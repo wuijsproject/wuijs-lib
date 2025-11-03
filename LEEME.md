@@ -1077,7 +1077,7 @@ Código CSS:
 ```css
 html,
 body {
-	height: 100%;
+	height: 100%; /* necessary */
 }
 .wui-scrolly {
 	overflow-x: hidden;
