@@ -1154,7 +1154,7 @@ Código HTML:
 	<!-- Portada -->
 
 	<section class="section section1">
-		<div class="scene">1: scroll down</div>
+		<div class="scene">desplázate hacia abajo</div>
 	</section>
 
 	<!-- Animación CSS -->

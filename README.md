@@ -1154,7 +1154,7 @@ HTML code:
 	<!-- Cover -->
 
 	<section class="section section1">
-		<div class="scene">1: scroll down</div>
+		<div class="scene">scroll down</div>
 	</section>
 
 	<!-- CSS animation -->
