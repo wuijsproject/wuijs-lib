@@ -1,12 +1,12 @@
 /*
- * WUIScrolly - v0.1
+ * WUIScrolly - v0.2
  * Author: Sergio E. Belmar (sbelmar@wuijs.dev)
  * Copyright (c) Sergio E. Belmar (sbelmar@wuijs.dev)
  */
 
 class WUIScrolly {
 
-	static version = "0.1";
+	static version = "0.2";
 	static #defaults = {
 		sections: [],
 		behavior: "smooth",
@@ -72,6 +72,10 @@ class WUIScrolly {
 
 	get deltaY() {
 		return this._deltaY;
+	}
+
+	get direction() {
+		return this._direction;
 	}
 
 	get sceneWidth() {
@@ -175,6 +179,7 @@ class WUIScrolly {
 		}
 		const onScrollJS = (event) => {
 			if (!this._lock) {
+				this._direction = window.scrollY > this._scrollY ? "down" : window.scrollY < this._scrollY ? "up" : this._direction;
 				this._scrollY = window.scrollY >= 0 ? window.scrollY : 0;
 				if (!this._moving) {
 					this._bodyHeight = WUIScrolly.bodyHeight();
@@ -264,11 +269,11 @@ class WUIScrolly {
 							this._sections[this._sceneIndex].animation(this._sceneStep, this._sceneProgress);
 						}
 						if (this._debug) {
-							console.log("scrolling > scrollY:", this._scrollY, "y:", y, "index:", this._sceneIndex, "step:", this._sceneStep, "progress:", this._sceneProgress);
+							console.log("WUIScrolly - scrolling > scrollY:", this._scrollY, "y:", y, "index:", this._sceneIndex, "step:", this._sceneStep, "progress:", this._sceneProgress);
 						}
 					}
 					if (typeof(this._onMove) == "function") {
-						this._onMove(event);
+						this._onMove(this._sceneIndex, this._sceneStep, this._sceneProgress);
 					}
 				}
 				if (this._stop) {
@@ -293,6 +298,7 @@ class WUIScrolly {
 		this._maxScrollTop = this._bodyHeight - this._screenHeight;
 		this._scrollY = window.scrollY >= 0 ? window.scrollY : 0;
 		this._deltaY = 0;
+		this._direction = null;
 		this._moving = false;
 		this._truncated = false;
 		this._stop = null;
@@ -308,7 +314,7 @@ class WUIScrolly {
 				}
 				this._sections[i]._element.style.height = typeof(height) == "number" ? height+"px" : height;
 				if (this._debug) {
-					console.log("init section > selector:", section.selector, "height:", height);
+					console.log("WUIScrolly - init section > selector:", section.selector, "height:", height);
 				}
 				if (typeof(section.type) == "string" && section.type == "static") {
 					this._sections[i]._element.classList.add("static");
@@ -362,7 +368,7 @@ class WUIScrolly {
 				}
 				if (sense.match(/^(start|forward|backward)$/)) {
 					if (this._debug) {
-						console.log("go section prepare animation > index:", i, ", sense:", sense, ", step:", this._sceneStep, "progress:", this._sceneProgress);
+						console.log("WUIScrolly - go section prepare animation > index:", i, ", sense:", sense, ", step:", this._sceneStep, "progress:", this._sceneProgress);
 					}
 					section.animation(this._sceneStep, this._sceneProgress);
 				}
@@ -419,7 +425,7 @@ class WUIScrolly {
 			scrolling = setInterval(() => {
 				if (top < 0 || top == window.scrollY) {
 					if (this._debug) {
-						console.log("go section stop > top:", top, "deltaY:", this._deltaY);
+						console.log("WUIScrolly - go section stop > top:", top, "deltaY:", this._deltaY);
 					}
 					clearInterval(scrolling);
 					if (iniIndex != endIndex) {
@@ -436,7 +442,7 @@ class WUIScrolly {
 					this._scrollY = top;
 					this._lock = false;
 					if (typeof(this._onMove) == "function") {
-						this._onMove();
+						this._onMove(this._sceneIndex, this._sceneStep, this._sceneProgress);
 					}
 					if (typeof(done) == "function") {
 						done();

@@ -57,7 +57,7 @@ WUI, acrónimo del inglés *Web User Interface JavaScript library*, es una bibli
 | [WUIHead](#WUIHead)           | `0.1`   | Administrador de cabecera HTML. |
 | [WUIBody](#WUIBody)           | `0.1`   | Administrador de cuerpo HTML. Permite la importación de contenido CSS/JS/HTML y facilita la implementación en entornos nativos móviles. |
 | [WUILanguage](#WUILanguage)   | `0.2`   | Administrador de idioma para interfaces web. Permite cargar archivos de idioma en formato JS o JSON y actualizar dinámicamente el contenido de los elementos HTML según el idioma. |
-| [WUIScrolly](#WUIScrolly)     | `0.1`   | Herramienta para animación de elementos HTML mediante el evento "onscroll" del cuerpo de la página HTML. |
+| [WUIScrolly](#WUIScrolly)     | `0.2`   | Herramienta para animación de elementos HTML mediante el evento "onscroll" del cuerpo de la página HTML. |
 | [WUIIcon](#WUIIcon)           | `0.1`   | Conjunto de íconos prediseñados y carga mediante CSS, para uso en interfaces. |
 | [WUIFade](#WUIFade)           | `0.1`   | Herramienta para salida y entrada con opacidad (fade-out y fade-in respectivamente) de elementos HTML. |
 | WUITooltip                    | `0.1`   | Objeto simple para texto emergente. |
@@ -605,7 +605,7 @@ Código HTML:
 		<meta name="theme-color" content="">
 		<link type="text/css" rel="stylesheet" href="./Settings/Main.css">
 		<link type="text/css" rel="stylesheet" href="./Settings/WUI.css">
-		<link type="text/css" rel="stylesheet" href="./Libraries/WUI/Scrolly/WUIScrolly-0.1.css">
+		<link type="text/css" rel="stylesheet" href="./Libraries/WUI/Scrolly/WUIScrolly-0.2.css">
 		<link type="text/css" rel="stylesheet" href="./Libraries/WUI/Icon/WUIIcon-0.1.css">
 		<link type="text/css" rel="stylesheet" href="./Libraries/WUI/Tooltip/WUITooltip-0.1.css">
 		<link type="text/css" rel="stylesheet" href="./Libraries/WUI/Loader/WUILoader-0.1.css">
@@ -628,7 +628,7 @@ Código HTML:
 		<script type="text/javascript" src="./Libraries/WUI/Head/WUIHead-0.1.js"></script>
 		<script type="text/javascript" src="./Libraries/WUI/Body/WUIBody-0.1.js"></script>
 		<script type="text/javascript" src="./Libraries/WUI/Language/WUILanguage-0.2.js"></script>
-		<script type="text/javascript" src="./Libraries/WUI/Scrolly/WUIScrolly-0.1.js"></script>
+		<script type="text/javascript" src="./Libraries/WUI/Scrolly/WUIScrolly-0.2.js"></script>
 		<script type="text/javascript" src="./Libraries/WUI/Fade/WUIFade-0.1.js"></script>
 		<script type="text/javascript" src="./Libraries/WUI/Tooltip/WUITooltip-0.1.js"></script>
 		<script type="text/javascript" src="./Libraries/WUI/Loader/WUILoader-0.1.js"></script>
@@ -998,7 +998,7 @@ language.load("es", ["main", "main2"]);
 
 ### WUIScrolly
 
-Versión: `0.1`
+Versión: `0.2`
 
 Herramienta para animación de elementos HTML mediante el evento "onscroll" del cuerpo de la página HTML.
 
@@ -1010,16 +1010,24 @@ Herramienta para animación de elementos HTML mediante el evento "onscroll" del 
 
 #### Propiedades
 
-| Propiedad   | Tipo       | Valor predeterminado | Descripción |
-| ----------- | ---------- | -------------------- | ----------- |
-| sections    | `array`    | `[]`                 | (get/set)<br><br>Lista secciones que serán incorporadas a la animación, según la definición de **Opciones de Sección**. Estas pueden ser definidas directamente sobre esta propiedad o mediante el método `addSection()`. |
-| behavior    | `string`   | `"smooth"`           | (get/set)<br><br>Comportamiento para desplazar el foco en el cuerpo de la página HTML.<br><br>Valores:<br>• `"auto"`<br>• `"smooth"` |
-| dataScrollY | `string`   | `"scrollY"`          | (get/set)<br><br>Nombre del atributo `data-*` del elemento de documento principal (`<html>` / `document.documentElement`) que contiene el valor numérico medido en píxeles del desplazamiento total del scroll vertical de la página HTML y donde `0` representa la parte superior del documento (o sin movimiento). |
-| dataDelay   | `string`   | `"delay"`            | (get/set)<br><br>Nombre del atributo `data-*` que determina el tiempo medido en milisegundos en que tarda en animarse un elemento HTML animados mediante estilos CSS una vez que se le da foco. |
-| onStart     | `function` | `null`               | (get/set)<br><br>Función que se llama cuando inicia el movimiento del scroll, ya sea a travéz de los eventos `scroll` para ratón o `touchmove` para pantalla táctil. |
-| onMove      | `function` | `null`               | (get/set)<br><br>Función que se llama cuando se ejecuta el movimiento del scroll, ya sea a travéz de los eventos `scroll` para ratón o `touchmove` para pantalla táctil. |
-| onStop      | `function` | `null`               | (get/set)<br><br>Función que se llama cuando termina el movimiento del scroll, ya sea a travéz de los eventos `scroll` para ratón o `touchmove` para pantalla táctil. |
-| debug       | `boolean`  | `false`              | (get/set)<br><br>Modo de testeo. Imprime en consola los valores `selector` y `height` de las escenas agregadas en la instancia de inicio y `scrollY`, `y`, `index`, `sceneIndex`, `step`, `sceneStep` y `progress` cuando estos cambian. Se habilitac cuando el valor de la propiedad es `true`. |
+| Propiedad     | Tipo       | Valor predeterminado        | Descripción |
+| ------------- | ---------- | --------------------------- | ----------- |
+| sections      | `array`    | `[]`                        | (get/set)<br><br>Lista secciones que serán incorporadas a la animación, según la definición de **Opciones de Sección**. Estas pueden ser definidas directamente sobre esta propiedad o mediante el método `addSection()`. |
+| behavior      | `string`   | `"smooth"`                  | (get/set)<br><br>Comportamiento para desplazar el foco en el cuerpo de la página HTML.<br><br>Valores:<br>• `"auto"`<br>• `"smooth"` |
+| dataScrollY   | `string`   | `"scrollY"`                 | (get/set)<br><br>Nombre del atributo `data-*` del elemento de documento principal (`<html>` / `document.documentElement`) que contiene el valor numérico medido en píxeles del desplazamiento total del scroll vertical de la página HTML y donde `0` representa la parte superior del documento (o sin movimiento). |
+| dataDelay     | `string`   | `"delay"`                   | (get/set)<br><br>Nombre del atributo `data-*` que determina el tiempo medido en milisegundos en que tarda en animarse un elemento HTML animados mediante estilos CSS una vez que se le da foco. |
+| onStart       | `function` | `null`                      | (get/set)<br><br>Función que se llama cuando inicia el movimiento del scroll, ya sea a travéz de los eventos `scroll` para ratón o `touchmove` para pantalla táctil. |
+| onMove        | `function` | `null`                      | (get/set)<br><br>Función que se llama cuando se ejecuta el movimiento del scroll, ya sea a travéz de los eventos `scroll` para ratón o `touchmove` para pantalla táctil. |
+| onStop        | `function` | `null`                      | (get/set)<br><br>Función que se llama cuando termina el movimiento del scroll, ya sea a travéz de los eventos `scroll` para ratón o `touchmove` para pantalla táctil. |
+| scrollY       | `number`   | `0`                         | (get)<br><br>Posición vertical de la página medida en píxeles. |
+| deltaY        | `number`   | `0`                         | (get)<br><br>Último paso de desplazamiento en el movimiento vertical de la página medida en píxeles. |
+| direction     | `string`   | `null`                      | (get)<br><br>Sentido del movimiento vertical de la página.<br><br>Valores:<br>• `"up"`<br>• `"down"` |
+| sceneWidth    | `number`   | `WUIScrolly.screenWidth()`  | (get)<br><br>Ancho de la escena medido en píxeles. |
+| sceneHeight   | `number`   | `WUIScrolly.screenHeight()` | (get)<br><br>Alto de la escena medido en píxeles. |
+| sceneIndex    | `number`   | `null`                      | (get)<br><br>Número de escena. |
+| sceneStep     | `number`   | `null`                      | (get)<br><br>Número de paso en una escena. |
+| sceneProgress | `number`   | `null`                      | (get)<br><br>Porcentaje de progreso de un paso en una escena, con valores entre `0` y `1`. |
+| debug         | `boolean`  | `false`                     | (get/set)<br><br>Modo de testeo. Imprime en consola los valores `selector` y `height` de las escenas agregadas en la instancia de inicio y `scrollY`, `y`, `index`, `sceneIndex`, `step`, `sceneStep` y `progress` cuando estos cambian. Se habilitac cuando el valor de la propiedad es `true`. |
 
 #### Opciones de Sección
 
@@ -1057,6 +1065,7 @@ Herramienta para animación de elementos HTML mediante el evento "onscroll" del 
 | ------------- | ----------- |
 | .fadein       | Entra y sale con opacidad sin movimiento. |
 | .fadein-up    | Entra y sale con opacidad desde arriba. |
+| .fadein-top   | Alias de `.fadein-up`. |
 | .fadein-left  | Entra y sale con opacidad desde la izquierda. |
 | .fadein-right | Entra y sale con opacidad desde la derecha. |
 
@@ -1135,8 +1144,8 @@ body {
 Cabecera HTML
 
 ```html
-<link type="text/css" rel="stylesheet" href="https://wuijs.dev/Libraries/WUI/Scrolly/WUIScrolly-0.1.css">
-<script type="text/javascript" src="https://wuijs.dev/Libraries/WUI/Scrolly/WUIScrolly-0.1.js"></script>
+<link type="text/css" rel="stylesheet" href="https://wuijs.dev/Libraries/WUI/Scrolly/WUIScrolly-0.2.css">
+<script type="text/javascript" src="https://wuijs.dev/Libraries/WUI/Scrolly/WUIScrolly-0.2.js"></script>
 ```
 
 Código HTML:
@@ -1200,9 +1209,11 @@ const scrolly = new WUIScrolly({
 	dataScrollY: "scrollY",  // Valor predeterminado, propiedad puede ser omitida
 	dataDelay: "delay",      // Valor predeterminado, propiedad puede ser omitida
 	onStart: () => {},
-	onMove: (event) => {},
+	onMove: (index, step, progress) => {
+		// ...
+	},
 	onStop: () => {},
-	debug: true
+	debug: false             // Valor predeterminado, propiedad puede ser omitida
 });
 const element5 = document.body.querySelector(".section3 .my-element.element5");
 const element6 = document.body.querySelector(".section3 .my-element.element6");
@@ -1231,7 +1242,9 @@ scrolly.addSection({
 	target: "js-animation",
 	type: "auto",
 	height: 4500,
-	animation: (step = 0, progress = 0) => {
+	steps: 2, /* 0 - 2 */
+	pages: 0,
+	animation: (step, progress) => {
 		const direction = scrolly.direction;
 		const left = step != null ? parseInt(200 * progress - 100)+"px" : "100px";
 		if (step == 0) {
@@ -1264,7 +1277,7 @@ scrolly.addSection({
 	height: 4500,
 	steps: 2,
 	pages: 3,
-	animation: (step = 0, progress = 0) => {
+	animation: (step, progress) => {
 		const direction = scrolly.direction;
 		const left = step != null ? parseInt(200 * progress - 100)+"px" : "100px";
 		// ...
