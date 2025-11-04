@@ -42,6 +42,7 @@ Autor: `Sergio E. Belmar V. <sbelmar@wuijs.dev>`
 	*   WUICheckbox
 	*   WUIIntensity
 	*   WUIButton
+*   [Ejemplos](#examples)
 
 <a name="overview"></a>
 
@@ -51,7 +52,7 @@ WUI, acrónimo del inglés *Web User Interface JavaScript library*, es una bibli
 
 ### Tabla de Clases
 
-| Class                         | Version | Descripción |
+| Clase                         | Version | Descripción |
 | ----------------------------- | -------:| ----------- |
 | [WUICookie](#WUICookie)       | `0.1`   | Administrador de cookies. |
 | [WUIHead](#WUIHead)           | `0.1`   | Administrador de cabecera HTML. |
@@ -2344,3 +2345,14 @@ table.print();
 <a name="WUICheckbox"></a>
 <a name="WUIIntensity"></a>
 <a name="WUIButton"></a>
+<a name="examples"></a>
+
+## Ejemplos
+
+| Clase                     | Enlace |
+| ------------------------- | ------ |
+| [WUIScrolly](#WUIScrolly) | [https://codepen.io/sbelmar/pen/azdjOQp](https://codepen.io/sbelmar/pen/azdjOQp) |
+| [WUIIcon](#WUIIcon)       | [https://codepen.io/sbelmar/pen/KwVBpoj](https://codepen.io/sbelmar/pen/KwVBpoj) |
+| [WUIFade](#WUIFade)       | [https://codepen.io/sbelmar/pen/KwVeEOv](https://codepen.io/sbelmar/pen/KwVeEOv) |
+| [WUIList](#WUIList)       | [https://codepen.io/sbelmar/pen/vELrGBJ](https://codepen.io/sbelmar/pen/vELrGBJ) |
+| [WUITable](#WUITable)     | [https://codepen.io/sbelmar/pen/zxrapZe](https://codepen.io/sbelmar/pen/zxrapZe) |

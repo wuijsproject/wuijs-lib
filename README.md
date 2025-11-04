@@ -42,6 +42,7 @@ Author: `Sergio E. Belmar V. <sbelmar@wuijs.dev>`
 	*   WUICheckbox
 	*   WUIIntensity
 	*   WUIButton
+*   [Examples](#examples)
 
 <a name="overview"></a>
 
@@ -2344,3 +2345,14 @@ table.print();
 <a name="WUICheckbox"></a>
 <a name="WUIIntensity"></a>
 <a name="WUIButton"></a>
+<a name="examples"></a>
+
+## Examples
+
+| Class                     | Link |
+| ------------------------- | ---- |
+| [WUIScrolly](#WUIScrolly) | [https://codepen.io/sbelmar/pen/azdjOQp](https://codepen.io/sbelmar/pen/azdjOQp) |
+| [WUIIcon](#WUIIcon)       | [https://codepen.io/sbelmar/pen/KwVBpoj](https://codepen.io/sbelmar/pen/KwVBpoj) |
+| [WUIFade](#WUIFade)       | [https://codepen.io/sbelmar/pen/KwVeEOv](https://codepen.io/sbelmar/pen/KwVeEOv) |
+| [WUIList](#WUIList)       | [https://codepen.io/sbelmar/pen/vELrGBJ](https://codepen.io/sbelmar/pen/vELrGBJ) |
+| [WUITable](#WUITable)     | [https://codepen.io/sbelmar/pen/zxrapZe](https://codepen.io/sbelmar/pen/zxrapZe) |
