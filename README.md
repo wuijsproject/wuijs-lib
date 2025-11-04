@@ -5,7 +5,7 @@
 
 Library version: `0.2.0` ([Change Log](./CHANGELOG.md))
 
-Document version: `0.2.0.20251104.1`
+Document version: `0.2.0.20251104.2`
 
 Licence: `Apache License 2.0`
 
@@ -1078,7 +1078,7 @@ CSS settings:
 
 ```css
 :root {
-	--wui-scrolly-paging-bgcolor: #f6f6fa;
+	--wui-scrolly-paging-bgcolor: #888;
 }
 ```
 
@@ -1120,9 +1120,6 @@ body {
 }
 .wui-scrolly > .section3 > .scene > .animation > .my-element {
 	left: -100px;
-}
-.wui-scrolly > .section4 {
-	background-color: #d9d9d9;
 }
 .my-element {
 	display: flex;
@@ -1182,22 +1179,6 @@ HTML code:
 			</div>
 			<div class="my-output"></div>
 		</div>
-	</section>
-
-	<!-- JS paging animation -->
-
-	<section class="section section4">
-		<div class="scene">
-			<div class="animation">
-				<div class="my-element element8">8</div>
-			</div>
-			<div class="my-output"></div>
-		</div>
-		<div class="scene">
-			<div class="animation">
-				<div class="my-element element9">9</div>
-			</div>
-		</div>
 		<div class="paging dots"></div>
 	</section>
 </body>
@@ -1216,10 +1197,6 @@ const scrolly = new WUIScrolly({
 	onMove: (index, step, progress) => {
 		if (index == 1) {
 			element5.style.left = "-100px";
-		} else if (index == 2) {
-			element8.style.left = "-100px";
-		} else if (index == 3) {
-			element7.style.left = "100px";
 		}
 	},
 	onStop: () => {},
@@ -1228,10 +1205,7 @@ const scrolly = new WUIScrolly({
 const element5 = document.body.querySelector(".section3 .my-element.element5");
 const element6 = document.body.querySelector(".section3 .my-element.element6");
 const element7 = document.body.querySelector(".section3 .my-element.element7");
-const element8 = document.body.querySelector(".section4 .my-element.element8");
-const element9 = document.body.querySelector(".section4 .my-element.element9");
-const output1 = document.body.querySelector(".section3 .my-output");
-const output2 = document.body.querySelector(".section4 .my-output");
+const output = document.body.querySelector(".section3 .my-output");
 
 // Add sections
 scrolly.addSection({
@@ -1252,11 +1226,12 @@ scrolly.addSection({
 	type: "auto",
 	height: 4500,
 	steps: 2, /* 0 - 2 */
-	pages: 0,
+	pages: 3,
 	animation: (step, progress) => {
 		const direction = scrolly.direction;
 		const left = step != null ? parseInt(200 * progress - 100)+"px" : "100px";
 		const text = `step: ${step}, progress: ${progress}, direction: ${direction}`;
+		scrolly.selectPage(2, step);
 		if (step == 0) {
 			if (direction == "up") {
 				element6.style.left = "-100px";
@@ -1277,26 +1252,7 @@ scrolly.addSection({
 		} else if (step == null) {
 			element7.style.left = left;
 		}
-		output1.textContent = text;
-	}
-});
-scrolly.addSection({
-	selector: ".section4",
-	target: "js-paging-animation",
-	type: "auto",
-	height: 2000,
-	steps: 1, /* 0 - 1 */
-	pages: 2, /* 1 - 2 */
-	animation: (step, progress) => {
-		const direction = scrolly.direction;
-		const left = step != null ? parseInt(200 * progress - 100)+"px" : "100px";
-		const text = `step: ${step}, progress: ${progress}, direction: ${direction}`;
-		if (step == 0) {
-			element8.style.left = left;
-		} else if (step == 1) {
-			element9.style.left = left;
-		}
-		output2.textContent = text;
+		output.textContent = text;
 	}
 });
 
@@ -2348,6 +2304,8 @@ table.print();
 <a name="examples"></a>
 
 ## Examples
+
+The examples listed in this section are detailed in the "Implementation" section of each class.
 
 | Class                     | Link |
 | ------------------------- | ---- |
