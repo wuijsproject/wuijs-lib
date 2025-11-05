@@ -1,0 +1,136 @@
+/*
+ * WUIMenubar - v0.1
+ * Author: Sergio E. Belmar (sbelmar@wuijs.dev)
+ * Copyright (c) Sergio E. Belmar (sbelmar@wuijs.dev)
+ */
+
+.wui-menubar,
+.wui-menubar * {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-tap-highlight-color: transparent;
+}
+.wui-menubar > .bar {
+	--bar-gradient: to bottom, var(--wui-menubar-bgtopcolor), var(--wui-menubar-bgbottomcolor);
+	display: flex;
+	position: absolute;
+	z-index: 4;
+	overflow: visible;
+	-webkit-border-radius: var(--wui-menubar-borderradius);
+	-moz-border-radius: var(--wui-menubar-borderradius);
+	border-radius: var(--wui-menubar-borderradius);
+	border: 1px solid var(--wui-menubar-bordercolor);
+	background-color: var(--wui-menubar-bgtopcolor);
+	background-image: -webkit-linear-gradient(var(--bar-gradient));
+	background-image: -moz-linear-gradient(var(--bar-gradient));
+	background-image: -o-linear-gradient(var(--bar-gradient));
+	background-image: linear-gradient(var(--bar-gradient));
+	align-items: center;
+	justify-content: center;
+}
+.wui-menubar > .bar > .main {
+	display: flex;
+	position: absolute;
+	align-items: center;
+	justify-content: space-between;
+}
+.wui-menubar > .bar > .main > .button {
+	display: flex;
+	position: relative;
+	width: 36px;
+	height: 36px;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	align-items: center;
+	justify-content: center;
+}
+.wui-menubar > .bar > .main > .button > .icon {
+	width: 24px;
+	height: 24px;
+}
+.wui-menubar > .bar > .main > .button > .bubble {
+	position: absolute;
+	top: -4px;
+	right: -4px;
+	min-width: 20px;
+	height: 20px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	background-color: var(--wui-menubar-bubblecolor);
+	line-height: 20px;
+	padding: 0 2px;
+	text-align: center;
+	font-size: 12px;
+	color: #fff;
+}
+.wui-menubar > .bar > .main > .button.account > .photo {
+	display: block;
+	position: absolute;
+	width: 24px;
+	height: 24px;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	background-origin: border-box;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.wui-menubar > .bar > .main > .button.selected {
+	--button-gradient: to bottom, var(--wui-menubar-mainbutton-bgtopcolor), var(--wui-menubar-mainbutton-bgbottomcolor);
+	background-color: var(--app-primarycolor);
+	background-image: -webkit-linear-gradient(var(--button-gradient));
+	background-image: -moz-linear-gradient(var(--button-gradient));
+	background-image: -o-linear-gradient(var(--button-gradient));
+	background-image: linear-gradient(var(--button-gradient));
+}
+.wui-menubar > .bar > .main > .button.selected > .icon {
+	background-color: var(--wui-menubar-mainicon-bgcolor-out);
+}
+.wui-menubar > .bar > .hidden,
+.wui-menubar > .bar > .main > .button > .bubble.hidden {
+	display: none;
+}
+@media screen and (max-width: 767px) {
+	.wui-menubar > .bar {
+		top: auto;
+		left: 10px;
+		right: 10px;
+		bottom: calc(var(--display-notch-navigationbar-height) + 10px);
+		width: auto;
+		height: 50px;
+		padding: 0 10px;
+		justify-content: center;
+		flex-direction: row;
+		flex-basis: 50px;
+	}
+	.wui-menubar > .bar > .logo,
+	.wui-menubar > .bar > .logout,
+	.wui-menubar > .bar > .main > .tooltip {
+		display: none !important;
+	}
+	.wui-menubar > .bar > .main {
+		width: 90%;
+		flex-direction: row;
+	}	
+}
+@media screen and (min-width: 768px) {
+	.wui-menubar > .bar {
+		top: 10px;
+		left: 10px;
+		right: auto;
+		bottom: 10px;
+		width: 60px;
+		height: auto;
+		padding: 10px 0;
+		flex-direction: column;
+		flex-basis: 60px;
+	}
+	.wui-menubar > .bar > .main {
+		width: 100%;
+		flex-direction: column;
+		gap: 8px;
+	}	
+}

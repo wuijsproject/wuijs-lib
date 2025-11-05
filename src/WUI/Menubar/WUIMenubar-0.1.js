@@ -36,8 +36,9 @@ class WUIMenubar {
 		if (typeof(value) == "string" && value != "") {
 			this._selector = value;
 			this._element = document.querySelector(value);
-			this._main = document.querySelector(value+" > .main");
-			this._bottom = document.querySelector(value+" > .bottom");
+			this._bar = document.querySelector(value+" > .bar");
+			this._main = this._bar.querySelector(".main");
+			this._bottom = this._bar.querySelector(".bottom");
 		}
 	}
 
@@ -70,17 +71,29 @@ class WUIMenubar {
 		return null;
 	}
 
+	setBubble(optionId, number = 0) {
+		const button = this._element.querySelector(`[data-id='${optionId}'].button`);
+		// ...
+	}
+
 	init() {
 		this._options.forEach(option => {
 			const button = document.createElement("div");
 			const icon = document.createElement("div");
-			const text = document.createElement("span");
+			const text = document.createElement("div");
+			const bubble = document.createElement("div");
+			button.append(icon);
+			button.append(text);
+			button.append(bubble);
 			button.dataset.id = option.id;
 			button.className = "button"+(option.enabled == false ? " disabled" : "");
 			(option.iconClass || "").split(/\s+/).forEach(name => {
 				icon.classList.add(name);
 			});
 			text.innerText = option.label || "";
+			text.className = "text";
+			bubble.className = "bubble hidden";
+			bubble.innerText = 0;
 			if ((typeof(option.position) == "undefined" || option.position == "main") && this._main) {
 				this._main.append(button);
 			} else if (option.position == "bottom" && this._bottom) {
@@ -99,6 +112,18 @@ class WUIMenubar {
 			}
 		}
 		this.getOption(id).enabled = enabled;
+	}
+
+	selectOption(id, selected = true) {
+		const button = this._element.querySelector(`[data-id='${id}'].button`);
+		if (button != null && !button.classList.contains("disabled")) {
+			if (selected) {
+				button.classList.add("selected");
+			} else {
+				button.classList.remove("selected");
+			}
+		}
+		this.getOption(id).selected = selected;
 	}
 
 	destroy() {
