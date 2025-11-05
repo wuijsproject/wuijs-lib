@@ -9,8 +9,8 @@ class WUIMenubar {
 	static version = "0.1";
 	static #defaults = {
 		selector: ".wui-menubar",
-		mainOptions: [],
-		secondaryOptions: []
+		expansive: true,
+		options: []
 	};
 
 	constructor (properties) {
@@ -18,37 +18,38 @@ class WUIMenubar {
 		Object.entries(defaults).forEach(([key, defValue]) => {
 			this[key] = key in properties ? properties[key] : defValue;
 		});
-		this._page = 0;
 	}
 
 	get selector() {
 		return this._selector;
 	}
 
-	get mainOptions() {
-		return this._mainOptions;
+	get expansive() {
+		return this._expansive;
 	}
 
-	get secondaryOptions() {
-		return this._secondaryOptions;
+	get options() {
+		return this._options;
 	}
 
 	set selector(value) {
 		if (typeof(value) == "string" && value != "") {
 			this._selector = value;
 			this._element = document.querySelector(value);
+			this._main = document.querySelector(value+" > .main");
+			this._bottom = document.querySelector(value+" > .bottom");
 		}
 	}
 
-	set mainOptions(value) {
-		if (Array.isArray(value)) {
-			this._mainOptions = value;
+	set expansive(value) {
+		if (typeof(value) == "boolean") {
+			this._expansive = value;
 		}
 	}
 
-	set secondaryOptions(value) {
+	set options(value) {
 		if (Array.isArray(value)) {
-			this._secondaryOptions = value;
+			this._options = value;
 		}
 	}
 
@@ -56,33 +57,47 @@ class WUIMenubar {
 		return this._element;
 	}
 
-	init() {
-		this.print();
-	}
-
-	addOption(type = "main", option) {
-		if (type.toLowerCase() == "main") {
-			this._mainOptions.push(option);
-		} else if (type.toLowerCase() == "secondary") {
-			this._secondaryOptions.push(option);
-		}
-	}
-
-	print(page = this._page) {
-	}
-
-	enableOption(index, enabled = true) {
-		if (index >= 0 && index < this._secondaryOptions.length) {
-			const row = this._element.querySelector(".row:nth-of-type("+(index+1)+")");
-			if (row != null) {
-				if (enabled) {
-					row.classList.remove("disabled");
-				} else {
-					row.classList.add("disabled");
-				}
+	getOption(id, options = this._options) {
+		for (const option of options) {
+			if (option.id == id) {
+				return option;
 			}
-			this._secondaryOptions[index].enabled = enabled;
+			if (option.options && option.options.length > 0) {
+				const found = this.getOption(id, option.options);
+				if (found) return found;
+			}
 		}
+		return null;
+	}
+
+	init() {
+		this._options.forEach(option => {
+			const button = document.createElement("div");
+			const icon = document.createElement("div");
+			button.dataset.id = option.id;
+			button.className = "button"+(option.enabled == false ? " disabled" : "");
+			if (this._expansive) {
+				const text = document.createElement("span");
+				text.innerText = option.label || "";
+			}
+			if ((typeof(option.position) == "undefined" || option.position == "main") && this._main) {
+				this._main.append(button);
+			} else if (option.position == "bottom" && this._bottom) {
+				this._bottom.append(button);
+			}
+		});
+	}
+
+	enableOption(id, enabled = true) {
+		const button = this._element.querySelector(`[data-id='${id}'].button`);
+		if (button != null) {
+			if (enabled) {
+				button.classList.remove("disabled");
+			} else {
+				button.classList.add("disabled");
+			}
+		}
+		this.getOption(id).enabled = enabled;
 	}
 
 	destroy() {
