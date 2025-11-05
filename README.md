@@ -41,7 +41,7 @@ Author: `Sergio E. Belmar V. <sbelmar@wuijs.dev>`
 	*   WUIColorpicker
 	*   WUICheckbox
 	*   WUIIntensity
-	*   WUIButton
+	*   [WUIButton](#WUIButton)
 *   [Examples](#examples)
 
 <a name="overview"></a>
@@ -78,7 +78,7 @@ WUI, an acronym for *Web User Interface JavaScript library*, is an open source J
 | WUIColorpicker                | `0.2`   | Advanced object for implementing color picker type data inputs. |
 | WUICheckbox                   | `0.2`   | Advanced object for implementing checkbox type data inputs. |
 | WUIIntensity                  | `0.1`   | Advanced object for implementing 4-level intensity selector type data inputs: none, low, half, and high. |
-| WUIButton                     | `0.2`   | Advanced object for button implementation. |
+| [WUIButton](#WUIButton)       | `0.2`   | Advanced object for button implementation. |
 
 <a name="install"></a>
 
@@ -686,7 +686,7 @@ Cookie manager.
 
 | Property | Type      | Default value       | Description |
 | -------- | --------- | ------------------- | ----------- |
-| domain   | `string`  | `location.hostname` | (get/set)<br><br>Defines the domain for which the cookie is accessible. By default, it's the current host. Setting it to a parent domain (e.g., example.com for sub.example.com) makes it accessible to subdomains. |
+| domain   | `string`  | `location.hostname` | (get/set)<br><br>Define the domain for which the cookie is accessible. By default, it's the current host. Setting it to a parent domain (e.g., example.com for sub.example.com) makes it accessible to subdomains. |
 | path     | `string`  | `"./"`              | (get/set)<br><br>Specifies the path for which the cookie is valid. The default value is the current path, with an empty value being equivalent to this. Setting "/" makes the cookie accessible across the entire domain. |
 | minutes  | `number`  | `525600`            | (get/set)<br><br>Specifies the duration, measured in minutes, for the cookie to remain active. The default value is 365 days. |
 | overssl  | `boolean` | `false`             | (get/set)<br><br>If set to `true`, the cookie will only be sent over HTTPS connections. |
@@ -1579,7 +1579,7 @@ Another alternative way is through extended methods of the `HTMLElement` class t
 
 | Option  | Type      | Default value | Description |
 | ------- | --------- | ------------- | ----------- |
-| delay   | `number`  | `400`         | Defines the time it will take for the transition effect  in and out, measured in milliseconds. |
+| delay   | `number`  | `400`         | Define the time it will take for the transition effect  in and out, measured in milliseconds. |
 | display | `string`  | `"block"`     | Sets the value of the CSS `display` property of the HTML element on which the transition effect is executed, once the incoming transition ends. |
 | force   | `boolean` | `false`       | Both the entrance and exit effects are executed as long as the CSS `display` property is different from `options.display` and `none`, respectively. The `force` option ignores this validation. |
 
@@ -1687,7 +1687,7 @@ Advanced object for implementing data lists and buttons for each row optionally.
 | data         | `array`   | `[]`          | Array with the contents of the cells in the row. |
 | innerContent | `string`  | `undefined`   | Optional inner row content, displayed at the bottom of the row. |
 | innerOpened  | `boolean` | `false`       | Initial opening of optional inner row content. |
-| enabled      | `boolean` | `true`        | Row enable state. The default is `true`. |
+| enabled      | `boolean` | `true`        | Define whether the row is enabled. |
 
 #### Row Button Options
 
@@ -1695,7 +1695,7 @@ Advanced object for implementing data lists and buttons for each row optionally.
 | --------- | ------------------- | ------------- | ----------- |
 | iconClass | `string\|function`  | `undefined`   | CSS styles that define the row button icon. This option can optionally be used with the [WUIIcon](#WUIIcon) library by using the `wui-icon` style in conjunction with a specific icon style. |
 | bgcolor   | `string\|function`  | `undefined`   | Background color in CSS compatible format. |
-| enabled   | `boolean\|function` | `true`        | Button enable state. |
+| enabled   | `boolean\|function` | `true`        | Defines whether the button is enabled. |
 | onClick   | `function`          | `null`        | Function called when the button is clicked. It receives the parameters `index`, corresponding to the row position starting from `0`; and `id`, corresponding to the row's unique identifier. |
 
 > [!IMPORTANT]
@@ -1982,10 +1982,10 @@ Advanced object for implementing data tables. Unlike the `WUIList` object, the `
 | rows         | `array`    | `[]`          | (get/set)<br><br>List of rows in the tabla, as defined by **Row Options**. |
 | align        | `string`   | `"left"`      | (get/set)<br><br>Horizontal alignment mode for table content.<br><br>Values:<br>• `"left"`<br>• `"center"`<br>• `"right"` |
 | valign       | `string`   | `"middle"`    | (get/set)<br><br>Vertical alignment mode for table content.<br><br>Values:<br>• `"top"`<br>• `"middle"`<br>• `"bottom"` |
-| sortable     | `boolean`  | `true`        | (get/set)<br><br>Defines whether rows are sortable by column. |
-| resizable    | `boolean`  | `true`        | (get/set)<br><br>Defines whether columns are resizable. |
-| draggable    | `boolean`  | `true`        | (get/set)<br><br>Defines whether columns are draggable so their position can be changed. |
-| selectable   | `boolean`  | `true`        | (get/set)<br><br>Defines whether rows are selectable. |
+| sortable     | `boolean`  | `true`        | (get/set)<br><br>Define whether rows are sortable by column. |
+| resizable    | `boolean`  | `true`        | (get/set)<br><br>Define whether columns are resizable. |
+| draggable    | `boolean`  | `true`        | (get/set)<br><br>Define whether columns are draggable so their position can be changed. |
+| selectable   | `boolean`  | `true`        | (get/set)<br><br>Define whether rows are selectable. |
 | onPrint      | `function` | `null`        | (get/set)<br><br>Function that is called when a page or the entire table is displayed. The function receives as parameters:<br><br>**• page:** `number`, page number.<br>**• pages:** `number`, total pages.<br>**• total:** `number`, total rows. |
 | onClick      | `function` | `null`        | (get/set)<br><br>Function that is called when a row is clicked. The function receives as parameters:<br><br>**• index:** `number`, row number.<br>**• id:** `string`, row id.<br>**• enabled:** `boolean`, row enable state.<br>**• options:** `object`, row settings options. |
 | onDblClick   | `function` | `null`        | (get/set)<br><br>Function that is called when a row is double-clicked. The function receives as parameters:<br><br>**• index:** `number`, row number.<br>**• id:** `string`, row id.<br>**• enabled:** `boolean`, row enable state.<br>**• options:** `object`, row settings options. |
@@ -1999,9 +1999,9 @@ Advanced object for implementing data tables. Unlike the `WUIList` object, the `
 | width     | `string`  | `undefined`          | Column width. This can be expressed as a number associated with pixels or in a CSS compatible format. |
 | align     | `string`  | `WUITable.align`     | Horizontal alignment mode for column content. This option takes precedence over the `align` property.<br><br>Values:<br>• `"left"`<br>• `"center"`<br>• `"right"` |
 | valign    | `string`  | `WUITable.valign`    | Vertical alignment mode for column content. This option takes precedence over the `valign` property.<br><br>Values:<br>• `"top"`<br>• `"middle"`<br>• `"bottom"` |
-| sortable  | `boolean` | `WUITable.sortable`  | Defines whether rows are sortable by column. This option takes precedence over the `sortable` property. |
-| resizable | `boolean` | `WUITable.resizable` | Defines whether the column is resizable. This option takes precedence over the `resizable` property. |
-| draggable | `boolean` | `WUITable.draggable` | Defines whether the column is draggable so its position can be changed. This option takes precedence over the `draggable` property. |
+| sortable  | `boolean` | `WUITable.sortable`  | Define whether rows are sortable by column. This option takes precedence over the `sortable` property. |
+| resizable | `boolean` | `WUITable.resizable` | Define whether the column is resizable. This option takes precedence over the `resizable` property. |
+| draggable | `boolean` | `WUITable.draggable` | Define whether the column is draggable so its position can be changed. This option takes precedence over the `draggable` property. |
 
 > [!IMPORTANT]
 > The `width` row option will not take values ​​greater than the maximum width computed between all the cells belonging to the column.
@@ -2015,8 +2015,8 @@ Advanced object for implementing data tables. Unlike the `WUIList` object, the `
 | align    | `string`  | `WUITable.align`  | Horizontal alignment mode for row content. This option takes precedence over the `align` property.<br><br>Values:<br>• `"left"`<br>• `"center"`<br>• `"right"` |
 | valign   | `string`  | `WUITable.valign` | Vertical alignment mode for row content. This option takes precedence over the `valign` property.<br><br>Values:<br>• `"top"`<br>• `"middle"`<br>• `"bottom"` |
 | data     | `array`   | `[]`              | Array with the contents of the cells in the row. |
-| selected | `boolean` | `false`           | Defines whether the row is selected. The default is `false`. |
-| enabled  | `boolean` | `true`            | Defines whether the row is enabled. The default is `true`. |
+| selected | `boolean` | `false`           | Define whether the row is selected. |
+| enabled  | `boolean` | `true`            | Define whether the row is enabled. |
 
 #### Methods
 
@@ -2301,6 +2301,189 @@ table.print();
 <a name="WUICheckbox"></a>
 <a name="WUIIntensity"></a>
 <a name="WUIButton"></a>
+
+### WUIButton
+
+Versión: `0.2`
+
+Advanced object for button implementation.
+
+#### Constructor
+
+| Type      | Description |
+| --------- | ----------- |
+| WUIButton | `WUIButton([properties])`<br><br>Arguments:<br>**• properties:** `object` *optional* |
+
+#### Properties
+
+| Property     | Type       | Default value.  | Description |
+| ------------ | ---------- | --------------- | ----------- |
+| selector     | `string`   | `".wui-button"` | (get/set)<br><br>CSS selector that defines the HTML element that will be converted into the advanced button object. If more than one element matches the selector, only the first match will be included. |
+| text         | `string`   | `""`            | (get/set)<br><br>Text or HTML content of the element. |
+| selectable   | `boolean`  | `true`          | (get/set)<br><br>Define whether the button is selectable. |
+| locked       | `boolean`  | `false`         | (get/set)<br><br>Defines whether the button is locked. |
+| enabled      | `boolean`  | `true`          | (get/set)<br><br>Defines whether the button is enabled. |
+| onClick      | `function` | `null`          | (get/set)<br><br>Function that is called when the button is clicked. The function does not receive parameters. |
+| onDblClick   | `function` | `null`          | (get/set)<br><br>Function that is called when the button is double-clicked. The function does not receive parameters. |
+
+#### Methods
+
+| Method       | Return type   | Description |
+| ------------ | ------------- | ----------- |
+| getElement   | `HTMLElement` | `getElement()`<br><br>Returns the HTML element containing the advanced object. |
+| init         | `void`        | `init()`<br><br>Initializes the object. |
+| focus        | `void`        | `focus()`<br><br>Focus on the button. |
+| select       | `select`      | `select()`<br><br>Select the button. |
+| unselect     | `unselect`    | `unselect()`<br><br>Unselect the button. |
+| isSelected   | `isSelected`  | `isSelected()`<br><br>Returns if the button is selected. |
+
+#### CSS Variables
+
+| Variable                                    | Description |
+| ------------------------------------------- | ----------- |
+| `--wui-button-default-minwidth`             |
+| `--wui-button-default-height`               |
+| `--wui-button-default-bordercolor-out`      |
+| `--wui-button-default-bordercolor-over`     |
+| `--wui-button-default-bordercolor-selected` |
+| `--wui-button-default-bordercolor-disabled` |
+| `--wui-button-default-bgcolor-out`          |
+| `--wui-button-default-bgcolor-over`         |
+| `--wui-button-default-bgcolor-selected`     |
+| `--wui-button-default-bgcolor-disabled`     |
+| `--wui-button-default-textcolor-out`        |
+| `--wui-button-default-textcolor-over`       |
+| `--wui-button-default-textcolor-selected`   |
+| `--wui-button-default-textcolor-disabled`   |
+| `--wui-button-default-textsize`             |
+| `--wui-button-submit-minwidth`              |
+| `--wui-button-submit-height`                |
+| `--wui-button-submit-bordercolor-out`       |
+| `--wui-button-submit-bordercolor-over`      |
+| `--wui-button-submit-bordercolor-selected`  |
+| `--wui-button-submit-bordercolor-disabled`  |
+| `--wui-button-submit-bgcolor-out`           |
+| `--wui-button-submit-bgcolor-over`          |
+| `--wui-button-submit-bgcolor-mobile`        |
+| `--wui-button-submit-bgcolor-selected`      |
+| `--wui-button-submit-bgcolor-disabled`      |
+| `--wui-button-submit-textcolor-out`         |
+| `--wui-button-submit-textcolor-over`        |
+| `--wui-button-submit-textcolor-mobile`      |
+| `--wui-button-submit-textcolor-selected`    |
+| `--wui-button-submit-textcolor-disabled`    |
+| `--wui-button-submit-textsize`              |
+| `--wui-button-warning-bordercolor-out`      |
+| `--wui-button-warning-bordercolor-over`     |
+| `--wui-button-warning-bordercolor-selected` |
+| `--wui-button-warning-bordercolor-disabled` |
+| `--wui-button-warning-bgcolor-out`          |
+| `--wui-button-warning-bgcolor-over`         |
+| `--wui-button-warning-bgcolor-selected`     |
+| `--wui-button-warning-bgcolor-disabled`     |
+| `--wui-button-warning-textcolor-out`        |
+| `--wui-button-warning-textcolor-over`       |
+| `--wui-button-warning-textcolor-mobile`     |
+| `--wui-button-warning-textcolor-selected`   |
+| `--wui-button-warning-textcolor-disabled`   |
+| `--wui-button-icon-float-padding`           |
+| `--wui-button-mobile-default-height`        |
+| `--wui-button-mobile-submit-height`         |
+| `--wui-button-mobile-icon-float-padding`    |
+| `--wui-button-form-default-minwidth`        |
+
+#### Implementation
+
+CSS settings:
+
+```css
+:root {
+
+	/* wui-icon */
+
+	--wui-icon-size: 24px;
+	--wui-icon-smallsize: 14px;
+	--wui-icon-bgcolor-out: rgb(from #353a40 r g b / 70%);
+	--wui-icon-bgcolor-over: #353a40;
+
+	/* wui-button */
+
+	--wui-button-default-minwidth: 200px;
+	--wui-button-default-height: 34px;
+	--wui-button-default-bordercolor-out: #d5dce3;
+	--wui-button-default-bordercolor-over: #1e90ff;
+	--wui-button-default-bordercolor-selected: #1e90ff;
+	--wui-button-default-bordercolor-disabled: #d5dce3;
+	--wui-button-default-bgcolor-out: transparent;
+	--wui-button-default-bgcolor-over: transparent;
+	--wui-button-default-bgcolor-selected: #1e90ff;
+	--wui-button-default-bgcolor-disabled: transparent;
+	--wui-button-default-textcolor-out: #1e90ff;
+	--wui-button-default-textcolor-over: #1e90ff;
+	--wui-button-default-textcolor-selected: #fff;
+	--wui-button-default-textcolor-disabled: #d5dce3;
+	--wui-button-default-textsize: 15px;
+	--wui-button-submit-minwidth: 200px;
+	--wui-button-submit-height: 34px;
+	--wui-button-submit-bordercolor-out: rgb(from #1e90ff r g b / 20%);
+	--wui-button-submit-bordercolor-over: #1e90ff;
+	--wui-button-submit-bordercolor-selected: #1e90ff;
+	--wui-button-submit-bordercolor-disabled: #d5dce3;
+	--wui-button-submit-bgcolor-out: #1e90ff;
+	--wui-button-submit-bgcolor-over: #1e90ff;
+	--wui-button-submit-bgcolor-mobile: rgb(from #959da5 r g b / 20%);
+	--wui-button-submit-bgcolor-selected: #1e90ff;
+	--wui-button-submit-bgcolor-disabled: #d5dce3;
+	--wui-button-submit-textcolor-out: #fff;
+	--wui-button-submit-textcolor-over: #fff;
+	--wui-button-submit-textcolor-mobile: #1e90ff;
+	--wui-button-submit-textcolor-selected: #fff;
+	--wui-button-submit-textcolor-disabled: #d5dce3;
+	--wui-button-submit-textsize: 15px;
+	--wui-button-warning-bordercolor-out: rgb(from #f44343 r g b / 25%);
+	--wui-button-warning-bordercolor-over: #f44343;
+	--wui-button-warning-bordercolor-selected: #f44343;
+	--wui-button-warning-bordercolor-disabled: #d5dce3;
+	--wui-button-warning-bgcolor-out: #f44343;
+	--wui-button-warning-bgcolor-over: #f44343;
+	--wui-button-warning-bgcolor-selected: #f44343;
+	--wui-button-warning-bgcolor-disabled: #d5dce3;
+	--wui-button-warning-textcolor-out: #fff;
+	--wui-button-warning-textcolor-over: #fff;
+	--wui-button-warning-textcolor-mobile: #f44343;
+	--wui-button-warning-textcolor-selected: #fff;
+	--wui-button-warning-textcolor-disabled: #d5dce3;
+	--wui-button-icon-float-padding: 5px;
+	--wui-button-mobile-default-height: 40px;
+	--wui-button-mobile-submit-height: 40px;
+	--wui-button-mobile-icon-float-padding: 10px;
+	--wui-button-form-default-minwidth: 100px;
+}
+```
+
+CSS code:
+
+```css
+```
+
+HTML head:
+
+```html
+<link type="text/css" rel="stylesheet" href="https://wuijs.dev/Libraries/WUI/Icon/WUIIcon-0.1.css">
+<link type="text/css" rel="stylesheet" href="https://wuijs.dev/Libraries/WUI/Button/WUIButton-0.2.css">
+<script type="text/javascript" src="https://wuijs.dev/Libraries/WUI/Button/WUIButton-0.2.js"></script>
+```
+
+HTML code:
+
+```html
+```
+
+JS code:
+
+```js
+```
+
 <a name="examples"></a>
 
 ## Examples

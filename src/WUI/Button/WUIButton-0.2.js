@@ -8,7 +8,7 @@ class WUIButton {
 
 	static version = "0.2";
 	static #defaults = {
-		selector: "",
+		selector: ".wui-button",
 		text: "",
 		selectable: false,
 		locked: false,
@@ -116,6 +116,7 @@ class WUIButton {
 	}
 
 	init() {
+		this._text = this._element.innerHTML;
 		this.#setStyle();
 		this._element.addEventListener("click", () => {
 			this.#setStyle();
@@ -157,7 +158,3 @@ class WUIButton {
 		return false;
 	}
 }
-/*
-Generated HTML code:
-<button class="wui-button"></button>
-*/

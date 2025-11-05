@@ -41,7 +41,7 @@ Autor: `Sergio E. Belmar V. <sbelmar@wuijs.dev>`
 	*   WUIColorpicker
 	*   WUICheckbox
 	*   WUIIntensity
-	*   WUIButton
+	*   [WUIButton](#WUIButton)
 *   [Ejemplos](#examples)
 
 <a name="overview"></a>
@@ -78,7 +78,7 @@ WUI, acrónimo del inglés *Web User Interface JavaScript library*, es una bibli
 | WUIColorpicker                | `0.2`   | Objeto avanzado para implementación de entradas de datos de tipo selector de color. |
 | WUICheckbox                   | `0.2`   | Objeto avanzado para implementación de entradas de datos de tipo casilla de verificación. |
 | WUIIntensity                  | `0.1`   | Objeto avanzado para implementación de entradas de datos de tipo selector de intensidad de 4 niveles: nada, bajo, medio y alto. |
-| WUIButton                     | `0.2`   | Objeto avanzado para implementación de botones. |
+| [WUIButton](#WUIButton)       | `0.2`   | Objeto avanzado para implementación de botones. |
 
 <a name="install"></a>
 
@@ -700,7 +700,7 @@ Administrador de cookies.
 
 #### Implementación
 
-Cabecera HTML
+Cabecera HTML:
 
 ```html
 <script type="text/javascript" src="https://wuijs.dev/Libraries/WUI/Cookie/WUICookie-0.1.js"></script>
@@ -754,7 +754,7 @@ Clase sin propiedades.
 
 #### Implementación
 
-Cabecera HTML
+Cabecera HTML:
 
 ```html
 <title></title>
@@ -839,7 +839,7 @@ const testContentLog = (content) => {
 }
 ```
 
-Cabecera HTML
+Cabecera HTML:
 
 ```html
 <script type="text/javascript" src="https://wuijs.dev/Libraries/WUI/Body/WUIBody-0.1.js"></script>
@@ -935,7 +935,7 @@ Código JSON archivo `main-es.json`:
 }
 ```
 
-Cabecera HTML
+Cabecera HTML:
 
 ```html
 <script type="text/javascript" src="https://wuijs.dev/Libraries/WUI/Language/WUILanguage-0.2.js"></script>
@@ -1074,7 +1074,7 @@ Herramienta para animación de elementos HTML mediante el evento "onscroll" del 
 
 Existen dos modos de implementación de la librería de animación, la más sencilla es por medio de etiquetas de animación CSS, la segunda es mediante la programación de funciones JS de animación que se cargan mediante la configuración de secciones.
 
-Configuración CSS
+Configuración CSS:
 
 ```css
 :root {
@@ -1139,7 +1139,7 @@ body {
 }
 ```
 
-Cabecera HTML
+Cabecera HTML:
 
 ```html
 <link type="text/css" rel="stylesheet" href="https://wuijs.dev/Libraries/WUI/Scrolly/WUIScrolly-0.2.css">
@@ -1184,7 +1184,7 @@ Código HTML:
 </body>
 ```
 
-Código JS
+Código JS:
 
 ```js
 // Crear objeto
@@ -1520,7 +1520,7 @@ nav {
 }
 ```
 
-Cabecera HTML
+Cabecera HTML:
 
 ```html
 <link type="text/css" rel="stylesheet" href="https://wuijs.dev/Libraries/WUI/Icon/WUIIcon-0.1.css">
@@ -1601,7 +1601,7 @@ Código CSS:
 }
 ```
 
-Cabecera HTML
+Cabecera HTML:
 
 ```html
 <script type="text/javascript" src="https://wuijs.dev/Libraries/WUI/Fade/WUIFade-0.1.js"></script>
@@ -1687,7 +1687,7 @@ Objeto avanzado para implementación de listas de datos y botoneras para cada fi
 | data         | `array`   | `[]`                 | Arreglo con el contenido de las celdas de la fila. |
 | innerContent | `string`  | `undefined`          | Contenido opcional de la fila interna, desplegado en la parte inferior de la fila. |
 | innerOpened  | `boolean` | `false`              | Apertura inicial del contenido opcional de la fila interna. |
-| enabled      | `boolean` | `true`               | Estado de habilitación de la fila. El valor predeterminado `true`. |
+| enabled      | `boolean` | `true`               | Define si la fila está habilitada. |
 
 #### Opciones de Botón de Fila
 
@@ -1695,7 +1695,7 @@ Objeto avanzado para implementación de listas de datos y botoneras para cada fi
 | --------- | ------------------- | -------------------- | ----------- |
 | iconClass | `string\|function`  | `undefined`          | Estilos CSS que define el ícono del botón de fila. Esta opción puede ser utilizado opcionalmente con la librería [WUIIcon](#wuiIcon) mediante el estilo `wui-icon` conjuntamente a un estilo de ícono específico. |
 | bgcolor   | `string\|function`  | `undefined`          | Color de fondo en formato compatible CSS. |
-| enabled   | `boolean\|function` | `true`               | Estado de habilitación del botón. |
+| enabled   | `boolean\|function` | `true`               | Define si el botón está habilitado. |
 | onClick   | `function`          | `null`               | Función que se llama cuando el botón es presionado. Reciven los parámetro `index`, correspondiente a la posición de la fila partiendo desde `0`; y `id`, correspondiente al Identificador único de fila. |
 
 > [!IMPORTANT]
@@ -1826,7 +1826,7 @@ footer {
 }
 ```
 
-Cabecera HTML
+Cabecera HTML:
 
 ```html
 <link type="text/css" rel="stylesheet" href="https://wuijs.dev/Libraries/WUI/Icon/WUIIcon-0.1.css">
@@ -1854,7 +1854,7 @@ Código HTML:
 </footer>
 ```
 
-Código JS
+Código JS:
 
 ```js
 // Crear objeto
@@ -1987,9 +1987,9 @@ Objeto avanzado para implementación de tablas de datos. A diferencia del objeto
 | draggable    | `boolean`  | `true`               | (get/set)<br><br>Define si las columnas son arrastrables para poder cambiar su posición. |
 | selectable   | `boolean`  | `true`               | (get/set)<br><br>Define si las filas son seleccionables. |
 | onPrint      | `function` | `null`               | (get/set)<br><br>Función que se llama cuando una página o la totalidad de la tabla es despliega. La función recibe por parámetro:<br><br>**• page:** `number`, número de página.<br>**• pages:** `number`, total de página.<br>**• total:** `number`, total de filas. |
-| onClick      | `function` | `null`               | (get/set)<br><br>Función que se llama cuando una fila es presionada. Función que se llama cuando una fila es presionada. La función recibe por parámetro:<br><br>**• index:** `number`, número de fila.<br>**• id:** `string`, id de fila.<br>**• enabled:** `boolean`, estado de habilitación de fila.<br>**• options:** `object`, opciones de configuración de la fila. |
-| onDblClick   | `function` | `null`               | (get/set)<br><br>Función que se llama cuando una fila es presionada dos veces. Función que se llama cuando una fila es presionada. La función recibe por parámetro:<br><br>**• index:** `number`, número de fila.<br>**• id:** `string`, id de fila.<br>**• enabled:** `boolean`, estado de habilitación de fila.<br>**• options:** `object`, opciones de configuración de la fila. |
-| onSelect     | `function` | `null`               | (get/set)<br><br>Función que se llama cuando una fila es seleccionada. Función que se llama cuando una fila es presionada. La función recibe por parámetro:<br><br>**• index:** `number`, número de fila.<br>**• id:** `string`, id de fila.<br>**• enabled:** `boolean`, estado de habilitación de fila.<br>**• options:** `object`, opciones de configuración de la fila. |
+| onClick      | `function` | `null`               | (get/set)<br><br>Función que se llama cuando una fila es presionada. La función recibe por parámetro:<br><br>**• index:** `number`, número de fila.<br>**• id:** `string`, id de fila.<br>**• enabled:** `boolean`, estado de habilitación de fila.<br>**• options:** `object`, opciones de configuración de la fila. |
+| onDblClick   | `function` | `null`               | (get/set)<br><br>Función que se llama cuando una fila es presionada dos veces. La función recibe por parámetro:<br><br>**• index:** `number`, número de fila.<br>**• id:** `string`, id de fila.<br>**• enabled:** `boolean`, estado de habilitación de fila.<br>**• options:** `object`, opciones de configuración de la fila. |
+| onSelect     | `function` | `null`               | (get/set)<br><br>Función que se llama cuando una fila es seleccionada. La función recibe por parámetro:<br><br>**• index:** `number`, número de fila.<br>**• id:** `string`, id de fila.<br>**• enabled:** `boolean`, estado de habilitación de fila.<br>**• options:** `object`, opciones de configuración de la fila. |
 
 #### Opciones de Columna
 
@@ -2015,8 +2015,8 @@ Objeto avanzado para implementación de tablas de datos. A diferencia del objeto
 | align     | `string`  | `WUITable.align`     | Modo de alineación horizontal del contenido de la fila. Esta opción tiene prioridad sobre la propiedad `align`.<br><br>Valores:<br>• `"left"`<br>• `"center"`<br>• `"right"` |
 | valign    | `string`  | `WUITable.valign`    | Modo de alineación vertical del contenido de la fila. Esta opción tiene prioridad sobre la propiedad `valign`.<br><br>Valores:<br>• `"top"`<br>• `"middle"`<br>• `"bottom"` |
 | data      | `array`   | `[]`                 | Arreglo con el contenido de las celdas de la fila. |
-| selected  | `boolean` | `false`              | Define si la fila está seleccionada. El valor predeterminado `false`. |
-| enabled   | `boolean` | `true`               | Define si la fila está habilitada. El valor predeterminado `true`. |
+| selected  | `boolean` | `false`              | Define si la fila está seleccionada. |
+| enabled   | `boolean` | `true`               | Define si la fila está habilitada. |
 
 #### Métodos
 
@@ -2159,7 +2159,7 @@ footer {
 }
 ```
 
-Cabecera HTML
+Cabecera HTML:
 
 ```html
 <link type="text/css" rel="stylesheet" href="https://wuijs.dev/Libraries/WUI/Table/WUITable-0.2.css">
@@ -2186,7 +2186,7 @@ Código HTML:
 </footer>
 ```
 
-Código JS
+Código JS:
 
 ```js
 // Crear objeto
@@ -2301,6 +2301,189 @@ table.print();
 <a name="WUICheckbox"></a>
 <a name="WUIIntensity"></a>
 <a name="WUIButton"></a>
+
+### WUIButton
+
+Versión: `0.2`
+
+Objeto avanzado para implementación de botones.
+
+#### Constructor
+
+| Tipo      | Descripción |
+| --------- | ----------- |
+| WUIButton | `WUIButton([properties])`<br><br>Parámetros:<br>**• properties:** `object` *opcional* |
+
+#### Propiedades
+
+| Propiedad    | Tipo       | Valor predeterminado | Descripción |
+| ------------ | ---------- | -------------------- | ----------- |
+| selector     | `string`   | `".wui-button"`      | (get/set)<br><br>Selector CSS que define el elemento HTML que serán convertido en el objeto avanzado tipo botón. En caso de existir más de un elemento coincidente con el selector se incluirá únicamente la primera coincidencia. |
+| text         | `string`   | `""`                 | (get/set)<br><br>Texto o contenido HTML del elemento. |
+| selectable   | `boolean`  | `true`               | (get/set)<br><br>Define si el botón es seleccionable. |
+| locked       | `boolean`  | `false`              | (get/set)<br><br>Define si el botón está bloqueado. |
+| enabled      | `boolean`  | `true`               | (get/set)<br><br>Define si el botón está habilitado. |
+| onClick      | `function` | `null`               | (get/set)<br><br>Función que se llama cuando el botón es presionado. La función no recibe parámetros. |
+| onDblClick   | `function` | `null`               | (get/set)<br><br>Función que se llama cuando el botón es presionado dos veces. La función no recibe parámetros. |
+
+#### Métodos
+
+| Método       | Tipo retorno  | Descripción |
+| ------------ | ------------- | ----------- |
+| getElement   | `HTMLElement` | `getElement()`<br><br>Retorna el elemento HTML contenedor del objeto avanzado. |
+| init         | `void`        | `init()`<br><br>Inicializa el objeto. |
+| focus        | `void`        | `focus()`<br><br>Da foco al botón. |
+| select       | `select`      | `select()`<br><br>Selecciona el botón. |
+| unselect     | `unselect`    | `unselect()`<br><br>Deselecciona el botón. |
+| isSelected   | `isSelected`  | `isSelected()`<br><br>Retorna si el botón está seleccionado. |
+
+#### Variables CSS
+
+| Variable                                    | Descripción |
+| ------------------------------------------- | ----------- |
+| `--wui-button-default-minwidth`             |
+| `--wui-button-default-height`               |
+| `--wui-button-default-bordercolor-out`      |
+| `--wui-button-default-bordercolor-over`     |
+| `--wui-button-default-bordercolor-selected` |
+| `--wui-button-default-bordercolor-disabled` |
+| `--wui-button-default-bgcolor-out`          |
+| `--wui-button-default-bgcolor-over`         |
+| `--wui-button-default-bgcolor-selected`     |
+| `--wui-button-default-bgcolor-disabled`     |
+| `--wui-button-default-textcolor-out`        |
+| `--wui-button-default-textcolor-over`       |
+| `--wui-button-default-textcolor-selected`   |
+| `--wui-button-default-textcolor-disabled`   |
+| `--wui-button-default-textsize`             |
+| `--wui-button-submit-minwidth`              |
+| `--wui-button-submit-height`                |
+| `--wui-button-submit-bordercolor-out`       |
+| `--wui-button-submit-bordercolor-over`      |
+| `--wui-button-submit-bordercolor-selected`  |
+| `--wui-button-submit-bordercolor-disabled`  |
+| `--wui-button-submit-bgcolor-out`           |
+| `--wui-button-submit-bgcolor-over`          |
+| `--wui-button-submit-bgcolor-mobile`        |
+| `--wui-button-submit-bgcolor-selected`      |
+| `--wui-button-submit-bgcolor-disabled`      |
+| `--wui-button-submit-textcolor-out`         |
+| `--wui-button-submit-textcolor-over`        |
+| `--wui-button-submit-textcolor-mobile`      |
+| `--wui-button-submit-textcolor-selected`    |
+| `--wui-button-submit-textcolor-disabled`    |
+| `--wui-button-submit-textsize`              |
+| `--wui-button-warning-bordercolor-out`      |
+| `--wui-button-warning-bordercolor-over`     |
+| `--wui-button-warning-bordercolor-selected` |
+| `--wui-button-warning-bordercolor-disabled` |
+| `--wui-button-warning-bgcolor-out`          |
+| `--wui-button-warning-bgcolor-over`         |
+| `--wui-button-warning-bgcolor-selected`     |
+| `--wui-button-warning-bgcolor-disabled`     |
+| `--wui-button-warning-textcolor-out`        |
+| `--wui-button-warning-textcolor-over`       |
+| `--wui-button-warning-textcolor-mobile`     |
+| `--wui-button-warning-textcolor-selected`   |
+| `--wui-button-warning-textcolor-disabled`   |
+| `--wui-button-icon-float-padding`           |
+| `--wui-button-mobile-default-height`        |
+| `--wui-button-mobile-submit-height`         |
+| `--wui-button-mobile-icon-float-padding`    |
+| `--wui-button-form-default-minwidth`        |
+
+#### Implementación
+
+Configuración CSS:
+
+```css
+:root {
+
+	/* wui-icon */
+
+	--wui-icon-size: 24px;
+	--wui-icon-smallsize: 14px;
+	--wui-icon-bgcolor-out: rgb(from #353a40 r g b / 70%);
+	--wui-icon-bgcolor-over: #353a40;
+
+	/* wui-button */
+
+	--wui-button-default-minwidth: 200px;
+	--wui-button-default-height: 34px;
+	--wui-button-default-bordercolor-out: #d5dce3;
+	--wui-button-default-bordercolor-over: #1e90ff;
+	--wui-button-default-bordercolor-selected: #1e90ff;
+	--wui-button-default-bordercolor-disabled: #d5dce3;
+	--wui-button-default-bgcolor-out: transparent;
+	--wui-button-default-bgcolor-over: transparent;
+	--wui-button-default-bgcolor-selected: #1e90ff;
+	--wui-button-default-bgcolor-disabled: transparent;
+	--wui-button-default-textcolor-out: #1e90ff;
+	--wui-button-default-textcolor-over: #1e90ff;
+	--wui-button-default-textcolor-selected: #fff;
+	--wui-button-default-textcolor-disabled: #d5dce3;
+	--wui-button-default-textsize: 15px;
+	--wui-button-submit-minwidth: 200px;
+	--wui-button-submit-height: 34px;
+	--wui-button-submit-bordercolor-out: rgb(from #1e90ff r g b / 20%);
+	--wui-button-submit-bordercolor-over: #1e90ff;
+	--wui-button-submit-bordercolor-selected: #1e90ff;
+	--wui-button-submit-bordercolor-disabled: #d5dce3;
+	--wui-button-submit-bgcolor-out: #1e90ff;
+	--wui-button-submit-bgcolor-over: #1e90ff;
+	--wui-button-submit-bgcolor-mobile: rgb(from #959da5 r g b / 20%);
+	--wui-button-submit-bgcolor-selected: #1e90ff;
+	--wui-button-submit-bgcolor-disabled: #d5dce3;
+	--wui-button-submit-textcolor-out: #fff;
+	--wui-button-submit-textcolor-over: #fff;
+	--wui-button-submit-textcolor-mobile: #1e90ff;
+	--wui-button-submit-textcolor-selected: #fff;
+	--wui-button-submit-textcolor-disabled: #d5dce3;
+	--wui-button-submit-textsize: 15px;
+	--wui-button-warning-bordercolor-out: rgb(from #f44343 r g b / 25%);
+	--wui-button-warning-bordercolor-over: #f44343;
+	--wui-button-warning-bordercolor-selected: #f44343;
+	--wui-button-warning-bordercolor-disabled: #d5dce3;
+	--wui-button-warning-bgcolor-out: #f44343;
+	--wui-button-warning-bgcolor-over: #f44343;
+	--wui-button-warning-bgcolor-selected: #f44343;
+	--wui-button-warning-bgcolor-disabled: #d5dce3;
+	--wui-button-warning-textcolor-out: #fff;
+	--wui-button-warning-textcolor-over: #fff;
+	--wui-button-warning-textcolor-mobile: #f44343;
+	--wui-button-warning-textcolor-selected: #fff;
+	--wui-button-warning-textcolor-disabled: #d5dce3;
+	--wui-button-icon-float-padding: 5px;
+	--wui-button-mobile-default-height: 40px;
+	--wui-button-mobile-submit-height: 40px;
+	--wui-button-mobile-icon-float-padding: 10px;
+	--wui-button-form-default-minwidth: 100px;
+}
+```
+
+Código CSS:
+
+```css
+```
+
+Cabecera HTML:
+
+```html
+<link type="text/css" rel="stylesheet" href="https://wuijs.dev/Libraries/WUI/Icon/WUIIcon-0.1.css">
+<link type="text/css" rel="stylesheet" href="https://wuijs.dev/Libraries/WUI/Button/WUIButton-0.2.css">
+<script type="text/javascript" src="https://wuijs.dev/Libraries/WUI/Button/WUIButton-0.2.js"></script>
+```
+
+Código HTML:
+
+```html
+```
+
+Código JS:
+
+```js
+```
+
 <a name="examples"></a>
 
 ## Ejemplos
