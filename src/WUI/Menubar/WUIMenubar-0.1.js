@@ -74,12 +74,13 @@ class WUIMenubar {
 		this._options.forEach(option => {
 			const button = document.createElement("div");
 			const icon = document.createElement("div");
+			const text = document.createElement("span");
 			button.dataset.id = option.id;
 			button.className = "button"+(option.enabled == false ? " disabled" : "");
-			if (this._expansive) {
-				const text = document.createElement("span");
-				text.innerText = option.label || "";
-			}
+			(option.iconClass || "").split(/\s+/).forEach(name => {
+				icon.classList.add(name);
+			});
+			text.innerText = option.label || "";
 			if ((typeof(option.position) == "undefined" || option.position == "main") && this._main) {
 				this._main.append(button);
 			} else if (option.position == "bottom" && this._bottom) {
