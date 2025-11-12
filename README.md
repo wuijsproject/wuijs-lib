@@ -5,7 +5,7 @@
 
 Library version: `0.2.0` ([Change Log](./CHANGELOG.md))
 
-Document version: `0.2.0.20251104.2`
+Document version: `0.2.0.20251105.1`
 
 Licence: `Apache License 2.0`
 
@@ -31,6 +31,7 @@ Author: `Sergio E. Belmar V. <sbelmar@wuijs.dev>`
 	*   WUISlider
 	*   WUIPaging
 	*   WUITabs
+	*   [WUIMenubar](#WUIMenubar)
 	*   [WUIList](#WUIList)
 	*   [WUITable](#WUITable)
 	*   WUIForm
@@ -68,6 +69,7 @@ WUI, an acronym for *Web User Interface JavaScript library*, is an open source J
 | WUISlider                     | `0.2`   | Advanced object for implementing mouse-controlled and/or event-controlled blinds. |
 | WUIPaging                     | `0.1`   | Advanced object for implementing paginated views. |
 | WUITabs                       | `0.1`   | Advanced object for implementing views accessible by tab selection. |
+| [WUIMenubar](#WUIMenubar)     | `0.1`   | Advanced object for implementing menu bars. |
 | [WUIList](#WUIList)           | `0.2`   | Advanced object for implementing data lists and buttons for each row optionally. |
 | [WUITable](#WUITable)         | `0.2`   | Advanced object for implementing data tables. Unlike the `WUIList` object, the `WUITable` object includes a column header. |
 | WUIForm                       | `0.2`   | Advanced object for implementing data forms. This object allows the implementation of HTML data input elements such as `<input>`, `<select>`, and `<textarea>`, and WUI library objects such as `WUISelectpicker`, `WUIDatepicker`, `WUITimepicker`, `WUIColorpicker`, `WUICheckbox`, `WUIIntensity`, and `WUIButton`. |
@@ -614,6 +616,7 @@ HTML code:
 		<link type="text/css" rel="stylesheet" href="./Libraries/WUI/Slider/WUISlider-0.2.css">
 		<link type="text/css" rel="stylesheet" href="./Libraries/WUI/Paging/WUIPaging-0.1.css">
 		<link type="text/css" rel="stylesheet" href="./Libraries/WUI/Tabs/WUITabs-0.1.css">
+		<link type="text/css" rel="stylesheet" href="./Libraries/WUI/Menubar/WUIMenubar-0.1.css">
 		<link type="text/css" rel="stylesheet" href="./Libraries/WUI/List/WUIList-0.2.css">
 		<link type="text/css" rel="stylesheet" href="./Libraries/WUI/Table/WUITable-0.1.css">
 		<link type="text/css" rel="stylesheet" href="./Libraries/WUI/Form/WUIForm-0.1.css">
@@ -637,6 +640,7 @@ HTML code:
 		<script type="text/javascript" src="./Libraries/WUI/Slider/WUISlider-0.2.js"></script>
 		<script type="text/javascript" src="./Libraries/WUI/Paging/WUIPaging-0.1.js"></script>
 		<script type="text/javascript" src="./Libraries/WUI/Tabs/WUITabs-0.1.js"></script>
+		<script type="text/javascript" src="./Libraries/WUI/Menubar/WUIMenubar-0.1.js"></script>
 		<script type="text/javascript" src="./Libraries/WUI/List/WUIList-0.2.js"></script>
 		<script type="text/javascript" src="./Libraries/WUI/Table/WUITable-0.1.js"></script>
 		<script type="text/javascript" src="./Libraries/WUI/Form/WUIForm-0.1.js"></script>
@@ -1641,6 +1645,57 @@ const fadeout = () => {
 <a name="WUISlider"></a>
 <a name="WUIPaging"></a>
 <a name="WUITabs"></a>
+<a name="WUIMenubar"></a>
+
+### WUIMenubar
+
+Versión: `0.1`
+
+Advanced object for implementing menu bars.
+
+#### Constructor
+
+| Type       | Description |
+| ---------- | ----------- |
+| WUIMenubar | `WUIMenubar([properties])`<br><br>Arguments:<br>**• properties:** `object` *optional* |
+
+#### Properties
+
+| Property  | Type      | Default value.   | Description |
+| --------- | --------- | ---------------- | ----------- |
+| selector  | `string`  | `".wui-menubar"` | (get/set)<br><br>CSS selector that defines the HTML element that will be converted into the advanced menu bar object. If more than one element matches the selector, only the first match will be included. |
+| expansive | `boolean` | `true`           | (get/set)<br><br>Define the menu expands. |
+| buttons   | `array`   | `[]`             | (get/set)<br><br>List of menu buttons, as defined by **Button Options**. |
+
+#### Button Options
+
+| Property     | Type       | Default value | Description |
+| ------------ | ---------- | ------------- | ----------- |
+| id           | `string`   | `undefined`   | Unique button identifier. |
+| iconClass    | `string`   | `undefined`   | CSS styles that define the menu button icon. This option can optionally be used with the [WUIIcon](#WUIIcon) library by using the `wui-icon` style in conjunction with a specific icon style. |
+| label        | `string`   | `""`          | Label text associated with the menu button. |
+| section      | `string`   | `"main"`      | Section where the button is added.<br><br>Values:<br>• `"main"`<br>• `"bottom"` |
+| enabled      | `boolean`  | `true`        | Defines whether the button is enabled. |
+| onClick      | `function` | `null`        | Function called when the button is clicked. |
+
+#### Methods
+
+| Method       | Return type   | Description |
+| ------------ | ------------- | ----------- |
+| getElement   | `HTMLElement` | `getElement()`<br><br>Returns the HTML element containing the advanced object. |
+| getButton    | `object`      | `getButton(id)`<br><br>Arguments:<br>**• id:** `string`, unique button identifier.<br><br>Returns the menu button according to the unique button identifier passed as a argument. |
+| init         | `void`        | `init()`<br><br>Initializes the object. |
+| selectButton | `void`        | `selectButton(id[, selected])`<br><br>Arguments:<br>**• id:** `string`, unique button identifier.<br>**• selected:** `boolean`, button selection state. The default value is `true`.<br><br>Select or unselect a menu button. |
+| enableButton | `void`        | `enableButton(id[, enabled])`<br><br>Arguments:<br>**• id:** `string`, unique button identifier.<br>**• enabled:** `boolean`, button enable state. The default value is `true`.<br><br>Enables or disables a menu button. |
+| setBubble    | `void`        | `setBubble(id, number)`<br><br>Arguments:<br>**• id:** `string`, unique button identifier.<br>**• number:** `number`, number that will appear in the bubble. The value `0` hides the bubble. |
+| close        | `void`        | `close()`<br><br>Close the submenu if it is open. |
+| destroy      | `void`        | `destroy()`<br><br>Destroyer. |
+
+#### CSS Variables
+
+| Variable                             | Description |
+| ------------------------------------ | ----------- |
+
 <a name="WUIList"></a>
 
 ### WUIList
@@ -1659,7 +1714,7 @@ Advanced object for implementing data lists and buttons for each row optionally.
 
 | Property     | Type       | Default value | Description |
 | ------------ | ---------- | ------------- | ----------- |
-| selector     | `string`   | `.wui-list`   | (get/set)<br><br>CSS selector that defines the HTML element that will be converted into the advanced list object. If more than one element matches the selector, only the first match will be included. |
+| selector     | `string`   | `".wui-list"` | (get/set)<br><br>CSS selector that defines the HTML element that will be converted into the advanced list object. If more than one element matches the selector, only the first match will be included. |
 | paging       | `number`   | `0`           | (get/set)<br><br>Paging, or the number of rows per page in the list. A value of `0` indicates that the pagination will be the same length as rows; in other words, a value of `0` disables paging. |
 | page         | `number`   | `0`           | (get)<br><br>Current page displayed in the list, where page `0` corresponds to the first page and the last to the total number of rows minus 1. |
 | pages        | `number`   | `0`           | (get)<br><br>Total number of pages. |
@@ -1969,26 +2024,26 @@ Advanced object for implementing data tables. Unlike the `WUIList` object, the `
 
 #### Properties
 
-| Property     | Type       | Default value | Description |
-| ------------ | ---------- | ------------- | ----------- |
-| selector     | `string`   | `.wui-table`  | (get/set)<br><br>CSS selector that defines the HTML element that will be converted into the advanced table object. If more than one element matches the selector, only the first match will be included. |
-| width        | `string`   | `"auto"`      | (get/set)<br><br>Table width in CSS compatible format. |
-| paging       | `number`   | `0`           | (get/set)<br><br>Paging, or the number of rows per page in the table. A value of `0` indicates that the pagination will be the same length as rows; in other words, a value of `0` disables paging. |
-| page         | `number`   | `0`           | (get)<br><br>Current page displayed in the table, where page `0` corresponds to the first page and the last to the total number of rows minus 1. |
-| pages        | `number`   | `0`           | (get)<br><br>Total number of pages. |
-| total        | `number`   | `0`           | (get)<br><br>Total number of rows. |
-| columns      | `array`    | `[]`          | (get/set)<br><br>List of columns in the table, as defined by **Column Options**. |
-| rows         | `array`    | `[]`          | (get/set)<br><br>List of rows in the tabla, as defined by **Row Options**. |
-| align        | `string`   | `"left"`      | (get/set)<br><br>Horizontal alignment mode for table content.<br><br>Values:<br>• `"left"`<br>• `"center"`<br>• `"right"` |
-| valign       | `string`   | `"middle"`    | (get/set)<br><br>Vertical alignment mode for table content.<br><br>Values:<br>• `"top"`<br>• `"middle"`<br>• `"bottom"` |
-| sortable     | `boolean`  | `true`        | (get/set)<br><br>Define whether rows are sortable by column. |
-| resizable    | `boolean`  | `true`        | (get/set)<br><br>Define whether columns are resizable. |
-| draggable    | `boolean`  | `true`        | (get/set)<br><br>Define whether columns are draggable so their position can be changed. |
-| selectable   | `boolean`  | `true`        | (get/set)<br><br>Define whether rows are selectable. |
-| onPrint      | `function` | `null`        | (get/set)<br><br>Function that is called when a page or the entire table is displayed. The function receives as parameters:<br><br>**• page:** `number`, page number.<br>**• pages:** `number`, total pages.<br>**• total:** `number`, total rows. |
-| onClick      | `function` | `null`        | (get/set)<br><br>Function that is called when a row is clicked. The function receives as parameters:<br><br>**• index:** `number`, row number.<br>**• id:** `string`, row id.<br>**• enabled:** `boolean`, row enable state.<br>**• options:** `object`, row settings options. |
-| onDblClick   | `function` | `null`        | (get/set)<br><br>Function that is called when a row is double-clicked. The function receives as parameters:<br><br>**• index:** `number`, row number.<br>**• id:** `string`, row id.<br>**• enabled:** `boolean`, row enable state.<br>**• options:** `object`, row settings options. |
-| onSelect     | `function` | `null`        | (get/set)<br><br>Function that is called when a row is selected. The function receives as parameters:<br><br>**• index:** `number`, row number.<br>**• id:** `string`, row id.<br>**• enabled:** `boolean`, row enable state.<br>**• options:** `object`, row settings options. |
+| Property     | Type       | Default value  | Description |
+| ------------ | ---------- | -------------- | ----------- |
+| selector     | `string`   | `".wui-table"` | (get/set)<br><br>CSS selector that defines the HTML element that will be converted into the advanced table object. If more than one element matches the selector, only the first match will be included. |
+| width        | `string`   | `"auto"`       | (get/set)<br><br>Table width in CSS compatible format. |
+| paging       | `number`   | `0`            | (get/set)<br><br>Paging, or the number of rows per page in the table. A value of `0` indicates that the pagination will be the same length as rows; in other words, a value of `0` disables paging. |
+| page         | `number`   | `0`            | (get)<br><br>Current page displayed in the table, where page `0` corresponds to the first page and the last to the total number of rows minus 1. |
+| pages        | `number`   | `0`            | (get)<br><br>Total number of pages. |
+| total        | `number`   | `0`            | (get)<br><br>Total number of rows. |
+| columns      | `array`    | `[]`           | (get/set)<br><br>List of columns in the table, as defined by **Column Options**. |
+| rows         | `array`    | `[]`           | (get/set)<br><br>List of rows in the tabla, as defined by **Row Options**. |
+| align        | `string`   | `"left"`       | (get/set)<br><br>Horizontal alignment mode for table content.<br><br>Values:<br>• `"left"`<br>• `"center"`<br>• `"right"` |
+| valign       | `string`   | `"middle"`     | (get/set)<br><br>Vertical alignment mode for table content.<br><br>Values:<br>• `"top"`<br>• `"middle"`<br>• `"bottom"` |
+| sortable     | `boolean`  | `true`         | (get/set)<br><br>Define whether rows are sortable by column. |
+| resizable    | `boolean`  | `true`         | (get/set)<br><br>Define whether columns are resizable. |
+| draggable    | `boolean`  | `true`         | (get/set)<br><br>Define whether columns are draggable so their position can be changed. |
+| selectable   | `boolean`  | `true`         | (get/set)<br><br>Define whether rows are selectable. |
+| onPrint      | `function` | `null`         | (get/set)<br><br>Function that is called when a page or the entire table is displayed. The function receives as parameters:<br><br>**• page:** `number`, page number.<br>**• pages:** `number`, total pages.<br>**• total:** `number`, total rows. |
+| onClick      | `function` | `null`         | (get/set)<br><br>Function that is called when a row is clicked. The function receives as parameters:<br><br>**• index:** `number`, row number.<br>**• id:** `string`, row id.<br>**• enabled:** `boolean`, row enable state.<br>**• options:** `object`, row settings options. |
+| onDblClick   | `function` | `null`         | (get/set)<br><br>Function that is called when a row is double-clicked. The function receives as parameters:<br><br>**• index:** `number`, row number.<br>**• id:** `string`, row id.<br>**• enabled:** `boolean`, row enable state.<br>**• options:** `object`, row settings options. |
+| onSelect     | `function` | `null`         | (get/set)<br><br>Function that is called when a row is selected. The function receives as parameters:<br><br>**• index:** `number`, row number.<br>**• id:** `string`, row id.<br>**• enabled:** `boolean`, row enable state.<br>**• options:** `object`, row settings options. |
 
 #### Column Options
 
@@ -2027,7 +2082,7 @@ Advanced object for implementing data tables. Unlike the `WUIList` object, the `
 | addRow       | `void`        | `addRow(options)`<br><br>Adds a new row settings to the object's rows list, as defined by **Row Options**. |
 | print        | `void`        | `print([page])`<br><br>Arguments:<br>**• page:** `number`, page number. The default value corresponds to the `page` property. If a value other than the `page` property is passed as a parameter and if it is valid, the property will take that value.<br><br>Prints a table view; this view can be a page or the entire table depending on the `paging` property and the `page` parameter. |
 | sort         | `void`        | `first(index[, direction])`<br><br>Arguments:<br>**• index:** `number`, rcolumn number.<br>**• direction:** `string`, order direction, this can be: `"asc"` or `"desc"`. The default value is `asc`. |
-| selectRow    | `void`        | `selectRow(index[, selected])`<br><br>Arguments:<br>**• index:** `number`, row number.<br>**• selected:** `boolean`, row selection state. The default is `true`.<br><br>Selects or deselects a row. |
+| selectRow    | `void`        | `selectRow(index[, selected])`<br><br>Arguments:<br>**• index:** `number`, row number.<br>**• selected:** `boolean`, row selection state. The default is `true`.<br><br>Select or unselect a row. |
 | enableRow    | `void`        | `enableRow(index[, enabled])`<br><br>Arguments:<br>**• index:** `number`, row number.<br>**• enabled:** `boolean`, row enable state. The default value is `true`.<br><br>Enables or disables a row. |
 | first        | `void`        | `first()`<br><br>Displays the view of the first page. |
 | last         | `void`        | `last()`<br><br>Displays the view of the last page. |

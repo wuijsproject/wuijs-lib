@@ -10,7 +10,7 @@ class WUIMenubar {
 	static #defaults = {
 		selector: ".wui-menubar",
 		expansive: true,
-		options: []
+		buttons: []
 	};
 
 	constructor (properties) {
@@ -28,8 +28,8 @@ class WUIMenubar {
 		return this._expansive;
 	}
 
-	get options() {
-		return this._options;
+	get buttons() {
+		return this._buttons;
 	}
 
 	set selector(value) {
@@ -48,9 +48,9 @@ class WUIMenubar {
 		}
 	}
 
-	set options(value) {
+	set buttons(value) {
 		if (Array.isArray(value)) {
-			this._options = value;
+			this._buttons = value;
 		}
 	}
 
@@ -58,34 +58,24 @@ class WUIMenubar {
 		return this._element;
 	}
 
-	getOption(id, options = this._options) {
-		for (const option of options) {
+	getButton(id, buttons = this._buttons) {
+		for (const option of buttons) {
 			if (option.id == id) {
 				return option;
 			}
-			if (option.options && option.options.length > 0) {
-				const found = this.getOption(id, option.options);
+			if (option.buttons && option.buttons.length > 0) {
+				const found = this.getButton(id, option.buttons);
 				if (found) return found;
 			}
 		}
 		return null;
 	}
 
-	setBubble(optionId, number = 0) {
-		const bubble = this._element.querySelector(`[data-id='${optionId}'].button > .bubble`);
-		bubble.textContent = number;
-		if (number > 0) {
-			bubble.classList.remove("hidden");
-		} else {
-			bubble.classList.add("hidden");
-		}
-	}
-
 	init() {
 		this._submenu = document.createElement("div");
 		this._submenu.className = "submenu";
 		this._element.append(this._submenu);
-		this._options.forEach(option => {
+		this._buttons.forEach(option => {
 			const button = document.createElement("div");
 			const icon = document.createElement("div");
 			const text = document.createElement("div");
@@ -113,27 +103,15 @@ class WUIMenubar {
 			tooltip.textContent = option.label || "";
 			bubble.className = "bubble hidden";
 			bubble.innerText = 0;
-			if ((typeof(option.position) == "undefined" || option.position == "main") && this._main) {
+			if ((typeof(option.section) == "undefined" || option.section == "main") && this._main) {
 				this._main.append(button);
-			} else if (option.position == "bottom" && this._bottom) {
+			} else if (option.section == "bottom" && this._bottom) {
 				this._bottom.append(button);
 			}
 		});
 	}
 
-	enableOption(id, enabled = true) {
-		const button = this._element.querySelector(`[data-id='${id}'].button`);
-		if (button != null) {
-			if (enabled) {
-				button.classList.remove("disabled");
-			} else {
-				button.classList.add("disabled");
-			}
-		}
-		this.getOption(id).enabled = enabled;
-	}
-
-	selectOption(id, selected = true) {
+	selectButton(id, selected = true) {
 		const button = this._element.querySelector(`[data-id='${id}'].button`);
 		if (button != null && !button.classList.contains("disabled")) {
 			if (selected) {
@@ -142,10 +120,32 @@ class WUIMenubar {
 				button.classList.remove("selected");
 			}
 		}
-		this.getOption(id).selected = selected;
+		this.getButton(id).selected = selected;
 	}
 
-	open() {}
+	enableButton(id, enabled = true) {
+		const button = this._element.querySelector(`[data-id='${id}'].button`);
+		if (button != null) {
+			if (enabled) {
+				button.classList.remove("disabled");
+			} else {
+				button.classList.add("disabled");
+			}
+		}
+		this.getButton(id).enabled = enabled;
+	}
+
+	setBubble(optionId, number = 0) {
+		const bubble = this._element.querySelector(`[data-id='${optionId}'].button > .bubble`);
+		bubble.textContent = number;
+		if (number > 0) {
+			bubble.classList.remove("hidden");
+		} else {
+			bubble.classList.add("hidden");
+		}
+	}
+
+	#open() {}
 
 	close() {}
 

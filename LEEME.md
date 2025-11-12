@@ -5,7 +5,7 @@
 
 Versión librería: `0.2.0` ([Registro de Cambio](./REGISTRODECAMBIO.md))
 
-Versión documentación: `0.2.0.20251104.2`
+Versión documentación: `0.2.0.20251105.1`
 
 Licencia: `Licencia Apache 2.0`
 
@@ -31,6 +31,7 @@ Autor: `Sergio E. Belmar V. <sbelmar@wuijs.dev>`
 	*   WUISlider
 	*   WUIPaging
 	*   WUITabs
+	*   [WUIMenubar](#WUIMenubar)
 	*   [WUIList](#WUIList)
 	*   [WUITable](#WUITable)
 	*   WUIForm
@@ -68,6 +69,7 @@ WUI, acrónimo del inglés *Web User Interface JavaScript library*, es una bibli
 | WUISlider                     | `0.2`   | Objeto avanzado para implementación de persianas controladas por ratón y/o por evento. |
 | WUIPaging                     | `0.1`   | Objeto avanzado para implementación de vistas accesibles paginadamente. |
 | WUITabs                       | `0.1`   | Objeto avanzado para implementación de vistas accesibles mediante selección por pestaña. |
+| [WUIMenubar](#WUIMenubar)     | `0.1`   | Objeto avanzado para implementación de barras de menú. |
 | [WUIList](#WUIList)           | `0.2`   | Objeto avanzado para implementación de listas de datos y botoneras para cada fila de manera opcional. |
 | [WUITable](#WUITable)         | `0.2`   | Objeto avanzado para implementación de tablas de datos. A diferencia del objeto `WUIList`, el objeto `WUITable` incluye una cabecera de columnas. |
 | WUIForm                       | `0.2`   | Objeto avanzado para implementación de formularios de datos. Este objeto permite la implementación de elementos HTML de entrada de datos tales como `<input>`, `<select>` y `<textarea>` y objetos de la librería WUI como `WUISelectpicker`, `WUIDatepicker`, `WUITimepicker`, `WUIColorpicker`, `WUICheckbox`, `WUIIntensity` y `WUIButton`. |
@@ -614,6 +616,7 @@ Código HTML:
 		<link type="text/css" rel="stylesheet" href="./Libraries/WUI/Slider/WUISlider-0.2.css">
 		<link type="text/css" rel="stylesheet" href="./Libraries/WUI/Paging/WUIPaging-0.1.css">
 		<link type="text/css" rel="stylesheet" href="./Libraries/WUI/Tabs/WUITabs-0.1.css">
+		<link type="text/css" rel="stylesheet" href="./Libraries/WUI/Menubar/WUIMenubar-0.1.css">
 		<link type="text/css" rel="stylesheet" href="./Libraries/WUI/List/WUIList-0.2.css">
 		<link type="text/css" rel="stylesheet" href="./Libraries/WUI/Table/WUITable-0.1.css">
 		<link type="text/css" rel="stylesheet" href="./Libraries/WUI/Form/WUIForm-0.1.css">
@@ -637,6 +640,7 @@ Código HTML:
 		<script type="text/javascript" src="./Libraries/WUI/Slider/WUISlider-0.2.js"></script>
 		<script type="text/javascript" src="./Libraries/WUI/Paging/WUIPaging-0.1.js"></script>
 		<script type="text/javascript" src="./Libraries/WUI/Tabs/WUITabs-0.1.js"></script>
+		<script type="text/javascript" src="./Libraries/WUI/Menubar/WUIMenubar-0.1.js"></script>
 		<script type="text/javascript" src="./Libraries/WUI/List/WUIList-0.2.js"></script>
 		<script type="text/javascript" src="./Libraries/WUI/Table/WUITable-0.1.js"></script>
 		<script type="text/javascript" src="./Libraries/WUI/Form/WUIForm-0.1.js"></script>
@@ -1641,6 +1645,57 @@ const fadeout = () => {
 <a name="WUISlider"></a>
 <a name="WUIPaging"></a>
 <a name="WUITabs"></a>
+<a name="WUIMenubar"></a>
+
+### WUIMenubar
+
+Versión: `0.1`
+
+Objeto avanzado para implementación de barras de menú.
+
+#### Constructor
+
+| Tipo       | Descripción |
+| ---------- | ----------- |
+| WUIMenubar | `WUIMenubar([properties])`<br><br>Parámetros:<br>**• properties:** `object` *opcional* |
+
+#### Propiedades
+
+| Propiedad | Tipo      | Valor predeterminado | Descripción |
+| --------- | --------- | -------------------- | ----------- |
+| selector  | `string`  | `".wui-menubar"`     | (get/set)<br><br>Selector CSS que define el elemento HTML que serán convertido en el objeto avanzado tipo bara de menú. En caso de existir más de un elemento coincidente con el selector se incluirá únicamente la primera coincidencia. |
+| expansive | `boolean` | `true`               | (get/set)<br><br>Define el menú se expande. |
+| buttons   | `array`   | `[]`                 | (get/set)<br><br>Lista de botones de menú, según la definición de **Opciones de Botón**. |
+
+#### Opciones de Botón
+
+| Propiedad    | Tipo       | Valor predeterminado | Descripción |
+| ------------ | ---------- | -------------------- | ----------- |
+| id           | `string`   | `undefined`          | Identificador único de botón. |
+| iconClass    | `string`   | `undefined`          | Estilos CSS que define el ícono del botón de menú. Esta opción puede ser utilizado opcionalmente con la librería [WUIIcon](#wuiIcon) mediante el estilo `wui-icon` conjuntamente a un estilo de ícono específico. |
+| label        | `string`   | `""`                 | Texto de la etiqueta asociada al botón de menú. |
+| section      | `string`   | `"main"`             | Sección donde se agregado el botón.<br><br>Valores:<br>• `"main"`<br>• `"bottom"` |
+| enabled      | `boolean`  | `true`               | Define si el botón está habilitado. |
+| onClick      | `function` | `null`               | Función que se llama cuando el botón es presionado. |
+
+#### Métodos
+
+| Método       | Tipo retorno  | Descripción |
+| ------------ | ------------- | ----------- |
+| getElement   | `HTMLElement` | `getElement()`<br><br>Retorna el elemento HTML contenedor del objeto avanzado. |
+| getButton    | `object`      | `getButton(id)`<br><br>Parámetros:<br>**• id:** `string`, identificador único de botón.<br><br>Retorna el botón de menú según el identificador único botón de menú pasado por parámetro. |
+| init         | `void`        | `init()`<br><br>Inicializa el objeto. |
+| selectButton | `void`        | `selectButton(id[, selected])`<br><br>Parámetros:<br>**• id:** `string`, identificador único de botón.<br>**• selected:** `boolean`, estado de selección del botón. El valor predeterminado `true`.<br><br>Selecciona o deselecciona un botón de menú. |
+| enableButton | `void`        | `enableButton(id[, enabled])`<br><br>Parámetros:<br>**• id:** `string`, identificador único de botón.<br>**• enabled:** `boolean`, estado de habilitación del botón. El valor predeterminado `true`.<br><br>Hablita o deshabilita un botón de menú. |
+| setBubble    | `void`        | `setBubble(id, number)`<br><br>Parámetros:<br>**• id:** `string`, identificador único de botón.<br>**• number:** `number`, número que aparecerá en la burbuja. El valor `0` oculta la burbuja. |
+| close        | `void`        | `close()`<br><br>Cierra el submenú en caso de estar desplegado. |
+| destroy      | `void`        | `destroy()`<br><br>Destructor. |
+
+#### Variables CSS
+
+| Variable                             | Descripción |
+| ------------------------------------ | ----------- |
+
 <a name="WUIList"></a>
 
 ### WUIList
@@ -2027,7 +2082,7 @@ Objeto avanzado para implementación de tablas de datos. A diferencia del objeto
 | addRow       | `void`        | `addRow(options)`<br><br>Agrega la configuración de una nueva fila a la lista filas del objeto, según la definición de **Opciones de Fila**. |
 | print        | `void`        | `print([page])`<br><br>Parámetros:<br>**• page:** `number`, número de página. El valor predeterminado corresponde a la propiedad `page`. Si se pasa como parámetro un valor distinto al de la propiedad `page` y si es válido, la propiedad tomará dicho valor.<br><br>Imprime la vista de una tabla, esta vista puede ser una página o la tabla completa según la propiedad `paging` y el parámetro `page`. |
 | sort         | `void`        | `first(index[, direction])`<br><br>Parámetros:<br>**• index:** `number`, número de columns.<br>**• direction:** `string`, dirección de orden, esta puede ser: `"asc"` o `"desc"`. El valor predeterminado `asc`. |
-| selectRow    | `void`        | `selectRow(index[, selected])`<br><br>Parámetros:<br>**• index:** `number`, número de fila.<br>**• selected:** `boolean`, estado de selección de la fila. El valor predeterminado `true`.<br><br>Selecciona o desselecciona una fila. |
+| selectRow    | `void`        | `selectRow(index[, selected])`<br><br>Parámetros:<br>**• index:** `number`, número de fila.<br>**• selected:** `boolean`, estado de selección de la fila. El valor predeterminado `true`.<br><br>Selecciona o deselecciona una fila. |
 | enableRow    | `void`        | `enableRow(index[, enabled])`<br><br>Parámetros:<br>**• index:** `number`, número de fila.<br>**• enabled:** `boolean`, estado de habilitación de la fila. El valor predeterminado `true`.<br><br>Hablita o deshabilita una fila. |
 | first        | `void`        | `first()`<br><br>Despliega la vista de la primera página. |
 | last         | `void`        | `last()`<br><br>Despliega la vista de la última página. |
