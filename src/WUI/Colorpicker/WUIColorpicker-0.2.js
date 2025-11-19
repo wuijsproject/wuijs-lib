@@ -27,7 +27,7 @@ class WUIColorpicker {
 			+"<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'>"
 			+"<path d='M8.12 14.71L12 10.83l3.88 3.88a.996.996 0 1 0 1.41-1.41L12.7 8.71a.996.996 0 0 0-1.41 0L6.7 13.3a.996.996 0 0 0 0 1.41c.39.38 1.03.39 1.42 0z'/>"
 			+"</svg>",
-		empty: ""
+		"viewcolor-empty": ""
 			+"<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='currentColor'>"
 			+"<path d='M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z'/>"
 			+"<path d='M13.654 2.346a.5.5 0 0 1 0 .708l-10.5 10.5a.5.5 0 0 1-.708-.708l10.5-10.5a.5.5 0 0 1 .708 0Z'/>"
@@ -483,7 +483,7 @@ class WUIColorpicker {
 		const list = WUIColorpicker.#colors.list;
 		const empty = Boolean(value == "" || value == this._emptyValue);
 		const bgcolor = empty ? "transparent" : value;
-		const bgimage = empty ? this.#getSRCIcon("empty") : "url()";
+		const bgimage = empty ? this.#getSRCIcon("viewcolor-empty") : "url()";
 		this._buttonColor.style.backgroundColor = bgcolor;
 		this._buttonColor.style.maskImage = bgimage;
 		this._previewColor.style.backgroundColor = bgcolor;

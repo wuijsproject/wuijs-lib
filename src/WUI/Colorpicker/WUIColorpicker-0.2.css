@@ -86,15 +86,15 @@
 	background-color: var(--wui-colorpicker-button-bgcolor-disabled);
 }
 .wui-colorpicker > button.button > .color {
-	--viewicon-size: calc(var(--wui-colorpicker-button-size) - 6px);
-	width: var(--viewicon-size);
-	height: var(--viewicon-size);
+	--color-size: calc(var(--wui-colorpicker-button-size) - 6px);
+	width: var(--color-size);
+	height: var(--color-size);
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
 	border-radius: 50%;
-	border-width: var(--wui-colorpicker-viewicon-borderwidth);
+	border-width: var(--wui-colorpicker-viewcolor-borderwidth);
 	border-style: solid;
-	border-color: var(--wui-colorpicker-viewicon-bordercolor);
+	border-color: var(--wui-colorpicker-viewcolor-bordercolor);
 	-webkit-mask-image: url();
 	-webkit-mask-position: center;
 	-webkit-mask-repeat: no-repeat;
@@ -240,9 +240,9 @@
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
 	border-radius: 50%;
-	border-width: var(--wui-colorpicker-viewicon-borderwidth);
+	border-width: var(--wui-colorpicker-viewcolor-borderwidth);
 	border-style: solid;
-	border-color: var(--wui-colorpicker-viewicon-bordercolor);
+	border-color: var(--wui-colorpicker-viewcolor-bordercolor);
 }
 .wui-colorpicker > .box > .list > .option > .text {
 	font-size: 14px;

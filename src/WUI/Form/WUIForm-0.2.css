@@ -175,18 +175,49 @@
 }
 .wui-form fieldset > .field > input[type="date"],
 .wui-form fieldset > .field > input[type="time"] {
-	padding-right: 35px;
 	min-width: 140px;
-	background-repeat: no-repeat;
-	background-position-x: 100%;
+	-webkit-mask-image: url();
+	-webkit-mask-position: center right;
+	-webkit-mask-repeat: no-repeat;
+	-moz-mask-image: url();
+	-moz-mask-position: center right;
+	-moz-mask-repeat: no-repeat;
+	mask-image: url();
+	mask-position: center right;
+	mask-repeat: no-repeat;
 	background-image: none;
-	padding-right: 2rem;
 }
 .wui-form fieldset > .field > input[type="date"] {
-	background-size: var(--wui-form-date-openicon-size);
+	--date-size: var(--wui-form-date-opener-iconsize) var(--wui-form-date-opener-iconsize);
+	-webkit-mask-size: var(--date-size);
+	-moz-mask-size: var(--date-size);
+	mask-size: var(--date-size);
+	background-color: var(--wui-form-date-opener-iconcolor-out);
+	padding-right: var(--wui-form-date-opener-iconsize);
+}
+.wui-form fieldset > .field:not(.disabled) > input[type="date"]:is(:hover, :focus, :focus-within),
+.wui-form fieldset > .field > input[type="date"]:not(:disabled):is(:hover, :focus, :focus-within) {
+	background-color: var(--wui-form-date-opener-iconcolor-over);
+}
+.wui-form fieldset > .field.disabled > input[type="date"],
+.wui-form fieldset > .field > input[type="date"]:disabled {
+	color: var(--wui-form-date-opener-iconcolor-disabled) !important;
 }
 .wui-form fieldset > .field > input[type="time"] {
-	background-size: var(--wui-form-time-openicon-size);
+	--time-size: var(--wui-form-time-opener-iconsize) var(--wui-form-time-opener-iconsize);
+	-webkit-mask-size: var(--time-size);
+	-moz-mask-size: var(--time-size);
+	mask-size: var(--time-size);
+	background-color: var(--wui-form-time-opener-iconcolor-out);
+	padding-right: var(--wui-form-time-opener-iconsize);
+}
+.wui-form fieldset > .field:not(.disabled) > input[type="time"]:is(:hover, :focus, :focus-within),
+.wui-form fieldset > .field > input[type="time"]:not(:disabled):is(:hover, :focus, :focus-within) {
+	background-color: var(--wui-form-time-opener-iconcolor-over);
+}
+.wui-form fieldset > .field.disabled > input[type="time"],
+.wui-form fieldset > .field > input[type="time"]:disabled {
+	color: var(--wui-form-time-opener-iconcolor-disabled) !important;
 }
 .wui-form fieldset > .field > :is(input[type="date"], input[type="time"])
 .wui-form fieldset > .field > :is(input[type="date"], input[type="time"])::-webkit-date-and-time-value {
@@ -358,7 +389,16 @@
 	background-position-x: 100%;
 	background-image: none;
 	background-size: var(--wui-form-select-opener-iconsize);
-	padding-right: 2rem;
+	padding-right: var(--wui-form-select-opener-iconsize);
+	color: var(--wui-form-select-opener-iconcolor-out);
+}
+.wui-form fieldset > .field:not(.disabled) > select:is(:hover, :focus, :focus-within),
+.wui-form fieldset > .field > select:not(:disabled):is(:hover, :focus, :focus-within) {
+	color: var(--wui-form-select-opener-iconcolor-over);
+}
+.wui-form fieldset > .field.disabled > select,
+.wui-form fieldset > .field > select:disabled {
+	color: var(--wui-form-select-opener-iconcolor-disabled) !important;
 }
 /*.wui-form fieldset > .field > select[multiple="true"] {
 	height: auto;

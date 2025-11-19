@@ -14,17 +14,29 @@ class WUIForm {
 		onSubmit: null
 	};
 	static #icons = {
-		"date-open": ""
+		"date-opener-open": ""
 			+"<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'>"
 			+"<path d='M8.12 9.29L12 13.17l3.88-3.88a.996.996 0 1 1 1.41 1.41l-4.59 4.59a.996.996 0 0 1-1.41 0L6.7 10.7a.996.996 0 0 1 0-1.41c.39-.38 1.03-.39 1.42 0z'/>"
 			+"</svg>",
-		"time-open": ""
+		"date-opener-close": ""
+			+"<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'>"
+			+"<path d='M8.12 14.71L12 10.83l3.88 3.88a.996.996 0 1 0 1.41-1.41L12.7 8.71a.996.996 0 0 0-1.41 0L6.7 13.3a.996.996 0 0 0 0 1.41c.39.38 1.03.39 1.42 0z'/>"
+			+"</svg>",
+		"time-opener-open": ""
 			+"<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'>"
 			+"<path d='M8.12 9.29L12 13.17l3.88-3.88a.996.996 0 1 1 1.41 1.41l-4.59 4.59a.996.996 0 0 1-1.41 0L6.7 10.7a.996.996 0 0 1 0-1.41c.39-.38 1.03-.39 1.42 0z'/>"
 			+"</svg>",
-		"select-open": ""
+		"time-opener-close": ""
+			+"<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'>"
+			+"<path d='M8.12 14.71L12 10.83l3.88 3.88a.996.996 0 1 0 1.41-1.41L12.7 8.71a.996.996 0 0 0-1.41 0L6.7 13.3a.996.996 0 0 0 0 1.41c.39.38 1.03.39 1.42 0z'/>"
+			+"</svg>",
+		"select-opener-open": ""
 			+"<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'>"
 			+"<path d='M8.12 9.29L12 13.17l3.88-3.88a.996.996 0 1 1 1.41 1.41l-4.59 4.59a.996.996 0 0 1-1.41 0L6.7 10.7a.996.996 0 0 1 0-1.41c.39-.38 1.03-.39 1.42 0z'/>"
+			+"</svg>",
+		"select-opener-close": ""
+			+"<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'>"
+			+"<path d='M8.12 14.71L12 10.83l3.88 3.88a.996.996 0 1 0 1.41-1.41L12.7 8.71a.996.996 0 0 0-1.41 0L6.7 13.3a.996.996 0 0 0 0 1.41c.39.38 1.03.39 1.42 0z'/>"
 			+"</svg>"
 	};
 
@@ -162,23 +174,10 @@ class WUIForm {
 		return this._element.querySelector(".text."+name);
 	}
 
-	#getSRCIcon(input, name, event) {
-		const isDarkMode = () => {
-			const shema = getComputedStyle(element).getPropertyValue("color-scheme").trim().replace(/only\s+/, "");
-			return shema == "dark" || (shema.includes("dark") && window.matchMedia("(prefers-color-scheme: dark)").matches);
-		}
-		const rgb2hex = (rgba) => "#"+rgba.map((x, i) => {return ("0"+parseInt(i == 3 ? 255*x : x).toString(16)).slice(-2);}).join("");
+	#getSRCIcon(input, name) {
 		const element = input || this._form || this._element || document.documentElement;
-		const color = (() => {
-			let color = getComputedStyle(element).getPropertyValue("--wui-form-"+name+"color-"+event).replace(/#/g, "%23").trim();
-			if (color.match(/light-dark/)) {
-				const lightdark = color.match(/light-dark\(([^,]+),\s*([^)]+)\)/);
-				color = lightdark[!isDarkMode() ? 1 : 2].trim();
-			}
-			return (color.replace(/\s+/g, "").match(/\d+\,\d+\,\d+/) ? rgb2hex(color.replace(/\s+/g, "").replace(/^rgba?\((\d+\,\d+\,\d+)(\,[\d.]+)?\)$/, "$1$2").split(",")) : color);
-		})();
-		const src = getComputedStyle(element).getPropertyValue("--wui-form-"+name+"icon-src").replace(/currentColor/g, color);
-		return src != "" && !src.match(/^(none|url\(\))$/) ? src : "url(\"data:image/svg+xml,"+WUIForm.#icons[name].replace(/currentColor/g, color)+"\")";
+		const src = getComputedStyle(element).getPropertyValue("--wui-form-"+name+"icon-src");
+		return src != "" && !src.match(/^(none|url\(\))$/) ? src : "url(\"data:image/svg+xml,"+WUIForm.#icons[name]+"\")";
 	}
 
 	setType = (name, type) => {
@@ -306,11 +305,13 @@ class WUIForm {
 			const type = input.getAttribute("type") || "";
 			const label = input.parentNode.querySelector("label") || input.parentNode.parentNode.querySelector("label") || this.getLabel(input.name);
 			if (type.match(/^(date|time)$/i) || tag.match(/^(select)$/i)) {
-				const icon = (type || tag)+"-open";
-				input.style.backgroundImage = this.#getSRCIcon(input, icon, input.disabled ? "disabled" : "out");
-				["mouseover", "mouseout", "focus", "blur"].forEach(type => {
-					const event = input.disabled ? "disabled" : type == "blur" ? "out" : type.replace(/mouse/, "");
+				input.style.backgroundImage = this.#getSRCIcon(input, (type || tag)+"-opener-open");
+				["mouseover", "mousedown", "mouseout", "focus", "blur"].forEach(type => {
 					input.addEventListener(type, () => {
+						const srcIcon =
+							type == "mousedown" ? this.#getSRCIcon(input, (type || tag)+"-opener-close") :
+							type == "blur" ? this.#getSRCIcon(input, (type || tag)+"-opener-open") :
+							"";
 						if (label != null) {
 							if (type.match(/mouseover|focus/) || input.value != "") {
 								label.classList.add("notempty");
@@ -318,10 +319,21 @@ class WUIForm {
 								label.classList.remove("notempty");
 							}
 						}
-						input.style.backgroundImage = this.#getSRCIcon(input, icon, event);
-						if (type == "focus") {
+						if (type == "mousedown") {
+							if (type.match(/^(date|time)$/i)) {
+								input.style.maskImage = srcIcon;
+							} else if (tag.match(/^(select)$/i)) {
+								input.style.backgroundImage = srcIcon;
+							}
+						} else if (type == "focus") {
 							const open = new MouseEvent("mousedown");
 							input.dispatchEvent(open);
+						} else if (type == "blur") {
+							if (type.match(/^(date|time)$/i)) {
+								input.style.maskImage = srcIcon;
+							} else if (tag.match(/^(select)$/i)) {
+								input.style.backgroundImage = srcIcon;
+							}
 						}
 					});
 				});
@@ -360,8 +372,12 @@ class WUIForm {
 				const tag = input.localName.toLowerCase();
 				const type = input.getAttribute("type") || "";
 				if (type.match(/^(date|time)$/i) || tag.match(/^(select)$/i)) {
-					const icon = (type || tag)+"-open";
-					input.style.backgroundImage = this.#getSRCIcon(input, icon, input.disabled ? "disabled" : "out");
+					const srcIcon = this.#getSRCIcon(input, (type || tag)+"-opener-open");
+					if (type.match(/^(date|time)$/i)) {
+						input.style.maskImage = srcIcon;
+					} else if (tag.match(/^(select)$/i)) {
+						input.style.backgroundImage = srcIcon;
+					}
 				}
 			});
 		});
