@@ -14,11 +14,11 @@ class WUIMenubar {
 	};
 
 	static #icons = {
-		"bar-expand": ""
+		"barexpander-expand": ""
 			+"<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'>"
 			+"<path d='M9.29 15.88L13.17 12L9.29 8.12a.996.996 0 1 1 1.41-1.41l4.59 4.59c.39.39.39 1.02 0 1.41L10.7 17.3a.996.996 0 0 1-1.41 0c-.38-.39-.39-1.03 0-1.42z'/>"
 			+"</svg>",
-		"bar-contract": ""
+		"barexpander-contract": ""
 			+"<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'>"
 			+"<path d='M14.71 15.88L10.83 12l3.88-3.88a.996.996 0 1 0-1.41-1.41L8.71 11.3a.996.996 0 0 0 0 1.41l4.59 4.59c.39.39 1.02.39 1.41 0c.38-.39.39-1.03 0-1.42z'/>"
 			+"</svg>"
@@ -104,11 +104,11 @@ class WUIMenubar {
 		if (this._expansive) {
 			this._expander = document.createElement("div");
 			this._expander.className = "expander";
-			this._expander.style.maskImage = this.#getSRCIcon("bar-expand");
+			this._expander.style.maskImage = this.#getSRCIcon("barexpander-expand");
 			this._expander.addEventListener("click", () => {
 				const expanded = this._expander.classList.contains("expanded");
 				this._expander.classList.toggle("expanded");
-				this._expander.style.maskImage = this.#getSRCIcon("bar-"+(expanded ? "expand" : "contract"));
+				this._expander.style.maskImage = this.#getSRCIcon("barexpander-"+(expanded ? "expand" : "contract"));
 			});
 			this._top.append(this._expander);
 		}
@@ -200,7 +200,7 @@ class WUIMenubar {
 <div class="wui-menubar">
 	<div class="bar">
 		<div class="top">
-			<div class="expander"></div>
+			<div class="expand"></div>
 		</div>
 		<div class="main">
 			<div class="button">

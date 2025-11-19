@@ -20,9 +20,13 @@ class WUITimepicker {
 		onChange: null
 	};
 	static #icons = {
-		open: ""
+		"opener-open": ""
 			+"<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'>"
 			+"<path d='M8.12 9.29L12 13.17l3.88-3.88a.996.996 0 1 1 1.41 1.41l-4.59 4.59a.996.996 0 0 1-1.41 0L6.7 10.7a.996.996 0 0 1 0-1.41c.39-.38 1.03-.39 1.42 0z'/>"
+			+"</svg>",
+		"opener-close": ""
+			+"<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'>"
+			+"<path d='M8.12 14.71L12 10.83l3.88 3.88a.996.996 0 1 0 1.41-1.41L12.7 8.71a.996.996 0 0 0-1.41 0L6.7 13.3a.996.996 0 0 0 0 1.41c.39.38 1.03.39 1.42 0z'/>"
 			+"</svg>"
 	};
 	static #texts = {
@@ -207,7 +211,7 @@ class WUITimepicker {
 	}
 
 	init() {
-		this._open = document.createElement("div");
+		this._opener = document.createElement("div");
 		this._inputs = document.createElement("div");
 		this._inputHours = document.createElement("input");
 		this._inputMinutes = document.createElement("input");
@@ -219,12 +223,12 @@ class WUITimepicker {
 		this._footer = document.createElement("div");
 		this._cancelButton = document.createElement("button");
 		this._acceptButton = document.createElement("button");
-		this._element.appendChild(this._open);
+		this._element.appendChild(this._opener);
 		this._element.appendChild(this._inputs);
 		this._element.appendChild(this._background);
 		this._element.appendChild(this._box);
 		this._element.addEventListener("click", event => {
-			if (this._enabled && (event.target.classList.contains("wui-timepicker") || event.target.classList.contains("open"))) {
+			if (this._enabled && (event.target.classList.contains("wui-timepicker") || event.target.classList.contains("opener"))) {
 				this.toggle();
 			}
 		});
@@ -290,8 +294,8 @@ class WUITimepicker {
 				list.appendChild(option);
 			}
 		});
-		this._open.className = "open";
-		this._open.style.maskImage = this.#getSRCIcon("open");
+		this._opener.className = "opener";
+		this._opener.style.maskImage = this.#getSRCIcon("opener-open");
 		this._inputs.className = "inputs";
 		this._background.className = "background hidden";
 		this._box.className = "box "+this._openDirection+" hidden";
@@ -368,6 +372,7 @@ class WUITimepicker {
 
 	open() {
 		const mobile = Boolean(window.matchMedia("(max-width: 767px)").matches);
+		this._opener.style.maskImage = this.#getSRCIcon("opener-close");
 		this._background.classList.remove("hidden");
 		this._box.classList.remove("hidden");
 		this._box.style.marginBottom = !mobile && this._openDirection == "up" ? this._element.clientHeight+"px" : "auto";
@@ -379,6 +384,7 @@ class WUITimepicker {
 	}
 
 	close() {
+		this._opener.style.maskImage = this.#getSRCIcon("opener-open");
 		this._background.classList.add("hidden");
 		this._box.classList.add("hidden");
 	}
@@ -436,7 +442,7 @@ class WUITimepicker {
 Generated HTML code:
 <div class="wui-timepicker">
 	<input type="time" name="(name)" value="">
-	<div class="open"></div>
+	<div class="opener"></div>
 	<div class="inputs">
 		<input type="text" name="(name))Hours" class="hours">
 		<span></span>

@@ -88,8 +88,8 @@
 	position: absolute;
 	top: 50%;
 	right: 4px;
-	width: 16px;
-	height: 16px;
+	width: var(--wui-table-column-sorter-iconsize);
+	height: var(--wui-table-column-sorter-iconsize);
 	-webkit-mask-image: url();
 	-webkit-mask-position: center;
 	-webkit-mask-repeat: no-repeat;
@@ -99,8 +99,16 @@
 	mask-image: url();
 	mask-position: center;
 	mask-repeat: no-repeat;
-	background-color: var(--wui-table-column-sort-asccolor-out);
+	background-color: var(--wui-table-column-sorter-iconcolor-out);
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
 	transform: translateY(-50%);
+}
+.wui-table > table > thead > tr > th.sortable > .sorter:hover {
+	background-color: var(--wui-table-column-sorter-iconcolor-over);
+}
+.wui-table > table > thead > tr > th.sortable.disabled > .sorter {
+	background-color: var(--wui-table-column-sorter-iconcolor-disabled) !important;
 }
 .wui-table > table > thead > tr > th.resizable > .resizer {
 	cursor: col-resize;
@@ -110,10 +118,10 @@
 	right: 0;
 	width: 4px;
 	height: 100%;
-	border-right: 1px solid var(--wui-table-column-resize-bordercolor-out);
+	border-right: 1px solid var(--wui-table-column-resizer-bordercolor-out);
 }
 .wui-table > table > thead > tr > th.resizable > .resizer:hover {
-	border-right: 1px solid var(--wui-table-column-resize-bordercolor-over);
+	border-right: 1px solid var(--wui-table-column-resizer-bordercolor-over);
 }
 .wui-table > table > thead > tr > th.draggable.drag {
 	-khtml-opacity: .5;
@@ -121,10 +129,10 @@
 	opacity: .5;
 }
 .wui-table > table > thead > tr > th.draggable.over {
-	outline: 2px dashed var(--wui-table-column-drag-bordercolor-over);
+	outline: 2px dashed var(--wui-table-column-dragger-bordercolor-over);
 }
 .wui-table > table > thead > tr > th.draggable.drop {
-	background-color: var(--wui-table-column-drag-bgcolor-drop);
+	background-color: var(--wui-table-column-dragger-bgcolor-drop);
 }
 .wui-table > table > tbody {
 	overflow-y: auto;

@@ -16,18 +16,18 @@
 	height: 30px;
 	margin: 0;
 	border: 0;
-	padding-right: var(--wui-timepicker-openicon-size);
+	padding-right: var(--wui-timepicker-opener-iconsize);
 }
 .wui-timepicker > input[type="time"] {
 	display: none;
 }
-.wui-timepicker > .open {
+.wui-timepicker > .opener {
 	cursor: pointer;
 	position: absolute;
 	top: 50%;
 	right: 0;
-	width: var(--wui-timepicker-openicon-size);
-	height: var(--wui-timepicker-openicon-size);
+	width: var(--wui-timepicker-opener-iconsize);
+	height: var(--wui-timepicker-opener-iconsize);
 	-webkit-mask-image: url();
 	-webkit-mask-position: center;
 	-webkit-mask-repeat: no-repeat;
@@ -37,16 +37,16 @@
 	mask-image: url();
 	mask-position: center;
 	mask-repeat: no-repeat;
-	background-color: var(--wui-timepicker-opencolor-out);
+	background-color: var(--wui-timepicker-opener-iconcolor-out);
 	-webkit-transform: translateY(-50%);
 	-moz-transform: translateY(-50%);
 	transform: translateY(-50%);
 }
-.wui-timepicker:not(.disabled):hover > .open {
-	background-color: var(--wui-timepicker-opencolor-over);
+.wui-timepicker:not(.disabled):is(:hover, :focus, :focus-within) > .opener {
+	background-color: var(--wui-timepicker-opener-iconcolor-over);
 }
-.wui-timepicker.disabled > .open {
-	background-color: var(--wui-timepicker-opencolor-disabled) !important;
+.wui-timepicker.disabled > .opener {
+	background-color: var(--wui-timepicker-opener-iconcolor-disabled) !important;
 }
 .wui-timepicker > .inputs {
 	display: flex;

@@ -19,9 +19,13 @@ class WUIColorpicker {
 		onChange: null
 	};	
 	static #icons = {
-		open: ""
+		"opener-open": ""
 			+"<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'>"
 			+"<path d='M8.12 9.29L12 13.17l3.88-3.88a.996.996 0 1 1 1.41 1.41l-4.59 4.59a.996.996 0 0 1-1.41 0L6.7 10.7a.996.996 0 0 1 0-1.41c.39-.38 1.03-.39 1.42 0z'/>"
+			+"</svg>",
+		"opener-close": ""
+			+"<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'>"
+			+"<path d='M8.12 14.71L12 10.83l3.88 3.88a.996.996 0 1 0 1.41-1.41L12.7 8.71a.996.996 0 0 0-1.41 0L6.7 13.3a.996.996 0 0 0 0 1.41c.39.38 1.03.39 1.42 0z'/>"
 			+"</svg>",
 		empty: ""
 			+"<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='currentColor'>"
@@ -520,7 +524,7 @@ class WUIColorpicker {
 			this.#setValue(value);
 			this.#setView(value);
 		}
-		this._open = document.createElement("div");
+		this._opener = document.createElement("div");
 		this._button = document.createElement("button");
 		this._buttonColor = document.createElement("div");
 		this._background = document.createElement("div");
@@ -536,12 +540,16 @@ class WUIColorpicker {
 		this._footer = document.createElement("div");
 		this._cancelButton = document.createElement("button");
 		this._acceptButton = document.createElement("button");
-		this._element.appendChild(this._open);
+		this._element.appendChild(this._opener);
 		this._element.appendChild(this._button);
 		this._element.appendChild(this._background);
 		this._element.appendChild(this._box);
 		this._element.addEventListener("click", event => {
-			if (this._enabled && event.target.classList.contains("button") || (event.target.classList.contains("color") && event.target.parentNode.classList.contains("button"))) {
+			if (this._enabled && (
+				event.target.classList.contains("wui-colorpicker") ||
+				event.target.classList.contains("opener") ||
+				event.target.classList.contains("button") ||
+				(event.target.classList.contains("color") && event.target.parentNode.classList.contains("button")))) {
 				this.toggle();
 			}
 		});
@@ -580,8 +588,8 @@ class WUIColorpicker {
 			option.addEventListener("click", () => {optionOnClick(option, "list");});
 			this._list.appendChild(option);
 		});
-		this._open.className = "open";
-		this._open.style.maskImage = this.#getSRCIcon("open");
+		this._opener.className = "opener";
+		this._opener.style.maskImage = this.#getSRCIcon("opener-open");
 		this._button.className = "button";
 		this._button.appendChild(this._buttonColor);
 		this._buttonColor.className = "color";
@@ -656,6 +664,7 @@ class WUIColorpicker {
 
 	open() {
 		const mobile = Boolean(window.matchMedia("(max-width: 767px)").matches);
+		this._opener.style.maskImage = this.#getSRCIcon("opener-close");
 		this._background.classList.remove("hidden");
 		this._box.className = "box "+this._openDirection;
 		this._box.style.marginBottom = !mobile && this._openDirection == "up" ? this._element.clientHeight+"px" : "auto";
@@ -667,6 +676,7 @@ class WUIColorpicker {
 	}
 
 	close() {
+		this._opener.style.maskImage = this.#getSRCIcon("opener-open");
 		this._background.classList.add("hidden");
 		this._box.classList.add("hidden");
 	}
@@ -748,7 +758,7 @@ class WUIColorpicker {
 Generated HTML code:
 <div class="wui-colorpicker">
 	<input type="color" value="(name)" value="">
-	<div class="open"></div>
+	<div class="opener"></div>
 	<button class="button">
 		<div class="color"></div>
 	</button>

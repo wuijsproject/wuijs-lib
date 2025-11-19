@@ -357,7 +357,7 @@
 	background-repeat: no-repeat;
 	background-position-x: 100%;
 	background-image: none;
-	background-size: var(--wui-form-select-openicon-size);
+	background-size: var(--wui-form-select-opener-iconsize);
 	padding-right: 2rem;
 }
 /*.wui-form fieldset > .field > select[multiple="true"] {

@@ -16,18 +16,18 @@
 	height: 30px;
 	margin: 0;
 	border: 0;
-	padding-right: var(--wui-selectpicker-openicon-size);
+	padding-right: var(--wui-selectpicker-opener-iconsize);
 }
 .wui-selectpicker > select {
 	display: none;
 }
-.wui-selectpicker > .open {
+.wui-selectpicker > .opener {
 	cursor: pointer;
 	position: absolute;
 	top: 50%;
 	right: 0;
-	width: var(--wui-selectpicker-openicon-size);
-	height: var(--wui-selectpicker-openicon-size);
+	width: var(--wui-selectpicker-opener-iconsize);
+	height: var(--wui-selectpicker-opener-iconsize);
 	-webkit-mask-image: url();
 	-webkit-mask-position: center;
 	-webkit-mask-repeat: no-repeat;
@@ -37,16 +37,16 @@
 	mask-image: url();
 	mask-position: center;
 	mask-repeat: no-repeat;
-	background-color: var(--wui-selectpicker-opencolor-out);
+	background-color: var(--wui-selectpicker-opener-iconcolor-out);
 	-webkit-transform: translateY(-50%);
 	-moz-transform: translateY(-50%);
 	transform: translateY(-50%);
 }
-.wui-selectpicker:not(.disabled):hover > .open {
-	background-color: var(--wui-selectpicker-opencolor-over);
+.wui-selectpicker:not(.disabled):is(:hover, :focus, :focus-within) > .opener {
+	background-color: var(--wui-selectpicker-opener-iconcolor-over);
 }
-.wui-selectpicker.disabled > .open {
-	background-color: var(--wui-selectpicker-opencolor-disabled) !important;
+.wui-selectpicker.disabled > .opener {
+	background-color: var(--wui-selectpicker-opener-iconcolor-disabled) !important;
 }
 .wui-selectpicker > input[type="text"] {
 	width: 100%;
@@ -160,8 +160,8 @@
 }
 .wui-selectpicker > .box > .options > .option > .icon {
 	visibility: hidden;
-	width: 24px;
-	height: 24px;
+	width: var(--wui-selectpicker-box-option-iconsize);
+	height: var(--wui-selectpicker-box-option-iconsize);
 	flex-shrink: 0;
 	-webkit-mask-position: center;
 	-webkit-mask-repeat: no-repeat;
@@ -175,13 +175,13 @@
 	visibility: visible;
 }
 .wui-selectpicker > .box > .options > .option > .icon.check {
-	background-color: var(--wui-selectpicker-box-option-checkcolor-out);
+	background-color: var(--wui-selectpicker-box-option-iconcolor-out);
 }
 .wui-selectpicker > .box > .options > .option:not(.disabled):is(:hover, :focus, :focus-within, .focus) > .icon.check {
-	background-color: var(--wui-selectpicker-box-option-checkcolor-over);
+	background-color: var(--wui-selectpicker-box-option-iconcolor-over);
 }
 .wui-selectpicker > .box > .options > .option.disabled > .icon.check {
-	background-color: var(--wui-selectpicker-box-option-checkcolor-disabled);
+	background-color: var(--wui-selectpicker-box-option-iconcolor-disabled);
 }
 .wui-selectpicker > .box > .options > .option > .text {
 	cursor: default;

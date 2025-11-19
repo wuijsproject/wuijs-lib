@@ -45,8 +45,8 @@
 }
 .wui-menubar > .bar > .top > .expander {
 	cursor: pointer;
-	width: var(--wui-menubar-bar-expander-size);
-	height: var(--wui-menubar-bar-expander-size);
+	width: var(--wui-menubar-barexpander-iconsize);
+	height: var(--wui-menubar-barexpander-iconsize);
 	-webkit-mask-image: url();
 	-webkit-mask-position: center;
 	-webkit-mask-repeat: no-repeat;
@@ -56,10 +56,10 @@
 	mask-image: url();
 	mask-position: center;
 	mask-repeat: no-repeat;
-	background-color: var(--wui-menubar-bar-expandcolor-out);
+	background-color: var(--wui-menubar-barexpander-bgcolor-out);
 }
 .wui-menubar > .bar > .top > .expander:hover {
-	background-color: var(--wui-menubar-bar-expandcolor-over);
+	background-color: var(--wui-menubar-barexpander-bgcolor-over);
 }
 .wui-menubar > .bar > .main {
 	display: flex;
@@ -80,8 +80,8 @@
 	justify-content: center;
 }
 .wui-menubar > .bar > .main > .button > .icon {
-	width: 24px;
-	height: 24px;
+	width: var(--wui-menubar-barbutton-iconsize);
+	height: var(--wui-menubar-barbutton-iconsize);
 	background-color: var(--wui-menubar-barbutton-iconcolor-out);
 }
 .wui-menubar > .bar > .main > .button > .bubble {

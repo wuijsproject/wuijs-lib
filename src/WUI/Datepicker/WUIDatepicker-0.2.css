@@ -16,18 +16,18 @@
 	height: 30px;
 	margin: 0;
 	border: 0;
-	padding-right: var(--wui-datepicker-openicon-size);
+	padding-right: var(--wui-datepicker-opener-iconsize);
 }
 .wui-datepicker > input[type="date"] {
 	display: none;
 }
-.wui-datepicker > .open {
+.wui-datepicker > .opener {
 	cursor: pointer;
 	position: absolute;
 	top: 50%;
 	right: 0;
-	width: var(--wui-datepicker-openicon-size);
-	height: var(--wui-datepicker-openicon-size);
+	width: var(--wui-datepicker-opener-iconsize);
+	height: var(--wui-datepicker-opener-iconsize);
 	-webkit-mask-image: url();
 	-webkit-mask-position: center;
 	-webkit-mask-repeat: no-repeat;
@@ -37,16 +37,16 @@
 	mask-image: url();
 	mask-position: center;
 	mask-repeat: no-repeat;
-	background-color: var(--wui-datepicker-opencolor-out);
+	background-color: var(--wui-datepicker-opener-iconcolor-out);
 	-webkit-transform: translateY(-50%);
 	-moz-transform: translateY(-50%);
 	transform: translateY(-50%);
 }
-.wui-datepicker:not(.disabled):hover > .open {
-	background-color: var(--wui-datepicker-opencolor-over);
+.wui-datepicker:not(.disabled):is(:hover, :focus, :focus-within) > .opener {
+	background-color: var(--wui-datepicker-opener-iconcolor-over);
 }
-.wui-datepicker.disabled > .open {
-	background-color: var(--wui-datepicker-opencolor-disabled) !important;
+.wui-datepicker.disabled > .opener {
+	background-color: var(--wui-datepicker-opener-iconcolor-disabled) !important;
 }
 .wui-datepicker > .inputs {
 	display: flex;
@@ -154,8 +154,7 @@
 	font-size: 14px;
 }
 .wui-datepicker > .box > .header > .period > .icon,
-.wui-datepicker > .box > .header > .prev,
-.wui-datepicker > .box > .header > .next {
+.wui-datepicker > .box > .header > :is(.prev, .next) {
 	cursor: pointer;
 	-webkit-mask-image: url();
 	-webkit-mask-position: center;
@@ -168,45 +167,35 @@
 	mask-repeat: no-repeat;
 }
 .wui-datepicker > .box > .header > .period > .icon {
-	width: 20px;
-	height: 20px;
-	background-color: var(--wui-datepicker-box-upcolor-out);
+	width: var(--wui-datepicker-box-period-iconsize);
+	height: var(--wui-datepicker-box-period-iconsize);
+	background-color: var(--wui-datepicker-box-period-iconcolor-out);
 }
 .wui-datepicker > .box > .header > .period:hover > .icon {
-	background-color: var(--wui-datepicker-box-upcolor-over);
+	background-color: var(--wui-datepicker-box-period-iconcolor-over);
 }
 .wui-datepicker > .box > .header > .period.disabled > .icon {
-	background-color: var(--wui-datepicker-box-upcolor-disabled) !important;
+	background-color: var(--wui-datepicker-box-period-iconcolor-disabled) !important;
 }
-.wui-datepicker > .box > .header > .prev,
-.wui-datepicker > .box > .header > .next {
+.wui-datepicker > .box > .header > :is(.prev, .next) {
 	position: absolute;
-	width: 26px;
-	height: 26px;
+	width: var(--wui-datepicker-box-paging-iconsize);
+	height: var(--wui-datepicker-box-paging-iconsize);
+	background-color: var(--wui-datepicker-box-paging-iconcolor-out);
 }
 .wui-datepicker > .box > .header > .prev {
 	right: 32px;
-	background-color: var(--wui-datepicker-box-prevcolor-out);
-}
-.wui-datepicker > .box > .header > .prev:hover {
-	background-color: var(--wui-datepicker-box-prevcolor-over);
-}
-.wui-datepicker > .box > .header > .prev.disabled {
-	background-color: var(--wui-datepicker-box-prevcolor-disabled) !important;
 }
 .wui-datepicker > .box > .header > .next {
 	right: 0;
-	background-color: var(--wui-datepicker-box-nextcolor-out);
 }
-.wui-datepicker > .box > .header > .next:hover {
-	background-color: var(--wui-datepicker-box-nextcolor-over);
+.wui-datepicker > .box > .header > :is(.prev, .next):hover {
+	background-color: var(--wui-datepicker-box-paging-iconcolor-over);
 }
-.wui-datepicker > .box > .header > .next.disabled {
-	background-color: var(--wui-datepicker-box-nextcolor-disabled) !important;
+.wui-datepicker > .box > .header > :is(.prev, .next).disabled {
+	background-color: var(--wui-datepicker-box-paging-iconcolor-disabled) !important;
 }
-.wui-datepicker > .box > .months,
-.wui-datepicker > .box > .week,
-.wui-datepicker > .box > .days {
+.wui-datepicker > .box > :is(.months, .week, .days) {
 	display: grid;
 	width: 100%;
 }
