@@ -305,13 +305,17 @@ class WUIForm {
 			const type = input.getAttribute("type") || "";
 			const label = input.parentNode.querySelector("label") || input.parentNode.parentNode.querySelector("label") || this.getLabel(input.name);
 			if (type.match(/^(date|time)$/i) || tag.match(/^(select)$/i)) {
-				input.style.backgroundImage = this.#getSRCIcon(input, (type || tag)+"-opener-open");
-				["mouseover", "mousedown", "mouseout", "focus", "blur"].forEach(type => {
+				if (!input.parentNode.classList.contains("wui-selectpicker") &&
+					!input.parentNode.classList.contains("wui-datepicker") &&
+					!input.parentNode.classList.contains("wui-timepicker")
+				) {
+					const opener = document.createElement("div");
+					opener.className = "opener";
+					opener.style.maskImage = this.#getSRCIcon(input, (type || tag)+"-opener-open");
+					input.after(opener);
+				}
+				["mouseover", "mouseout", "focus", "blur"].forEach(type => {
 					input.addEventListener(type, () => {
-						const srcIcon =
-							type == "mousedown" ? this.#getSRCIcon(input, (type || tag)+"-opener-close") :
-							type == "blur" ? this.#getSRCIcon(input, (type || tag)+"-opener-open") :
-							"";
 						if (label != null) {
 							if (type.match(/mouseover|focus/) || input.value != "") {
 								label.classList.add("notempty");
@@ -319,21 +323,9 @@ class WUIForm {
 								label.classList.remove("notempty");
 							}
 						}
-						if (type == "mousedown") {
-							if (type.match(/^(date|time)$/i)) {
-								input.style.maskImage = srcIcon;
-							} else if (tag.match(/^(select)$/i)) {
-								input.style.backgroundImage = srcIcon;
-							}
-						} else if (type == "focus") {
+						if (type == "focus") {
 							const open = new MouseEvent("mousedown");
 							input.dispatchEvent(open);
-						} else if (type == "blur") {
-							if (type.match(/^(date|time)$/i)) {
-								input.style.maskImage = srcIcon;
-							} else if (tag.match(/^(select)$/i)) {
-								input.style.backgroundImage = srcIcon;
-							}
 						}
 					});
 				});
@@ -372,12 +364,7 @@ class WUIForm {
 				const tag = input.localName.toLowerCase();
 				const type = input.getAttribute("type") || "";
 				if (type.match(/^(date|time)$/i) || tag.match(/^(select)$/i)) {
-					const srcIcon = this.#getSRCIcon(input, (type || tag)+"-opener-open");
-					if (type.match(/^(date|time)$/i)) {
-						input.style.maskImage = srcIcon;
-					} else if (tag.match(/^(select)$/i)) {
-						input.style.backgroundImage = srcIcon;
-					}
+					input.style.maskImage = this.#getSRCIcon(input, (type || tag)+"-opener-open");
 				}
 			});
 		});

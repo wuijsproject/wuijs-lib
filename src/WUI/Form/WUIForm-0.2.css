@@ -160,6 +160,9 @@
 	font-size: 15px;
 	color: var(--wui-form-input-textcolor-out);
 }
+.wui-form fieldset > .field > :is(input, select, textarea) {
+	font-size: 14px;
+}
 .wui-form fieldset > .field > :is(input, select, textarea):is(:-webkit-autofill, :autofill)
 .wui-form fieldset > .field > :is(input, select, textarea):is(:-webkit-autofill, :autofill):is(:hover, :focus, :active) {
 	--input-transition: color 9999s ease-out, background-color 9999s ease-out;
@@ -176,48 +179,57 @@
 .wui-form fieldset > .field > input[type="date"],
 .wui-form fieldset > .field > input[type="time"] {
 	min-width: 140px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+.wui-form fieldset > .field > input[type="date"] + .opener,
+.wui-form fieldset > .field > input[type="time"] + .opener {
+	position: absolute;
+	z-index: -1;
+	right: 0;
 	-webkit-mask-image: url();
-	-webkit-mask-position: center right;
+	-webkit-mask-position: center;
 	-webkit-mask-repeat: no-repeat;
 	-moz-mask-image: url();
-	-moz-mask-position: center right;
+	-moz-mask-position: center;
 	-moz-mask-repeat: no-repeat;
 	mask-image: url();
-	mask-position: center right;
+	mask-position: center;
 	mask-repeat: no-repeat;
 	background-image: none;
 }
 .wui-form fieldset > .field > input[type="date"] {
-	--date-size: var(--wui-form-date-opener-iconsize) var(--wui-form-date-opener-iconsize);
-	-webkit-mask-size: var(--date-size);
-	-moz-mask-size: var(--date-size);
-	mask-size: var(--date-size);
-	background-color: var(--wui-form-date-opener-iconcolor-out);
 	padding-right: var(--wui-form-date-opener-iconsize);
 }
-.wui-form fieldset > .field:not(.disabled) > input[type="date"]:is(:hover, :focus, :focus-within),
-.wui-form fieldset > .field > input[type="date"]:not(:disabled):is(:hover, :focus, :focus-within) {
+.wui-form fieldset > .field > input[type="date"] + .opener {
+	width: var(--wui-form-date-opener-iconsize);
+	height: var(--wui-form-date-opener-iconsize);
+	background-color: var(--wui-form-date-opener-iconcolor-out);
+}
+.wui-form fieldset > .field:not(.disabled) > input[type="date"]:not(:disabled):is(:hover, :focus, :focus-within) + .opener {
 	background-color: var(--wui-form-date-opener-iconcolor-over);
 }
-.wui-form fieldset > .field.disabled > input[type="date"],
-.wui-form fieldset > .field > input[type="date"]:disabled {
-	color: var(--wui-form-date-opener-iconcolor-disabled) !important;
+.wui-form fieldset > .field.disabled > input[type="date"] + .opener,
+.wui-form fieldset > .field > input[type="date"]:disabled + .opener {
+	background-color: var(--wui-form-date-opener-iconcolor-disabled) !important;
 }
 .wui-form fieldset > .field > input[type="time"] {
+	padding-right: var(--wui-form-time-opener-iconsize);
+}
+.wui-form fieldset > .field > input[type="time"] + .opener {
 	--time-size: var(--wui-form-time-opener-iconsize) var(--wui-form-time-opener-iconsize);
 	-webkit-mask-size: var(--time-size);
 	-moz-mask-size: var(--time-size);
 	mask-size: var(--time-size);
 	background-color: var(--wui-form-time-opener-iconcolor-out);
-	padding-right: var(--wui-form-time-opener-iconsize);
 }
-.wui-form fieldset > .field:not(.disabled) > input[type="time"]:is(:hover, :focus, :focus-within),
-.wui-form fieldset > .field > input[type="time"]:not(:disabled):is(:hover, :focus, :focus-within) {
+.wui-form fieldset > .field:not(.disabled) > input[type="time"]:not(:disabled):is(:hover, :focus, :focus-within) + .opener {
 	background-color: var(--wui-form-time-opener-iconcolor-over);
 }
-.wui-form fieldset > .field.disabled > input[type="time"],
-.wui-form fieldset > .field > input[type="time"]:disabled {
-	color: var(--wui-form-time-opener-iconcolor-disabled) !important;
+.wui-form fieldset > .field.disabled > input[type="time"] + .opener,
+.wui-form fieldset > .field > input[type="time"]:disabled + .opener {
+	background-color: var(--wui-form-time-opener-iconcolor-disabled) !important;
 }
 .wui-form fieldset > .field > :is(input[type="date"], input[type="time"])
 .wui-form fieldset > .field > :is(input[type="date"], input[type="time"])::-webkit-date-and-time-value {
@@ -382,23 +394,35 @@
 	background-color: var(--wui-form-input-bordercolor-disabled) !important;
 }
 .wui-form fieldset > .field > select {
+	min-width: 140px;
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
-	background-repeat: no-repeat;
-	background-position-x: 100%;
-	background-image: none;
-	background-size: var(--wui-form-select-opener-iconsize);
 	padding-right: var(--wui-form-select-opener-iconsize);
-	color: var(--wui-form-select-opener-iconcolor-out);
 }
-.wui-form fieldset > .field:not(.disabled) > select:is(:hover, :focus, :focus-within),
-.wui-form fieldset > .field > select:not(:disabled):is(:hover, :focus, :focus-within) {
-	color: var(--wui-form-select-opener-iconcolor-over);
+.wui-form fieldset > .field > select + .opener {
+	position: absolute;
+	z-index: -1;
+	right: 0;
+	width: var(--wui-form-select-opener-iconsize);
+	height: var(--wui-form-select-opener-iconsize);
+	-webkit-mask-image: url();
+	-webkit-mask-position: center;
+	-webkit-mask-repeat: no-repeat;
+	-moz-mask-image: url();
+	-moz-mask-position: center;
+	-moz-mask-repeat: no-repeat;
+	mask-image: url();
+	mask-position: center;
+	mask-repeat: no-repeat;
+	background-color: var(--wui-form-select-opener-iconcolor-out);
 }
-.wui-form fieldset > .field.disabled > select,
-.wui-form fieldset > .field > select:disabled {
-	color: var(--wui-form-select-opener-iconcolor-disabled) !important;
+.wui-form fieldset > .field:not(.disabled) > select:not(:disabled):is(:hover, :focus, :focus-within) + .opener {
+	background-color: var(--wui-form-select-opener-iconcolor-over);
+}
+.wui-form fieldset > .field.disabled > select + .opener,
+.wui-form fieldset > .field > select:disabled + .opener {
+	background-color: var(--wui-form-select-opener-iconcolor-disabled) !important;
 }
 /*.wui-form fieldset > .field > select[multiple="true"] {
 	height: auto;
@@ -653,7 +677,7 @@
 	}
 	.wui-form fieldset > .field > input:not([type="color"]):not([type="range"]):not([type="checkbox"]):not([type="button"]),
 	.wui-form fieldset > .field > :is(select, textarea, data) {
-		font-size: 17px;
+		font-size: 15px;
 	}
 	.wui-form a.link {
 		font-size: 15px;
