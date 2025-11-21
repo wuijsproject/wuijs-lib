@@ -21,6 +21,10 @@ class WUIMenubar {
 		"barexpander-contract": ""
 			+"<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'>"
 			+"<path d='M14.71 15.88L10.83 12l3.88-3.88a.996.996 0 1 0-1.41-1.41L8.71 11.3a.996.996 0 0 0 0 1.41l4.59 4.59c.39.39 1.02.39 1.41 0c.38-.39.39-1.03 0-1.42z'/>"
+			+"</svg>",
+		"submenu-opener-open": ""
+			+"<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'>"
+			+"<path d='M9.29 15.88L13.17 12L9.29 8.12a.996.996 0 1 1 1.41-1.41l4.59 4.59c.39.39.39 1.02 0 1.41L10.7 17.3a.996.996 0 0 1-1.41 0c-.38-.39-.39-1.03 0-1.42z'/>"
 			+"</svg>"
 	};
 
@@ -121,12 +125,28 @@ class WUIMenubar {
 			const text = document.createElement("div");
 			const tooltip = document.createElement("div");
 			const bubble = document.createElement("div");
+			icon.className = "icon";
+			(option.iconClass || "").split(/\s+/).forEach(name => {
+				icon.classList.add(name);
+			});
+			text.innerHTML = option.label || "";
+			text.className = "text";
+			tooltip.className = "tooltip hidden";
+			tooltip.innerHTML = option.label || "";
+			bubble.className = "bubble hidden";
+			bubble.innerText = 0;
 			button.append(icon);
 			button.append(text);
 			button.append(tooltip);
 			button.append(bubble);
 			button.dataset.id = option.id;
 			button.className = "button"+(option.enabled == false ? " disabled" : "");
+			if (typeof(option.buttons) == "object" && Array.isArray(option.buttons) && option.buttons.length > 0) {
+				const opener = document.createElement("div");
+				opener.className = "opener";
+				opener.style.maskImage = this.#getSRCIcon("submenu-opener-open");
+				button.append(opener);
+			}
 			button.addEventListener("click", () => {
 				if (!button.classList.contains("disabled")) {
 					if (typeof(option.type) == "string" && option.type == "toggle") {
@@ -134,7 +154,8 @@ class WUIMenubar {
 					} else {
 						this._buttons.forEach(opt => {
 							if (opt.id == option.id) {
-								this.selectButton(opt.id, !opt.selected);
+								this.selectButton(opt.id, true);
+								this.#open(opt.id);
 							} else {
 								this.selectButton(opt.id, false);
 							}
@@ -147,16 +168,6 @@ class WUIMenubar {
 					}
 				}
 			});
-			icon.className = "icon";
-			(option.iconClass || "").split(/\s+/).forEach(name => {
-				icon.classList.add(name);
-			});
-			text.innerHTML = option.label || "";
-			text.className = "text";
-			tooltip.className = "tooltip hidden";
-			tooltip.innerHTML = option.label || "";
-			bubble.className = "bubble hidden";
-			bubble.innerText = 0;
 			if ((typeof(option.section) == "undefined" || option.section == "main") && this._main) {
 				this._main.append(button);
 			} else if (option.section == "bottom" && this._bottom) {
@@ -202,7 +213,9 @@ class WUIMenubar {
 		}
 	}
 
-	#open() {}
+	#open(id) {
+		this._submenu.classList.add("opened");
+	}
 
 	close() {}
 
