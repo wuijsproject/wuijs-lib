@@ -32,50 +32,74 @@ class WUIScrolly {
 		return Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
 	}
 
-	constructor (properties) {
-		Object.keys(WUIScrolly.#defaults).forEach(prop => {
-			this[prop] = typeof(properties) != "undefined" && prop in properties ? properties[prop] : prop in WUIScrolly.#defaults ? WUIScrolly.#defaults[prop] : null;
+	#sections;
+	#behavior;
+	#dataScrollY;
+	#dataDelay;
+	#onStart;
+	#onMove;
+	#onStop;
+	#scrollY;
+	#deltaY;
+	#direction;
+	#sceneIndex;
+	#sceneStep;
+	#sceneProgress;
+	#debug;
+
+	#bodyHeight;
+	#screenHeight;
+	#maxScrollTop;
+	#moving;
+	#truncated;
+	#stop;
+	#lock;
+
+	constructor(properties) {
+		const defaults = structuredClone(WUIScrolly.#defaults);
+		Object.entries(defaults).forEach(([key, defValue]) => {
+			this[key] = key in properties ? properties[key] : defValue;
 		});
 	}
 
 	get sections() {
-		return this._sections;
+		return this.#sections;
 	}
 
 	get behavior() {
-		return this._behavior;
+		return this.#behavior;
 	}
 
 	get dataScrollY() {
-		return this._dataScrollY;
+		return this.#dataScrollY;
 	}
 
 	get dataDelay() {
-		return this._dataDelay;
+		return this.#dataDelay;
 	}
 
 	get onStart() {
-		return this._onStart;
+		return this.#onStart;
 	}
 
 	get onMove() {
-		return this._onMove;
+		return this.#onMove;
 	}
 
 	get onStop() {
-		return this._onStop;
+		return this.#onStop;
 	}
 
 	get scrollY() {
-		return this._scrollY;
+		return this.#scrollY;
 	}
 
 	get deltaY() {
-		return this._deltaY;
+		return this.#deltaY;
 	}
 
 	get direction() {
-		return this._direction;
+		return this.#direction;
 	}
 
 	get sceneWidth() {
@@ -87,66 +111,66 @@ class WUIScrolly {
 	}
 
 	get sceneIndex() {
-		return this._sceneIndex;
+		return this.#sceneIndex;
 	}
 
 	get sceneStep() {
-		return this._sceneStep;
+		return this.#sceneStep;
 	}
 
 	get sceneProgress() {
-		return this._sceneProgress;
+		return this.#sceneProgress;
 	}
 
 	get debug() {
-		return this._debug;
+		return this.#debug;
 	}
 
 	set sections(value) {
 		if (Array.isArray(value)) {
-			this._sections = value;
+			this.#sections = value;
 		}
 	}
 
 	set behavior(value) {
-		if (typeof(value) == "string" && value.match(/^(auto|smooth)$/i)) {
-			this._behavior = value.toLowerCase();
+		if (typeof (value) == "string" && value.match(/^(auto|smooth)$/i)) {
+			this.#behavior = value.toLowerCase();
 		}
 	}
 
 	set dataScrollY(value) {
-		if (typeof(value) == "string") {
-			this._dataScrollY = value;
+		if (typeof (value) == "string") {
+			this.#dataScrollY = value;
 		}
 	}
 
 	set dataDelay(value) {
-		if (typeof(value) == "string") {
-			this._dataDelay = value;
+		if (typeof (value) == "string") {
+			this.#dataDelay = value;
 		}
 	}
 
 	set onStart(value) {
-		if (typeof(value) == "function") {
-			this._onStart = value;
+		if (typeof (value) == "function") {
+			this.#onStart = value;
 		}
 	}
 
 	set onMove(value) {
-		if (typeof(value) == "function") {
-			this._onMove = value;
+		if (typeof (value) == "function") {
+			this.#onMove = value;
 		}
 	}
 
 	set onStop(value) {
-		if (typeof(value) == "function") {
-			this._onStop = value;
+		if (typeof (value) == "function") {
+			this.#onStop = value;
 		}
 	}
 
 	set debug(value) {
-		if (typeof(value) == "boolean") {
-			this._debug = value;
+		if (typeof (value) == "boolean") {
+			this.#debug = value;
 		}
 	}
 
@@ -154,84 +178,84 @@ class WUIScrolly {
 		const debounce = (fn) => {
 			let frame;
 			return (...params) => {
-				if (frame) { 
+				if (frame) {
 					cancelAnimationFrame(frame);
 				}
 				frame = requestAnimationFrame(() => {
 					fn(...params);
 				});
-			} 
+			}
 		};
 		const onScrollCSS = () => {
-			document.documentElement.dataset[this._dataScrollY] = window.scrollY >= 0 ? window.scrollY : 0;
+			document.documentElement.dataset[this.#dataScrollY] = window.scrollY >= 0 ? window.scrollY : 0;
 			document.querySelectorAll(".wui-scrolly-load:not(.loaded)").forEach(element => {
 				const rect = element.getBoundingClientRect();
 				if (rect.top < 0.75 * window.innerHeight) {
-					if (typeof(element.dataset[this._dataDelay]) != "undefined") {
-						const dataDelay = element.dataset[this._dataDelay] || 0;
-						element.style.webkitTransitionDelay = dataDelay+"s";
-						element.style.mozTransitionDelay = dataDelay+"s";
-						element.style.transitionDelay = dataDelay+"s";
+					if (typeof (element.dataset[this.#dataDelay]) != "undefined") {
+						const dataDelay = element.dataset[this.#dataDelay] || 0;
+						element.style.webkitTransitionDelay = dataDelay + "s";
+						element.style.mozTransitionDelay = dataDelay + "s";
+						element.style.transitionDelay = dataDelay + "s";
 					}
 					element.classList.add("loaded");
 				}
 			}, this);
 		}
 		const onScrollJS = (event) => {
-			if (!this._lock) {
-				this._direction = window.scrollY > this._scrollY ? "down" : window.scrollY < this._scrollY ? "up" : this._direction;
-				this._scrollY = window.scrollY >= 0 ? window.scrollY : 0;
-				if (!this._moving) {
-					this._bodyHeight = WUIScrolly.bodyHeight();
-					this._screenHeight = WUIScrolly.screenHeight();
-					this._maxScrollTop = this._bodyHeight - this._screenHeight;		
-					this._deltaY = 0;
-					this._moving = true;
-					this._truncated = false;
-					if (typeof(this._onStart) == "function") {
-						this._onStart(event);
+			if (!this.#lock) {
+				this.#direction = window.scrollY > this.#scrollY ? "down" : window.scrollY < this.#scrollY ? "up" : this.#direction;
+				this.#scrollY = window.scrollY >= 0 ? window.scrollY : 0;
+				if (!this.#moving) {
+					this.#bodyHeight = WUIScrolly.bodyHeight();
+					this.#screenHeight = WUIScrolly.screenHeight();
+					this.#maxScrollTop = this.#bodyHeight - this.#screenHeight;
+					this.#deltaY = 0;
+					this.#moving = true;
+					this.#truncated = false;
+					if (typeof (this.#onStart) == "function") {
+						this.#onStart(event);
 					}
 				}
-				if (!this._truncated && event.deltaY != 0) {
-					this._deltaY += event.deltaY;
-					if (this._sections.length > 0) {
+				if (!this.#truncated && event.deltaY != 0) {
+					this.#deltaY += event.deltaY;
+					if (this.#sections.length > 0) {
 						let y = 0;
 						let i = 0;
 						let s = 0;
 						let p = 0;
 						let h = 0;
-						this._sceneIndex = null;
-						this._sceneStep = 0;
-						this._sceneProgress = 0;
-						for (i = 0; i < this._sections.length; i++) {
-							const section = this._sections[i];
+						this.#sceneIndex = null;
+						this.#sceneStep = 0;
+						this.#sceneProgress = 0;
+						for (i = 0; i < this.#sections.length; i++) {
+							const section = this.#sections[i];
 							let height = section.height;
-							if (typeof(section.height) == "string") {
+							if (typeof (section.height) == "string") {
 								if (section.height.match(/^\d+$/)) {
 									height = parseInt(section.height);
 								} else if (section.height.match(/^\d+%$/)) {
-									height = this._screenHeight * parseInt(section.height.replace("%", ""))/100;
+									height = this.#screenHeight * parseInt(section.height.replace("%", "")) / 100;
 								} else if (section.height == "auto") {
 									height = section._element.clientHeight || section._element.innerHeight;
 								}
-							} else if (typeof(section.height) == "undefined") {
+							} else if (typeof (section.height) == "undefined") {
 								height = section._element.clientHeight || section._element.innerHeight;
 							}
-							if (this._scrollY >= h && this._scrollY < h +height -this._screenHeight) {
+							if (this.#scrollY >= h && this.#scrollY < h + height - this.#screenHeight) {
 								if (!section._element.classList.contains("static")) {
 									section._scene.classList.add("fixed");
 									if (section._paging) {
 										section._paging.classList.add("fixed");
 									}
 								}
-								this._sceneIndex = i;
-								y = this._scrollY -h;
-								p = y/(height -this._screenHeight);
+								this.#sceneIndex = i;
+								y = this.#scrollY - h;
+								p = y / (height - this.#screenHeight);
 								break;
-							} else if (this._scrollY >= h +height -this._screenHeight && this._scrollY < h +height) {
-								if (this._scrollY >= h) {
-									this._sceneIndex = i;
-									this._sceneStep = null;
+							} else if (this.#scrollY >= h + height - this.#screenHeight && this.#scrollY < h + height) {
+								if (this.#scrollY >= h) {
+									this.#sceneIndex = i;
+									this.#sceneStep = null;
 								}
 								if (section._scene.classList.contains("fixed")) {
 									section._scene.classList.remove("fixed");
@@ -241,12 +265,12 @@ class WUIScrolly {
 										section._paging.classList.remove("fixed");
 									}
 								}
-								if (i +1 < this._sections.length && this._sections[i +1]._scene.classList.contains("fixed")) {
-									this._sections[i +1]._scene.classList.remove("fixed");
-									this._sections[i +1]._scene.style.top = "0px";
-									this._sections[i +1]._scene.style.bottom = "auto";
-									if (this._sections[i +1]._paging) {
-										this._sections[i +1]._paging.classList.remove("fixed");
+								if (i + 1 < this.#sections.length && this.#sections[i + 1]._scene.classList.contains("fixed")) {
+									this.#sections[i + 1]._scene.classList.remove("fixed");
+									this.#sections[i + 1]._scene.style.top = "0px";
+									this.#sections[i + 1]._scene.style.bottom = "auto";
+									if (this.#sections[i + 1]._paging) {
+										this.#sections[i + 1]._paging.classList.remove("fixed");
 									}
 								}
 								break;
@@ -254,38 +278,38 @@ class WUIScrolly {
 							h += height;
 						}
 						if (y > 0) {
-							const steps = this._sections[this._sceneIndex].steps;
+							const steps = this.#sections[this.#sceneIndex].steps;
 							for (s = 0; s < steps; s++) {
-								if (p >= s/steps && p < (s +1)/steps) {
-									this._sceneStep = s;
-									this._sceneProgress = steps*p -s;
+								if (p >= s / steps && p < (s + 1) / steps) {
+									this.#sceneStep = s;
+									this.#sceneProgress = steps * p - s;
 									break;
 								}
 							}
-						} else if (this._sceneIndex != null) {
-							this._sceneProgress = this._deltaY > 0 ? 1 : 0;
+						} else if (this.#sceneIndex != null) {
+							this.#sceneProgress = this.#deltaY > 0 ? 1 : 0;
 						}
-						if (this._sceneIndex != null && typeof(this._sections[this._sceneIndex].animation) == "function" && !this._lock) {
-							this._sections[this._sceneIndex].animation(this._sceneStep, this._sceneProgress);
+						if (this.#sceneIndex != null && typeof (this.#sections[this.#sceneIndex].animation) == "function" && !this.#lock) {
+							this.#sections[this.#sceneIndex].animation(this.#sceneStep, this.#sceneProgress);
 						}
-						if (this._debug) {
-							console.log("WUIScrolly - scrolling > scrollY:", this._scrollY, "y:", y, "index:", this._sceneIndex, "step:", this._sceneStep, "progress:", this._sceneProgress);
+						if (this.#debug) {
+							console.log("WUIScrolly - scrolling > scrollY:", this.#scrollY, "y:", y, "index:", this.#sceneIndex, "step:", this.#sceneStep, "progress:", this.#sceneProgress);
 						}
 					}
-					if (typeof(this._onMove) == "function") {
-						this._onMove(this._sceneIndex, this._sceneStep, this._sceneProgress);
+					if (typeof (this.#onMove) == "function") {
+						this.#onMove(this.#sceneIndex, this.#sceneStep, this.#sceneProgress);
 					}
 				}
-				if (this._stop) {
-					clearTimeout(this._stop);
+				if (this.#stop) {
+					clearTimeout(this.#stop);
 				}
-				this._stop = setTimeout(() => {
-					this._moving = false;
-					if (typeof(this._onStop) == "function") {
-						this._onStop(event);
+				this.#stop = setTimeout(() => {
+					this.#moving = false;
+					if (typeof (this.#onStop) == "function") {
+						this.#onStop(event);
 					}
-					if (this._truncated) {
-						this._truncated = false;
+					if (this.#truncated) {
+						this.#truncated = false;
 						event.stopPropagation();
 						event.stopImmediatePropagation();
 						event.preventDefault();
@@ -293,128 +317,128 @@ class WUIScrolly {
 				}, 100);
 			}
 		};
-		this._bodyHeight = WUIScrolly.bodyHeight();
-		this._screenHeight = WUIScrolly.screenHeight();
-		this._maxScrollTop = this._bodyHeight - this._screenHeight;
-		this._scrollY = window.scrollY >= 0 ? window.scrollY : 0;
-		this._deltaY = 0;
-		this._direction = null;
-		this._moving = false;
-		this._truncated = false;
-		this._stop = null;
-		this._lock = false;
-		this._sections.forEach((section, i) => {
-			if (typeof(section.selector) == "string" && section.selector != "") {
+		this.#bodyHeight = WUIScrolly.bodyHeight();
+		this.#screenHeight = WUIScrolly.screenHeight();
+		this.#maxScrollTop = this.#bodyHeight - this.#screenHeight;
+		this.#scrollY = window.scrollY >= 0 ? window.scrollY : 0;
+		this.#deltaY = 0;
+		this.#direction = null;
+		this.#moving = false;
+		this.#truncated = false;
+		this.#stop = null;
+		this.#lock = false;
+		this.#sections.forEach((section, i) => {
+			if (typeof (section.selector) == "string" && section.selector != "") {
 				let height = section.height;
-				this._sections[i]._element = document.querySelector(section.selector);
-				this._sections[i]._scene = this._sections[i]._element.querySelector(".scene");
-				this._sections[i]._paging = this._sections[i]._element.querySelector(".paging");
-				if (typeof(section.height) == "string" && section.height.match(/^\d+$/)) {
+				this.#sections[i]._element = document.querySelector(section.selector);
+				this.#sections[i]._scene = this.#sections[i]._element.querySelector(".scene");
+				this.#sections[i]._paging = this.#sections[i]._element.querySelector(".paging");
+				if (typeof (section.height) == "string" && section.height.match(/^\d+$/)) {
 					height = parseInt(section.height);
 				}
-				this._sections[i]._element.style.height = typeof(height) == "number" ? height+"px" : height;
-				if (this._debug) {
+				this.#sections[i]._element.style.height = typeof (height) == "number" ? height + "px" : height;
+				if (this.#debug) {
 					console.log("WUIScrolly - init section > selector:", section.selector, "height:", height);
 				}
-				if (typeof(section.type) == "string" && section.type == "static") {
-					this._sections[i]._element.classList.add("static");
+				if (typeof (section.type) == "string" && section.type == "static") {
+					this.#sections[i]._element.classList.add("static");
 				}
-				if (this._sections[i]._paging && typeof(section.pages) == "number" && section.pages > 0) {
+				if (this.#sections[i]._paging && typeof (section.pages) == "number" && section.pages > 0) {
 					for (let j = 0; j < section.pages; j++) {
 						const child = document.createElement("div");
-						this._sections[i]._paging.appendChild(child);
+						this.#sections[i]._paging.appendChild(child);
 					}
 				}
 			}
 		}, this);
-		document.documentElement.dataset[this._dataScrollY] = window.scrollY >= 0 ? window.scrollY : 0;
+		document.documentElement.dataset[this.#dataScrollY] = window.scrollY >= 0 ? window.scrollY : 0;
 		["scroll", "touchmove"].forEach(type => {
-			document.addEventListener(type, debounce(onScrollCSS), {passive: true});
-			if (this._sections.length > 0 || (typeof(this._onStart) == "function" || typeof(this._onMove) == "function" || typeof(this._onStop) == "function")) {
-				this._sceneIndex = null;
-				this._sceneStep = null;
-				this._sceneProgress = null;
-				document.addEventListener(type, debounce(onScrollJS), {passive: false});
+			document.addEventListener(type, debounce(onScrollCSS), { passive: true });
+			if (this.#sections.length > 0 || (typeof (this.#onStart) == "function" || typeof (this.#onMove) == "function" || typeof (this.#onStop) == "function")) {
+				this.#sceneIndex = null;
+				this.#sceneStep = null;
+				this.#sceneProgress = null;
+				document.addEventListener(type, debounce(onScrollJS), { passive: false });
 			}
 		}, this);
 	}
 
 	stop() {
-		this._truncated = true;
+		this.#truncated = true;
 	}
 
 	addSection(options) {
-		if (typeof(options) == "object") {
-			this._sections.push(options);
+		if (typeof (options) == "object") {
+			this.#sections.push(options);
 		}
 	}
 
-	goSection(target, done, behavior = this._behavior) {
+	goSection(target, done, behavior = this.#behavior) {
 		const prepareAnimation = (i, sense = "start") => {
-			const section = this._sections[i];
-			if (typeof(section.animation) == "function") {
+			const section = this.#sections[i];
+			if (typeof (section.animation) == "function") {
 				if (sense == "start" || sense == "backward") {
 					section._scene.classList.remove("fixed");
 					section._scene.style.top = "0px";
 					section._scene.style.bottom = "auto";
-					this._sceneStep = 0;
-					this._sceneProgress = 0;
+					this.#sceneStep = 0;
+					this.#sceneProgress = 0;
 				} else if (sense == "forward") {
 					section._scene.classList.remove("fixed");
 					section._scene.style.top = "auto";
 					section._scene.style.bottom = "0px";
-					this._sceneStep = section.steps -1;
-					this._sceneProgress = 1;
+					this.#sceneStep = section.steps - 1;
+					this.#sceneProgress = 1;
 				}
 				if (sense.match(/^(start|forward|backward)$/)) {
-					if (this._debug) {
-						console.log("WUIScrolly - go section prepare animation > index:", i, ", sense:", sense, ", step:", this._sceneStep, "progress:", this._sceneProgress);
+					if (this.#debug) {
+						console.log("WUIScrolly - go section prepare animation > index:", i, ", sense:", sense, ", step:", this.#sceneStep, "progress:", this.#sceneProgress);
 					}
-					section.animation(this._sceneStep, this._sceneProgress);
+					section.animation(this.#sceneStep, this.#sceneProgress);
 				}
 			}
 		}
 		let top = -1;
-		let iniIndex = this._sceneIndex || 0;
-		let endIndex = this._sceneIndex || 0;
+		let iniIndex = this.#sceneIndex || 0;
+		let endIndex = this.#sceneIndex || 0;
 		let scrolling = null;
-		this._bodyHeight = WUIScrolly.bodyHeight();
-		this._screenHeight = WUIScrolly.screenHeight();
-		this._maxScrollTop = this._bodyHeight - this._screenHeight;
-		this._sceneIndex = null;
-		this._sceneStep = null;
-		this._sceneProgress = null;
-		if (!this._lock) {
-			this._lock = true;
-			this._sections.every((section, i) => {
-				if ((typeof(target) == "number" && i == target) || (typeof(target) == "string" && (section.target == target || section.selector == target))) {
-					this._sceneIndex = i;
+		this.#bodyHeight = WUIScrolly.bodyHeight();
+		this.#screenHeight = WUIScrolly.screenHeight();
+		this.#maxScrollTop = this.#bodyHeight - this.#screenHeight;
+		this.#sceneIndex = null;
+		this.#sceneStep = null;
+		this.#sceneProgress = null;
+		if (!this.#lock) {
+			this.#lock = true;
+			this.#sections.every((section, i) => {
+				if ((typeof (target) == "number" && i == target) || (typeof (target) == "string" && (section.target == target || section.selector == target))) {
+					this.#sceneIndex = i;
 					endIndex = i;
 					prepareAnimation(i);
 					return false;
 				} else {
 					let height = section.height;
-					if (typeof(section.height) == "string") {
+					if (typeof (section.height) == "string") {
 						if (section.height.match(/^\d+$/)) {
 							height = parseInt(section.height);
 						} else if (section.height.match(/^\d+%$/)) {
-							height = this._screenHeight * parseInt(section.height.replace("%", ""))/100;
+							height = this.#screenHeight * parseInt(section.height.replace("%", "")) / 100;
 						} else if (section.height == "auto") {
 							height = section._element.clientHeight || section._element.innerHeight;
 						}
-					} else if (typeof(section.height) == "undefined") {
+					} else if (typeof (section.height) == "undefined") {
 						height = section._element.clientHeight || section._element.innerHeight;
 					}
 					top += height;
 					return true;
 				}
 			});
-			if (top > this._maxScrollTop) {
-				top = this._maxScrollTop;
+			if (top > this.#maxScrollTop) {
+				top = this.#maxScrollTop;
 			}
-			this._deltaY = window.scrollY - top;
+			this.#deltaY = window.scrollY - top;
 			if (behavior == "auto") {
-				this._sections[this._sceneIndex]._element.scrollIntoView();
+				this.#sections[this.#sceneIndex]._element.scrollIntoView();
 			} else if (behavior == "smooth") {
 				window.scroll({
 					top: top,
@@ -424,8 +448,8 @@ class WUIScrolly {
 			}
 			scrolling = setInterval(() => {
 				if (top < 0 || top == window.scrollY) {
-					if (this._debug) {
-						console.log("WUIScrolly - go section stop > top:", top, "deltaY:", this._deltaY);
+					if (this.#debug) {
+						console.log("WUIScrolly - go section stop > top:", top, "deltaY:", this.#deltaY);
 					}
 					clearInterval(scrolling);
 					if (iniIndex != endIndex) {
@@ -439,12 +463,12 @@ class WUIScrolly {
 							}
 						}
 					}
-					this._scrollY = top;
-					this._lock = false;
-					if (typeof(this._onMove) == "function") {
-						this._onMove(this._sceneIndex, this._sceneStep, this._sceneProgress);
+					this.#scrollY = top;
+					this.#lock = false;
+					if (typeof (this.#onMove) == "function") {
+						this.#onMove(this.#sceneIndex, this.#sceneStep, this.#sceneProgress);
 					}
-					if (typeof(done) == "function") {
+					if (typeof (done) == "function") {
 						done();
 					}
 				}
@@ -453,11 +477,11 @@ class WUIScrolly {
 	}
 
 	selectPage(sectionIndex, pageIndex) {
-		if (this._sections.length > 0 && this._sections[sectionIndex]._paging) {
-			if (this._sections[sectionIndex]._paging.querySelector(".selected")) {
-				this._sections[sectionIndex]._paging.querySelector(".selected").classList.remove("selected");
+		if (this.#sections.length > 0 && this.#sections[sectionIndex]._paging) {
+			if (this.#sections[sectionIndex]._paging.querySelector(".selected")) {
+				this.#sections[sectionIndex]._paging.querySelector(".selected").classList.remove("selected");
 			}
-			this._sections[sectionIndex]._paging.childNodes.item(pageIndex).classList.add("selected");
+			this.#sections[sectionIndex]._paging.childNodes.item(pageIndex).classList.add("selected");
 		}
 	}
 
@@ -469,11 +493,11 @@ class WUIScrolly {
 		center.style.top = "50%";
 		center.style.left = "50%";
 		["h", "v"].forEach(o => {
-			const axis = document.createElement("div");	
+			const axis = document.createElement("div");
 			axis.style.position = "absolute";
-			axis.style.width = (o == "h" ? 20 : 1)+"px";
-			axis.style.height = (o == "v" ? 20 : 1)+"px";
-			axis.style["margin"+(o == "v" ? "Top" : "Left")] = "-10px";
+			axis.style.width = (o == "h" ? 20 : 1) + "px";
+			axis.style.height = (o == "v" ? 20 : 1) + "px";
+			axis.style["margin" + (o == "v" ? "Top" : "Left")] = "-10px";
 			axis.style.backgroundColor = color;
 			center.appendChild(axis);
 		});
@@ -486,11 +510,11 @@ class WUIScrolly {
 		ruler.style.zIndex = 1000;
 		ruler.style.top = "0px";
 		ruler.style.left = "0px";
-		for (let h = 0; h < this._bodyHeight; h += 100) {
+		for (let h = 0; h < this.#bodyHeight; h += 100) {
 			const line = document.createElement("div");
 			line.style.position = "absolute";
-			line.style.top = h+"px";
-			line.style.borderTop = "1px solid "+color;
+			line.style.top = h + "px";
+			line.style.borderTop = "1px solid " + color;
 			line.style.opacity = 1;
 			line.style.color = color;
 			line.innerHTML = h;

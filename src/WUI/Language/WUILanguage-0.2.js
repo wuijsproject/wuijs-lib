@@ -18,6 +18,16 @@ class WUILanguage {
 		onLoad: null
 	};
 	static #log = [];
+
+	#selector;
+	#directory;
+	#sets;
+	#lang;
+	#mode;
+	#dataKey;
+	#dataOutput;
+	#onLoad;
+
 	#languages = {};
 
 	constructor(properties) {
@@ -28,87 +38,86 @@ class WUILanguage {
 	}
 
 	get selector() {
-		return this._selector;
+		return this.#selector;
 	}
 
 	get directory() {
-		return this._directory;
+		return this.#directory;
 	}
 
 	get sets() {
-		return this._sets;
+		return this.#sets;
 	}
 
 	get lang() {
-		return this._lang;
+		return this.#lang;
 	}
 
 	get mode() {
-		return this._mode;
+		return this.#mode;
 	}
 
 	get dataKey() {
-		return this._dataKey;
+		return this.#dataKey;
 	}
 
 	get dataOutput() {
-		return this._dataOutput;
+		return this.#dataOutput;
 	}
 
 	get onLoad() {
-		return this._onLoad;
+		return this.#onLoad;
 	}
 
 	set selector(value) {
 		if (typeof (value) == "string") {
-			this._selector = value;
-			this._elements = document.querySelectorAll(value);
+			this.#selector = value;
 		}
 	}
 
 	set directory(value) {
 		if (typeof (value) == "string") {
-			this._directory = value;
+			this.#directory = value;
 		}
 	}
 
 	set sets(value) {
 		if (Array.isArray(value)) {
-			this._sets = value;
+			this.#sets = value;
 		}
 	}
 
 	set lang(value) {
 		if (typeof (value) == "string") {
-			this._lang = value;
+			this.#lang = value;
 		}
 	}
 
 	set mode(value) {
 		if (typeof (value) == "string" && value.toString().match(/^(js|json)$/i)) {
-			this._mode = value.toLowerCase();
+			this.#mode = value.toLowerCase();
 		}
 	}
 
 	set dataKey(value) {
 		if (typeof (value) == "string") {
-			this._dataKey = value;
+			this.#dataKey = value;
 		}
 	}
 
 	set dataOutput(value) {
 		if (typeof (value) == "string") {
-			this._dataOutput = value;
+			this.#dataOutput = value;
 		}
 	}
 
 	set onLoad(value) {
 		if (typeof (value) == "function") {
-			this._onLoad = value;
+			this.#onLoad = value;
 		}
 	}
 
-	load(lang = this._lang, sets = this._sets) {
+	load(lang = this.#lang, sets = this.#sets) {
 		const temp = {};
 		const onLoad = (set) => {
 			total++;
@@ -131,33 +140,33 @@ class WUILanguage {
 					});
 				});
 				this.refresh();
-				if (typeof (this._onLoad) == "function") {
-					this._onLoad(lang, this.#languages);
+				if (typeof (this.#onLoad) == "function") {
+					this.#onLoad(lang, this.#languages);
 				}
 			}
 		}
 		let total = 0;
+		this.#lang = lang;
+		this.#sets = sets;
 		if (!(lang in this.#languages)) {
 			this.#languages[lang] = {};
 		}
-		this._lang = lang;
-		this._sets = sets;
 		sets.forEach(set => {
 			const key = set + "-" + lang;
 			if (WUILanguage.#log.indexOf(key) == -1) {
 				const xhr = new XMLHttpRequest();
 				const token = new Date().getTime();
-				const url = `${this._directory}${set}-${lang}.${this._mode}?_=${token}`;
-				if (this._mode == "js") {
+				const url = `${this.#directory}${set}-${lang}.${this.#mode}?_=${token}`;
+				if (this.#mode == "js") {
 					xhr.overrideMimeType("text/plain");
-				} else if (this._mode == "json") {
+				} else if (this.#mode == "json") {
 					xhr.responseType = "json";
 					xhr.overrideMimeType("application/json");
 				}
 				xhr.onload = () => {
 					if (xhr.status == 200 || xhr.status == 0) {
 						const content = xhr.responseText;
-						if (this._mode == "js") {
+						if (this.#mode == "js") {
 							if (content.trim().replace(/[\n\r]+/g, " ").match(/^return\s*\{.+\}\s*;?$/)) {
 								try {
 									let jsObject = {};
@@ -167,7 +176,7 @@ class WUILanguage {
 									console.error(`error stringify-parse JS file '${url}': ${error}`);
 								}
 							}
-						} else if (this._mode == "json") {
+						} else if (this.#mode == "json") {
 							try {
 								temp[set] = JSON.parse(content);
 							} catch (error) {
@@ -176,7 +185,7 @@ class WUILanguage {
 						}
 						onLoad(set);
 					} else {
-						console.error(`error load ${this._mode.toUpperCase()} file '${url}'`);
+						console.error(`error load ${this.#mode.toUpperCase()} file '${url}'`);
 					}
 				}
 				xhr.open("GET", url, true);
@@ -188,11 +197,11 @@ class WUILanguage {
 		});
 	}
 
-	refresh(selector = this._selector, lang = this._lang) {
+	refresh(selector = this.#selector, lang = this.#lang) {
 		document.querySelectorAll(selector).forEach(element => {
 			const tagName = element.tagName;
-			const dataKey = element.dataset[this._dataKey];
-			const dataOutput = element.dataset[this._dataOutput];
+			const dataKey = element.dataset[this.#dataKey];
+			const dataOutput = element.dataset[this.#dataOutput];
 			if (dataKey != "") {
 				const keys = dataKey.split(".");
 				let text = this.#languages[lang];
@@ -205,7 +214,7 @@ class WUILanguage {
 					}
 				}
 				if (typeof (dataOutput) != "undefined") {
-					element.dataset[this._dataOutput] = text;
+					element.dataset[this.#dataOutput] = text;
 				} else if (tagName.match(/^(meta)$/i)) {
 					element.setAttribute("content", text);
 				} else if (tagName.match(/^(h1|h2|h3|h4|h5|h6|div|span|p|i|li|a|legend|label|option|data|button)$/i)) {
