@@ -263,7 +263,6 @@
 		left: var(--wui-menubar-margin);
 		right: var(--wui-menubar-margin);
 		bottom: var(--wui-menubar-margin);
-		bottom: 100px;
 		width: auto;
 		height: 50px;
 		-webkit-transition: var(--transition);
@@ -317,7 +316,6 @@
 		--transition: width 0.3s ease-in-out;
 		top: var(--wui-menubar-margin);
 		left: var(--wui-menubar-margin);
-		left: 100px;
 		right: auto;
 		bottom: var(--wui-menubar-margin);
 		width: 60px;

@@ -294,6 +294,14 @@ class WUIMenubar {
 		this.getButton(id).enabled = enabled;
 	}
 
+	setPhoto(optionId, src = "") {
+		const photo = this.#htmlElement.querySelector(`[data-id='${optionId}'].button > .photo`);
+		if (photo instanceof HTMLElement) {
+			photo.style.backgroundImage = "url(" + src + ")";
+		}
+		this.getButton(id).photoImage = src;
+	}
+
 	setBubble(optionId, number = 0) {
 		const bubble = this.#htmlElement.querySelector(`[data-id='${optionId}'].button > .bubble`);
 		if (bubble instanceof HTMLElement) {
