@@ -1760,6 +1760,85 @@ Advanced object for implementing menu bars.
 | `--wui-menubar-bubble-bgcolor`              | 
 | `--wui-menubar-bubble-textcolor`            | 
 
+#### Implementation
+
+CSS settings:
+
+```css
+:root {
+
+	/* wui-icon */
+
+	--wui-icon-size: 24px;
+	--wui-icon-smallsize: 14px;
+	--wui-icon-bgcolor-out: rgb(from #353a40 r g b / 70%);
+	--wui-icon-bgcolor-over: #353a40;
+
+	/* wui-menubar */
+
+	--wui-menubar-shadowcolor: #959da5;
+	--wui-menubar-margin: 10px;
+	--wui-menubar-borderradius: 10px;
+	--wui-menubar-bar-bordercolor: #f0f0f3;
+	--wui-menubar-bar-bgcolor-top: #f0f0f3;
+	--wui-menubar-bar-bgcolor-bottom: #f0f0f3;
+	--wui-menubar-expander-bgcolor-out: transparent;
+	--wui-menubar-expander-bgcolor-over: rgb(from #d5dce3 r g b / 40%);
+	--wui-menubar-expander-iconsize: 16px;
+	--wui-menubar-expander-iconcolor-out: #444;
+	--wui-menubar-expander-iconcolor-over: #000;
+	--wui-menubar-expander-expandicon-src: none;
+	--wui-menubar-expander-contracticon-src: none;
+	--wui-menubar-submenu-opener-iconsize: 16px;
+	--wui-menubar-submenu-opener-openicon-src: none;
+	--wui-menubar-submenu-bordercolor: #f0f0f3;
+	--wui-menubar-submenu-bgcolor: #fdfdfe;
+	--wui-menubar-button-bgcolor-out: transparent;
+	--wui-menubar-button-bgcolor-over: rgb(from #d5dce3 r g b / 40%);
+	--wui-menubar-button-bgcolor-selected: #1e90ff;
+	--wui-menubar-button-bgcolor-disabled: transparent;
+	--wui-menubar-button-iconsize: 24px;
+	--wui-menubar-button-iconcolor-out: rgb(from #353a40 r g b / 70%);
+	--wui-menubar-button-iconcolor-over: #353a40;
+	--wui-menubar-button-iconcolor-selected: #f6f6fa;
+	--wui-menubar-button-iconcolor-disabled: #d5dce3;
+	--wui-menubar-button-textcolor-out: #2d3a47;
+	--wui-menubar-button-textcolor-over: #1f2937;
+	--wui-menubar-button-textcolor-selected: #f6f6fa;
+	--wui-menubar-button-textcolor-disabled: #d5dce3;
+	--wui-menubar-bubble-bgcolor: #f44343;
+	--wui-menubar-bubble-textcolor: #fff;
+}
+```
+
+CSS code:
+
+```css
+```
+
+HTML head:
+
+```html
+<link type="text/css" rel="stylesheet" href="https://wuijs.dev/Libraries/WUI/Icon/WUIIcon-0.1.css">
+<link type="text/css" rel="stylesheet" href="https://wuijs.dev/Libraries/WUI/Menubar/WUIMenubar-0.2.css">
+<script type="text/javascript" src="https://wuijs.dev/Libraries/WUI/Menubar/WUIMenubar-0.2.js"></script>
+```
+
+HTML code:
+
+```html
+<div class="wui-menubar my-menubar"></div>
+```
+
+JS code:
+
+```js
+// Create object
+const menubar = new WUIMenubar(".wui-menubar.my-menubar");
+
+// Customize object
+```
+
 <a name="WUIList"></a>
 
 ### WUIList
