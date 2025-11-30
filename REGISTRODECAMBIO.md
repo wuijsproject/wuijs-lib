@@ -84,4 +84,5 @@ Características:
 	- Se agregó soporte para valores privados.
 	- Se corrigió error en el evento de arrastre al seleccionar y deseleccionar la caja de verificación usando el evento `mousedown`, habilitándo únicamente cuando el botón izquierdo permanece presionado.
 21. Actualización versión clase WUIButton a 0.2.
+	- Se agregó soporte para valores privados.
 	- Se agregó propiedad `onDblClick`.
