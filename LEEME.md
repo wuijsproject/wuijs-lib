@@ -219,6 +219,19 @@ Código CSS archivo `WUI.css`:
 	--wui-menubar-bar-bordercolor: #f0f0f3;
 	--wui-menubar-bar-bgcolor-top: #f0f0f3;
 	--wui-menubar-bar-bgcolor-bottom: #f0f0f3;
+	--wui-menubar-bar-button-bgcolor-out: transparent;
+	--wui-menubar-bar-button-bgcolor-over: rgb(from #d5dce3 r g b / 40%);
+	--wui-menubar-bar-button-bgcolor-selected: #1e90ff;
+	--wui-menubar-bar-button-bgcolor-disabled: transparent;
+	--wui-menubar-bar-button-iconsize: 24px;
+	--wui-menubar-bar-button-iconcolor-out: rgb(from #353a40 r g b / 70%);
+	--wui-menubar-bar-button-iconcolor-over: #353a40;
+	--wui-menubar-bar-button-iconcolor-selected: #f6f6fa;
+	--wui-menubar-bar-button-iconcolor-disabled: #d5dce3;
+	--wui-menubar-bar-button-textcolor-out: #2d3a47;
+	--wui-menubar-bar-button-textcolor-over: #1f2937;
+	--wui-menubar-bar-button-textcolor-selected: #f6f6fa;
+	--wui-menubar-bar-button-textcolor-disabled: #d5dce3;
 	--wui-menubar-expander-bgcolor-out: transparent;
 	--wui-menubar-expander-bgcolor-over: rgb(from #d5dce3 r g b / 40%);
 	--wui-menubar-expander-iconsize: 16px;
@@ -230,19 +243,19 @@ Código CSS archivo `WUI.css`:
 	--wui-menubar-submenu-opener-openicon-src: none;
 	--wui-menubar-submenu-bordercolor: #f0f0f3;
 	--wui-menubar-submenu-bgcolor: #fdfdfe;
-	--wui-menubar-button-bgcolor-out: transparent;
-	--wui-menubar-button-bgcolor-over: rgb(from #d5dce3 r g b / 40%);
-	--wui-menubar-button-bgcolor-selected: #1e90ff;
-	--wui-menubar-button-bgcolor-disabled: transparent;
-	--wui-menubar-button-iconsize: 24px;
-	--wui-menubar-button-iconcolor-out: rgb(from #353a40 r g b / 70%);
-	--wui-menubar-button-iconcolor-over: #353a40;
-	--wui-menubar-button-iconcolor-selected: #f6f6fa;
-	--wui-menubar-button-iconcolor-disabled: #d5dce3;
-	--wui-menubar-button-textcolor-out: #2d3a47;
-	--wui-menubar-button-textcolor-over: #1f2937;
-	--wui-menubar-button-textcolor-selected: #f6f6fa;
-	--wui-menubar-button-textcolor-disabled: #d5dce3;
+	--wui-menubar-submenu-button-bgcolor-out: transparent;
+	--wui-menubar-submenu-button-bgcolor-over: rgb(from #d5dce3 r g b / 40%);
+	--wui-menubar-submenu-button-bgcolor-selected: #1e90ff;
+	--wui-menubar-submenu-button-bgcolor-disabled: transparent;
+	--wui-menubar-submenu-button-iconsize: 24px;
+	--wui-menubar-submenu-button-iconcolor-out: rgb(from #353a40 r g b / 70%);
+	--wui-menubar-submenu-button-iconcolor-over: #353a40;
+	--wui-menubar-submenu-button-iconcolor-selected: #f6f6fa;
+	--wui-menubar-submenu-button-iconcolor-disabled: #d5dce3;
+	--wui-menubar-submenu-button-textcolor-out: #2d3a47;
+	--wui-menubar-submenu-button-textcolor-over: #1f2937;
+	--wui-menubar-submenu-button-textcolor-selected: #f6f6fa;
+	--wui-menubar-submenu-button-textcolor-disabled: #d5dce3;
 	--wui-menubar-bubble-bgcolor: #f44343;
 	--wui-menubar-bubble-textcolor: #fff;
 
@@ -1726,40 +1739,53 @@ Objeto avanzado para implementación de barras de menú.
 
 #### Variables CSS
 
-| Variable                                    | Descripción |
-| ------------------------------------------- | ----------- |
-| `--wui-menubar-shadowcolor`                 | 
-| `--wui-menubar-margin`                      | 
-| `--wui-menubar-borderradius`                | 
-| `--wui-menubar-bar-bordercolor`             | 
-| `--wui-menubar-bar-bgcolor-top`             | 
-| `--wui-menubar-bar-bgcolor-bottom`          | 
-| `--wui-menubar-expander-bgcolor-out`        | 
-| `--wui-menubar-expander-bgcolor-over`       | 
-| `--wui-menubar-expander-iconsize`           | 
-| `--wui-menubar-expander-iconcolor-out`      | 
-| `--wui-menubar-expander-iconcolor-over`     | 
-| `--wui-menubar-expander-expandicon-src`     | 
-| `--wui-menubar-expander-contracticon-src`   | 
-| `--wui-menubar-submenu-opener-iconsize`     | 
-| `--wui-menubar-submenu-opener-openicon-src` | 
-| `--wui-menubar-submenu-bordercolor`         | 
-| `--wui-menubar-submenu-bgcolor`             | 
-| `--wui-menubar-button-bgcolor-out`          | 
-| `--wui-menubar-button-bgcolor-over`         | 
-| `--wui-menubar-button-bgcolor-selected`     | 
-| `--wui-menubar-button-bgcolor-disabled`     | 
-| `--wui-menubar-button-iconsize`             | 
-| `--wui-menubar-button-iconcolor-out`        | 
-| `--wui-menubar-button-iconcolor-over`       | 
-| `--wui-menubar-button-iconcolor-selected`   | 
-| `--wui-menubar-button-iconcolor-disabled`   | 
-| `--wui-menubar-button-textcolor-out`        | 
-| `--wui-menubar-button-textcolor-over`       | 
-| `--wui-menubar-button-textcolor-selected`   | 
-| `--wui-menubar-button-textcolor-disabled`   | 
-| `--wui-menubar-bubble-bgcolor`              | 
-| `--wui-menubar-bubble-textcolor`            | 
+| Variable                                          | Descripción |
+| ------------------------------------------------- | ----------- |
+| `--wui-menubar-shadowcolor`                       | 
+| `--wui-menubar-margin`                            | 
+| `--wui-menubar-borderradius`                      | 
+| `--wui-menubar-bar-bordercolor`                   | 
+| `--wui-menubar-bar-bgcolor-top`                   | 
+| `--wui-menubar-bar-bgcolor-bottom`                | 
+| `--wui-menubar-bar-button-bgcolor-out`            | 
+| `--wui-menubar-bar-button-bgcolor-over`           | 
+| `--wui-menubar-bar-button-bgcolor-selected`       | 
+| `--wui-menubar-bar-button-bgcolor-disabled`       | 
+| `--wui-menubar-bar-button-iconsize`               | 
+| `--wui-menubar-bar-button-iconcolor-out`          | 
+| `--wui-menubar-bar-button-iconcolor-over`         | 
+| `--wui-menubar-bar-button-iconcolor-selected`     | 
+| `--wui-menubar-bar-button-iconcolor-disabled`     | 
+| `--wui-menubar-bar-button-textcolor-out`          | 
+| `--wui-menubar-bar-button-textcolor-over`         | 
+| `--wui-menubar-bar-button-textcolor-selected`     | 
+| `--wui-menubar-bar-button-textcolor-disabled`     | 
+| `--wui-menubar-expander-bgcolor-out`              | 
+| `--wui-menubar-expander-bgcolor-over`             | 
+| `--wui-menubar-expander-iconsize`                 | 
+| `--wui-menubar-expander-iconcolor-out`            | 
+| `--wui-menubar-expander-iconcolor-over`           | 
+| `--wui-menubar-expander-expandicon-src`           | 
+| `--wui-menubar-expander-contracticon-src`         | 
+| `--wui-menubar-submenu-opener-iconsize`           | 
+| `--wui-menubar-submenu-opener-openicon-src`       | 
+| `--wui-menubar-submenu-bordercolor`               | 
+| `--wui-menubar-submenu-bgcolor`                   | 
+| `--wui-menubar-submenu-button-bgcolor-out`        | 
+| `--wui-menubar-submenu-button-bgcolor-over`       | 
+| `--wui-menubar-submenu-button-bgcolor-selected`   | 
+| `--wui-menubar-submenu-button-bgcolor-disabled`   | 
+| `--wui-menubar-submenu-button-iconsize`           | 
+| `--wui-menubar-submenu-button-iconcolor-out`      | 
+| `--wui-menubar-submenu-button-iconcolor-over`     | 
+| `--wui-menubar-submenu-button-iconcolor-selected` | 
+| `--wui-menubar-submenu-button-iconcolor-disabled` | 
+| `--wui-menubar-submenu-button-textcolor-out`      | 
+| `--wui-menubar-submenu-button-textcolor-over`     | 
+| `--wui-menubar-submenu-button-textcolor-selected` | 
+| `--wui-menubar-submenu-button-textcolor-disabled` | 
+| `--wui-menubar-bubble-bgcolor`                    | 
+| `--wui-menubar-bubble-textcolor`                  | 
 
 #### Implementación
 
@@ -1794,19 +1820,19 @@ Configuración CSS:
 	--wui-menubar-submenu-opener-openicon-src: none;
 	--wui-menubar-submenu-bordercolor: #f0f0f3;
 	--wui-menubar-submenu-bgcolor: #fdfdfe;
-	--wui-menubar-button-bgcolor-out: transparent;
-	--wui-menubar-button-bgcolor-over: rgb(from #d5dce3 r g b / 40%);
-	--wui-menubar-button-bgcolor-selected: #1e90ff;
-	--wui-menubar-button-bgcolor-disabled: transparent;
-	--wui-menubar-button-iconsize: 24px;
-	--wui-menubar-button-iconcolor-out: rgb(from #353a40 r g b / 70%);
-	--wui-menubar-button-iconcolor-over: #353a40;
-	--wui-menubar-button-iconcolor-selected: #f6f6fa;
-	--wui-menubar-button-iconcolor-disabled: #d5dce3;
-	--wui-menubar-button-textcolor-out: #2d3a47;
-	--wui-menubar-button-textcolor-over: #1f2937;
-	--wui-menubar-button-textcolor-selected: #f6f6fa;
-	--wui-menubar-button-textcolor-disabled: #d5dce3;
+	--wui-menubar-bar-button-bgcolor-out: transparent;
+	--wui-menubar-bar-button-bgcolor-over: rgb(from #d5dce3 r g b / 40%);
+	--wui-menubar-bar-button-bgcolor-selected: #1e90ff;
+	--wui-menubar-bar-button-bgcolor-disabled: transparent;
+	--wui-menubar-bar-button-iconsize: 24px;
+	--wui-menubar-bar-button-iconcolor-out: rgb(from #353a40 r g b / 70%);
+	--wui-menubar-bar-button-iconcolor-over: #353a40;
+	--wui-menubar-bar-button-iconcolor-selected: #f6f6fa;
+	--wui-menubar-bar-button-iconcolor-disabled: #d5dce3;
+	--wui-menubar-bar-button-textcolor-out: #2d3a47;
+	--wui-menubar-bar-button-textcolor-over: #1f2937;
+	--wui-menubar-bar-button-textcolor-selected: #f6f6fa;
+	--wui-menubar-bar-button-textcolor-disabled: #d5dce3;
 	--wui-menubar-bubble-bgcolor: #f44343;
 	--wui-menubar-bubble-textcolor: #fff;
 }
