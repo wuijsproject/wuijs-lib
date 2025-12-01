@@ -167,27 +167,6 @@ CSS code in the `WUI.css` file:
 	--wui-modal-smallpage-box-width: 340px;
 	--wui-modal-smallpage-box-height: 280px;
 
-	/* wui-modal select */
-
-	--wui-modal-select-box-width: 280px;
-	--wui-modal-select-box-bgcolor: #fdfdfe;
-	--wui-modal-select-option-bordercolor-out: #f0f0f3;
-	--wui-modal-select-option-bordercolor-over: #f0f0f3;
-	--wui-modal-select-option-bgcolor-out: transparent;
-	--wui-modal-select-option-bgcolor-over: #f6f6fa;
-	--wui-modal-select-option-iconcolor-out: #1e90ff;
-	--wui-modal-select-option-iconcolor-over: #1e90ff;
-	--wui-modal-select-option-iconcolor-disabled: #d5dce3;
-	--wui-modal-select-option-textcolor-out: #2d3a47;
-	--wui-modal-select-option-textcolor-over: #1e90ff;
-	--wui-modal-select-option-textcolor-selected: #1e90ff;
-	--wui-modal-select-option-textcolor-disabled: #d5dce3;
-	--wui-modal-select-option-checker-bordercolor-out: #1e90ff;
-	--wui-modal-select-option-checker-bordercolor-selected: #1e90ff;
-	--wui-modal-select-option-checker-bgcolor-out: transparent;
-	--wui-modal-select-option-checker-bgcolor-selected: #1e90ff;
-	--wui-modal-select-button-bordercolor: #f0f0f3;
-
 	/* wui-slider */
 
 	--wui-slider-dots-bgcolor: transparent;
@@ -1867,7 +1846,11 @@ JS code:
 // Create object
 const menubar = new WUIMenubar(".wui-menubar.my-menubar");
 
-// Customize object
+// Add buttons
+// ...
+
+// Initialize object
+scrolly.init();
 ```
 
 <a name="WUIList"></a>
