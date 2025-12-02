@@ -128,17 +128,8 @@ class WUIMenubar {
 		return this.#htmlElement;
 	}
 
-	getButton(id, buttons = this.#buttons) {
-		for (const options of buttons) {
-			if (options.id == id) {
-				return options;
-			}
-			if (options.buttons && options.buttons.length > 0) {
-				const found = this.getButton(id, options.buttons);
-				if (found) return found;
-			}
-		}
-		return null;
+	getButton(id) {
+		return (this.#buttons.find(options => options.id == id) || null);
 	}
 
 	#getSRCIcon(name) {
@@ -148,6 +139,14 @@ class WUIMenubar {
 	}
 
 	init() {
+		const loadButtons = (buttons) => {
+			for (const options of buttons) {
+				this.#buttons.push(options);
+				if (Array.isArray(options.buttons) && options.buttons.length > 0) {
+					loadButtons(options.buttons);
+				}
+			}
+		}
 		this.#htmlElements.bar = document.createElement("div");
 		this.#htmlElements.barHeader = document.createElement("div");
 		this.#htmlElements.barTop = document.createElement("div");
@@ -184,16 +183,16 @@ class WUIMenubar {
 			this.#htmlElements.barHeader.append(this.#htmlElements.expander);
 		}
 		this.#buttons = [];
+		loadButtons(this.#properties.topButtons);
+		loadButtons(this.#properties.mainButtons);
+		loadButtons(this.#properties.bottomButtons);
 		this.#properties.topButtons.forEach(options => {
-			this.#buttons.push(options);
 			this.#htmlElements.barTop.append(this.#addButton(options));
 		});
 		this.#properties.mainButtons.forEach(options => {
-			this.#buttons.push(options);
 			this.#htmlElements.barMain.append(this.#addButton(options));
 		});
 		this.#properties.bottomButtons.forEach(options => {
-			this.#buttons.push(options);
 			this.#htmlElements.barBottom.append(this.#addButton(options));
 		});
 	}
@@ -289,7 +288,10 @@ class WUIMenubar {
 				} else if (typeof (options.selectable) == "undefined" || options.selectable) {
 					this.#buttons.filter(opt => opt.id != id).forEach(opt => {
 						const btn = this.#htmlElement.querySelector(`[data-id='${opt.id}'].button`);
-						btn.classList.remove("selected");
+						if (btn instanceof HTMLElement && !btn.classList.contains("disabled")) {
+							btn.classList.remove("selected");
+							this.getButton(opt.id).selected = false;
+						}
 					});
 					button.classList.add("selected");
 					this.#open(options.id);
