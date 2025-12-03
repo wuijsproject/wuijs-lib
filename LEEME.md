@@ -1700,6 +1700,7 @@ Objeto avanzado para implementación de barras de menú.
 | label        | `string`   | `""`                 | Texto de la etiqueta asociada al botón de menú. |
 | selected     | `boolean`  | `false`              | Define si el botón se encuentra seleccionado. |
 | selectable   | `boolean`  | `true`               | Define si el botón es seleccionable. |
+| tooltipable  | `boolean`  | `true`               | Define si el botón muestra un tooltip cuando está contraido y el ancho de la pantalla es mayor o igual a `768px`. |
 | radio        | `boolean`  | `true`               | Define si el botón se comporta como un botón de radio. |
 | enabled      | `boolean`  | `true`               | Define si el botón está habilitado. |
 | onClick      | `function` | `null`               | Función que se llama cuando el botón es presionado. Si está definida, esta opción tiene prioridad sobre la propiedad `onClick`. |

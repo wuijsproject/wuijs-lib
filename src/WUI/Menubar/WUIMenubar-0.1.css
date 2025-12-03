@@ -241,6 +241,7 @@
 .wui-menubar > :is(.bar, .submenu) > :is(.top, .main, .bottom) > .button > .photo {
 	display: block;
 	position: absolute;
+	left: 6px;
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
 	border-radius: 50%;
@@ -422,6 +423,13 @@
 		transition: var(--button-transition);
 	}
 
+	.wui-menubar > :is(.bar, .submenu) > :is(.top, .main, .bottom) > .button > .photo {
+		--photo-transition: left 0.3s ease-in-out;
+		-webkit-transition: var(--photo-transition);
+		-moz-transition: var(--photo-transition);
+		transition: var(--photo-transition);
+	}
+
 	.wui-menubar > :is(.bar, .submenu) > :is(.top, .main, .bottom) > .button > .text {
 		--text-transition: width 0.3s ease-in-out, padding-left 0.3s ease-in-out, opacity 0.3s ease-in-out;
 		display: block;
@@ -455,11 +463,15 @@
 	}
 
 	.wui-menubar.expanded > :is(.bar, .submenu) > :is(.top, .main, .bottom) > .button {
-		width: 174px;
+		width: 180px;
+	}
+
+	.wui-menubar.expanded > :is(.bar, .submenu) > :is(.top, .main, .bottom) > .button > .photo {
+		left: 8px;
 	}
 
 	.wui-menubar.expanded > :is(.bar, .submenu) > :is(.top, .main, .bottom) > .button > .text {
-		width: 130px;
+		width: 140px;
 		padding-left: 12px;
 		-khtml-opacity: 1;
 		-moz-opacity: 1;

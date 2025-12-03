@@ -1700,6 +1700,7 @@ Advanced object for implementing menu bars.
 | label        | `string`   | `""`          | Label text associated with the menu button. |
 | selected     | `boolean`  | `false`       | Defines whether the button is selected. |
 | selectable   | `boolean`  | `true`        | Defines whether the button is selectable. |
+| tooltipable  | `boolean`  | `true`        | Defines whether the button displays a tooltip when collapsed and the screen width is greater than or equal to `768px`. |
 | radio        | `boolean`  | `true`        | Defines whether the button behaves like a radio button. |
 | enabled      | `boolean`  | `true`        | Defines whether the button is enabled. |
 | onClick      | `function` | `null`        | Function called when the button is clicked. If defined, this option takes precedence over the `onClick` property. |

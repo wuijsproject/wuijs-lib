@@ -139,11 +139,12 @@ class WUIMenubar {
 	}
 
 	init() {
-		const loadButtons = (buttons) => {
+		const loadButtons = (buttons, parendId = "") => {
 			for (const options of buttons) {
+				options.parentId = parendId;
 				this.#buttons.push(options);
 				if (Array.isArray(options.buttons) && options.buttons.length > 0) {
-					loadButtons(options.buttons);
+					loadButtons(options.buttons, options.id);
 				}
 			}
 		}
@@ -214,7 +215,7 @@ class WUIMenubar {
 		}
 		text.innerHTML = options.label || "";
 		text.className = "text";
-		tooltip.className = "tooltip" + (!options.label ? " hidden" : "");
+		tooltip.className = "tooltip" + (!options.label || (typeof (options.tooltipable) == "boolean" && !options.tooltipable) ? " hidden" : "");
 		tooltip.innerHTML = options.label || "";
 		bubble.className = "bubble hidden";
 		bubble.innerText = 0;
