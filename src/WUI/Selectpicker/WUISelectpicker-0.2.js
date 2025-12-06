@@ -69,9 +69,9 @@ class WUISelectpicker {
 						active.open();
 					}
 				} else {
-					const focusOption = active._options.querySelector(".option.focus");
+					const focusOption = active.getOptions().querySelector(".option.focus");
 					if (keys.up || keys.down) {
-						const options = Array.from(active._options.querySelectorAll(".option")).filter(option => !option.classList.contains("hidden"));
+						const options = Array.from(active.getOptions().querySelectorAll(".option")).filter(option => !option.classList.contains("hidden"));
 						const focusIndex = options.indexOf(focusOption);
 						const nextIndex =
 							options.length == 0 ? null :
@@ -85,7 +85,7 @@ class WUISelectpicker {
 							focusOption.classList.remove("focus");
 						}
 						if (nextOption != null) {
-							active._options.scrollTop = nextOption.offsetTop - parseInt(active._options.clientHeight / 2);
+							active.getOptions().scrollTop = nextOption.offsetTop - parseInt(active.getOptions().clientHeight / 2);
 							nextOption.classList.add("focus");
 						}
 					} else if (keys.intro) {
@@ -293,6 +293,10 @@ class WUISelectpicker {
 
 	getBox() {
 		return this.#htmlElements.box;
+	}
+
+	getOptions() {
+		return this.#htmlElements.options;
 	}
 
 	getFocusableElements() {
