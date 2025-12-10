@@ -1112,6 +1112,9 @@ html,
 body {
 	height: 100%; /* necessary */
 }
+body {
+	font-family: Arial, Helvetica, Verdana, sans-serif;
+}
 .wui-scrolly {
 	overflow-x: hidden;
 	margin: 0;
@@ -1612,6 +1615,9 @@ Another alternative way is through extended methods of the `HTMLElement` class t
 CSS code:
 
 ```CSS
+body {
+	font-family: Arial, Helvetica, Verdana, sans-serif;
+}
 .my-link {
 	margin: 0 10px;
 	text-decoration: none;
@@ -1795,17 +1801,6 @@ CSS settings:
 	--wui-menubar-bar-bordercolor: #f0f0f3;
 	--wui-menubar-bar-bgcolor-top: #f0f0f3;
 	--wui-menubar-bar-bgcolor-bottom: #f0f0f3;
-	--wui-menubar-expander-bgcolor-out: transparent;
-	--wui-menubar-expander-bgcolor-over: rgb(from #d5dce3 r g b / 40%);
-	--wui-menubar-expander-iconsize: 16px;
-	--wui-menubar-expander-iconcolor-out: #444;
-	--wui-menubar-expander-iconcolor-over: #000;
-	--wui-menubar-expander-expandicon-src: none;
-	--wui-menubar-expander-contracticon-src: none;
-	--wui-menubar-submenu-opener-iconsize: 16px;
-	--wui-menubar-submenu-opener-openicon-src: none;
-	--wui-menubar-submenu-bordercolor: #f0f0f3;
-	--wui-menubar-submenu-bgcolor: #fdfdfe;
 	--wui-menubar-bar-button-bgcolor-out: transparent;
 	--wui-menubar-bar-button-bgcolor-over: rgb(from #d5dce3 r g b / 40%);
 	--wui-menubar-bar-button-bgcolor-selected: #1e90ff;
@@ -1819,6 +1814,32 @@ CSS settings:
 	--wui-menubar-bar-button-textcolor-over: #1f2937;
 	--wui-menubar-bar-button-textcolor-selected: #f6f6fa;
 	--wui-menubar-bar-button-textcolor-disabled: #d5dce3;
+	--wui-menubar-expander-bgcolor-out: transparent;
+	--wui-menubar-expander-bgcolor-over: rgb(from #d5dce3 r g b / 40%);
+	--wui-menubar-expander-iconsize: 16px;
+	--wui-menubar-expander-iconcolor-out: #444;
+	--wui-menubar-expander-iconcolor-over: #000;
+	--wui-menubar-expander-expandicon-src: none;
+	--wui-menubar-expander-contracticon-src: none;
+	--wui-menubar-submenu-opener-iconsize: 16px;
+	--wui-menubar-submenu-opener-openicon-src: none;
+	--wui-menubar-submenu-bordercolor: #f0f0f3;
+	--wui-menubar-submenu-bgcolor: #fdfdfe;
+	--wui-menubar-submenu-button-bgcolor-out: transparent;
+	--wui-menubar-submenu-button-bgcolor-over: rgb(from #d5dce3 r g b / 40%);
+	--wui-menubar-submenu-button-bgcolor-selected: #1e90ff;
+	--wui-menubar-submenu-button-bgcolor-disabled: transparent;
+	--wui-menubar-submenu-button-iconsize: 24px;
+	--wui-menubar-submenu-button-iconcolor-out: rgb(from #353a40 r g b / 70%);
+	--wui-menubar-submenu-button-iconcolor-over: #353a40;
+	--wui-menubar-submenu-button-iconcolor-selected: #f6f6fa;
+	--wui-menubar-submenu-button-iconcolor-disabled: #d5dce3;
+	--wui-menubar-submenu-button-textcolor-out: #2d3a47;
+	--wui-menubar-submenu-button-textcolor-over: #1f2937;
+	--wui-menubar-submenu-button-textcolor-selected: #f6f6fa;
+	--wui-menubar-submenu-button-textcolor-disabled: #d5dce3;
+	--wui-menubar-tooltip-bgcolor: #000;
+	--wui-menubar-tooltip-textcolor: #fff;
 	--wui-menubar-bubble-bgcolor: #f44343;
 	--wui-menubar-bubble-textcolor: #fff;
 }
@@ -1827,6 +1848,14 @@ CSS settings:
 CSS code:
 
 ```css
+body {
+	font-family: Arial, Helvetica, Verdana, sans-serif;
+}
+.my-output {
+	position: absolute;
+	top: 10px;
+	left: 440px;
+}
 ```
 
 HTML head:
@@ -1841,13 +1870,15 @@ HTML code:
 
 ```html
 <div class="wui-menubar my-menubar"></div>
+<div class="my-output"></div>
 ```
 
 JS code:
 
 ```js
 // Create object
-const menubar = new WUIMenubar(".wui-menubar.my-menubar");
+const output = document.body.querySelector(".my-output");
+const menubar = new WUIMenubar({selector: ".wui-menubar.my-menubar"});
 
 // Add buttons
 menubar.topButtons = [{
@@ -1867,6 +1898,27 @@ menubar.mainButtons = [{
 	iconClass: "wui-icon gear-fill",
 	label: "Settings",
 	selectable: false
+}, {
+	id: "tools",
+	iconClass: "wui-icon pencil-fill",
+	label: "Tools",
+	buttons: [{
+		id: "users",
+		iconClass: "wui-icon palette-fill",
+		label: "Colors"
+	}, {
+		id: "zoomin",
+		iconClass: "wui-icon zoomin-line",
+		label: "Zoom in"
+	}, {
+		id: "zoomout",
+		iconClass: "wui-icon zoomout-line",
+		label: "Zoom out"
+	}, {
+		id: "images",
+		iconClass: "wui-icon image-fill",
+		label: "Images"
+	}]
 }, {
 	id: "account",
 	iconClass: "wui-icon person-circle-fill",
@@ -1888,6 +1940,7 @@ menubar.bottomButtons = [{
 
 // Initialize object
 menubar.onClick = (id) => {
+	output.textContent = `Click button id: "${id}"`;
 };
 menubar.init();
 ```
@@ -2051,6 +2104,9 @@ CSS settings:
 CSS code:
 
 ```css
+body {
+	font-family: Arial, Helvetica, Verdana, sans-serif;
+}
 header {
 	max-width: 600px;
 	text-align: right;
@@ -2380,6 +2436,9 @@ CSS settings:
 CSS code:
 
 ```css
+body {
+	font-family: Arial, Helvetica, Verdana, sans-serif;
+}
 header {
 	max-width: 600px;
 	text-align: right;
@@ -2713,6 +2772,9 @@ CSS settings:
 CSS code:
 
 ```css
+body {
+	font-family: Arial, Helvetica, Verdana, sans-serif;
+}
 .my-button {
 	margin: 20px;
 }
