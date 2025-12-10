@@ -1850,9 +1850,45 @@ JS code:
 const menubar = new WUIMenubar(".wui-menubar.my-menubar");
 
 // Agregar botones
-// ...
+menubar.topButtons = [{
+	id: "logo",
+	iconImage: "https://wuijs.dev/wuijs-color.svg",
+	label: "WUI/JS",
+	tooltipable: false,
+	selectable: false
+}];
+menubar.mainButtons = [{
+	id: "home",
+	iconClass: "wui-icon home-fill",
+	label: "Home",
+	selected: true
+}, {
+	id: "settings",
+	iconClass: "wui-icon gear-fill",
+	label: "Settings",
+	selectable: false
+}, {
+	id: "account",
+	iconClass: "wui-icon person-circle-fill",
+	photoImage: "",
+	label: "Account",
+	selectable: false
+}, {
+	id: "notifications",
+	iconClass: "wui-icon bell-fill",
+	label: "Notifications",
+	radio: false
+}];
+menubar.bottomButtons = [{
+	id: "logout",
+	iconClass: "wui-icon logout-line",
+	label: "Logout",
+	selectable: false
+}];
 
 // Inicializar objeto
+menubar.onClick = (id) => {
+};
 menubar.init();
 ```
 
