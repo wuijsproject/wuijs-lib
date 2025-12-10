@@ -1673,8 +1673,8 @@ Version: `0.2`
 
 Fuentes:
 
-*   [WUILoader-0.2.css](https://github.com/sbelmar/wuijs-lib/blob/main/Libraries/WUI/Loader/WUILoader-0.2.css)
-*   [WUILoader-0.2.js](https://github.com/sbelmar/wuijs-lib/blob/main/Libraries/WUI/Loader/WUILoader-0.2.js)
+*   [WUILoader-0.2.css](https://github.com/sbelmar/wuijs-lib/blob/main/src/WUI/Loader/WUILoader-0.2.css)
+*   [WUILoader-0.2.js](https://github.com/sbelmar/wuijs-lib/blob/main/src/WUI/Loader/WUILoader-0.2.js)
 
 Objeto para animación de carga.
 
