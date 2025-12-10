@@ -7,7 +7,7 @@
 
 Library version: `0.2.0` ([Change Log](./CHANGELOG.md))
 
-Document version: `0.2.0.20251130.1`
+Document version: `0.2.0.20251210.1`
 
 Licence: `Apache License 2.0`
 
@@ -26,7 +26,7 @@ Author: `Sergio E. Belmar V. <sbelmar@wuijs.dev>`
 	*   [WUIScrolly](#WUIScrolly)
 	*   [WUIIcon](#WUIIcon)
 	*   [WUIFade](#WUIFade)
-	*   WUILoader
+	*   [WUILoader](#WUILoader)
 	*   WUITooltip
 	*   WUIModal
 	*   WUISlider
@@ -62,25 +62,25 @@ WUI, an acronym for *Web User Interface JavaScript library*, is an open source J
 | [WUILanguage](#WUILanguage)   | `0.2`   | Language manager for web interfaces. Allows you to load language files in JS or JSON format and dynamically update the content of HTML elements based on the language. |
 | [WUIScrolly](#WUIScrolly)     | `0.2`   | Tool for animating HTML elements using the "onscroll" event of the HTML page body. |
 | [WUIIcon](#WUIIcon)           | `0.1`   | Set of pre-designed icons loaded via CSS, for use in interfaces. |
-| [WUIFade](#WUIFade)           | `0.1`   | Tool for fading out and fading in HTML elements with opacity. |
-| WUILoader                     | `0.2`   | Simple object for loading animation. |
-| WUITooltip                    | `0.1`   | Simple object for hover text. |
-| WUIModal                      | `0.2`   | Advanced object for implementing dialog boxes (type `message`) and pop-up windows (type `page`). |
-| WUISlider                     | `0.2`   | Advanced object for implementing mouse-controlled and/or event-controlled blinds. |
-| WUIPaging                     | `0.1`   | Advanced object for implementing paginated views. |
-| WUITabs                       | `0.1`   | Advanced object for implementing views accessible by tab selection. |
-| [WUIMenubar](#WUIMenubar)     | `0.1`   | Advanced object for implementing menu bars. |
-| [WUIList](#WUIList)           | `0.2`   | Advanced object for implementing data lists and buttons for each row optionally. |
-| [WUITable](#WUITable)         | `0.2`   | Advanced object for implementing data tables. Unlike the `WUIList` object, the `WUITable` object includes a column header. |
-| WUIForm                       | `0.2`   | Advanced object for implementing data forms. This object allows the implementation of HTML data input elements such as `<input>`, `<select>`, and `<textarea>`, and WUI library objects such as `WUISelectpicker`, `WUIDatepicker`, `WUITimepicker`, `WUIColorpicker`, `WUICheckbox`, `WUIIntensity`, and `WUIButton`. |
+| [WUIFade](#WUIFade)           | `0.1`   | Tool for fading out and fading control in HTML elements with opacity. |
+| [WUILoader](#WUILoader)       | `0.2`   | Object for loading animation. |
+| WUITooltip                    | `0.1`   | Object for hover text. |
+| WUIModal                      | `0.2`   | Object for implementing dialog boxes (type `message`) and pop-up windows (type `page`). |
+| WUISlider                     | `0.2`   | Object for implementing mouse-controlled and/or event-controlled blinds. |
+| WUIPaging                     | `0.1`   | Object for implementing paginated views. |
+| WUITabs                       | `0.1`   | Object for implementing views accessible by tab selection. |
+| [WUIMenubar](#WUIMenubar)     | `0.1`   | Object for implementing menu bars. |
+| [WUIList](#WUIList)           | `0.2`   | Object for implementing data lists and buttons for each row optionally. |
+| [WUITable](#WUITable)         | `0.2`   | Object for implementing data tables. Unlike the `WUIList` object, the `WUITable` object includes a column header. |
+| WUIForm                       | `0.2`   | Object for implementing data forms. This object allows the implementation of HTML data input elements such as `<input>`, `<select>`, and `<textarea>`, and WUI library objects such as `WUISelectpicker`, `WUIDatepicker`, `WUITimepicker`, `WUIColorpicker`, `WUICheckbox`, `WUIIntensity`, and `WUIButton`. |
 | WUIFormat                     | `0.2`   | Tool for managing and validating `string`, `number` and `Date` data formats. |
-| WUISelectpicker               | `0.2`   | Advanced object for implementing multiple-select or exclusive data entries based on lists based on HTML `<select>` elements. |
-| WUIDatepicker                 | `0.2`   | Advanced object for implementing date type data input. |
-| WUITimepicker                 | `0.2`   | Advanced object for implementing time type data inputs. |
-| WUIColorpicker                | `0.2`   | Advanced object for implementing color picker type data inputs. |
-| WUICheckbox                   | `0.2`   | Advanced object for implementing checkbox type data inputs. |
-| WUIIntensity                  | `0.1`   | Advanced object for implementing 4-level intensity selector type data inputs: none, low, half, and high. |
-| [WUIButton](#WUIButton)       | `0.2`   | Advanced object for button implementation. |
+| WUISelectpicker               | `0.2`   | Object for implementing multiple-select or exclusive data entries based on lists based on HTML `<select>` elements. |
+| WUIDatepicker                 | `0.2`   | Object for implementing date type data input. |
+| WUITimepicker                 | `0.2`   | Object for implementing time type data inputs. |
+| WUIColorpicker                | `0.2`   | Object for implementing color picker type data inputs. |
+| WUICheckbox                   | `0.2`   | Object for implementing checkbox type data inputs. |
+| WUIIntensity                  | `0.1`   | Object for implementing 4-level intensity selector type data inputs: none, low, half, and high. |
+| [WUIButton](#WUIButton)       | `0.2`   | Object for button implementation. |
 
 <a name="install"></a>
 
@@ -1573,9 +1573,9 @@ HTML code:
 
 ### WUIFade
 
-Versión: `0.1`
+Version: `0.1`
 
-Tool for fading out and fading in HTML elements with opacity.
+Tool for fading out and fading control in HTML elements with opacity.
 
 It is a static class that does not have a constructor or properties.
 
@@ -1666,6 +1666,41 @@ const fadeout = () => {
 > You can check out this working example on CodePen at the link: [https://codepen.io/sbelmar/pen/KwVeEOv](https://codepen.io/sbelmar/pen/KwVeEOv).
 
 <a name="WUILoader"></a>
+
+### WUILoader
+
+Version: `0.2`
+
+Sources:
+
+*   [WUILoader-0.2.css](https://github.com/sbelmar/wuijs-lib/blob/main/Libraries/WUI/Loader/WUILoader-0.2.css)
+*   [WUILoader-0.2.js](https://github.com/sbelmar/wuijs-lib/blob/main/Libraries/WUI/Loader/WUILoader-0.2.js)
+
+Object for loading animation.
+
+#### Constructor
+
+| Type       | Description |
+| ---------- | ----------- |
+| WUILoader  | `WUILoader([properties])`<br><br>Arguments:<br>**• properties:** `object` *optional* |
+
+#### Properties
+
+| Property  | Type     | Default value   | Description |
+| --------- | -------- | --------------- | ----------- |
+| selector  | `string` | `".wui-loader"` | (get/set)<br><br>CSS selector that defines the HTML element that will be converted into the loader object. If more than one element matches the selector, only the first match will be included. |
+| style     | `string` | `"ring"`        | (get/set)<br><br>Loading animation style.<br><br>Values:<br>• `"ring"`, ring shape.<br>• `"dualring"`, dual ring shape.<br>• `"spinner"`, spinner shape.<br>• `"roller"`, roller shape.<br>• `"ellipsis"`, dot shape.<br>• `"grid"`, grid shape. |
+| size      | `number` | `60`            | (get/set)<br><br>Loading animation size in pixels. |
+| dataStyle | `string` | `"style"`       | (get/set)<br><br>Name of the `data-*` attribute that contains the value of the `style` property. |
+| dataSize  | `string` | `"size"`        | (get/set)<br><br>Name of the `data-*` attribute that contains the value of the `size` property. |
+
+#### Methods
+
+| Method      | Return type | Description |
+| ----------- | ----------- | ----------- |
+| getElements | `NodeList`  | `getElements()`<br><br>Returns a list of HTML elements with the containers of the loading animation objects. |
+| init        | `void`      | `init()`<br><br>Initializes the loading animation objects. |
+
 <a name="WUITooltip"></a>
 <a name="WUIModal"></a>
 <a name="WUIModalSelector"></a>
@@ -1678,7 +1713,7 @@ const fadeout = () => {
 
 Versión: `0.1`
 
-Advanced object for implementing menu bars.
+Object for implementing menu bars.
 
 #### Constructor
 
@@ -1690,7 +1725,7 @@ Advanced object for implementing menu bars.
 
 | Property      | Type       | Default value.   | Description |
 | ------------- | ---------- | ---------------- | ----------- |
-| selector      | `string`   | `".wui-menubar"` | (get/set)<br><br>CSS selector that defines the HTML element that will be converted into the advanced menu bar object. If more than one element matches the selector, only the first match will be included. |
+| selector      | `string`   | `".wui-menubar"` | (get/set)<br><br>CSS selector that defines the HTML element that will be converted into the menu bar object. If more than one element matches the selector, only the first match will be included. |
 | expansive     | `boolean`  | `true`           | (get/set)<br><br>Define the menu expands. The function of expansion is not visible in mobile mode (when the screen width is less than `768px`). |
 | topButtons    | `array`    | `[]`             | (get/set)<br><br>List of menu top buttons, as defined by **Button Options**. These buttons are not visible in mobile mode (when the screen width is less than `768px`). |
 | mainButtons   | `array`    | `[]`             | (get/set)<br><br>List of menu main buttons, as defined by **Button Options**. |
@@ -1717,7 +1752,7 @@ Advanced object for implementing menu bars.
 
 | Method       | Return type   | Description |
 | ------------ | ------------- | ----------- |
-| getElement   | `HTMLElement` | `getElement()`<br><br>Returns the HTML element containing the advanced object. |
+| getElement   | `HTMLElement` | `getElement()`<br><br>Returns the HTML element containing the object. |
 | getButton    | `object`      | `getButton(id)`<br><br>Arguments:<br>**• id:** `string`, unique button identifier.<br><br>Returns the menu button according to the unique button identifier passed as a argument. |
 | init         | `void`        | `init()`<br><br>Initializes the object. |
 | selectButton | `void`        | `selectButton(id[, selected])`<br><br>Arguments:<br>**• id:** `string`, unique button identifier.<br>**• selected:** `boolean`, button selection state. The default value is `true`.<br><br>Select or unselect a menu button. |
@@ -1940,7 +1975,7 @@ menubar.bottomButtons = [{
 
 // Initialize object
 menubar.onClick = (id) => {
-	output.textContent = `Click button id: "${id}"`;
+	output.textContent = `Click button - id: "${id}"`;
 };
 menubar.init();
 ```
@@ -1954,7 +1989,7 @@ menubar.init();
 
 Versión: `0.2`
 
-Advanced object for implementing data lists and buttons for each row optionally.
+Object for implementing data lists and buttons for each row optionally.
 
 #### Constructor
 
@@ -1966,7 +2001,7 @@ Advanced object for implementing data lists and buttons for each row optionally.
 
 | Property     | Type       | Default value | Description |
 | ------------ | ---------- | ------------- | ----------- |
-| selector     | `string`   | `".wui-list"` | (get/set)<br><br>CSS selector that defines the HTML element that will be converted into the advanced list object. If more than one element matches the selector, only the first match will be included. |
+| selector     | `string`   | `".wui-list"` | (get/set)<br><br>CSS selector that defines the HTML element that will be converted into the list object. If more than one element matches the selector, only the first match will be included. |
 | paging       | `number`   | `0`           | (get/set)<br><br>Paging, or the number of rows per page in the list. A value of `0` indicates that the pagination will be the same length as rows; in other words, a value of `0` disables paging. |
 | page         | `number`   | `0`           | (get)<br><br>Current page displayed in the list, where page `0` corresponds to the first page and the last to the total number of rows minus 1. |
 | pages        | `number`   | `0`           | (get)<br><br>Total number of pages. |
@@ -2011,7 +2046,7 @@ Advanced object for implementing data lists and buttons for each row optionally.
 
 | Method       | Return type   | Description |
 | ------------ | ------------- | ----------- |
-| getElement   | `HTMLElement` | `getElement()`<br><br>Returns the HTML element containing the advanced object. |
+| getElement   | `HTMLElement` | `getElement()`<br><br>Returns the HTML element containing the object. |
 | init         | `void`        | `init()`<br><br>Initializes the object. |
 | addColumn    | `void`        | `addColumn(options)`<br><br>Adds a new column settings to the object's column list, as defined in **Column Options**. |
 | addRow       | `void`        | `addRow(options)`<br><br>Adds a new row settings to the object's rows list, as defined by **Row Options**. |
@@ -2269,7 +2304,7 @@ list.print();
 
 Versión: `0.2`
 
-Advanced object for implementing data tables. Unlike the `WUIList` object, the `WUITable` object includes a column header.
+Object for implementing data tables. Unlike the `WUIList` object, the `WUITable` object includes a column header.
 
 #### Constructor
 
@@ -2281,7 +2316,7 @@ Advanced object for implementing data tables. Unlike the `WUIList` object, the `
 
 | Property     | Type       | Default value  | Description |
 | ------------ | ---------- | -------------- | ----------- |
-| selector     | `string`   | `".wui-table"` | (get/set)<br><br>CSS selector that defines the HTML element that will be converted into the advanced table object. If more than one element matches the selector, only the first match will be included. |
+| selector     | `string`   | `".wui-table"` | (get/set)<br><br>CSS selector that defines the HTML element that will be converted into the table object. If more than one element matches the selector, only the first match will be included. |
 | width        | `string`   | `"auto"`       | (get/set)<br><br>Table width in CSS compatible format. |
 | paging       | `number`   | `0`            | (get/set)<br><br>Paging, or the number of rows per page in the table. A value of `0` indicates that the pagination will be the same length as rows; in other words, a value of `0` disables paging. |
 | page         | `number`   | `0`            | (get)<br><br>Current page displayed in the table, where page `0` corresponds to the first page and the last to the total number of rows minus 1. |
@@ -2331,7 +2366,7 @@ Advanced object for implementing data tables. Unlike the `WUIList` object, the `
 
 | Method       | Return type   | Description |
 | ------------ | ------------- | ----------- |
-| getElement   | `HTMLElement` | `getElement()`<br><br>Returns the HTML element containing the advanced object. |
+| getElement   | `HTMLElement` | `getElement()`<br><br>Returns the HTML element containing the object. |
 | init         | `void`        | `init()`<br><br>Initializes the object. |
 | addColumn    | `void`        | `addColumn(options)`<br><br>Adds a new column settings to the object's column list, as defined in **Column Options**. |
 | addRow       | `void`        | `addRow(options)`<br><br>Adds a new row settings to the object's rows list, as defined by **Row Options**. |
@@ -2614,7 +2649,7 @@ table.print();
 
 Versión: `0.2`
 
-Advanced object for button implementation.
+Object for button implementation.
 
 #### Constructor
 
@@ -2626,7 +2661,7 @@ Advanced object for button implementation.
 
 | Property     | Type       | Default value.  | Description |
 | ------------ | ---------- | --------------- | ----------- |
-| selector     | `string`   | `".wui-button"` | (get/set)<br><br>CSS selector that defines the HTML element that will be converted into the advanced button object. If more than one element matches the selector, only the first match will be included. |
+| selector     | `string`   | `".wui-button"` | (get/set)<br><br>CSS selector that defines the HTML element that will be converted into the button object. If more than one element matches the selector, only the first match will be included. |
 | text         | `string`   | `""`            | (get/set)<br><br>Text or HTML content of the element. |
 | selectable   | `boolean`  | `true`          | (get/set)<br><br>Define whether the button is selectable. |
 | locked       | `boolean`  | `false`         | (get/set)<br><br>Defines whether the button is locked. |
@@ -2638,7 +2673,7 @@ Advanced object for button implementation.
 
 | Method       | Return type   | Description |
 | ------------ | ------------- | ----------- |
-| getElement   | `HTMLElement` | `getElement()`<br><br>Returns the HTML element containing the advanced object. |
+| getElement   | `HTMLElement` | `getElement()`<br><br>Returns the HTML element containing the object. |
 | init         | `void`        | `init()`<br><br>Initializes the object. |
 | focus        | `void`        | `focus()`<br><br>Focus on the button. |
 | select       | `select`      | `select()`<br><br>Select the button. |
