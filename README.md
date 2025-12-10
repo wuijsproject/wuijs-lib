@@ -3,7 +3,7 @@
 
 # wuijs-lib
 
-![WUIJS Library](https://github.com/sbelmar/wuijs-lib/blob/main/docs/wuijs-color.svg)
+<img src="https://github.com/sbelmar/wuijs-lib/blob/main/docs/wuijs-color.svg" width="48" height="48">
 
 Library version: `0.2.0` ([Change Log](./CHANGELOG.md))
 
