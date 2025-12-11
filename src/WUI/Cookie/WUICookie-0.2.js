@@ -90,6 +90,7 @@ class WUICookie {
 	get(name) {
 		const cname = name + "=";
 		let cookies = [];
+		let value = "";
 		if (navigator.cookieEnabled) {
 			try {
 				cookies = decodeURIComponent(document.cookie).split(";");
@@ -101,11 +102,11 @@ class WUICookie {
 					part = part.substring(1);
 				}
 				if (part.indexOf(cname) == 0) {
-					return part.substring(cname.length, part.length);
+					value = part.substring(cname.length, part.length);
 				}
 			});
 		}
-		return "";
+		return value;
 	}
 
 	remove(name) {

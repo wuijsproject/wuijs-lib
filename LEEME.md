@@ -7,7 +7,7 @@
 
 Versión librería: `0.2.0` ([Registro de Cambio](./REGISTRODECAMBIO.md))
 
-Versión documentación: `0.2.0.20251210.1`
+Versión documentación: `0.2.0.20251210.2`
 
 Licencia: `Licencia Apache 2.0`
 
@@ -15,7 +15,7 @@ Autor: `Sergio E. Belmar V. <sbelmar@wuijs.dev>`
 
 ## Índice
 
-*   [Description General](#overview)
+*   [Descripción General](#overview)
 *   [Instalación](#install)
 *   [Implementación](#implementation)
 *   [Clases](#classes)
@@ -48,7 +48,7 @@ Autor: `Sergio E. Belmar V. <sbelmar@wuijs.dev>`
 
 <a name="overview"></a>
 
-## Description General
+## Descripción General
 
 WUI, acrónimo del inglés *Web User Interface JavaScript library*, es una biblioteca JavaScript/CSS de código abierto orientada a la implementación rápida de intetfaces de usuario Web compuesta por 25 clases, las que pueden ser utilizadas de manera independiente o conjunta.
 
@@ -57,7 +57,7 @@ WUI, acrónimo del inglés *Web User Interface JavaScript library*, es una bibli
 | Clase                         | Version | Descripción |
 | ----------------------------- | -------:| ----------- |
 | [WUICookie](#WUICookie)       | `0.2`   | Administrador de cookies. |
-| [WUIHead](#WUIHead)           | `0.1`   | Administrador de cabecera HTML. |
+| [WUIHead](#WUIHead)           | `0.2`   | Administrador de cabecera HTML. |
 | [WUIBody](#WUIBody)           | `0.2`   | Administrador de cuerpo HTML. Permite la importación de contenido CSS/JS/HTML y facilita la implementación en entornos nativos móviles. |
 | [WUILanguage](#WUILanguage)   | `0.2`   | Administrador de idioma para interfaces web. Permite cargar archivos de idioma en formato JS o JSON y actualizar dinámicamente el contenido de los elementos HTML según el idioma. |
 | [WUIScrolly](#WUIScrolly)     | `0.2`   | Herramienta para animación de elementos HTML mediante el evento "onscroll" del cuerpo de la página HTML. |
@@ -100,7 +100,7 @@ Opcionalmente puede ser descargada desde los mismos repositorios en formato ZIP.
 cd ./downloads
 wget https://github.com/sbelmar/wuijs-lib/archive/refs/heads/main.zip
 tar -xzf main.zip
-cp -p ./wuijs-lib-main/src/WDS ../src/Libraries/
+cp -r ./wuijs-lib-main/src/WDS ../src/Libraries/
 ```
 
 <a name="implementation"></a>
@@ -648,7 +648,7 @@ Código HTML:
 		<link type="text/css" rel="stylesheet" href="./Libraries/WUI/Intensity/WUIIntensity-0.1.css">
 		<link type="text/css" rel="stylesheet" href="./Libraries/WUI/Button/WUIButton-0.2.css">
 		<script type="text/javascript" src="./Libraries/WUI/Cookie/WUICookie-0.2.js"></script>
-		<script type="text/javascript" src="./Libraries/WUI/Head/WUIHead-0.1.js"></script>
+		<script type="text/javascript" src="./Libraries/WUI/Head/WUIHead-0.2.js"></script>
 		<script type="text/javascript" src="./Libraries/WUI/Body/WUIBody-0.2.js"></script>
 		<script type="text/javascript" src="./Libraries/WUI/Language/WUILanguage-0.2.js"></script>
 		<script type="text/javascript" src="./Libraries/WUI/Scrolly/WUIScrolly-0.2.js"></script>
@@ -702,7 +702,7 @@ Administrador de cookies.
 
 | Tipo | Archivo |
 | ---- | ------- |
-| JS   | [./src/WUI/Cookie/WUICookie-0.2.js](https://github.com/sbelmar/wuijs-lib/blob/main/src/WUI/Cookie/WUICookie-0.2.js) |
+| JS   | [src/WUI/Cookie/WUICookie-0.2.js](https://github.com/sbelmar/wuijs-lib/blob/main/src/WUI/Cookie/WUICookie-0.2.js) |
 
 #### Constructor
 
@@ -721,10 +721,11 @@ Administrador de cookies.
 
 #### Métodos
 
-| Método    | Tipo retorno | Descripción |
-| --------- | ------------ | ----------- |
-| set       | `void`       | `set(name, value[, options])`<br><br>Parámetros:<br>**• name:** `string` <br>**• value:** `string` <br>**• options:** `object` *opcional*<br><br>Agrega o modifica una cookie. |
-| get       | `string`     | `get(name)`<br><br>Parámetros:<br>**• name:** `string`<br><br>Lee el contenido de una cookie mediante su nombre. |
+| Método | Tipo retorno | Descripción |
+| ------ | ------------ | ----------- |
+| set    | `void`       | `set(name, value[, options])`<br><br>Parámetros:<br>**• name:** `string` <br>**• value:** `string` <br>**• options:** `object` *opcional*<br><br>Agrega o modifica una cookie. |
+| get    | `string`     | `get(name)`<br><br>Parámetros:<br>**• name:** `string`<br><br>Lee el contenido de una cookie mediante su nombre. |
+| remove | `void`       | `remove(name)`<br><br>Parámetros:<br>**• name:** `string`<br><br>Elimina una cookie mediante su nombre. |
 
 #### Implementación
 
@@ -756,7 +757,7 @@ console.log(cookie.get("mycookie"));
 
 ### WUIHead
 
-Versión: `0.1`
+Versión: `0.2`
 
 Administrador de cabecera HTML.
 
@@ -764,7 +765,7 @@ Administrador de cabecera HTML.
 
 | Tipo | Archivo |
 | ---- | ------- |
-| JS   | [./src/WUI/Head/WUIHead-0.1.js](https://github.com/sbelmar/wuijs-lib/blob/main/src/WUI/Head/WUIHead-0.1.js) |
+| JS   | [src/WUI/Head/WUIHead-0.2.js](https://github.com/sbelmar/wuijs-lib/blob/main/src/WUI/Head/WUIHead-0.2.js) |
 
 #### Constructor
 
@@ -794,7 +795,7 @@ Cabecera HTML:
 <title></title>
 <meta name="application-name" content="">
 <meta name="theme-color" content="">
-<script type="text/javascript" src="https://wuijs.dev/Libraries/WUI/Head/WUIHead-0.1.js"></script>
+<script type="text/javascript" src="https://wuijs.dev/Libraries/WUI/Head/WUIHead-0.2.js"></script>
 ```
 
 Código JS:
@@ -825,7 +826,7 @@ Administrador de cuerpo HTML. Permite la importación de contenido CSS/JS/HTML y
 
 | Tipo | Archivo |
 | ---- | ------- |
-| JS   | [./src/WUI/Body/WUIBody-0.2.js](https://github.com/sbelmar/wuijs-lib/blob/main/src/WUI/Body/WUIBody-0.2.js) |
+| JS   | [src/WUI/Body/WUIBody-0.2.js](https://github.com/sbelmar/wuijs-lib/blob/main/src/WUI/Body/WUIBody-0.2.js) |
 
 #### Constructor
 
@@ -924,7 +925,7 @@ Administrador de idioma para interfaces web. Permite cargar archivos de idioma e
 
 | Tipo | Archivo |
 | ---- | ------- |
-| JS   | [./src/WUI/Language/WUILanguage-0.2.js](https://github.com/sbelmar/wuijs-lib/blob/main/src/WUI/Language/WUILanguage-0.2.js) |
+| JS   | [src/WUI/Language/WUILanguage-0.2.js](https://github.com/sbelmar/wuijs-lib/blob/main/src/WUI/Language/WUILanguage-0.2.js) |
 
 #### Constructor
 
@@ -1055,7 +1056,7 @@ Herramienta para animación de elementos HTML mediante el evento "onscroll" del 
 
 | Tipo | Archivo |
 | ---- | ------- |
-| JS   | [./src/WUI/Scrolly/WUIScrolly-0.2.js](https://github.com/sbelmar/wuijs-lib/blob/main/src/WUI/Scrolly/WUIScrolly-0.2.js) |
+| JS   | [src/WUI/Scrolly/WUIScrolly-0.2.js](https://github.com/sbelmar/wuijs-lib/blob/main/src/WUI/Scrolly/WUIScrolly-0.2.js) |
 
 #### Constructor
 
@@ -1343,7 +1344,7 @@ Conjunto de íconos prediseñados y carga mediante CSS, para uso en interfaces.
 
 | Tipo | Archivo |
 | ---- | ------- |
-| CSS  | [./src/WUI/Icon/WUIIcon-0.1.css](https://github.com/sbelmar/wuijs-lib/blob/main/src/WUI/Icon/WUIIcon-0.1.css) |
+| CSS  | [src/WUI/Icon/WUIIcon-0.1.css](https://github.com/sbelmar/wuijs-lib/blob/main/src/WUI/Icon/WUIIcon-0.1.css) |
 
 #### Tabla de Íconos de Señale
 
@@ -1632,7 +1633,7 @@ Es una clase estática que no posee un constructor ni propiedades.
 
 | Tipo | Archivo |
 | ---- | ------- |
-| JS   | [./src/WUI/Fade/WUIFade-0.1.js](https://github.com/sbelmar/wuijs-lib/blob/main/src/WUI/Fade/WUIFade-0.1.js) |
+| JS   | [src/WUI/Fade/WUIFade-0.1.js](https://github.com/sbelmar/wuijs-lib/blob/main/src/WUI/Fade/WUIFade-0.1.js) |
 
 #### Métodos
 
@@ -1734,8 +1735,8 @@ Objeto para animación de carga.
 
 | Tipo | Archivo |
 | ---- | ------- |
-| CSS  | [./src/WUI/Loader/WUILoader-0.2.css](https://github.com/sbelmar/wuijs-lib/blob/main/src/WUI/Loader/WUILoader-0.2.css) |
-| JS   | [./src/WUI/Loader/WUILoader-0.2.js](https://github.com/sbelmar/wuijs-lib/blob/main/src/WUI/Loader/WUILoader-0.2.js) |
+| CSS  | [src/WUI/Loader/WUILoader-0.2.css](https://github.com/sbelmar/wuijs-lib/blob/main/src/WUI/Loader/WUILoader-0.2.css) |
+| JS   | [src/WUI/Loader/WUILoader-0.2.js](https://github.com/sbelmar/wuijs-lib/blob/main/src/WUI/Loader/WUILoader-0.2.js) |
 
 #### Constructor
 
@@ -1778,8 +1779,8 @@ Objeto para implementación de barras de menú.
 
 | Tipo | Archivo |
 | ---- | ------- |
-| CSS  | [./src/WUI/Menubar/WUIMenubar-0.1.css](https://github.com/sbelmar/wuijs-lib/blob/main/src/WUI/Menubar/WUIMenubar-0.1.css) |
-| JS   | [./src/WUI/Menubar/WUIMenubar-0.1.js](https://github.com/sbelmar/wuijs-lib/blob/main/src/WUI/Menubar/WUIMenubar-0.1.js) |
+| CSS  | [src/WUI/Menubar/WUIMenubar-0.1.css](https://github.com/sbelmar/wuijs-lib/blob/main/src/WUI/Menubar/WUIMenubar-0.1.css) |
+| JS   | [src/WUI/Menubar/WUIMenubar-0.1.js](https://github.com/sbelmar/wuijs-lib/blob/main/src/WUI/Menubar/WUIMenubar-0.1.js) |
 
 #### Constructor
 
@@ -2069,8 +2070,8 @@ Objeto para implementación de listas de datos y botoneras para cada fila de man
 
 | Tipo | Archivo |
 | ---- | ------- |
-| CSS  | [./src/WUI/List/WUIList-0.2.css](https://github.com/sbelmar/wuijs-lib/blob/main/src/WUI/List/WUIList-0.2.css) |
-| JS   | [./src/WUI/List/WUIList-0.2.js](https://github.com/sbelmar/wuijs-lib/blob/main/src/WUI/List/WUIList-0.2.js) |
+| CSS  | [src/WUI/List/WUIList-0.2.css](https://github.com/sbelmar/wuijs-lib/blob/main/src/WUI/List/WUIList-0.2.css) |
+| JS   | [src/WUI/List/WUIList-0.2.js](https://github.com/sbelmar/wuijs-lib/blob/main/src/WUI/List/WUIList-0.2.js) |
 
 #### Constructor
 
@@ -2398,8 +2399,8 @@ Objeto para implementación de tablas de datos. A diferencia del objeto `WUIList
 
 | Tipo | Archivo |
 | ---- | ------- |
-| CSS  | [./src/WUI/Table/WUITable-0.2.css](https://github.com/sbelmar/wuijs-lib/blob/main/src/WUI/Table/WUITable-0.2.css) |
-| JS   | [./src/WUI/Table/WUITable-0.2.js](https://github.com/sbelmar/wuijs-lib/blob/main/src/WUI/Table/WUITable-0.2.js) |
+| CSS  | [src/WUI/Table/WUITable-0.2.css](https://github.com/sbelmar/wuijs-lib/blob/main/src/WUI/Table/WUITable-0.2.css) |
+| JS   | [src/WUI/Table/WUITable-0.2.js](https://github.com/sbelmar/wuijs-lib/blob/main/src/WUI/Table/WUITable-0.2.js) |
 
 #### Constructor
 
@@ -2758,8 +2759,8 @@ Objeto para implementación de botones.
 
 | Tipo | Archivo |
 | ---- | ------- |
-| CSS  | [./src/WUI/Button/WUIButton-0.2.css](https://github.com/sbelmar/wuijs-lib/blob/main/src/WUI/Button/WUIButton-0.2.css) |
-| JS   | [./src/WUI/Button/WUIButton-0.2.js](https://github.com/sbelmar/wuijs-lib/blob/main/src/WUI/Button/WUIButton-0.2.js) |
+| CSS  | [src/WUI/Button/WUIButton-0.2.css](https://github.com/sbelmar/wuijs-lib/blob/main/src/WUI/Button/WUIButton-0.2.css) |
+| JS   | [src/WUI/Button/WUIButton-0.2.js](https://github.com/sbelmar/wuijs-lib/blob/main/src/WUI/Button/WUIButton-0.2.js) |
 
 #### Constructor
 
@@ -2771,7 +2772,7 @@ Objeto para implementación de botones.
 
 | Propiedad    | Tipo       | Valor predeterminado | Descripción |
 | ------------ | ---------- | -------------------- | ----------- |
-| selector     | `string`   | `".wui-button"`      | (get/set)<br><br>Selector CSS que define el elemento HTML que serán convertido en el objeto tipo botón. En caso de existir más de un elemento coincidente con el selector se incluirá únicamente la primera coincidencia. |
+| selector     | `string`   | `".wui-button"`      | (get/set)<br><br>Selector CSS que define el elemento HTML de tipo `HTMLButtonElement` que serán convertido en el objeto tipo botón. En caso de existir más de un elemento coincidente con el selector se incluirá únicamente la primera coincidencia. |
 | text         | `string`   | `""`                 | (get/set)<br><br>Texto o contenido HTML del elemento. |
 | selectable   | `boolean`  | `true`               | (get/set)<br><br>Define si el botón es seleccionable. |
 | locked       | `boolean`  | `false`              | (get/set)<br><br>Define si el botón está bloqueado. |
@@ -2987,6 +2988,9 @@ const button2 = new WUIButton({
 button1.init();
 button2.init();
 ```
+
+> [!IMPORTANT]
+> Si el selector define un elemento que no es de tipo `HTMLButtonElement`, el objeto no se inicializará.
 
 > [!TIP]
 > Puede revisar este ejemplo funcional en CodePen en el enlace: [https://codepen.io/sbelmar/pen/gbPyBNJ](https://codepen.io/sbelmar/pen/gbPyBNJ).

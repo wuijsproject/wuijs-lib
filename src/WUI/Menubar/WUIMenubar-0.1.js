@@ -148,54 +148,56 @@ class WUIMenubar {
 				}
 			}
 		}
-		this.#htmlElements.bar = document.createElement("div");
-		this.#htmlElements.barHeader = document.createElement("div");
-		this.#htmlElements.barTop = document.createElement("div");
-		this.#htmlElements.barMain = document.createElement("div");
-		this.#htmlElements.barBottom = document.createElement("div");
-		this.#htmlElements.submenu = document.createElement("div");
-		this.#htmlElements.submenuMain = document.createElement("div");
-		this.#htmlElement.append(this.#htmlElements.bar);
-		this.#htmlElement.append(this.#htmlElements.submenu);
-		this.#htmlElements.bar.className = "bar";
-		this.#htmlElements.bar.append(this.#htmlElements.barHeader);
-		this.#htmlElements.bar.append(this.#htmlElements.barTop);
-		this.#htmlElements.bar.append(this.#htmlElements.barMain);
-		this.#htmlElements.bar.append(this.#htmlElements.barBottom);
-		this.#htmlElements.barHeader.className = "header";
-		this.#htmlElements.barTop.className = "top";
-		this.#htmlElements.barMain.className = "main";
-		this.#htmlElements.barBottom.className = "bottom";
-		this.#htmlElements.submenu.className = "submenu";
-		this.#htmlElements.submenu.append(this.#htmlElements.submenuMain);
-		this.#htmlElements.submenuMain.className = "main";
-		if (this.#properties.expansive) {
-			this.#htmlElements.expander = document.createElement("div");
-			this.#htmlElements.expanderIcon = document.createElement("div");
-			this.#htmlElements.expander.append(this.#htmlElements.expanderIcon);
-			this.#htmlElements.expander.className = "expander";
-			this.#htmlElements.expanderIcon.className = "icon";
-			this.#htmlElements.expanderIcon.style.maskImage = this.#getSRCIcon("barexpander-expand");
-			this.#htmlElements.expander.addEventListener("click", () => {
-				const expanded = this.#htmlElement.classList.contains("expanded");
-				this.#htmlElement.classList.toggle("expanded");
-				this.#htmlElements.expanderIcon.style.maskImage = this.#getSRCIcon("barexpander-" + (expanded ? "expand" : "contract"));
-			});
-			this.#htmlElements.barHeader.append(this.#htmlElements.expander);
-		}
 		this.#buttons = [];
-		loadButtons(this.#properties.topButtons);
-		loadButtons(this.#properties.mainButtons);
-		loadButtons(this.#properties.bottomButtons);
-		this.#properties.topButtons.forEach(options => {
-			this.#htmlElements.barTop.append(this.#addButton(options));
-		});
-		this.#properties.mainButtons.forEach(options => {
-			this.#htmlElements.barMain.append(this.#addButton(options));
-		});
-		this.#properties.bottomButtons.forEach(options => {
-			this.#htmlElements.barBottom.append(this.#addButton(options));
-		});
+		if (this.#htmlElement instanceof HTMLElement) {
+			this.#htmlElements.bar = document.createElement("div");
+			this.#htmlElements.barHeader = document.createElement("div");
+			this.#htmlElements.barTop = document.createElement("div");
+			this.#htmlElements.barMain = document.createElement("div");
+			this.#htmlElements.barBottom = document.createElement("div");
+			this.#htmlElements.submenu = document.createElement("div");
+			this.#htmlElements.submenuMain = document.createElement("div");
+			this.#htmlElement.append(this.#htmlElements.bar);
+			this.#htmlElement.append(this.#htmlElements.submenu);
+			this.#htmlElements.bar.className = "bar";
+			this.#htmlElements.bar.append(this.#htmlElements.barHeader);
+			this.#htmlElements.bar.append(this.#htmlElements.barTop);
+			this.#htmlElements.bar.append(this.#htmlElements.barMain);
+			this.#htmlElements.bar.append(this.#htmlElements.barBottom);
+			this.#htmlElements.barHeader.className = "header";
+			this.#htmlElements.barTop.className = "top";
+			this.#htmlElements.barMain.className = "main";
+			this.#htmlElements.barBottom.className = "bottom";
+			this.#htmlElements.submenu.className = "submenu";
+			this.#htmlElements.submenu.append(this.#htmlElements.submenuMain);
+			this.#htmlElements.submenuMain.className = "main";
+			if (this.#properties.expansive) {
+				this.#htmlElements.expander = document.createElement("div");
+				this.#htmlElements.expanderIcon = document.createElement("div");
+				this.#htmlElements.expander.append(this.#htmlElements.expanderIcon);
+				this.#htmlElements.expander.className = "expander";
+				this.#htmlElements.expanderIcon.className = "icon";
+				this.#htmlElements.expanderIcon.style.maskImage = this.#getSRCIcon("barexpander-expand");
+				this.#htmlElements.expander.addEventListener("click", () => {
+					const expanded = this.#htmlElement.classList.contains("expanded");
+					this.#htmlElement.classList.toggle("expanded");
+					this.#htmlElements.expanderIcon.style.maskImage = this.#getSRCIcon("barexpander-" + (expanded ? "expand" : "contract"));
+				});
+				this.#htmlElements.barHeader.append(this.#htmlElements.expander);
+			}
+			loadButtons(this.#properties.topButtons);
+			loadButtons(this.#properties.mainButtons);
+			loadButtons(this.#properties.bottomButtons);
+			this.#properties.topButtons.forEach(options => {
+				this.#htmlElements.barTop.append(this.#addButton(options));
+			});
+			this.#properties.mainButtons.forEach(options => {
+				this.#htmlElements.barMain.append(this.#addButton(options));
+			});
+			this.#properties.bottomButtons.forEach(options => {
+				this.#htmlElements.barBottom.append(this.#addButton(options));
+			});
+		}
 	}
 
 	#addButton(options) {

@@ -65,7 +65,9 @@ class WUIButton {
 	set text(value) {
 		if (typeof (value) == "string" && value != "") {
 			this.#properties.text = value;
-			this.#htmlElement.innerHTML = value;
+			if (this.#htmlElement instanceof HTMLButtonElement) {
+				this.#htmlElement.innerHTML = value;
+			}
 		}
 	}
 
@@ -84,13 +86,15 @@ class WUIButton {
 	set enabled(value) {
 		if (typeof (value) == "boolean") {
 			this.#properties.enabled = value;
-			this.#htmlElement.disabled = !value;
-			if (value) {
-				this.#htmlElement.removeAttribute("disabled");
-			} else {
-				this.#htmlElement.setAttribute("disabled", "true");
+			if (this.#htmlElement instanceof HTMLButtonElement) {
+				this.#htmlElement.disabled = !value;
+				if (value) {
+					this.#htmlElement.removeAttribute("disabled");
+				} else {
+					this.#htmlElement.setAttribute("disabled", "true");
+				}
+				this.#setStyle();
 			}
-			this.#setStyle();
 		}
 	}
 
@@ -111,52 +115,58 @@ class WUIButton {
 	}
 
 	#setStyle() {
-		const disabled = this.#htmlElement.disabled;
-		if (disabled) {
-			this.#htmlElement.classList.add("disabled");
-		} else {
-			this.#htmlElement.classList.remove("disabled");
+		if (this.#htmlElement instanceof HTMLButtonElement) {
+			const disabled = this.#htmlElement.disabled;
+			if (disabled) {
+				this.#htmlElement.classList.add("disabled");
+			} else {
+				this.#htmlElement.classList.remove("disabled");
+			}
 		}
 	}
 
 	init() {
 		this.#properties.text = this.#htmlElement.innerHTML;
-		this.#htmlElement.addEventListener("click", () => {
+		if (this.#htmlElement instanceof HTMLButtonElement) {
+			this.#htmlElement.addEventListener("click", () => {
+				this.#setStyle();
+				if (this.#properties.selectable && this.#properties.enabled) {
+					this.#htmlElement.classList.toggle("selected");
+				}
+				if (!this.#properties.locked && this.#properties.enabled && typeof (this.#properties.onClick) == "function") {
+					this.#properties.onClick();
+				}
+			});
+			this.#htmlElement.addEventListener("dblclick", () => {
+				this.#setStyle();
+				if (!this.#properties.locked && this.#properties.enabled && typeof (this.#properties.onDblClick) == "function") {
+					this.#properties.onDblClick();
+				}
+			});
 			this.#setStyle();
-			if (this.#properties.selectable && this.#properties.enabled) {
-				this.#htmlElement.classList.toggle("selected");
-			}
-			if (!this.#properties.locked && this.#properties.enabled && typeof (this.#properties.onClick) == "function") {
-				this.#properties.onClick();
-			}
-		});
-		this.#htmlElement.addEventListener("dblclick", () => {
-			this.#setStyle();
-			if (!this.#properties.locked && this.#properties.enabled && typeof (this.#properties.onDblClick) == "function") {
-				this.#properties.onDblClick();
-			}
-		});
-		this.#setStyle();
+		}
 	}
 
 	focus() {
-		this.#htmlElement.focus();
+		if (this.#htmlElement instanceof HTMLButtonElement) {
+			this.#htmlElement.focus();
+		}
 	}
 
 	select() {
-		if (this.#properties.selectable && this.#properties.enabled) {
+		if (this.#htmlElement instanceof HTMLButtonElement && this.#properties.selectable && this.#properties.enabled) {
 			this.#htmlElement.classList.add("selected");
 		}
 	}
 
 	unselect() {
-		if (this.#properties.selectable && this.#properties.enabled) {
+		if (this.#htmlElement instanceof HTMLButtonElement && this.#properties.selectable && this.#properties.enabled) {
 			this.#htmlElement.classList.remove("selected");
 		}
 	}
 
 	isSelected() {
-		if (this.#properties.selectable && this.#properties.enabled) {
+		if (this.#htmlElement instanceof HTMLButtonElement && this.#properties.selectable && this.#properties.enabled) {
 			return this.#htmlElement.classList.contains("selected");
 		}
 		return false;
