@@ -57,6 +57,7 @@ Features:
 14. WUIForm version class update to 0.2.
 	- Added support for private values.
 	- Added support for light/dark CSS formatting.
+	- Added `getIcon()` method.
 	- Added `--wui-form-message-shadowcolor` CSS var.
 15. WUIFormat version class update to 0.2.
 	- Added support for `Windows Phone` in the `getOS()` and `getMobileOS()` methods.

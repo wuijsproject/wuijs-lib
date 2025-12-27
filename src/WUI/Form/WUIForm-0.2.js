@@ -127,57 +127,46 @@ class WUIForm {
 		return new FormData(this.#htmlElements.form);
 	}
 
-	getNode(name, type) {
-		let node = this.#htmlElement.querySelector("data." + name) || this.#htmlElements.form[name] || null;
-		if (type.match(/^(input|data)$/)) {
-			return node;
-		} else if (node instanceof HTMLElement) {
-			let loop = 0;
-			let nodeReturn = null;
-			while (node != this.#htmlElement.parentNode && loop <= 100) {
-				if (type.match(/^(label)$/) && node.querySelector(type)) {
-					node.querySelectorAll(type).forEach(nodeType => {
-						if (nodeReturn == null && (node.querySelector("[name=" + name + "]") || node.querySelector("data." + name))) {
-							nodeReturn = nodeType;
-						}
-					});
-					return nodeReturn;
-				} else if (type.match(/^(field)$/) && node.querySelector("." + type)) {
-					node.querySelectorAll("." + type).forEach(nodeType => {
-						if (nodeReturn == null && (nodeType.querySelector("[name=" + name + "]") || nodeType.querySelector("data." + name))) {
-							nodeReturn = nodeType;
-						}
-					});
-					return nodeReturn;
-				} else {
-					node = node.parentNode;
-				}
-				loop++;
-			}
+	#getNode(name, type) {
+		const root = this.#htmlElements.form || this.#htmlElement;
+		const input = root.querySelector(`[name="${name}"]`);
+		if (!input) return null;
+		const field = input.closest(".field");
+		if (!field) return null;
+		switch (type) {
+			case "field": return field;
+			case "icon": return field.querySelector(":scope > .icon");
+			case "label": return field.querySelector(":scope > label");
+			case "input": return field.querySelector(":scope > input, :scope > select, :scope > textarea, :scope > div > input");
+			case "data": return field.querySelector(":scope > data");
+			default: return null;
 		}
-		return null;
 	}
 
 	getField(name) {
-		return this.getNode(name, "field");
+		return this.#getNode(name, "field");
+	}
+
+	getIcon(name) {
+		return this.#getNode(name, "icon");
 	}
 
 	getLabel(name) {
-		return this.getNode(name, "label");
+		return this.#getNode(name, "label");
 	}
 
 	getInput(name) {
 		return this.#htmlElements.form[name];
 	}
 
+	getData(name) {
+		return this.#getNode(name, "data");
+	}
+
 	getValue(name) {
 		const input = this.getInput(name);
 		const data = this.getData(name);
-		return input instanceof HTMLInputElement || input instanceof HTMLSelectElement || input instanceof HTMLTextAreaElement ? input.value : data instanceof HTMLDataElement ? data.innerHTML : "";
-	}
-
-	getData(name) {
-		return this.#htmlElement.querySelector("data." + name);
+		return input instanceof HTMLInputElement || input instanceof HTMLSelectElement || input instanceof HTMLTextAreaElement ? input.value : data instanceof HTMLDataElement ? (data.value || data.innerHTML) : "";
 	}
 
 	getText(name) {
@@ -237,9 +226,17 @@ class WUIForm {
 	}
 
 	setEnabled = (name, value) => {
+		const icon = this.getIcon(name);
 		const label = this.getLabel(name);
 		const input = this.getInput(name);
 		const data = this.getData(name);
+		if (icon instanceof HTMLElement) {
+			if (value) {
+				icon.classList.remove("disabled");
+			} else {
+				icon.classList.add("disabled");
+			}
+		}
 		if (label instanceof HTMLLabelElement) {
 			if (value) {
 				label.classList.remove("disabled");
@@ -303,7 +300,7 @@ class WUIForm {
 		this.#htmlElement.querySelectorAll(".field > label").forEach(label => {
 			label.addEventListener("click", () => {
 				const field = label.parentNode;
-				const input = field.querySelector("input,select,textarea");
+				const input = field.querySelector("input, select, textarea");
 				if (input instanceof HTMLInputElement || input instanceof HTMLSelectElement || input instanceof HTMLTextAreaElement) {
 					input.focus();
 				}
@@ -440,18 +437,22 @@ Implemented HTML structure:
 		<legend>Fieldset</legend>
 		<fieldset>
 			<div class="field">
+				<div class="icon"></div>
 				<label>Text</label>
 				<input type="text" name="text">
 			</div>
 			<div class="field">
+				<div class="icon"></div>
 				<label>Date</label>
 				<input type="date" name="date">
 			</div>
 			<div class="field">
+				<div class="icon"></div>
 				<label>Time</label>
 				<input type="time" name="time">
 			</div>
 			<div class="field">
+				<div class="icon"></div>
 				<label>Select</label>
 				<select name="select">
 					<option value="value1">value 1</option>
@@ -459,18 +460,22 @@ Implemented HTML structure:
 				</select>
 			</div>
 			<div class="field color">
+				<div class="icon"></div>
 				<label>Color</label>
 				<input type="color" name="color">
 			</div>
 			<div class="field textarea">
+				<div class="icon"></div>
 				<label for="wuiTextarea"></label>
 				<textarea name="textarea"></textarea>
 			</div>
 			<div class="field checkbox">
+				<div class="icon"></div>
 				<label for="checkbox">Checkbox</label>
 				<input id="checkbox" type="checkbox" name="checkbox" value="1">
 			</div>
 			<div class="field">
+				<div class="icon"></div>
 				<label>Data</label>
 				<data value="" class="name"></data>
 			</div>
@@ -478,6 +483,7 @@ Implemented HTML structure:
 		<legend>WUI Fieldset</legend>
 		<fieldset>
 			<div class="field">
+				<div class="icon"></div>
 				<label>WUI Selectpicker</label>
 				<div class="wui-selectpicker">
 					<select name="wuiSelect">
@@ -487,18 +493,22 @@ Implemented HTML structure:
 				</div>
 			</div>
 			<div class="field">
+				<div class="icon"></div>
 				<label>WUI Datepicker</label>
 				<div class="wui-datepicker"><input type="date" name="wuiDate" value=""></div>
 			</div>
 			<div class="field">
+				<div class="icon"></div>
 				<label>WUI Timepicker</label>
 				<div class="wui-timepicker"><input type="time" name="wuiTime" value=""></div>
 			</div>
 			<div class="field color">
-				<label>WUI Timepicker</label>
+				<div class="icon"></div>
+				<label>WUI Colorpicker</label>
 				<div class="wui-colorpicker"><input type="color" name="wuiColor" value=""></div>
 			</div>
 			<div class="field checkbox">
+				<div class="icon"></div>
 				<label for="wuiCheckbox">WUI Checkbox</label>
 				<div class="wui-checkbox"><input id="wuiCheckbox" type="checkbox" name="wuiCheckbox" value="1"></div>
 			</div>

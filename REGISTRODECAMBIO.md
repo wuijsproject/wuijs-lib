@@ -57,6 +57,7 @@ Características:
 14. Actualización versión clase WUIForm a 0.2.
 	- Se agregó soporte para valores privados.
 	- Se agregó soporte para formato CSS claro/oscuro.
+	- Se agregó el método `getIcon()`.
 	- Se agregó la variable CSS `--wui-form-message-shadowcolor`.
 15. Actualización versión clase WUIFormat a 0.2.
 	- Se agregó soporte para `"Windows Phone"` en los métodos `getOS()` y `getMobileOS()`.
