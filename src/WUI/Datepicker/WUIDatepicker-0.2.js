@@ -303,6 +303,7 @@ class WUIDatepicker {
 	#setValue(value) {
 		this.#properties.value = value;
 		if (this.#htmlElements.input instanceof HTMLInputElement) {
+			this.#htmlElements.input.value = value;
 			this.#htmlElements.input.dispatchEvent(new Event("change"));
 		}
 	}
