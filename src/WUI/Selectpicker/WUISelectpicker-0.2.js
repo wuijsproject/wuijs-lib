@@ -115,7 +115,6 @@ class WUISelectpicker {
 		cancelButton: null,
 		acceptButton: null
 	};
-	#value;
 	#targetValue;
 	#cancelValue;
 	#colorScheme;
@@ -125,7 +124,6 @@ class WUISelectpicker {
 		Object.entries(defaults).forEach(([name, value]) => {
 			this[name] = name in properties ? properties[name] : value;
 		});
-		this.#value = null;
 		this.#targetValue = null;
 		this.#cancelValue = null;
 		this.#colorScheme = null;
@@ -194,7 +192,7 @@ class WUISelectpicker {
 	set value(value) {
 		if (typeof (value).toString().match(/string|number/) && (typeof (this.#properties.enabled) == "undefined" || this.#properties.enabled)) {
 			value = value.toString().trim();
-			this.#value = value;
+			this.#properties.value = value;
 			if (this.#properties.enabled) {
 				this.#setValue(value);
 				this.#refreshView();
@@ -319,7 +317,7 @@ class WUISelectpicker {
 	}
 
 	#getValue() {
-		return this.#getSelectedOptions().map(opt => opt.value).join(this.#properties.separatorValue) || "";
+		return this.#getSelectedOptions().map(opt => opt.value).join(this.#properties.separatorValue) || this.#properties.value || "";
 	}
 
 	#getText() {
@@ -459,7 +457,7 @@ class WUISelectpicker {
 			if (this.#htmlElements.input.getAttribute("style") != null) {
 				this.#htmlElements.input.removeAttributeNode(this.#htmlElements.input.getAttributeNode("style"));
 			}
-			this.#properties.value = this.#value || "";
+			this.#properties.value = this.#properties.value || "";
 			this.#htmlElements.input.addEventListener("change", () => {
 				if (typeof (this.#properties.onChange) == "function") {
 					this.#properties.onChange(this.value);
@@ -532,8 +530,8 @@ class WUISelectpicker {
 			this.#darkModeListener(() => {
 				this.#setStyle();
 			});
-			if (this.#value != null) {
-				this.value = this.#value
+			if (this.#properties.value != null) {
+				this.value = this.#properties.value
 			}
 		}
 	}
@@ -668,7 +666,6 @@ class WUISelectpicker {
 		Object.keys(this.#properties).forEach(name => {
 			delete this.#properties[name];
 		});
-		this.#value = undefined;
 		this.#targetValue = undefined;
 		this.#cancelValue = undefined;
 		this.#colorScheme = undefined;

@@ -92,7 +92,7 @@ Para instalar la biblioteca WUI, debe ser clonada desde el repositorio oficial e
 
 ```bash
 cd ./downloads
-git clone https://git@github.com/sbelmar/wuijs-lib.git
+git clone https://git@github.com/wuijsproject/wuijs-lib.git
 cp -r ./wuijs-lib/src/WUI ../src/Libraries/
 ```
 
@@ -100,7 +100,7 @@ Opcionalmente puede ser descargada desde los mismos repositorios en formato ZIP.
 
 ```bash
 cd ./downloads
-wget https://github.com/sbelmar/wuijs-lib/archive/refs/heads/main.zip
+wget https://github.com/wuijsproject/wuijs-lib/archive/refs/heads/main.zip
 unzip main.zip
 cp -r ./wuijs-lib-main/src/WUI ../src/Libraries/
 ```
