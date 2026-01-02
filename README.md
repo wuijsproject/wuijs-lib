@@ -2903,6 +2903,11 @@ body {
 
 .my-selectpicker {
 	max-width: 200px;
+	-webkit-border-radius: var(--wui-selectpicker-box-option-borderradius);
+	-moz-border-radius: var(--wui-selectpicker-box-option-borderradius);
+	border-radius: var(--wui-selectpicker-box-option-borderradius);
+	background-color: var(--wui-selectpicker-box-option-bgcolor-over);
+	padding-left: 7px;
 }
 
 .my-output {
