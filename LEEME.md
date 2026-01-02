@@ -1332,7 +1332,7 @@ scrolly.init();
 ```
 
 > [!TIP]
-> Puede revisar este ejemplo funcional en CodePen en el enlace: [https://codepen.io/sbelmar/pen/azdjOQp](https://codepen.io/sbelmar/pen/azdjOQp).
+> Puede revisar este ejemplo funcional en CodePen en el enlace: [https://codepen.io/wuijsproject/pen/azZvxMK](https://codepen.io/wuijsproject/pen/azZvxMK).
 
 <a name="WUIIcon"></a>
 
@@ -1619,7 +1619,7 @@ Código HTML:
 ```
 
 > [!TIP]
-> Puede revisar este ejemplo funcional en CodePen en el enlace: [https://codepen.io/sbelmar/pen/KwVBpoj](https://codepen.io/sbelmar/pen/KwVBpoj).
+> Puede revisar este ejemplo funcional en CodePen en el enlace: [https://codepen.io/wuijsproject/pen/gbMayJO](https://codepen.io/wuijsproject/pen/gbMayJO).
 
 <a name="WUIFade"></a>
 
@@ -1723,7 +1723,7 @@ const fadeout = () => {
 ```
 
 > [!TIP]
-> Puede revisar este ejemplo funcional en CodePen en el enlace: [https://codepen.io/sbelmar/pen/KwVeEOv](https://codepen.io/sbelmar/pen/KwVeEOv).
+> Puede revisar este ejemplo funcional en CodePen en el enlace: [https://codepen.io/wuijsproject/pen/LEZpvoX](https://codepen.io/wuijsproject/pen/LEZpvoX).
 
 <a name="WUILoader"></a>
 
@@ -2059,7 +2059,7 @@ menubar.init();
 ```
 
 > [!TIP]
-> Puede revisar este ejemplo funcional en CodePen en el enlace: [https://codepen.io/sbelmar/pen/zxqevgE](https://codepen.io/sbelmar/pen/zxqevgE).
+> Puede revisar este ejemplo funcional en CodePen en el enlace: [https://codepen.io/wuijsproject/pen/JoKYVQm](https://codepen.io/wuijsproject/pen/JoKYVQm).
 
 <a name="WUIList"></a>
 
@@ -2388,7 +2388,7 @@ list.print();
 ```
 
 > [!TIP]
-> Puede revisar este ejemplo funcional en CodePen en el enlace: [https://codepen.io/sbelmar/pen/vELrGBJ](https://codepen.io/sbelmar/pen/vELrGBJ).
+> Puede revisar este ejemplo funcional en CodePen en el enlace: [https://codepen.io/wuijsproject/pen/xbOweva](https://codepen.io/wuijsproject/pen/xbOweva).
 
 <a name="WUITable"></a>
 
@@ -2740,7 +2740,7 @@ table.print();
 ```
 
 > [!TIP]
-> Puede revisar este ejemplo funcional en CodePen en el enlace: [https://codepen.io/sbelmar/pen/zxrapZe](https://codepen.io/sbelmar/pen/zxrapZe).
+> Puede revisar este ejemplo funcional en CodePen en el enlace: [https://codepen.io/wuijsproject/pen/jErboKZ](https://codepen.io/wuijsproject/pen/jErboKZ).
 
 <a name="WUIForm"></a>
 <a name="WUIFormat"></a>
@@ -2853,9 +2853,6 @@ Configuración CSS:
 
 ```css
 :root {
-
-	/* wui-selectpicker */
-
 	--wui-selectpicker-opener-iconsize: 20px;
 	--wui-selectpicker-opener-iconcolor-out: rgb(from #2d3a47 r g b / 20%);
 	--wui-selectpicker-opener-iconcolor-over: #2d3a47;
@@ -2914,7 +2911,7 @@ Código HTML:
 
 ```html
 <div class="wui-selectpicker my-selectpicker">
-	<select name="mySelect">
+	<select name="mySelectpicker">
 		<option value=""></option>
 		<option value="1">Opción 1</option>
 		<option value="2">Opción 2</option>
@@ -2930,7 +2927,7 @@ Código JS:
 ```js
 // Crear objeto
 const output = document.body.querySelector(".my-output");
-const select = new WUISelectpicker({
+const selectpicker = new WUISelectpicker({
 	selector: ".wui-selectpicker.my-selectpicker",
 	value: "2",
 	lang: "es",
@@ -2950,11 +2947,14 @@ const select = new WUISelectpicker({
 });
 
 // Inicializar objeto
-select.init();
+selectpicker.init();
 ```
 
 > [!IMPORTANT]
 > Si el selector define un elemento que no es de tipo `HTMLDivElement`, el objeto no se inicializará.
+
+> [!TIP]
+> Puede revisar este ejemplo funcional en CodePen en el enlace: [https://codepen.io/wuijsproject/pen/WbxQBKX](https://codepen.io/wuijsproject/pen/WbxQBKX).
 
 <a name="WUIDatepicker"></a>
 <a name="WUITimepicker"></a>
@@ -3207,7 +3207,7 @@ button2.init();
 > Si el selector define un elemento que no es de tipo `HTMLButtonElement`, el objeto no se inicializará.
 
 > [!TIP]
-> Puede revisar este ejemplo funcional en CodePen en el enlace: [https://codepen.io/sbelmar/pen/gbPyBNJ](https://codepen.io/sbelmar/pen/gbPyBNJ).
+> Puede revisar este ejemplo funcional en CodePen en el enlace: [https://codepen.io/wuijsproject/pen/xbOwNzN](https://codepen.io/wuijsproject/pen/xbOwNzN).
 
 <a name="examples"></a>
 
@@ -3215,12 +3215,13 @@ button2.init();
 
 Los ejemplos listados en esta sección, son detallados en la sección "Implementavión" de cada clase.
 
-| Clase                     | Enlace |
-| ------------------------- | ------ |
-| [WUIScrolly](#WUIScrolly) | [https://codepen.io/sbelmar/pen/azdjOQp](https://codepen.io/sbelmar/pen/azdjOQp) |
-| [WUIIcon](#WUIIcon)       | [https://codepen.io/sbelmar/pen/KwVBpoj](https://codepen.io/sbelmar/pen/KwVBpoj) |
-| [WUIFade](#WUIFade)       | [https://codepen.io/sbelmar/pen/KwVeEOv](https://codepen.io/sbelmar/pen/KwVeEOv) |
-| [WUIMenubar](#WUIMenubar) | [https://codepen.io/sbelmar/pen/zxqevgE](https://codepen.io/sbelmar/pen/zxqevgE) |
-| [WUIList](#WUIList)       | [https://codepen.io/sbelmar/pen/vELrGBJ](https://codepen.io/sbelmar/pen/vELrGBJ) |
-| [WUITable](#WUITable)     | [https://codepen.io/sbelmar/pen/zxrapZe](https://codepen.io/sbelmar/pen/zxrapZe) |
-| [WUIButton](#WUIButton)   | [https://codepen.io/sbelmar/pen/gbPyBNJ](https://codepen.io/sbelmar/pen/gbPyBNJ) |
+| Clase                               | Enlace |
+| ----------------------------------- | ------ |
+| [WUIScrolly](#WUIScrolly)           | [https://codepen.io/wuijsproject/pen/azZvxMK](https://codepen.io/wuijsproject/pen/azZvxMK) |
+| [WUIIcon](#WUIIcon)                 | [https://codepen.io/wuijsproject/pen/gbMayJO](https://codepen.io/wuijsproject/pen/gbMayJO) |
+| [WUIFade](#WUIFade)                 | [https://codepen.io/wuijsproject/pen/LEZpvoX](https://codepen.io/wuijsproject/pen/LEZpvoX) |
+| [WUIMenubar](#WUIMenubar)           | [https://codepen.io/wuijsproject/pen/JoKYVQm](https://codepen.io/wuijsproject/pen/JoKYVQm) |
+| [WUIList](#WUIList)                 | [https://codepen.io/wuijsproject/pen/xbOweva](https://codepen.io/wuijsproject/pen/xbOweva) |
+| [WUITable](#WUITable)               | [https://codepen.io/wuijsproject/pen/jErboKZ](https://codepen.io/wuijsproject/pen/jErboKZ) |
+| [WUISelectpicker](#WUISelectpicker) | [https://codepen.io/wuijsproject/pen/WbxQBKX](https://codepen.io/wuijsproject/pen/WbxQBKX) |
+| [WUIButton](#WUIButton)             | [https://codepen.io/wuijsproject/pen/xbOwNzN](https://codepen.io/wuijsproject/pen/xbOwNzN) |
