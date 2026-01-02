@@ -2894,6 +2894,10 @@ body {
 	font-family: Arial, Helvetica, Verdana, sans-serif;
 }
 
+.wui-selectpicker {
+	width: 200px;
+}
+
 .my-output {
 	margin: 10px;
 	font-family: monospace;

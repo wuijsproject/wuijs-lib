@@ -267,8 +267,8 @@ class WUISelectpicker {
 	set enabled(value) {
 		if (typeof (value) == "boolean") {
 			this.#properties.enabled = value;
-			this.#htmlElements.input.disabled = !value;
-			if (this.#htmlElements.inputText instanceof HTMLInputElement) {
+			if (this.#htmlElements.input instanceof HTMLSelectElement && this.#htmlElements.inputText instanceof HTMLInputElement) {
+				this.#htmlElements.input.disabled = !value;
 				this.#htmlElements.inputText.disabled = !value;
 				if (value) {
 					this.#htmlElements.inputText.removeAttribute("disabled");
