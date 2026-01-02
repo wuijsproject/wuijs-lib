@@ -396,9 +396,9 @@ CSS code in the `WUI.css` file:
 	--wui-selectpicker-opener-iconcolor-disabled: #d5dce3;
 	--wui-selectpicker-opener-openicon-src: none;
 	--wui-selectpicker-opener-closeicon-src: none;
-	--wui-selectpicker-input-textcolor-out: var(--wui-form-input-textcolor-out);
-	--wui-selectpicker-input-textcolor-over: var(--wui-form-input-textcolor-over);
-	--wui-selectpicker-input-textcolor-disabled: var(--wui-form-input-textcolor-disabled);
+	--wui-selectpicker-input-textcolor-out: #2d3a47;
+	--wui-selectpicker-input-textcolor-over: #1f2937;
+	--wui-selectpicker-input-textcolor-disabled: #d5dce3;
 	--wui-selectpicker-box-shadowcolor: #959da5;
 	--wui-selectpicker-box-borderradius: 15px;
 	--wui-selectpicker-box-bordercolor: #f0f0f3;
@@ -423,8 +423,8 @@ CSS code in the `WUI.css` file:
 	--wui-selectpicker-box-button-textcolor-out: #1e90ff;
 	--wui-selectpicker-box-button-textcolor-over: #1e90ff;
 	--wui-selectpicker-mobile-overlay-bgcolor: rgb(from #010203 r g b / 20%);
-	--wui-selectpicker-mobile-box-width: var(--wui-modal-select-box-width);
-	--wui-selectpicker-mobile-box-borderradius: var(--wui-modal-box-borderradius);
+	--wui-selectpicker-mobile-box-width: 280px;
+	--wui-selectpicker-mobile-box-borderradius: 17px;
 
 	/* wui-datepicker */
 
@@ -2818,6 +2818,8 @@ Component for the implementation of multiple or exclusive selection list data in
 | `--wui-selectpicker-opener-iconcolor-out`           |
 | `--wui-selectpicker-opener-iconcolor-over`          |
 | `--wui-selectpicker-opener-iconcolor-disabled`      |
+| `--wui-selectpicker-opener-openicon-src`            |
+| `--wui-selectpicker-opener-closeicon-src`           |
 | `--wui-selectpicker-input-textcolor-out`            |
 | `--wui-selectpicker-input-textcolor-over`           |
 | `--wui-selectpicker-input-textcolor-disabled`       |
@@ -2826,19 +2828,21 @@ Component for the implementation of multiple or exclusive selection list data in
 | `--wui-selectpicker-box-bordercolor`                |
 | `--wui-selectpicker-box-bgcolor`                    |
 | `--wui-selectpicker-box-option-borderradius`        |
-| `--wui-selectpicker-box-option-bgcolor-out`         |
-| `--wui-selectpicker-box-option-bgcolor-over`        |
 | `--wui-selectpicker-box-option-bordercolor-out`     |
 | `--wui-selectpicker-box-option-bordercolor-over`    |
+| `--wui-selectpicker-box-option-bgcolor-out`         |
+| `--wui-selectpicker-box-option-bgcolor-over`        |
 | `--wui-selectpicker-box-option-iconsize`            |
 | `--wui-selectpicker-box-option-iconcolor-out`       |
 | `--wui-selectpicker-box-option-iconcolor-over`      |
+| `--wui-selectpicker-box-option-iconcolor-selected`  |
 | `--wui-selectpicker-box-option-iconcolor-disabled`  |
-| `--wui-selectpicker-box-option-textcolor-out`       |
+| `--wui-selectpicker-box-option-checkicon-src`       |
 | `--wui-selectpicker-box-option-textcolor-empty`     |
+| `--wui-selectpicker-box-option-textcolor-out`       |
 | `--wui-selectpicker-box-option-textcolor-over`      |
-| `--wui-selectpicker-box-option-textcolor-disabled`  |
 | `--wui-selectpicker-box-option-textcolor-selected`  |
+| `--wui-selectpicker-box-option-textcolor-disabled`  |
 | `--wui-selectpicker-box-button-bordercolor`         |
 | `--wui-selectpicker-box-button-textcolor-out`       |
 | `--wui-selectpicker-box-button-textcolor-over`      |
@@ -2852,37 +2856,41 @@ CSS Settings:
 
 ```css
 :root {
-	--wui-selectpicker-opener-iconsize: 20px;
-	--wui-selectpicker-opener-iconcolor-out: rgb(from #2d3a47 r g b / 20%);
-	--wui-selectpicker-opener-iconcolor-over: #2d3a47;
+	--wui-selectpicker-opener-iconsize: 30px;
+	--wui-selectpicker-opener-iconcolor-out: #000;
+	--wui-selectpicker-opener-iconcolor-over: #1e90ff;
 	--wui-selectpicker-opener-iconcolor-disabled: #d5dce3;
+	--wui-selectpicker-opener-openicon-src: none;
+	--wui-selectpicker-opener-closeicon-src: none;
 	--wui-selectpicker-input-textcolor-out: #2d3a47;
 	--wui-selectpicker-input-textcolor-over: #1f2937;
 	--wui-selectpicker-input-textcolor-disabled: #d5dce3;
 	--wui-selectpicker-box-shadowcolor: #959da5;
-	--wui-selectpicker-box-borderradius: 10px;
-	--wui-selectpicker-box-bordercolor: rgb(from #353a40 r g b / 20%);
-	--wui-selectpicker-box-bgcolor: #fff;
-	--wui-selectpicker-box-option-borderradius: 5px;
-	--wui-selectpicker-box-option-bgcolor-out: #fff;
+	--wui-selectpicker-box-borderradius: 15px;
+	--wui-selectpicker-box-bordercolor: #f0f0f3;
+	--wui-selectpicker-box-bgcolor: #fdfdfe;
+	--wui-selectpicker-box-option-borderradius: 10px;
+	--wui-selectpicker-box-option-bordercolor-out: #f0f0f3;
+	--wui-selectpicker-box-option-bordercolor-over: #f0f0f3;
+	--wui-selectpicker-box-option-bgcolor-out: transparent;
 	--wui-selectpicker-box-option-bgcolor-over: #f6f6fa;
-	--wui-selectpicker-box-option-bordercolor-out: transparent;
-	--wui-selectpicker-box-option-bordercolor-over: transparent;
-	--wui-selectpicker-box-option-iconsize: 20px;
+	--wui-selectpicker-box-option-iconsize: 24px;
 	--wui-selectpicker-box-option-iconcolor-out: #1e90ff;
 	--wui-selectpicker-box-option-iconcolor-over: #1e90ff;
-	--wui-selectpicker-box-option-iconcolor-disabled: #d5dce3;
+	--wui-selectpicker-box-option-iconcolor-selected: #1e90ff;
+	--wui-selectpicker-box-option-iconcolor-disabled: rgb(from #d5dce3 r g b / 40%);
+	--wui-selectpicker-box-option-checkicon-src: none;
+	--wui-selectpicker-box-option-textcolor-empty: rgb(from #2d3a47 r g b / 60%);
 	--wui-selectpicker-box-option-textcolor-out: #2d3a47;
-	--wui-selectpicker-box-option-textcolor-empty: #d5dce3;
-	--wui-selectpicker-box-option-textcolor-over: #1f2937;
-	--wui-selectpicker-box-option-textcolor-disabled: #d5dce3;
-	--wui-selectpicker-box-option-textcolor-selected: #1f2937;
+	--wui-selectpicker-box-option-textcolor-over: #2d3a47;
+	--wui-selectpicker-box-option-textcolor-selected: #1e90ff;
+	--wui-selectpicker-box-option-textcolor-disabled: rgb(from #d5dce3 r g b / 40%);
 	--wui-selectpicker-box-button-bordercolor: #f0f0f3;
 	--wui-selectpicker-box-button-textcolor-out: #1e90ff;
-	--wui-selectpicker-box-button-textcolor-over: #1060aa;
-	--wui-selectpicker-mobile-overlay-bgcolor: rgba(0, 0, 0, 0.5);
-	--wui-selectpicker-mobile-box-width: 80%;
-	--wui-selectpicker-mobile-box-borderradius: 15px;
+	--wui-selectpicker-box-button-textcolor-over: #1e90ff;
+	--wui-selectpicker-mobile-overlay-bgcolor: rgb(from #010203 r g b / 20%);
+	--wui-selectpicker-mobile-box-width: 280px;
+	--wui-selectpicker-mobile-box-borderradius: 17px;
 }
 ```
 
@@ -2893,8 +2901,8 @@ body {
 	font-family: Arial, Helvetica, Verdana, sans-serif;
 }
 
-.wui-selectpicker {
-	width: 200px;
+.my-selectpicker {
+	max-width: 200px;
 }
 
 .my-output {
