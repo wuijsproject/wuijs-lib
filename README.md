@@ -9,7 +9,7 @@
 
 Library version: `0.2.0` ([Change Log](./CHANGELOG.md))
 
-Document version: `0.2.0.20251231.0`
+Document version: `0.2.0.20260101.0`
 
 License: `Apache License 2.0`
 
@@ -39,7 +39,7 @@ Author: `Sergio E. Belmar V. <sbelmar@wuijs.dev>`
 	*   [WUITable](#WUITable)
 	*   WUIForm
 	*   WUIFormat
-	*   WUISelectpicker
+	*   [WUISelectpicker](#WUISelectpicker)
 	*   WUIDatepicker
 	*   WUITimepicker
 	*   WUIColorpicker
@@ -56,33 +56,33 @@ WUI, an acronym for *Web User Interface JavaScript library*, is an open source J
 
 ### Classes Table
 
-| Class                         | Version | Description |
-| ----------------------------- | -------:| ----------- |
-| [WUICookie](#WUICookie)       | `0.2`   | Cookie manager. |
-| [WUIHead](#WUIHead)           | `0.2`   | HTML header manager. |
-| [WUIBody](#WUIBody)           | `0.2`   | HTML body manager. Allows the import of CSS/JS/HTML content and facilitates implementation in native mobile environments. |
-| [WUILanguage](#WUILanguage)   | `0.2`   | Language manager for web interfaces. Allows you to load language files in JS or JSON format and dynamically update the content of HTML elements based on the language. |
-| [WUIScrolly](#WUIScrolly)     | `0.2`   | Tool for animating HTML elements using the "onscroll" event of the HTML page body. |
-| [WUIIcon](#WUIIcon)           | `0.1`   | Set of pre-designed icons loaded via CSS, for use in interfaces. |
-| [WUIFade](#WUIFade)           | `0.1`   | Tool for fading out and fading control in HTML elements with opacity. |
-| [WUILoader](#WUILoader)       | `0.2`   | Object for loading animation. |
-| WUITooltip                    | `0.1`   | Object for hover text. |
-| WUIModal                      | `0.2`   | Object for implementing dialog boxes (type `message`) and pop-up windows (type `page`). |
-| WUISlider                     | `0.2`   | Object for implementing mouse-controlled and/or event-controlled blinds. |
-| WUIPaging                     | `0.1`   | Object for implementing paginated views. |
-| WUITabs                       | `0.1`   | Object for implementing views accessible by tab selection. |
-| [WUIMenubar](#WUIMenubar)     | `0.1`   | Object for implementing menu bars. |
-| [WUIList](#WUIList)           | `0.2`   | Object for implementing data lists and buttons for each row optionally. |
-| [WUITable](#WUITable)         | `0.2`   | Object for implementing data tables. Unlike the `WUIList` object, the `WUITable` object includes a column header. |
-| WUIForm                       | `0.2`   | Object for implementing data forms. This object allows the implementation of HTML data input elements such as `<input>`, `<select>`, and `<textarea>`, and WUI library objects such as `WUISelectpicker`, `WUIDatepicker`, `WUITimepicker`, `WUIColorpicker`, `WUICheckbox`, `WUIIntensity`, and `WUIButton`. |
-| WUIFormat                     | `0.2`   | Tool for managing and validating `string`, `number` and `Date` data formats. |
-| WUISelectpicker               | `0.2`   | Object for implementing multiple-select or exclusive data entries based on lists based on HTML `<select>` elements. |
-| WUIDatepicker                 | `0.2`   | Object for implementing date type data input. |
-| WUITimepicker                 | `0.2`   | Object for implementing time type data inputs. |
-| WUIColorpicker                | `0.2`   | Object for implementing color picker type data inputs. |
-| WUICheckbox                   | `0.2`   | Object for implementing checkbox type data inputs. |
-| WUIIntensity                  | `0.1`   | Object for implementing 4-level intensity selector type data inputs: none, low, half, and high. |
-| [WUIButton](#WUIButton)       | `0.2`   | Object for button implementation. |
+| Class                               | Version | Description |
+| ----------------------------------- | -------:| ----------- |
+| [WUICookie](#WUICookie)             | `0.2`   | Cookie manager. |
+| [WUIHead](#WUIHead)                 | `0.2`   | HTML header manager. |
+| [WUIBody](#WUIBody)                 | `0.2`   | HTML body manager. Allows the import of CSS/JS/HTML content and facilitates implementation in native mobile environments. |
+| [WUILanguage](#WUILanguage)         | `0.2`   | Language manager for web interfaces. Allows you to load language files in JS or JSON format and dynamically update the content of HTML elements based on the language. |
+| [WUIScrolly](#WUIScrolly)           | `0.2`   | Tool for animating HTML elements using the "onscroll" event of the HTML page body. |
+| [WUIIcon](#WUIIcon)                 | `0.1`   | Set of pre-designed icons loaded via CSS, for use in interfaces. |
+| [WUIFade](#WUIFade)                 | `0.1`   | Tool for fading out and fading control in HTML elements with opacity. |
+| [WUILoader](#WUILoader)             | `0.2`   | Component for the implementation of loading animations. |
+| WUITooltip                          | `0.1`   | Component for the implementation of tooltip texts. |
+| WUIModal                            | `0.2`   | Component for the implementation of dialog boxes (type `message`) and pop-up windows (type `page`). |
+| WUISlider                           | `0.2`   | Component for the implementation of mouse-controlled and/or event-controlled blinds. |
+| WUIPaging                           | `0.1`   | Component for the implementation of paginated views. |
+| WUITabs                             | `0.1`   | Component for the implementation of views accessible by tab selection. |
+| [WUIMenubar](#WUIMenubar)           | `0.1`   | Component for the implementation of menu bars. |
+| [WUIList](#WUIList)                 | `0.2`   | Component for the implementation of data lists and buttons for each row optionally. |
+| [WUITable](#WUITable)               | `0.2`   | Component for the implementation of data tables. Unlike the `WUIList` component, the `WUITable` component includes a column header. |
+| WUIForm                             | `0.2`   | Component for the implementation of data forms. This component allows the implementation of HTML data input elements such as `<input>`, `<select>`, and `<textarea>`, and WUI library objects such as `WUISelectpicker`, `WUIDatepicker`, `WUITimepicker`, `WUIColorpicker`, `WUICheckbox`, `WUIIntensity`, and `WUIButton`. |
+| WUIFormat                           | `0.2`   | Tool for managing and validating `string`, `number` and `Date` data formats. |
+| [WUISelectpicker](#WUISelectpicker) | `0.2`   | Component for the implementation of multiple or exclusive selection list data inputs based on HTML element `<select>`. |
+| WUIDatepicker                       | `0.2`   | Component for the implementation of date type data inputs based on HTML element `<input type="date">`. |
+| WUITimepicker                       | `0.2`   | Component for the implementation of time type data inputs based on HTML element `<input type="time">`. |
+| WUIColorpicker                      | `0.2`   | Component for the implementation of color picker type data inputs based on HTML element `<input type="color">`. |
+| WUICheckbox                         | `0.2`   | Component for the implementation of checkbox type data inputs based on HTML element `<input type="checkbox">`. |
+| WUIIntensity                        | `0.1`   | Component for the implementation of 4-level intensity selector type data inputs: none, low, half, and high based on HTML element `<input type="range">`. |
+| [WUIButton](#WUIButton)             | `0.2`   | Component for the implementation of based on HTML element `<button>`. |
 
 <a name="install"></a>
 
@@ -742,10 +742,10 @@ JS code:
 ```js
 // Create object
 const cookie = new WUICookie({
-	domain: location.hostname,  // Default value, property can be omitted
-	path: "./",                 // Default value, property can be omitted
-	minutes: 365*24*60,         // Default value, property can be omitted
-	overssl: false              // Default value, property can be omitted
+	//domain: location.hostname,
+	//path: "./",
+	//minutes: 365*24*60,
+	//overssl: false
 });
 
 // Save cookie
@@ -900,9 +900,9 @@ JS code:
 ```js
 // Create object
 const body = new WUIBody({
-	environment: "web",             // Default value, property can be omitted
+	//environment: "web",
 	importDirectory: "./Imports/",
-	importMode: "fetch",            // Default value, property can be omitted
+	//importMode: "fetch",
 	onCompleted: () => {
 		body.prepare();
 	},
@@ -1004,13 +1004,13 @@ JS code:
 ```js
 // Create object
 const language = new WUILanguage({
-    selector: ".wui-language",  // Default value, property can be omitted
-    directory: "./Languages/",  // Default value, property can be omitted
-    sets: ["main"],             // Default value, property can be omitted
-    lang: "en",                 // Default value, property can be omitted
-    mode: "js",                 // Default value, property can be omitted
-    dataKey: "key",             // Default value, property can be omitted
-    dataOutput: "text",         // Default value, property can be omitted
+    //selector: ".wui-language",
+    //directory: "./Languages/",
+    //sets: ["main"],
+    //lang: "en",
+    //mode: "js",
+    //dataKey: "key",
+    //dataOutput: "text",
     onLoad: (...args) => {
 		[lang, languages] = args;
         console.log("Language loaded:", lang, languages);
@@ -1260,10 +1260,10 @@ JS code:
 ```js
 // Create object
 const scrolly = new WUIScrolly({
-	sections: [],            // Default value, property can be omitted
-	behavior: "smooth",      // Default value, property can be omitted
-	dataScrollY: "scrollY",  // Default value, property can be omitted
-	dataDelay: "delay",      // Default value, property can be omitted
+	//sections: [],
+	//behavior: "smooth",
+	//dataScrollY: "scrollY",
+	//dataDelay: "delay",
 	onStart: () => {},
 	onMove: (index, step, progress) => {
 		if (index == 1) {
@@ -1271,7 +1271,7 @@ const scrolly = new WUIScrolly({
 		}
 	},
 	onStop: () => {},
-	debug: false             // Default value, property can be omitted
+	debug: true
 });
 const element5 = document.body.querySelector(".section3 .my-element.element5");
 const element6 = document.body.querySelector(".section3 .my-element.element6");
@@ -1731,7 +1731,7 @@ const fadeout = () => {
 
 Version: `0.2`
 
-Object for loading animation.
+Component for the implementation of loading animations.
 
 #### Sources
 
@@ -1750,7 +1750,7 @@ Object for loading animation.
 
 | Property  | Type     | Default value   | Description |
 | --------- | -------- | --------------- | ----------- |
-| selector  | `string` | `".wui-loader"` | (get/set)<br><br>CSS selector that defines the HTML element that will be converted into the loader object. If more than one element matches the selector, only the first match will be included. |
+| selector  | `string` | `".wui-loader"` | (get/set)<br><br>CSS selector that defines the HTML element that will be converted into the object. If more than one element matches the selector, only the first match will be included. |
 | style     | `string` | `"ring"`        | (get/set)<br><br>Loading animation style.<br><br>Values:<br>• `"ring"`, ring.<br>• `"dualring"`, dual ring.<br>• `"spinner"`, spinner.<br>• `"roller"`, roller.<br>• `"ellipsis"`, dots.<br>• `"grid"`, grid. |
 | size      | `number` | `60`            | (get/set)<br><br>Loading animation size in pixels. |
 | dataStyle | `string` | `"style"`       | (get/set)<br><br>Name of the `data-*` attribute that contains the value of the `style` property. |
@@ -1775,7 +1775,7 @@ Object for loading animation.
 
 Versión: `0.1`
 
-Object for implementing menu bars.
+Component for the implementation of menu bars.
 
 #### Sources
 
@@ -1794,7 +1794,7 @@ Object for implementing menu bars.
 
 | Property      | Type       | Default value.   | Description |
 | ------------- | ---------- | ---------------- | ----------- |
-| selector      | `string`   | `".wui-menubar"` | (get/set)<br><br>CSS selector that defines the HTML element that will be converted into the menu bar object. If more than one element matches the selector, only the first match will be included. |
+| selector      | `string`   | `".wui-menubar"` | (get/set)<br><br>CSS selector that defines the HTML element that will be converted into the object. If more than one element matches the selector, only the first match will be included. |
 | expansive     | `boolean`  | `true`           | (get/set)<br><br>Define the menu expands. The function of expansion is not visible in mobile mode (when the screen width is less than `768px`). |
 | topButtons    | `array`    | `[]`             | (get/set)<br><br>List of menu top buttons, as defined by **Button Options**. These buttons are not visible in mobile mode (when the screen width is less than `768px`). |
 | mainButtons   | `array`    | `[]`             | (get/set)<br><br>List of menu main buttons, as defined by **Button Options**. |
@@ -1986,14 +1986,14 @@ JS code:
 const output = document.body.querySelector(".my-output");
 const menubar = new WUIMenubar({
 	selector: ".wui-menubar.my-menubar",
-	expansive: true,    // Default value, property can be omitted
-	topButtons: [],     // Default value, property can be omitted
-	mainButtons: [],    // Default value, property can be omitted
-	bottomButtons: [],  // Default value, property can be omitted
+	//expansive: true,
+	//topButtons: [],
+	//mainButtons: [],
+	//bottomButtons: [],
 	onClick: (id) => {
 		output.textContent = `Click button - id: "${id}"`;
 	},
-	onSelect: null      // Default value, property can be omitted
+	//onSelect: null
 });
 
 // Add buttons
@@ -2067,7 +2067,7 @@ menubar.init();
 
 Versión: `0.2`
 
-Object for implementing data lists and buttons for each row optionally.
+Component for the implementation of data lists and buttons for each row optionally.
 
 #### Sources
 
@@ -2086,7 +2086,7 @@ Object for implementing data lists and buttons for each row optionally.
 
 | Property     | Type       | Default value | Description |
 | ------------ | ---------- | ------------- | ----------- |
-| selector     | `string`   | `".wui-list"` | (get/set)<br><br>CSS selector that defines the HTML element that will be converted into the list object. If more than one element matches the selector, only the first match will be included. |
+| selector     | `string`   | `".wui-list"` | (get/set)<br><br>CSS selector that defines the HTML element that will be converted into the object. If more than one element matches the selector, only the first match will be included. |
 | paging       | `number`   | `0`           | (get/set)<br><br>Paging, or the number of rows per page in the list. A value of `0` indicates that the pagination will be the same length as rows; in other words, a value of `0` disables paging. |
 | page         | `number`   | `0`           | (get)<br><br>Current page displayed in the list, where page `0` corresponds to the first page and the last to the total number of rows minus 1. |
 | pages        | `number`   | `0`           | (get)<br><br>Total number of pages. |
@@ -2314,7 +2314,7 @@ const list = new WUIList({
 		width: 40,
 		align: "center"
 	}],
-	rows: [],  // Default value, property can be omitted
+	//rows: [],
 	buttons: [{
 		iconClass: "wui-icon trash-fill",
 		bgcolor: "#f44343",
@@ -2396,7 +2396,7 @@ list.print();
 
 Versión: `0.2`
 
-Object for implementing data tables. Unlike the `WUIList` object, the `WUITable` object includes a column header.
+Component for the implementation of data tables. Unlike the `WUIList` object, the `WUITable` object includes a column header.
 
 #### Sources
 
@@ -2415,7 +2415,7 @@ Object for implementing data tables. Unlike the `WUIList` object, the `WUITable`
 
 | Property     | Type       | Default value  | Description |
 | ------------ | ---------- | -------------- | ----------- |
-| selector     | `string`   | `".wui-table"` | (get/set)<br><br>CSS selector that defines the HTML element that will be converted into the table object. If more than one element matches the selector, only the first match will be included. |
+| selector     | `string`   | `".wui-table"` | (get/set)<br><br>CSS selector that defines the HTML element that will be converted into the object. If more than one element matches the selector, only the first match will be included. |
 | width        | `string`   | `"auto"`       | (get/set)<br><br>Table width in CSS compatible format. |
 | paging       | `number`   | `0`            | (get/set)<br><br>Paging, or the number of rows per page in the table. A value of `0` indicates that the pagination will be the same length as rows; in other words, a value of `0` disables paging. |
 | page         | `number`   | `0`            | (get)<br><br>Current page displayed in the table, where page `0` corresponds to the first page and the last to the total number of rows minus 1. |
@@ -2647,7 +2647,7 @@ const paging = document.body.querySelector(".my-paging");
 const output = document.body.querySelector(".my-output");
 const table = new WUITable({
 	selector: ".wui-table.my-table",
-	width: "auto",     // Default value, property can be omitted
+	//width: "auto",
 	paging: 5,
 	columns: [{
 		label: "A Column",
@@ -2662,13 +2662,13 @@ const table = new WUITable({
 		label: "D Column",
 		width: 100
 	}],
-	rows: [],          // Default value, property can be omitted
+	//rows: [],
 	align: "center",
-	valign: "middle",  // Default value, property can be omitted
-	sortable: true,    // Default value, property can be omitted
-	resizable: true,   // Default value, property can be omitted
-	draggable: true,   // Default value, property can be omitted
-	selectable: true,  // Default value, property can be omitted
+	//valign: "middle",
+	//sortable: true,
+	//resizable: true,
+	//draggable: true,
+	//selectable: true,
 	onPrint: (page, pages, total) => {
 		if (table.isPrevEnable()) {
 			firstLink.classList.remove("disabled");
@@ -2739,11 +2739,221 @@ table.print();
 ```
 
 > [!TIP]
-> You can check out this working example on CodePen at the link: [https://codepen.io/sbelmar/pen/zxrapZe](https://codepen.io/sbelmar/pen/zxrapZe).
+> You can check this functional example in CodePen at the link: [https://codepen.io/sbelmar/pen/zxrapZe](https://codepen.io/sbelmar/pen/zxrapZe).
 
 <a name="WUIForm"></a>
 <a name="WUIFormat"></a>
 <a name="WUISelectpicker"></a>
+
+### WUISelectpicker
+
+Version: `0.2`
+
+Component for the implementation of multiple or exclusive selection list data inputs based on HTML element `<select>`.
+
+#### Sources
+
+| Type | File |
+| ---- | ---- |
+| CSS  | [src/WUI/Selectpicker/WUISelectpicker-0.2.css](https://github.com/sbelmar/wuijs-lib/blob/main/src/WUI/Selectpicker/WUISelectpicker-0.2.css) |
+| JS   | [src/WUI/Selectpicker/WUISelectpicker-0.2.js](https://github.com/sbelmar/wuijs-lib/blob/main/src/WUI/Selectpicker/WUISelectpicker-0.2.js) |
+
+#### Constructor
+
+| Type            | Description |
+| --------------- | ----------- |
+| WUISelectpicker | `WUISelectpicker([properties])`<br><br>Arguments:<br>**• properties:** `object` *optional* |
+
+#### Properties
+
+| Property       | Type       | Default value | Description |
+| -------------- | ---------- | ------------- | ----------- |
+| selector       | `string`   | `undefined`   | (get/set)<br><br>CSS selector that defines the HTML container element of the object. If more than one element matches the selector, only the first match will be included. |
+| value          | `string`   | `""`          | (get/set)<br><br>Value of the initial options selection. |
+| text           | `string`   | `""`          | (get)<br><br>Text of the initial options selection. |
+| lang           | `string`   | `"en"`        | (get/set)<br><br>Component language.<br><br>Values:<br>• `"de"`, German.<br>• `"en"`, English.<br>• `"es"`, Spanish. |
+| texts          | `object`   | `{}`          | (get/set)<br><br>Custom texts for component buttons and messages. |
+| openDirection  | `string`   | `"down"`      | (get/set)<br><br>Opening direction of the options list.<br><br>Values:<br>• `"up"`, upwards.<br>• `"down"`, downwards. |
+| multiple       | `boolean`  | `false`       | (get/set)<br><br>Defines if the selector allows multiple selection. |
+| separatorValue | `string`   | `","`         | (get/set)<br><br>Character separator of values ​​in case of multiple selection. |
+| separatorText  | `string`   | `", "`        | (get/set)<br><br>Character separator of texts in case of multiple selection. |
+| filterable     | `boolean`  | `true`        | (get/set)<br><br>Defines if the selector allows filtering options by text input. |
+| enabled        | `boolean`  | `true`        | (get/set)<br><br>Defines whether the selector is enabled. |
+| onOpen         | `function` | `null`        | (get/set)<br><br>Function called when the selector is opened. The function receives the current selected value as a parameter. |
+| onChange       | `function` | `null`        | (get/set)<br><br>Function called when the selected value changes. The function receives the new selected value as a parameter. |
+
+#### Menu Options
+
+| Property  | Type      | Default value | Description |
+| --------- | --------- | ------------- | ----------- |
+| icon      | `string`  | `undefined`   | CSS classes of the option icon. |
+| text      | `string`  | `""`          | Option text. |
+| value     | `string`  | `""`          | Option value. |
+| selected  | `boolean` | `false`       | Option selection state. |
+
+#### Methods
+
+| Method       | Return type   | Description |
+| ------------ | ------------- | ----------- |
+| getElement   | `HTMLElement` | `getElement()`<br><br>Returns the HTML element containing the object. |
+| init         | `void`        | `init()`<br><br>Initializes the object. |
+| addOption    | `void`        | `addOption(option)`<br><br>Arguments:<br>**• option:** `object`.<br><br>Add an option to the list, as defined by **Menu Options**. |
+| loadOptions  | `void`        | `loadOptions(options)`<br><br>Arguments:<br>**• options:** `array`.<br><br>Loads an array of options, clearing previously existing ones. |
+| clearOptions | `void`        | `clearOptions()`<br><br>Removes all options from the list. |
+| open         | `void`        | `open()`<br><br>Opens the list of options. |
+| close        | `void`        | `close()`<br><br>Closes the list of options. |
+| toggle       | `void`        | `toggle()`<br><br>Toggles the open state of the list of options. |
+| cancel       | `void`        | `cancel()`<br><br>Cancels the current selection and reverts to the previous value, closing the list. |
+| accept       | `void`        | `accept()`<br><br>Accepts the current selection and closes the list. |
+| isOpen       | `boolean`     | `isOpen()`<br><br>Returns whether the options list is open. |
+| isEmpty      | `boolean`     | `isEmpty()`<br><br>Returns whether the selector has no options selected. |
+| isValid      | `boolean`     | `isValid()`<br><br>Returns if the value entered in the text field corresponds to a valid option. |
+| destroy      | `destroy`     | `destroy()`<br><br>Destroyer. |
+
+#### CSS Variables
+
+| Variable                                            | Description |
+| --------------------------------------------------- | ----------- |
+| `--wui-selectpicker-opener-iconsize`                |
+| `--wui-selectpicker-opener-iconcolor-out`           |
+| `--wui-selectpicker-opener-iconcolor-over`          |
+| `--wui-selectpicker-opener-iconcolor-disabled`      |
+| `--wui-selectpicker-input-textcolor-out`            |
+| `--wui-selectpicker-input-textcolor-over`           |
+| `--wui-selectpicker-input-textcolor-disabled`       |
+| `--wui-selectpicker-box-shadowcolor`                |
+| `--wui-selectpicker-box-borderradius`               |
+| `--wui-selectpicker-box-bordercolor`                |
+| `--wui-selectpicker-box-bgcolor`                    |
+| `--wui-selectpicker-box-option-borderradius`        |
+| `--wui-selectpicker-box-option-bgcolor-out`         |
+| `--wui-selectpicker-box-option-bgcolor-over`        |
+| `--wui-selectpicker-box-option-bordercolor-out`     |
+| `--wui-selectpicker-box-option-bordercolor-over`    |
+| `--wui-selectpicker-box-option-iconsize`            |
+| `--wui-selectpicker-box-option-iconcolor-out`       |
+| `--wui-selectpicker-box-option-iconcolor-over`      |
+| `--wui-selectpicker-box-option-iconcolor-disabled`  |
+| `--wui-selectpicker-box-option-textcolor-out`       |
+| `--wui-selectpicker-box-option-textcolor-empty`     |
+| `--wui-selectpicker-box-option-textcolor-over`      |
+| `--wui-selectpicker-box-option-textcolor-disabled`  |
+| `--wui-selectpicker-box-option-textcolor-selected`  |
+| `--wui-selectpicker-box-button-bordercolor`         |
+| `--wui-selectpicker-box-button-textcolor-out`       |
+| `--wui-selectpicker-box-button-textcolor-over`      |
+| `--wui-selectpicker-mobile-overlay-bgcolor`         |
+| `--wui-selectpicker-mobile-box-width`               |
+| `--wui-selectpicker-mobile-box-borderradius`        |
+
+#### Implementation
+
+CSS Settings:
+
+```css
+:root {
+
+	/* wui-selectpicker */
+
+	--wui-selectpicker-opener-iconsize: 20px;
+	--wui-selectpicker-opener-iconcolor-out: rgb(from #2d3a47 r g b / 20%);
+	--wui-selectpicker-opener-iconcolor-over: #2d3a47;
+	--wui-selectpicker-opener-iconcolor-disabled: #d5dce3;
+	--wui-selectpicker-input-textcolor-out: #2d3a47;
+	--wui-selectpicker-input-textcolor-over: #1f2937;
+	--wui-selectpicker-input-textcolor-disabled: #d5dce3;
+	--wui-selectpicker-box-shadowcolor: #959da5;
+	--wui-selectpicker-box-borderradius: 10px;
+	--wui-selectpicker-box-bordercolor: rgb(from #353a40 r g b / 20%);
+	--wui-selectpicker-box-bgcolor: #fff;
+	--wui-selectpicker-box-option-borderradius: 5px;
+	--wui-selectpicker-box-option-bgcolor-out: #fff;
+	--wui-selectpicker-box-option-bgcolor-over: #f6f6fa;
+	--wui-selectpicker-box-option-bordercolor-out: transparent;
+	--wui-selectpicker-box-option-bordercolor-over: transparent;
+	--wui-selectpicker-box-option-iconsize: 20px;
+	--wui-selectpicker-box-option-iconcolor-out: #1e90ff;
+	--wui-selectpicker-box-option-iconcolor-over: #1e90ff;
+	--wui-selectpicker-box-option-iconcolor-disabled: #d5dce3;
+	--wui-selectpicker-box-option-textcolor-out: #2d3a47;
+	--wui-selectpicker-box-option-textcolor-empty: #d5dce3;
+	--wui-selectpicker-box-option-textcolor-over: #1f2937;
+	--wui-selectpicker-box-option-textcolor-disabled: #d5dce3;
+	--wui-selectpicker-box-option-textcolor-selected: #1f2937;
+	--wui-selectpicker-box-button-bordercolor: #f0f0f3;
+	--wui-selectpicker-box-button-textcolor-out: #1e90ff;
+	--wui-selectpicker-box-button-textcolor-over: #1060aa;
+	--wui-selectpicker-mobile-overlay-bgcolor: rgba(0, 0, 0, 0.5);
+	--wui-selectpicker-mobile-box-width: 80%;
+	--wui-selectpicker-mobile-box-borderradius: 15px;
+}
+```
+
+CSS Code:
+
+```css
+body {
+	font-family: Arial, Helvetica, Verdana, sans-serif;
+}
+
+.my-output {
+	margin: 10px;
+	font-family: monospace;
+}
+```
+
+HTML Header:
+
+```html
+<link type="text/css" rel="stylesheet" href="https://wuijs.dev/Libraries/WUI/Selectpicker/WUISelectpicker-0.2.css">
+<script type="text/javascript" src="https://wuijs.dev/Libraries/WUI/Selectpicker/WUISelectpicker-0.2.js"></script>
+```
+
+HTML Code:
+
+```html
+<div class="wui-selectpicker my-selectpicker">
+	<select name="mySelect">
+		<option value="1">Option 1</option>
+		<option value="2">Option 2</option>
+		<option value="3">Option 3</option>
+	</select>
+</div>
+
+<div class="my-output"></div>
+```
+
+JS Code:
+
+```js
+// Create object
+const output = document.body.querySelector(".my-output");
+const select = new WUISelectpicker({
+	selector: ".wui-selectpicker.my-selectpicker",
+	value: "",
+	//lang: "en",
+	//texts: {},
+	//openDirection: "down",
+	//multiple: false,
+	//separatorValue: ",",
+	//separatorText: ", ",
+	//filterable: true,
+	//enabled: true,
+	onOpen: (value) => {
+		output.textContent = `Select opened: ${value}`;
+	},
+	onChange: (value) => {
+		output.textContent = `Select changed: ${value}`;
+	}
+});
+
+// Initialize object
+select.init();
+```
+
+> [!IMPORTANT]
+> If the selector defines an element that is not of type `HTMLDivElement`, the object will not be initialized.
+
 <a name="WUIDatepicker"></a>
 <a name="WUITimepicker"></a>
 <a name="WUIColorpicker"></a>
@@ -2755,7 +2965,7 @@ table.print();
 
 Versión: `0.2`
 
-Object for button implementation.
+Component for the implementation of.
 
 #### Sources
 
@@ -2774,7 +2984,7 @@ Object for button implementation.
 
 | Property     | Type       | Default value.  | Description |
 | ------------ | ---------- | --------------- | ----------- |
-| selector     | `string`   | `".wui-button"` | (get/set)<br><br>CSS selector that defines the HTML element of type `HTMLButtonElement` that will be converted into the button object. If more than one element matches the selector, only the first match will be included. |
+| selector     | `string`   | `".wui-button"` | (get/set)<br><br>CSS selector that defines the HTML element of type `HTMLButtonElement` that will be converted into the object. If more than one element matches the selector, only the first match will be included. |
 | text         | `string`   | `""`            | (get/set)<br><br>Text or HTML content of the element. |
 | selectable   | `boolean`  | `true`          | (get/set)<br><br>Define whether the button is selectable. |
 | locked       | `boolean`  | `false`         | (get/set)<br><br>Defines whether the button is locked. |
@@ -2961,10 +3171,10 @@ JS code:
 const output = document.body.querySelector(".my-output");
 const button1 = new WUIButton({
 	selector: ".wui-button.button1",
-	text: "",           // Default value, property can be omitted
-	selectable: false,  // Default value, property can be omitted
-	locked: false,      // Default value, property can be omitted
-	enabled: true,      // Default value, property can be omitted
+	//text: "",
+	//selectable: false,
+	//locked: false,
+	//enabled: true,
 	onClick: () => {
 		output.textContent = "Click button 1";
 	},
@@ -2974,10 +3184,10 @@ const button1 = new WUIButton({
 });
 const button2 = new WUIButton({
 	selector: ".wui-button.button2",
-	text: "",           // Default value, property can be omitted
-	selectable: false,  // Default value, property can be omitted
-	locked: false,      // Default value, property can be omitted
-	enabled: true,      // Default value, property can be omitted
+	//text: "",
+	//selectable: false,
+	//locked: false,
+	//enabled: true,
 	onClick: () => {
 		output.textContent = "Click button 2";
 	},

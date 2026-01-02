@@ -374,9 +374,6 @@ class WUISelectpicker {
 		if (this.#htmlElements.input instanceof HTMLSelectElement) {
 			const selected = typeof (opt.selected) == "boolean" ? opt.selected : false;
 			const option = new Option(opt.text || "", opt.value || "", selected);
-			if (typeof (opt.className) == "string") {
-				option.className = opt.className;
-			}
 			this.#htmlElements.input.appendChild(option);
 		}
 	}
@@ -462,7 +459,7 @@ class WUISelectpicker {
 			this.#properties.value = this.#value || "";
 			this.#htmlElements.input.addEventListener("change", () => {
 				if (typeof (this.#properties.onChange) == "function") {
-					this.#properties.onChange(this.#properties.value);
+					this.#properties.onChange(this.value);
 				}
 			});
 			Array.from(this.#htmlElements.input.options).forEach(opt => {

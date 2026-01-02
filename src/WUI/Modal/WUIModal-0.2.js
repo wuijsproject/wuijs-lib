@@ -34,8 +34,8 @@ class WUIModal {
 	};
 	#bodyStyle;
 	#drag;
-	#initY;
-	#direction;
+	#dragIinitY;
+	#dragDirection;
 	#boxWidth;
 	#boxHeight;
 	#boxTop;
@@ -259,41 +259,40 @@ class WUIModal {
 		}
 		if (this.#htmlElements.topbar instanceof HTMLElement) {
 			this.#drag = false;
-			this.#initY = null;
-			this.#direction = null;
+			this.#dragIinitY = null;
+			this.#dragDirection = null;
 			["touchstart", "mousedown"].forEach(type => {
 				this.#htmlElements.topbar.addEventListener(type, event => {
 					if (!this.#drag) {
 						const initY = (event.type == "touchstart" ? event.touches[0].clientY : event.clientY || event.pageY) - event.target.offsetParent.offsetTop;
-						this.#initY = initY;
 						this.#drag = Boolean(type == "touchstart" || event.buttons == 1);
+						this.#dragIinitY = initY;
 					}
 				});
 			});
 			["touchmove", "mousemove"].forEach(type => {
 				this.#htmlElements.topbar.addEventListener(type, event => {
 					if (this.#drag) {
-						const initY = parseFloat(this.#initY);
+						const initY = parseFloat(this.#dragIinitY);
 						const moveY = (event.type == "touchmove" ? event.touches[0].clientY : event.clientY || event.pageY) - event.target.offsetParent.offsetTop;
 						const diffY = moveY - initY;
-						const direction = diffY > 10 ? "bottom" : diffY < -10 ? "top" : null;
-						this.#direction = direction;
+						this.#dragDirection = diffY > 10 ? "bottom" : diffY < -10 ? "top" : null;
 					}
 				});
 			});
 			["touchend", "mouseup"].forEach(type => {
 				document.addEventListener(type, () => {
 					if (this.#drag) {
-						this.#initY = null;
 						this.#drag = false;
-						if (this.#direction != null) {
-							if (this.#direction == "top") {
+						this.#dragIinitY = null;
+						if (this.#dragDirection != null) {
+							if (this.#dragDirection == "top") {
 								this.maximize();
-							} else if (this.#direction == "bottom") {
+							} else if (this.#dragDirection == "bottom") {
 								this.close();
 							}
 							setTimeout(() => {
-								this.#direction = null;
+								this.#dragDirection = null;
 							}, 400);
 						}
 					}
@@ -498,8 +497,8 @@ class WUIModal {
 		this.#htmlElement.classList.remove("opened");
 		this.#htmlElement.classList.add("closed");
 		if (this.#htmlElements.topbar instanceof HTMLElement) {
-			this.#initY = null;
 			this.#drag = false;
+			this.#dragIinitY = null;
 		}
 		if (this.#htmlElements.box instanceof HTMLElement) {
 			Object.keys(this.#bodyStyle).forEach(key => {

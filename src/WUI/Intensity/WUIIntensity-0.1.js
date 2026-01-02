@@ -20,8 +20,8 @@ class WUIIntensity {
 		input: null
 	};
 	#drag;
-	#initX;
-	#diffX;
+	#dragInitX;
+	#dragDiffX;
 
 	constructor(properties = {}) {
 		const defaults = structuredClone(WUIIntensity.#defaults);
@@ -56,15 +56,15 @@ class WUIIntensity {
 
 	set value(value) {
 		if (typeof (value).toString().match(/string|number/) && value.toString().match(/^(0|1|2|3|none|low|half|high)$/i) && (typeof (this.#properties.enabled) == "undefined" || this.#properties.enabled)) {
+			switch (value.toString().toLowerCase()) {
+				case "none": value = 0; break;
+				case "low": value = 1; break;
+				case "half": value = 2; break;
+				case "high": value = 3; break;
+				default: value = parseInt(value); break;
+			}
 			this.#properties.value = value;
 			if (this.#htmlElement instanceof HTMLDivElement && this.#htmlElements.input instanceof HTMLInputElement) {
-				switch (value.toString().toLowerCase()) {
-					case "none": value = 0; break;
-					case "low": value = 1; break;
-					case "half": value = 2; break;
-					case "high": value = 3; break;
-					default: value = parseInt(value); break;
-				}
 				switch (value) {
 					case 0: this.#htmlElement.dataset.value = "none"; break;
 					case 1: this.#htmlElement.dataset.value = "low"; break;
@@ -123,8 +123,8 @@ class WUIIntensity {
 
 	init() {
 		this.#drag = false;
-		this.#initX = null;
-		this.#diffX = 0;
+		this.#dragInitX = null;
+		this.#dragDiffX = 0;
 		if (this.#htmlElement instanceof HTMLDivElement && this.#htmlElements.input instanceof HTMLInputElement) {
 			this.#htmlElements.input.min = 0;
 			this.#htmlElements.input.max = 3;
@@ -133,17 +133,17 @@ class WUIIntensity {
 				this.#htmlElement.addEventListener(type, event => {
 					if (!this.#drag) {
 						const initX = (event.type == "touchstart" ? event.touches[0].clientX : event.clientX || event.pageX) - event.target.offsetParent.offsetLeft;
-						this.#initX = initX;
-						this.#drag = true;
+						this.#drag = Boolean(type == "touchstart" || event.buttons == 1);
+						this.#dragInitX = initX;
 					}
 				});
 			});
 			["touchmove", "mousemove"].forEach(type => {
 				this.#htmlElement.addEventListener(type, event => {
 					if (this.#drag) {
-						const initX = parseFloat(this.#initX);
+						const initX = parseFloat(this.#dragInitX);
 						const moveX = (event.type == "touchmove" ? event.touches[0].clientX : event.clientX || event.pageX) - event.target.offsetParent.offsetLeft;
-						this.#diffX = moveX - initX;
+						this.#dragDiffX = moveX - initX;
 					}
 				});
 			});
@@ -151,11 +151,11 @@ class WUIIntensity {
 				document.addEventListener(type, () => {
 					if (this.#drag) {
 						this.#drag = false;
-						this.#initX = null;
-						if (Math.abs(this.#diffX) > 10) {
-							const iniValue = parseInt(this.#htmlElements.input.value);
+						this.#dragInitX = null;
+						if (Math.abs(this.#dragDiffX) > 10) {
 							const event = new Event("input");
-							let endValue = iniValue + parseInt(this.#diffX / 40);
+							const iniValue = parseInt(this.#htmlElements.input.value);
+							let endValue = iniValue + parseInt(this.#dragDiffX / 40);
 							if (endValue < 0) {
 								endValue = 0;
 							} else if (endValue > 3) {
@@ -164,7 +164,7 @@ class WUIIntensity {
 							this.value = endValue;
 							this.#htmlElements.input.dispatchEvent(event);
 							setTimeout(() => {
-								this.#diffX = 0;
+								this.#dragDiffX = 0;
 							}, 400);
 						}
 					}

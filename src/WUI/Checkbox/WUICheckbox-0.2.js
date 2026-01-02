@@ -21,8 +21,8 @@ class WUICheckbox {
 		input: null
 	};
 	#drag;
-	#initX;
-	#direction;
+	#dragInitX;
+	#dragDirection;
 
 	constructor(properties = {}) {
 		const defaults = structuredClone(WUICheckbox.#defaults);
@@ -60,7 +60,7 @@ class WUICheckbox {
 	}
 
 	set value(value) {
-		if (typeof (value).match(/(string|number)/) && (typeof (this.#properties.enabled) == "undefined" || this.#properties.enabled)) {
+		if (typeof (value).toString().match(/string|number/) && (typeof (this.#properties.enabled) == "undefined" || this.#properties.enabled)) {
 			this.#properties.value = value;
 			if (this.#htmlElements.input instanceof HTMLInputElement) {
 				this.#htmlElements.input.value = value;
@@ -135,26 +135,25 @@ class WUICheckbox {
 
 	init() {
 		this.#drag = false;
-		this.#initX = null;
-		this.#direction = null;
+		this.#dragInitX = null;
+		this.#dragDirection = null;
 		if (this.#htmlElement instanceof HTMLDivElement && this.#htmlElements.input instanceof HTMLInputElement) {
 			["touchstart", "mousedown"].forEach(type => {
 				this.#htmlElement.addEventListener(type, event => {
 					if (!this.#drag) {
 						const initX = (event.type == "touchstart" ? event.touches[0].clientX : event.clientX || event.pageX) - event.target.offsetParent.offsetLeft;
-						this.#initX = initX;
 						this.#drag = Boolean(type == "touchstart" || event.buttons == 1);
+						this.#dragInitX = initX;
 					}
 				});
 			});
 			["touchmove", "mousemove"].forEach(type => {
 				this.#htmlElement.addEventListener(type, event => {
 					if (this.#drag) {
-						const initX = parseFloat(this.#initX);
+						const initX = parseFloat(this.#dragInitX);
 						const moveX = (event.type == "touchmove" ? event.touches[0].clientX : event.clientX || event.pageX) - event.target.offsetParent.offsetLeft;
 						const diffX = moveX - initX;
-						const direction = diffX > 10 ? "right" : diffX < -10 ? "left" : null;
-						this.#direction = direction;
+						this.#dragDirection = diffX > 10 ? "right" : diffX < -10 ? "left" : null;
 					}
 				});
 			});
@@ -162,13 +161,13 @@ class WUICheckbox {
 				document.addEventListener(type, () => {
 					if (this.#drag) {
 						this.#drag = false;
-						this.#initX = null;
-						if (this.#direction != null) {
+						this.#dragInitX = null;
+						if (this.#dragDirection != null) {
 							const event = new Event("change");
-							this.checked = this.#direction == "left" ? false : this.#direction == "right" ? true : false;
+							this.checked = this.#dragDirection == "left" ? false : this.#dragDirection == "right" ? true : false;
 							this.#htmlElements.input.dispatchEvent(event);
 							setTimeout(() => {
-								this.#direction = null;
+								this.#dragDirection = null;
 							}, 400);
 						}
 					}
@@ -178,7 +177,7 @@ class WUICheckbox {
 				if (event.target.classList.contains("wui-checkbox")) {
 					setTimeout(() => {
 						const mobile = Boolean(window.matchMedia("(max-width: 767px)").matches);
-						if (!mobile && this.#direction == null) {
+						if (!mobile && this.#dragDirection == null) {
 							const event = new Event("change");
 							this.checked = !this.checked;
 							this.#htmlElements.input.dispatchEvent(event);
