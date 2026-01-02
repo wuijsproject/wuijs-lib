@@ -4,15 +4,15 @@
  * Copyright (c) Sergio E. Belmar (sbelmar@wuijs.dev)
  */
 
-.wui-selectpicker,
-.wui-selectpicker * {
+div.wui-selectpicker,
+div.wui-selectpicker * {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	-webkit-tap-highlight-color: transparent;
 }
 
-.wui-selectpicker {
+div.wui-selectpicker {
 	position: relative;
 	width: 100%;
 	height: 30px;
@@ -21,11 +21,11 @@
 	padding-right: var(--wui-selectpicker-opener-iconsize);
 }
 
-.wui-selectpicker > select {
+div.wui-selectpicker > select {
 	display: none;
 }
 
-.wui-selectpicker > .opener {
+div.wui-selectpicker > .opener {
 	cursor: pointer;
 	position: absolute;
 	top: 50%;
@@ -47,15 +47,15 @@
 	transform: translateY(-50%);
 }
 
-.wui-selectpicker:not(.disabled):is(:hover, :focus, :focus-within) > .opener {
+div.wui-selectpicker:not(.disabled):is(:hover, :focus, :focus-within) > .opener {
 	background-color: var(--wui-selectpicker-opener-iconcolor-over);
 }
 
-.wui-selectpicker.disabled > .opener {
+div.wui-selectpicker.disabled > .opener {
 	background-color: var(--wui-selectpicker-opener-iconcolor-disabled) !important;
 }
 
-.wui-selectpicker > input[type="text"] {
+div.wui-selectpicker > input[type="text"] {
 	width: 100%;
 	height: 100%;
 	margin: 0;
@@ -69,16 +69,16 @@
 	color: var(--wui-selectpicker-input-textcolor-out);
 }
 
-.wui-selectpicker > input[type="text"]:is(:hover, :focus, :focus-within) {
+div.wui-selectpicker > input[type="text"]:is(:hover, :focus, :focus-within) {
 	color: var(--wui-selectpicker-input-textcolor-over);
 }
 
-.wui-selectpicker > input[type="text"]:disabled,
-.wui-selectpicker.disabled > input[type="text"] {
+div.wui-selectpicker > input[type="text"]:disabled,
+div.wui-selectpicker.disabled > input[type="text"] {
 	color: var(--wui-selectpicker-input-textcolor-disabled) !important;
 }
 
-.wui-selectpicker > .background {
+div.wui-selectpicker > .background {
 	display: none;
 	position: fixed;
 	z-index: 100;
@@ -90,16 +90,16 @@
 	height: 100vh;
 }
 
-.wui-selectpicker > .background.hidden {
+div.wui-selectpicker > .background.hidden {
 	display: none;
 }
 
-.wui-selectpicker > .box,
-.wui-selectpicker > .box * {
+div.wui-selectpicker > .box,
+div.wui-selectpicker > .box * {
 	display: flex;
 }
 
-.wui-selectpicker > .box {
+div.wui-selectpicker > .box {
 	--box-shadow: rgb(from var(--wui-selectpicker-box-shadowcolor) r g b / 20%) 0px 8px 24px;
 	--box-filter: blur(10px);
 	position: absolute;
@@ -124,27 +124,27 @@
 	padding: 0;
 }
 
-.wui-selectpicker > .box.down {
+div.wui-selectpicker > .box.down {
 	bottom: auto;
 }
 
-.wui-selectpicker > .box.up {
+div.wui-selectpicker > .box.up {
 	bottom: 0;
 }
 
-.wui-selectpicker > .box.hidden {
+div.wui-selectpicker > .box.hidden {
 	display: none;
 }
 
-.wui-selectpicker > .box > .options,
-.wui-selectpicker > .box > .options > .option {
+div.wui-selectpicker > .box > .options,
+div.wui-selectpicker > .box > .options > .option {
 	display: flex;
 	position: relative;
 	flex-grow: 1;
 	flex-shrink: 0;
 }
 
-.wui-selectpicker > .box > .options {
+div.wui-selectpicker > .box > .options {
 	min-height: calc(calc(1 * 30px) + 10px - 1px);
 	max-height: calc(calc(11 * 30px) + 10px - 1px);
 	overflow-x: hidden;
@@ -158,7 +158,7 @@
 	align-items: flex-start;
 }
 
-.wui-selectpicker > .box > .options > .option {
+div.wui-selectpicker > .box > .options > .option {
 	cursor: pointer;
 	width: 100%;
 	height: 30px;
@@ -171,16 +171,16 @@
 	gap: 10px;
 }
 
-.wui-selectpicker > .box > .options > .option:not(.disabled):is(:hover, :focus, :focus-within, .focus) {
+div.wui-selectpicker > .box > .options > .option:not(.disabled):is(:hover, :focus, :focus-within, .focus) {
 	border-color: var(--wui-selectpicker-box-option-bordercolor-over);
 	background-color: var(--wui-selectpicker-box-option-bgcolor-over);
 }
 
-.wui-selectpicker > .box > .options > .option.hidden {
+div.wui-selectpicker > .box > .options > .option.hidden {
 	display: none;
 }
 
-.wui-selectpicker > .box > .options > .option > .icon {
+div.wui-selectpicker > .box > .options > .option > .icon {
 	visibility: hidden;
 	width: var(--wui-selectpicker-box-option-iconsize);
 	height: var(--wui-selectpicker-box-option-iconsize);
@@ -193,24 +193,24 @@
 	mask-repeat: no-repeat;
 }
 
-.wui-selectpicker > .box > .options > .option > .icon.visible,
-.wui-selectpicker > .box > .options > .option.selected > .icon {
+div.wui-selectpicker > .box > .options > .option > .icon.visible,
+div.wui-selectpicker > .box > .options > .option.selected > .icon {
 	visibility: visible;
 }
 
-.wui-selectpicker > .box > .options > .option > .icon.check {
+div.wui-selectpicker > .box > .options > .option > .icon.check {
 	background-color: var(--wui-selectpicker-box-option-iconcolor-out);
 }
 
-.wui-selectpicker > .box > .options > .option:not(.disabled):is(:hover, :focus, :focus-within, .focus) > .icon.check {
+div.wui-selectpicker > .box > .options > .option:not(.disabled):is(:hover, :focus, :focus-within, .focus) > .icon.check {
 	background-color: var(--wui-selectpicker-box-option-iconcolor-over);
 }
 
-.wui-selectpicker > .box > .options > .option.disabled > .icon.check {
+div.wui-selectpicker > .box > .options > .option.disabled > .icon.check {
 	background-color: var(--wui-selectpicker-box-option-iconcolor-disabled);
 }
 
-.wui-selectpicker > .box > .options > .option > .text {
+div.wui-selectpicker > .box > .options > .option > .text {
 	cursor: default;
 	overflow: hidden;
 	flex-grow: 1;
@@ -224,24 +224,24 @@
 	user-select: none;
 }
 
-.wui-selectpicker > .box > .options > .option > .text.empty {
+div.wui-selectpicker > .box > .options > .option > .text.empty {
 	font-style: italic;
 	color: var(--wui-selectpicker-box-option-textcolor-empty);
 }
 
-.wui-selectpicker > .box > .options > .option:not(.disabled):is(:hover, :focus, :focus-within, .focus) > .text {
+div.wui-selectpicker > .box > .options > .option:not(.disabled):is(:hover, :focus, :focus-within, .focus) > .text {
 	color: var(--wui-selectpicker-box-option-textcolor-over);
 }
 
-.wui-selectpicker > .box > .options > .option.disabled > .text {
+div.wui-selectpicker > .box > .options > .option.disabled > .text {
 	color: var(--wui-selectpicker-box-option-textcolor-disabled);
 }
 
-.wui-selectpicker > .box > .options > .option.selected > .text.selecteable {
+div.wui-selectpicker > .box > .options > .option.selected > .text.selecteable {
 	color: var(--wui-selectpicker-box-option-textcolor-selected) !important;
 }
 
-.wui-selectpicker > .box > .footer {
+div.wui-selectpicker > .box > .footer {
 	display: none;
 	height: 30px;
 	border-top: 1px solid var(--wui-selectpicker-box-button-bordercolor);
@@ -251,7 +251,7 @@
 	flex-wrap: wrap;
 }
 
-.wui-selectpicker > .box > .footer > button {
+div.wui-selectpicker > .box > .footer > button {
 	cursor: pointer;
 	height: 100%;
 	margin: 0;
@@ -272,25 +272,25 @@
 	color: var(--wui-selectpicker-box-button-textcolor-out);
 }
 
-.wui-selectpicker > .box > .footer > button:hover {
+div.wui-selectpicker > .box > .footer > button:hover {
 	color: var(--wui-selectpicker-box-button-textcolor-over);
 }
 
-.wui-selectpicker > .box > .footer > button.accept {
+div.wui-selectpicker > .box > .footer > button.accept {
 	font-weight: bold;
 }
 
 @media screen and (max-width: 767px) {
-	.wui-selectpicker > input[type="text"] {
+	div.wui-selectpicker > input[type="text"] {
 		font-size: 15px;
 	}
 
-	.wui-selectpicker > .background {
+	div.wui-selectpicker > .background {
 		display: block;
 		background-color: var(--wui-selectpicker-mobile-overlay-bgcolor);
 	}
 
-	.wui-selectpicker > .box {
+	div.wui-selectpicker > .box {
 		--box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 		--box-transform: translate(-50%, -50%);
 		position: fixed;
@@ -308,11 +308,11 @@
 		transform: var(--box-transform);
 	}
 
-	.wui-selectpicker > .box.up {
+	div.wui-selectpicker > .box.up {
 		bottom: auto;
 	}
 
-	.wui-selectpicker > .box > .options {
+	div.wui-selectpicker > .box > .options {
 		min-height: calc(calc(2 * 44px) - 1px);
 		max-height: calc(calc(11 * 44px) - 1px);
 		-webkit-border-top-left-radius: var(--wui-selectpicker-mobile-box-borderradius);
@@ -330,34 +330,34 @@
 		padding: 0;
 	}
 
-	.wui-selectpicker > .box > .options > .option {
+	div.wui-selectpicker > .box > .options > .option {
 		height: 44px;
 		-webkit-border-radius: 0;
 		-moz-border-radius: 0;
 		border-radius: 0;
 	}
 
-	.wui-selectpicker > .box > .options > .option:not(:last-child) {
+	div.wui-selectpicker > .box > .options > .option:not(:last-child) {
 		border-bottom: 1px solid var(--wui-selectpicker-box-option-bordercolor-out);
 	}
 
-	.wui-selectpicker > .box > .footer {
+	div.wui-selectpicker > .box > .footer {
 		display: flex;
 		height: 52px;
 		font-size: 17px;
 	}
 
-	.wui-selectpicker > .box > .footer > button {
+	div.wui-selectpicker > .box > .footer > button {
 		width: 50%;
 		font-size: 17px;
 	}
 
-	.wui-selectpicker > .box > .footer > button:is(:hover, :focus, :focus-within) {
+	div.wui-selectpicker > .box > .footer > button:is(:hover, :focus, :focus-within) {
 		border-color: transparent;
 		background-color: rgba(204, 204, 204, 0.3);
 	}
 
-	.wui-selectpicker > .box > .footer > button:first-child {
+	div.wui-selectpicker > .box > .footer > button:first-child {
 		border-right: 1px solid var(--wui-selectpicker-box-button-bordercolor);
 	}
 }
