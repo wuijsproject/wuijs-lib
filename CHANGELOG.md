@@ -80,6 +80,7 @@ Features:
 	- Added `destroy()` method.
 	- Added `--wui-datepicker-box-shadowcolor` CSS var.
 	- Added relative positioning to the HTML element.
+	- Fixed bug to load the `value` property when instantiating the object.
 	- Fixed bug to ensure HTML element references of type `HTMLInputElement`.
 18. WUITimepicker version class update to 0.2.
 	- Added support for private values.

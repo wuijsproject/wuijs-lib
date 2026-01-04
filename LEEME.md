@@ -40,7 +40,7 @@ Autor: `Sergio E. Belmar V. <sbelmar@wuijs.dev>`
 	*   WUIForm
 	*   WUIFormat
 	*   [WUISelectpicker](#WUISelectpicker)
-	*   WUIDatepicker
+	*   [WUIDatepicker](#WUIDatepicker)
 	*   WUITimepicker
 	*   WUIColorpicker
 	*   WUICheckbox
@@ -77,7 +77,7 @@ WUI, acrónimo del inglés *Web User Interface JavaScript library*, es una bibli
 | WUIForm                             | `0.2`   | Componente para la implementación de formularios de datos. Este componente permite la implementación de elementos HTML de entrada de datos tales como `<input>`, `<select>` y `<textarea>` y objetos de la librería WUI como `WUISelectpicker`, `WUIDatepicker`, `WUITimepicker`, `WUIColorpicker`, `WUICheckbox`, `WUIIntensity` y `WUIButton`. |
 | WUIFormat                           | `0.2`   | Herramienta para manejo y validación de formatos de datos de tipo `string`, `number` y `Date`. |
 | [WUISelectpicker](#WUISelectpicker) | `0.2`   | Componente para la implementación de entradas de datos de tipo lista de selección múltiple o excluyente basada en el elemento HTML `<select>`. |
-| WUIDatepicker                       | `0.2`   | Componente para la implementación de entradas de datos de tipo fecha basada en el elemento HTML `<input type="date">`. |
+| [WUIDatepicker](#WUIDatepicker)     | `0.2`   | Componente para la implementación de entradas de datos de tipo fecha basada en el elemento HTML `<input type="date">`. |
 | WUITimepicker                       | `0.2`   | Componente para la implementación de entradas de datos de tipo hora basada en el elemento HTML `<input type="time">`. |
 | WUIColorpicker                      | `0.2`   | Componente para la implementación de entradas de datos de tipo selector de color basada en el elemento HTML `<input type="color">`. |
 | WUICheckbox                         | `0.2`   | Componente para la implementación de entradas de datos de tipo casilla de verificación basada en el elemento HTML `<input type="checkbox">`. |
@@ -2904,14 +2904,17 @@ body {
 
 .my-selectpicker {
 	max-width: 200px;
-	-webkit-border-radius: var(--wui-selectpicker-box-option-borderradius);
-	-moz-border-radius: var(--wui-selectpicker-box-option-borderradius);
-	border-radius: var(--wui-selectpicker-box-option-borderradius);
-	background-color: var(--wui-selectpicker-box-option-bgcolor-over);
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	background-color: #f6f6fa;
 	padding-left: 7px;
 }
 
 .my-output {
+	position: absolute;
+	top: 4px;
+	left: 210px;
 	margin: 10px;
 	font-family: monospace;
 }
@@ -2974,6 +2977,227 @@ selectpicker.init();
 > Puede revisar este ejemplo funcional en CodePen en el enlace: [https://codepen.io/wuijsproject/pen/WbxQBKX](https://codepen.io/wuijsproject/pen/WbxQBKX).
 
 <a name="WUIDatepicker"></a>
+
+### WUIDatepicker
+
+Versión: `0.2`
+
+Componente para la implementación de entradas de datos de tipo fecha basada en el elemento HTML `<input type="date">`.
+
+#### Fuentes
+
+| Tipo | Archivo |
+| ---- | ------- |
+| CSS  | [src/WUI/Datepicker/WUIDatepicker-0.2.css](https://github.com/sbelmar/wuijs-lib/blob/main/src/WUI/Datepicker/WUIDatepicker-0.2.css) |
+| JS   | [src/WUI/Datepicker/WUIDatepicker-0.2.js](https://github.com/sbelmar/wuijs-lib/blob/main/src/WUI/Datepicker/WUIDatepicker-0.2.js) |
+
+#### Constructor
+
+| Tipo          | Descripción |
+| ------------- | ----------- |
+| WUIDatepicker | `WUIDatepicker([properties])`<br><br>Parámetros:<br>**• properties:** `object` *opcional* |
+
+#### Propiedades
+
+| Propiedad     | Tipo       | Valor predeterminado | Descripción |
+| ------------- | ---------- | -------------------- | ----------- |
+| selector      | `string`   | `undefined`          | (get/set)<br><br>Selector CSS que define el elemento HTML contenedor del objeto. En caso de existir más de un elemento coincidente con el selector se incluirá únicamente la primera coincidencia. |
+| locales       | `string`   | `"en-US"`            | (get/set)<br><br>Código de configuración regional en formato `<ISO 639-1>-<ISO 3166-1 alpha-2>`. Por ejemplo: `es-CL`, `en-US`, `fr-FR`, etc. |
+| value         | `string`   | `""`                 | (get/set)<br><br>Fecha seleccionada en formato `YYYY-MM-DD`. |
+| min           | `string`   | `""`                 | (get/set)<br><br>Fecha mínima permitida en formato `YYYY-MM-DD`. |
+| max           | `string`   | `""`                 | (get/set)<br><br>Fecha máxima permitida en formato `YYYY-MM-DD`. |
+| monthsNames   | `array`    | `[]`                 | (get/set)<br><br>Nombres personalizados para los meses. Si se define, sobrescribe los nombres generados por `locales`. |
+| weekDaysNames | `array`    | `[]`                 | (get/set)<br><br>Nombres personalizados para los días de la semana. Si se define, sobrescribe los nombres generados por `locales`. |
+| texts         | `object`   | `{}`                 | (get/set)<br><br>Textos personalizados para los botones y mensajes del componente. |
+| openDirection | `string`   | `"down"`             | (get/set)<br><br>Dirección de apertura del calendario.<br><br>Valores:<br>• `"up"`, hacia arriba.<br>• `"down"`, hacia abajo. |
+| boxAlign      | `string`   | `"center"`           | (get/set)<br><br>Alineación horizontal del calendario respecto a la entrada de datos.<br><br>Valores:<br>• `"left"`, izquierda.<br>• `"center"`, centro.<br>• `"right"`, derecha. |
+| enabled       | `boolean`  | `true`               | (get/set)<br><br>Define si la entrada de datos está habilitada. |
+| onOpen        | `function` | `null`               | (get/set)<br><br>Función que se llama cuando se abre el calendario. La función recibe por parámetro el valor actual seleccionado. |
+| onChange      | `function` | `null`               | (get/set)<br><br>Función que se llama cuando cambia el valor seleccionado. La función recibe por parámetro el nuevo valor seleccionado. |
+
+#### Métodos
+
+| Método       | Tipo retorno  | Descripción |
+| ------------ | ------------- | ----------- |
+| getElement   | `HTMLElement` | `getElement()`<br><br>Retorna el elemento HTML contenedor del objeto. |
+| init         | `void`        | `init()`<br><br>Inicializa el objeto. |
+| open         | `void`        | `open()`<br><br>Abre el calendario. |
+| close        | `void`        | `close()`<br><br>Cierra el calendario. |
+| toggle       | `void`        | `toggle()`<br><br>Alterna el estado de apertura del calendario. |
+| toggleMode   | `void`        | `toggleMode()`<br><br>Alterna la vista entre días y meses. |
+| prev         | `void`        | `prev()`<br><br>Muestra el periodo anterior (mes o año según la vista). |
+| next         | `void`        | `next()`<br><br>Muestra el periodo siguiente (mes o año según la vista). |
+| cancel       | `void`        | `cancel()`<br><br>Cancela la selección actual y revierte al valor anterior, cerrando el calendario. |
+| accept       | `void`        | `accept()`<br><br>Acepta la selección actual y cierra el calendario. |
+| isOpen       | `boolean`     | `isOpen()`<br><br>Retorna si el calendario está abierto. |
+| isEmpty      | `boolean`     | `isEmpty()`<br><br>Retorna si el selector no tiene ninguna fecha seleccionada. |
+| isValid      | `boolean`     | `isValid()`<br><br>Retorna si el valor ingresado corresponde a una fecha válida. |
+| destroy      | `destroy`     | `destroy()`<br><br>Destructor. |
+
+#### Variables CSS
+
+| Variable                                         | Descripción |
+| ------------------------------------------------ | ----------- |
+| `--wui-datepicker-opener-iconsize`               | 
+| `--wui-datepicker-opener-iconcolor-out`          | 
+| `--wui-datepicker-opener-iconcolor-over`         | 
+| `--wui-datepicker-opener-iconcolor-disabled`     | 
+| `--wui-datepicker-input-textcolor-out`           | 
+| `--wui-datepicker-input-textcolor-over`          | 
+| `--wui-datepicker-input-textcolor-disabled`      | 
+| `--wui-datepicker-box-shadowcolor`               | 
+| `--wui-datepicker-box-borderradius`              | 
+| `--wui-datepicker-box-bordercolor`               | 
+| `--wui-datepicker-box-bgcolor`                   | 
+| `--wui-datepicker-box-period-iconsize`           | 
+| `--wui-datepicker-box-period-iconcolor-out`      | 
+| `--wui-datepicker-box-period-iconcolor-over`     | 
+| `--wui-datepicker-box-period-iconcolor-disabled` | 
+| `--wui-datepicker-box-paging-iconsize`           | 
+| `--wui-datepicker-box-paging-iconcolor-out`      | 
+| `--wui-datepicker-box-paging-iconcolor-over`     | 
+| `--wui-datepicker-box-paging-iconcolor-disabled` | 
+| `--wui-datepicker-box-month-titlecolor`          | 
+| `--wui-datepicker-box-month-textcolor-out`       | 
+| `--wui-datepicker-box-month-textcolor-over`      | 
+| `--wui-datepicker-box-month-bgcolor-over`        | 
+| `--wui-datepicker-box-month-bgcolor-today`       | 
+| `--wui-datepicker-box-month-bgcolor-selected`    | 
+| `--wui-datepicker-box-month-textcolor-selected`  | 
+| `--wui-datepicker-box-day-textcolor-out`         | 
+| `--wui-datepicker-box-day-textcolor-over`        | 
+| `--wui-datepicker-box-day-bgcolor-over`          | 
+| `--wui-datepicker-box-day-bgcolor-today`         | 
+| `--wui-datepicker-box-day-bgcolor-selected`      | 
+| `--wui-datepicker-box-day-textcolor-selected`    | 
+| `--wui-datepicker-box-button-textcolor-out`      | 
+| `--wui-datepicker-box-button-textcolor-over`     | 
+| `--wui-datepicker-mobile-overlay-bgcolor`        | 
+
+#### Implementación
+
+Configuración CSS:
+
+```css
+:root {
+	--wui-datepicker-opener-iconsize: 30px;
+	--wui-datepicker-opener-iconcolor-out: #000;
+	--wui-datepicker-opener-iconcolor-over: #1e90ff;
+	--wui-datepicker-opener-iconcolor-disabled: #d5dce3;
+	--wui-datepicker-opener-openicon-src: none;
+	--wui-datepicker-opener-closeicon-src: none;
+	--wui-datepicker-box-shadowcolor: #959da5;
+	--wui-datepicker-box-borderradius: 15px;
+	--wui-datepicker-box-bordercolor: #f0f0f3;
+	--wui-datepicker-box-bgcolor: rgb(from #fdfdfe r g b / 100%);
+	--wui-datepicker-box-period-iconsize: 20px;
+	--wui-datepicker-box-period-iconcolor-out: #000;
+	--wui-datepicker-box-period-iconcolor-over: #1e90ff;
+	--wui-datepicker-box-period-iconcolor-disabled: #d5dce3;
+	--wui-datepicker-box-period-upicon-src: none;
+	--wui-datepicker-box-period-downicon-src: none;
+	--wui-datepicker-box-paging-iconsize: 26px;
+	--wui-datepicker-box-paging-iconcolor-out: #1e90ff;
+	--wui-datepicker-box-paging-iconcolor-over: #1e90ff;
+	--wui-datepicker-box-paging-iconcolor-disabled: #d5dce3;
+	--wui-datepicker-box-paging-previcon-src: none;
+	--wui-datepicker-box-paging-nexticon-src: none;
+	--wui-datepicker-box-month-titlecolor: #888;
+	--wui-datepicker-box-month-bgcolor-today: #f0f0f3;
+	--wui-datepicker-box-month-bgcolor-over: rgb(from #1e90ff r g b / 20%);
+	--wui-datepicker-box-month-bgcolor-selected: #1e90ff;
+	--wui-datepicker-box-month-textcolor-out: #000;
+	--wui-datepicker-box-month-textcolor-over: #1e90ff;
+	--wui-datepicker-box-month-textcolor-selected: #fff;
+	--wui-datepicker-box-day-bgcolor-today: #f0f0f3;
+	--wui-datepicker-box-day-bgcolor-over: rgb(from #1e90ff r g b / 20%);
+	--wui-datepicker-box-day-bgcolor-selected: #1e90ff;
+	--wui-datepicker-box-day-textcolor-out: #000;
+	--wui-datepicker-box-day-textcolor-over: #1e90ff;
+	--wui-datepicker-box-day-textcolor-selected: #fff;
+	--wui-datepicker-box-button-textcolor-out: #1e90ff;
+	--wui-datepicker-box-button-textcolor-over: #1e90ff;
+	--wui-datepicker-mobile-overlay-bgcolor: rgb(from #010203 r g b / 20%);
+}
+```
+
+Código CSS:
+
+```css
+body {
+	font-family: Arial, Helvetica, Verdana, sans-serif;
+}
+
+.my-datepicker {
+	max-width: 200px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	background-color: #f6f6fa;
+	padding-left: 7px;
+}
+
+.my-output {
+	position: absolute;
+	top: 4px;
+	left: 210px;
+	margin: 10px;
+	font-family: monospace;
+}
+```
+
+Cabecera HTML:
+
+```html
+<link type="text/css" rel="stylesheet" href="https://wuijs.dev/Libraries/WUI/Datepicker/WUIDatepicker-0.2.css">
+<script type="text/javascript" src="https://wuijs.dev/Libraries/WUI/Datepicker/WUIDatepicker-0.2.js"></script>
+```
+
+Código HTML:
+
+```html
+<div class="wui-datepicker my-datepicker">
+	<input type="date" name="myDate">
+</div>
+
+<div class="my-output"></div>
+```
+
+Código JS:
+
+```js
+// Crear objeto
+const output = document.body.querySelector(".my-output");
+const datepicker = new WUIDatepicker({
+	selector: ".wui-datepicker.my-datepicker",
+	value: "2026-01-01",
+	//locales: "en-US",
+	//min: "",
+	//max: "",
+	//monthsNames: [],
+	//weekDaysNames: [],
+	//texts: {},
+	//openDirection: "down",
+	//boxAlign: "center",
+	//enabled: true,
+	onOpen: (value) => {
+		output.textContent = `Abre selector: ${value}`;
+	},
+	onChange: (value) => {
+		output.textContent = `Cambia selector: ${value}`;
+	}
+});
+
+// Inicializar objeto
+datepicker.init();
+```
+
+> [!IMPORTANT]
+> Si el selector define un elemento que no es de tipo `HTMLDivElement`, el objeto no se inicializará.
+
+> [!TIP]
+> Puede revisar este ejemplo funcional en CodePen en el enlace: [...].
+
 <a name="WUITimepicker"></a>
 <a name="WUIColorpicker"></a>
 <a name="WUICheckbox"></a>

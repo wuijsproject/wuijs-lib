@@ -530,8 +530,8 @@ class WUISelectpicker {
 			this.#darkModeListener(() => {
 				this.#setStyle();
 			});
-			if (this.#properties.value != null) {
-				this.value = this.#properties.value
+			if (this.#properties.value != "") {
+				this.value = this.#properties.value;
 			}
 		}
 	}

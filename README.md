@@ -2903,14 +2903,17 @@ body {
 
 .my-selectpicker {
 	max-width: 200px;
-	-webkit-border-radius: var(--wui-selectpicker-box-option-borderradius);
-	-moz-border-radius: var(--wui-selectpicker-box-option-borderradius);
-	border-radius: var(--wui-selectpicker-box-option-borderradius);
-	background-color: var(--wui-selectpicker-box-option-bgcolor-over);
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	background-color: #f6f6fa;
 	padding-left: 7px;
 }
 
 .my-output {
+	position: absolute;
+	top: 4px;
+	left: 210px;
 	margin: 10px;
 	font-family: monospace;
 }

@@ -190,9 +190,9 @@ class WUIDatepicker {
 
 	set value(value) {
 		if (typeof (value) == "string" && value.match(/^(\d{4}-\d{2}-\d{2})?$/) && (typeof (this.#properties.enabled) == "undefined" || this.#properties.enabled)) {
-			this.#setValue(value);
 			this.#targetValue = value;
 			this.#targetDate = new Date(value + "T00:00:00");
+			this.#setValue(value);
 			this.#refreshView();
 		}
 	}
@@ -433,6 +433,9 @@ class WUIDatepicker {
 			this.#darkModeListener(() => {
 				this.#setStyle();
 			});
+			if (this.#properties.value != "") {
+				this.value = this.#properties.value;
+			}
 		}
 	}
 
@@ -478,7 +481,7 @@ class WUIDatepicker {
 			const day = this.#htmlElements.inputDay.value;
 			this.#setValue(year != "" && month != "" && day != "" ? ("000" + year).slice(-4) + "-" + ("0" + month).slice(-2) + "-" + ("0" + day).slice(-2) : "");
 			if (this.#properties.value != value && typeof (this.#properties.onChange) == "function") {
-				this.#properties.onChange(this.#properties.value);
+				this.#properties.onChange(this.value);
 			}
 		}
 	}
@@ -568,6 +571,9 @@ class WUIDatepicker {
 						this.#htmlElements.period.innerHTML = this.#properties.monthsNames[option.dataset.month - 1] + " " + option.dataset.year + " <div class='icon up'></div>";
 						this.#setValue(value);
 						this.#refreshView();
+						if (typeof (this.#properties.onChange) == "function") {
+							this.#properties.onChange(value);
+						}
 					});
 					cell.appendChild(option);
 					m++;
@@ -638,6 +644,9 @@ class WUIDatepicker {
 						this.#targetDate = date;
 						this.#setValue(value);
 						this.#refreshView();
+						if (typeof (this.#properties.onChange) == "function") {
+							this.#properties.onChange(value);
+						}
 					});
 					cell.appendChild(option);
 					if (i + 1 == 7 * 5 && d < lasmday) {
@@ -686,7 +695,7 @@ class WUIDatepicker {
 			this.#prepare();
 			this.#loadBox();
 			if (typeof (this.#properties.onOpen) == "function") {
-				this.#properties.onOpen(this.#properties.value);
+				this.#properties.onOpen(this.value);
 			}
 		}
 	}
