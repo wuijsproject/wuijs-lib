@@ -9,7 +9,7 @@
 
 Library version: `0.2.0` ([Change Log](./CHANGELOG.md))
 
-Document version: `0.2.0.20260102.0`
+Document version: `0.2.0.20260104.0`
 
 License: `Apache License 2.0`
 
@@ -40,8 +40,8 @@ Author: `Sergio E. Belmar V. <sbelmar@wuijs.dev>`
 	*   WUIForm
 	*   WUIFormat
 	*   [WUISelectpicker](#WUISelectpicker)
-	*   WUIDatepicker
-	*   WUITimepicker
+	*   [WUIDatepicker](#WUIDatepicker)
+	*   [WUITimepicker](#WUITimepicker)
 	*   WUIColorpicker
 	*   WUICheckbox
 	*   WUIIntensity
@@ -77,8 +77,8 @@ WUI, an acronym for *Web User Interface JavaScript library*, is an open source J
 | WUIForm                             | `0.2`   | Component for the implementation of data forms. This component allows the implementation of HTML data input elements such as `<input>`, `<select>`, and `<textarea>`, and WUI library objects such as `WUISelectpicker`, `WUIDatepicker`, `WUITimepicker`, `WUIColorpicker`, `WUICheckbox`, `WUIIntensity`, and `WUIButton`. |
 | WUIFormat                           | `0.2`   | Tool for managing and validating `string`, `number` and `Date` data formats. |
 | [WUISelectpicker](#WUISelectpicker) | `0.2`   | Component for the implementation of multiple or exclusive selection list data inputs based on HTML element `<select>`. |
-| WUIDatepicker                       | `0.2`   | Component for the implementation of date type data inputs based on HTML element `<input type="date">`. |
-| WUITimepicker                       | `0.2`   | Component for the implementation of time type data inputs based on HTML element `<input type="time">`. |
+| [WUIDatepicker](#WUIDatepicker)     | `0.2`   | Component for the implementation of date type data inputs based on HTML element `<input type="date">`. |
+| [WUITimepicker](#WUITimepicker)     | `0.2`   | Component for the implementation of time type data inputs based on HTML element `<input type="time">`. |
 | WUIColorpicker                      | `0.2`   | Component for the implementation of color picker type data inputs based on HTML element `<input type="color">`. |
 | WUICheckbox                         | `0.2`   | Component for the implementation of checkbox type data inputs based on HTML element `<input type="checkbox">`. |
 | WUIIntensity                        | `0.1`   | Component for the implementation of 4-level intensity selector type data inputs: none, low, half, and high based on HTML element `<input type="range">`. |
@@ -479,6 +479,8 @@ CSS code in the `WUI.css` file:
 	--wui-timepicker-box-borderradius: 15px;
 	--wui-timepicker-box-bordercolor: #f0f0f3;
 	--wui-timepicker-box-bgcolor: rgb(from #fff r g b / 80%);
+	--wui-timepicker-box-scroll-bgcolor-out: rgb(from #353a40 r g b / 20%);
+	--wui-timepicker-box-scroll-bgcolor-over: rgb(from #353a40 r g b / 40%);
 	--wui-timepicker-box-option-bgcolor-now: #f0f0f3;
 	--wui-timepicker-box-option-bgcolor-over: rgb(from #1e90ff r g b / 20%);
 	--wui-timepicker-box-option-bgcolor-selected: #1e90ff;
@@ -1959,8 +1961,10 @@ body {
 
 .my-output {
 	position: absolute;
-	top: 10px;
+	top: 4px;
 	left: 440px;
+	margin: 10px;
+	font-family: monospace;
 }
 ```
 
@@ -2793,22 +2797,25 @@ Component for the implementation of multiple or exclusive selection list data in
 
 #### Methods
 
-| Method       | Return type   | Description |
-| ------------ | ------------- | ----------- |
-| getElement   | `HTMLElement` | `getElement()`<br><br>Returns the HTML element containing the object. |
-| init         | `void`        | `init()`<br><br>Initializes the object. |
-| addOption    | `void`        | `addOption(option)`<br><br>Arguments:<br>**• option:** `object`.<br><br>Add an option to the list, as defined by **Menu Options**. |
-| loadOptions  | `void`        | `loadOptions(options)`<br><br>Arguments:<br>**• options:** `array`.<br><br>Loads an array of options, clearing previously existing ones. |
-| clearOptions | `void`        | `clearOptions()`<br><br>Removes all options from the list. |
-| open         | `void`        | `open()`<br><br>Opens the list of options. |
-| close        | `void`        | `close()`<br><br>Closes the list of options. |
-| toggle       | `void`        | `toggle()`<br><br>Toggles the open state of the list of options. |
-| cancel       | `void`        | `cancel()`<br><br>Cancels the current selection and reverts to the previous value, closing the list. |
-| accept       | `void`        | `accept()`<br><br>Accepts the current selection and closes the list. |
-| isOpen       | `boolean`     | `isOpen()`<br><br>Returns whether the options list is open. |
-| isEmpty      | `boolean`     | `isEmpty()`<br><br>Returns whether the selector has no options selected. |
-| isValid      | `boolean`     | `isValid()`<br><br>Returns if the value entered in the text field corresponds to a valid option. |
-| destroy      | `destroy`     | `destroy()`<br><br>Destroyer. |
+| Method          | Return type   | Description |
+| --------------- | ------------- | ----------- |
+| getElement      | `HTMLElement` | `getElement()`<br><br>Returns the HTML element containing the object. |
+| getBox          | `HTMLElement` | `getBox()`<br><br>Returns the HTML element of the dropdown box. |
+| getViewElements | `array`       | `getViewElements()`<br><br>Returns an array of the HTML elements that are part of the value display. |
+| getInput        | `HTMLElement` | `getInput()`<br><br>Returns the HTML element associated with the base data input `<select>`. |
+| init            | `void`        | `init()`<br><br>Initializes the object. |
+| addOption       | `void`        | `addOption(option)`<br><br>Arguments:<br>**• option:** `object`.<br><br>Add an option to the list, as defined by **Menu Options**. |
+| loadOptions     | `void`        | `loadOptions(options)`<br><br>Arguments:<br>**• options:** `array`.<br><br>Loads an array of options, clearing previously existing ones. |
+| clearOptions    | `void`        | `clearOptions()`<br><br>Removes all options from the list. |
+| open            | `void`        | `open()`<br><br>Opens the list of options. |
+| close           | `void`        | `close()`<br><br>Closes the list of options. |
+| toggle          | `void`        | `toggle()`<br><br>Toggles the open state of the list of options. |
+| cancel          | `void`        | `cancel()`<br><br>Cancels the current selection and reverts to the previous value, closing the list. |
+| accept          | `void`        | `accept()`<br><br>Accepts the current selection and closes the list. |
+| isOpen          | `boolean`     | `isOpen()`<br><br>Returns whether the options list is open. |
+| isEmpty         | `boolean`     | `isEmpty()`<br><br>Returns whether the selector has no options selected. |
+| isValid         | `boolean`     | `isValid()`<br><br>Returns if the value entered in the text field corresponds to a valid option. |
+| destroy         | `destroy`     | `destroy()`<br><br>Destroyer. |
 
 #### CSS Variables
 
@@ -2976,7 +2983,416 @@ selectpicker.init();
 > You can check out this working example on CodePen at the link: [https://codepen.io/wuijsproject/pen/WbxQBKX](https://codepen.io/wuijsproject/pen/WbxQBKX).
 
 <a name="WUIDatepicker"></a>
+
+### WUIDatepicker
+
+Versión: `0.2`
+
+Component for the implementation of date type data inputs based on HTML element `<input type="date">`.
+
+#### Sources
+
+| Type | File |
+| ---- | ---- |
+| CSS  | [src/WUI/Datepicker/WUIDatepicker-0.2.css](https://github.com/sbelmar/wuijs-lib/blob/main/src/WUI/Datepicker/WUIDatepicker-0.2.css) |
+| JS   | [src/WUI/Datepicker/WUIDatepicker-0.2.js](https://github.com/sbelmar/wuijs-lib/blob/main/src/WUI/Datepicker/WUIDatepicker-0.2.js) |
+
+#### Constructor
+
+| Type          | Description |
+| ------------- | ----------- |
+| WUIDatepicker | `WUIDatepicker([properties])`<br><br>Arguments:<br>**• properties:** `object` *optional* |
+
+#### Properties
+
+| Property      | Type       | Default value | Description |
+| ------------- | ---------- | ------------- | ----------- |
+| selector      | `string`   | `undefined`   | (get/set)<br><br>CSS selector that defines the HTML container element of the object. If more than one element matches the selector, only the first match will be included. |
+| locales       | `string`   | `"en-US"`     | (get/set)<br><br>Locale code in `<ISO 639-1>-<ISO 3166-1 alpha-2>` format. For example: `es-CL`, `en-US`, `fr-FR`, etc. |
+| value         | `string`   | `""`          | (get/set)<br><br>Selected date in `yyyy-mm-dd` format. |
+| min           | `string`   | `""`          | (get/set)<br><br>Minimum allowed date in `yyyy-mm-dd` format. |
+| max           | `string`   | `""`          | (get/set)<br><br>Maximum allowed date in `yyyy-mm-dd` format. |
+| monthsNames   | `array`    | `[]`          | (get/set)<br><br>Custom names for months. If defined, overwrites names generated by `locales`. |
+| weekDaysNames | `array`    | `[]`          | (get/set)<br><br>Custom names for days of the week. If defined, overwrites names generated by `locales`. |
+| texts         | `object`   | `{}`          | (get/set)<br><br>Custom texts for the component buttons and messages. |
+| openDirection | `string`   | `"down"`      | (get/set)<br><br>Opening direction of the calendar.<br><br>Values:<br>• `"up"`, upwards.<br>• `"down"`, downwards. |
+| boxAlign      | `string`   | `"center"`    | (get/set)<br><br>Horizontal alignment of the calendar relative to the input.<br><br>Values:<br>• `"left"`, left.<br>• `"center"`, center.<br>• `"right"`, right. |
+| enabled       | `boolean`  | `true`        | (get/set)<br><br>Defines whether the input is enabled. |
+| onOpen        | `function` | `null`        | (get/set)<br><br>Function called when the calendar is opened. The function receives the current selected value as a parameter. |
+| onChange      | `function` | `null`        | (get/set)<br><br>Function called when the selected value changes. The function receives the new selected value as a parameter. |
+
+#### Methods
+
+| Method          | Return type   | Description |
+| --------------- | ------------- | ----------- |
+| getElement      | `HTMLElement` | `getElement()`<br><br>Returns the HTML container element of the object. |
+| getViewElements | `array`       | `getViewElements()`<br><br>Returns an array of the HTML elements that are part of the value display. |
+| getInput        | `HTMLElement` | `getInput()`<br><br>Returns the HTML element associated with the base data input `<input type="date">`. |
+| init            | `void`        | `init()`<br><br>Initializes the object. |
+| open            | `void`        | `open()`<br><br>Opens the calendar. |
+| close           | `void`        | `close()`<br><br>Closes the calendar. |
+| toggle          | `void`        | `toggle()`<br><br>Toggles the opening state of the calendar. |
+| toggleMode      | `void`        | `toggleMode()`<br><br>Toggles the view between days and months. |
+| prev            | `void`        | `prev()`<br><br>Shows the previous period (month or year depending on the view). |
+| next            | `void`        | `next()`<br><br>Shows the next period (month or year depending on the view). |
+| cancel          | `void`        | `cancel()`<br><br>Cancels the current selection and reverts to the previous value, closing the calendar. |
+| accept          | `void`        | `accept()`<br><br>Accepts the current selection and closes the calendar. |
+| isOpen          | `boolean`     | `isOpen()`<br><br>Returns whether the calendar is open. |
+| isEmpty         | `boolean`     | `isEmpty()`<br><br>Returns whether the selector has no date selected. |
+| isValid         | `boolean`     | `isValid()`<br><br>Returns whether the entered value corresponds to a valid date. |
+| destroy         | `destroy`     | `destroy()`<br><br>Destructor. |
+
+#### CSS Variables
+
+| Variable                                         | Description |
+| ------------------------------------------------ | ----------- |
+| `--wui-datepicker-opener-iconsize`               | 
+| `--wui-datepicker-opener-iconcolor-out`          | 
+| `--wui-datepicker-opener-iconcolor-over`         | 
+| `--wui-datepicker-opener-iconcolor-disabled`     | 
+| `--wui-datepicker-opener-openicon-src`           | 
+| `--wui-datepicker-opener-closeicon-src`          | 
+| `--wui-datepicker-box-shadowcolor`               | 
+| `--wui-datepicker-box-borderradius`              | 
+| `--wui-datepicker-box-bordercolor`               | 
+| `--wui-datepicker-box-bgcolor`                   | 
+| `--wui-datepicker-box-period-iconsize`           | 
+| `--wui-datepicker-box-period-iconcolor-out`      | 
+| `--wui-datepicker-box-period-iconcolor-over`     | 
+| `--wui-datepicker-box-period-iconcolor-disabled` | 
+| `--wui-datepicker-box-period-upicon-src`         | 
+| `--wui-datepicker-box-period-downicon-src`       | 
+| `--wui-datepicker-box-paging-iconsize`           | 
+| `--wui-datepicker-box-paging-iconcolor-out`      | 
+| `--wui-datepicker-box-paging-iconcolor-over`     | 
+| `--wui-datepicker-box-paging-iconcolor-disabled` | 
+| `--wui-datepicker-box-paging-previcon-src`       | 
+| `--wui-datepicker-box-paging-nexticon-src`       | 
+| `--wui-datepicker-box-month-titlecolor`          | 
+| `--wui-datepicker-box-month-bgcolor-today`       | 
+| `--wui-datepicker-box-month-bgcolor-over`        | 
+| `--wui-datepicker-box-month-bgcolor-selected`    | 
+| `--wui-datepicker-box-month-textcolor-out`       | 
+| `--wui-datepicker-box-month-textcolor-over`      | 
+| `--wui-datepicker-box-month-textcolor-selected`  | 
+| `--wui-datepicker-box-day-bgcolor-today`         | 
+| `--wui-datepicker-box-day-bgcolor-over`          | 
+| `--wui-datepicker-box-day-bgcolor-selected`      | 
+| `--wui-datepicker-box-day-textcolor-out`         | 
+| `--wui-datepicker-box-day-textcolor-over`        | 
+| `--wui-datepicker-box-day-textcolor-selected`    | 
+| `--wui-datepicker-box-button-textcolor-out`      | 
+| `--wui-datepicker-box-button-textcolor-over`     | 
+| `--wui-datepicker-mobile-overlay-bgcolor`        | 
+
+#### Implementation
+
+CSS settings:
+
+```css
+:root {
+	--wui-datepicker-opener-iconsize: 30px;
+	--wui-datepicker-opener-iconcolor-out: #000;
+	--wui-datepicker-opener-iconcolor-over: #1e90ff;
+	--wui-datepicker-opener-iconcolor-disabled: #d5dce3;
+	--wui-datepicker-opener-openicon-src: none;
+	--wui-datepicker-opener-closeicon-src: none;
+	--wui-datepicker-box-shadowcolor: #959da5;
+	--wui-datepicker-box-borderradius: 15px;
+	--wui-datepicker-box-bordercolor: #f0f0f3;
+	--wui-datepicker-box-bgcolor: rgb(from #fdfdfe r g b / 100%);
+	--wui-datepicker-box-period-iconsize: 20px;
+	--wui-datepicker-box-period-iconcolor-out: #000;
+	--wui-datepicker-box-period-iconcolor-over: #1e90ff;
+	--wui-datepicker-box-period-iconcolor-disabled: #d5dce3;
+	--wui-datepicker-box-period-upicon-src: none;
+	--wui-datepicker-box-period-downicon-src: none;
+	--wui-datepicker-box-paging-iconsize: 26px;
+	--wui-datepicker-box-paging-iconcolor-out: #1e90ff;
+	--wui-datepicker-box-paging-iconcolor-over: #1e90ff;
+	--wui-datepicker-box-paging-iconcolor-disabled: #d5dce3;
+	--wui-datepicker-box-paging-previcon-src: none;
+	--wui-datepicker-box-paging-nexticon-src: none;
+	--wui-datepicker-box-month-titlecolor: #888;
+	--wui-datepicker-box-month-bgcolor-today: #f0f0f3;
+	--wui-datepicker-box-month-bgcolor-over: rgb(from #1e90ff r g b / 20%);
+	--wui-datepicker-box-month-bgcolor-selected: #1e90ff;
+	--wui-datepicker-box-month-textcolor-out: #000;
+	--wui-datepicker-box-month-textcolor-over: #1e90ff;
+	--wui-datepicker-box-month-textcolor-selected: #fff;
+	--wui-datepicker-box-day-bgcolor-today: #f0f0f3;
+	--wui-datepicker-box-day-bgcolor-over: rgb(from #1e90ff r g b / 20%);
+	--wui-datepicker-box-day-bgcolor-selected: #1e90ff;
+	--wui-datepicker-box-day-textcolor-out: #000;
+	--wui-datepicker-box-day-textcolor-over: #1e90ff;
+	--wui-datepicker-box-day-textcolor-selected: #fff;
+	--wui-datepicker-box-button-textcolor-out: #1e90ff;
+	--wui-datepicker-box-button-textcolor-over: #1e90ff;
+	--wui-datepicker-mobile-overlay-bgcolor: rgb(from #010203 r g b / 20%);
+}
+```
+
+CSS code:
+
+```css
+body {
+	font-family: Arial, Helvetica, Verdana, sans-serif;
+}
+
+.my-datepicker {
+	max-width: 200px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	background-color: #f6f6fa;
+	padding-left: 7px;
+}
+
+.my-output {
+	position: absolute;
+	top: 4px;
+	left: 210px;
+	margin: 10px;
+	font-family: monospace;
+}
+```
+
+HTML Header:
+
+```html
+<link type="text/css" rel="stylesheet" href="https://wuijs.dev/Libraries/WUI/Datepicker/WUIDatepicker-0.2.css">
+<script type="text/javascript" src="https://wuijs.dev/Libraries/WUI/Datepicker/WUIDatepicker-0.2.js"></script>
+```
+
+HTML Code:
+
+```html
+<div class="wui-datepicker my-datepicker">
+	<input type="date" name="myDate">
+</div>
+
+<div class="my-output"></div>
+```
+
+JS Code:
+
+```js
+// Create object
+const output = document.body.querySelector(".my-output");
+const datepicker = new WUIDatepicker({
+	selector: ".wui-datepicker.my-datepicker",
+	value: "2026-01-01",
+	//locales: "en-US",
+	//min: "",
+	//max: "",
+	//monthsNames: [],
+	//weekDaysNames: [],
+	//texts: {},
+	//openDirection: "down",
+	//boxAlign: "center",
+	//enabled: true,
+	onOpen: (value) => {
+		output.textContent = `Datepicker opened: ${value}`;
+	},
+	onChange: (value) => {
+		output.textContent = `Datepicker changed: ${value}`;
+	}
+});
+
+// Initialize object
+datepicker.init();
+```
+
+> [!IMPORTANT]
+> If the selector defines an element that is not of type `HTMLDivElement`, the object will not be initialized.
+
+> [!TIP]
+> You can check out this working example on CodePen at the link: [https://codepen.io/wuijsproject/pen/Wbxrrar](https://codepen.io/wuijsproject/pen/Wbxrrar).
+
 <a name="WUITimepicker"></a>
+
+### WUITimepicker
+
+Versión: `0.2`
+
+Component for the implementation of time type data inputs based on HTML element `<input type="time">`.
+
+#### Sources
+
+| Type | File |
+| ---- | ---- |
+| CSS  | [src/WUI/Timepicker/WUITimepicker-0.2.css](https://github.com/sbelmar/wuijs-lib/blob/main/src/WUI/Timepicker/WUITimepicker-0.2.css) |
+| JS   | [src/WUI/Timepicker/WUITimepicker-0.2.js](https://github.com/sbelmar/wuijs-lib/blob/main/src/WUI/Timepicker/WUITimepicker-0.2.js) |
+
+#### Constructor
+
+| Type          | Description |
+| ------------- | ----------- |
+| WUITimepicker | `WUITimepicker([properties])`<br><br>Arguments:<br>**• properties:** `object` *optional* |
+
+#### Properties
+
+| Property      | Type       | Default value | Description |
+| ------------- | ---------- | ------------- | ----------- |
+| selector      | `string`   | `undefined`   | (get/set)<br><br>CSS selector that defines the HTML container element of the object. If more than one element matches the selector, only the first match will be included. |
+| value         | `string`   | `""`          | (get/set)<br><br>Selected time in `hh:mm` format (24 hours). |
+| min           | `string`   | `"00:00"`     | (get/set)<br><br>Minimum allowed time in `hh:mm` format. |
+| max           | `string`   | `"23:59"`     | (get/set)<br><br>Maximum allowed time in `hh:mm` format. |
+| lang          | `string`   | `"en"`        | (get/set)<br><br>Component language.<br><br>Values:<br>• `"de"`, German.<br>• `"en"`, English.<br>• `"es"`, Spanish. |
+| texts         | `object`   | `{}`          | (get/set)<br><br>Custom texts for the component buttons and messages. |
+| openDirection | `string`   | `"down"`      | (get/set)<br><br>Opening direction of the time picker.<br><br>Values:<br>• `"up"`, upwards.<br>• `"down"`, downwards. |
+| enabled       | `boolean`  | `true`        | (get/set)<br><br>Defines whether the input is enabled. |
+| onOpen        | `function` | `null`        | (get/set)<br><br>Function called when the selector is opened. The function receives the current selected value as a parameter. |
+| onChange      | `function` | `null`        | (get/set)<br><br>Function called when the selected value changes. The function receives the new selected value as a parameter. |
+
+#### Methods
+
+| Method          | Return type   | Description |
+| --------------- | ------------- | ----------- |
+| getElement      | `HTMLElement` | `getElement()`<br><br>Returns the HTML container element of the object. |
+| getViewElements | `array`       | `getViewElements()`<br><br>Retorna un arreglo de los elementos HTML que son parte de la visualización del valor. |
+| getInput        | `HTMLElement` | `getInput()`<br><br>Retorna el elemento HTML asociado a la entrada de datos base `<input type="time">`. |
+| init            | `void`        | `init()`<br><br>Initializes the object. |
+| open            | `void`        | `open()`<br><br>Opens the selector. |
+| close           | `void`        | `close()`<br><br>Closes the selector. |
+| toggle          | `void`        | `toggle()`<br><br>Toggles the opening state of the selector. |
+| cancel          | `void`        | `cancel()`<br><br>Cancels the current selection and reverts to the previous value, closing the selector. |
+| accept          | `void`        | `accept()`<br><br>Accepts the current selection and closes the selector. |
+| isOpen          | `boolean`     | `isOpen()`<br><br>Returns whether the selector is open. |
+| isEmpty         | `boolean`     | `isEmpty()`<br><br>Returns whether the selector has no time selected. |
+| isValid         | `boolean`     | `isValid()`<br><br>Returns whether the entered value corresponds to a valid time. |
+| destroy         | `destroy`     | `destroy()`<br><br>Destructor. |
+
+#### CSS Variables
+
+| Variable                                         | Description |
+| ------------------------------------------------ | ----------- |
+| `--wui-timepicker-opener-iconsize`               |
+| `--wui-timepicker-opener-iconcolor-out`          |
+| `--wui-timepicker-opener-iconcolor-over`         |
+| `--wui-timepicker-opener-iconcolor-disabled`     |
+| `--wui-timepicker-opener-openicon-src`           |
+| `--wui-timepicker-opener-closeicon-src`          |
+| `--wui-timepicker-box-shadowcolor`               |
+| `--wui-timepicker-box-borderradius`              |
+| `--wui-timepicker-box-bordercolor`               |
+| `--wui-timepicker-box-bgcolor`                   |
+| `--wui-timepicker-box-scroll-bgcolor-out`        | 
+| `--wui-timepicker-box-scroll-bgcolor-over`       |
+| `--wui-timepicker-box-option-textcolor-out`      |
+| `--wui-timepicker-box-option-bgcolor-over`       |
+| `--wui-timepicker-box-option-textcolor-over`     |
+| `--wui-timepicker-box-option-bgcolor-now`        |
+| `--wui-timepicker-box-option-bgcolor-selected`   |
+| `--wui-timepicker-box-option-textcolor-selected` |
+| `--wui-timepicker-box-button-textcolor-out`      |
+| `--wui-timepicker-box-button-textcolor-over`     |
+| `--wui-timepicker-mobile-overlay-bgcolor`        |
+
+#### Implementation
+
+CSS settings:
+
+```css
+:root {
+	--wui-timepicker-opener-iconsize: 30px;
+	--wui-timepicker-opener-iconcolor-out: #000;
+	--wui-timepicker-opener-iconcolor-over: #1e90ff;
+	--wui-timepicker-opener-iconcolor-disabled: #d5dce3;
+	--wui-timepicker-opener-openicon-src: none;
+	--wui-timepicker-opener-closeicon-src: none;
+	--wui-timepicker-box-shadowcolor: #959da5;
+	--wui-timepicker-box-borderradius: 15px;
+	--wui-timepicker-box-bordercolor: #f0f0f3;
+	--wui-timepicker-box-bgcolor: rgb(from #fdfdfe r g b / 100%);
+	--wui-timepicker-box-scroll-bgcolor-out: rgb(from #353a40 r g b / 20%);
+	--wui-timepicker-box-scroll-bgcolor-over: rgb(from #353a40 r g b / 40%);
+	--wui-timepicker-box-option-textcolor-out: #000;
+	--wui-timepicker-box-option-bgcolor-over: rgb(from #1e90ff r g b / 20%);
+	--wui-timepicker-box-option-textcolor-over: #1e90ff;
+	--wui-timepicker-box-option-bgcolor-now: #f0f0f3;
+	--wui-timepicker-box-option-bgcolor-selected: #1e90ff;
+	--wui-timepicker-box-option-textcolor-selected: #fff;
+	--wui-timepicker-box-button-textcolor-out: #1e90ff;
+	--wui-timepicker-box-button-textcolor-over: #1e90ff;
+	--wui-timepicker-mobile-overlay-bgcolor: rgb(from #010203 r g b / 20%);
+}
+```
+
+CSS code:
+
+```css
+body {
+	font-family: Arial, Helvetica, Verdana, sans-serif;
+}
+
+.my-timepicker {
+	max-width: 120px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	background-color: #f6f6fa;
+	padding-left: 7px;
+}
+
+.my-output {
+	position: absolute;
+	top: 4px;
+	left: 210px;
+	margin: 10px;
+	font-family: monospace;
+}
+```
+
+HTML Header:
+
+```html
+<link type="text/css" rel="stylesheet" href="https://wuijs.dev/Libraries/WUI/Timepicker/WUITimepicker-0.2.css">
+<script type="text/javascript" src="https://wuijs.dev/Libraries/WUI/Timepicker/WUITimepicker-0.2.js"></script>
+```
+
+HTML Code:
+
+```html
+<div class="wui-timepicker my-timepicker">
+	<input type="time" name="myTime">
+</div>
+
+<div class="my-output"></div>
+```
+
+JS Code:
+
+```js
+// Create object
+const output = document.body.querySelector(".my-output");
+const timepicker = new WUITimepicker({
+	selector: ".wui-timepicker.my-timepicker",
+	value: "10:30",
+	//min: "00:00",
+	//max: "23:59",
+	//lang: "en",
+	//texts: {},
+	//openDirection: "down",
+	//enabled: true,
+	onOpen: (value) => {
+		output.textContent = `Timepicker opened: ${value}`;
+	},
+	onChange: (value) => {
+		output.textContent = `Timepicker changed: ${value}`;
+	}
+});
+
+// Initialize object
+timepicker.init();
+```
+
+> [!IMPORTANT]
+> If the selector defines an element that is not of type `HTMLDivElement`, the object will not be initialized.
+
+> [!TIP]
+> You can check out this working example on CodePen at the link: [https://codepen.io/wuijsproject/pen/azZdGrY](https://codepen.io/wuijsproject/pen/azZdGrY).
+
 <a name="WUIColorpicker"></a>
 <a name="WUICheckbox"></a>
 <a name="WUIIntensity"></a>
@@ -3243,4 +3659,6 @@ The examples listed in this section are detailed in the "Implementation" section
 | [WUIList](#WUIList)                 | [https://codepen.io/wuijsproject/pen/xbOweva](https://codepen.io/wuijsproject/pen/xbOweva) |
 | [WUITable](#WUITable)               | [https://codepen.io/wuijsproject/pen/jErboKZ](https://codepen.io/wuijsproject/pen/jErboKZ) |
 | [WUISelectpicker](#WUISelectpicker) | [https://codepen.io/wuijsproject/pen/WbxQBKX](https://codepen.io/wuijsproject/pen/WbxQBKX) |
+| [WUIDatepicker](#WUIDatepicker)     | [https://codepen.io/wuijsproject/pen/Wbxrrar](https://codepen.io/wuijsproject/pen/Wbxrrar) |
+| [WUITimepicker](#WUITimepicker)     | [https://codepen.io/wuijsproject/pen/azZdGrY](https://codepen.io/wuijsproject/pen/azZdGrY) |
 | [WUIButton](#WUIButton)             | [https://codepen.io/wuijsproject/pen/xbOwNzN](https://codepen.io/wuijsproject/pen/xbOwNzN) |

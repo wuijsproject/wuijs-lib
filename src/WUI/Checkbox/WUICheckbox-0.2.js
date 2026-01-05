@@ -108,7 +108,7 @@ class WUICheckbox {
 		return this.#htmlElement;
 	}
 
-	getFocusableElements() {
+	getViewElements() {
 		return [this.#htmlElements.input];
 	}
 

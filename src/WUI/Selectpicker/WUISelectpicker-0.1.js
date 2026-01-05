@@ -23,13 +23,13 @@ class WUISelectpicker {
 	};
 	static #icons = {
 		open: ""
-			+"<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'>"
-			+"<path d='M8.12 9.29L12 13.17l3.88-3.88a.996.996 0 1 1 1.41 1.41l-4.59 4.59a.996.996 0 0 1-1.41 0L6.7 10.7a.996.996 0 0 1 0-1.41c.39-.38 1.03-.39 1.42 0z'/>"
-			+"</svg>",
+			+ "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'>"
+			+ "<path d='M8.12 9.29L12 13.17l3.88-3.88a.996.996 0 1 1 1.41 1.41l-4.59 4.59a.996.996 0 0 1-1.41 0L6.7 10.7a.996.996 0 0 1 0-1.41c.39-.38 1.03-.39 1.42 0z'/>"
+			+ "</svg>",
 		"box-option-check": ""
-			+"<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='currentColor'>"
-			+"<path d='M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z'/>"
-			+"</svg>"
+			+ "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='currentColor'>"
+			+ "<path d='M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z'/>"
+			+ "</svg>"
 	};
 	static #texts = {
 		de: {
@@ -71,17 +71,17 @@ class WUISelectpicker {
 						const focusIndex = options.indexOf(focusOption);
 						const nextIndex =
 							options.length == 0 ? null :
-							keys.up && focusOption == null ? options.length -1 :
-							keys.up && focusOption != null ? focusIndex -1 :
-							keys.down && focusOption == null ? 0 :
-							keys.down && focusOption != null ? focusIndex +1 :
-							null;
+								keys.up && focusOption == null ? options.length - 1 :
+									keys.up && focusOption != null ? focusIndex - 1 :
+										keys.down && focusOption == null ? 0 :
+											keys.down && focusOption != null ? focusIndex + 1 :
+												null;
 						const nextOption = nextIndex != null ? options[nextIndex] : null;
 						if (focusOption != null) {
 							focusOption.classList.remove("focus");
 						}
 						if (nextOption != null) {
-							active._options.scrollTop = nextOption.offsetTop - parseInt(active._options.clientHeight/2);
+							active._options.scrollTop = nextOption.offsetTop - parseInt(active._options.clientHeight / 2);
 							nextOption.classList.add("focus");
 						}
 					} else if (keys.intro) {
@@ -98,9 +98,9 @@ class WUISelectpicker {
 		});
 	}
 
-	constructor (properties) {
+	constructor(properties) {
 		Object.keys(WUISelectpicker.#defaults).forEach(prop => {
-			this[prop] = typeof(properties) != "undefined" && prop in properties ? properties[prop] : prop in WUISelectpicker.#defaults ? WUISelectpicker.#defaults[prop] : null;
+			this[prop] = typeof (properties) != "undefined" && prop in properties ? properties[prop] : prop in WUISelectpicker.#defaults ? WUISelectpicker.#defaults[prop] : null;
 		});
 	}
 
@@ -153,15 +153,15 @@ class WUISelectpicker {
 	}
 
 	set selector(value) {
-		if (typeof(value) == "string" && value != "") {
+		if (typeof (value) == "string" && value != "") {
 			this._selector = value;
 			this._element = document.querySelector(value);
-			this._input = document.querySelector(value+" > select");
+			this._input = document.querySelector(value + " > select");
 		}
 	}
 
 	set value(value) {
-		if (typeof(value).toString().match(/string|number/) && (typeof(this._enabled) == "undefined" || this._enabled)) {
+		if (typeof (value).toString().match(/string|number/) && (typeof (this._enabled) == "undefined" || this._enabled)) {
 			value = value.toString().trim();
 			this._value = value;
 			if (this._enabled) {
@@ -173,13 +173,13 @@ class WUISelectpicker {
 	}
 
 	set lang(value) {
-		if (typeof(value) == "string" && value.match(/^\w{2}$/)) {
+		if (typeof (value) == "string" && value.match(/^\w{2}$/)) {
 			this._lang = value.toLowerCase();
 		}
 	}
 
 	set texts(value) {
-		if (typeof(value) == "object" && !Array.isArray(value) && value !== null) {
+		if (typeof (value) == "object" && !Array.isArray(value) && value !== null) {
 			Object.keys(WUISelectpicker.#texts.en).forEach(text => {
 				if (!(text in value)) {
 					value[text] = "";
@@ -190,15 +190,15 @@ class WUISelectpicker {
 	}
 
 	set openDirection(value) {
-		if (typeof(value) == "string" && value.match(/^(up|down)$/i)) {
+		if (typeof (value) == "string" && value.match(/^(up|down)$/i)) {
 			this._openDirection = value.toLowerCase();
 		}
 	}
 
 	set multiple(value) {
-		if (typeof(value) == "boolean") {
+		if (typeof (value) == "boolean") {
 			this._multiple = value;
-			if (typeof(this._input) != "undefined") {
+			if (typeof (this._input) != "undefined") {
 				if (value) {
 					this._input.setAttribute("multiple", "true");
 				} else {
@@ -209,21 +209,21 @@ class WUISelectpicker {
 	}
 
 	set separatorValue(value) {
-		if (typeof(value) == "string") {
+		if (typeof (value) == "string") {
 			this._separatorValue = value;
 		}
 	}
 
 	set separatorText(value) {
-		if (typeof(value) == "string") {
+		if (typeof (value) == "string") {
 			this._separatorText = value;
 		}
 	}
 
 	set filterable(value) {
-		if (typeof(value) == "boolean") {
+		if (typeof (value) == "boolean") {
 			this._filterable = value;
-			if (typeof(this._inputText) != "undefined") {
+			if (typeof (this._inputText) != "undefined") {
 				this._inputText.readOnly = !value;
 				this._inputText.style.cursor = value ? "default" : "pointer";
 				if (value) {
@@ -236,10 +236,10 @@ class WUISelectpicker {
 	}
 
 	set enabled(value) {
-		if (typeof(value) == "boolean") {
+		if (typeof (value) == "boolean") {
 			this._enabled = value;
 			this._input.disabled = !value;
-			if (typeof(this._inputText) != "undefined") {
+			if (typeof (this._inputText) != "undefined") {
 				this._inputText.disabled = !value;
 				if (value) {
 					this._inputText.removeAttribute("disabled");
@@ -252,13 +252,13 @@ class WUISelectpicker {
 	}
 
 	set onOpen(value) {
-		if (typeof(value) == "function") {
+		if (typeof (value) == "function") {
 			this._onOpen = value;
 		}
 	}
 
 	set onChange(value) {
-		if (typeof(value) == "function") {
+		if (typeof (value) == "function") {
 			this._onChange = value;
 		}
 	}
@@ -271,7 +271,7 @@ class WUISelectpicker {
 		return this._box;
 	}
 
-	getFocusableElements() {
+	getViewElements() {
 		return [this._inputText];
 	}
 
@@ -292,15 +292,15 @@ class WUISelectpicker {
 	}
 
 	#getSRCIcon(name, event) {
-		const rgb2Hex = (rgba) => "#"+rgba.map((x, i) => {return ("0"+parseInt(i == 3 ? 255*x : x).toString(16)).slice(-2);}).join("");
+		const rgb2Hex = (rgba) => "#" + rgba.map((x, i) => { return ("0" + parseInt(i == 3 ? 255 * x : x).toString(16)).slice(-2); }).join("");
 		const prepareColor = (color) => {
 			return color.replace(/\s+/g, "").match(/\d+\,\d+\,\d+/) ? rgb2Hex(color.replace(/\s+/g, "").replace(/^rgba?\((\d+\,\d+\,\d+)(\,[\d.]+)?\)$/, "$1$2").split(",")) : color;
 		}
 		const element = this._element || document.documentElement;
-		const baseColor = getComputedStyle(element).getPropertyValue("--wui-selectpicker-"+name+"color-"+event);
+		const baseColor = getComputedStyle(element).getPropertyValue("--wui-selectpicker-" + name + "color-" + event);
 		const hexColor = prepareColor(baseColor).replace(/#/g, "%23").trim();
-		const src = getComputedStyle(element).getPropertyValue("--wui-selectpicker-"+name+"icon-src").replace(/currentColor/g, hexColor);
-		return src != "" && !src.match(/^(none|url\(\))$/) ? src : "url(\"data:image/svg+xml,"+WUISelectpicker.#icons[name].replace(/currentColor/g, hexColor)+"\")";
+		const src = getComputedStyle(element).getPropertyValue("--wui-selectpicker-" + name + "icon-src").replace(/currentColor/g, hexColor);
+		return src != "" && !src.match(/^(none|url\(\))$/) ? src : "url(\"data:image/svg+xml," + WUISelectpicker.#icons[name].replace(/currentColor/g, hexColor) + "\")";
 	}
 
 	#setValue(value) {
@@ -341,10 +341,10 @@ class WUISelectpicker {
 	}
 
 	#addSelectOption(opt) {
-		if (typeof(this._input) != "undefined") {
-			const selected = typeof(opt.selected) == "boolean" ? opt.selected : false;
+		if (typeof (this._input) != "undefined") {
+			const selected = typeof (opt.selected) == "boolean" ? opt.selected : false;
 			const option = new Option(opt.text || "", opt.value || "", selected);
-			if (typeof(opt.className) == "string") {
+			if (typeof (opt.className) == "string") {
 				option.className = opt.className;
 			}
 			this._input.appendChild(option);
@@ -352,15 +352,15 @@ class WUISelectpicker {
 	}
 
 	#addHTMLOption(opt) {
-		if (typeof(this._options) != "undefined") {
+		if (typeof (this._options) != "undefined") {
 			const option = document.createElement("div");
 			const icon = document.createElement("div");
 			const text = document.createElement("div");
 			const selected = Boolean(opt.selected);
-			const customIcon = Boolean(typeof(opt.icon) == "string" && opt.icon != "");
-			icon.className = "icon "+(customIcon ? opt.icon : "check");
+			const customIcon = Boolean(typeof (opt.icon) == "string" && opt.icon != "");
+			icon.className = "icon " + (customIcon ? opt.icon : "check");
 			icon.style.maskImage = !customIcon ? this.#getSRCIcon("box-option-check", selected ? "selected focus" : "out") : "url()";
-			text.className = "text "+(opt.value == "" ? "empty" : this._selecteableText ? "selecteable" : "");
+			text.className = "text " + (opt.value == "" ? "empty" : this._selecteableText ? "selecteable" : "");
 			text.innerHTML = opt.value == "" ? (this.texts.empty != "" ? this.texts.empty : lang in WUISelectpicker.#texts ? WUISelectpicker.#texts[lang].empty : "") : opt.text;
 			(opt.classList || []).forEach(key => {
 				text.classList.add(key);
@@ -368,12 +368,12 @@ class WUISelectpicker {
 			Object.keys(opt.dataset || []).forEach(key => {
 				text.dataset[key] = opt.dataset[key];
 			});
-			option.className = "option"+(selected ? " selected" : "");	
+			option.className = "option" + (selected ? " selected" : "");
 			option.dataset.value = opt.value;
 			option.appendChild(icon);
 			option.appendChild(text);
-			option.addEventListener("mouseover", () => {option.classList.add("focus");});
-			option.addEventListener("mouseout", () => {option.classList.remove("focus");});
+			option.addEventListener("mouseover", () => { option.classList.add("focus"); });
+			option.addEventListener("mouseout", () => { option.classList.remove("focus"); });
 			option.addEventListener("click", () => {
 				const mobile = Boolean(window.matchMedia("(max-width: 767px)").matches);
 				const selected = !Boolean(option.classList.contains("selected"));
@@ -381,9 +381,9 @@ class WUISelectpicker {
 				const values = [];
 				let value = "";
 				option.classList.toggle("selected");
-				this._options.scrollTop = option.offsetTop - parseInt(this._options.clientHeight/2);
+				this._options.scrollTop = option.offsetTop - parseInt(this._options.clientHeight / 2);
 				this._options.querySelectorAll(".option").forEach(option => {
-					if (typeof(option.dataset.value) != "undefined") {
+					if (typeof (option.dataset.value) != "undefined") {
 						option.classList.remove("focus");
 						if (!this._multiple && option.dataset.value != targetValue) {
 							option.classList.remove("selected");
@@ -435,7 +435,7 @@ class WUISelectpicker {
 		}
 		this._input.value = this._value || "";
 		this._input.addEventListener("change", () => {
-			if (typeof(this._onChange) == "function") {
+			if (typeof (this._onChange) == "function") {
 				this._onChange(this._input.value);
 			}
 		});
@@ -443,7 +443,7 @@ class WUISelectpicker {
 			this.#addHTMLOption(opt);
 		});
 		this._inputText.type = "text";
-		this._inputText.name = this._input.name+"Text";
+		this._inputText.name = this._input.name + "Text";
 		this._inputText.readOnly = !this._filterable;
 		this._inputText.style.cursor = this._filterable ? "default" : "pointer";
 		this._inputText.addEventListener("focus", () => {
@@ -478,7 +478,7 @@ class WUISelectpicker {
 				const regexp = new RegExp(prepare(key));
 				this._options.querySelectorAll(".option").forEach(option => {
 					const value = option.dataset.value;
-					const text = this._input.querySelector("option[value='"+value+"']").text.trim().toLowerCase();
+					const text = this._input.querySelector("option[value='" + value + "']").text.trim().toLowerCase();
 					if (regexp.test(prepare(text))) {
 						option.classList.remove("hidden");
 					} else {
@@ -491,7 +491,7 @@ class WUISelectpicker {
 			}
 		});
 		this._background.className = "background hidden";
-		this._box.className = "box "+this._openDirection+" hidden";
+		this._box.className = "box " + this._openDirection + " hidden";
 		this._box.appendChild(this._options);
 		this._box.appendChild(this._footer);
 		this._options.className = "options";
@@ -499,9 +499,9 @@ class WUISelectpicker {
 		this._footer.appendChild(this._cancelButton);
 		this._footer.appendChild(this._acceptButton);
 		this._cancelButton.className = "cancel";
-		this._cancelButton.addEventListener("click", () => {this.cancel();});
+		this._cancelButton.addEventListener("click", () => { this.cancel(); });
 		this._acceptButton.className = "accept";
-		this._acceptButton.addEventListener("click", () => {this.accept();});
+		this._acceptButton.addEventListener("click", () => { this.accept(); });
 		this.#prepare();
 	}
 
@@ -517,10 +517,10 @@ class WUISelectpicker {
 
 	#loadBox() {
 		Array.from(this._input.options).forEach((opt, i) => {
-			const option = this._options.querySelector(".option:nth-child("+(i +1)+")");
-			if (typeof(option.dataset.value) != "undefined") {
+			const option = this._options.querySelector(".option:nth-child(" + (i + 1) + ")");
+			if (typeof (option.dataset.value) != "undefined") {
 				if (opt.selected) {
-					this._options.scrollTop = option.offsetTop - parseInt((this._options.clientHeight - option.clientHeight)/2);
+					this._options.scrollTop = option.offsetTop - parseInt((this._options.clientHeight - option.clientHeight) / 2);
 					option.classList.add("selected");
 				} else {
 					option.classList.remove("selected", "focus");
@@ -537,7 +537,7 @@ class WUISelectpicker {
 	}
 
 	clearOptions() {
-		if (typeof(this._input) != "undefined") {
+		if (typeof (this._input) != "undefined") {
 			this._input.innerHTML = "";
 			this._options.innerHTML = "";
 		}
@@ -547,10 +547,10 @@ class WUISelectpicker {
 		const mobile = Boolean(window.matchMedia("(max-width: 767px)").matches);
 		this._background.classList.remove("hidden");
 		this._box.classList.remove("hidden");
-		this._box.style.marginBottom = !mobile && this._openDirection == "up" ? this._element.clientHeight+"px" : "auto";
+		this._box.style.marginBottom = !mobile && this._openDirection == "up" ? this._element.clientHeight + "px" : "auto";
 		this.#prepare();
 		this.#loadBox();
-		if (typeof(this._onOpen) == "function") {
+		if (typeof (this._onOpen) == "function") {
 			this._onOpen(this.getValue());
 		}
 		WUISelectpicker.#active = this;

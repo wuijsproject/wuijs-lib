@@ -206,7 +206,7 @@ class WUITimepicker {
 		return this.#htmlElement;
 	}
 
-	getFocusableElements() {
+	getViewElements() {
 		return [this.#htmlElements.inputHours, this.#htmlElements.inputMinutes];
 	}
 
@@ -353,6 +353,9 @@ class WUITimepicker {
 			this.#darkModeListener(() => {
 				this.#setStyle();
 			});
+			if (this.#properties.value != "") {
+				this.value = this.#properties.value;
+			}
 		}
 	}
 
@@ -412,7 +415,7 @@ class WUITimepicker {
 			const minutes = this.#htmlElements.inputMinutes.value;
 			this.#setValue(hours != "" && minutes != "" ? ("0" + hours).slice(-2) + ":" + ("0" + minutes).slice(-2) : "");
 			if (this.#htmlElements.input.value != value && typeof (this.#properties.onChange) == "function") {
-				this.#properties.onChange(this.#htmlElements.input.value);
+				this.#properties.onChange(this.value);
 			}
 		}
 	}
@@ -427,7 +430,7 @@ class WUITimepicker {
 			this.#prepare();
 			this.#loadBox();
 			if (typeof (this.#properties.onOpen) == "function") {
-				this.#properties.onOpen(this.#htmlElements.input.value);
+				this.#properties.onOpen(this.value);
 			}
 		}
 	}
@@ -458,6 +461,9 @@ class WUITimepicker {
 	}
 
 	accept() {
+		if (typeof (this.#properties.onChange) == "function") {
+			this.#properties.onChange(this.value);
+		}
 		this.close();
 	}
 

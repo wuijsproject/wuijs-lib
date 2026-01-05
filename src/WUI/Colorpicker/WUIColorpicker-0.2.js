@@ -613,7 +613,7 @@ class WUIColorpicker {
 		return this.#htmlElement;
 	}
 
-	getFocusableElements() {
+	getViewElements() {
 		return [this.#htmlElements.button];
 	}
 

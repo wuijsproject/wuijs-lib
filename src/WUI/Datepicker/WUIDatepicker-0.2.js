@@ -288,7 +288,7 @@ class WUIDatepicker {
 		return this.#htmlElement;
 	}
 
-	getFocusableElements() {
+	getViewElements() {
 		return [this.#htmlElements.inputYear, this.#htmlElements.inputMonth, this.#htmlElements.inputDay];
 	}
 

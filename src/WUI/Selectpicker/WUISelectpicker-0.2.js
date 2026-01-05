@@ -69,9 +69,10 @@ class WUISelectpicker {
 						active.open();
 					}
 				} else {
-					const focusOption = active.getOptions().querySelector(".option.focus");
+					const activeOptions = active.getBox().querySelector(".options");
+					const focusOption = activeOptions.querySelector(".option.focus");
 					if (keys.up || keys.down) {
-						const options = Array.from(active.getOptions().querySelectorAll(".option")).filter(option => !option.classList.contains("hidden"));
+						const options = Array.from(activeOptions.querySelectorAll(".option")).filter(option => !option.classList.contains("hidden"));
 						const focusIndex = options.indexOf(focusOption);
 						const nextIndex =
 							options.length == 0 ? null :
@@ -85,7 +86,7 @@ class WUISelectpicker {
 							focusOption.classList.remove("focus");
 						}
 						if (nextOption != null) {
-							active.getOptions().scrollTop = nextOption.offsetTop - parseInt(active.getOptions().clientHeight / 2);
+							activeOptions.scrollTop = nextOption.offsetTop - parseInt(activeOptions.clientHeight / 2);
 							nextOption.classList.add("focus");
 						}
 					} else if (keys.intro) {
@@ -300,11 +301,7 @@ class WUISelectpicker {
 		return this.#htmlElements.box;
 	}
 
-	getOptions() {
-		return this.#htmlElements.options;
-	}
-
-	getFocusableElements() {
+	getViewElements() {
 		return [this.#htmlElements.inputText];
 	}
 
@@ -363,73 +360,6 @@ class WUISelectpicker {
 			} else {
 				this.#htmlElement.classList.remove("disabled");
 			}
-		}
-	}
-
-	addOption(opt) {
-		this.#addSelectOption(opt);
-		this.#addHTMLOption(opt);
-	}
-
-	#addSelectOption(opt) {
-		if (this.#htmlElements.input instanceof HTMLSelectElement) {
-			const selected = typeof (opt.selected) == "boolean" ? opt.selected : false;
-			const option = new Option(opt.text || "", opt.value || "", selected);
-			this.#htmlElements.input.appendChild(option);
-		}
-	}
-
-	#addHTMLOption(opt) {
-		if (this.#htmlElements.options instanceof HTMLElement) {
-			const option = document.createElement("div");
-			const icon = document.createElement("div");
-			const text = document.createElement("div");
-			const selected = Boolean(opt.selected);
-			const customIcon = Boolean(typeof (opt.icon) == "string" && opt.icon != "");
-			icon.className = "icon " + (customIcon ? opt.icon : "check");
-			icon.style.maskImage = !customIcon ? this.#getSRCIcon("box-option-check", selected ? "focus" : "out") : "url()";
-			text.className = "text " + (opt.value == "" ? "empty" : this._selecteableText ? "selecteable" : "");
-			text.innerHTML = opt.value == "" ? (this.texts.empty != "" ? this.texts.empty : this.lang in WUISelectpicker.#texts ? WUISelectpicker.#texts[this.lang].empty : "") : opt.text;
-			(opt.classList || []).forEach(key => {
-				text.classList.add(key);
-			});
-			Object.keys(opt.dataset || []).forEach(key => {
-				text.dataset[key] = opt.dataset[key];
-			});
-			option.className = "option" + (selected ? " selected" : "");
-			option.dataset.value = opt.value;
-			option.appendChild(icon);
-			option.appendChild(text);
-			option.addEventListener("mouseover", () => { option.classList.add("focus"); });
-			option.addEventListener("mouseout", () => { option.classList.remove("focus"); });
-			option.addEventListener("click", () => {
-				const mobile = Boolean(window.matchMedia("(max-width: 767px)").matches);
-				const selected = !Boolean(option.classList.contains("selected"));
-				const targetValue = option.dataset.value || "";
-				const values = [];
-				let value = "";
-				option.classList.toggle("selected");
-				this.#htmlElements.options.scrollTop = option.offsetTop - parseInt(this.#htmlElements.options.clientHeight / 2);
-				this.#htmlElements.options.querySelectorAll(".option").forEach(option => {
-					if (typeof (option.dataset.value) != "undefined") {
-						option.classList.remove("focus");
-						if (!this.#properties.multiple && option.dataset.value != targetValue) {
-							option.classList.remove("selected");
-						}
-						if (this.#properties.multiple && option.classList.contains("selected")) {
-							values.push(option.dataset.value);
-						}
-					}
-				});
-				value = this.#properties.multiple ? values.join(this.#properties.separatorValue) : selected ? targetValue : "";
-				option.classList.add("focus");
-				this.#targetValue = value;
-				this.value = value;
-				if (!this.#properties.multiple && !mobile) {
-					this.close();
-				}
-			});
-			this.#htmlElements.options.appendChild(option);
 		}
 	}
 
@@ -546,6 +476,73 @@ class WUISelectpicker {
 			this.#htmlElements.acceptButton.textContent = this.#properties.texts.accept != "" ? this.#properties.texts.accept : lang in texts ? texts[lang].accept : "";
 		}
 		this.#refreshView();
+	}
+
+	addOption(opt) {
+		this.#addSelectOption(opt);
+		this.#addHTMLOption(opt);
+	}
+
+	#addSelectOption(opt) {
+		if (this.#htmlElements.input instanceof HTMLSelectElement) {
+			const selected = typeof (opt.selected) == "boolean" ? opt.selected : false;
+			const option = new Option(opt.text || "", opt.value || "", selected);
+			this.#htmlElements.input.appendChild(option);
+		}
+	}
+
+	#addHTMLOption(opt) {
+		if (this.#htmlElements.options instanceof HTMLElement) {
+			const option = document.createElement("div");
+			const icon = document.createElement("div");
+			const text = document.createElement("div");
+			const selected = Boolean(opt.selected);
+			const customIcon = Boolean(typeof (opt.icon) == "string" && opt.icon != "");
+			icon.className = "icon " + (customIcon ? opt.icon : "check");
+			icon.style.maskImage = !customIcon ? this.#getSRCIcon("box-option-check", selected ? "focus" : "out") : "url()";
+			text.className = "text " + (opt.value == "" ? "empty" : this._selecteableText ? "selecteable" : "");
+			text.innerHTML = opt.value == "" ? (this.texts.empty != "" ? this.texts.empty : this.lang in WUISelectpicker.#texts ? WUISelectpicker.#texts[this.lang].empty : "") : opt.text;
+			(opt.classList || []).forEach(key => {
+				text.classList.add(key);
+			});
+			Object.keys(opt.dataset || []).forEach(key => {
+				text.dataset[key] = opt.dataset[key];
+			});
+			option.className = "option" + (selected ? " selected" : "");
+			option.dataset.value = opt.value;
+			option.appendChild(icon);
+			option.appendChild(text);
+			option.addEventListener("mouseover", () => { option.classList.add("focus"); });
+			option.addEventListener("mouseout", () => { option.classList.remove("focus"); });
+			option.addEventListener("click", () => {
+				const mobile = Boolean(window.matchMedia("(max-width: 767px)").matches);
+				const selected = !Boolean(option.classList.contains("selected"));
+				const targetValue = option.dataset.value || "";
+				const values = [];
+				let value = "";
+				option.classList.toggle("selected");
+				this.#htmlElements.options.scrollTop = option.offsetTop - parseInt(this.#htmlElements.options.clientHeight / 2);
+				this.#htmlElements.options.querySelectorAll(".option").forEach(option => {
+					if (typeof (option.dataset.value) != "undefined") {
+						option.classList.remove("focus");
+						if (!this.#properties.multiple && option.dataset.value != targetValue) {
+							option.classList.remove("selected");
+						}
+						if (this.#properties.multiple && option.classList.contains("selected")) {
+							values.push(option.dataset.value);
+						}
+					}
+				});
+				value = this.#properties.multiple ? values.join(this.#properties.separatorValue) : selected ? targetValue : "";
+				option.classList.add("focus");
+				this.#targetValue = value;
+				this.value = value;
+				if (!this.#properties.multiple && !mobile) {
+					this.close();
+				}
+			});
+			this.#htmlElements.options.appendChild(option);
+		}
 	}
 
 	#loadBox() {

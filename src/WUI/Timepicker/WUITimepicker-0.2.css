@@ -159,6 +159,28 @@ div.wui-timepicker > .box > .lists > ul {
 	list-style-type: none;
 }
 
+div.wui-timepicker > .box > .lists > ul {
+	scrollbar-color: var(--wui-timepicker-box-scroll-bgcolor-out) transparent;
+}
+
+div.wui-timepicker > .box > .lists > ul::-webkit-scrollbar {
+	width: 4px;
+	background-color: transparent;
+}
+
+div.wui-timepicker > .box > .lists > ul::-webkit-scrollbar-thumb {
+	border-radius: 2px;
+	background-color: var(--wui-timepicker-box-scroll-bgcolor-out);
+}
+
+div.wui-timepicker > .box > .lists > ul::-webkit-scrollbar-thumb:is(:hover, :active) {
+	background-color: var(--wui-timepicker-box-scroll-bgcolor-over);
+}
+
+div.wui-timepicker > .box > .lists > ul::-webkit-scrollbar-track {
+	background-color: transparent;
+}
+
 div.wui-timepicker > .box > .lists > ul::before,
 div.wui-timepicker > .box > .lists > ul::after {
 	content: "";

@@ -15,9 +15,9 @@ class WUICheckbox {
 		onChange: null
 	};
 
-	constructor (properties) {
+	constructor(properties) {
 		Object.keys(WUICheckbox.#defaults).forEach(prop => {
-			this[prop] = typeof(properties) != "undefined" && prop in properties ? properties[prop] : prop in WUICheckbox.#defaults ? WUICheckbox.#defaults[prop] : null;
+			this[prop] = typeof (properties) != "undefined" && prop in properties ? properties[prop] : prop in WUICheckbox.#defaults ? WUICheckbox.#defaults[prop] : null;
 		});
 	}
 
@@ -46,21 +46,21 @@ class WUICheckbox {
 	}
 
 	set selector(value) {
-		if (typeof(value) == "string" && value != "") {
+		if (typeof (value) == "string" && value != "") {
 			this._selector = value;
 			this._element = document.querySelector(value);
-			this._input = document.querySelector(value+" > input[type='checkbox']");
+			this._input = document.querySelector(value + " > input[type='checkbox']");
 		}
 	}
 
 	set value(value) {
-		if (typeof(value).match(/(string|number)/) && (typeof(this._enabled) == "undefined" || this._enabled)) {
+		if (typeof (value).match(/(string|number)/) && (typeof (this._enabled) == "undefined" || this._enabled)) {
 			this._input.value = value;
 		}
 	}
 
 	set checked(value) {
-		if (typeof(value) == "boolean" && (typeof(this._enabled) == "undefined" || this._enabled)) {
+		if (typeof (value) == "boolean" && (typeof (this._enabled) == "undefined" || this._enabled)) {
 			this._checked = value;
 			this._input.checked = value;
 			if (value) {
@@ -73,7 +73,7 @@ class WUICheckbox {
 	}
 
 	set enabled(value) {
-		if (typeof(value) == "boolean") {
+		if (typeof (value) == "boolean") {
 			this._enabled = value;
 			this._input.disabled = !value;
 			if (value) {
@@ -86,7 +86,7 @@ class WUICheckbox {
 	}
 
 	set onChange(value) {
-		if (typeof(value) == "function") {
+		if (typeof (value) == "function") {
 			this._onChange = value;
 		}
 	}
@@ -95,7 +95,7 @@ class WUICheckbox {
 		return this._element;
 	}
 
-	getFocusableElements() {
+	getViewElements() {
 		return [this._input];
 	}
 
@@ -136,7 +136,7 @@ class WUICheckbox {
 				if (this._drag) {
 					const initX = parseFloat(this._initX);
 					const moveX = (event.type == "touchmove" ? event.touches[0].clientX : event.clientX || event.pageX) - event.target.offsetParent.offsetLeft;
-					const diffX = moveX -initX;
+					const diffX = moveX - initX;
 					const direction = diffX > 10 ? "right" : diffX < -10 ? "left" : null;
 					this._direction = direction;
 				}
@@ -172,7 +172,7 @@ class WUICheckbox {
 		});
 		this._input.addEventListener("change", event => {
 			this.#setStyle();
-			if (typeof(this._onChange) == "function") {
+			if (typeof (this._onChange) == "function") {
 				this._onChange(event, event.target.checked);
 			}
 		});

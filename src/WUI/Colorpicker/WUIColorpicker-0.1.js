@@ -17,17 +17,17 @@ class WUIColorpicker {
 		enabled: true,
 		onOpen: null,
 		onChange: null
-	};	
+	};
 	static #icons = {
 		open: ""
-			+"<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'>"
-			+"<path d='M8.12 9.29L12 13.17l3.88-3.88a.996.996 0 1 1 1.41 1.41l-4.59 4.59a.996.996 0 0 1-1.41 0L6.7 10.7a.996.996 0 0 1 0-1.41c.39-.38 1.03-.39 1.42 0z'/>"
-			+"</svg>",
+			+ "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'>"
+			+ "<path d='M8.12 9.29L12 13.17l3.88-3.88a.996.996 0 1 1 1.41 1.41l-4.59 4.59a.996.996 0 0 1-1.41 0L6.7 10.7a.996.996 0 0 1 0-1.41c.39-.38 1.03-.39 1.42 0z'/>"
+			+ "</svg>",
 		empty: ""
-			+"<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='currentColor'>"
-			+"<path d='M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z'/>"
-			+"<path d='M13.654 2.346a.5.5 0 0 1 0 .708l-10.5 10.5a.5.5 0 0 1-.708-.708l10.5-10.5a.5.5 0 0 1 .708 0Z'/>"
-			+"</svg>"
+			+ "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='currentColor'>"
+			+ "<path d='M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z'/>"
+			+ "<path d='M13.654 2.346a.5.5 0 0 1 0 .708l-10.5 10.5a.5.5 0 0 1-.708-.708l10.5-10.5a.5.5 0 0 1 .708 0Z'/>"
+			+ "</svg>"
 	};
 	static #texts = {
 		de: {
@@ -270,7 +270,7 @@ class WUIColorpicker {
 			"#f0fff0": "honeyDew",
 
 			// Cyanes
-			
+
 			"#008b8b": "darkCyan",
 			"#008080": "teal",
 			"#00ffff": "aqua",
@@ -333,9 +333,9 @@ class WUIColorpicker {
 		}
 	};
 
-	constructor (properties) {
+	constructor(properties) {
 		Object.keys(WUIColorpicker.#defaults).forEach(prop => {
-			this[prop] = typeof(properties) != "undefined" && prop in properties ? properties[prop] : prop in WUIColorpicker.#defaults ? WUIColorpicker.#defaults[prop] : null;
+			this[prop] = typeof (properties) != "undefined" && prop in properties ? properties[prop] : prop in WUIColorpicker.#defaults ? WUIColorpicker.#defaults[prop] : null;
 		});
 	}
 
@@ -376,34 +376,34 @@ class WUIColorpicker {
 	}
 
 	set selector(value) {
-		if (typeof(value) == "string" && value != "") {
+		if (typeof (value) == "string" && value != "") {
 			this._selector = value;
 			this._element = document.querySelector(value);
-			this._input = document.querySelector(value+" > input[type='color']");
+			this._input = document.querySelector(value + " > input[type='color']");
 		}
 	}
 
 	set value(value) {
-		if (typeof(value) == "string" && (value.match(/^#([0-9A-F]{3}){1,2}$/i) || Object.values(WUIColorpicker.#colors.list).map(x => x.toLowerCase()).indexOf(value.toLowerCase()) > 0) && (typeof(this._enabled) == "undefined" || this._enabled)) {
+		if (typeof (value) == "string" && (value.match(/^#([0-9A-F]{3}){1,2}$/i) || Object.values(WUIColorpicker.#colors.list).map(x => x.toLowerCase()).indexOf(value.toLowerCase()) > 0) && (typeof (this._enabled) == "undefined" || this._enabled)) {
 			this.#setValue(value.trim().toLowerCase());
 			this.#prepare();
 		}
 	}
 
 	set emptyValue(value) {
-		if (typeof(value) == "string" && value.match(/^#([0-9A-F]{3}){1,2}$/i)) {
+		if (typeof (value) == "string" && value.match(/^#([0-9A-F]{3}){1,2}$/i)) {
 			this._emptyValue = value.toLowerCase();
 		}
 	}
 
 	set lang(value) {
-		if (typeof(value) == "string" && value.match(/^\w{2}$/)) {
+		if (typeof (value) == "string" && value.match(/^\w{2}$/)) {
 			this._lang = value.toLowerCase();
 		}
 	}
 
 	set texts(value) {
-		if (typeof(value) == "object" && !Array.isArray(value) && value !== null) {
+		if (typeof (value) == "object" && !Array.isArray(value) && value !== null) {
 			Object.keys(WUIColorpicker.#texts.en).forEach(text => {
 				if (!(text in value)) {
 					value[text] = "";
@@ -414,16 +414,16 @@ class WUIColorpicker {
 	}
 
 	set openDirection(value) {
-		if (typeof(value) == "string" && value.match(/^(up|down)$/i)) {
+		if (typeof (value) == "string" && value.match(/^(up|down)$/i)) {
 			this._openDirection = value.toLowerCase();
 		}
 	}
 
 	set enabled(value) {
-		if (typeof(value) == "boolean") {
+		if (typeof (value) == "boolean") {
 			this._enabled = value;
 			this._input.disabled = !value;
-			if (typeof(this._button) != "undefined") {
+			if (typeof (this._button) != "undefined") {
 				this._button.disabled = !value;
 				if (value) {
 					this._button.removeAttribute("disabled");
@@ -436,13 +436,13 @@ class WUIColorpicker {
 	}
 
 	set onOpen(value) {
-		if (typeof(value) == "function") {
+		if (typeof (value) == "function") {
 			this._onOpen = value;
 		}
 	}
 
 	set onChange(value) {
-		if (typeof(value) == "function") {
+		if (typeof (value) == "function") {
 			this._onChange = value;
 		}
 	}
@@ -451,7 +451,7 @@ class WUIColorpicker {
 		return this._element;
 	}
 
-	getFocusableElements() {
+	getViewElements() {
 		return [this._button];
 	}
 
@@ -460,15 +460,15 @@ class WUIColorpicker {
 	}
 
 	#getSRCIcon(name, event) {
-		const rgb2Hex = (rgba) => "#"+rgba.map((x, i) => {return ("0"+parseInt(i == 3 ? 255*x : x).toString(16)).slice(-2);}).join("");
+		const rgb2Hex = (rgba) => "#" + rgba.map((x, i) => { return ("0" + parseInt(i == 3 ? 255 * x : x).toString(16)).slice(-2); }).join("");
 		const prepareColor = (color) => {
 			return color.replace(/\s+/g, "").match(/\d+\,\d+\,\d+/) ? rgb2Hex(color.replace(/\s+/g, "").replace(/^rgba?\((\d+\,\d+\,\d+)(\,[\d.]+)?\)$/, "$1$2").split(",")) : color;
 		}
 		const element = this._element || document.documentElement;
-		const baseColor = getComputedStyle(element).getPropertyValue("--wui-colorpicker-"+name+"color-"+event);
+		const baseColor = getComputedStyle(element).getPropertyValue("--wui-colorpicker-" + name + "color-" + event);
 		const hexColor = prepareColor(baseColor).replace(/#/g, "%23").trim();
-		const src = getComputedStyle(element).getPropertyValue("--wui-colorpicker-"+name+"icon-src").replace(/currentColor/g, hexColor);
-		return src != "" && !src.match(/^(none|url\(\))$/) ? src : "url(\"data:image/svg+xml,"+WUIColorpicker.#icons[name].replace(/currentColor/g, hexColor)+"\")";
+		const src = getComputedStyle(element).getPropertyValue("--wui-colorpicker-" + name + "icon-src").replace(/currentColor/g, hexColor);
+		return src != "" && !src.match(/^(none|url\(\))$/) ? src : "url(\"data:image/svg+xml," + WUIColorpicker.#icons[name].replace(/currentColor/g, hexColor) + "\")";
 	}
 
 	#setValue(value) {
@@ -515,8 +515,8 @@ class WUIColorpicker {
 			const selected = !Boolean(option.classList.contains("selected"));
 			const targetValue = option.dataset.value || "";
 			const value = selected ? targetValue : "";
-			this["_"+mode].querySelectorAll(mode == "list" ? ".option" : ".color").forEach(div => {
-				if (typeof(div.dataset.value) != "undefined" && div.dataset.value != targetValue) {
+			this["_" + mode].querySelectorAll(mode == "list" ? ".option" : ".color").forEach(div => {
+				if (typeof (div.dataset.value) != "undefined" && div.dataset.value != targetValue) {
 					div.classList.remove("selected");
 				}
 			});
@@ -559,7 +559,7 @@ class WUIColorpicker {
 			this._input.removeAttributeNode(this._input.getAttributeNode("style"));
 		}
 		this._input.addEventListener("change", () => {
-			if (typeof(this._onChange) == "function") {
+			if (typeof (this._onChange) == "function") {
 				this._onChange(this._input.value);
 			}
 		});
@@ -567,10 +567,10 @@ class WUIColorpicker {
 			row.forEach(value => {
 				const option = document.createElement("div");
 				const selected = Boolean(this._input.value.toLowerCase() == value.toLowerCase());
-				option.className = "color"+(selected ? " selected" : "");
+				option.className = "color" + (selected ? " selected" : "");
 				option.style.backgroundColor = value;
 				option.dataset.value = value;
-				option.addEventListener("click", () => {optionOnClick(option, "grid");});
+				option.addEventListener("click", () => { optionOnClick(option, "grid"); });
 				this._grid.appendChild(option);
 			});
 		});
@@ -583,18 +583,18 @@ class WUIColorpicker {
 			color.style.backgroundColor = value;
 			text.className = "text";
 			text.textContent = name.replace(/([a-z])([A-Z])/g, "$1 $2").toLowerCase();
-			option.className = "option "+name+(selected ? " selected" : "");
+			option.className = "option " + name + (selected ? " selected" : "");
 			option.dataset.value = value.toLowerCase();
 			option.appendChild(color);
 			option.appendChild(text);
-			option.addEventListener("click", () => {optionOnClick(option, "list");});
+			option.addEventListener("click", () => { optionOnClick(option, "list"); });
 			this._list.appendChild(option);
 		});
 		this._button.className = "button";
 		this._button.appendChild(this._buttonColor);
 		this._buttonColor.className = "color";
 		this._background.className = "background hidden";
-		this._box.className = "box "+this._openDirection+" hidden";
+		this._box.className = "box " + this._openDirection + " hidden";
 		this._box.appendChild(this._header);
 		this._box.appendChild(this._grid);
 		this._box.appendChild(this._list);
@@ -604,9 +604,9 @@ class WUIColorpicker {
 		this._header.appendChild(this._gridTab);
 		this._header.appendChild(this._listTab);
 		this._gridTab.className = "tab grid selected";
-		this._gridTab.addEventListener("click", () => {this.selectMode("grid");});
+		this._gridTab.addEventListener("click", () => { this.selectMode("grid"); });
 		this._listTab.className = "tab list";
-		this._listTab.addEventListener("click", () => {this.selectMode("list");});
+		this._listTab.addEventListener("click", () => { this.selectMode("list"); });
 		this._grid.className = "grid";
 		this._list.className = "list hidden";
 		this._preview.className = "preview";
@@ -618,9 +618,9 @@ class WUIColorpicker {
 		this._footer.appendChild(this._cancelButton);
 		this._footer.appendChild(this._acceptButton);
 		this._cancelButton.className = "cancel";
-		this._cancelButton.addEventListener("click", () => {this.cancel();});
+		this._cancelButton.addEventListener("click", () => { this.cancel(); });
 		this._acceptButton.className = "accept";
-		this._acceptButton.addEventListener("click", () => {this.accept();});
+		this._acceptButton.addEventListener("click", () => { this.accept(); });
 		this.#prepare();
 	}
 
@@ -632,8 +632,8 @@ class WUIColorpicker {
 		this._gridTab.textContent = this._texts.grid != "" ? this._texts.grid : lang in texts ? texts[lang].grid : "";
 		this._listTab.textContent = this._texts.list != "" ? this._texts.list : lang in texts ? texts[lang].list : "";
 		if (lang.match(/(es)/)) {
-			Object.values(WUIColorpicker.#colors.list).forEach(name => {	
-				const text = this._list.querySelector(".option."+name+" > .text");
+			Object.values(WUIColorpicker.#colors.list).forEach(name => {
+				const text = this._list.querySelector(".option." + name + " > .text");
 				text.textContent = texts[lang].colors[name];
 			});
 		}
@@ -645,9 +645,9 @@ class WUIColorpicker {
 	#loadBox() {
 		const value = this._targetValue;
 		["grid", "list"].forEach(name => {
-			const content = this["_"+name];
+			const content = this["_" + name];
 			content.querySelectorAll(name == "grid" ? ".color" : ".option").forEach(opt => {
-				if (typeof(opt.dataset.value) != "undefined") {
+				if (typeof (opt.dataset.value) != "undefined") {
 					if (opt.dataset.value == value) {
 						opt.classList.add("selected");
 						this.selectMode(name);
@@ -662,11 +662,11 @@ class WUIColorpicker {
 	open() {
 		const mobile = Boolean(window.matchMedia("(max-width: 767px)").matches);
 		this._background.classList.remove("hidden");
-		this._box.className = "box "+this._openDirection;
-		this._box.style.marginBottom = !mobile && this._openDirection == "up" ? this._element.clientHeight+"px" : "auto";
+		this._box.className = "box " + this._openDirection;
+		this._box.style.marginBottom = !mobile && this._openDirection == "up" ? this._element.clientHeight + "px" : "auto";
 		this.#prepare();
 		this.#loadBox();
-		if (typeof(this._onOpen) == "function") {
+		if (typeof (this._onOpen) == "function") {
 			this._onOpen(this._input.value);
 		}
 	}
@@ -686,8 +686,8 @@ class WUIColorpicker {
 
 	selectMode(mode) {
 		["grid", "list"].forEach(name => {
-			const tab = this["_"+name+"Tab"];
-			const content = this["_"+name];
+			const tab = this["_" + name + "Tab"];
+			const content = this["_" + name];
 			if (name == mode) {
 				tab.classList.add("selected");
 				content.classList.remove("hidden");
@@ -700,8 +700,8 @@ class WUIColorpicker {
 			const list = WUIColorpicker.#colors.list;
 			const value = this._input.value || "";
 			if (value in list) {
-				const option = this._list.querySelector(".option."+list[value]);
-				this._list.scrollTop = option.offsetTop - parseInt((this._list.clientHeight - option.clientHeight)/2);
+				const option = this._list.querySelector(".option." + list[value]);
+				this._list.scrollTop = option.offsetTop - parseInt((this._list.clientHeight - option.clientHeight) / 2);
 			} else {
 				this._list.scrollTop = 0;
 			}
