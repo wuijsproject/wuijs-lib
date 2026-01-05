@@ -3328,7 +3328,7 @@ body {
 }
 
 .my-timepicker {
-	max-width: 120px;
+	max-width: 100px;
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
 	border-radius: 10px;
