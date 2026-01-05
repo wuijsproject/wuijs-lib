@@ -2926,14 +2926,14 @@ body {
 }
 ```
 
-HTML Header:
+HTML head:
 
 ```html
 <link type="text/css" rel="stylesheet" href="https://wuijs.dev/Libraries/WUI/Selectpicker/WUISelectpicker-0.2.css">
 <script type="text/javascript" src="https://wuijs.dev/Libraries/WUI/Selectpicker/WUISelectpicker-0.2.js"></script>
 ```
 
-HTML Code:
+HTML code:
 
 ```html
 <div class="wui-selectpicker my-selectpicker">
@@ -2948,7 +2948,7 @@ HTML Code:
 <div class="my-output"></div>
 ```
 
-JS Code:
+JS code:
 
 ```js
 // Create object
@@ -3157,14 +3157,14 @@ body {
 }
 ```
 
-HTML Header:
+HTML head:
 
 ```html
 <link type="text/css" rel="stylesheet" href="https://wuijs.dev/Libraries/WUI/Datepicker/WUIDatepicker-0.2.css">
 <script type="text/javascript" src="https://wuijs.dev/Libraries/WUI/Datepicker/WUIDatepicker-0.2.js"></script>
 ```
 
-HTML Code:
+HTML code:
 
 ```html
 <div class="wui-datepicker my-datepicker">
@@ -3174,7 +3174,7 @@ HTML Code:
 <div class="my-output"></div>
 ```
 
-JS Code:
+JS code:
 
 ```js
 // Create object
@@ -3344,14 +3344,14 @@ body {
 }
 ```
 
-HTML Header:
+HTML head:
 
 ```html
 <link type="text/css" rel="stylesheet" href="https://wuijs.dev/Libraries/WUI/Timepicker/WUITimepicker-0.2.css">
 <script type="text/javascript" src="https://wuijs.dev/Libraries/WUI/Timepicker/WUITimepicker-0.2.js"></script>
 ```
 
-HTML Code:
+HTML code:
 
 ```html
 <div class="wui-timepicker my-timepicker">
@@ -3361,7 +3361,7 @@ HTML Code:
 <div class="my-output"></div>
 ```
 
-JS Code:
+JS code:
 
 ```js
 // Create object
