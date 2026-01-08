@@ -63,7 +63,7 @@ div.wui-datepicker > .inputs {
 	display: flex;
 	height: 100%;
 	align-items: center;
-	margin-left: var(--wui-datepicker-input-paddingleft);
+	margin-left: var(--wui-datepicker-viewinput-paddingleft);
 }
 
 div.wui-datepicker > .inputs > input[type="text"] {
@@ -77,15 +77,15 @@ div.wui-datepicker > .inputs > input[type="text"] {
 	text-align: center;
 	font-family: inherit;
 	font-size: 14px;
-	color: var(--wui-datepicker-input-textcolor-out);
+	color: var(--wui-datepicker-viewinput-textcolor-out);
 }
 
 div.wui-datepicker > .inputs > input[type="text"]:is(:hover, :focus, :focus-within) {
-	color: var(--wui-datepicker-input-textcolor-over);
+	color: var(--wui-datepicker-viewinput-textcolor-over);
 }
 
 div.wui-datepicker > .inputs > input[type="text"]:disabled {
-	color: var(--wui-datepicker-input-textcolor-disabled) !important;
+	color: var(--wui-datepicker-viewinput-textcolor-disabled) !important;
 }
 
 div.wui-datepicker > .inputs > input[type="text"].year {

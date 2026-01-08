@@ -66,20 +66,20 @@ div.wui-selectpicker > input[type="text"] {
 	outline: none;
 	border: 0;
 	background-color: transparent;
-	padding: 0 0 0 var(--wui-selectpicker-input-paddingleft);
+	padding: 0 0 0 var(--wui-selectpicker-viewinput-paddingleft);
 	text-align: left;
 	font-family: inherit;
 	font-size: 14px;
-	color: var(--wui-selectpicker-input-textcolor-out);
+	color: var(--wui-selectpicker-viewinput-textcolor-out);
 }
 
 div.wui-selectpicker > input[type="text"]:is(:hover, :focus, :focus-within) {
-	color: var(--wui-selectpicker-input-textcolor-over);
+	color: var(--wui-selectpicker-viewinput-textcolor-over);
 }
 
 div.wui-selectpicker > input[type="text"]:disabled,
 div.wui-selectpicker.disabled > input[type="text"] {
-	color: var(--wui-selectpicker-input-textcolor-disabled) !important;
+	color: var(--wui-selectpicker-viewinput-textcolor-disabled) !important;
 }
 
 div.wui-selectpicker > .background {

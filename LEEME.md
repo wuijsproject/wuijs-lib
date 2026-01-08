@@ -400,10 +400,10 @@ Código CSS archivo `WUI.css`:
 	--wui-selectpicker-opener-iconcolor-disabled: #d5dce3;
 	--wui-selectpicker-opener-openicon-src: none;
 	--wui-selectpicker-opener-closeicon-src: none;
-	--wui-selectpicker-input-paddingleft: 10px;
-	--wui-selectpicker-input-textcolor-out: #2d3a47;
-	--wui-selectpicker-input-textcolor-over: #1f2937;
-	--wui-selectpicker-input-textcolor-disabled: #d5dce3;
+	--wui-selectpicker-viewinput-paddingleft: 10px;
+	--wui-selectpicker-viewinput-textcolor-out: #2d3a47;
+	--wui-selectpicker-viewinput-textcolor-over: #1f2937;
+	--wui-selectpicker-viewinput-textcolor-disabled: #d5dce3;
 	--wui-selectpicker-box-shadowcolor: #959da5;
 	--wui-selectpicker-box-borderradius: 15px;
 	--wui-selectpicker-box-bordercolor: #f0f0f3;
@@ -443,10 +443,10 @@ Código CSS archivo `WUI.css`:
 	--wui-datepicker-opener-iconcolor-disabled: #d5dce3;
 	--wui-datepicker-opener-openicon-src: none;
 	--wui-datepicker-opener-closeicon-src: none;
-	--wui-datepicker-input-paddingleft: 10px;
-	--wui-datepicker-input-textcolor-out: #2d3a47;
-	--wui-datepicker-input-textcolor-over: #1f2937;
-	--wui-datepicker-input-textcolor-disabled: #d5dce3;
+	--wui-datepicker-viewinput-paddingleft: 10px;
+	--wui-datepicker-viewinput-textcolor-out: #2d3a47;
+	--wui-datepicker-viewinput-textcolor-over: #1f2937;
+	--wui-datepicker-viewinput-textcolor-disabled: #d5dce3;
 	--wui-datepicker-box-shadowcolor: #959da5;
 	--wui-datepicker-box-borderradius: 15px;
 	--wui-datepicker-box-bordercolor: #f0f0f3;
@@ -492,10 +492,10 @@ Código CSS archivo `WUI.css`:
 	--wui-timepicker-opener-iconcolor-disabled: #d5dce3;
 	--wui-timepicker-opener-openicon-src: none;
 	--wui-timepicker-opener-closeicon-src: none;
-	--wui-timepicker-input-paddingleft: 10px;
-	--wui-timepicker-input-textcolor-out: #2d3a47;
-	--wui-timepicker-input-textcolor-over: #1f2937;
-	--wui-timepicker-input-textcolor-disabled: #d5dce3;
+	--wui-timepicker-viewinput-paddingleft: 10px;
+	--wui-timepicker-viewinput-textcolor-out: #2d3a47;
+	--wui-timepicker-viewinput-textcolor-over: #1f2937;
+	--wui-timepicker-viewinput-textcolor-disabled: #d5dce3;
 	--wui-timepicker-box-shadowcolor: #959da5;
 	--wui-timepicker-box-borderradius: 15px;
 	--wui-timepicker-box-bordercolor: #f0f0f3;
@@ -2854,10 +2854,10 @@ Componente para la implementación de entradas de datos de tipo lista de selecci
 | `--wui-selectpicker-opener-iconcolor-disabled`      |
 | `--wui-selectpicker-opener-openicon-src`            |
 | `--wui-selectpicker-opener-closeicon-src`           |
-| `--wui-selectpicker-input-paddingleft`              |
-| `--wui-selectpicker-input-textcolor-out`            |
-| `--wui-selectpicker-input-textcolor-over`           |
-| `--wui-selectpicker-input-textcolor-disabled`       |
+| `--wui-selectpicker-viewinput-paddingleft`          |
+| `--wui-selectpicker-viewinput-textcolor-out`        |
+| `--wui-selectpicker-viewinput-textcolor-over`       |
+| `--wui-selectpicker-viewinput-textcolor-disabled`   |
 | `--wui-selectpicker-box-shadowcolor`                |
 | `--wui-selectpicker-box-borderradius`               |
 | `--wui-selectpicker-box-bordercolor`                |
@@ -2901,10 +2901,10 @@ Configuración CSS:
 	--wui-selectpicker-opener-iconcolor-disabled: #d5dce3;
 	--wui-selectpicker-opener-openicon-src: none;
 	--wui-selectpicker-opener-closeicon-src: none;
-	--wui-selectpicker-input-paddingleft: 10px;
-	--wui-selectpicker-input-textcolor-out: #2d3a47;
-	--wui-selectpicker-input-textcolor-over: #1f2937;
-	--wui-selectpicker-input-textcolor-disabled: #d5dce3;
+	--wui-selectpicker-viewinput-paddingleft: 10px;
+	--wui-selectpicker-viewinput-textcolor-out: #2d3a47;
+	--wui-selectpicker-viewinput-textcolor-over: #1f2937;
+	--wui-selectpicker-viewinput-textcolor-disabled: #d5dce3;
 	--wui-selectpicker-box-shadowcolor: #959da5;
 	--wui-selectpicker-box-borderradius: 15px;
 	--wui-selectpicker-box-bordercolor: #f0f0f3;
@@ -3084,10 +3084,10 @@ Componente para la implementación de entradas de datos de tipo fecha basada en 
 | `--wui-datepicker-opener-iconcolor-disabled`     | 
 | `--wui-datepicker-opener-openicon-src`           | 
 | `--wui-datepicker-opener-closeicon-src`          | 
-| `--wui-datepicker-input-paddingleft`             |
-| `--wui-datepicker-input-textcolor-out`           |
-| `--wui-datepicker-input-textcolor-over`          |
-| `--wui-datepicker-input-textcolor-disabled`      |
+| `--wui-datepicker-viewinput-paddingleft`         |
+| `--wui-datepicker-viewinput-textcolor-out`       |
+| `--wui-datepicker-viewinput-textcolor-over`      |
+| `--wui-datepicker-viewinput-textcolor-disabled`  |
 | `--wui-datepicker-box-shadowcolor`               | 
 | `--wui-datepicker-box-borderradius`              | 
 | `--wui-datepicker-box-bordercolor`               | 
@@ -3137,10 +3137,10 @@ Configuración CSS:
 	--wui-datepicker-opener-iconcolor-disabled: #d5dce3;
 	--wui-datepicker-opener-openicon-src: none;
 	--wui-datepicker-opener-closeicon-src: none;
-	--wui-datepicker-input-paddingleft: 10px;
-	--wui-datepicker-input-textcolor-out: #2d3a47;
-	--wui-datepicker-input-textcolor-over: #1f2937;
-	--wui-datepicker-input-textcolor-disabled: #d5dce3;
+	--wui-datepicker-viewinput-paddingleft: 10px;
+	--wui-datepicker-viewinput-textcolor-out: #2d3a47;
+	--wui-datepicker-viewinput-textcolor-over: #1f2937;
+	--wui-datepicker-viewinput-textcolor-disabled: #d5dce3;
 	--wui-datepicker-box-shadowcolor: #959da5;
 	--wui-datepicker-box-borderradius: 15px;
 	--wui-datepicker-box-bordercolor: #f0f0f3;
@@ -3316,10 +3316,10 @@ Componente para la implementación de entradas de datos de tipo hora basada en e
 | `--wui-timepicker-opener-iconcolor-disabled`     |
 | `--wui-timepicker-opener-openicon-src`           |
 | `--wui-timepicker-opener-closeicon-src`          |
-| `--wui-timepicker-input-paddingleft`             |
-| `--wui-timepicker-input-textcolor-out`           |
-| `--wui-timepicker-input-textcolor-over`          |
-| `--wui-timepicker-input-textcolor-disabled`      |
+| `--wui-timepicker-viewinput-paddingleft`         |
+| `--wui-timepicker-viewinput-textcolor-out`       |
+| `--wui-timepicker-viewinput-textcolor-over`      |
+| `--wui-timepicker-viewinput-textcolor-disabled`  |
 | `--wui-timepicker-box-shadowcolor`               |
 | `--wui-timepicker-box-borderradius`              |
 | `--wui-timepicker-box-bordercolor`               |
@@ -3352,10 +3352,10 @@ Configuración CSS:
 	--wui-timepicker-opener-iconcolor-disabled: #d5dce3;
 	--wui-timepicker-opener-openicon-src: none;
 	--wui-timepicker-opener-closeicon-src: none;
-	--wui-timepicker-input-paddingleft: 10px;
-	--wui-timepicker-input-textcolor-out: #2d3a47;
-	--wui-timepicker-input-textcolor-over: #1f2937;
-	--wui-timepicker-input-textcolor-disabled: #d5dce3;
+	--wui-timepicker-viewinput-paddingleft: 10px;
+	--wui-timepicker-viewinput-textcolor-out: #2d3a47;
+	--wui-timepicker-viewinput-textcolor-over: #1f2937;
+	--wui-timepicker-viewinput-textcolor-disabled: #d5dce3;
 	--wui-timepicker-box-shadowcolor: #959da5;
 	--wui-timepicker-box-borderradius: 15px;
 	--wui-timepicker-box-bordercolor: #f0f0f3;

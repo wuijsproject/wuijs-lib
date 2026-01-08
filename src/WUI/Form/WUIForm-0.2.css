@@ -1139,7 +1139,7 @@
 	--wui-selectpicker-borderwidth: 0px;
 	--wui-selectpicker-bordercolor: transparent;
 	--wui-selectpicker-bgcolor: transparent;
-	--wui-selectpicker-input-paddingleft: 0px;
+	--wui-selectpicker-viewinput-paddingleft: 0px;
 }
 
 .wui-form:is(.line, .border) fieldset > .field > .wui-datepicker {
@@ -1147,7 +1147,7 @@
 	--wui-datepicker-borderwidth: 0px;
 	--wui-datepicker-bordercolor: transparent;
 	--wui-datepicker-bgcolor: transparent;
-	--wui-datepicker-input-paddingleft: 0px;
+	--wui-datepicker-viewinput-paddingleft: 0px;
 }
 
 .wui-form:is(.line, .border) fieldset > .field > .wui-timepicker {
@@ -1155,7 +1155,7 @@
 	--wui-timepicker-borderwidth: 0px;
 	--wui-timepicker-bordercolor: transparent;
 	--wui-timepicker-bgcolor: transparent;
-	--wui-timepicker-input-paddingleft: 0px;
+	--wui-timepicker-viewinput-paddingleft: 0px;
 }
 
 .wui-form:is(.line, .border) fieldset > .field > :is(.wui-selectpicker, .wui-datepicker, .wui-timepicker) {
