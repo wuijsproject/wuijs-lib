@@ -3576,8 +3576,18 @@ Código CSS:
 	--wui-colorpicker-box-button-textcolor-over: #1e90ff;
 	--wui-colorpicker-mobile-overlay-bgcolor: rgb(from #010203 r g b / 20%);
 }
+```
 
-.my-colorpicker {}
+Código CSS:
+
+```css
+body {
+	font-family: Arial, Helvetica, Verdana, sans-serif;
+}
+
+.my-colorpicker {
+	max-width: 90px;
+}
 
 .my-output {
 	position: absolute;
@@ -3609,6 +3619,7 @@ Código JS:
 
 ```js
 // Crear objeto
+const output = document.body.querySelector(".my-output");
 const colorpicker = new WUIColorpicker({
 	selector: ".wui-colorpicker.my-colorpicker",
 	value: "#1e90ff",

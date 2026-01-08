@@ -809,7 +809,7 @@ class WUIColorpicker {
 		}
 		if (lang.match(/(en|es)/)) {
 			Object.values(WUIColorpicker.#colors.list).forEach(name => {
-				const text = this.#htmlElements.list.querySelector(".option." + name + " > .text");
+				const text = this.#htmlElements.list.querySelector(`.option.${name} > .text`);
 				text.textContent = texts[lang].colors[name];
 			});
 		}
