@@ -42,7 +42,7 @@ Author: `Sergio E. Belmar V. <sbelmar@wuijs.dev>`
 	*   [WUISelectpicker](#WUISelectpicker)
 	*   [WUIDatepicker](#WUIDatepicker)
 	*   [WUITimepicker](#WUITimepicker)
-	*   WUIColorpicker
+	*   [WUIColorpicker](#WUIColorpicker)
 	*   WUICheckbox
 	*   WUIIntensity
 	*   [WUIButton](#WUIButton)
@@ -79,7 +79,7 @@ WUI, an acronym for *Web User Interface JavaScript library*, is an open source J
 | [WUISelectpicker](#WUISelectpicker) | `0.2`   | Component for the implementation of multiple or exclusive selection list data inputs based on HTML element `<select>`. |
 | [WUIDatepicker](#WUIDatepicker)     | `0.2`   | Component for the implementation of date type data inputs based on HTML element `<input type="date">`. |
 | [WUITimepicker](#WUITimepicker)     | `0.2`   | Component for the implementation of time type data inputs based on HTML element `<input type="time">`. |
-| WUIColorpicker                      | `0.2`   | Component for the implementation of color picker type data inputs based on HTML element `<input type="color">`. |
+| [WUIColorpicker](#WUIColorpicker)   | `0.2`   | Component for the implementation of color picker type data inputs based on HTML element `<input type="color">`. |
 | WUICheckbox                         | `0.2`   | Component for the implementation of checkbox type data inputs based on HTML element `<input type="checkbox">`. |
 | WUIIntensity                        | `0.1`   | Component for the implementation of 4-level intensity selector type data inputs: none, low, half, and high based on HTML element `<input type="range">`. |
 | [WUIButton](#WUIButton)             | `0.2`   | Component for the implementation of based on HTML element `<button>`. |
@@ -2800,12 +2800,12 @@ Component for the implementation of multiple or exclusive selection list data in
 | text           | `string`   | `""`          | (get)<br><br>Text of the initial options selection. |
 | lang           | `string`   | `"en"`        | (get/set)<br><br>Component language.<br><br>Values:<br>• `"de"`, German.<br>• `"en"`, English.<br>• `"es"`, Spanish. |
 | texts          | `object`   | `{}`          | (get/set)<br><br>Custom texts for component buttons and messages. |
-| openDirection  | `string`   | `"down"`      | (get/set)<br><br>Opening direction of the options list.<br><br>Values:<br>• `"up"`, upwards.<br>• `"down"`, downwards. |
+| openDirection  | `string`   | `"down"`      | (get/set)<br><br>Opening direction of the selector.<br><br>Values:<br>• `"up"`, upwards.<br>• `"down"`, downwards. |
 | multiple       | `boolean`  | `false`       | (get/set)<br><br>Defines if the selector allows multiple selection. |
 | separatorValue | `string`   | `","`         | (get/set)<br><br>Character separator of values ​​in case of multiple selection. |
 | separatorText  | `string`   | `", "`        | (get/set)<br><br>Character separator of texts in case of multiple selection. |
 | filterable     | `boolean`  | `true`        | (get/set)<br><br>Defines if the selector allows filtering options by text input. |
-| enabled        | `boolean`  | `true`        | (get/set)<br><br>Defines whether the selector is enabled. |
+| enabled        | `boolean`  | `true`        | (get/set)<br><br>Defines whether the data input is enabled. |
 | onOpen         | `function` | `null`        | (get/set)<br><br>Function called when the selector is opened. The function receives the current selected value as a parameter. |
 | onChange       | `function` | `null`        | (get/set)<br><br>Function called when the selected value changes. The function receives the new selected value as a parameter. |
 
@@ -2830,14 +2830,14 @@ Component for the implementation of multiple or exclusive selection list data in
 | addOption       | `void`        | `addOption(option)`<br><br>Arguments:<br>**• option:** `object`.<br><br>Add an option to the list, as defined by **Menu Options**. |
 | loadOptions     | `void`        | `loadOptions(options)`<br><br>Arguments:<br>**• options:** `array`.<br><br>Loads an array of options, clearing previously existing ones. |
 | clearOptions    | `void`        | `clearOptions()`<br><br>Removes all options from the list. |
-| open            | `void`        | `open()`<br><br>Opens the list of options. |
-| close           | `void`        | `close()`<br><br>Closes the list of options. |
-| toggle          | `void`        | `toggle()`<br><br>Toggles the open state of the list of options. |
-| cancel          | `void`        | `cancel()`<br><br>Cancels the current selection and reverts to the previous value, closing the list. |
-| accept          | `void`        | `accept()`<br><br>Accepts the current selection and closes the list. |
-| isOpen          | `boolean`     | `isOpen()`<br><br>Returns whether the options list is open. |
+| open            | `void`        | `open()`<br><br>Opens the selector. |
+| close           | `void`        | `close()`<br><br>Closes the selector. |
+| toggle          | `void`        | `toggle()`<br><br>Toggles the open state of the selector. |
+| cancel          | `void`        | `cancel()`<br><br>Cancels the current selection and reverts to the previous value, closing the selector. |
+| accept          | `void`        | `accept()`<br><br>Accepts the current selection and closes the selector. |
+| isOpen          | `boolean`     | `isOpen()`<br><br>Returns whether the selector is open. |
 | isEmpty         | `boolean`     | `isEmpty()`<br><br>Returns whether the selector has no options selected. |
-| isValid         | `boolean`     | `isValid()`<br><br>Returns if the value entered in the text field corresponds to a valid option. |
+| isValid         | `boolean`     | `isValid()`<br><br>Returns if the entered value corresponds to a valid option. |
 | destroy         | `destroy`     | `destroy()`<br><br>Destroyer. |
 
 #### CSS Variables
@@ -3066,9 +3066,9 @@ Component for the implementation of date type data inputs based on HTML element 
 | cancel          | `void`        | `cancel()`<br><br>Cancels the current selection and reverts to the previous value, closing the calendar. |
 | accept          | `void`        | `accept()`<br><br>Accepts the current selection and closes the calendar. |
 | isOpen          | `boolean`     | `isOpen()`<br><br>Returns whether the calendar is open. |
-| isEmpty         | `boolean`     | `isEmpty()`<br><br>Returns whether the selector has no date selected. |
+| isEmpty         | `boolean`     | `isEmpty()`<br><br>Returns whether the calendar has no date selected. |
 | isValid         | `boolean`     | `isValid()`<br><br>Returns whether the entered value corresponds to a valid date. |
-| destroy         | `destroy`     | `destroy()`<br><br>Destructor. |
+| destroy         | `destroy`     | `destroy()`<br><br>Destroyer. |
 
 #### CSS Variables
 
@@ -3246,7 +3246,7 @@ datepicker.init();
 > If the selector defines an element that is not of type `HTMLDivElement`, the object will not be initialized.
 
 > [!TIP]
-> You can check out this working example on CodePen at the link: [https://codepen.io/wuijsproject/pen/Wbxrrar](https://codepen.io/wuijsproject/pen/Wbxrrar).
+> You can check out this working example on CodePen at the link: [https://codepen.io/wuijsproject/pen/QwEyyZN](https://codepen.io/wuijsproject/pen/QwEyyZN).
 
 <a name="WUITimepicker"></a>
 
@@ -3281,7 +3281,7 @@ Component for the implementation of time type data inputs based on HTML element 
 | texts         | `object`   | `{}`          | (get/set)<br><br>Custom texts for the component buttons and messages. |
 | openDirection | `string`   | `"down"`      | (get/set)<br><br>Opening direction of the time picker.<br><br>Values:<br>• `"up"`, upwards.<br>• `"down"`, downwards. |
 | enabled       | `boolean`  | `true`        | (get/set)<br><br>Defines whether the input is enabled. |
-| onOpen        | `function` | `null`        | (get/set)<br><br>Function called when the selector is opened. The function receives the current selected value as a parameter. |
+| onOpen        | `function` | `null`        | (get/set)<br><br>Function called when the time picker is opened. The function receives the current selected value as a parameter. |
 | onChange      | `function` | `null`        | (get/set)<br><br>Function called when the selected value changes. The function receives the new selected value as a parameter. |
 
 #### Methods
@@ -3292,15 +3292,15 @@ Component for the implementation of time type data inputs based on HTML element 
 | getViewElements | `array`       | `getViewElements()`<br><br>Retorna un arreglo de los elementos HTML que son parte de la visualización del valor. |
 | getInput        | `HTMLElement` | `getInput()`<br><br>Retorna el elemento HTML asociado a la entrada de datos base `<input type="time">`. |
 | init            | `void`        | `init()`<br><br>Initializes the object. |
-| open            | `void`        | `open()`<br><br>Opens the selector. |
-| close           | `void`        | `close()`<br><br>Closes the selector. |
-| toggle          | `void`        | `toggle()`<br><br>Toggles the opening state of the selector. |
-| cancel          | `void`        | `cancel()`<br><br>Cancels the current selection and reverts to the previous value, closing the selector. |
-| accept          | `void`        | `accept()`<br><br>Accepts the current selection and closes the selector. |
-| isOpen          | `boolean`     | `isOpen()`<br><br>Returns whether the selector is open. |
-| isEmpty         | `boolean`     | `isEmpty()`<br><br>Returns whether the selector has no time selected. |
+| open            | `void`        | `open()`<br><br>Opens the time picker. |
+| close           | `void`        | `close()`<br><br>Closes the time picker. |
+| toggle          | `void`        | `toggle()`<br><br>Toggles the opening state of the time picker. |
+| cancel          | `void`        | `cancel()`<br><br>Cancels the current selection and reverts to the previous value, closing the time picker. |
+| accept          | `void`        | `accept()`<br><br>Accepts the current selection and closes the time picker. |
+| isOpen          | `boolean`     | `isOpen()`<br><br>Returns whether the time picker is open. |
+| isEmpty         | `boolean`     | `isEmpty()`<br><br>Returns whether the time picker has no time selected. |
 | isValid         | `boolean`     | `isValid()`<br><br>Returns whether the entered value corresponds to a valid time. |
-| destroy         | `destroy`     | `destroy()`<br><br>Destructor. |
+| destroy         | `destroy`     | `destroy()`<br><br>Destroyer. |
 
 #### CSS Variables
 
@@ -3444,6 +3444,197 @@ timepicker.init();
 > You can check out this working example on CodePen at the link: [https://codepen.io/wuijsproject/pen/azZdGrY](https://codepen.io/wuijsproject/pen/azZdGrY).
 
 <a name="WUIColorpicker"></a>
+
+### WUIColorpicker
+
+Version: `0.2`
+
+Component for the implementation of color picker type data inputs based on HTML element `<input type="color">`.
+
+#### Sources
+
+| Type | File |
+| ---- | ---- |
+| CSS  | [src/WUI/Colorpicker/WUIColorpicker-0.2.css](https://github.com/sbelmar/wuijs-lib/blob/main/src/WUI/Colorpicker/WUIColorpicker-0.2.css) |
+| JS   | [src/WUI/Colorpicker/WUIColorpicker-0.2.js](https://github.com/sbelmar/wuijs-lib/blob/main/src/WUI/Colorpicker/WUIColorpicker-0.2.js) |
+
+#### Constructor
+
+| Type           | Description |
+| -------------- | ----------- |
+| WUIColorpicker | `WUIColorpicker([properties])`<br><br>Arguments:<br>**• properties:** `object` *optional* |
+
+#### Properties
+
+| Property      | Type       | Default value | Description |
+| ------------- | ---------- | ------------- | ----------- |
+| selector      | `string`   | `undefined`   | (get/set)<br><br>CSS selector that defines the HTML container element of the object. If more than one element matches the selector, only the first match will be included. |
+| value         | `string`   | `""`          | (get/set)<br><br>Selected color in hexadecimal format or CSS color name. Returns the value in hexadecimal. |
+| emptyValue    | `string`   | `"#000001"`   | (get/set)<br><br>Hexadecimal value representing an empty or unselected color. |
+| lang          | `string`   | `"en"`        | (get/set)<br><br>Component language.<br><br>Values:<br>• `"de"`, German.<br>• `"en"`, English.<br>• `"es"`, Spanish. |
+| texts         | `object`   | `{}`          | (get/set)<br><br>Custom texts for the component buttons and messages. |
+| openDirection | `string`   | `"down"`      | (get/set)<br><br>Opening direction of the color picker.<br><br>Values:<br>• `"up"`, upwards.<br>• `"down"`, downwards. |
+| enabled       | `boolean`  | `true`        | (get/set)<br><br>Defines whether the data input is enabled. |
+| onOpen        | `function` | `null`        | (get/set)<br><br>Function to execute when the color picker is opened. Receives the current value as an argument. |
+| onChange      | `function` | `null`        | (get/set)<br><br>Function to execute when the selected value changes. Receives the new value as an argument. |
+
+#### Methods
+
+| Method          | Return type   | Description |
+| --------------- | ------------- | ----------- |
+| getElement      | `HTMLElement` | `getElement()`<br><br>Returns the HTML container element of the object. |
+| getViewElements | `array`       | `getViewElements()`<br><br>Returns an array of the HTML elements that are part of the value display. |
+| getInput        | `HTMLElement` | `getInput()`<br><br>Returns the HTML element associated with the base data input `<input type="color">`. |
+| init            | `void`        | `init()`<br><br>Initializes the object. |
+| open            | `void`        | `open()`<br><br>Opens the color picker. |
+| close           | `void`        | `close()`<br><br>Closes the color picker. |
+| toggle          | `void`        | `toggle()`<br><br>Toggles the opening state of the color picker. |
+| selectMode      | `void`        | `selectMode(mode)`<br><br>Arguments:<br>**• mode:** `string`.<br><br>Selects the display mode (`"grid"` or `"list"`). |
+| cancel          | `void`        | `cancel()`<br><br>Cancels the current selection and reverts to the previous value, closing the color picker. |
+| accept          | `void`        | `accept()`<br><br>Accepts the current selection and closes the color picker. |
+| isOpen          | `boolean`     | `isOpen()`<br><br>Returns whether the color picker is open. |
+| isEmpty         | `boolean`     | `isEmpty()`<br><br>Returns whether the color picker has no color selected. |
+| isValid         | `boolean`     | `isValid()`<br><br>Returns whether the entered value corresponds to a valid color. |
+| destroy         | `destroy`     | `destroy()`<br><br>Destroyer. |
+
+#### CSS Variables
+
+| Variable                                            | Description |
+| --------------------------------------------------- | ----------- |
+| `--wui-colorpicker-opener-iconsize`                 |
+| `--wui-colorpicker-opener-iconcolor-out`            |
+| `--wui-colorpicker-opener-iconcolor-over`           |
+| `--wui-colorpicker-opener-iconcolor-disabled`       |
+| `--wui-colorpicker-viewbutton-size`                 |
+| `--wui-colorpicker-viewbutton-bordercolor-out`      |
+| `--wui-colorpicker-viewbutton-bgcolor-out`          |
+| `--wui-colorpicker-viewbutton-bordercolor-over`     |
+| `--wui-colorpicker-viewbutton-bgcolor-over`         |
+| `--wui-colorpicker-viewbutton-bordercolor-disabled` |
+| `--wui-colorpicker-viewbutton-bgcolor-disabled`     |
+| `--wui-colorpicker-viewcolor-borderwidth`           |
+| `--wui-colorpicker-viewcolor-bordercolor`           |
+| `--wui-colorpicker-box-shadowcolor`                 |
+| `--wui-colorpicker-box-borderradius`                |
+| `--wui-colorpicker-box-bordercolor`                 |
+| `--wui-colorpicker-box-bgcolor`                     |
+| `--wui-colorpicker-box-tab-textcolor-out`           |
+| `--wui-colorpicker-box-tab-textcolor-selected`      |
+| `--wui-colorpicker-box-option-bgcolor-out`          |
+| `--wui-colorpicker-box-option-bordercolor-over`     |
+| `--wui-colorpicker-box-option-bgcolor-over`         |
+| `--wui-colorpicker-box-option-bgcolor-selected`     |
+| `--wui-colorpicker-box-option-textcolor-out`        |
+| `--wui-colorpicker-box-option-textcolor-over`       |
+| `--wui-colorpicker-box-option-textcolor-selected`   |
+| `--wui-colorpicker-box-preview-textcolor-out`       |
+| `--wui-colorpicker-box-preview-textcolor-empty`     |
+| `--wui-colorpicker-box-button-textcolor-out`        |
+| `--wui-colorpicker-box-button-textcolor-over`       |
+| `--wui-colorpicker-mobile-overlay-bgcolor`          |
+
+#### Implementation
+
+CSS code:
+
+```css
+:root {
+	--wui-colorpicker-opener-iconsize: 30px;
+	--wui-colorpicker-opener-iconcolor-out: #000;
+	--wui-colorpicker-opener-iconcolor-over: #1e90ff;
+	--wui-colorpicker-opener-iconcolor-disabled: #d5dce3;
+	--wui-colorpicker-opener-openicon-src: none;
+	--wui-colorpicker-opener-closeicon-src: none;
+	--wui-colorpicker-viewbutton-size: 30px;
+	--wui-colorpicker-viewbutton-bordercolor-out: rgb(from #1e90ff r g b / 20%);
+	--wui-colorpicker-viewbutton-bordercolor-over: #1e90ff;
+	--wui-colorpicker-viewbutton-bordercolor-invalid: #f44343;
+	--wui-colorpicker-viewbutton-bordercolor-disabled: #d5dce3;
+	--wui-colorpicker-viewbutton-bgcolor-out: transparent;
+	--wui-colorpicker-viewbutton-bgcolor-over: transparent;
+	--wui-colorpicker-viewbutton-bgcolor-disabled: transparent;
+	--wui-colorpicker-viewcolor-borderwidth: 1px;
+	--wui-colorpicker-viewcolor-bordercolor: rgb(from #1e90ff r g b / 20%);
+	--wui-colorpicker-viewcolor-emptyicon-src: none;
+	--wui-colorpicker-box-shadowcolor: #959da5;
+	--wui-colorpicker-box-borderradius: 15px;
+	--wui-colorpicker-box-bordercolor: #f0f0f3;
+	--wui-colorpicker-box-bgcolor: rgb(from #fff r g b / 80%);
+	--wui-colorpicker-box-tab-textcolor-out: #2d3a47;
+	--wui-colorpicker-box-tab-textcolor-selected: #1e90ff;
+	--wui-colorpicker-box-option-bordercolor-out: #f0f0f3;
+	--wui-colorpicker-box-option-bordercolor-over: #f0f0f3;
+	--wui-colorpicker-box-option-bgcolor-out: transparent;
+	--wui-colorpicker-box-option-bgcolor-over: #f6f6fa;
+	--wui-colorpicker-box-option-bgcolor-selected: #1e90ff;
+	--wui-colorpicker-box-option-textcolor-out: #000;
+	--wui-colorpicker-box-option-textcolor-over: #1e90ff;
+	--wui-colorpicker-box-option-textcolor-selected: #fff;
+	--wui-colorpicker-box-preview-textcolor-out: #000;
+	--wui-colorpicker-box-preview-textcolor-empty: rgb(from #2d3a47 r g b / 60%);
+	--wui-colorpicker-box-button-textcolor-out: #1e90ff;
+	--wui-colorpicker-box-button-textcolor-over: #1e90ff;
+	--wui-colorpicker-mobile-overlay-bgcolor: rgb(from #010203 r g b / 20%);
+}
+
+.my-colorpicker {}
+
+.my-output {
+	position: absolute;
+	top: 4px;
+	left: 50px;
+	margin: 10px;
+	font-family: monospace;
+}
+```
+
+HTML head:
+
+```html
+<link type="text/css" rel="stylesheet" href="https://wuijs.dev/Libraries/WUI/Colorpicker/WUIColorpicker-0.2.css">
+<script type="text/javascript" src="https://wuijs.dev/Libraries/WUI/Colorpicker/WUIColorpicker-0.2.js"></script>
+```
+
+HTML code:
+
+```html
+<div class="wui-colorpicker my-colorpicker">
+	<input type="color" name="myColor">
+</div>
+
+<div class="my-output"></div>
+```
+
+JS code:
+
+```js
+// Create object
+const colorpicker = new WUIColorpicker({
+	selector: ".wui-colorpicker.my-colorpicker",
+	value: "#1e90ff",
+	//emptyValue: "#000001",
+	//lang: "en",
+	//texts: {},
+	//openDirection: "down",
+	//enabled: true,
+	onOpen: (value) => {
+		output.textContent = `Timepicker opened: ${value}`;
+	},
+	onChange: (value) => {
+		output.textContent = `Timepicker changed: ${value}`;
+	}
+});
+
+// Initialize object
+colorpicker.init();
+```
+
+> [!IMPORTANT]
+> If the selector defines an element that is not of type `HTMLDivElement`, the object will not be initialized.
+
+> [!TIP]
+> You can check out this working example on CodePen at the link: [https://codepen.io/wuijsproject/pen/bNeeobP](https://codepen.io/wuijsproject/pen/bNeeobP).
+
 <a name="WUICheckbox"></a>
 <a name="WUIIntensity"></a>
 <a name="WUIButton"></a>
@@ -3709,6 +3900,7 @@ The examples listed in this section are detailed in the "Implementation" section
 | [WUIList](#WUIList)                 | [https://codepen.io/wuijsproject/pen/xbOweva](https://codepen.io/wuijsproject/pen/xbOweva) |
 | [WUITable](#WUITable)               | [https://codepen.io/wuijsproject/pen/jErboKZ](https://codepen.io/wuijsproject/pen/jErboKZ) |
 | [WUISelectpicker](#WUISelectpicker) | [https://codepen.io/wuijsproject/pen/WbxQBKX](https://codepen.io/wuijsproject/pen/WbxQBKX) |
-| [WUIDatepicker](#WUIDatepicker)     | [https://codepen.io/wuijsproject/pen/Wbxrrar](https://codepen.io/wuijsproject/pen/Wbxrrar) |
+| [WUIDatepicker](#WUIDatepicker)     | [https://codepen.io/wuijsproject/pen/QwEyyZN](https://codepen.io/wuijsproject/pen/QwEyyZN) |
 | [WUITimepicker](#WUITimepicker)     | [https://codepen.io/wuijsproject/pen/azZdGrY](https://codepen.io/wuijsproject/pen/azZdGrY) |
+| [WUIColorpicker](#WUIColorpicker)   | [https://codepen.io/wuijsproject/pen/bNeeobP](https://codepen.io/wuijsproject/pen/bNeeobP) |
 | [WUIButton](#WUIButton)             | [https://codepen.io/wuijsproject/pen/xbOwNzN](https://codepen.io/wuijsproject/pen/xbOwNzN) |

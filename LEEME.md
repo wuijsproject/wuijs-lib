@@ -42,7 +42,7 @@ Autor: `Sergio E. Belmar V. <sbelmar@wuijs.dev>`
 	*   [WUISelectpicker](#WUISelectpicker)
 	*   [WUIDatepicker](#WUIDatepicker)
 	*   [WUITimepicker](#WUITimepicker)
-	*   WUIColorpicker
+	*   [WUIColorpicker](#WUIColorpicker)
 	*   WUICheckbox
 	*   WUIIntensity
 	*   [WUIButton](#WUIButton)
@@ -79,7 +79,7 @@ WUI, acrónimo del inglés *Web User Interface JavaScript library*, es una bibli
 | [WUISelectpicker](#WUISelectpicker) | `0.2`   | Componente para la implementación de entradas de datos de tipo lista de selección múltiple o excluyente basada en el elemento HTML `<select>`. |
 | [WUIDatepicker](#WUIDatepicker)     | `0.2`   | Componente para la implementación de entradas de datos de tipo fecha basada en el elemento HTML `<input type="date">`. |
 | [WUITimepicker](#WUITimepicker)     | `0.2`   | Componente para la implementación de entradas de datos de tipo hora basada en el elemento HTML `<input type="time">`. |
-| WUIColorpicker                      | `0.2`   | Componente para la implementación de entradas de datos de tipo selector de color basada en el elemento HTML `<input type="color">`. |
+| [WUIColorpicker](#WUIColorpicker)   | `0.2`   | Componente para la implementación de entradas de datos de tipo selector de color basada en el elemento HTML `<input type="color">`. |
 | WUICheckbox                         | `0.2`   | Componente para la implementación de entradas de datos de tipo casilla de verificación basada en el elemento HTML `<input type="checkbox">`. |
 | WUIIntensity                        | `0.1`   | Componente para la implementación de entradas de datos de tipo selector de intensidad de 4 niveles: nada, bajo, medio y alto basada en el elemento HTML `<input type="range">`. |
 | [WUIButton](#WUIButton)             | `0.2`   | Componente para la implementación de botones basada en el elemento HTML `<button>`. |
@@ -2800,12 +2800,12 @@ Componente para la implementación de entradas de datos de tipo lista de selecci
 | text           | `string`   | `""`                 | (get)<br><br>Texto de la selección de opciones inicial. |
 | lang           | `string`   | `"en"`               | (get/set)<br><br>Idioma del componente.<br><br>Valores:<br>• `"de"`, Alemán.<br>• `"en"`, Inglés.<br>• `"es"`, Español. |
 | texts          | `object`   | `{}`                 | (get/set)<br><br>Textos personalizados para los botones y mensajes del componente. |
-| openDirection  | `string`   | `"down"`             | (get/set)<br><br>Dirección de apertura de la lista de opciones.<br><br>Valores:<br>• `"up"`, hacia arriba.<br>• `"down"`, hacia abajo. |
+| openDirection  | `string`   | `"down"`             | (get/set)<br><br>Dirección de apertura del selector.<br><br>Valores:<br>• `"up"`, hacia arriba.<br>• `"down"`, hacia abajo. |
 | multiple       | `boolean`  | `false`              | (get/set)<br><br>Define si el selector permite selección múltiple. |
 | separatorValue | `string`   | `","`                | (get/set)<br><br>Caracter separador de valores en caso de selección múltiple. |
 | separatorText  | `string`   | `", "`               | (get/set)<br><br>Caracter separador de textos en caso de selección múltiple. |
 | filterable     | `boolean`  | `true`               | (get/set)<br><br>Define si el selector permite filtrar opciones mediante entrada de texto. |
-| enabled        | `boolean`  | `true`               | (get/set)<br><br>Define si el selector está habilitado. |
+| enabled        | `boolean`  | `true`               | (get/set)<br><br>Define si la entrada de datos está habilitada. |
 | onOpen         | `function` | `null`               | (get/set)<br><br>Función que se llama cuando se abre el selector. La función recibe por parámetro el valor actual seleccionado. |
 | onChange       | `function` | `null`               | (get/set)<br><br>Función que se llama cuando cambia el valor seleccionado. La función recibe por parámetro el nuevo valor seleccionado. |
 
@@ -3246,7 +3246,7 @@ datepicker.init();
 > Si el selector define un elemento que no es de tipo `HTMLDivElement`, el objeto no se inicializará.
 
 > [!TIP]
-> Puede revisar este ejemplo funcional en CodePen en el enlace: [https://codepen.io/wuijsproject/pen/Wbxrrar](https://codepen.io/wuijsproject/pen/Wbxrrar).
+> Puede revisar este ejemplo funcional en CodePen en el enlace: [https://codepen.io/wuijsproject/pen/QwEyyZN](https://codepen.io/wuijsproject/pen/QwEyyZN).
 
 <a name="WUITimepicker"></a>
 
@@ -3281,7 +3281,7 @@ Componente para la implementación de entradas de datos de tipo hora basada en e
 | texts         | `object`   | `{}`                 | (get/set)<br><br>Textos personalizados para los botones y mensajes del componente. |
 | openDirection | `string`   | `"down"`             | (get/set)<br><br>Dirección de apertura del selector de hora.<br><br>Valores:<br>• `"up"`, hacia arriba.<br>• `"down"`, hacia abajo. |
 | enabled       | `boolean`  | `true`               | (get/set)<br><br>Define si la entrada de datos está habilitada. |
-| onOpen        | `function` | `null`               | (get/set)<br><br>Función que se llama cuando se abre el selector. La función recibe por parámetro el valor actual seleccionado. |
+| onOpen        | `function` | `null`               | (get/set)<br><br>Función que se llama cuando se abre el selector de hora. La función recibe por parámetro el valor actual seleccionado. |
 | onChange      | `function` | `null`               | (get/set)<br><br>Función que se llama cuando cambia el valor seleccionado. La función recibe por parámetro el nuevo valor seleccionado. |
 
 #### Métodos
@@ -3444,6 +3444,197 @@ timepicker.init();
 > Puede revisar este ejemplo funcional en CodePen en el enlace: [https://codepen.io/wuijsproject/pen/azZdGrY](https://codepen.io/wuijsproject/pen/azZdGrY).
 
 <a name="WUIColorpicker"></a>
+
+### WUIColorpicker
+
+Versión: `0.2`
+
+Componente para la implementación de entradas de datos de tipo selector de color basada en el elemento HTML `<input type="color">`.
+
+#### Fuentes
+
+| Tipo | Archivo |
+| ---- | ------- |
+| CSS  | [src/WUI/Colorpicker/WUIColorpicker-0.2.css](https://github.com/sbelmar/wuijs-lib/blob/main/src/WUI/Colorpicker/WUIColorpicker-0.2.css) |
+| JS   | [src/WUI/Colorpicker/WUIColorpicker-0.2.js](https://github.com/sbelmar/wuijs-lib/blob/main/src/WUI/Colorpicker/WUIColorpicker-0.2.js) |
+
+#### Constructor
+
+| Tipo           | Descripción |
+| -------------- | ----------- |
+| WUIColorpicker | `WUIColorpicker([properties])`<br><br>Parámetros:<br>**• properties:** `object` *opcional* |
+
+#### Propiedades
+
+| Propiedad     | Tipo       | Valor predeterminado | Descripción |
+| ------------- | ---------- | -------------------- | ----------- |
+| selector      | `string`   | `undefined`          | (get/set)<br><br>Selector CSS que define el elemento HTML contenedor del objeto. En caso de existir más de un elemento coincidente con el selector se incluirá únicamente la primera coincidencia. |
+| value         | `string`   | `""`                 | (get/set)<br><br>Color seleccionado en formato hexadecimal o nombre de color CSS. Retorna el valor en hexadecimal. |
+| emptyValue    | `string`   | `"#000001"`          | (get/set)<br><br>Valor hexadecimal que representa un color vacío o no seleccionado. |
+| lang          | `string`   | `"en"`               | (get/set)<br><br>Idioma del componente.<br><br>Valores:<br>• `"de"`, Alemán.<br>• `"en"`, Inglés.<br>• `"es"`, Español. |
+| texts         | `object`   | `{}`                 | (get/set)<br><br>Textos personalizados para los botones y mensajes del componente. |
+| openDirection | `string`   | `"down"`             | (get/set)<br><br>Dirección de apertura del selector de color.<br><br>Valores:<br>• `"up"`, hacia arriba.<br>• `"down"`, hacia abajo. |
+| enabled       | `boolean`  | `true`               | (get/set)<br><br>Define si la entrada de datos está habilitada. |
+| onOpen        | `function` | `null`               | (get/set)<br><br>Función que se llama cuando se abre el selector de color. La función recibe por parámetro el valor actual seleccionado. |
+| onChange      | `function` | `null`               | (get/set)<br><br>Función que se llama cuando cambia el valor seleccionado. La función recibe por parámetro el nuevo valor seleccionado. |
+
+#### Métodos
+
+| Método          | Tipo retorno  | Descripción |
+| --------------- | ------------- | ----------- |
+| getElement      | `HTMLElement` | `getElement()`<br><br>Retorna el elemento HTML contenedor del objeto. |
+| getViewElements | `array`       | `getViewElements()`<br><br>Retorna un arreglo de los elementos HTML que son parte de la visualización del valor. |
+| getInput        | `HTMLElement` | `getInput()`<br><br>Retorna el elemento HTML asociado a la entrada de datos base `<input type="color">`. |
+| init            | `void`        | `init()`<br><br>Inicializa el objeto. |
+| open            | `void`        | `open()`<br><br>Abre el selector de color. |
+| close           | `void`        | `close()`<br><br>Cierra el selector de color. |
+| toggle          | `void`        | `toggle()`<br><br>Alterna el estado de apertura del selector de color. |
+| selectMode      | `void`        | `selectMode(mode)`<br><br>Parámetros:<br>**• mode:** `string`.<br><br>Selecciona el modo de visualización (`"grid"` o `"list"`). |
+| cancel          | `void`        | `cancel()`<br><br>Cancela la selección actual y revierte al valor anterior, cerrando el selector. |
+| accept          | `void`        | `accept()`<br><br>Acepta la selección actual y cierra el selector. |
+| isOpen          | `boolean`     | `isOpen()`<br><br>Retorna si el selector está abierto. |
+| isEmpty         | `boolean`     | `isEmpty()`<br><br>Retorna si el selector no tiene ningún color seleccionado. |
+| isValid         | `boolean`     | `isValid()`<br><br>Retorna si el valor corresponde a un color válido. |
+| destroy         | `destroy`     | `destroy()`<br><br>Destructor. |
+
+#### Variables CSS
+
+| Variable                                            | Descripción |
+| --------------------------------------------------- | ----------- |
+| `--wui-colorpicker-opener-iconsize`                 |
+| `--wui-colorpicker-opener-iconcolor-out`            |
+| `--wui-colorpicker-opener-iconcolor-over`           |
+| `--wui-colorpicker-opener-iconcolor-disabled`       |
+| `--wui-colorpicker-viewbutton-size`                 |
+| `--wui-colorpicker-viewbutton-bordercolor-out`      |
+| `--wui-colorpicker-viewbutton-bgcolor-out`          |
+| `--wui-colorpicker-viewbutton-bordercolor-over`     |
+| `--wui-colorpicker-viewbutton-bgcolor-over`         |
+| `--wui-colorpicker-viewbutton-bordercolor-disabled` |
+| `--wui-colorpicker-viewbutton-bgcolor-disabled`     |
+| `--wui-colorpicker-viewcolor-borderwidth`           |
+| `--wui-colorpicker-viewcolor-bordercolor`           |
+| `--wui-colorpicker-box-shadowcolor`                 |
+| `--wui-colorpicker-box-borderradius`                |
+| `--wui-colorpicker-box-bordercolor`                 |
+| `--wui-colorpicker-box-bgcolor`                     |
+| `--wui-colorpicker-box-tab-textcolor-out`           |
+| `--wui-colorpicker-box-tab-textcolor-selected`      |
+| `--wui-colorpicker-box-option-bgcolor-out`          |
+| `--wui-colorpicker-box-option-bordercolor-over`     |
+| `--wui-colorpicker-box-option-bgcolor-over`         |
+| `--wui-colorpicker-box-option-bgcolor-selected`     |
+| `--wui-colorpicker-box-option-textcolor-out`        |
+| `--wui-colorpicker-box-option-textcolor-over`       |
+| `--wui-colorpicker-box-option-textcolor-selected`   |
+| `--wui-colorpicker-box-preview-textcolor-out`       |
+| `--wui-colorpicker-box-preview-textcolor-empty`     |
+| `--wui-colorpicker-box-button-textcolor-out`        |
+| `--wui-colorpicker-box-button-textcolor-over`       |
+| `--wui-colorpicker-mobile-overlay-bgcolor`          |
+
+#### Implementación
+
+Código CSS:
+
+```css
+:root {
+	--wui-colorpicker-opener-iconsize: 30px;
+	--wui-colorpicker-opener-iconcolor-out: #000;
+	--wui-colorpicker-opener-iconcolor-over: #1e90ff;
+	--wui-colorpicker-opener-iconcolor-disabled: #d5dce3;
+	--wui-colorpicker-opener-openicon-src: none;
+	--wui-colorpicker-opener-closeicon-src: none;
+	--wui-colorpicker-viewbutton-size: 30px;
+	--wui-colorpicker-viewbutton-bordercolor-out: rgb(from #1e90ff r g b / 20%);
+	--wui-colorpicker-viewbutton-bordercolor-over: #1e90ff;
+	--wui-colorpicker-viewbutton-bordercolor-invalid: #f44343;
+	--wui-colorpicker-viewbutton-bordercolor-disabled: #d5dce3;
+	--wui-colorpicker-viewbutton-bgcolor-out: transparent;
+	--wui-colorpicker-viewbutton-bgcolor-over: transparent;
+	--wui-colorpicker-viewbutton-bgcolor-disabled: transparent;
+	--wui-colorpicker-viewcolor-borderwidth: 1px;
+	--wui-colorpicker-viewcolor-bordercolor: rgb(from #1e90ff r g b / 20%);
+	--wui-colorpicker-viewcolor-emptyicon-src: none;
+	--wui-colorpicker-box-shadowcolor: #959da5;
+	--wui-colorpicker-box-borderradius: 15px;
+	--wui-colorpicker-box-bordercolor: #f0f0f3;
+	--wui-colorpicker-box-bgcolor: rgb(from #fff r g b / 80%);
+	--wui-colorpicker-box-tab-textcolor-out: #2d3a47;
+	--wui-colorpicker-box-tab-textcolor-selected: #1e90ff;
+	--wui-colorpicker-box-option-bordercolor-out: #f0f0f3;
+	--wui-colorpicker-box-option-bordercolor-over: #f0f0f3;
+	--wui-colorpicker-box-option-bgcolor-out: transparent;
+	--wui-colorpicker-box-option-bgcolor-over: #f6f6fa;
+	--wui-colorpicker-box-option-bgcolor-selected: #1e90ff;
+	--wui-colorpicker-box-option-textcolor-out: #000;
+	--wui-colorpicker-box-option-textcolor-over: #1e90ff;
+	--wui-colorpicker-box-option-textcolor-selected: #fff;
+	--wui-colorpicker-box-preview-textcolor-out: #000;
+	--wui-colorpicker-box-preview-textcolor-empty: rgb(from #2d3a47 r g b / 60%);
+	--wui-colorpicker-box-button-textcolor-out: #1e90ff;
+	--wui-colorpicker-box-button-textcolor-over: #1e90ff;
+	--wui-colorpicker-mobile-overlay-bgcolor: rgb(from #010203 r g b / 20%);
+}
+
+.my-colorpicker {}
+
+.my-output {
+	position: absolute;
+	top: 4px;
+	left: 50px;
+	margin: 10px;
+	font-family: monospace;
+}
+```
+
+Código HTML:
+
+```html
+<link type="text/css" rel="stylesheet" href="https://wuijs.dev/Libraries/WUI/Colorpicker/WUIColorpicker-0.2.css">
+<script type="text/javascript" src="https://wuijs.dev/Libraries/WUI/Colorpicker/WUIColorpicker-0.2.js"></script>
+```
+
+Código HTML:
+
+```html
+<div class="wui-colorpicker my-colorpicker">
+	<input type="color" name="myColor">
+</div>
+
+<div class="my-output"></div>
+```
+
+Código JS:
+
+```js
+// Crear objeto
+const colorpicker = new WUIColorpicker({
+	selector: ".wui-colorpicker.my-colorpicker",
+	value: "#1e90ff",
+	//emptyValue: "#000001",
+	lang: "es",
+	//texts: {},
+	//openDirection: "down",
+	//enabled: true,
+	onOpen: (value) => {
+		output.textContent = `Abre selector: ${value}`;
+	},
+	onChange: (value) => {
+		output.textContent = `Cambia selector: ${value}`;
+	}
+});
+
+// Inicializar objeto
+colorpicker.init();
+```
+
+> [!IMPORTANT]
+> Si el selector define un elemento que no es de tipo `HTMLDivElement`, el objeto no se inicializará.
+
+> [!TIP]
+> Puede revisar este ejemplo funcional en CodePen en el enlace: [https://codepen.io/wuijsproject/pen/bNeeobP](https://codepen.io/wuijsproject/pen/bNeeobP).
+
 <a name="WUICheckbox"></a>
 <a name="WUIIntensity"></a>
 <a name="WUIButton"></a>
@@ -3709,6 +3900,7 @@ Los ejemplos listados en esta sección, son detallados en la sección "Implement
 | [WUIList](#WUIList)                 | [https://codepen.io/wuijsproject/pen/xbOweva](https://codepen.io/wuijsproject/pen/xbOweva) |
 | [WUITable](#WUITable)               | [https://codepen.io/wuijsproject/pen/jErboKZ](https://codepen.io/wuijsproject/pen/jErboKZ) |
 | [WUISelectpicker](#WUISelectpicker) | [https://codepen.io/wuijsproject/pen/WbxQBKX](https://codepen.io/wuijsproject/pen/WbxQBKX) |
-| [WUIDatepicker](#WUIDatepicker)     | [https://codepen.io/wuijsproject/pen/Wbxrrar](https://codepen.io/wuijsproject/pen/Wbxrrar) |
+| [WUIDatepicker](#WUIDatepicker)     | [https://codepen.io/wuijsproject/pen/QwEyyZN](https://codepen.io/wuijsproject/pen/QwEyyZN) |
 | [WUITimepicker](#WUITimepicker)     | [https://codepen.io/wuijsproject/pen/azZdGrY](https://codepen.io/wuijsproject/pen/azZdGrY) |
+| [WUIColorpicker](#WUIColorpicker)   | [https://codepen.io/wuijsproject/pen/bNeeobP](https://codepen.io/wuijsproject/pen/bNeeobP) |
 | [WUIButton](#WUIButton)             | [https://codepen.io/wuijsproject/pen/xbOwNzN](https://codepen.io/wuijsproject/pen/xbOwNzN) |
