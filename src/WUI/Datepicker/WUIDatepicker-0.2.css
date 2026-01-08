@@ -63,6 +63,7 @@ div.wui-datepicker > .inputs {
 	display: flex;
 	height: 100%;
 	align-items: center;
+	padding-left: var(--wui-timepicker-input-paddingleft);
 }
 
 div.wui-datepicker > .inputs > input[type="text"] {
@@ -72,7 +73,7 @@ div.wui-datepicker > .inputs > input[type="text"] {
 	outline: none;
 	border: 0;
 	background-color: transparent;
-	padding: 0 0 0 var(--wui-timepicker-input-paddingleft);
+	padding: 0;
 	text-align: center;
 	font-family: inherit;
 	font-size: 14px;
