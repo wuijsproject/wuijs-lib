@@ -11,7 +11,7 @@ icon_size = 24
 
 # Get arguments
 parser = argparse.ArgumentParser(
-    description="Extract SVG icons from WUIIcon CSS file.",
+    description="Make SVG icons from WUIIcon CSS file.",
     formatter_class=argparse.ArgumentDefaultsHelpFormatter
 )
 parser.add_argument("--css", type=str, help="Path to the CSS file.", default=css_path)
