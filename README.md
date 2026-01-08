@@ -3184,7 +3184,7 @@ body {
 }
 
 .my-datepicker {
-	max-width: 200px;
+	max-width: 130px;
 }
 
 .my-output {
@@ -3382,7 +3382,7 @@ body {
 }
 
 .my-timepicker {
-	max-width: 100px;
+	max-width: 90px;
 }
 
 .my-output {
