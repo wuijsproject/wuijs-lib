@@ -56,13 +56,13 @@ div.wui-colorpicker.disabled > .opener {
 }
 
 div.wui-colorpicker > button {
-	--button-radius: calc(var(--wui-colorpicker-button-size) / 2);
+	--button-radius: calc(var(--wui-colorpicker-viewbutton-size) / 2);
 	--button-transition: border-color .2s ease-out;
 	display: flex;
 	cursor: pointer;
 	position: relative;
-	width: calc(1.9 * var(--wui-colorpicker-button-size));
-	height: var(--wui-colorpicker-button-size);
+	width: calc(1.9 * var(--wui-colorpicker-viewbutton-size));
+	height: var(--wui-colorpicker-viewbutton-size);
 	outline: none;
 	margin: 0;
 	overflow: hidden;
@@ -81,23 +81,23 @@ div.wui-colorpicker > button {
 }
 
 div.wui-colorpicker:not(.disabled) > button {
-	border-color: var(--wui-colorpicker-button-bordercolor-out);
-	background-color: var(--wui-colorpicker-button-bgcolor-out);
+	border-color: var(--wui-colorpicker-viewbutton-bordercolor-out);
+	background-color: var(--wui-colorpicker-viewbutton-bgcolor-out);
 }
 
 div.wui-colorpicker:not(.disabled):hover > button,
 div.wui-colorpicker:not(.disabled):focus-within > button {
-	border-color: var(--wui-colorpicker-button-bordercolor-over);
-	background-color: var(--wui-colorpicker-button-bgcolor-over);
+	border-color: var(--wui-colorpicker-viewbutton-bordercolor-over);
+	background-color: var(--wui-colorpicker-viewbutton-bgcolor-over);
 }
 
 div.wui-colorpicker.disabled {
-	border-color: var(--wui-colorpicker-button-bordercolor-disabled);
-	background-color: var(--wui-colorpicker-button-bgcolor-disabled);
+	border-color: var(--wui-colorpicker-viewbutton-bordercolor-disabled);
+	background-color: var(--wui-colorpicker-viewbutton-bgcolor-disabled);
 }
 
 div.wui-colorpicker > button.button > .color {
-	--color-size: calc(var(--wui-colorpicker-button-size) - 6px);
+	--color-size: calc(var(--wui-colorpicker-viewbutton-size) - 6px);
 	width: var(--color-size);
 	height: var(--color-size);
 	-webkit-border-radius: 50%;
