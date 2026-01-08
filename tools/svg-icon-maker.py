@@ -4,20 +4,20 @@ import urllib.parse
 import argparse
 
 # Default arguments
-css_path = "../src/WUI/Icon/WUIIcon-0.1.css"
-out_dir = "../imgs/Icons/"
-icon_color = "#a2a9b6"
-icon_size = 24
+default_css_path = "../src/WUI/Icon/WUIIcon-0.1.css"
+default_out_dir = "../imgs/Icons/"
+default_icon_color = "#a2a9b6"
+default_icon_size = 24
 
 # Get arguments
 parser = argparse.ArgumentParser(
     description="Make SVG icons from WUIIcon CSS file.",
     formatter_class=argparse.ArgumentDefaultsHelpFormatter
 )
-parser.add_argument("--css", type=str, help="Path to the CSS file.", default=css_path)
-parser.add_argument("--out", type=str, help="Output directory for SVG icons.", default=out_dir)
-parser.add_argument("--color", type=str, help="Color to replace 'currentColor' in SVGs.", default=icon_color)
-parser.add_argument("--size", type=int, help="Size (width and height) to set in SVGs.", default=icon_size)
+parser.add_argument("--css", type=str, help="Path to the CSS file.", default=default_css_path)
+parser.add_argument("-o", "--out", type=str, help="Output directory for SVG icons.", default=default_out_dir)
+parser.add_argument("-c", "--color", type=str, help="Color to replace 'currentColor' in SVGs.", default=default_icon_color)
+parser.add_argument("-s", "--size", type=int, help="Size (width and height) to set in SVGs.", default=default_icon_size)
 args = parser.parse_args()
 
 # Create output directory if it doesn't exist
