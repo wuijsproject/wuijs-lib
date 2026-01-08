@@ -63,7 +63,7 @@ div.wui-timepicker > .inputs {
 	display: flex;
 	height: 100%;
 	align-items: center;
-	padding-left: var(--wui-timepicker-input-paddingleft);
+	margin-left: var(--wui-timepicker-input-paddingleft);
 }
 
 div.wui-timepicker > .inputs > input[type="text"] {
