@@ -3307,6 +3307,7 @@ Component for the implementation of time type data inputs based on HTML element 
 | lang          | `string`   | `"en"`        | (get/set)<br><br>Component language.<br><br>Values:<br>• `"de"`, German.<br>• `"en"`, English.<br>• `"es"`, Spanish. |
 | texts         | `object`   | `{}`          | (get/set)<br><br>Custom texts for the component buttons and messages. |
 | openDirection | `string`   | `"down"`      | (get/set)<br><br>Opening direction of the time picker.<br><br>Values:<br>• `"up"`, upwards.<br>• `"down"`, downwards. |
+| boxAlign      | `string`   | `"left"`      | (get/set)<br><br>Horizontal alignment of the calendar relative to the input.<br><br>Values:<br>• `"left"`, left.<br>• `"center"`, center.<br>• `"right"`, right. |
 | enabled       | `boolean`  | `true`        | (get/set)<br><br>Defines whether the input is enabled. |
 | onOpen        | `function` | `null`        | (get/set)<br><br>Function called when the time picker is opened. The function receives the current selected value as a parameter. |
 | onChange      | `function` | `null`        | (get/set)<br><br>Function called when the selected value changes. The function receives the new selected value as a parameter. |
@@ -3451,6 +3452,7 @@ const timepicker = new WUITimepicker({
 	//lang: "en",
 	//texts: {},
 	//openDirection: "down",
+	//boxAlign: "left",
 	//enabled: true,
 	onOpen: (value) => {
 		output.textContent = `Timepicker opened: ${value}`;
@@ -3501,6 +3503,7 @@ Component for the implementation of color picker type data inputs based on HTML 
 | lang          | `string`   | `"en"`        | (get/set)<br><br>Component language.<br><br>Values:<br>• `"de"`, German.<br>• `"en"`, English.<br>• `"es"`, Spanish. |
 | texts         | `object`   | `{}`          | (get/set)<br><br>Custom texts for the component buttons and messages. |
 | openDirection | `string`   | `"down"`      | (get/set)<br><br>Opening direction of the color picker.<br><br>Values:<br>• `"up"`, upwards.<br>• `"down"`, downwards. |
+| boxAlign      | `string`   | `"left"`      | (get/set)<br><br>Horizontal alignment of the calendar relative to the input.<br><br>Values:<br>• `"left"`, left.<br>• `"center"`, center.<br>• `"right"`, right. |
 | enabled       | `boolean`  | `true`        | (get/set)<br><br>Defines whether the data input is enabled. |
 | onOpen        | `function` | `null`        | (get/set)<br><br>Function to execute when the color picker is opened. Receives the current value as an argument. |
 | onChange      | `function` | `null`        | (get/set)<br><br>Function to execute when the selected value changes. Receives the new value as an argument. |
@@ -3658,6 +3661,7 @@ const colorpicker = new WUIColorpicker({
 	//lang: "en",
 	//texts: {},
 	//openDirection: "down",
+	//boxAlign: "left",
 	//enabled: true,
 	onOpen: (value) => {
 		output.textContent = `Timepicker opened: ${value}`;

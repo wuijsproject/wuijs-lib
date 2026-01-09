@@ -15,6 +15,7 @@ class WUITimepicker {
 		lang: "en",
 		texts: {},
 		openDirection: "down",
+		boxAlign: "left",
 		enabled: true,
 		onOpen: null,
 		onChange: null
@@ -103,6 +104,10 @@ class WUITimepicker {
 		return this.#properties.openDirection;
 	}
 
+	get boxAlign() {
+		return this.#properties.boxAlign;
+	}
+
 	get enabled() {
 		return this.#properties.enabled;
 	}
@@ -168,6 +173,12 @@ class WUITimepicker {
 	set openDirection(value) {
 		if (typeof (value) == "string" && value.match(/^(up|down)$/i)) {
 			this.#properties.openDirection = value.toLowerCase();
+		}
+	}
+
+	set boxAlign(value) {
+		if (typeof (value) == "string" && value.match(/^(left|center|right)$/i)) {
+			this.#properties.boxAlign = value.toLowerCase();
 		}
 	}
 
@@ -336,7 +347,7 @@ class WUITimepicker {
 			this.#htmlElements.opener.style.maskImage = this.#getSRCIcon("opener-open");
 			this.#htmlElements.inputs.className = "inputs";
 			this.#htmlElements.background.className = "background hidden";
-			this.#htmlElements.box.className = "box " + this.#properties.openDirection + " hidden";
+			this.#htmlElements.box.className = `box ${this.#properties.boxAlign} ${this.#properties.openDirection} hidden`;
 			this.#htmlElements.box.appendChild(this.#htmlElements.lists);
 			this.#htmlElements.box.appendChild(this.#htmlElements.footer);
 			this.#htmlElements.lists.className = "lists";

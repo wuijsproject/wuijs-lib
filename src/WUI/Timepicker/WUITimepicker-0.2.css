@@ -145,6 +145,19 @@ div.wui-timepicker > .box {
 	padding: 5px;
 }
 
+div.wui-timepicker > .box.left {
+	left: 0;
+}
+
+div.wui-timepicker > .box.center {
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+div.wui-timepicker > .box.right {
+	right: 0;
+}
+
 div.wui-timepicker > .box.down {
 	bottom: auto;
 }

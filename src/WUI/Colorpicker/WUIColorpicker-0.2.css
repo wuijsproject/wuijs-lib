@@ -167,6 +167,19 @@ div.wui-colorpicker > .box {
 	padding: 5px;
 }
 
+div.wui-colorpicker > .box.left {
+	left: 0;
+}
+
+div.wui-colorpicker > .box.center {
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+div.wui-colorpicker > .box.right {
+	right: 0;
+}
+
 div.wui-colorpicker > .box.down {
 	bottom: auto;
 }

@@ -14,6 +14,7 @@ class WUIColorpicker {
 		lang: "en",
 		texts: {},
 		openDirection: "down",
+		boxAlign: "left",
 		enabled: true,
 		onOpen: null,
 		onChange: null
@@ -525,6 +526,10 @@ class WUIColorpicker {
 		return this.#properties.openDirection;
 	}
 
+	get boxAlign() {
+		return this.#properties.boxAlign;
+	}
+
 	get enabled() {
 		return this.#properties.enabled;
 	}
@@ -578,6 +583,12 @@ class WUIColorpicker {
 	set openDirection(value) {
 		if (typeof (value) == "string" && value.match(/^(up|down)$/i)) {
 			this.#properties.openDirection = value.toLowerCase();
+		}
+	}
+
+	set boxAlign(value) {
+		if (typeof (value) == "string" && value.match(/^(left|center|right)$/i)) {
+			this.#properties.boxAlign = value.toLowerCase();
 		}
 	}
 
@@ -760,7 +771,7 @@ class WUIColorpicker {
 			this.#htmlElements.button.appendChild(this.#htmlElements.buttonColor);
 			this.#htmlElements.buttonColor.className = "color";
 			this.#htmlElements.background.className = "background hidden";
-			this.#htmlElements.box.className = "box " + this.#properties.openDirection + " hidden";
+			this.#htmlElements.box.className = `box ${this.#properties.boxAlign} ${this.#properties.openDirection} hidden`;
 			this.#htmlElements.box.appendChild(this.#htmlElements.header);
 			this.#htmlElements.box.appendChild(this.#htmlElements.grid);
 			this.#htmlElements.box.appendChild(this.#htmlElements.list);

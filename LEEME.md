@@ -3308,6 +3308,7 @@ Componente para la implementación de entradas de datos de tipo hora basada en e
 | lang          | `string`   | `"en"`               | (get/set)<br><br>Idioma del componente.<br><br>Valores:<br>• `"de"`, Alemán.<br>• `"en"`, Inglés.<br>• `"es"`, Español. |
 | texts         | `object`   | `{}`                 | (get/set)<br><br>Textos personalizados para los botones y mensajes del componente. |
 | openDirection | `string`   | `"down"`             | (get/set)<br><br>Dirección de apertura del selector de hora.<br><br>Valores:<br>• `"up"`, hacia arriba.<br>• `"down"`, hacia abajo. |
+| boxAlign      | `string`   | `"left"`             | (get/set)<br><br>Alineación horizontal del calendario respecto a la entrada de datos.<br><br>Valores:<br>• `"left"`, izquierda.<br>• `"center"`, centro.<br>• `"right"`, derecha. |
 | enabled       | `boolean`  | `true`               | (get/set)<br><br>Define si la entrada de datos está habilitada. |
 | onOpen        | `function` | `null`               | (get/set)<br><br>Función que se llama cuando se abre el selector de hora. La función recibe por parámetro el valor actual seleccionado. |
 | onChange      | `function` | `null`               | (get/set)<br><br>Función que se llama cuando cambia el valor seleccionado. La función recibe por parámetro el nuevo valor seleccionado. |
@@ -3452,6 +3453,7 @@ const timepicker = new WUITimepicker({
 	lang: "es",
 	//texts: {},
 	//openDirection: "down",
+	//boxAlign: "left",
 	//enabled: true,
 	onOpen: (value) => {
 		output.textContent = `Abre selector: ${value}`;
@@ -3502,6 +3504,7 @@ Componente para la implementación de entradas de datos de tipo selector de colo
 | lang          | `string`   | `"en"`               | (get/set)<br><br>Idioma del componente.<br><br>Valores:<br>• `"de"`, Alemán.<br>• `"en"`, Inglés.<br>• `"es"`, Español. |
 | texts         | `object`   | `{}`                 | (get/set)<br><br>Textos personalizados para los botones y mensajes del componente. |
 | openDirection | `string`   | `"down"`             | (get/set)<br><br>Dirección de apertura del selector de color.<br><br>Valores:<br>• `"up"`, hacia arriba.<br>• `"down"`, hacia abajo. |
+| boxAlign      | `string`   | `"left"`             | (get/set)<br><br>Alineación horizontal del calendario respecto a la entrada de datos.<br><br>Valores:<br>• `"left"`, izquierda.<br>• `"center"`, centro.<br>• `"right"`, derecha. |
 | enabled       | `boolean`  | `true`               | (get/set)<br><br>Define si la entrada de datos está habilitada. |
 | onOpen        | `function` | `null`               | (get/set)<br><br>Función que se llama cuando se abre el selector de color. La función recibe por parámetro el valor actual seleccionado. |
 | onChange      | `function` | `null`               | (get/set)<br><br>Función que se llama cuando cambia el valor seleccionado. La función recibe por parámetro el nuevo valor seleccionado. |
@@ -3659,6 +3662,7 @@ const colorpicker = new WUIColorpicker({
 	lang: "es",
 	//texts: {},
 	//openDirection: "down",
+	//boxAlign: "left",
 	//enabled: true,
 	onOpen: (value) => {
 		output.textContent = `Abre selector: ${value}`;
