@@ -656,6 +656,7 @@ class WUIColorpicker {
 			const list = WUIColorpicker.#colors.list;
 			const value = this.#targetValue;
 			const lang = this.#properties.lang;
+			const previewName = false;
 			const empty = Boolean(value == "" || value == this.#properties.emptyValue);
 			const bgcolor = empty ? "transparent" : value;
 			const bgimage = empty ? this.#getSRCIcon("viewcolor-empty") : "none";
@@ -663,7 +664,7 @@ class WUIColorpicker {
 			this.#htmlElements.buttonColor.style.maskImage = bgimage;
 			this.#htmlElements.previewColor.style.backgroundColor = bgcolor;
 			this.#htmlElements.previewColor.style.maskImage = bgimage;
-			this.#htmlElements.previewText.innerHTML = empty ? texts[lang].empty : value in list ? /*list[value].toLowerCase()*/ value : value;
+			this.#htmlElements.previewText.innerHTML = empty ? texts[lang].empty : value in list && previewName ? list[value].toLowerCase() : value;
 			if (empty) {
 				this.#htmlElements.buttonColor.classList.add("empty");
 				this.#htmlElements.previewColor.classList.add("empty");
