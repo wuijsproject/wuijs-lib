@@ -1291,13 +1291,13 @@ const scrolly = new WUIScrolly({
 	//behavior: "smooth",
 	//dataScrollY: "scrollY",
 	//dataDelay: "delay",
-	onStart: () => {},
+	//onStart: null,
 	onMove: (index, step, progress) => {
 		if (index == 1) {
 			element5.style.left = "-100px";
 		}
 	},
-	onStop: () => {},
+	//onStop: null,
 	debug: true
 });
 const element5 = document.body.querySelector(".section3 .my-element.element5");
@@ -1737,16 +1737,18 @@ Código JS:
 ```js
 const element = document.getElementById("myElement");
 const options = {
-	display: "block",
-	delay: 200
+	delay: 200,
+	//display: "block"
 };
 const fadein = () => {
-	//WUIFade.in(element, options); 
-	element.wuiFadein(options); 
+	element.wuiFadein(options);
+	// or alternatively
+	//WUIFade.in(element, options);
 }
 const fadeout = () => {
-	//WUIFade.out(element, options); 
 	element.wuiFadeout(options); 
+	// or alternatively
+	//WUIFade.out(element, options);
 }
 ```
 
@@ -2978,6 +2980,24 @@ Código HTML:
 		<option value="1">Opción 1</option>
 		<option value="2">Opción 2</option>
 		<option value="3">Opción 3</option>
+		<!--
+		<option value="4">Option 4</option>
+		<option value="5">Option 5</option>
+		<option value="6">Option 6</option>
+		<option value="7">Option 7</option>
+		<option value="8">Option 8</option>
+		<option value="9">Option 9</option>
+		<option value="10">Option 10</option>
+		<option value="11">Option 11</option>
+		<option value="12">Option 12</option>
+		<option value="13">Option 13</option>
+		<option value="14">Option 14</option>
+		<option value="15">Option 15</option>
+		<option value="16">Option 16</option>
+		<option value="17">Option 17</option>
+		<option value="18">Option 18</option>
+		<option value="19">Option 19</option>
+		-->
 	</select>
 </div>
 
@@ -3229,7 +3249,7 @@ const output = document.body.querySelector(".my-output");
 const datepicker = new WUIDatepicker({
 	selector: ".wui-datepicker.my-datepicker",
 	value: "2026-01-01",
-	//locales: "en-US",
+	locales: "es-CL",
 	//min: "",
 	//max: "",
 	//monthsNames: [],
