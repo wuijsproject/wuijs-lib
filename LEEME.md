@@ -1286,6 +1286,10 @@ Código JS:
 
 ```js
 // Crear objeto
+const element5 = document.body.querySelector(".section3 .my-element.element5");
+const element6 = document.body.querySelector(".section3 .my-element.element6");
+const element7 = document.body.querySelector(".section3 .my-element.element7");
+const output = document.body.querySelector(".section3 .my-output");
 const scrolly = new WUIScrolly({
 	//sections: [],
 	//behavior: "smooth",
@@ -1300,10 +1304,6 @@ const scrolly = new WUIScrolly({
 	//onStop: null,
 	debug: true
 });
-const element5 = document.body.querySelector(".section3 .my-element.element5");
-const element6 = document.body.querySelector(".section3 .my-element.element6");
-const element7 = document.body.querySelector(".section3 .my-element.element7");
-const output = document.body.querySelector(".section3 .my-output");
 
 // Agregar secciones
 scrolly.addSection({
