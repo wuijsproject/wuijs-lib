@@ -118,7 +118,6 @@ CSS code in the `WUI.css` file:
 
 :root {
 
-
 	/* wui-scrolly */
 
 	--wui-scrolly-paging-bgcolor: #f6f6fa;
