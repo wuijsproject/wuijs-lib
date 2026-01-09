@@ -852,7 +852,7 @@ class WUIColorpicker {
 			const mobile = Boolean(window.matchMedia("(max-width: 767px)").matches);
 			this.#htmlElements.opener.style.maskImage = this.#getSRCIcon("opener-close");
 			this.#htmlElements.background.classList.remove("hidden");
-			this.#htmlElements.box.className = "box " + this.#properties.openDirection;
+			this.#htmlElements.box.className = `box ${this.#properties.boxAlign} ${this.#properties.openDirection}`;
 			this.#htmlElements.box.style.marginBottom = !mobile && this.#properties.openDirection == "up" ? this.#htmlElement.clientHeight + "px" : "auto";
 			this.#prepare();
 			this.#loadBox();
