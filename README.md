@@ -2023,7 +2023,7 @@ const menubar = new WUIMenubar({
 	//mainButtons: [],
 	//bottomButtons: [],
 	onClick: (id) => {
-		output.textContent = `Click button - id: "${id}"`;
+		output.textContent = `Click - id button: "${id}"`;
 	},
 	//onSelect: null
 });
@@ -3020,10 +3020,10 @@ const selectpicker = new WUISelectpicker({
 	//filterable: true,
 	//enabled: true,
 	onOpen: (value) => {
-		output.textContent = `Selectpicker opened: ${value}`;
+		output.textContent = `Opened - value: ${value}`;
 	},
 	onChange: (value) => {
-		output.textContent = `Selectpicker changed: ${value}`;
+		output.textContent = `Changed - value: ${value}`;
 	}
 });
 
@@ -3258,10 +3258,10 @@ const datepicker = new WUIDatepicker({
 	//boxAlign: "left",
 	//enabled: true,
 	onOpen: (value) => {
-		output.textContent = `Datepicker opened: ${value}`;
+		output.textContent = `Opened - value: ${value}`;
 	},
 	onChange: (value) => {
-		output.textContent = `Datepicker changed: ${value}`;
+		output.textContent = `Changed - value: ${value}`;
 	}
 });
 
@@ -3455,10 +3455,10 @@ const timepicker = new WUITimepicker({
 	//boxAlign: "left",
 	//enabled: true,
 	onOpen: (value) => {
-		output.textContent = `Timepicker opened: ${value}`;
+		output.textContent = `Opened - value: ${value}`;
 	},
 	onChange: (value) => {
-		output.textContent = `Timepicker changed: ${value}`;
+		output.textContent = `Changed - value: ${value}`;
 	}
 });
 
@@ -3662,10 +3662,10 @@ const colorpicker = new WUIColorpicker({
 	//boxAlign: "left",
 	//enabled: true,
 	onOpen: (value) => {
-		output.textContent = `Timepicker opened: ${value}`;
+		output.textContent = `Opened - value: ${value}`;
 	},
 	onChange: (value) => {
-		output.textContent = `Timepicker changed: ${value}`;
+		output.textContent = `Changed - value: ${value}`;
 	}
 });
 
@@ -3820,7 +3820,7 @@ const checkbox = new WUICheckbox({
 	checked: true,
 	//enabled: true,
 	onChange: (value, checked) => {
-		output.textContent = `Change checked: ${checked}`;
+		output.textContent = `Change - value: ${value}, checked: ${checked}`;
 	}
 });
 
