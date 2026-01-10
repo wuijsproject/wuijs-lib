@@ -43,7 +43,7 @@ Author: `Sergio E. Belmar V. <sbelmar@wuijs.dev>`
 	*   [WUIDatepicker](#WUIDatepicker)
 	*   [WUITimepicker](#WUITimepicker)
 	*   [WUIColorpicker](#WUIColorpicker)
-	*   WUICheckbox
+	*   [WUICheckbox](#WUICheckbox)
 	*   WUIIntensity
 	*   [WUIButton](#WUIButton)
 *   [Examples](#examples) (CodePen)
@@ -80,7 +80,7 @@ WUI, an acronym for *Web User Interface JavaScript library*, is an open source J
 | [WUIDatepicker](#WUIDatepicker)     | `0.2`   | Component for the implementation of date type data inputs based on HTML element `<input type="date">`. |
 | [WUITimepicker](#WUITimepicker)     | `0.2`   | Component for the implementation of time type data inputs based on HTML element `<input type="time">`. |
 | [WUIColorpicker](#WUIColorpicker)   | `0.2`   | Component for the implementation of color picker type data inputs based on HTML element `<input type="color">`. |
-| WUICheckbox                         | `0.2`   | Component for the implementation of checkbox type data inputs based on HTML element `<input type="checkbox">`. |
+| [WUICheckbox](#WUICheckbox)         | `0.2`   | Component for the implementation of checkbox type data inputs based on HTML element `<input type="checkbox">`. |
 | WUIIntensity                        | `0.1`   | Component for the implementation of 4-level intensity selector type data inputs: none, low, half, and high based on HTML element `<input type="range">`. |
 | [WUIButton](#WUIButton)             | `0.2`   | Component for the implementation of based on HTML element `<button>`. |
 
