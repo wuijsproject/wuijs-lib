@@ -338,7 +338,7 @@ Date.prototype.wuiDefaults = {
 }
 
 Date.prototype.wuiLoadNames = function () {
-	if (this.wuiConstants.locales.toLowerCase().indexOf(this.wuiDefaults.locales.toLowerCase()) > -1) {
+	if (this.wuiConstants.locales.indexOf(this.wuiDefaults.locales.toLowerCase()) > -1) {
 		let i;
 		for (i = 0; i < 7; i++) {
 			const name = new Date(2023, 0, i + 1).toLocaleString(this.wuiDefaults.locales, { weekday: "long" }); // 2023-01-01: sunday
