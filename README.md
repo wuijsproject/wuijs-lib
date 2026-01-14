@@ -2811,7 +2811,7 @@ Tool for managing and validating `string`, `number` and `Date` data formats.
 
 #### Prototype Extensions
 
-**String**
+**String** `String.prototype`
 
 | Method        | Return type  | Description |
 | ------------- | ------------ | ----------- |
@@ -2827,7 +2827,7 @@ Tool for managing and validating `string`, `number` and `Date` data formats.
 | wuiValidateModule23  | `boolean`    | `wuiValidateModule23(map)`<br><br>Validates module 23. |
 | wuiValidateNID       | `boolean`    | `wuiValidateNID(countryCode)`<br><br>Validates national identity document. |
 
-**Number**
+**Number** `Number.prototype`
 
 | Method            | Return type  | Description |
 | ----------------- | ------------ | ----------- |
@@ -2836,7 +2836,7 @@ Tool for managing and validating `string`, `number` and `Date` data formats.
 | wuiToModule11     | `string`     | `wuiToModule11([tenCode])`<br><br>Calculates module 11 check digit. |
 | wuiToModule23     | `string`     | `wuiToModule23(map)`<br><br>Calculates module 23 check digit. |
 
-**Date**
+**Date** `Date.prototype`
 
 | Method         | Return type  | Description |
 | -------------- | ------------ | ----------- |

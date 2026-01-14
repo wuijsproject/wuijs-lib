@@ -2812,7 +2812,7 @@ Herramienta para manejo y validación de formatos de datos de tipo `string`, `nu
 
 #### Extensiones de Prototipo
 
-**String**
+**String** `String.prototype`
 
 | Método               | Tipo retorno | Descripción |
 | -------------------- | ------------ | ----------- |
@@ -2828,7 +2828,7 @@ Herramienta para manejo y validación de formatos de datos de tipo `string`, `nu
 | wuiValidateModule23  | `boolean`    | `wuiValidateModule23(map)`<br><br>Valida módulo 23. |
 | wuiValidateNID       | `boolean`    | `wuiValidateNID(countryCode)`<br><br>Valida documento de identidad. |
 
-**Number**
+**Number** `Number.prototype`
 
 | Método            | Tipo retorno | Descripción |
 | ----------------- | ------------ | ----------- |
@@ -2837,7 +2837,7 @@ Herramienta para manejo y validación de formatos de datos de tipo `string`, `nu
 | wuiToModule11     | `string`     | `wuiToModule11([tenCode])`<br><br>Calcula dígito verificador módulo 11. |
 | wuiToModule23     | `string`     | `wuiToModule23(map)`<br><br>Calcula dígito verificador módulo 23. |
 
-**Date**
+**Date** `Date.prototype`
 
 | Método         | Tipo retorno | Descripción |
 | -------------- | ------------ | ----------- |
