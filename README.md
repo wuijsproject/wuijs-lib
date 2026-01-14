@@ -38,7 +38,7 @@ Author: `Sergio E. Belmar V. <wuijs.project@gmail.com>`
 	*   [WUIList](#WUIList)
 	*   [WUITable](#WUITable)
 	*   WUIForm
-	*   WUIFormat
+	*   [WUIFormat](#WUIFormat)
 	*   [WUISelectpicker](#WUISelectpicker)
 	*   [WUIDatepicker](#WUIDatepicker)
 	*   [WUITimepicker](#WUITimepicker)
@@ -75,7 +75,7 @@ WUI, an acronym for *Web User Interface JavaScript library*, is an open source J
 | [WUIList](#WUIList)                 | `0.2`   | Component for the implementation of data lists and buttons for each row optionally. |
 | [WUITable](#WUITable)               | `0.2`   | Component for the implementation of data tables. Unlike the `WUIList` component, the `WUITable` component includes a column header. |
 | WUIForm                             | `0.2`   | Component for the implementation of data forms. This component allows the implementation of HTML data input elements such as `<input>`, `<select>`, and `<textarea>`, and WUI library objects such as `WUISelectpicker`, `WUIDatepicker`, `WUITimepicker`, `WUIColorpicker`, `WUICheckbox`, `WUIIntensity`, and `WUIButton`. |
-| WUIFormat                           | `0.2`   | Tool for managing and validating `string`, `number` and `Date` data formats. |
+| [WUIFormat](#WUIFormat)             | `0.2`   | Tool for managing and validating `string`, `number` and `Date` data formats. |
 | [WUISelectpicker](#WUISelectpicker) | `0.2`   | Component for the implementation of multiple or exclusive selection list data inputs based on HTML element `<select>`. |
 | [WUIDatepicker](#WUIDatepicker)     | `0.2`   | Component for the implementation of date type data inputs based on HTML element `<input type="date">`. |
 | [WUITimepicker](#WUITimepicker)     | `0.2`   | Component for the implementation of time type data inputs based on HTML element `<input type="time">`. |
@@ -2261,7 +2261,7 @@ body {
 }
 
 header {
-	max-width: 600px;
+	width: 600px;
 	text-align: right;
 }
 
@@ -2285,7 +2285,7 @@ nav {
 }
 
 footer {
-	max-width: 600px;
+	width: 600px;
 }
 
 .my-output {
@@ -2607,7 +2607,7 @@ body {
 }
 
 header {
-	max-width: 600px;
+	width: 600px;
 	text-align: right;
 }
 
@@ -2631,7 +2631,7 @@ nav {
 }
 
 footer {
-	max-width: 600px;
+	width: 600px;
 }
 
 .my-output {
@@ -2775,6 +2775,102 @@ table.print();
 
 <a name="WUIForm"></a>
 <a name="WUIFormat"></a>
+
+### WUIFormat
+
+Version: `0.2`
+
+Tool for managing and validating `string`, `number` and `Date` data formats.
+
+#### Sources
+
+| Type | File |
+| ---- | ---- |
+| JS   | [src/WUI/Format/WUIFormat-0.2.js](https://github.com/wuijsproject/wuijs-lib/blob/main/src/WUI/Format/WUIFormat-0.2.js) |
+
+#### Static Methods
+
+| Method                | Return type  | Description |
+| --------------------- | ------------ | ----------- |
+| validateDate          | `boolean`    | `validateDate(value, format)`<br><br>Validates a date string.<br><br>Arguments:<br>**• value:** `string` Value to validate.<br>**• format:** `string` Expected date format (default `"yyyy-mm-dd"` defined in `String.prototype.wuiDefaults.dateFormat`). |
+| validateEmail         | `boolean`    | `validateEmail(value)`<br><br>Validates an email address. |
+| validateEmailList     | `boolean`    | `validateEmailList(value[, separator])`<br><br>Validates a list of email addresses. |
+| validatePhone         | `boolean`    | `validatePhone(value[, length])`<br><br>Validates a phone number. |
+| validatePhoneList     | `boolean`    | `validatePhoneList(value[, length, separator])`<br><br>Validates a list of phone numbers. |
+| validateURL           | `boolean`    | `validateURL(value)`<br><br>Validates a URL. |
+| validateURLList       | `boolean`    | `validateURLList(value[, separator])`<br><br>Validates a list of URLs. |
+| validateIPv4          | `boolean`    | `validateIPv4(value)`<br><br>Validates an IPv4 address. |
+| validateModule11      | `boolean`    | `validateModule11(value[, tenCode])`<br><br>Validates the module 11 check digit.<br><br>Arguments:<br>**• value:** `string` Value to validate (including check digit).<br>**• tenCode:** `string` *optional* Character to represent 10/K. Defaults to `"10"`. |
+| validateModule23      | `boolean`    | `validateModule23(value, map)`<br><br>Validates the module 23 check digit.<br><br>Arguments:<br>**• value:** `string` Value to validate.<br>**• map:** `string` Mapping character string. |
+| validateNID           | `boolean`    | `validateNID(value, countryCode)`<br><br>Validates a national identity document.<br><br>Arguments:<br>**• value:** `string` Value to validate.<br>**• countryCode:** `string` Country code (`"CL"`, `"PY"`, `"ES"`). |
+| numberToString        | `string`     | `numberToString(value)`<br><br>Formats a number to string using `wuiDefaults`. |
+| numberToSizeString    | `string`     | `numberToSizeString(value)`<br><br>Formats a number to file size (B, KB, MB, TB). |
+| numberToModule11      | `string`     | `numberToModule11(value[, tenCode])`<br><br>Calculates the module 11 check digit. |
+| numberToModule23      | `string`     | `numberToModule23(value, map)`<br><br>Calculates the module 23 check digit. |
+| loadDate              | `Date`       | `loadDate(value, format)`<br><br>Loads a date from a string or numeric values. |
+
+#### Prototype Extensions
+
+**String**
+
+| Method        | Return type  | Description |
+| ------------- | ------------ | ----------- |
+| wuiValidateDate      | `boolean`    | `wuiValidateDate([format])`<br><br>Validates if the string is a valid date. |
+| wuiValidateEmail     | `boolean`    | `wuiValidateEmail()`<br><br>Validates if the string is a valid email. |
+| wuiValidateEmailList | `boolean`    | `wuiValidateEmailList([separator])`<br><br>Validates list of emails. |
+| wuiValidatePhone     | `boolean`    | `wuiValidatePhone([length])`<br><br>Validates phone number. |
+| wuiValidatePhoneList | `boolean`    | `wuiValidatePhoneList([length, separator])`<br><br>Validates list of phone numbers. |
+| wuiValidateURL       | `boolean`    | `wuiValidateURL()`<br><br>Validates URL. |
+| wuiValidateURLList   | `boolean`    | `wuiValidateURLList([separator])`<br><br>Validates list of URLs. |
+| wuiValidateIPv4      | `boolean`    | `wuiValidateIPv4()`<br><br>Validates IPv4. |
+| wuiValidateModule11  | `boolean`    | `wuiValidateModule11([tenCode])`<br><br>Validates module 11. |
+| wuiValidateModule23  | `boolean`    | `wuiValidateModule23(map)`<br><br>Validates module 23. |
+| wuiValidateNID       | `boolean`    | `wuiValidateNID(countryCode)`<br><br>Validates national identity document. |
+
+**Number**
+
+| Method            | Return type  | Description |
+| ----------------- | ------------ | ----------- |
+| wuiToString       | `string`     | `wuiToString([options])`<br><br>Converts to formatted string. |
+| wuiToSizeString   | `string`     | `wuiToSizeString()`<br><br>Converts to size string. |
+| wuiToModule11     | `string`     | `wuiToModule11([tenCode])`<br><br>Calculates module 11 check digit. |
+| wuiToModule23     | `string`     | `wuiToModule23(map)`<br><br>Calculates module 23 check digit. |
+
+**Date**
+
+| Method         | Return type  | Description |
+| -------------- | ------------ | ----------- |
+| wuiLoad        | `Date`       | `wuiLoad(value[, format, options])`<br><br>Loads date. |
+| wuiToString    | `string`     | `wuiToString([format, options])`<br><br>Converts date to string. |
+
+#### Implementation
+
+HTML head:
+
+```html
+<script type="text/javascript" src="https://wuijs.dev/Libraries/WUI/Format/WUIFormat-0.2.js"></script>
+```
+
+JS code:
+
+```js
+// Email validation
+const email = "test@example.com";
+console.log(WUIFormat.validateEmail(email)); // true
+console.log(email.wuiValidateEmail()); // true
+
+// Number formatting
+const number = 1234.56;
+console.log(number.wuiToString({ decimalLength: 2, numberPrefix: "$" })); // "$1.234,56"
+
+// Dates formatting
+const date = new Date().wuiLoad("2023-12-31", "yyyy-mm-dd");
+console.log(date.wuiToString("dd/mm/yyyy")); // "31/12/2023"
+```
+
+> [!TIP]
+> You can check out this working example on CodePen at the link: [https://codepen.io/wuijsproject/pen/emzBjVy](https://codepen.io/wuijsproject/pen/emzBjVy).
+
 <a name="WUISelectpicker"></a>
 
 ### WUISelectpicker

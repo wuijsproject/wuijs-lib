@@ -13,70 +13,58 @@ class WUIFormat {
 	static _initClass() {
 		this.platform = navigator.userAgentData?.platform || navigator.platform;
 		this.systemName =
-			this.platform.match(/iphone|ipad/i) ? "iOS" :
-				this.platform.match(/android/i) ? "Android" :
-					this.platform.match(/mac/i) ? "macOS" :
-						this.platform.match(/linux/i) ? "Linux" :
-							this.platform.match(/windows phone|windows mobile/i) ? "Windows Phone" :
-								this.platform.match(/win/i) ? "Windows" :
-									"";
+			this.platform.match(/iphone|ipad/i) ? ("iOS"
+			) : this.platform.match(/android/i) ? ("Android"
+			) : this.platform.match(/mac/i) ? ("macOS"
+			) : this.platform.match(/linux/i) ? ("Linux"
+			) : this.platform.match(/windows phone|windows mobile/i) ? ("Windows Phone"
+			) : this.platform.match(/win/i) ? ("Windows"
+			) : "";
 		Date.prototype.wuiLoadNames();
 	}
 
-	static getOS() {
-		return this.systemName;
+	static validateDate(value, format) {
+		return typeof (value) == "string" ? value.wuiValidateDate(format) : false;
 	}
 
-	static getMobileOS() {
-		return this.systemName.match(/Android|iOS|Windows Phone/) ? this.systemName : "unknown";
+	static validateEmail(value) {
+		return typeof (value) == "string" ? value.wuiValidateEmail() : false;
 	}
 
-	static getAppURL(id, mobileOS = WUIFormat.getMobileOS()) {
-		return (
-			mobileOS.match(/iOS/i) ? "http://appstore.com/" + id :
-				mobileOS.match(/Android/i) ? "http://play.google.com/store/apps/details?id=" + id :
-					""
-		);
+	static validateEmailList(value, separator) {
+		return typeof (value) == "string" ? value.wuiValidateEmailList(separator) : false;
 	}
 
-	static stringValidDateFormat(value, format) {
-		return typeof (value) == "string" ? value.wuiValidDateFormat(format) : false;
+	static validatePhone(value, length) {
+		return typeof (value) == "string" ? value.wuiValidatePhone(length) : false;
 	}
 
-	static stringValidEmailFormat(value) {
-		return typeof (value) == "string" ? value.wuiValidEmailFormat() : false;
+	static validatePhoneList(value, length, separator) {
+		return typeof (value) == "string" ? value.wuiValidatePhoneList(length, separator) : false;
 	}
 
-	static stringValidEmailListFormat(value, separator) {
-		return typeof (value) == "string" ? value.wuiValidEmailListFormat(separator) : false;
+	static validateURL(value) {
+		return typeof (value) == "string" ? value.wuiValidateURL() : false;
 	}
 
-	static stringValidPhoneFormat(value, length) {
-		return typeof (value) == "string" ? value.wuiValidPhoneFormat(length) : false;
+	static validateURLList(value, separator) {
+		return typeof (value) == "string" ? value.wuiValidateURLList(separator) : false;
 	}
 
-	static stringValidPhoneListFormat(value, length, separator) {
-		return typeof (value) == "string" ? value.wuiValidPhoneListFormat(length, separator) : false;
+	static validateIPv4(value) {
+		return typeof (value) == "string" ? value.wuiValidateIPv4() : false;
 	}
 
-	static stringValidURLFormat(value) {
-		return typeof (value) == "string" ? value.wuiValidURLFormat() : false;
+	static validateModule11(value, tenCode = "10") {
+		return typeof (value) == "string" ? value.wuiValidateModule11(tenCode) : false;
 	}
 
-	static stringValidURLListFormat(value, separator) {
-		return typeof (value) == "string" ? value.wuiValidURLListFormat(separator) : false;
+	static validateModule23(value, map) {
+		return typeof (value) == "string" ? value.wuiValidateModule23(map) : false;
 	}
 
-	static stringValidIPv4Format(value) {
-		return typeof (value) == "string" ? value.wuiValidIPv4Format() : false;
-	}
-
-	static stringValidModule11Format(value, tenCode) {
-		return typeof (value) == "string" ? value.wuiValidModule11Format(tenCode) : false;
-	}
-
-	static stringValidCLRUTFormat(value) {
-		return typeof (value) == "string" ? value.wuiValidCLRUTFormat() : false;
+	static validateNID(value, countryCode) {
+		return typeof (value) == "string" ? value.wuiValidateNID(countryCode) : false;
 	}
 
 	static numberToString(value) {
@@ -87,11 +75,15 @@ class WUIFormat {
 		return typeof (value) == "number" ? value.wuiToSizeString() : "error";
 	}
 
-	static dateValid(value) {
-		return typeof (value) == "object" && value != null && value instanceof Date ? true : false;
+	static numberToModule11(value, tenCode = "10") {
+		return typeof (value) == "number" ? value.wuiToModule11(tenCode) : "error";
 	}
 
-	static dateLoad(value, format) {
+	static numberToModule23(value, map) {
+		return typeof (value) == "number" ? value.wuiToModule23(map) : "error";
+	}
+
+	static loadDate(value, format) {
 		return Date.prototype.wuiLoad(value, format);
 	}
 }
@@ -134,7 +126,7 @@ String.prototype.wuiConstants = {
 		+ "".toLowerCase().split(/\s+/)
 }
 
-String.prototype.wuiValidDateFormat = function (format = "default") {
+String.prototype.wuiValidateDate = function (format = "default") {
 	const pattern =
 		format == "default" ? this.wuiDefaults.dateFormat :
 			format == "standard" ? "yyyy-mm-dd" :
@@ -175,7 +167,7 @@ String.prototype.wuiValidDateFormat = function (format = "default") {
 	return valid;
 }
 
-String.prototype.wuiValidEmailFormat = function () {
+String.prototype.wuiValidateEmail = function () {
 	if (this == null || this == "") {
 		return false;
 	} else {
@@ -184,14 +176,14 @@ String.prototype.wuiValidEmailFormat = function () {
 	}
 }
 
-String.prototype.wuiValidEmailListFormat = function (separator = this.wuiDefaults.emailListSeparator) {
+String.prototype.wuiValidateEmailList = function (separator = this.wuiDefaults.emailListSeparator) {
 	let valid = true;
 	if (this == null || this == "") {
 		valid = false;
 	} else {
 		const list = this.split(separator);
 		for (let i in list) {
-			if (!list[i].toString().trim().wuiValidEmailFormat()) {
+			if (!list[i].toString().trim().wuiValidateEmail()) {
 				valid = false;
 			}
 		}
@@ -199,7 +191,7 @@ String.prototype.wuiValidEmailListFormat = function (separator = this.wuiDefault
 	return valid;
 }
 
-String.prototype.wuiValidPhoneFormat = function (length = this.wuiDefaults.phoneLength) {
+String.prototype.wuiValidatePhone = function (length = this.wuiDefaults.phoneLength) {
 	if (this == null || this == "") {
 		return false;
 	} else {
@@ -207,14 +199,14 @@ String.prototype.wuiValidPhoneFormat = function (length = this.wuiDefaults.phone
 	}
 }
 
-String.prototype.wuiValidPhoneListFormat = function (length = this.wuiDefaults.phoneLength, separator = this.wuiDefaults.phoneListSeparator) {
+String.prototype.wuiValidatePhoneList = function (length = this.wuiDefaults.phoneLength, separator = this.wuiDefaults.phoneListSeparator) {
 	let valid = true;
 	if (this == null || this == "") {
 		valid = false;
 	} else {
 		const list = this.split(separator);
 		for (let i in list) {
-			if (!list[i].toString().trim().wuiValidPhoneFormat(length)) {
+			if (!list[i].toString().trim().wuiValidatePhone(length)) {
 				valid = false;
 			}
 		}
@@ -222,7 +214,7 @@ String.prototype.wuiValidPhoneListFormat = function (length = this.wuiDefaults.p
 	return valid;
 }
 
-String.prototype.wuiValidURLFormat = function () {
+String.prototype.wuiValidateURL = function () {
 	if (this == null || this == "") {
 		return false;
 	} else {
@@ -232,7 +224,7 @@ String.prototype.wuiValidURLFormat = function () {
 	}
 }
 
-String.prototype.wuiValidURLListFormat = function (separator = this.wuiDefaults.urlListSeparator) {
+String.prototype.wuiValidateURLList = function (separator = this.wuiDefaults.urlListSeparator) {
 	let valid = true;
 	if (this == null || this == "") {
 		valid = false;
@@ -247,7 +239,7 @@ String.prototype.wuiValidURLListFormat = function (separator = this.wuiDefaults.
 	return valid;
 }
 
-String.prototype.wuiValidIPv4Format = function () {
+String.prototype.wuiValidateIPv4 = function () {
 	if (this == null || this == "") {
 		return false;
 	} else {
@@ -255,47 +247,44 @@ String.prototype.wuiValidIPv4Format = function () {
 	}
 }
 
-String.prototype.wuiValidModule11Format = function (tenCode = "10") {
-	let valid = true;
-	if (this == null || this == "") {
-		valid = false;
-	} else {
-		const value = this,
-			data = value.replace(/\./g, "").split("-"),
-			number = typeof (data[0]) != "undefined" ? data[0] : 0,
-			code = (typeof (data[1]) != "undefined" ? data[1] : "").toUpperCase();
-		if (number == 0 || number.match(/\D/)) {
-			valid = false;
-		} else if ((code.match(/\D/) && code != tenCode) || code == "") {
-			valid = false;
-		} else {
-			let sum = 0,
-				chr = 0,
-				r = 2,
-				ctl = "";
-			for (chr = number.length - 1; chr >= 0; chr--) {
-				sum += (number.charAt(chr) * r);
-				r = r == 7 ? 2 : r + 1;
-			}
-			ctl += (11 - sum % 11);
-			if (ctl == "10") {
-				ctl = tenCode;
-			} else if (ctl == "11") {
-				ctl = "0";
-			}
-			valid = ctl == code ? true : false;
-		}
+String.prototype.wuiValidateModule11 = function (tenCode = "10") {
+	if (!this || this.trim() == "") return false;
+	const value = this.trim().replace(/[\.-]/g, "");
+	if (value.length < 2) return false;
+	const number = value.slice(0, -1);
+	const control = value.slice(-1).toUpperCase();
+	if (!/^\d+$/.test(number)) return false;
+	return BigInt(number).wuiToModule11(tenCode) == control;
+}
+
+String.prototype.wuiValidateModule23 = function (map) {
+	if (!this || this.trim() == "") return false;
+	const value = this.trim().toUpperCase().replace(/[\.-]/g, "");
+	if (!value) return false;
+	const number = value.slice(0, -1);
+	const control = value.slice(-1);
+	if (!/^\d+$/.test(number) || !map.includes(control)) return false;
+	return BigInt(number).wuiToModule23(map) == control;
+}
+
+String.prototype.wuiValidateNID = function (countryCode) {
+	const value = this.trim().toUpperCase();
+	switch (countryCode) {
+		case "CL": // RUN/RUT
+			return value.replace(/\./g, "").wuiValidateModule11("K");
+		case "PY": // RUC
+			return value.replace(/\./g, "").wuiValidateModule11("0");
+		case "ES": // DNI/NIE
+			if (!/^[0-9XYZ][0-9]{7}[A-Z]$/.test(value)) return false;
+			return value
+				.replace(/^X/, '0')
+				.replace(/^Y/, '1')
+				.replace(/^Z/, '2')
+				.wuiValidateModule23("TRWAGMYFPDXBNJZSQVHLCKET");
+		default:
+			return false;
 	}
-	return valid;
 }
-
-String.prototype.wuiValidCLRUNFormat = function () {
-	return this.wuiValidModule11Format("K");
-}
-
-String.prototype.wuiValidCLRUTFormat = function () {
-	return this.wuiValidModule11Format("K");
-};
 
 Number.prototype.wuiDefaults = {
 	numberPrefix: "",
@@ -333,6 +322,23 @@ Number.prototype.wuiToSizeString = function () {
 	const uni = size < 1024 ? "B" : size < Math.pow(1024, 2) ? "KB" : size < Math.pow(1024, 3) ? "MB" : "TB";
 	return parseInt(size / div).wuiToString() + " " + uni;
 };
+
+Number.prototype.wuiToModule11 = function (tenCode = "10") {
+	const str = this.toString();
+	let sum = 0, factor = 2;
+	for (let i = str.length - 1; i >= 0; i--) {
+		sum += Number(str.charAt(i)) * factor;
+		factor = factor == 7 ? 2 : factor + 1;
+	}
+	const remainder = 11 - (sum % 11);
+	if (remainder == 10) return tenCode.toUpperCase();
+	if (remainder == 11) return "0";
+	return remainder.toString();
+}
+
+Number.prototype.wuiToModule23 = function (map) {
+	return map.charAt(this % 23);
+}
 
 Date.prototype.wuiConstants = {
 	locales: "" // https://www.techonthenet.com/js/language_tags.php 20241007

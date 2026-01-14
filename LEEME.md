@@ -38,7 +38,7 @@ Autor: `Sergio E. Belmar V. <wuijs.project@gmail.com>`
 	*   [WUIList](#WUIList)
 	*   [WUITable](#WUITable)
 	*   WUIForm
-	*   WUIFormat
+	*   [WUIFormat](#WUIFormat)
 	*   [WUISelectpicker](#WUISelectpicker)
 	*   [WUIDatepicker](#WUIDatepicker)
 	*   [WUITimepicker](#WUITimepicker)
@@ -75,7 +75,7 @@ WUI, acrónimo del inglés *Web User Interface JavaScript library*, es una bibli
 | [WUIList](#WUIList)                 | `0.2`   | Componente para la implementación de listas de datos y botoneras para cada fila de manera opcional. |
 | [WUITable](#WUITable)               | `0.2`   | Componente para la implementación de tablas de datos. A diferencia del componente `WUIList`, el componente `WUITable` incluye una cabecera de columnas. |
 | WUIForm                             | `0.2`   | Componente para la implementación de formularios de datos. Este componente permite la implementación de elementos HTML de entrada de datos tales como `<input>`, `<select>` y `<textarea>` y objetos de la librería WUI como `WUISelectpicker`, `WUIDatepicker`, `WUITimepicker`, `WUIColorpicker`, `WUICheckbox`, `WUIIntensity` y `WUIButton`. |
-| WUIFormat                           | `0.2`   | Herramienta para manejo y validación de formatos de datos de tipo `string`, `number` y `Date`. |
+| [WUIFormat](#WUIFormat)             | `0.2`   | Herramienta para manejo y validación de formatos de datos de tipo `string`, `number` y `Date`. |
 | [WUISelectpicker](#WUISelectpicker) | `0.2`   | Componente para la implementación de entradas de datos de tipo lista de selección múltiple o excluyente basada en el elemento HTML `<select>`. |
 | [WUIDatepicker](#WUIDatepicker)     | `0.2`   | Componente para la implementación de entradas de datos de tipo fecha basada en el elemento HTML `<input type="date">`. |
 | [WUITimepicker](#WUITimepicker)     | `0.2`   | Componente para la implementación de entradas de datos de tipo hora basada en el elemento HTML `<input type="time">`. |
@@ -2261,7 +2261,7 @@ body {
 }
 
 header {
-	max-width: 600px;
+	width: 600px;
 	text-align: right;
 }
 
@@ -2285,7 +2285,7 @@ nav {
 }
 
 footer {
-	max-width: 600px;
+	width: 600px;
 }
 
 .my-output {
@@ -2608,7 +2608,7 @@ body {
 }
 
 header {
-	max-width: 600px;
+	width: 600px;
 	text-align: right;
 }
 
@@ -2632,7 +2632,7 @@ nav {
 }
 
 footer {
-	max-width: 600px;
+	width: 600px;
 }
 
 .my-output {
@@ -2776,6 +2776,102 @@ table.print();
 
 <a name="WUIForm"></a>
 <a name="WUIFormat"></a>
+
+### WUIFormat
+
+Versión: `0.2`
+
+Herramienta para manejo y validación de formatos de datos de tipo `string`, `number` y `Date`.
+
+#### Fuentes
+
+| Tipo | Archivo |
+| ---- | ------- |
+| JS   | [src/WUI/Format/WUIFormat-0.2.js](https://github.com/wuijsproject/wuijs-lib/blob/main/src/WUI/Format/WUIFormat-0.2.js) |
+
+#### Métodos Estáticos
+
+| Método                | Tipo retorno | Descripción |
+| --------------------- | ------------ | ----------- |
+| validateDate          | `boolean`    | `validateDate(value, format)`<br><br>Valida una fecha en formato string.<br><br>Parámetros:<br>**• value:** `string` Valor a validar.<br>**• format:** `string` Formato de fecha esperado (por defecto `"yyyy-mm-dd"` definido en `String.prototype.wuiDefaults.dateFormat`). |
+| validateEmail         | `boolean`    | `validateEmail(value)`<br><br>Valida un correo electrónico. |
+| validateEmailList     | `boolean`    | `validateEmailList(value[, separator])`<br><br>Valida una lista de correos electrónicos. |
+| validatePhone         | `boolean`    | `validatePhone(value[, length])`<br><br>Valida un número de teléfono. |
+| validatePhoneList     | `boolean`    | `validatePhoneList(value[, length, separator])`<br><br>Valida una lista de números de teléfono. |
+| validateURL           | `boolean`    | `validateURL(value)`<br><br>Valida una URL. |
+| validateURLList       | `boolean`    | `validateURLList(value[, separator])`<br><br>Valida una lista de URLs. |
+| validateIPv4          | `boolean`    | `validateIPv4(value)`<br><br>Valida una dirección IPv4. |
+| validateModule11      | `boolean`    | `validateModule11(value[, tenCode])`<br><br>Valida el dígito verificador módulo 11.<br><br>Parámetros:<br>**• value:** `string` Valor a validar (incluido dígito verificador).<br>**• tenCode:** `string` *opcional* Carácter para representar el 10/K. Por defecto `"10"`. |
+| validateModule23      | `boolean`    | `validateModule23(value, map)`<br><br>Valida el dígito verificador módulo 23.<br><br>Parámetros:<br>**• value:** `string` Valor a validar.<br>**• map:** `string` Cadena de caracteres de mapeo. |
+| validateNID           | `boolean`    | `validateNID(value, countryCode)`<br><br>Valida un documento de identidad nacional.<br><br>Parámetros:<br>**• value:** `string` Valor a validar.<br>**• countryCode:** `string` Código de país (`"CL"`, `"PY"`, `"ES"`). |
+| numberToString        | `string`     | `numberToString(value)`<br><br>Formatea un número a string usando `wuiDefaults`. |
+| numberToSizeString    | `string`     | `numberToSizeString(value)`<br><br>Formatea un número a tamaño de archivo (B, KB, MB, TB). |
+| numberToModule11      | `string`     | `numberToModule11(value[, tenCode])`<br><br>Calcula el dígito verificador módulo 11. |
+| numberToModule23      | `string`     | `numberToModule23(value, map)`<br><br>Calcula el dígito verificador módulo 23. |
+| loadDate              | `Date`       | `loadDate(value, format)`<br><br>Carga una fecha desde un string o valores numéricos. |
+
+#### Extensiones de Prototipo
+
+**String**
+
+| Método               | Tipo retorno | Descripción |
+| -------------------- | ------------ | ----------- |
+| wuiValidateDate      | `boolean`    | `wuiValidateDate([format])`<br><br>Valida si el string es una fecha válida. |
+| wuiValidateEmail     | `boolean`    | `wuiValidateEmail()`<br><br>Valida si el string es un email válido. |
+| wuiValidateEmailList | `boolean`    | `wuiValidateEmailList([separator])`<br><br>Valida lista de emails. |
+| wuiValidatePhone     | `boolean`    | `wuiValidatePhone([length])`<br><br>Valida número de teléfono. |
+| wuiValidatePhoneList | `boolean`    | `wuiValidatePhoneList([length, separator])`<br><br>Valida lista de teléfonos. |
+| wuiValidateURL       | `boolean`    | `wuiValidateURL()`<br><br>Valida URL. |
+| wuiValidateURLList   | `boolean`    | `wuiValidateURLList([separator])`<br><br>Valida lista de URLs. |
+| wuiValidateIPv4      | `boolean`    | `wuiValidateIPv4()`<br><br>Valida IPv4. |
+| wuiValidateModule11  | `boolean`    | `wuiValidateModule11([tenCode])`<br><br>Valida módulo 11. |
+| wuiValidateModule23  | `boolean`    | `wuiValidateModule23(map)`<br><br>Valida módulo 23. |
+| wuiValidateNID       | `boolean`    | `wuiValidateNID(countryCode)`<br><br>Valida documento de identidad. |
+
+**Number**
+
+| Método            | Tipo retorno | Descripción |
+| ----------------- | ------------ | ----------- |
+| wuiToString       | `string`     | `wuiToString([options])`<br><br>Convierte a string con formato. |
+| wuiToSizeString   | `string`     | `wuiToSizeString()`<br><br>Convierte a string de tamaño. |
+| wuiToModule11     | `string`     | `wuiToModule11([tenCode])`<br><br>Calcula dígito verificador módulo 11. |
+| wuiToModule23     | `string`     | `wuiToModule23(map)`<br><br>Calcula dígito verificador módulo 23. |
+
+**Date**
+
+| Método         | Tipo retorno | Descripción |
+| -------------- | ------------ | ----------- |
+| wuiLoad        | `Date`       | `wuiLoad(value[, format, options])`<br><br>Carga fecha. |
+| wuiToString    | `string`     | `wuiToString([format, options])`<br><br>Convierte fecha a string. |
+
+#### Implementación
+
+Cabecera HTML:
+
+```html
+<script type="text/javascript" src="https://wuijs.dev/Libraries/WUI/Format/WUIFormat-0.2.js"></script>
+```
+
+Código JS:
+
+```js
+// Validación correo
+const email = "test@example.com";
+console.log(WUIFormat.validateEmail(email)); // true
+console.log(email.wuiValidateEmail()); // true
+
+// Formateo de números
+const number = 1234.56;
+console.log(number.wuiToString({ decimalLength: 2, numberPrefix: "$" })); // "$1.234,56"
+
+// Formateo de fechas
+const date = new Date().wuiLoad("2023-12-31", "yyyy-mm-dd");
+console.log(date.wuiToString("dd/mm/yyyy")); // "31/12/2023"
+```
+
+> [!TIP]
+> Puede revisar este ejemplo funcional en CodePen en el enlace: [https://codepen.io/wuijsproject/pen/emzBjVy](https://codepen.io/wuijsproject/pen/emzBjVy).
+
 <a name="WUISelectpicker"></a>
 
 ### WUISelectpicker
@@ -4225,6 +4321,7 @@ Los ejemplos listados en esta sección, son detallados en la sección "Implement
 | [WUIMenubar](#WUIMenubar)           | [https://codepen.io/wuijsproject/pen/JoKYVQm](https://codepen.io/wuijsproject/pen/JoKYVQm) |
 | [WUIList](#WUIList)                 | [https://codepen.io/wuijsproject/pen/xbOweva](https://codepen.io/wuijsproject/pen/xbOweva) |
 | [WUITable](#WUITable)               | [https://codepen.io/wuijsproject/pen/jErboKZ](https://codepen.io/wuijsproject/pen/jErboKZ) |
+| [WUIFormat](#WUIFormat)             | [https://codepen.io/wuijsproject/pen/emzBjVy](https://codepen.io/wuijsproject/pen/emzBjVy) |
 | [WUISelectpicker](#WUISelectpicker) | [https://codepen.io/wuijsproject/pen/WbxQBKX](https://codepen.io/wuijsproject/pen/WbxQBKX) |
 | [WUIDatepicker](#WUIDatepicker)     | [https://codepen.io/wuijsproject/pen/QwEyyZN](https://codepen.io/wuijsproject/pen/QwEyyZN) |
 | [WUITimepicker](#WUITimepicker)     | [https://codepen.io/wuijsproject/pen/azZdGrY](https://codepen.io/wuijsproject/pen/azZdGrY) |
