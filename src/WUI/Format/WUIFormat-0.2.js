@@ -168,12 +168,9 @@ String.prototype.wuiValidateDate = function (format = "default") {
 }
 
 String.prototype.wuiValidateEmail = function () {
-	if (this == null || this == "") {
-		return false;
-	} else {
-		const tld = (this.toLowerCase().match(/(\w{2,18})$/) || [])[0];
-		return /^\w[\w\-\.\~]*\@\w[\w\-\.]*\.\w{2,18}$/.test(this) && tld != null && this.wuiConstants.tlds.indexOf(tld) > -1 ? true : false;
-	}
+	if (this == null || this == "") return false;
+	const tld = (this.toLowerCase().match(/(\w{2,18})$/) || [])[0];
+	return /^\w[\w\-\.\~\+]*\@\w[\w\-\.]*\.\w{2,18}$/.test(this) && tld != null && this.wuiConstants.tlds.indexOf(tld) > -1 ? true : false;
 }
 
 String.prototype.wuiValidateEmailList = function (separator = this.wuiDefaults.emailListSeparator) {
@@ -192,11 +189,8 @@ String.prototype.wuiValidateEmailList = function (separator = this.wuiDefaults.e
 }
 
 String.prototype.wuiValidatePhone = function (length = this.wuiDefaults.phoneLength) {
-	if (this == null || this == "") {
-		return false;
-	} else {
-		return this.length == length && !(/\D/.test(this)) ? true : false;
-	}
+	if (this == null || this == "") return false;
+	return this.length == length && !(/\D/.test(this)) ? true : false;
 }
 
 String.prototype.wuiValidatePhoneList = function (length = this.wuiDefaults.phoneLength, separator = this.wuiDefaults.phoneListSeparator) {

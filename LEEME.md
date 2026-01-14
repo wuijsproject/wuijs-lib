@@ -2846,10 +2846,32 @@ Herramienta para manejo y validación de formatos de datos de tipo `string`, `nu
 
 #### Implementación
 
+CSS Code:
+
+```css
+body {
+	font-family: Arial, Helvetica, Verdana, sans-serif;
+}
+
+.my-output {
+	position: relative;
+	margin: 10px;
+	font-family: monospace;
+}
+```
+
 Cabecera HTML:
 
 ```html
 <script type="text/javascript" src="https://wuijs.dev/Libraries/WUI/Format/WUIFormat-0.2.js"></script>
+```
+
+HTML code:
+
+```html
+<div class="my-output email"></div>
+<div class="my-output number"></div>
+<div class="my-output date"></div>
 ```
 
 Código JS:
@@ -2857,16 +2879,22 @@ Código JS:
 ```js
 // Validación correo
 const email = "test@example.com";
-console.log(WUIFormat.validateEmail(email)); // true
-console.log(email.wuiValidateEmail()); // true
+const emailOutput = document.body.querySelector(".my-output.email");
+const emailValidation = email.wuiValidateEmail();
+emailOutput.textContent = `email: ${email} - validation: ${emailValidation}`;
 
 // Formateo de números
-const number = 1234.56;
-console.log(number.wuiToString({ decimalLength: 2, numberPrefix: "$" })); // "$1.234,56"
+const number = 1234.567;
+const numberOutput = document.body.querySelector(".my-output.number");
+const numberFormatting = number.wuiToString({ decimalLength: 2, numberPrefix: "$" });
+numberOutput.textContent = `number: ${number} - formatting: ${numberFormatting}`;
 
 // Formateo de fechas
-const date = new Date().wuiLoad("2023-12-31", "yyyy-mm-dd");
-console.log(date.wuiToString("dd/mm/yyyy")); // "31/12/2023"
+const dateFormat = "yyyy-mm-dd";
+const date = new Date().wuiLoad("2023-12-31", dateFormat);
+const dateOutput = document.body.querySelector(".my-output.date");
+const dateFormatting = date.wuiToString("dd/mm/yyyy");
+dateOutput.textContent = `number: ${date} - format: ${dateFormat} - formatting: ${dateFormatting}`;
 ```
 
 > [!TIP]
