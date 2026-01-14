@@ -2890,7 +2890,7 @@ const dateFormat = "yyyy-mm-dd";
 const date = new Date().wuiLoad("2023-12-31", dateFormat);
 const dateOutput = document.body.querySelector(".my-output.date");
 const dateFormatting = date.wuiToString("dd/mm/yyyy");
-dateOutput.textContent = `number: ${date} - format: ${dateFormat} - formatting: ${dateFormatting}`;
+dateOutput.textContent = `date: ${date} - format: ${dateFormat} - formatting: ${dateFormatting}`;
 ```
 
 > [!TIP]
