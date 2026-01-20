@@ -2792,10 +2792,10 @@ Tool for managing and validating `string`, `number` and `Date` data formats.
 
 | Method                | Return type  | Description |
 | --------------------- | ------------ | ----------- |
-| numberToString        | `string`     | `numberToString(number)`<br><br>Formats a number to string using `Number.prototype.wuiDefaults`.<br><br>Arguments:<br>**• number:** `number`, numeric to format. |
-| numberToSizeString    | `string`     | `numberToSizeString(number)`<br><br>Formats a number to file size (B, KB, MB, TB).<br><br>Arguments:<br>**• number:** `number`, numeric to format. |
-| numberToModule11      | `string`     | `numberToModule11(number, codeTen)`<br><br>Calculates the module 11 check digit.<br><br>Arguments:<br>**• number:** `string`, value to validate (including check digit).<br>**• codeTen:** `string`, character to replace the check digit if it is 10. |
-| numberToModule23      | `string`     | `numberToModule23(number, map)`<br><br>Calculates the module 23 check digit.<br><br>Arguments:<br>**• number:** `string`, value to validate.<br>**• map:** `string`, mapping string. |
+| numberToString        | `string`     | `numberToString(number)`<br><br>Formats a number to string using `Number.prototype.wuiDefaults`.<br><br>Arguments:<br>**• number:** `number`, number to format. |
+| numberToSizeString    | `string`     | `numberToSizeString(number)`<br><br>Formats a number to file size (B, KB, MB, TB).<br><br>Arguments:<br>**• number:** `number`, number to format. |
+| numberToModule11      | `string`     | `numberToModule11(number, codeTen)`<br><br>Calculates the module 11 check digit.<br><br>Arguments:<br>**• number:** `string`, number to validate (including check digit).<br>**• codeTen:** `string`, character to replace the check digit if it is 10. |
+| numberToModule23      | `string`     | `numberToModule23(number, map)`<br><br>Calculates the module 23 check digit.<br><br>Arguments:<br>**• number:** `string`, number to validate.<br>**• map:** `string`, mapping string. |
 | validateDate          | `boolean`    | `validateDate(date, format)`<br><br>Validates a date string.<br><br>Arguments:<br>**• date:** `string`, date to validate.<br>**• format:** `string`, expected date format (default `"yyyy-mm-dd"` defined in `String.prototype.wuiDefaults.dateFormat`). |
 | validateEmail         | `boolean`    | `validateEmail(email)`<br><br>Validates an email address.<br><br>Arguments:<br>**• email:** `string`, email address. |
 | validateEmailList     | `boolean`    | `validateEmailList(list[, separator])`<br><br>Validates a list of email addresses.<br><br>Arguments:<br>**• list:** `string`, list of email addresses.<br>**• separator:** `string` *opcional*, list separator character(s). |
@@ -2804,8 +2804,8 @@ Tool for managing and validating `string`, `number` and `Date` data formats.
 | validateURL           | `boolean`    | `validateURL(url)`<br><br>Validates a URL address.<br><br>Arguments:<br><br>Parameters:<br>**• url:** `string`, URL address. |
 | validateURLList       | `boolean`    | `validateURLList(list[, separator])`<br><br>Validates a list of URLs.<br><br>Arguments:<br>**• list:** `string`, list of URL addresses.<br>**• separator:** `string` *opcional*, list separator character(s). |
 | validateIPv4          | `boolean`    | `validateIPv4(ipv4)`<br><br>Validates an IPv4 address.<br><br>Arguments:<br><br>Parameters:<br>**• ipv4:** `string`, IPv4 address. |
-| validateModule11      | `boolean`    | `validateModule11(number, codeTen)`<br><br>Validates the module 11 check digit.<br><br>Arguments:<br>**• number:** `string`, value to validate (including check digit).<br>**• codeTen:** `string`, character to replace the check digit if it is 10. |
-| validateModule23      | `boolean`    | `validateModule23(number, map)`<br><br>Validates the module 23 check digit.<br><br>Arguments:<br>**• number:** `string`, value to validate.<br>**• map:** `string`, mapping character string. |
+| validateModule11      | `boolean`    | `validateModule11(value, codeTen)`<br><br>Validate a string including the modulo 11 check digit.<br><br>Arguments:<br>**• value:** `string`, string to validate (including check digit).<br>**• codeTen:** `string`, character to replace the check digit if it is 10. |
+| validateModule23      | `boolean`    | `validateModule23(value, map)`<br><br>Validate a string including the modulo 23 check digit.<br><br>Arguments:<br>**• value:** `string`, string to validate (including check digit).<br>**• map:** `string`, mapping character string. |
 | validateNID           | `boolean`    | `validateNID(nid, countryCode)`<br><br>Validates a national identity document.<br><br>Arguments:<br>**• nid:** `string`, value to validate.<br>**• countryCode:** `string`, country code (`"CL"`, `"PY"`, `"ES"`). |
 | loadDate              | `Date`       | `loadDate(date, format)`<br><br>Loads a date from a string or numeric values.<br><br>Arguments:<br>**• date:** `string`, date to format.<br>**• format:** `string`, output format. |
 
