@@ -9,7 +9,7 @@
 
 Versión librería: `0.2.0` ([Registro de Cambio](./REGISTRODECAMBIO.md))
 
-Versión documentación: `0.2.0.20260113.0`
+Versión documentación: `0.2.0.20260120.0`
 
 Licencia: `Licencia Apache 2.0`
 
@@ -2793,22 +2793,23 @@ Herramienta para manejo y validación de formatos de datos de tipo `string`, `nu
 
 | Método                | Tipo retorno | Descripción |
 | --------------------- | ------------ | ----------- |
-| numberToString        | `string`     | `numberToString(number)`<br><br>Formatea un número a string usando `Number.prototype.wuiDefaults`.<br><br>Parámetros:<br>**• number:** `number`, número a formatear. |
-| numberToSizeString    | `string`     | `numberToSizeString(number)`<br><br>Formatea un número a tamaño de archivo (B, KB, MB, TB).<br><br>Parámetros:<br>**• number:** `number`, número a formatear. |
-| numberToModule11      | `string`     | `numberToModule11(number, codeTen)`<br><br>Calcula el dígito verificador módulo 11.<br><br>Parámetros:<br>**• number:** `string`, número a validar (incluido dígito verificador).<br>**• codeTen:** `string`, carácter por el que se reemplazará el dígito verificador en caso que sea 10. |
-| numberToModule23      | `string`     | `numberToModule23(number, map)`<br><br>Calcula el dígito verificador módulo 23.<br><br>Parámetros:<br>**• number:** `string`, número a validar.<br>**• map:** `string`, cadena de caracteres de mapeo. |
-| validateDate          | `boolean`    | `validateDate(date, format)`<br><br>Valida una fecha en formato string.<br><br>Parámetros:<br>**• date:** `string`, fecha a validar.<br>**• format:** `string`, formato de fecha esperado (por defecto `"yyyy-mm-dd"` definido en `String.prototype.wuiDefaults.dateFormat`). |
-| validateEmail         | `boolean`    | `validateEmail(email)`<br><br>Valida un correo electrónico.<br><br>Parámetros:<br>**• email:** `string`, dirección de correo. |
-| validateEmailList     | `boolean`    | `validateEmailList(list[, separator])`<br><br>Valida una lista de correos electrónicos.<br><br>Parámetros:<br>**• list:** `string`, lista de direcciones de correo.<br>**• separator:** `string` *opcional*, carácter(es) de separación de lista. |
-| validatePhone         | `boolean`    | `validatePhone(phone[, length])`<br><br>Valida un número de teléfono.<br><br>Parámetros:<br>**• phone:** `string`, número telefónico.<br>**• length:** `number` *opcional*, largo del número telefónico. |
-| validatePhoneList     | `boolean`    | `validatePhoneList(list[, length[, separator]])`<br><br>Valida una lista de números de teléfono.<br><br>Parámetros:<br>**• list:** `string`, lista de números telefónicos.<br>**• length:** `number` *opcional*, largo del número telefónico.<br>**• separator:** `string` *opcional*, carácter(es) de separación de lista. |
-| validateURL           | `boolean`    | `validateURL(url)`<br><br>Valida una dirección URL.<br><br>Parámetros:<br>**• url:** `string`, dirección URL. |
-| validateURLList       | `boolean`    | `validateURLList(list[, separator])`<br><br>Valida una lista de URLs.<br><br>Parámetros:<br>**• list:** `string`, lista de direcciones URL.<br>**• separator:** `string` *opcional*, carácter(es) de separación de lista. |
-| validateIPv4          | `boolean`    | `validateIPv4(ipv4)`<br><br>Valida una dirección IPv4.<br><br>Parámetros:<br>**• ipv4:** `string`, dirección de IPv4. |
-| validateModule11      | `boolean`    | `validateModule11(value, codeTen)`<br><br>Valida una cadena incluido el dígito verificador módulo 11.<br><br>Parámetros:<br>**• value:** `string`, cadena a validar (incluido dígito verificador).<br>**• codeTen:** `string`, carácter por el que se reemplazará el dígito verificador en caso que sea 10. |
-| validateModule23      | `boolean`    | `validateModule23(value, map)`<br><br>Valida una cadena incluido el dígito verificador módulo 23.<br><br>Parámetros:<br>**• value:** `string`, cadena a validar (incluido dígito verificador).<br>**• map:** `string`, cadena de caracteres de mapeo. |
-| validateNID           | `boolean`    | `validateNID(nid, countryCode)`<br><br>Valida un documento de identidad nacional.<br><br>Parámetros:<br>**• nid:** `string`, valor a validar.<br>**• countryCode:** `string`, código de país (`"CL"`, `"PY"`, `"ES"`). |
-| loadDate              | `Date`       | `loadDate(date, format)`<br><br>Carga una fecha desde un string o valores numéricos.<br><br>Parámetros:<br>**• date:** `string`, fecha a formatear.<br>**• format:** `string`, formato de salida. |
+| numberToString        | `string`     | `numberToString(number[, options])`<br><br>Parámetros:<br>**• number:** `number`, número a formatear.<br>**• options:** `Object` *opcional*, opciones de formateo.<br><br>Formatea un número a una cadena. |
+| numberToSizeString    | `string`     | `numberToSizeString(number)`<br><br>Parámetros:<br>**• number:** `number`, número a formatear.<br><br>Formatea un número a una cadena que representa el tamaño de archivo (B, KB, MB, TB). |
+| numberToModule11      | `string`     | `numberToModule11(number, codeTen)`<br><br>Parámetros:<br>**• number:** `string`, número a validar (incluido dígito verificador).<br>**• codeTen:** `string`, carácter por el que se reemplazará el dígito verificador en caso que sea 10.<br><br>Calcula el dígito verificador módulo 11. |
+| numberToModule23      | `string`     | `numberToModule23(number, map)`<br><br>Parámetros:<br>**• number:** `string`, número a validar.<br>**• map:** `string`, cadena de caracteres de mapeo.<br><br>Calcula el dígito verificador módulo 23. |
+| dateToString          | `string`     | `dateToString(date[, format[, options]])`<br><br>Parámetros:<br>**• date:** `Date`, fecha a formatear.<br>**• format:** `string` *opcional*, formato de fecha esperado (por defecto `"yyyy-mm-dd"`).<br>**• options:** `Object` *opcional*, opciones de formateo.<br><br>Formatea una fecha a cadena usando `Date.prototype.wuiDefaults`. |
+| validateDate          | `boolean`    | `validateDate(date[, format])`<br><br>Parámetros:<br>**• date:** `string`, fecha a validar.<br>**• format:** `string` *opcional*, formato de fecha esperado (por defecto `"yyyy-mm-dd"`).<br><br>Valida una fecha en formato cadena. |
+| validateEmail         | `boolean`    | `validateEmail(email)`<br><br>Parámetros:<br>**• email:** `string`, dirección de correo.<br><br>Valida una dirección de correo electrónico. |
+| validateEmailList     | `boolean`    | `validateEmailList(list[, separator])`<br><br>Parámetros:<br>**• list:** `string`, lista de direcciones de correo.<br>**• separator:** `string` *opcional*, carácter(es) de separación de lista.<br><br>Valida una lista de correos electrónicos. |
+| validatePhone         | `boolean`    | `validatePhone(phone[, length])`<br><br>Parámetros:<br>**• phone:** `string`, número telefónico.<br>**• length:** `number` *opcional*, largo del número telefónico.<br><br>Valida un número de teléfono. |
+| validatePhoneList     | `boolean`    | `validatePhoneList(list[, length[, separator]])`<br><br>Parámetros:<br>**• list:** `string`, lista de números telefónicos.<br>**• length:** `number` *opcional*, largo del número telefónico.<br>**• separator:** `string` *opcional*, carácter(es) de separación de lista.<br><br>Valida una lista de números de teléfono. |
+| validateURL           | `boolean`    | `validateURL(url)`<br><br>Parámetros:<br>**• url:** `string`, dirección URL.<br><br>Valida una dirección URL. |
+| validateURLList       | `boolean`    | `validateURLList(list[, separator])`<br><br>Parámetros:<br>**• list:** `string`, lista de direcciones URL.<br>**• separator:** `string` *opcional*, carácter(es) de separación de lista.<br><br>Valida una lista de URLs. |
+| validateIPv4          | `boolean`    | `validateIPv4(ipv4)`<br><br>Parámetros:<br>**• ipv4:** `string`, dirección de IPv4.<br><br>Valida una dirección IPv4. |
+| validateModule11      | `boolean`    | `validateModule11(value, codeTen)`<br><br>Parámetros:<br>**• value:** `string`, cadena a validar (incluido dígito verificador).<br>**• codeTen:** `string`, carácter por el que se reemplazará el dígito verificador en caso que sea 10.<br><br>Valida una cadena incluido el dígito verificador módulo 11. |
+| validateModule23      | `boolean`    | `validateModule23(value, map)`<br><br>Parámetros:<br>**• value:** `string`, cadena a validar (incluido dígito verificador).<br>**• map:** `string`, cadena de caracteres de mapeo.<br><br>Valida una cadena incluido el dígito verificador módulo 23. |
+| validateNID           | `boolean`    | `validateNID(nid, countryCode)`<br><br>Parámetros:<br>**• nid:** `string`, valor a validar.<br>**• countryCode:** `string`, código de país en formato ISO 3166-1 alpha-2 con soporte para CL, PY y ES.<br><br>Valida un documento de identidad nacional. |
+| loadDate              | `Date`       | `loadDate(date[, format[, options]])`<br><br>Parámetros:<br>**• date:** `string`, fecha a cargar.<br>**• format:** `string` *opcional*, formato de fecha.<br>**• options:** `object` *opcional*, opciones de fecha, según la definición de **Valores predeterminados** `<Date.prototype.wuiDefaults>`.<br><br>Carga una fecha a partir de una cadena. |
 
 #### Extensiones de Prototipo Number `Number.prototype`
 
@@ -2826,10 +2827,10 @@ Herramienta para manejo y validación de formatos de datos de tipo `string`, `nu
 
 | Método          | Tipo retorno | Descripción |
 | --------------- | ------------ | ----------- |
-| wuiToString     | `string`     | `wuiToString([options])`<br><br>Convierte a string con formato, según la definición de **Valores predeterminados** `<Number.prototype.wuiDefaults>`. |
-| wuiToSizeString | `string`     | `wuiToSizeString()`<br><br>Formatea un número a tamaño de archivo (B, KB, MB, TB). |
-| wuiToModule11   | `string`     | `wuiToModule11(codeTen)`<br><br>Calcula dígito verificador módulo 11.  |
-| wuiToModule23   | `string`     | `wuiToModule23(map)`<br><br>Calcula dígito verificador módulo 23. |
+| wuiToString     | `string`     | `wuiToString([options])`<br><br>Parámetros:<br>**• options:** `Object` *opcional*, opciones de formateo.<br><br>Formatea un número a una cadena. |
+| wuiToSizeString | `string`     | `wuiToSizeString()`<br><br>Formatea un número a una cadena que representa el tamaño de archivo (B, KB, MB, TB). |
+| wuiToModule11   | `string`     | `wuiToModule11(codeTen)`<br><br>Parámetros:<br>**• codeTen:** `string`, carácter por el que se reemplazará el dígito verificador en caso que sea 10.<br><br>Calcula el dígito verificador módulo 11. |
+| wuiToModule23   | `string`     | `wuiToModule23(map)`<br><br>Parámetros:<br>**• map:** `string`, cadena de caracteres de mapeo.<br><br>Calcula el dígito verificador módulo 23. |
 
 #### Extensiones de Prototipo String `String.prototype`
 
@@ -2838,7 +2839,7 @@ Herramienta para manejo y validación de formatos de datos de tipo `string`, `nu
 | Propiedad          | Tipo     | Valor predeterminado | Descripción |
 | ------------------ | -------- | -------------------- | ----------- |
 | emailListSeparator | `string` | `","`                | Separador compuesto por uno o más caracteres utilizada para la validación de listas de direcciones de correos. |
-| phoneLength        | `number` | `9`                  | Largo requerido para la validación de un número de teléfono. |
+| phoneLength        | `number` | `10`                 | Largo requerido para la validación de un número de teléfono. |
 | phoneListSeparator | `string` | `","`                | Separador compuesto por uno o más caracteres utilizada para la validación de listas de números de teléfono. |
 | urlListSeparator   | `string` | `","`                | Separador compuesto por uno o más caracteres utilizada para la validación de listas de direcciones URLs. |
 
@@ -2846,17 +2847,17 @@ Herramienta para manejo y validación de formatos de datos de tipo `string`, `nu
 
 | Método               | Tipo retorno | Descripción |
 | -------------------- | ------------ | ----------- |
-| wuiValidateDate      | `boolean`    | `wuiValidateDate([format])`<br><br>Valida si el string es una fecha válida. |
-| wuiValidateEmail     | `boolean`    | `wuiValidateEmail()`<br><br>Valida si el string es un email válido. |
-| wuiValidateEmailList | `boolean`    | `wuiValidateEmailList([separator])`<br><br>Valida lista de emails. |
-| wuiValidatePhone     | `boolean`    | `wuiValidatePhone([length])`<br><br>Valida número de teléfono. |
-| wuiValidatePhoneList | `boolean`    | `wuiValidatePhoneList([length, separator])`<br><br>Valida lista de teléfonos. |
-| wuiValidateURL       | `boolean`    | `wuiValidateURL()`<br><br>Valida URL. |
-| wuiValidateURLList   | `boolean`    | `wuiValidateURLList([separator])`<br><br>Valida lista de URLs. |
-| wuiValidateIPv4      | `boolean`    | `wuiValidateIPv4()`<br><br>Valida IPv4. |
-| wuiValidateModule11  | `boolean`    | `wuiValidateModule11(codeTen)`<br><br>Parámetros:<br>**• codeTen:** `string`, carácter de verificador si el digito de verificación es 10.<br><br>Valida módulo 11. |
-| wuiValidateModule23  | `boolean`    | `wuiValidateModule23(map)`<br><br>Valida módulo 23. |
-| wuiValidateNID       | `boolean`    | `wuiValidateNID(countryCode)`<br><br>Valida documento de identidad. |
+| wuiValidateDate      | `boolean`    | `wuiValidateDate([format])`<br><br>Parámetros:<br>**• format:** `string` *opcional*, formato de fecha esperado (por defecto `"yyyy-mm-dd"`).<br><br>Valida una fecha en formato cadena. |
+| wuiValidateEmail     | `boolean`    | `wuiValidateEmail()`<br><br>Valida una dirección de correo electrónico. |
+| wuiValidateEmailList | `boolean`    | `wuiValidateEmailList([separator])`<br><br>Parámetros:<br>**• separator:** `string` *opcional*, carácter(es) de separación de lista.<br><br>Valida una lista de correos electrónicos. |
+| wuiValidatePhone     | `boolean`    | `wuiValidatePhone([length])`<br><br>Parámetros:<br>**• length:** `number` *opcional*, largo del número telefónico.<br><br>Valida un número de teléfono. |
+| wuiValidatePhoneList | `boolean`    | `wuiValidatePhoneList([length, separator])`<br><br>Parámetros:<br>**• length:** `number` *opcional*, largo del número telefónico.<br>**• separator:** `string` *opcional*, carácter(es) de separación de lista.<br><br>Valida una lista de números de teléfono. |
+| wuiValidateURL       | `boolean`    | `wuiValidateURL()`<br><br>Valida una dirección URL. |
+| wuiValidateURLList   | `boolean`    | `wuiValidateURLList([separator])`<br><br>Parámetros:<br>**• separator:** `string` *opcional*, carácter(es) de separación de lista.<br><br>Valida una lista de URLs. |
+| wuiValidateIPv4      | `boolean`    | `wuiValidateIPv4()`<br><br>Valida una dirección IPv4. |
+| wuiValidateModule11  | `boolean`    | `wuiValidateModule11(codeTen)`<br><br>Parámetros:<br>**• codeTen:** `string`, carácter por el que se reemplazará el dígito verificador en caso que sea 10.<br><br>Valida una cadena incluido el dígito verificador módulo 11. |
+| wuiValidateModule23  | `boolean`    | `wuiValidateModule23(map)`<br><br>Parámetros:<br>**• map:** `string`, cadena de caracteres de mapeo.<br><br>Valida una cadena incluido el dígito verificador módulo 23. |
+| wuiValidateNID       | `boolean`    | `wuiValidateNID(countryCode)`<br><br>Parámetros:<br>**• countryCode:** `string`, código de país en formato ISO 3166-1 alpha-2 con soporte para CL, PY y ES.<br><br>Valida un documento de identidad nacional. |
 
 #### Extensiones de Prototipo Date `Date.prototype`
 
@@ -2864,17 +2865,60 @@ Herramienta para manejo y validación de formatos de datos de tipo `string`, `nu
 
 | Propiedad      | Tipo            | Valor predeterminado    | Descripción |
 | -------------- | --------------- | ----------------------- | ----------- |
+| utc            | `boolean`       | `false`                 | Indica si se debe usar la hora universal coordinada (UTC). |
 | locales        | `string`        | `"en-US"`               | Código de configuración regional en formato `<ISO 639-1>-<ISO 3166-1 alpha-2>`. Por ejemplo: `es-CL`, `en-US`, `fr-FR`, etc. |
-| dateFormat     | `string`        | `"yyyy-mm-dd"`          | 
-| timeFormat     | `string`        | `"hh:MM:ss"`            | 
-| datetimeFormat | `string`        | `"yyyy-mm-dd hh:MM:ss"` | 
+| dateFormat     | `string`        | `"yyyy-mm-dd"`          | Formato de fecha, según la definición de **Partes del formato de fecha/hora**.|
+| timeFormat     | `string`        | `"hh:MM:ss"`            | Formato de hora, según la definición de **Partes del formato de fecha/hora**. |
+| datetimeFormat | `string`        | `"yyyy-mm-dd hh:MM:ss"` | Formato de fecha/hora, según la definición de **Partes del formato de fecha/hora**. |
+
+##### Partes del formato de fecha/hora
+
+| Parte  | Descripción |
+| ------ | ----------- |
+| yyyy   | Año en formato de 4 digitos. |
+| yy     | Año en formato de 2 digitos. |
+| mmmm   | Mes en formato nombre completo. |
+| mmm    | Mes en formato de las primeras 3 iniciales del nombre. |
+| mm     | Mes en formato de 2 digitos. |
+| m      | Mes en formato de número entero. |
+| dd     | Día del mes en formato de 2 digitos. |
+| d      | Día del mes en formato de número entero. |
+| DDDD   | Nombre del día de la semana en formato nombre completo. |
+| DDD    | Nombre del día de la semana en formato de las primeras 3 iniciales del nombre. |
+| DD     | Nombre del día de la semana en formato de las primeras 2 iniciales del nombre. |
+| D      | Nombre del día de la semana en formato de número entero. |
+| hh     | Hora en formato de 2 digitos. |
+| h      | Hora en formato de número entero. |
+| MM     | Minuto en formato de 2 digitos. |
+| M      | Minuto en formato de número entero. |
+| ss     | Segundo en formato de 2 digitos. |
+| s      | Segundo en formato de número entero. |
+| zzz    | Milisegundo en formato de 3 digitos. |
+| z      | Milisegundo en formato de número entero. |
+| offset | Offset UTC en formato ±hhMM. |
+| o      | Offset UTC en formato de número entero. |
+
+##### Formatos predefinidos
+
+| Formato                                       | Valor |
+| --------------------------------------------- | ----- |
+| `"defaultdate\|dateformat\|date"`             | `Date.prototype.wuiDefaults.dateFormat` |
+| `"defaulttime\|timeformat\|time"`             | `Date.prototype.wuiDefaults.timeFormat` |
+| `"defaultdatetime\|datetimeformat\|datetime"` | `Date.prototype.wuiDefaults.datetimeFormat` |
+| `"standard"`                                  | `"yyyy-mm-dd hh:MM:ss"` |
+| `"numeric"`                                   | `"yyyymmddhhMMss"` |
+| `"longtime"`                                  | `"yyyy-mm-ddThh:MM:ss"` |
+| `"rfc3339\|atom"`                             | `"yyyy-mm-ddThh:MM:ss.zzzZ"` |
+| `"rfc1123\|cookie"`                           | `"DDD, dd-mmm-yyyy hh:MM:ss GMT"` |
+| `"rfc2616"`                                   | `"DDD, dd mmm yyyy hh:MM:ss GMT"` |
+| `"rfc3501"`                                   | `"d-mmm-yyyy hh:MM:ss offset"` |
 
 ##### Métodos
 
 | Método         | Tipo retorno | Descripción |
 | -------------- | ------------ | ----------- |
-| wuiLoad        | `Date`       | `wuiLoad(value[, format, options])`<br><br>Carga fecha. |
-| wuiToString    | `string`     | `wuiToString([format, options])`<br><br>Convierte fecha a string. |
+| wuiLoad        | `Date`       | `wuiLoad(value[, format[, options]])`<br><br>Parámetros:<br>**• value:** `string`, fecha a cargar.<br>**• format:** `string` *opcional*, formato de fecha.<br>**• options:** `object` *opcional*, opciones de fecha, según la definición de **Valores predeterminados** `<Date.prototype.wuiDefaults>`.<br><br>Carga una fecha a partir de una cadena. |
+| wuiToString    | `string`     | `wuiToString([format[, options]])`<br><br>Parámetros:<br>**• format:** `string` *opcional*, formato de fecha.<br>**• options:** `object` *opcional*, opciones de fecha, según la definición de **Valores predeterminados** `<Date.prototype.wuiDefaults>`.<br><br>Convierte una fecha a cadena. |
 
 #### Implementación
 
@@ -2899,7 +2943,8 @@ HTML code:
 ```html
 <div class="my-output number"></div>
 <div class="my-output email"></div>
-<div class="my-output date"></div>
+<div class="my-output localDatetime"></div>
+<div class="my-output utcDatetime"></div>
 ```
 
 Código JS:
@@ -2917,17 +2962,25 @@ const numberOutput = document.body.querySelector(".my-output.number");
 const numberFormatting = number.wuiToString({ numberPrefix: "$ " });
 numberOutput.textContent = `number: ${number} - formatting: ${numberFormatting}`;
 
-// Validación correo
+// Validación de correo
 const email = "test@example.com";
 const emailOutput = document.body.querySelector(".my-output.email");
 const emailValidation = email.wuiValidateEmail();
 emailOutput.textContent = `email: ${email} - validation: ${emailValidation}`;
 
-// Formateo de fechas
+// Formateo de fecha/hora local
 const dateLoadFormat = "yyyy-mm-dd";
 const date = new Date().wuiLoad("2023-12-31", dateLoadFormat);
-const dateOutput = document.body.querySelector(".my-output.date");
-const dateFormat = "dd/mm/yyyy";
+const dateOutput = document.body.querySelector(".my-output.localDatetime");
+const dateFormat = "dd/mm/yyyy hh:MM";
+const dateFormatting = date.wuiToString(dateFormat);
+dateOutput.textContent = `date: ${date} - format: ${dateFormat} - formatting: ${dateFormatting}`;
+
+// Formateo de fecha/hora UTC
+const dateLoadFormat = "yyyy-mm-dd";
+const date = new Date().wuiLoad("2023-12-31", dateLoadFormat);
+const dateOutput = document.body.querySelector(".my-output.utcDatetime");
+const dateFormat = "dd/mm/yyyy hh:MM GMT";
 const dateFormatting = date.wuiToString(dateFormat);
 dateOutput.textContent = `date: ${date} - format: ${dateFormat} - formatting: ${dateFormatting}`;
 ```

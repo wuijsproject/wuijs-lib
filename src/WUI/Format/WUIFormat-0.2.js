@@ -12,68 +12,72 @@ class WUIFormat {
 		Date.prototype.wuiLoadNames();
 	}
 
-	static numberToString(value) {
-		return typeof (value) == "number" ? value.wuiToString() : "error";
+	static numberToString(number, options) {
+		return typeof (number) == "number" ? number.wuiToString(options) : "error";
 	}
 
-	static numberToSizeString(value) {
-		return typeof (value) == "number" ? value.wuiToSizeString() : "error";
+	static numberToSizeString(number) {
+		return typeof (number) == "number" ? number.wuiToSizeString() : "error";
 	}
 
-	static numberToModule11(value, codeTen) {
-		return typeof (value) == "number" && codeTen != null ? value.wuiToModule11(codeTen) : "error";
+	static numberToModule11(number, codeTen) {
+		return typeof (number) == "number" && codeTen != null ? number.wuiToModule11(codeTen) : "error";
 	}
 
-	static numberToModule23(value, map) {
-		return typeof (value) == "number" ? value.wuiToModule23(map) : "error";
+	static numberToModule23(number, map) {
+		return typeof (number) == "number" ? number.wuiToModule23(map) : "error";
 	}
 
-	static validateDate(value, format) {
-		return typeof (value) == "string" ? value.wuiValidateDate(format) : false;
+	static dateToString(date, format, options) {
+		return date instanceof Date ? date.wuiToString(format, options) : "error";
 	}
 
-	static validateEmail(value) {
-		return typeof (value) == "string" ? value.wuiValidateEmail() : false;
+	static validateDate(date, format) {
+		return typeof (date) == "string" ? date.wuiValidateDate(format) : false;
 	}
 
-	static validateEmailList(value, separator) {
-		return typeof (value) == "string" ? value.wuiValidateEmailList(separator) : false;
+	static validateEmail(email) {
+		return typeof (email) == "string" ? email.wuiValidateEmail() : false;
 	}
 
-	static validatePhone(value, length) {
-		return typeof (value) == "string" ? value.wuiValidatePhone(length) : false;
+	static validateEmailList(list, separator) {
+		return typeof (list) == "string" ? list.wuiValidateEmailList(separator) : false;
 	}
 
-	static validatePhoneList(value, length, separator) {
-		return typeof (value) == "string" ? value.wuiValidatePhoneList(length, separator) : false;
+	static validatePhone(phone, length) {
+		return typeof (phone) == "string" ? phone.wuiValidatePhone(length) : false;
 	}
 
-	static validateURL(value) {
-		return typeof (value) == "string" ? value.wuiValidateURL() : false;
+	static validatePhoneList(list, length, separator) {
+		return typeof (list) == "string" ? list.wuiValidatePhoneList(length, separator) : false;
 	}
 
-	static validateURLList(value, separator) {
-		return typeof (value) == "string" ? value.wuiValidateURLList(separator) : false;
+	static validateURL(url) {
+		return typeof (url) == "string" ? url.wuiValidateURL() : false;
 	}
 
-	static validateIPv4(value) {
-		return typeof (value) == "string" ? value.wuiValidateIPv4() : false;
+	static validateURLList(list, separator) {
+		return typeof (list) == "string" ? list.wuiValidateURLList(separator) : false;
 	}
 
-	static validateModule11(value, codeTen) {
-		return typeof (value) == "string" && codeTen != null ? value.wuiValidateModule11(codeTen) : false;
+	static validateIPv4(ipv4) {
+		return typeof (ipv4) == "string" ? ipv4.wuiValidateIPv4() : false;
 	}
 
-	static validateModule23(value, map) {
-		return typeof (value) == "string" ? value.wuiValidateModule23(map) : false;
+	static validateModule11(number, codeTen) {
+		return typeof (number) == "number" && codeTen != null ? number.wuiValidateModule11(codeTen) : false;
 	}
 
-	static validateNID(value, countryCode) {
-		return typeof (value) == "string" ? value.wuiValidateNID(countryCode) : false;
+	static validateModule23(number, map) {
+		return typeof (number) == "number" ? number.wuiValidateModule23(map) : false;
 	}
 
-	static loadDate(value, format) {
-		return Date.prototype.wuiLoad(value, format);
+	static validateNID(nid, countryCode) {
+		return typeof (nid) == "string" ? nid.wuiValidateNID(countryCode) : false;
+	}
+
+	static loadDate(date, format) {
+		return Date.prototype.wuiLoad(date, format);
 	}
 }
 
@@ -86,8 +90,11 @@ Number.prototype.wuiDefaults = {
 }
 
 Number.prototype.wuiToString = function (options = {}) {
-	Object.keys(this.wuiDefaults).forEach(key => {
-		options[key] = typeof (options) != "undefined" && key in options ? options[key] : this.wuiDefaults[key];
+	const defaults = structuredClone(this.wuiDefaults);
+	Object.entries(defaults).forEach(([name, value]) => {
+		if (!(name in options)) {
+			options[name] = value;
+		}
 	});
 	let
 		number = parseFloat(this),
@@ -133,7 +140,7 @@ Number.prototype.wuiToModule23 = function (map) {
 
 String.prototype.wuiDefaults = {
 	emailListSeparator: ",",
-	phoneLength: 9,
+	phoneLength: 10,
 	phoneListSeparator: ",",
 	urlListSeparator: ","
 }
@@ -170,10 +177,7 @@ String.prototype.wuiConstants = {
 }
 
 String.prototype.wuiValidateDate = function (format = "default") {
-	const pattern =
-		format == "default" ? this.wuiDefaults.dateFormat :
-			format == "standard" ? "yyyy-mm-dd" :
-				format;
+	const pattern = format == "default" ? this.wuiDefaults.dateFormat : format == "standard" ? "yyyy-mm-dd" : format;
 	let valid = true;
 	if (this == null || this == "") {
 		valid = false;
@@ -318,6 +322,7 @@ Date.prototype.wuiConstants = {
 }
 
 Date.prototype.wuiDefaults = {
+	utc: false,
 	locales: "en-US",
 	dateFormat: "yyyy-mm-dd",
 	timeFormat: "hh:MM:ss",
@@ -341,14 +346,17 @@ Date.prototype.wuiLoadNames = function () {
 }
 
 Date.prototype.wuiLoad = function (value, format = "default", options = {}) {
-	Object.keys(this.wuiDefaults).forEach(key => {
-		options[key] = typeof (options) != "undefined" && key in options ? options[key] : this.wuiDefaults[key];
+	const defaults = structuredClone(this.wuiDefaults);
+	Object.entries(defaults).forEach(([name, value]) => {
+		if (!(name in options)) {
+			options[name] = value;
+		}
 	});
 	let string = "";
 	switch (format.toLowerCase()) {
 		case "default":
 		case "defaultdatetime":
-		case "defaultformat": string = options.datetimeFormat; break;
+		case "datetimeformat": string = options.datetimeFormat; break;
 		case "standard": string = "yyyy-mm-dd hh:MM:ss"; break;
 		case "numeric": string = "yyyy mm dd hh MM ss"; break;
 		case "longtime": string = "yyyy-mm-dd T hh:MM:ss"; break;
@@ -380,18 +388,28 @@ Date.prototype.wuiLoad = function (value, format = "default", options = {}) {
 
 Date.prototype.wuiToString = function (format = "default", options = {}) {
 	if (isNaN(this)) return "invalid date";
+	switch (format.toLowerCase()) {
+		case "atom":
+		case "rfc3339": return this.toISOString();
+		case "cookie":
+		case "rfc1123":
+		case "rfc2616": return this.toUTCString();
+	}
 	Object.keys(this.wuiDefaults).forEach(key => {
 		options[key] = typeof (options) != "undefined" && key in options ? options[key] : this.wuiDefaults[key];
 	});
-	const year = this.getFullYear(),
-		month = this.getMonth() + 1,
+	const utc = options.utc || format.match(/\b(GMT|UTC|Z)\b/) || false;
+	const year = utc ? this.getUTCFullYear() : this.getFullYear(),
+		month = utc ? this.getUTCMonth() + 1 : this.getMonth() + 1,
 		monthName = options.monthsNames[month - 1],
-		day = this.getDate(),
-		weekDay = this.getDay(),
+		day = utc ? this.getUTCDate() : this.getDate(),
+		weekDay = utc ? this.getUTCDay() : this.getDay(),
 		weekDayName = options.weekDaysNames[weekDay],
-		hour = this.getHours(),
-		minute = this.getMinutes(),
-		second = this.getSeconds();
+		hour = utc ? this.getUTCHours() : this.getHours(),
+		minute = utc ? this.getUTCMinutes() : this.getMinutes(),
+		second = utc ? this.getUTCSeconds() : this.getSeconds(),
+		milliseconds = utc ? this.getUTCMilliseconds() : this.getMilliseconds(),
+		offset = utc ? 0 : -this.getTimezoneOffset();
 	const patterns = {
 		"yyyy": year,
 		"yy": year.toString().substring(2, 2),
@@ -410,13 +428,21 @@ Date.prototype.wuiToString = function (format = "default", options = {}) {
 		"MM": ("0" + minute).slice(-2),
 		"M": minute,
 		"ss": ("0" + second).slice(-2),
-		"s": second
+		"s": second,
+		"zzz": ("0" + milliseconds).slice(-3),
+		"z": milliseconds,
+		"offset": (() => {
+			const sign = offset >= 0 ? "+" : "-";
+			const minutes = Math.abs(offset);
+			return sign + String(Math.floor(minutes / 60)).padStart(2, "0") + String(minutes % 60).padStart(2, "0");
+		})(),
+		"o": offset
 	};
 	let string = "";
 	switch (format.toLowerCase()) {
 		case "default":
 		case "defaultdatetime":
-		case "defaultformat": string = options.datetimeFormat; break;
+		case "datetimeformat": string = options.datetimeFormat; break;
 		case "date":
 		case "defaultdate":
 		case "dateformat": string = options.dateFormat; break;
@@ -427,11 +453,11 @@ Date.prototype.wuiToString = function (format = "default", options = {}) {
 		case "numeric": string = "yyyy mm dd hh MM ss"; break;
 		case "longtime": string = "yyyy-mm-dd T hh:MM:ss"; break;
 		case "atom":
-		case "rfc3339": string = "yyyy-mm-dd T hh:MM:ss zzz"; break;
+		/*case "rfc3339": string = "yyyy-mm-dd T hh:MM:ss.zzz Z"; break;
 		case "cookie":
 		case "rfc1123": string = "DDD, dd-mmm-yyyy hh:MM:ss GMT"; break;
-		case "rfc2616": string = "DDD, dd mmm yyyy hh:MM:ss GMT"; break;
-		case "rfc3501": string = "d-mmm-yyyy hh:MM:ss zzzzz"; break;
+		case "rfc2616": string = "DDD, dd mmm yyyy hh:MM:ss GMT"; break;*/
+		case "rfc3501": string = "d-mmm-yyyy hh:MM:ss offset"; break;
 		default: string = format; break;
 	}
 	for (let p in patterns) {
