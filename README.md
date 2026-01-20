@@ -2861,6 +2861,13 @@ Tool for managing and validating `string`, `number` and `Date` data formats.
 
 ##### Defaults `Date.prototype.wuiDefaults`
 
+| Property       | Type            | Default value           | Description |
+| -------------- | --------------- | ----------------------- | ----------- |
+| locales        | `string`        | `"en-US"`               | Locale code in `<ISO 639-1>-<ISO 3166-1 alpha-2>` format. For example: `es-CL`, `en-US`, `fr-FR`, etc. |
+| dateFormat     | `string`        | `"yyyy-mm-dd"`          | 
+| timeFormat     | `string`        | `"hh:MM:ss"`            | 
+| datetimeFormat | `string`        | `"yyyy-mm-dd hh:MM:ss"` | 
+
 ##### Methods
 
 | Method         | Return type  | Description |

@@ -2862,6 +2862,13 @@ Herramienta para manejo y validación de formatos de datos de tipo `string`, `nu
 
 ##### Valores predeterminados `Date.prototype.wuiDefaults`
 
+| Propiedad      | Tipo            | Valor predeterminado    | Descripción |
+| -------------- | --------------- | ----------------------- | ----------- |
+| locales        | `string`        | `"en-US"`               | Código de configuración regional en formato `<ISO 639-1>-<ISO 3166-1 alpha-2>`. Por ejemplo: `es-CL`, `en-US`, `fr-FR`, etc. |
+| dateFormat     | `string`        | `"yyyy-mm-dd"`          | 
+| timeFormat     | `string`        | `"hh:MM:ss"`            | 
+| datetimeFormat | `string`        | `"yyyy-mm-dd hh:MM:ss"` | 
+
 ##### Métodos
 
 | Método         | Tipo retorno | Descripción |
