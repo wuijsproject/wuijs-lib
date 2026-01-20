@@ -7,19 +7,8 @@
 class WUIFormat {
 
 	static version = "0.2";
-	static platform = null;
-	static systemName = null;
 
 	static _initClass() {
-		this.platform = navigator.userAgentData?.platform || navigator.platform;
-		this.systemName =
-			this.platform.match(/iphone|ipad/i) ? ("iOS"
-			) : this.platform.match(/android/i) ? ("Android"
-			) : this.platform.match(/mac/i) ? ("macOS"
-			) : this.platform.match(/linux/i) ? ("Linux"
-			) : this.platform.match(/windows phone|windows mobile/i) ? ("Windows Phone"
-			) : this.platform.match(/win/i) ? ("Windows"
-			) : "";
 		Date.prototype.wuiLoadNames();
 	}
 
