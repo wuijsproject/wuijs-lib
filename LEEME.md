@@ -2901,26 +2901,26 @@ Herramienta para manejo y validación de formatos de datos de tipo `string`, `nu
 
 ##### Formatos de carga predefinidos
 
-| Formato                                                | Valor |
-| ------------------------------------------------------ | ----- |
-| `"defaultdatetime\|datetimeformat\|datetime\|default"` | `Date.prototype.wuiDefaults.datetimeFormat` |
-| `"numeric"`                                            | `"yyyymmddhhMMss"` |
-| `"standard"`                                           | `"yyyy-mm-dd hh:MM:ss"` |
-| `"longtime"`                                           | `"yyyy-mm-ddThh:MM:ss"` |
+| Formato               | Valor |
+| --------------------- | ----- |
+| `"datetime\|default"` | `Date.prototype.wuiDefaults.datetimeFormat` |
+| `"numeric"`           | `"yyyymmddhhMMss"` |
+| `"standard"`          | `"yyyy-mm-dd hh:MM:ss"` |
+| `"longtime"`          | `"yyyy-mm-ddThh:MM:ss"` |
 
 ##### Formatos de salida predefinidos
 
-| Formato                                                | Valor |
-| ------------------------------------------------------ | ----- |
-| `"defaultdatetime\|datetimeformat\|datetime\|default"` | `Date.prototype.wuiDefaults.datetimeFormat` |
-| `"defaultdate\|dateformat\|date"`                      | `Date.prototype.wuiDefaults.dateFormat` |
-| `"defaulttime\|timeformat\|time"`                      | `Date.prototype.wuiDefaults.timeFormat` |
-| `"numeric"`                                            | `"yyyymmddhhMMss"` |
-| `"standard"`                                           | `"yyyy-mm-dd hh:MM:ss"` |
-| `"longtime"`                                           | `"yyyy-mm-ddThh:MM:ss"` |
-| `"rfc3339\|atom"`                                      | `"yyyy-mm-ddThh:MM:ss.SSSZ"` |
-| `"rfc1123\|rfc2616\|cookie"`                           | `"DDD, dd-mmm-yyyy hh:MM:ss GMT"` |
-| `"rfc3501"`                                            | `"dd-mmm-yyyy hh:MM:ss tz"` |
+| Formato                      | Valor |
+| ---------------------------- | ----- |
+| `"datetime\|default"`        | `Date.prototype.wuiDefaults.datetimeFormat` |
+| `"date"`                     | `Date.prototype.wuiDefaults.dateFormat` |
+| `"time"`                     | `Date.prototype.wuiDefaults.timeFormat` |
+| `"numeric"`                  | `"yyyymmddhhMMss"` |
+| `"standard"`                 | `"yyyy-mm-dd hh:MM:ss"` |
+| `"longtime"`                 | `"yyyy-mm-ddThh:MM:ss"` |
+| `"rfc3339\|atom"`            | `"yyyy-mm-ddThh:MM:ss.SSSZ"` |
+| `"rfc1123\|rfc2616\|cookie"` | `"DDD, dd-mmm-yyyy hh:MM:ss GMT"` |
+| `"rfc3501"`                  | `"dd-mmm-yyyy hh:MM:ss tz"` |
 
 ##### Métodos
 
