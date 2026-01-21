@@ -399,7 +399,7 @@ div.wui-menubar > :is(.bar, .submenu) > :is(.top, .main, .bottom) > .button > :i
 		overflow: visible;
 	}
 
-	div.wui-menubar > .submenu > .header > .close > .icon {
+	div.wui-menubar > .submenu > .header > .close {
 		margin-left: calc(2 * var(--wui-menubar-borderradius) + 2px);
 	}
 
