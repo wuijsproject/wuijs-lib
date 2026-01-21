@@ -185,6 +185,7 @@ class WUIMenubar {
 			this.#htmlElements.barMain.className = "main";
 			this.#htmlElements.barBottom.className = "bottom";
 			this.#htmlElements.submenu.className = "submenu";
+			this.#htmlElements.submenu.append(this.#htmlElements.submenuHeader);
 			this.#htmlElements.submenu.append(this.#htmlElements.submenuMain);
 			this.#htmlElements.submenuHeader.className = "header";
 			this.#htmlElements.submenuMain.className = "main";
@@ -210,7 +211,6 @@ class WUIMenubar {
 				this.#htmlElements.closeIcon.className = "icon";
 				this.#htmlElements.closeIcon.style.maskImage = this.#getSRCIcon("opener-close");
 				this.#htmlElements.close.addEventListener("click", () => {
-					this.#htmlElement.classList.toggle("expanded");
 					this.close();
 				});
 				this.#htmlElements.submenuHeader.append(this.#htmlElements.close);
