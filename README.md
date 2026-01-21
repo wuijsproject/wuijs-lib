@@ -2894,8 +2894,9 @@ Tool for managing and validating `string`, `number` and `Date` data formats.
 | s      | Second in integer number format. |
 | zzz    | Milisecond in 3 digits format. |
 | z      | Milisecond in integer number format. |
-| offset | UTC offset in ±hhMM format. |
-| o      | UTC offset in integer number format. |
+| o      | Time zone offset in integer number format. |
+| TZ     | Time zone offset in "±hhMM" format. |
+| GMT    | Time zone offset in "GMT±hhMM" format. |
 
 ##### Predefined formats
 
@@ -2942,8 +2943,8 @@ HTML code:
 ```html
 <div class="my-output number"></div>
 <div class="my-output email"></div>
-<div class="my-output localDatetime"></div>
-<div class="my-output utcDatetime"></div>
+<div class="my-output localDate"></div>
+<div class="my-output utcDate"></div>
 ```
 
 JS code:
@@ -2968,20 +2969,20 @@ const emailValidation = email.wuiValidateEmail();
 emailOutput.textContent = `email: ${email} - validation: ${emailValidation}`;
 
 // Local date/time formatting
-const dateLoadFormat = "yyyy-mm-dd";
-const date = new Date().wuiLoad("2023-12-31", dateLoadFormat);
-const dateOutput = document.body.querySelector(".my-output.localDatetime");
-const dateFormat = "dd/mm/yyyy hh:MM";
-const dateFormatting = date.wuiToString(dateFormat);
-dateOutput.textContent = `date: ${date} - format: ${dateFormat} - formatting: ${dateFormatting}`;
+const localDateLoadFormat = "yyyy-mm-dd";
+const localDate = new Date().wuiLoad("2023-12-31", localDateLoadFormat);
+const localDateOutput = document.body.querySelector(".my-output.localDate");
+const localDateFormat = "dd/mm/yyyy hh:MM GMT";
+const localDateFormatting = localDate.wuiToString(localDateFormat, { utc: false });
+localDateOutput.textContent = `local date: ${localDate} - format: ${localDateFormat} - formatting: ${localDateFormatting}`;
 
 // UTC date/time formatting
-const dateLoadFormat = "yyyy-mm-dd";
-const date = new Date().wuiLoad("2023-12-31", dateLoadFormat);
-const dateOutput = document.body.querySelector(".my-output.utcDatetime");
-const dateFormat = "dd/mm/yyyy hh:MM GMT";
-const dateFormatting = date.wuiToString(dateFormat);
-dateOutput.textContent = `date: ${date} - format: ${dateFormat} - formatting: ${dateFormatting}`;
+const utcDateLoadFormat = "yyyy-mm-dd";
+const utcDate = new Date().wuiLoad("2023-12-31", utcDateLoadFormat);
+const utcDateOutput = document.body.querySelector(".my-output.utcDate");
+const utcDateFormat = "dd/mm/yyyy hh:MM GMT";
+const utcDateFormatting = utcDate.wuiToString(utcDateFormat, { utc: true });
+utcDateOutput.textContent = `utc date: ${utcDate} - format: ${utcDateFormat} - formatting: ${utcDateFormatting}`;
 ```
 
 > [!TIP]

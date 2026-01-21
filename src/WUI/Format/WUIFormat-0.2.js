@@ -366,20 +366,42 @@ Date.prototype.wuiLoad = function (value, format = "default", options = {}) {
 	const values = value.split(/\W+/);
 	if (values.length == strings.length) {
 		for (let i = 0; i < strings.length; i++) {
-			const str = strings[i];
-			const val = parseInt(values[i]);
-			if (str.match(/^(yyyy|yy)$/)) {
-				this.setFullYear(val + (str == "yy" ? 2000 : 0));
-			} else if (str.match(/^(mm|m)$/)) {
-				this.setMonth(val - 1);
-			} else if (str.match(/^(dd|d)$/)) {
-				this.setDate(val);
-			} else if (str.match(/^(hh|h)$/)) {
-				this.setHours(val);
-			} else if (str.match(/^(MM|M)$/)) {
-				this.setMinutes(val);
-			} else if (str.match(/^(ss|s)$/)) {
-				this.setSeconds(val);
+			const key = strings[i];
+			let value = parseInt(values[i]);
+			if (key.match(/^(yyyy|yy)$/)) {
+				value = value + (key == "yy" ? 2000 : 0);
+				if (options.utc) {
+					this.setUTCFullYear(value);
+				} else {
+					this.setFullYear(value);
+				}
+			} else if (key.match(/^(mm|m)$/)) {
+				value--;
+				if (options.utc) {
+					this.setUTCMonth(value);
+				} else {
+					this.setMonth(value);
+				}
+			} else if (key.match(/^(dd|d)$/)) {
+				if (options.utc) {
+					this.setUTCDate(value);
+				} else {
+					this.setDate(value);
+				}
+			} else if (key.match(/^(hh|h)$/)) {
+				if (options.utc) {
+					this.setUTCHours(value);
+				} else {
+					this.setHours(value);
+				}
+			} else if (key.match(/^(MM|M)$/)) {
+				if (options.utc) {
+					this.setUTCMinutes(value);
+				} else {
+					this.setMinutes(value);
+				}
+			} else if (key.match(/^(ss|s)$/)) {
+				this.setSeconds(value);
 			}
 		}
 	}
@@ -398,7 +420,7 @@ Date.prototype.wuiToString = function (format = "default", options = {}) {
 	Object.keys(this.wuiDefaults).forEach(key => {
 		options[key] = typeof (options) != "undefined" && key in options ? options[key] : this.wuiDefaults[key];
 	});
-	const utc = options.utc || format.match(/\b(GMT|UTC|Z)\b/) || false;
+	const utc = options.utc || false;
 	const year = utc ? this.getUTCFullYear() : this.getFullYear(),
 		month = utc ? this.getUTCMonth() + 1 : this.getMonth() + 1,
 		monthName = options.monthsNames[month - 1],
@@ -409,7 +431,12 @@ Date.prototype.wuiToString = function (format = "default", options = {}) {
 		minute = utc ? this.getUTCMinutes() : this.getMinutes(),
 		second = utc ? this.getUTCSeconds() : this.getSeconds(),
 		milliseconds = utc ? this.getUTCMilliseconds() : this.getMilliseconds(),
-		offset = utc ? 0 : -this.getTimezoneOffset();
+		offset = utc ? 0 : -this.getTimezoneOffset(),
+		timezone = (() => {
+			const sign = offset >= 0 ? "+" : "-";
+			const minutes = Math.abs(offset);
+			return sign + String(Math.floor(minutes / 60)).padStart(2, "0") + String(minutes % 60).padStart(2, "0");
+		})();
 	const patterns = {
 		"yyyy": year,
 		"yy": year.toString().substring(2, 2),
@@ -431,12 +458,9 @@ Date.prototype.wuiToString = function (format = "default", options = {}) {
 		"s": second,
 		"zzz": ("0" + milliseconds).slice(-3),
 		"z": milliseconds,
-		"offset": (() => {
-			const sign = offset >= 0 ? "+" : "-";
-			const minutes = Math.abs(offset);
-			return sign + String(Math.floor(minutes / 60)).padStart(2, "0") + String(minutes % 60).padStart(2, "0");
-		})(),
-		"o": offset
+		"o": offset,
+		"TZ": timezone,
+		"GMT": "GMT" + timezone
 	};
 	let string = "";
 	switch (format.toLowerCase()) {
@@ -460,8 +484,8 @@ Date.prototype.wuiToString = function (format = "default", options = {}) {
 		case "rfc3501": string = "d-mmm-yyyy hh:MM:ss offset"; break;
 		default: string = format; break;
 	}
-	for (let p in patterns) {
-		string = string.replace(new RegExp("\\b" + p + "\\b"), patterns[p]);
+	for (let key in patterns) {
+		string = string.replace(new RegExp("\\b" + key + "\\b"), patterns[key]);
 	}
 	if (format.match(/^(numeric|longtime|atom|rfc3339)$/i)) {
 		string.replace(/\s/g, "");

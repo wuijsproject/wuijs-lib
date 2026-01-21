@@ -2873,30 +2873,31 @@ Herramienta para manejo y validación de formatos de datos de tipo `string`, `nu
 
 ##### Partes del formato de fecha/hora
 
-| Parte  | Descripción |
-| ------ | ----------- |
-| yyyy   | Año en formato de 4 digitos. |
-| yy     | Año en formato de 2 digitos. |
-| mmmm   | Mes en formato nombre completo. |
-| mmm    | Mes en formato de las primeras 3 iniciales del nombre. |
-| mm     | Mes en formato de 2 digitos. |
-| m      | Mes en formato de número entero. |
-| dd     | Día del mes en formato de 2 digitos. |
-| d      | Día del mes en formato de número entero. |
-| DDDD   | Nombre del día de la semana en formato nombre completo. |
-| DDD    | Nombre del día de la semana en formato de las primeras 3 iniciales del nombre. |
-| DD     | Nombre del día de la semana en formato de las primeras 2 iniciales del nombre. |
-| D      | Nombre del día de la semana en formato de número entero. |
-| hh     | Hora en formato de 2 digitos. |
-| h      | Hora en formato de número entero. |
-| MM     | Minuto en formato de 2 digitos. |
-| M      | Minuto en formato de número entero. |
-| ss     | Segundo en formato de 2 digitos. |
-| s      | Segundo en formato de número entero. |
-| zzz    | Milisegundo en formato de 3 digitos. |
-| z      | Milisegundo en formato de número entero. |
-| offset | Offset UTC en formato ±hhMM. |
-| o      | Offset UTC en formato de número entero. |
+| Parte | Descripción |
+| ----- | ----------- |
+| yyyy  | Año en formato de 4 digitos. |
+| yy    | Año en formato de 2 digitos. |
+| mmmm  | Mes en formato nombre completo. |
+| mmm   | Mes en formato de las primeras 3 iniciales del nombre. |
+| mm    | Mes en formato de 2 digitos. |
+| m     | Mes en formato de número entero. |
+| dd    | Día del mes en formato de 2 digitos. |
+| d     | Día del mes en formato de número entero. |
+| DDDD  | Nombre del día de la semana en formato nombre completo. |
+| DDD   | Nombre del día de la semana en formato de las primeras 3 iniciales del nombre. |
+| DD    | Nombre del día de la semana en formato de las primeras 2 iniciales del nombre. |
+| D     | Nombre del día de la semana en formato de número entero. |
+| hh    | Hora en formato de 2 digitos. |
+| h     | Hora en formato de número entero. |
+| MM    | Minuto en formato de 2 digitos. |
+| M     | Minuto en formato de número entero. |
+| ss    | Segundo en formato de 2 digitos. |
+| s     | Segundo en formato de número entero. |
+| zzz   | Milisegundo en formato de 3 digitos. |
+| z     | Milisegundo en formato de número entero. |
+| o     | Desplazamiento de zona horaria en formato de número entero. |
+| TZ    | Desplazamiento de zona horaria en formato "±hhMM". |
+| GMT   | Desplazamiento de zona horaria en formato "GMT±hhMM". |
 
 ##### Formatos predefinidos
 
@@ -2943,8 +2944,8 @@ HTML code:
 ```html
 <div class="my-output number"></div>
 <div class="my-output email"></div>
-<div class="my-output localDatetime"></div>
-<div class="my-output utcDatetime"></div>
+<div class="my-output localDate"></div>
+<div class="my-output utcDate"></div>
 ```
 
 Código JS:
@@ -2969,20 +2970,20 @@ const emailValidation = email.wuiValidateEmail();
 emailOutput.textContent = `email: ${email} - validation: ${emailValidation}`;
 
 // Formateo de fecha/hora local
-const dateLoadFormat = "yyyy-mm-dd";
-const date = new Date().wuiLoad("2023-12-31", dateLoadFormat);
-const dateOutput = document.body.querySelector(".my-output.localDatetime");
-const dateFormat = "dd/mm/yyyy hh:MM";
-const dateFormatting = date.wuiToString(dateFormat);
-dateOutput.textContent = `date: ${date} - format: ${dateFormat} - formatting: ${dateFormatting}`;
+const localDateLoadFormat = "yyyy-mm-dd";
+const localDate = new Date().wuiLoad("2023-12-31", localDateLoadFormat);
+const localDateOutput = document.body.querySelector(".my-output.localDate");
+const localDateFormat = "dd/mm/yyyy hh:MM GMT";
+const localDateFormatting = localDate.wuiToString(localDateFormat, { utc: false });
+localDateOutput.textContent = `local date: ${localDate} - format: ${localDateFormat} - formatting: ${localDateFormatting}`;
 
 // Formateo de fecha/hora UTC
-const dateLoadFormat = "yyyy-mm-dd";
-const date = new Date().wuiLoad("2023-12-31", dateLoadFormat);
-const dateOutput = document.body.querySelector(".my-output.utcDatetime");
-const dateFormat = "dd/mm/yyyy hh:MM GMT";
-const dateFormatting = date.wuiToString(dateFormat);
-dateOutput.textContent = `date: ${date} - format: ${dateFormat} - formatting: ${dateFormatting}`;
+const utcDateLoadFormat = "yyyy-mm-dd";
+const utcDate = new Date().wuiLoad("2023-12-31", utcDateLoadFormat);
+const utcDateOutput = document.body.querySelector(".my-output.utcDate");
+const utcDateFormat = "dd/mm/yyyy hh:MM GMT";
+const utcDateFormatting = utcDate.wuiToString(utcDateFormat, { utc: true });
+utcDateOutput.textContent = `utc date: ${utcDate} - format: ${utcDateFormat} - formatting: ${utcDateFormatting}`;
 ```
 
 > [!TIP]
