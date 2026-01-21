@@ -10,6 +10,7 @@ class WUIMenubar {
 	static #defaults = {
 		selector: ".wui-menubar",
 		expansive: true,
+		autoClose: true,
 		topButtons: [],
 		mainButtons: [],
 		bottomButtons: [],
@@ -17,17 +18,21 @@ class WUIMenubar {
 		onSelect: null
 	};
 	static #icons = {
-		"barexpander-expand": ""
+		"expander-expand": ""
 			+ "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'>"
 			+ "<path d='M9.29 15.88L13.17 12L9.29 8.12a.996.996 0 1 1 1.41-1.41l4.59 4.59c.39.39.39 1.02 0 1.41L10.7 17.3a.996.996 0 0 1-1.41 0c-.38-.39-.39-1.03 0-1.42z'/>"
 			+ "</svg>",
-		"barexpander-contract": ""
+		"expander-contract": ""
 			+ "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'>"
 			+ "<path d='M14.71 15.88L10.83 12l3.88-3.88a.996.996 0 1 0-1.41-1.41L8.71 11.3a.996.996 0 0 0 0 1.41l4.59 4.59c.39.39 1.02.39 1.41 0c.38-.39.39-1.03 0-1.42z'/>"
 			+ "</svg>",
-		"submenu-opener-open": ""
+		"opener-open": ""
 			+ "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'>"
 			+ "<path d='M9.29 15.88L13.17 12L9.29 8.12a.996.996 0 1 1 1.41-1.41l4.59 4.59c.39.39.39 1.02 0 1.41L10.7 17.3a.996.996 0 0 1-1.41 0c-.38-.39-.39-1.03 0-1.42z'/>"
+			+ "</svg>",
+		"opener-close": ""
+			+ "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'>"
+			+ "<path d='M14.71 15.88L10.83 12l3.88-3.88a.996.996 0 1 0-1.41-1.41L8.71 11.3a.996.996 0 0 0 0 1.41l4.59 4.59c.39.39 1.02.39 1.41 0c.38-.39.39-1.03 0-1.42z'/>"
 			+ "</svg>"
 	};
 
@@ -61,6 +66,10 @@ class WUIMenubar {
 		return this.#properties.expansive;
 	}
 
+	get autoClose() {
+		return this.#properties.autoClose;
+	}
+
 	get topButtons() {
 		return this.#properties.topButtons;
 	}
@@ -91,6 +100,12 @@ class WUIMenubar {
 	set expansive(value) {
 		if (typeof (value) == "boolean") {
 			this.#properties.expansive = value;
+		}
+	}
+
+	set autoClose(value) {
+		if (typeof (value) == "boolean") {
+			this.#properties.autoClose = value;
 		}
 	}
 
@@ -156,6 +171,7 @@ class WUIMenubar {
 			this.#htmlElements.barMain = document.createElement("div");
 			this.#htmlElements.barBottom = document.createElement("div");
 			this.#htmlElements.submenu = document.createElement("div");
+			this.#htmlElements.submenuHeader = document.createElement("div");
 			this.#htmlElements.submenuMain = document.createElement("div");
 			this.#htmlElement.append(this.#htmlElements.bar);
 			this.#htmlElement.append(this.#htmlElements.submenu);
@@ -170,6 +186,7 @@ class WUIMenubar {
 			this.#htmlElements.barBottom.className = "bottom";
 			this.#htmlElements.submenu.className = "submenu";
 			this.#htmlElements.submenu.append(this.#htmlElements.submenuMain);
+			this.#htmlElements.submenuHeader.className = "header";
 			this.#htmlElements.submenuMain.className = "main";
 			if (this.#properties.expansive) {
 				this.#htmlElements.expander = document.createElement("div");
@@ -177,13 +194,26 @@ class WUIMenubar {
 				this.#htmlElements.expander.append(this.#htmlElements.expanderIcon);
 				this.#htmlElements.expander.className = "expander";
 				this.#htmlElements.expanderIcon.className = "icon";
-				this.#htmlElements.expanderIcon.style.maskImage = this.#getSRCIcon("barexpander-expand");
+				this.#htmlElements.expanderIcon.style.maskImage = this.#getSRCIcon("expander-expand");
 				this.#htmlElements.expander.addEventListener("click", () => {
 					const expanded = this.#htmlElement.classList.contains("expanded");
 					this.#htmlElement.classList.toggle("expanded");
-					this.#htmlElements.expanderIcon.style.maskImage = this.#getSRCIcon("barexpander-" + (expanded ? "expand" : "contract"));
+					this.#htmlElements.expanderIcon.style.maskImage = this.#getSRCIcon("expander-" + (expanded ? "expand" : "contract"));
 				});
 				this.#htmlElements.barHeader.append(this.#htmlElements.expander);
+			}
+			if (!this.#properties.autoClose) {
+				this.#htmlElements.close = document.createElement("div");
+				this.#htmlElements.closeIcon = document.createElement("div");
+				this.#htmlElements.close.append(this.#htmlElements.closeIcon);
+				this.#htmlElements.close.className = "close";
+				this.#htmlElements.closeIcon.className = "icon";
+				this.#htmlElements.closeIcon.style.maskImage = this.#getSRCIcon("opener-close");
+				this.#htmlElements.close.addEventListener("click", () => {
+					this.#htmlElement.classList.toggle("expanded");
+					this.close();
+				});
+				this.#htmlElements.submenuHeader.append(this.#htmlElements.close);
 			}
 			loadButtons(this.#properties.topButtons);
 			loadButtons(this.#properties.mainButtons);
@@ -232,13 +262,11 @@ class WUIMenubar {
 		button.append(bubble);
 		button.dataset.id = options.id;
 		button.className = "button" + (typeof (options.hoverable) == "undefined" || options.hoverable ? " hoverable" : "") + (options.selected ? " selected" : "") + (options.enabled == false ? " disabled" : "");
-		options.submenu = false;
 		if (typeof (options.buttons) == "object" && Array.isArray(options.buttons) && options.buttons.length > 0) {
 			const opener = document.createElement("div");
 			opener.className = "opener";
-			opener.style.maskImage = this.#getSRCIcon("submenu-opener-open");
+			opener.style.maskImage = this.#getSRCIcon("opener-open");
 			button.append(opener);
-			options.submenu = true;
 		}
 		button.addEventListener("click", () => {
 			if (!button.classList.contains("disabled")) {
@@ -279,6 +307,7 @@ class WUIMenubar {
 	selectButton(id = "", selected = true, runCallback = true) {
 		if (id != "") {
 			const options = this.getButton(id);
+			const parentId = options.parentId;
 			const button = this.#htmlElement.querySelector(`[data-id='${id}'].button`);
 			const prevSelected = options.selected;
 			if (selected && typeof (options.radioMode) == "boolean" && !options.radioMode) {
@@ -294,7 +323,7 @@ class WUIMenubar {
 							button.classList.remove("selected");
 						}
 					} else if (typeof (options.selectable) == "undefined" || options.selectable) {
-						this.#buttons.filter(opt => opt.id != id).forEach(opt => {
+						this.#buttons.filter(opt => opt.id != id && opt.id != parentId).forEach(opt => {
 							const btn = this.#htmlElement.querySelector(`[data-id='${opt.id}'].button`);
 							if (btn instanceof HTMLElement && !btn.classList.contains("disabled")) {
 								btn.classList.remove("selected");
@@ -302,12 +331,14 @@ class WUIMenubar {
 							}
 						});
 						button.classList.add("selected");
-						this.#open(options.id);
+						if (Array.isArray(options.buttons) && options.buttons.length > 0) {
+							this.#open(options.id);
+						}
 					}
 				} else {
 					button.classList.remove("selected");
 				}
-				if (!options.submenu) {
+				if (this.autoClose && (typeof (options.buttons) == "undefined" || (Array.isArray(options.buttons) && options.buttons.length == 0))) {
 					this.close();
 				}
 				if (runCallback) {
@@ -372,21 +403,54 @@ class WUIMenubar {
 /*
 <div class="wui-menubar">
 	<div class="bar">
+		<div class="header">
+			<div class="expander">
+				<div class="icon"></div>
+			</div>
+		</div>
 		<div class="top">
-			<div class="expand">
+			<div class="button">
+				[<div class="icon"></div>|<img>]
+				<div class="text"></div>
+				<div class="tooltip"></div>
+				<div class="bubble"></div>
+			</div>
+			[...]
+		</div>
+		<div class="main">
+			<div class="button">
+				[<div class="icon"></div>|<img>]
+				<div class="text"></div>
+				<div class="tooltip"></div>
+				<div class="bubble"></div>
+			</div>
+			[...]
+		</div>
+		<div class="bottom">
+			<div class="button">
+				[<div class="icon"></div>|<img>]
+				<div class="text"></div>
+				<div class="tooltip"></div>
+				<div class="bubble"></div>
+			</div>
+			[...]
+		</div>
+	</div>
+	<div class="submenu">
+		<div class="header">
+			<div class="close">
 				<div class="icon"></div>
 			</div>
 		</div>
 		<div class="main">
 			<div class="button">
-				<div class="icon"></div>
+				[<div class="icon"></div>|<img>]
 				<div class="text"></div>
 				<div class="tooltip"></div>
 				<div class="bubble"></div>
 			</div>
-			...
+			[...]
 		</div>
-		<div class="bottom"></div>
 	</div>
 </div>
  */

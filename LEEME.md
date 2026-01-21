@@ -222,8 +222,9 @@ Código CSS archivo `WUI.css`:
 	--wui-menubar-expander-iconcolor-over: #000;
 	--wui-menubar-expander-expandicon-src: none;
 	--wui-menubar-expander-contracticon-src: none;
-	--wui-menubar-submenu-opener-iconsize: 16px;
-	--wui-menubar-submenu-opener-openicon-src: none;
+	--wui-menubar-opener-iconsize: 16px;
+	--wui-menubar-opener-openicon-src: none;
+	--wui-menubar-opener-closeicon-src: none;
 	--wui-menubar-submenu-bordercolor: #f0f0f3;
 	--wui-menubar-submenu-bgcolor: #fdfdfe;
 	--wui-menubar-submenu-button-bgcolor-out: transparent;
@@ -1825,7 +1826,8 @@ Componente para la implementación de barras de menú.
 | Propiedad     | Tipo       | Valor predeterminado | Descripción |
 | ------------- | ---------- | -------------------- | ----------- |
 | selector      | `string`   | `".wui-menubar"`     | (get/set)<br><br>Selector CSS que define el elemento HTML que serán convertido en el objeto. En caso de existir más de un elemento coincidente con el selector se incluirá únicamente la primera coincidencia. |
-| expansive     | `boolean`  | `true`               | (get/set)<br><br>Define el menú se expande. La función de expansión es no es visible en modo móvil (cuando el ancho de la pantalla es inferior a `768px`). |
+| expansive     | `boolean`  | `true`               | (get/set)<br><br>Define si el menú se expande. La función de expansión es no es visible en modo móvil (cuando el ancho de la pantalla es inferior a `768px`). |
+| autoClose     | `boolean`  | `true`               | (get/set)<br><br>Define si el submenú se cierra automáticamente al clicar un botón de él. |
 | topButtons    | `array`    | `[]`                 | (get/set)<br><br>Lista de botones de menú superior, según la definición de **Opciones de Botón**. Los botónes de esta sección no son visibles en modo móvil (cuando el ancho de la pantalla es inferior a `768px`). |
 | mainButtons   | `array`    | `[]`                 | (get/set)<br><br>Lista de botones de menú principal, según la definición de **Opciones de Botón**. |
 | bottomButtons | `array`    | `[]`                 | (get/set)<br><br>Lista de botones de menú inferior, según la definición de **Opciones de Botón**. Los botónes de esta sección no son visibles en modo móvil (cuando el ancho de la pantalla es inferior a `768px`). |
@@ -1892,8 +1894,9 @@ Componente para la implementación de barras de menú.
 | `--wui-menubar-expander-iconcolor-over`           | 
 | `--wui-menubar-expander-expandicon-src`           | 
 | `--wui-menubar-expander-contracticon-src`         | 
-| `--wui-menubar-submenu-opener-iconsize`           | 
-| `--wui-menubar-submenu-opener-openicon-src`       | 
+| `--wui-menubar-opener-iconsize`                   | 
+| `--wui-menubar-opener-openicon-src`               | 
+| `--wui-menubar-opener-closeicon-src`              | 
 | `--wui-menubar-submenu-bordercolor`               | 
 | `--wui-menubar-submenu-bgcolor`                   | 
 | `--wui-menubar-submenu-button-bgcolor-out`        | 
@@ -1956,8 +1959,9 @@ Configuración CSS:
 	--wui-menubar-expander-iconcolor-over: #000;
 	--wui-menubar-expander-expandicon-src: none;
 	--wui-menubar-expander-contracticon-src: none;
-	--wui-menubar-submenu-opener-iconsize: 16px;
-	--wui-menubar-submenu-opener-openicon-src: none;
+	--wui-menubar-opener-iconsize: 16px;
+	--wui-menubar-opener-openicon-src: none;
+	--wui-menubar-opener-closeicon-src: none;
 	--wui-menubar-submenu-bordercolor: #f0f0f3;
 	--wui-menubar-submenu-bgcolor: #fdfdfe;
 	--wui-menubar-submenu-button-bgcolor-out: transparent;
@@ -2019,6 +2023,7 @@ const output = document.body.querySelector(".my-output");
 const menubar = new WUIMenubar({
 	selector: ".wui-menubar.my-menubar",
 	//expansive: true,
+	//autoClose: true,
 	//topButtons: [],
 	//mainButtons: [],
 	//bottomButtons: [],

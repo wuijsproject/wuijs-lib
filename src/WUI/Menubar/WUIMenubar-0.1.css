@@ -44,7 +44,7 @@ div.wui-menubar > .bar {
 	justify-content: center;
 }
 
-div.wui-menubar > .bar > .header {
+div.wui-menubar > :is(.bar, .submenu) > .header {
 	display: flex;
 	position: absolute;
 	top: 0;
@@ -52,7 +52,7 @@ div.wui-menubar > .bar > .header {
 	height: 20px;
 }
 
-div.wui-menubar > .bar > .header > .expander {
+div.wui-menubar > :is(.bar, .submenu) > .header > :is(.expander, .close) {
 	cursor: pointer;
 	display: flex;
 	align-items: center;
@@ -64,7 +64,7 @@ div.wui-menubar > .bar > .header > .expander {
 	background-color: var(--wui-menubar-expander-bgcolor-out);
 }
 
-div.wui-menubar > .bar > .header > .expander > .icon {
+div.wui-menubar > :is(.bar, .submenu) > .header > :is(.expander, .close) > .icon {
 	width: var(--wui-menubar-expander-iconsize);
 	height: var(--wui-menubar-expander-iconsize);
 	-webkit-mask-image: url();
@@ -79,11 +79,11 @@ div.wui-menubar > .bar > .header > .expander > .icon {
 	background-color: var(--wui-menubar-expander-iconcolor-out);
 }
 
-div.wui-menubar > .bar > .header > .expander:hover {
+div.wui-menubar > :is(.bar, .submenu) > .header > :is(.expander, .close):hover {
 	background-color: var(--wui-menubar-expander-bgcolor-over);
 }
 
-div.wui-menubar > .bar > .header > .expander:hover > .icon {
+div.wui-menubar > :is(.bar, .submenu) > .header > :is(.expander, .close):hover > .icon {
 	background-color: var(--wui-menubar-expander-iconcolor-over);
 }
 
@@ -301,8 +301,8 @@ div.wui-menubar > :is(.bar, .submenu) > :is(.top, .main, .bottom) > .button > .o
 	display: none;
 	position: absolute;
 	right: 4px;
-	width: var(--wui-menubar-submenu-opener-iconsize);
-	height: var(--wui-menubar-submenu-opener-iconsize);
+	width: var(--wui-menubar-opener-iconsize);
+	height: var(--wui-menubar-opener-iconsize);
 	-webkit-mask-image: url();
 	-webkit-mask-position: center;
 	-webkit-mask-repeat: no-repeat;
