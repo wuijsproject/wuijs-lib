@@ -323,7 +323,7 @@ class WUIMenubar {
 							button.classList.remove("selected");
 						}
 					} else if (typeof (options.selectable) == "undefined" || options.selectable) {
-						this.#buttons.filter(opt => opt.id != id && opt.id != parentId).forEach(opt => {
+						this.#buttons.filter(opt => opt.id != id && opt.id != parentId && opt.parentId != id).forEach(opt => {
 							const btn = this.#htmlElement.querySelector(`[data-id='${opt.id}'].button`);
 							if (btn instanceof HTMLElement && !btn.classList.contains("disabled")) {
 								btn.classList.remove("selected");
