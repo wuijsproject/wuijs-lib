@@ -2956,7 +2956,6 @@ Código JS:
 Number.prototype.wuiDefaults.thousandsSeparator = ".";
 Number.prototype.wuiDefaults.decimalLength = 2;
 Number.prototype.wuiDefaults.decimalSeparator = ",";
-
 const number = 1234.567;
 const numberOutput = document.body.querySelector(".my-output.number");
 const numberFormatting = number.wuiToString({ numberPrefix: "$ " });
