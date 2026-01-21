@@ -356,9 +356,15 @@ Date.prototype.wuiLoad = function (value, format = "default", options = {}) {
 	switch (format.toLowerCase()) {
 		case "default":
 		case "datetime": string = options.datetimeFormat; break;
-		case "numeric": string = "yyyy mm dd hh MM ss"; break;
+		case "numeric":
+			string = "yyyy mm dd hh MM ss";
+			value = value.toString().replace(/(.{4})(?=.)/, "$1 ").replace(/(.{2})(?!$)/g, "$1 ").trim();
+			break;
 		case "standard": string = "yyyy-mm-dd hh:MM:ss"; break;
-		case "longtime": string = "yyyy-mm-dd T hh:MM:ss"; break;
+		case "longtime":
+			string = "yyyy-mm-dd T hh:MM:ss";
+			value = value.replace("T", " T ");
+			break;
 		default: string = format; break;
 	}
 	const strings = string.split(/\W+/);
