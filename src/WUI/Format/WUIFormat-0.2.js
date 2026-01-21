@@ -355,10 +355,11 @@ Date.prototype.wuiLoad = function (value, format = "default", options = {}) {
 	let string = "";
 	switch (format.toLowerCase()) {
 		case "default":
+		case "datetime":
 		case "defaultdatetime":
 		case "datetimeformat": string = options.datetimeFormat; break;
-		case "standard": string = "yyyy-mm-dd hh:MM:ss"; break;
 		case "numeric": string = "yyyy mm dd hh MM ss"; break;
+		case "standard": string = "yyyy-mm-dd hh:MM:ss"; break;
 		case "longtime": string = "yyyy-mm-dd T hh:MM:ss"; break;
 		default: string = format; break;
 	}
@@ -472,6 +473,7 @@ Date.prototype.wuiToString = function (format = "default", options = {}) {
 	let string = "";
 	switch (format.toLowerCase()) {
 		case "default":
+		case "datetime":
 		case "defaultdatetime":
 		case "datetimeformat": string = options.datetimeFormat; break;
 		case "date":
@@ -480,8 +482,8 @@ Date.prototype.wuiToString = function (format = "default", options = {}) {
 		case "time":
 		case "defaulttime":
 		case "timeformat": string = options.timeFormat; break;
-		case "standard": string = "yyyy-mm-dd hh:MM:ss"; break;
 		case "numeric": string = "yyyy mm dd hh MM ss"; break;
+		case "standard": string = "yyyy-mm-dd hh:MM:ss"; break;
 		case "longtime": string = "yyyy-mm-dd T hh:MM:ss"; break;
 		/*case "atom":
 		case "rfc3339": string = "yyyy-mm-dd T hh:MM:ss.zzz Z"; break;
