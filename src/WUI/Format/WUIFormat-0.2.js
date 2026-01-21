@@ -358,7 +358,7 @@ Date.prototype.wuiLoad = function (value, format = "default", options = {}) {
 		case "datetime": string = options.datetimeFormat; break;
 		case "numeric":
 			string = "yyyy mm dd hh MM ss";
-			value = value.toString().replace(/(.{4})(?=.)/, "$1 ").replace(/(.{2})(?!$)/g, "$1 ").trim();
+			value = value.toString().replace(/(\d{2})(\d{2})/g, "$1 $2 ").replace(/^(\d{2})\s(\d{2})/, "$1$2").trim();
 			break;
 		case "standard": string = "yyyy-mm-dd hh:MM:ss"; break;
 		case "longtime":
