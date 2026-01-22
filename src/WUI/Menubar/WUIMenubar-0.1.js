@@ -308,6 +308,7 @@ class WUIMenubar {
 		if (id != "") {
 			const options = this.getButton(id);
 			const parentId = options.parentId;
+			const hasChildren = Boolean(Array.isArray(options.buttons) && options.buttons.length > 0);
 			const button = this.#htmlElement.querySelector(`[data-id='${id}'].button`);
 			const prevSelected = options.selected;
 			if (selected && typeof (options.radioMode) == "boolean" && !options.radioMode) {
@@ -315,6 +316,9 @@ class WUIMenubar {
 			}
 			this.getButton(id).selected = selected;
 			if (button instanceof HTMLElement && !button.classList.contains("disabled")) {
+				if (parentId == "" || this.autoClose) {
+					this.close();
+				}
 				if (selected) {
 					if (typeof (options.radioMode) == "boolean" && !options.radioMode) {
 						if (!prevSelected) {
@@ -331,15 +335,12 @@ class WUIMenubar {
 							}
 						});
 						button.classList.add("selected");
-						if (Array.isArray(options.buttons) && options.buttons.length > 0) {
+						if (hasChildren) {
 							this.#open(options.id);
 						}
 					}
 				} else {
 					button.classList.remove("selected");
-				}
-				if (this.autoClose && (typeof (options.buttons) == "undefined" || (Array.isArray(options.buttons) && options.buttons.length == 0))) {
-					this.close();
 				}
 				if (runCallback) {
 					if (options.onClick && typeof (options.onClick) == "function") {

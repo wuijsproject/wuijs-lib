@@ -2029,7 +2029,7 @@ const output = document.body.querySelector(".my-output");
 const menubar = new WUIMenubar({
 	selector: ".wui-menubar.my-menubar",
 	//expansive: true,
-	//autoClose: true,
+	autoClose: false,
 	//topButtons: [],
 	//mainButtons: [],
 	//bottomButtons: [],
