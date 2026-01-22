@@ -361,12 +361,6 @@ div.wui-menubar > :is(.bar, .submenu) > :is(.top, .main, .bottom) > .button > :i
 		height: 0px;
 	}
 
-	div.wui-menubar > .submenu.opened {
-		height: calc(50px + 2 * var(--wui-menubar-borderradius));
-		padding-top: 8px;
-		align-items: flex-start;
-	}
-
 	div.wui-menubar > .submenu > .header {
 		position: absolute;
 		top: -20px;
@@ -377,16 +371,25 @@ div.wui-menubar > :is(.bar, .submenu) > :is(.top, .main, .bottom) > .button > :i
 	}
 
 	div.wui-menubar > .submenu > .header > .close {
-		--close-shadow: rgb(from var(--wui-menubar-shadowcolor) r g b / 40%) 0px -5px 12px -6px;
-		-webkit-box-shadow: var(--close-shadow);
-		-moz-box-shadow: var(--closer-shadow);
-		box-shadow: var(--close-shadow);
 		-webkit-border-bottom-left-radius: 0;
 		-webkit-border-bottom-right-radius: 0;
 		-moz-border-radius-bottomleft: 0;
 		-moz-border-radius-bottomright: 0;
 		border-bottom-left-radius: 0;
 		border-bottom-right-radius: 0;
+	}
+
+	div.wui-menubar > .submenu.opened {
+		height: calc(50px + 2 * var(--wui-menubar-borderradius));
+		padding-top: 8px;
+		align-items: flex-start;
+	}
+
+	div.wui-menubar > .submenu.opened > .header > .close {
+		--close-shadow: rgb(from var(--wui-menubar-shadowcolor) r g b / 40%) 0px -5px 12px -6px;
+		-webkit-box-shadow: var(--close-shadow);
+		-moz-box-shadow: var(--closer-shadow);
+		box-shadow: var(--close-shadow);
 	}
 
 	div.wui-menubar > :is(.bar, .submenu) > .main {

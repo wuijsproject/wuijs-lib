@@ -244,6 +244,7 @@ Código CSS archivo `WUI.css`:
 	--wui-menubar-tooltip-textcolor: #fff;
 	--wui-menubar-bubble-bgcolor: #f44343;
 	--wui-menubar-bubble-textcolor: #fff;
+	--wui-menubar-mobile-opener-closeicon-src: none;
 
 	/* wui-list */
 
@@ -1916,6 +1917,7 @@ Componente para la implementación de barras de menú.
 | `--wui-menubar-tooltip-textcolor`                 | 
 | `--wui-menubar-bubble-bgcolor`                    | 
 | `--wui-menubar-bubble-textcolor`                  | 
+| `--wui-menubar-mobile-opener-closeicon-src`       | 
 
 #### Implementación
 
@@ -1981,6 +1983,7 @@ Configuración CSS:
 	--wui-menubar-tooltip-textcolor: #fff;
 	--wui-menubar-bubble-bgcolor: #f44343;
 	--wui-menubar-bubble-textcolor: #fff;
+	--wui-menubar-mobile-opener-closeicon-src: none;
 }
 ```
 
