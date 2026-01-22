@@ -210,10 +210,14 @@ class WUIMenubar {
 			if (!this.#properties.autoClose) {
 				this.#htmlElements.close = document.createElement("div");
 				this.#htmlElements.closeIcon = document.createElement("div");
+				this.#htmlElements.closeMobileIcon = document.createElement("div");
 				this.#htmlElements.close.append(this.#htmlElements.closeIcon);
+				this.#htmlElements.close.append(this.#htmlElements.closeMobileIcon);
 				this.#htmlElements.close.className = "close";
 				this.#htmlElements.closeIcon.className = "icon";
 				this.#htmlElements.closeIcon.style.maskImage = this.#getSRCIcon("opener-close");
+				this.#htmlElements.closeMobileIcon.className = "icon mobile";
+				this.#htmlElements.closeMobileIcon.style.maskImage = this.#getSRCIcon("mobile-opener-close");
 				this.#htmlElements.close.addEventListener("click", () => {
 					this.close();
 				});

@@ -392,6 +392,20 @@ div.wui-menubar > :is(.bar, .submenu) > :is(.top, .main, .bottom) > .button > :i
 		box-shadow: var(--close-shadow);
 	}
 
+	div.wui-menubar > .submenu > .header > .close {
+		-webkit-box-shadow: none;
+		-moz-box-shadow: none;
+		box-shadow: none;
+	}
+
+	div.wui-menubar > .submenu > .header > .close > .icon:not(.mobile) {
+		display: none;
+	}
+
+	div.wui-menubar > .submenu > .header > .close > .icon.mobile {
+		display: block;
+	}
+
 	div.wui-menubar > :is(.bar, .submenu) > .main {
 		width: 90%;
 		flex-direction: row;
@@ -435,6 +449,14 @@ div.wui-menubar > :is(.bar, .submenu) > :is(.top, .main, .bottom) > .button > :i
 
 	div.wui-menubar > .submenu > .header > .close {
 		margin-left: calc(2 * var(--wui-menubar-borderradius) + 2px);
+	}
+
+	div.wui-menubar > .submenu > .header > .close > .icon:not(.mobile) {
+		display: block;
+	}
+
+	div.wui-menubar > .submenu > .header > .close > .icon.mobile {
+		display: none;
 	}
 
 	div.wui-menubar > .submenu > .main {
