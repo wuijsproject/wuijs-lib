@@ -2998,7 +2998,7 @@ HTML code:
 					<input type="color" name="color" value="">
 				</div>
 				<div class="field icon-left textarea">
-					<div class="icon wui-icon text-paragraph"></div>
+					<div class="icon wui-icon text-paragraph-line"></div>
 					<label for="wuiTextarea">Text area</label>
 					<textarea name="textarea"></textarea>
 				</div>

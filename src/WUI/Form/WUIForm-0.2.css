@@ -126,9 +126,12 @@
 }
 
 .wui-form fieldset > .field.inline {
+	flex-direction: row;
+}
+
+.wui-form fieldset > .field.inline > :is(input, select, button) {
 	position: absolute;
 	right: 0;
-	flex-direction: row;
 }
 
 .wui-form fieldset > .field.noborder {
