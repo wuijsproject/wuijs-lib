@@ -15,7 +15,7 @@
 }
 
 .wui-form,
-.wui-form :is(.request, .response):not(button),
+.wui-form :is(.request, .response),
 .wui-form > :is(.header, .body, .footer) {
 	display: flex;
 	position: relative;
@@ -30,7 +30,7 @@
 	align-items: stretch;
 }
 
-.wui-form :is(.request, .response):not(button),
+.wui-form :is(.request, .response),
 .wui-form > .body {
 	flex-grow: 1;
 }
@@ -125,6 +125,16 @@
 	align-items: center;
 }
 
+.wui-form fieldset > .field.inline {
+	position: absolute;
+	right: 0;
+	flex-direction: row;
+}
+
+.wui-form fieldset > .field.noborder {
+	border-color: transparent !important;
+}
+
 .wui-form fieldset > .field:is(:hover, :focus, :focus-within) {
 	border-color: var(--wui-form-input-bordercolor-focus);
 }
@@ -151,16 +161,16 @@
 	transition: var(--label-transition);
 }
 
-.wui-form:not(.grid) fieldset > .field:is(.color, .range, .checkbox, .data, .button) > label {
+.wui-form:not(.grid) fieldset > .field:is(.inline, .color, .range, .checkbox, .data, .button) > label {
 	top: 0;
 }
 
-.wui-form:not(.grid) fieldset > .field:not(:is(.color, .range, .checkbox, .data, .button)) > label.notempty,
-.wui-form:not(.grid) fieldset > .field:not(:is(.color, .range, .checkbox, .data, .button)):focus-within > label {
+.wui-form:not(.grid) fieldset > .field:not(:is(.inline, .color, .range, .checkbox, .data, .button)) > label.notempty,
+.wui-form:not(.grid) fieldset > .field:not(:is(.inline, .color, .range, .checkbox, .data, .button)):focus-within > label {
 	top: -12px;
 }
 
-.wui-form:not(.grid) fieldset > .field:not(:is(.color, .range, .checkbox, .data, .button)) > label.notempty {
+.wui-form:not(.grid) fieldset > .field:not(:is(.inline, .color, .range, .checkbox, .data, .button)) > label.notempty {
 	color: var(--wui-form-label-textcolor-notempty);
 }
 
@@ -775,11 +785,11 @@
 		padding-top: 0;
 	}
 
-	.wui-form :is(.request, .response):not(button) {
+	.wui-form :is(.request, .response) {
 		align-items: unset;
 	}
 
-	.wui-form :is(.request, .response):not(button),
+	.wui-form :is(.request, .response),
 	.wui-form fieldset {
 		flex-direction: column;
 		flex-wrap: nowrap;
@@ -851,18 +861,18 @@
 	padding: 0 0 20px 0;
 }
 
-.wui-form.line fieldset > .field:not(:is(.color, .range, .checkbox, .data, .button)) {
+.wui-form.line fieldset > .field:not(:is(.inline, .color, .range, .checkbox, .data, .button)) {
 	-webkit-border-radius: 0px;
 	-moz-border-radius: 0px;
 	border-radius: 0px;
 	border-bottom: var(--wui-form-input-borderwidth) solid var(--wui-form-input-bordercolor-out);
 }
 
-.wui-form.line fieldset > .field:not(:is(.color, .range, .checkbox, .data, .button)):hover {
+.wui-form.line fieldset > .field:not(:is(.inline, .color, .range, .checkbox, .data, .button)):hover {
 	border-bottom-color: var(--wui-form-input-bordercolor-out);
 }
 
-.wui-form.line fieldset > .field:not(:is(.color, .range, .checkbox, .data, .button)):after {
+.wui-form.line fieldset > .field:not(:is(.inline, .color, .range, .checkbox, .data, .button)):after {
 	--field-transition: right .4s ease-out;
 	content: "";
 	display: block;
@@ -880,7 +890,7 @@
 	transition: var(--field-transition);
 }
 
-.wui-form.line fieldset > .field:not(:is(.color, .range, .checkbox, .data, .button)):focus-within:after {
+.wui-form.line fieldset > .field:not(:is(.inline, .color, .range, .checkbox, .data, .button)):focus-within:after {
 	right: 0px;
 }
 
@@ -891,22 +901,22 @@
 	align-items: center;
 }
 
-.wui-form.line:not(.grid) fieldset > .field:not(:is(.color, .range, .checkbox, .data, .button)) > label:is(.fixed, .notempty),
-.wui-form.line:not(.grid) fieldset > .field:not(:is(.color, .range, .checkbox, .data, .button)):focus-within > label {
+.wui-form.line:not(.grid) fieldset > .field:not(:is(.inline, .color, .range, .checkbox, .data, .button)) > label:is(.fixed, .notempty),
+.wui-form.line:not(.grid) fieldset > .field:not(:is(.inline, .color, .range, .checkbox, .data, .button)):focus-within > label {
 	top: calc(-0.7 * var(--wui-form-input-height) - var(--wui-form-input-borderwidth));
 }
 
 @media screen and (max-width: 767px) {
 
-	.wui-form.line:not(.grid) fieldset > .field:not(:is(.color, .range, .checkbox, .data, .button)) > label:is(.fixed, .notempty),
-	.wui-form.line:not(.grid) fieldset > .field:not(:is(.color, .range, .checkbox, .data, .button)):focus-within > label {
+	.wui-form.line:not(.grid) fieldset > .field:not(:is(.inline, .color, .range, .checkbox, .data, .button)) > label:is(.fixed, .notempty),
+	.wui-form.line:not(.grid) fieldset > .field:not(:is(.inline, .color, .range, .checkbox, .data, .button)):focus-within > label {
 		top: calc(-0.7 * var(--wui-form-mobile-input-height) - var(--wui-form-input-borderwidth));
 	}
 }
 
 /* wui-form border */
 
-.wui-form.border fieldset > .field:not(:is(.color, .range, .checkbox, .data, .button)) {
+.wui-form.border fieldset > .field:not(:is(.inline, .color, .range, .checkbox, .data, .button)) {
 	-webkit-border-radius: var(--wui-form-input-borderradius);
 	-moz-border-radius: var(--wui-form-input-borderradius);
 	border-radius: var(--wui-form-input-borderradius);
@@ -914,7 +924,7 @@
 	background-color: var(--wui-form-input-bgcolor-out);
 }
 
-.wui-form.border fieldset > .field:not(:is(.color, .range, .checkbox, .data, .button)):focus-within {
+.wui-form.border fieldset > .field:not(:is(.inline, .color, .range, .checkbox, .data, .button)):focus-within {
 	border-color: var(--wui-form-input-bordercolor-focus);
 	background-color: var(--wui-form-input-bgcolor-focus);
 }
@@ -926,31 +936,31 @@
 	align-items: center;
 }
 
-.wui-form.border:not(.grid) fieldset > .field:not(:is(.color, .range, .checkbox, .data, .button)) > label:is(.fixed, .notempty),
-.wui-form.border:not(.grid) fieldset > .field:not(:is(.color, .range, .checkbox, .data, .button)):focus-within > label {
+.wui-form.border:not(.grid) fieldset > .field:not(:is(.inline, .color, .range, .checkbox, .data, .button)) > label:is(.fixed, .notempty),
+.wui-form.border:not(.grid) fieldset > .field:not(:is(.inline, .color, .range, .checkbox, .data, .button)):focus-within > label {
 	top: calc(-0.8 * var(--wui-form-input-height) - var(--wui-form-input-borderwidth));
 }
 
-.wui-form.border:not(.grid) fieldset > .field:not(:is(.color, .range, .checkbox, .data, .button)) > :is(input[type="text"], input[type="number"], input[type="date"], input[type="time"]) {
+.wui-form.border:not(.grid) fieldset > .field:not(:is(.inline, .color, .range, .checkbox, .data, .button)) > :is(input[type="text"], input[type="number"], input[type="date"], input[type="time"]) {
 	top: calc(-1 * var(--wui-form-input-borderwidth));
 }
 
 @media screen and (max-width: 767px) {
-	.wui-form.border fieldset > .field:not(:is(.color, .range, .checkbox, .data, .button)) {
+	.wui-form.border fieldset > .field:not(:is(.inline, .color, .range, .checkbox, .data, .button)) {
 		-webkit-border-radius: var(--wui-form-mobile-input-borderradius);
 		-moz-border-radius: var(--wui-form-mobile-input-borderradius);
 		border-radius: var(--wui-form-mobile-input-borderradius);
 	}
 
-	.wui-form.border:not(.grid) fieldset > .field:not(:is(.color, .range, .checkbox, .data, .button)) > label:is(.fixed, .notempty),
-	.wui-form.border:not(.grid) fieldset > .field:not(:is(.color, .range, .checkbox, .data, .button)):focus-within > label {
+	.wui-form.border:not(.grid) fieldset > .field:not(:is(.inline, .color, .range, .checkbox, .data, .button)) > label:is(.fixed, .notempty),
+	.wui-form.border:not(.grid) fieldset > .field:not(:is(.inline, .color, .range, .checkbox, .data, .button)):focus-within > label {
 		top: calc(-0.8 * var(--wui-form-mobile-input-height) - var(--wui-form-input-borderwidth));
 	}
 }
 
 /* wui-form border curve */
 
-.wui-form.border.curve fieldset > .field:not(:is(.color, .range, .checkbox, .data, .button)) {
+.wui-form.border.curve fieldset > .field:not(:is(.inline, .color, .range, .checkbox, .data, .button)) {
 	--field-radius: calc(var(--wui-form-input-height) / 2);
 	-webkit-border-radius: var(--field-radius);
 	-moz-border-radius: var(--field-radius);
@@ -958,7 +968,7 @@
 }
 
 @media screen and (max-width: 767px) {
-	.wui-form.border.curve fieldset > .field:not(:is(.color, .range, .checkbox, .data, .button)) {
+	.wui-form.border.curve fieldset > .field:not(:is(.inline, .color, .range, .checkbox, .data, .button)) {
 		--field-radius: calc(var(--wui-form-mobile-input-height) / 2);
 	}
 }
@@ -1110,7 +1120,7 @@
 }
 
 .wui-form:not(.grid) fieldset > .field.icon-left > label,
-.wui-form:not(.grid) fieldset > .field.icon-left:not(.data, .button) > :is(input, select, textarea, data, button) {
+.wui-form:not(.grid) fieldset > .field.icon-left:not(.inline, .data, .button) > :is(input, select, textarea, data, button) {
 	left: 0;
 	padding-left: 40px !important;
 }

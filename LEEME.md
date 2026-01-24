@@ -1573,11 +1573,12 @@ Conjunto de íconos prediseñados y carga mediante CSS, para uso en interfaces.
 
 #### Tabla de Íconos de Compositor
 
-| Icono                                        | Estilo                  | Icono                                         | Estilo                   | Icono                                  | Estilo            | Icono                                   | Estilo             |
-| :---:                                        | ------                  | :---:                                         | ------                   | :---:                                  | ------            | :---:                                   | ------             |
-| ![](./imgs/Icons/doublequotes-left-fill.svg) | .doublequotes-left-fill | ![](./imgs/Icons/doublequotes-right-fill.svg) | .doublequotes-right-fill | ![](./imgs/Icons/indent-left-line.svg) | .indent-left-line | ![](./imgs/Icons/indent-right-line.svg) | .indent-right-line |
-| ![](./imgs/Icons/link-line.svg)              | .link-line              | ![](./imgs/Icons/link-alt-line.svg)           | .link-alt-line           | ![](./imgs/Icons/list-check-line.svg)  | .list-check-line  | ![](./imgs/Icons/list-number-line.svg)  | .list-number-line  |
-| ![](./imgs/Icons/list-stars-line.svg)        | .list-stars-line        | ![](./imgs/Icons/list-unorderd-line.svg)      | .list-unorderd-line      | ![](./imgs/Icons/textleft-line.svg)    | .textleft-line    | ![](./imgs/Icons/textright-line.svg)    | .textright-line    |
+| Icono                                        | Estilo                  | Icono                                         | Estilo                   | Icono                                  | Estilo            | Icono                                    | Estilo              |
+| :---:                                        | ------                  | :---:                                         | ------                   | :---:                                  | ------            | :---:                                    | ------              |
+| ![](./imgs/Icons/doublequotes-left-fill.svg) | .doublequotes-left-fill | ![](./imgs/Icons/doublequotes-right-fill.svg) | .doublequotes-right-fill | ![](./imgs/Icons/indent-left-line.svg) | .indent-left-line | ![](./imgs/Icons/indent-right-line.svg)  | .indent-right-line  |
+| ![](./imgs/Icons/link-line.svg)              | .link-line              | ![](./imgs/Icons/link-alt-line.svg)           | .link-alt-line           | ![](./imgs/Icons/list-line.svg)        | .list-line        | ![](./imgs/Icons/list-check-line.svg)    | .list-check-line    |
+| ![](./imgs/Icons/list-number-line.svg)       | .list-number-line       | ![](./imgs/Icons/list-stars-line.svg)         | .list-stars-line         | ![](./imgs/Icons/list-task-line.svg)   | .list-task-line   | ![](./imgs/Icons/list-unorderd-line.svg) | .list-unorderd-line |
+| ![](./imgs/Icons/text-center-line.svg)       | .text-center-line       | ![](./imgs/Icons/text-paragraph-line.svg)     | .text-paragraph-line     | ![](./imgs/Icons/text-left-line.svg)   | .text-left-line   | ![](./imgs/Icons/text-right-line.svg)    | .text-right-line    |
 
 #### Tabla de Otros Íconos
 
@@ -2973,23 +2974,23 @@ Código HTML:
 		<div class="body">
 			<legend>Conjunto de campos</legend>
 			<fieldset>
-				<div class="field">
-					<div class="icon"></div>
+				<div class="field icon-left">
+					<div class="icon wui-icon text-left-line"></div>
 					<label>Texto</label>
 					<input type="text" name="text" value="">
 				</div>
-				<div class="field">
-					<div class="icon"></div>
+				<div class="field icon-left">
+					<div class="icon wui-icon calendar-line"></div>
 					<label>Fecha</label>
 					<input type="date" name="date" value="">
 				</div>
-				<div class="field">
-					<div class="icon"></div>
+				<div class="field icon-left">
+					<div class="icon wui-icon time-line"></div>
 					<label>Hora</label>
 					<input type="time" name="time" value="">
 				</div>
-				<div class="field">
-					<div class="icon"></div>
+				<div class="field icon-left">
+					<div class="icon wui-icon list-check-line"></div>
 					<label>Selector</label>
 					<select name="select">
 						<option value=""></option>
@@ -2998,22 +2999,22 @@ Código HTML:
 						<option value="value3">valor 3</option>
 					</select>
 				</div>
-				<div class="field color">
-					<div class="icon"></div>
+				<div class="field icon-left inline noborder">
+					<div class="icon wui-icon palette-line"></div>
 					<label>Color</label>
 					<input type="color" name="color" value="">
 				</div>
-				<div class="field textarea">
-					<div class="icon"></div>
+				<div class="field icon-left textarea">
+					<div class="icon wui-icon text-paragraph"></div>
 					<label for="wuiTextarea">Área de texto</label>
 					<textarea name="textarea"></textarea>
 				</div>
-				<div class="field checkbox">
+				<div class="field icon-left checkbox">
 					<div class="icon"></div>
 					<label for="checkbox">Caja de selección</label>
 					<input id="checkbox" type="checkbox" name="checkbox" value="1">
 				</div>
-				<div class="field">
+				<div class="field icon-left">
 					<div class="icon"></div>
 					<label>Dato</label>
 					<data class="name" value=""></data>

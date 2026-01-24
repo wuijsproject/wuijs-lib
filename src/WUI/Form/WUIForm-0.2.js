@@ -188,7 +188,7 @@ class WUIForm {
 	setValue = (name, value) => {
 		const label = this.getLabel(name);
 		const input = this.getInput(name);
-		const hidden = Boolean(typeof (input.type) != "undefined" && input.type == "hidden");
+		const hidden = Boolean(typeof (input.type) != "undefined" && input.type.toLowerCase() == "hidden");
 		if (label instanceof HTMLLabelElement && !hidden) {
 			if (value != "") {
 				label.classList.add("notempty");
@@ -438,22 +438,22 @@ HTML output:
 	<div class="body">
 		<legend>Fieldset</legend>
 		<fieldset>
-			<div class="field">
+			<div class="field icon-left">
 				<div class="icon"></div>
 				<label>Text</label>
 				<input type="text" name="text">
 			</div>
-			<div class="field">
+			<div class="field icon-left">
 				<div class="icon"></div>
 				<label>Date</label>
 				<input type="date" name="date">
 			</div>
-			<div class="field">
+			<div class="field icon-left">
 				<div class="icon"></div>
 				<label>Time</label>
 				<input type="time" name="time">
 			</div>
-			<div class="field">
+			<div class="field icon-left">
 				<div class="icon"></div>
 				<label>Select</label>
 				<select name="select">
@@ -461,22 +461,22 @@ HTML output:
 					...
 				</select>
 			</div>
-			<div class="field color">
+			<div class="field icon-left color">
 				<div class="icon"></div>
 				<label>Color</label>
 				<input type="color" name="color">
 			</div>
-			<div class="field textarea">
+			<div class="field icon-left textarea">
 				<div class="icon"></div>
 				<label for="wuiTextarea">Text area</label>
 				<textarea name="textarea"></textarea>
 			</div>
-			<div class="field checkbox">
+			<div class="field icon-left checkbox">
 				<div class="icon"></div>
 				<label for="checkbox">Checkbox</label>
 				<input id="checkbox" type="checkbox" name="checkbox" value="1">
 			</div>
-			<div class="field">
+			<div class="field icon-left">
 				<div class="icon"></div>
 				<label>Data</label>
 				<data class="name" value=""></data>
@@ -484,7 +484,7 @@ HTML output:
 		</fieldset>
 		<legend>WUI Inputs Fieldset</legend>
 		<fieldset>
-			<div class="field">
+			<div class="field icon-left">
 				<div class="icon"></div>
 				<label>WUI Selectpicker</label>
 				<div class="wui-selectpicker">
@@ -494,22 +494,22 @@ HTML output:
 					</select>
 				</div>
 			</div>
-			<div class="field">
+			<div class="field icon-left">
 				<div class="icon"></div>
 				<label>WUI Datepicker</label>
 				<div class="wui-datepicker"><input type="date" name="wuiDate" value=""></div>
 			</div>
-			<div class="field">
+			<div class="field icon-left">
 				<div class="icon"></div>
 				<label>WUI Timepicker</label>
 				<div class="wui-timepicker"><input type="time" name="wuiTime" value=""></div>
 			</div>
-			<div class="field color">
+			<div class="field icon-left color">
 				<div class="icon"></div>
 				<label>WUI Colorpicker</label>
 				<div class="wui-colorpicker"><input type="color" name="wuiColor" value=""></div>
 			</div>
-			<div class="field checkbox">
+			<div class="field icon-left checkbox">
 				<div class="icon"></div>
 				<label for="wuiCheckbox">WUI Checkbox</label>
 				<div class="wui-checkbox"><input id="wuiCheckbox" type="checkbox" name="wuiCheckbox" value="1"></div>

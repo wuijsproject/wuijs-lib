@@ -1571,11 +1571,12 @@ Set of pre-designed icons loaded via CSS, for use in interfaces.
 
 #### Composer Icon Table
 
-| Icon                                         | Style                   | Icon                                          | Style                    | Icon                                   | Style             | Icon                                    | Style              |
-| :--:                                         | -----                   | :--:                                          | -----                    | :--:                                   | -----             | :--:                                    | -----              |
-| ![](./imgs/Icons/doublequotes-left-fill.svg) | .doublequotes-left-fill | ![](./imgs/Icons/doublequotes-right-fill.svg) | .doublequotes-right-fill | ![](./imgs/Icons/indent-left-line.svg) | .indent-left-line | ![](./imgs/Icons/indent-right-line.svg) | .indent-right-line |
-| ![](./imgs/Icons/link-line.svg)              | .link-line              | ![](./imgs/Icons/link-alt-line.svg)           | .link-alt-line           | ![](./imgs/Icons/list-check-line.svg)  | .list-check-line  | ![](./imgs/Icons/list-number-line.svg)  | .list-number-line  |
-| ![](./imgs/Icons/list-stars-line.svg)        | .list-stars-line        | ![](./imgs/Icons/list-unorderd-line.svg)      | .list-unorderd-line      | ![](./imgs/Icons/textleft-line.svg)    | .textleft-line    | ![](./imgs/Icons/textright-line.svg)    | .textright-line    |
+| Icon                                         | Style                   | Icon                                          | Style                    | Icon                                   | Style             | Icon                                     | Style               |
+| :---:                                        | ------                  | :---:                                         | ------                   | :---:                                  | ------            | :---:                                    | ------              |
+| ![](./imgs/Icons/doublequotes-left-fill.svg) | .doublequotes-left-fill | ![](./imgs/Icons/doublequotes-right-fill.svg) | .doublequotes-right-fill | ![](./imgs/Icons/indent-left-line.svg) | .indent-left-line | ![](./imgs/Icons/indent-right-line.svg)  | .indent-right-line  |
+| ![](./imgs/Icons/link-line.svg)              | .link-line              | ![](./imgs/Icons/link-alt-line.svg)           | .link-alt-line           | ![](./imgs/Icons/list-line.svg)        | .list-line        | ![](./imgs/Icons/list-check-line.svg)    | .list-check-line    |
+| ![](./imgs/Icons/list-number-line.svg)       | .list-number-line       | ![](./imgs/Icons/list-stars-line.svg)         | .list-stars-line         | ![](./imgs/Icons/list-task-line.svg)   | .list-task-line   | ![](./imgs/Icons/list-unorderd-line.svg) | .list-unorderd-line |
+| ![](./imgs/Icons/text-center-line.svg)       | .text-center-line       | ![](./imgs/Icons/text-paragraph-line.svg)     | .text-paragraph-line     | ![](./imgs/Icons/text-left-line.svg)   | .text-left-line   | ![](./imgs/Icons/text-right-line.svg)    | .text-right-line    |
 
 #### Other Icons Table
 
@@ -2966,23 +2967,23 @@ HTML code:
 		<div class="body">
 			<legend>Fieldset</legend>
 			<fieldset>
-				<div class="field">
-					<div class="icon"></div>
+				<div class="field icon-left">
+					<div class="icon wui-icon text-left-line"></div>
 					<label>Text</label>
 					<input type="text" name="text" value="">
 				</div>
-				<div class="field">
-					<div class="icon"></div>
+				<div class="field icon-left">
+					<div class="icon wui-icon calendar-line"></div>
 					<label>Date</label>
 					<input type="date" name="date" value="">
 				</div>
-				<div class="field">
-					<div class="icon"></div>
+				<div class="field icon-left">
+					<div class="icon wui-icon time-line"></div>
 					<label>Time</label>
 					<input type="time" name="time" value="">
 				</div>
-				<div class="field">
-					<div class="icon"></div>
+				<div class="field icon-left">
+					<div class="icon wui-icon list-check-line"></div>
 					<label>Select</label>
 					<select name="select">
 						<option value=""></option>
@@ -2991,22 +2992,22 @@ HTML code:
 						<option value="value3">value 3</option>
 					</select>
 				</div>
-				<div class="field color">
-					<div class="icon"></div>
+				<div class="field icon-left inline noborder">
+					<div class="icon wui-icon palette-line"></div>
 					<label>Color</label>
 					<input type="color" name="color" value="">
 				</div>
-				<div class="field textarea">
-					<div class="icon"></div>
+				<div class="field icon-left textarea">
+					<div class="icon wui-icon text-paragraph"></div>
 					<label for="wuiTextarea">Text area</label>
 					<textarea name="textarea"></textarea>
 				</div>
-				<div class="field checkbox">
+				<div class="field icon-left checkbox">
 					<div class="icon"></div>
 					<label for="checkbox">Checkbox</label>
 					<input id="checkbox" type="checkbox" name="checkbox" value="1">
 				</div>
-				<div class="field">
+				<div class="field icon-left">
 					<div class="icon"></div>
 					<label>Data</label>
 					<data class="name" value=""></data>
