@@ -3098,13 +3098,13 @@ Código HTML:
 					<label>Dato</label>
 					<data class="name" value="dato">dato</data>
 				</div>
+				<div class="text my-text">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+				</div>
+				<div class="message highlight center">
+					<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+				</div>
 			</fieldset>
-			<div class="text my-text">
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-			</div>
-			<div class="message highlight center">
-				<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-			</div>
 		</div>
 		<div class="footer">
 			<button class="wui-button cancel">cancel</button>

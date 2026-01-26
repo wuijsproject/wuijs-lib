@@ -482,6 +482,12 @@ HTML output:
 				<label>Data</label>
 				<data class="name" value=""></data>
 			</div>
+			<div class="text name [disabled|center]">
+				[<p></p>]
+			</div>
+			<div class="message [highlight|center]">
+				[<p></p>]
+			</div>
 		</fieldset>
 		<legend>WUI Inputs Fieldset</legend>
 		<fieldset>
@@ -516,12 +522,6 @@ HTML output:
 				<div class="wui-checkbox"><input id="wuiCheckbox" type="checkbox" name="wuiCheckbox" value="1"></div>
 			</div>
 		</fieldset>
-		<div class="text name [disabled|center]">
-			[<p></p>]
-		</div>
-		<div class="message [highlight|center]">
-			[<p></p>]
-		</div>
 	</div>
 	<div class="footer">
 		<button class="wui-button cancel">cancel</button>
