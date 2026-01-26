@@ -9,7 +9,7 @@
 
 Versión librería: `0.2.0` ([Registro de Cambio](./REGISTRODECAMBIO.md))
 
-Versión documentación: `0.2.0.20260121.0`
+Versión documentación: `0.2.0.20260126.0`
 
 Licencia: `Licencia Apache 2.0`
 
@@ -2851,6 +2851,85 @@ Componente para la implementación de formularios de datos. Este componente perm
 | change      | `void`                                                     | `change(name)`<br><br>Parámetros:<br>**• name:** `string`<br><br>Desencadena el evento change en el campo identificado por el nombre del campo de entrada. |
 | autosize    | `void`                                                     | `autosize(name)`<br><br>Parámetros:<br>**• name:** `string`<br><br>Ajusta automáticamente la altura de un campo de texto `<textarea>` identificado por el nombre del campo de entrada. |
 
+#### Variables CSS
+
+| Variable                                       | Descripción |
+| ---------------------------------------------- | ----------- |
+| `--wui-form-header-bordercolor`                |
+| `--wui-form-header-titlecolor`                 |
+| `--wui-form-body-scroll-bgcolor-out`           |
+| `--wui-form-body-scroll-bgcolor-over`          |
+| `--wui-form-line-bordercolor`                  |
+| `--wui-form-fieldset-bgcolor`                  |
+| `--wui-form-legend-texttransform`              |
+| `--wui-form-legend-textcolor`                  |
+| `--wui-form-label-textcolor-out`               |
+| `--wui-form-label-textcolor-focus`             |
+| `--wui-form-label-textcolor-notempty`          |
+| `--wui-form-label-textcolor-disabled`          |
+| `--wui-form-input-height`                      |
+| `--wui-form-input-borderwidth`                 |
+| `--wui-form-input-borderradius`                |
+| `--wui-form-input-bordercolor-out`             |
+| `--wui-form-input-bordercolor-focus`           |
+| `--wui-form-input-bordercolor-invalid`         |
+| `--wui-form-input-bordercolor-disabled`        |
+| `--wui-form-input-bgcolor-out`                 |
+| `--wui-form-input-bgcolor-focus`               |
+| `--wui-form-input-bgcolor-disabled`            |
+| `--wui-form-input-textcolor-out`               |
+| `--wui-form-input-textcolor-over`              |
+| `--wui-form-input-textcolor-disabled`          |
+| `--wui-form-date-opener-iconsize`              |
+| `--wui-form-date-opener-iconcolor-out`         |
+| `--wui-form-date-opener-iconcolor-over`        |
+| `--wui-form-date-opener-iconcolor-disabled`    |
+| `--wui-form-date-opener-openicon-src`          |
+| `--wui-form-date-opener-closeicon-src`         |
+| `--wui-form-time-opener-iconsize`              |
+| `--wui-form-time-opener-iconcolor-out`         |
+| `--wui-form-time-opener-iconcolor-over`        |
+| `--wui-form-time-opener-iconcolor-disabled`    |
+| `--wui-form-time-opener-openicon-src`          |
+| `--wui-form-time-opener-closeicon-src`         |
+| `--wui-form-range-thumb-size`                  |
+| `--wui-form-range-thumb-bgcolor-out`           |
+| `--wui-form-range-thumb-bgcolor-over`          |
+| `--wui-form-range-thumb-bgcolor-disabled`      |
+| `--wui-form-range-trackbar-height`             |
+| `--wui-form-range-trackbar-borderwidth`        |
+| `--wui-form-range-trackbar-bordercolor`        |
+| `--wui-form-range-trackbar-bgcolor-out`        |
+| `--wui-form-range-trackbar-bgcolor-over`       |
+| `--wui-form-range-trackbar-bgcolor-disabled`   |
+| `--wui-form-select-opener-iconsize`            |
+| `--wui-form-select-opener-iconcolor-out`       |
+| `--wui-form-select-opener-iconcolor-over`      |
+| `--wui-form-select-opener-iconcolor-disabled`  |
+| `--wui-form-select-opener-openicon-src`        |
+| `--wui-form-select-opener-closeicon-src`       |
+| `--wui-form-data-textcolor-out`                |
+| `--wui-form-data-textcolor-disabled`           |
+| `--wui-form-progress-borderwidth`              |
+| `--wui-form-progress-bordercolor`              |
+| `--wui-form-progress-valuecolor`               |
+| `--wui-form-progress-bgcolor`                  |
+| `--wui-form-text-textcolor-out`                |
+| `--wui-form-text-textcolor-disabled`           |
+| `--wui-form-text-linkcolor-out`                |
+| `--wui-form-text-linkcolor-highlight`          |
+| `--wui-form-message-shadowcolor`               |
+| `--wui-form-message-bgcolor`                   |
+| `--wui-form-message-textcolor`                 |
+| `--wui-form-message-highlight-bgcolor`         |
+| `--wui-form-message-highlight-textcolor`       |
+| `--wui-form-mobile-field-bordercolor`          |
+| `--wui-form-mobile-label-textcolor`            |
+| `--wui-form-mobile-input-height`               |
+| `--wui-form-mobile-input-bgcolor`              |
+| `--wui-form-mobile-input-height`               |
+| `--wui-form-mobile-input-borderradius`         |
+
 #### Implementación
 
 Configuración CSS:
@@ -3004,20 +3083,20 @@ Código HTML:
 					<label>Color</label>
 					<input type="color" name="color" value="">
 				</div>
-				<div class="field icon-left textarea">
+				<div class="field icon-left autosize">
 					<div class="icon wui-icon text-paragraph-line"></div>
 					<label for="wuiTextarea">Área de texto</label>
 					<textarea name="textarea"></textarea>
 				</div>
-				<div class="field icon-left checkbox">
-					<div class="icon"></div>
+				<div class="field icon-left inline noborder">
+					<div class="icon wui-icon check-line"></div>
 					<label for="checkbox">Caja de selección</label>
 					<input id="checkbox" type="checkbox" name="checkbox" value="1">
 				</div>
 				<div class="field icon-left">
-					<div class="icon"></div>
+					<div class="icon wui-icon chat-left-text-line"></div>
 					<label>Dato</label>
-					<data class="name" value=""></data>
+					<data class="name" value="dato">dato</data>
 				</div>
 			</fieldset>
 			<div class="text my-text">

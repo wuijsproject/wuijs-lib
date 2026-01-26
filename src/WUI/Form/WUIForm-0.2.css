@@ -125,25 +125,12 @@
 	align-items: center;
 }
 
-.wui-form fieldset > .field.inline {
-	flex-direction: row;
-}
-
-.wui-form fieldset > .field.inline > :is(input, select, button) {
-	position: absolute;
-	right: 0;
-}
-
-.wui-form fieldset > .field.noborder {
-	border-color: transparent !important;
-}
-
 .wui-form fieldset > .field:is(:hover, :focus, :focus-within) {
 	border-color: var(--wui-form-input-bordercolor-focus);
 }
 
 .wui-form fieldset > .field > label,
-.wui-form fieldset > .field:not(.textarea) {
+.wui-form fieldset > .field:not(.autosize) {
 	height: var(--wui-form-input-height);
 }
 
@@ -268,10 +255,8 @@
 }
 
 .wui-form fieldset > .field > input[type="time"] + .opener {
-	--time-size: var(--wui-form-time-opener-iconsize) var(--wui-form-time-opener-iconsize);
-	-webkit-mask-size: var(--time-size);
-	-moz-mask-size: var(--time-size);
-	mask-size: var(--time-size);
+	width: var(--wui-form-time-opener-iconsize);
+	height: var(--wui-form-time-opener-iconsize);
 	background-color: var(--wui-form-time-opener-iconcolor-out);
 }
 
@@ -601,8 +586,26 @@
 	width: auto;
 }
 
+.wui-form fieldset > .field.inline {
+	flex-direction: row;
+}
+
+.wui-form fieldset > .field.inline > :is(input, select, button) {
+	position: absolute;
+	right: 0;
+}
+
+.wui-form fieldset > .field.noborder {
+	border-color: transparent !important;
+}
+
 .wui-form fieldset > .field.autosize {
 	height: auto !important;
+}
+
+.wui-form fieldset > .field.autosize > textarea {
+	overflow-x: hidden;
+	overflow-y: auto;
 }
 
 .wui-form fieldset > .field.hidden {

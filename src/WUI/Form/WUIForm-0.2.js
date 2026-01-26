@@ -188,9 +188,9 @@ class WUIForm {
 	setValue = (name, value) => {
 		const label = this.getLabel(name);
 		const input = this.getInput(name);
-		const hidden = Boolean(typeof (input.type) != "undefined" && input.type.toLowerCase() == "hidden");
-		if (label instanceof HTMLLabelElement && !hidden) {
-			if (value != "") {
+		const type = typeof (input.type) != "undefined" ? input.type.toLowerCase() : "";
+		if (label instanceof HTMLLabelElement && type != "hidden") {
+			if (value != "" || type.match(/date|time/)) {
 				label.classList.add("notempty");
 			} else {
 				label.classList.remove("notempty");
@@ -308,36 +308,37 @@ class WUIForm {
 				}
 			});
 		});
-		this.#htmlElement.querySelectorAll("input, select, textarea").forEach(input => {
+		this.#htmlElement.querySelectorAll("input, select, textarea, data").forEach(input => {
+			const field = input.closest(".field");
+			const label = field ? field.querySelector(":scope > label") : null;
 			const tag = input.localName.toLowerCase();
-			const type = input.getAttribute("type") || "";
-			const label = input.parentNode.querySelector("label") || input.parentNode.parentNode.querySelector("label") || this.getLabel(input.name);
-			if (type.match(/^(date|time)$/i) || tag.match(/^(select)$/i)) {
+			const type = typeof (input.type) != "undefined" ? input.type.toLowerCase() : "";
+			if (tag == "select" || type.match(/^(date|time)$/)) {
 				if (!input.parentNode.classList.contains("wui-selectpicker") &&
 					!input.parentNode.classList.contains("wui-datepicker") &&
 					!input.parentNode.classList.contains("wui-timepicker")
 				) {
 					const opener = document.createElement("div");
 					opener.className = "opener";
-					opener.style.maskImage = this.#getSRCIcon(input, (type || tag) + "-opener-open");
+					opener.style.maskImage = this.#getSRCIcon(input, type.replace(/-(one|multiple)/, "") + "-opener-open");
 					input.after(opener);
 				}
-				["mouseover", "mouseout", "focus", "blur"].forEach(type => {
-					input.addEventListener(type, () => {
+				["mouseover", "mouseout", "focus", "blur"].forEach(eventName => {
+					input.addEventListener(eventName, () => {
 						if (label instanceof HTMLLabelElement) {
-							if (type.match(/mouseover|focus/) || input.value != "") {
+							if (input.value != "" || type.match(/date|time/) || eventName.match(/mouseover|focus/)) {
 								label.classList.add("notempty");
 							} else {
 								label.classList.remove("notempty");
 							}
 						}
-						if (type == "focus") {
+						if (eventName == "focus") {
 							const open = new MouseEvent("mousedown");
 							input.dispatchEvent(open);
 						}
 					});
 				});
-			} else if (tag == "textarea" && input.classList.contains("autosize")) {
+			} else if (tag == "textarea" && field.classList.contains("autosize")) {
 				const resize = () => {
 					this.autosize(input.name);
 				}
@@ -352,14 +353,14 @@ class WUIForm {
 				}
 			}
 			if (label instanceof HTMLLabelElement) {
-				if (type.match(/^(date|time)$/)) {
+				if (tag == "data" || type.match(/^(date|time)$/)) {
 					label.classList.add("fixed");
 				}
-				if (input.value != "") {
+				if (input.value != "" || type.match(/date|time/)) {
 					label.classList.add("notempty");
 				}
 				input.addEventListener("change", () => {
-					if (input.value != "") {
+					if (input.value != "" || type.match(/date|time/)) {
 						label.classList.add("notempty");
 					} else {
 						label.classList.remove("notempty");
@@ -370,8 +371,8 @@ class WUIForm {
 		this.#darkModeListener(() => {
 			this.#htmlElement.querySelectorAll("input, select").forEach(input => {
 				const tag = input.localName.toLowerCase();
-				const type = input.getAttribute("type") || "";
-				if (type.match(/^(date|time)$/i) || tag.match(/^(select)$/i)) {
+				const type = typeof (input.type) != "undefined" ? input.type.toLowerCase() : "";
+				if (tag == "select" || type.match(/^(date|time)$/)) {
 					input.style.maskImage = this.#getSRCIcon(input, (type || tag) + "-opener-open");
 				}
 			});
@@ -458,20 +459,20 @@ HTML output:
 				<label>Select</label>
 				<select name="select">
 					<option value="value1">value 1</option>
-					...
+					[...]
 				</select>
 			</div>
-			<div class="field icon-left color">
+			<div class="field icon-left inline noborder">
 				<div class="icon"></div>
 				<label>Color</label>
 				<input type="color" name="color">
 			</div>
-			<div class="field icon-left textarea">
+			<div class="field icon-left [autosize]">
 				<div class="icon"></div>
 				<label for="wuiTextarea">Text area</label>
 				<textarea name="textarea"></textarea>
 			</div>
-			<div class="field icon-left checkbox">
+			<div class="field icon-left inline noborder">
 				<div class="icon"></div>
 				<label for="checkbox">Checkbox</label>
 				<input id="checkbox" type="checkbox" name="checkbox" value="1">
@@ -490,7 +491,7 @@ HTML output:
 				<div class="wui-selectpicker">
 					<select name="wuiSelect">
 						<option value="value1">value 1</option>
-						...
+						[...]
 					</select>
 				</div>
 			</div>
@@ -504,12 +505,12 @@ HTML output:
 				<label>WUI Timepicker</label>
 				<div class="wui-timepicker"><input type="time" name="wuiTime" value=""></div>
 			</div>
-			<div class="field icon-left color">
+			<div class="field icon-left inline noborder">
 				<div class="icon"></div>
 				<label>WUI Colorpicker</label>
 				<div class="wui-colorpicker"><input type="color" name="wuiColor" value=""></div>
 			</div>
-			<div class="field icon-left checkbox">
+			<div class="field icon-left inline noborder">
 				<div class="icon"></div>
 				<label for="wuiCheckbox">WUI Checkbox</label>
 				<div class="wui-checkbox"><input id="wuiCheckbox" type="checkbox" name="wuiCheckbox" value="1"></div>
