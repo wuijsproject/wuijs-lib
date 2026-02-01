@@ -9,7 +9,7 @@
 
 Versión librería: `0.2.0` ([Registro de Cambio](./REGISTRODECAMBIO.md))
 
-Versión documentación: `0.2.0.20260126.0`
+Versión documentación: `0.2.0.20260128.0`
 
 Licencia: `Licencia Apache 2.0`
 
@@ -35,8 +35,8 @@ Autor: `Sergio E. Belmar V. <wuijs.project@gmail.com>`
 	*   [WUILoader](#WUILoader)
 	*   WUITooltip
 	*   WUIModal
-	*   WUISlider
 	*   WUIPaging
+	*   WUISlider
 	*   WUITabs
 	*   [WUIMenubar](#WUIMenubar)
 	*   [WUIList](#WUIList)
@@ -72,8 +72,8 @@ WUI, acrónimo del inglés *Web User Interface JavaScript library*, es una bibli
 | [WUILoader](#WUILoader)             | `0.2`   | Componente para la implementación de animaciones de carga. |
 | WUITooltip                          | `0.1`   | Componente para la implementación de textos emergentes. |
 | WUIModal                            | `0.2`   | Componente para la implementación de cuadros de diálogo (tipo `message`) y ventanas emergentes (tipo `page`). |
+| WUIPaging                           | `0.2`   | Componente para la implementación de vistas accesibles paginadamente. |
 | WUISlider                           | `0.2`   | Componente para la implementación de persianas controladas por ratón y/o por evento. |
-| WUIPaging                           | `0.1`   | Componente para la implementación de vistas accesibles paginadamente. |
 | WUITabs                             | `0.1`   | Componente para la implementación de vistas accesibles mediante selección por pestaña. |
 | [WUIMenubar](#WUIMenubar)           | `0.1`   | Componente para la implementación de barras de menú. |
 | [WUIList](#WUIList)                 | `0.2`   | Componente para la implementación de listas de datos y botoneras para cada fila de manera opcional. |
@@ -175,18 +175,18 @@ Código CSS archivo `WUI.css`:
 	--wui-modal-smallpage-box-width: 340px;
 	--wui-modal-smallpage-box-height: 280px;
 
-	/* wui-slider */
-
-	--wui-slider-dots-bgcolor: transparent;
-	--wui-slider-dot-bgcolor: rgb(from #fff r g b / 60%);
-	--wui-slider-dot-bgcolor-selected: rgb(from #fff r g b / 90%);
-
 	/* wui-paging */
 
 	--wui-paging-page-transition-time: .4s;
 	--wui-paging-page-bgcolor: transparent;
 	--wui-paging-page-scroll-bgcolor-out: rgb(from #353a40 r g b / 20%);
 	--wui-paging-page-scroll-bgcolor-over: rgb(from #353a40 r g b / 40%);
+
+	/* wui-slider */
+
+	--wui-slider-dots-bgcolor: transparent;
+	--wui-slider-dot-bgcolor: rgb(from #fff r g b / 60%);
+	--wui-slider-dot-bgcolor-selected: rgb(from #fff r g b / 90%);
 
 	/* wui-tabs */
 
@@ -668,8 +668,8 @@ Código HTML:
 		<link type="text/css" rel="stylesheet" href="./Libraries/WUI/Loader/WUILoader-0.2.css">
 		<link type="text/css" rel="stylesheet" href="./Libraries/WUI/Tooltip/WUITooltip-0.1.css">
 		<link type="text/css" rel="stylesheet" href="./Libraries/WUI/Modal/WUIModal-0.2.css">
+		<link type="text/css" rel="stylesheet" href="./Libraries/WUI/Paging/WUIPaging-0.2.css">
 		<link type="text/css" rel="stylesheet" href="./Libraries/WUI/Slider/WUISlider-0.2.css">
-		<link type="text/css" rel="stylesheet" href="./Libraries/WUI/Paging/WUIPaging-0.1.css">
 		<link type="text/css" rel="stylesheet" href="./Libraries/WUI/Tabs/WUITabs-0.1.css">
 		<link type="text/css" rel="stylesheet" href="./Libraries/WUI/Menubar/WUIMenubar-0.1.css">
 		<link type="text/css" rel="stylesheet" href="./Libraries/WUI/List/WUIList-0.2.css">
@@ -691,8 +691,8 @@ Código HTML:
 		<script type="text/javascript" src="./Libraries/WUI/Loader/WUILoader-0.2.js"></script>
 		<script type="text/javascript" src="./Libraries/WUI/Tooltip/WUITooltip-0.1.js"></script>
 		<script type="text/javascript" src="./Libraries/WUI/Modal/WUIModal-0.2.js"></script>
+		<script type="text/javascript" src="./Libraries/WUI/Paging/WUIPaging-0.2.js"></script>
 		<script type="text/javascript" src="./Libraries/WUI/Slider/WUISlider-0.2.js"></script>
-		<script type="text/javascript" src="./Libraries/WUI/Paging/WUIPaging-0.1.js"></script>
 		<script type="text/javascript" src="./Libraries/WUI/Tabs/WUITabs-0.1.js"></script>
 		<script type="text/javascript" src="./Libraries/WUI/Menubar/WUIMenubar-0.1.js"></script>
 		<script type="text/javascript" src="./Libraries/WUI/List/WUIList-0.2.js"></script>
@@ -1802,9 +1802,8 @@ Componente para la implementación de animaciones de carga
 
 <a name="WUITooltip"></a>
 <a name="WUIModal"></a>
-<a name="WUIModalSelector"></a>
-<a name="WUISlider"></a>
 <a name="WUIPaging"></a>
+<a name="WUISlider"></a>
 <a name="WUITabs"></a>
 <a name="WUIMenubar"></a>
 

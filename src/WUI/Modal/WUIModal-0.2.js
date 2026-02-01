@@ -125,15 +125,7 @@ class WUIModal {
 	set selector(value) {
 		if (typeof (value) == "string" && value != "") {
 			this.#properties.selector = value;
-			this.#htmlElement = document.querySelector(value);
-			this.#htmlElements.box = document.querySelector(value + " > .box");
-			this.#htmlElements.header = document.querySelector(value + " > .box > .header");
-			this.#htmlElements.back = this.#htmlElements.header ? document.querySelector(value + " > .box > .header > .back") : null;
-			this.#htmlElements.topbar = this.#htmlElements.header ? document.querySelector(value + " > .box > .header > .topbar") : null;
-			this.#htmlElements.title = this.#htmlElements.header ? document.querySelector(value + " > .box > .header > .title") : null;
-			this.#htmlElements.close = this.#htmlElements.header ? document.querySelector(value + " > .box > .header > .close") : null;
-			this.#htmlElements.body = document.querySelector(value + " > .box > .body");
-			this.#htmlElements.footer = document.querySelector(value + " > .box > .footer");
+			this.#initHTML();
 		}
 	}
 
@@ -241,6 +233,22 @@ class WUIModal {
 		}
 	}
 
+	#initHTML() {
+		this.#loadHTML();
+	}
+
+	#loadHTML() {
+		this.#htmlElement = document.querySelector(this.selector);
+		this.#htmlElements.box = document.querySelector(this.selector + " > .box");
+		this.#htmlElements.header = document.querySelector(this.selector + " > .box > .header");
+		this.#htmlElements.back = document.querySelector(this.selector + " > .box > .header > .back");
+		this.#htmlElements.topbar = document.querySelector(this.selector + " > .box > .header > .topbar");
+		this.#htmlElements.title = document.querySelector(this.selector + " > .box > .header > .title");
+		this.#htmlElements.close = document.querySelector(this.selector + " > .box > .header > .close");
+		this.#htmlElements.body = document.querySelector(this.selector + " > .box > .body");
+		this.#htmlElements.footer = document.querySelector(this.selector + " > .box > .footer");
+	}
+
 	init() {
 		const debounce = (fn) => {
 			let frame;
@@ -253,6 +261,7 @@ class WUIModal {
 				});
 			}
 		};
+		this.#initHTML();
 		this.#bodyStyle = {};
 		if (navigator.userAgent.match(/iphone|ipad|android/i) && navigator.maxTouchPoints > 1) {
 			this.#htmlElement.classList.add("mobile");

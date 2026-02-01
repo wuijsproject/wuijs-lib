@@ -79,10 +79,9 @@ class WUIForm {
 		if (typeof (value) == "string" && value != "") {
 			this.#properties.selector = value;
 			this.#htmlElement = document.querySelector(value);
-			this.#htmlElements.header = document.querySelector(value + " > .header");
-			this.#htmlElements.body = document.querySelector(value + " > .body");
-			this.#htmlElements.footer = document.querySelector(value + " > .footer");
 			this.#htmlElements.form = this.#htmlElement.localName == "form" ? this.#htmlElement : this.#htmlElement.querySelector("form");
+			this.#loadHTMLElements();
+
 		}
 	}
 
@@ -262,6 +261,12 @@ class WUIForm {
 		}
 	}
 
+	#loadHTMLElements() {
+		this.#htmlElements.header = document.querySelector(this.selector + " > .header");
+		this.#htmlElements.body = document.querySelector(this.selector + " > .body");
+		this.#htmlElements.footer = document.querySelector(this.selector + " > .footer");
+	}
+
 	init() {
 		const debounce = (fn) => {
 			let frame;
@@ -274,6 +279,7 @@ class WUIForm {
 				});
 			}
 		};
+		this.#loadHTMLElements();
 		this.#htmlElements.form.addEventListener("submit", event => {
 			if (!this.#properties.submit) {
 				event.preventDefault();
