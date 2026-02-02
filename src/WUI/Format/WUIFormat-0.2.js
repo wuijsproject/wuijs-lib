@@ -472,8 +472,7 @@ Date.prototype.wuiToString = function (format = "default", options = {}) {
 		"SSS": ("0" + milliseconds).slice(-3),
 		"S": milliseconds,
 		"o": offset,
-		"tz": timezone,
-		"gmt": "GMT" + timezone
+		"tz": timezone
 	};
 	let string = "";
 	switch (format.toLowerCase()) {
@@ -499,7 +498,7 @@ Date.prototype.wuiToString = function (format = "default", options = {}) {
 		string.replace(/\s/g, "");
 	} else {
 		for (let i = 0; i < options.formatDelimiters.length; i++) {
-			string = string.replace(new RegExp(options.formatDelimiters[i], "g"), "");
+			string = string.replace(new RegExp("\\" + options.formatDelimiters[i], "g"), "");
 		}
 	}
 	return string;

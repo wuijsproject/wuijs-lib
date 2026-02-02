@@ -3260,7 +3260,6 @@ Herramienta para manejo y validación de formatos de datos de tipo `string`, `nu
 | S     | Milisegundo en formato de número entero. |
 | o     | Desplazamiento de zona horaria en formato de número entero. |
 | tz    | Desplazamiento de zona horaria en formato "±hhMM". |
-| gmt   | Desplazamiento de zona horaria en formato "GMT±hhMM". |
 
 ##### Formatos de carga predefinidos
 
@@ -3343,7 +3342,7 @@ emailOutput.textContent = `email: ${email} - validation: ${emailValidation}`;
 const localDateLoadFormat = "yyyy-mm-dd";
 const localDate = new Date().wuiLoad("2023-12-31", localDateLoadFormat);
 const localDateOutput = document.body.querySelector(".my-output.localDate");
-const localDateFormat = "dd/mm/yyyy hh:MM gmt";
+const localDateFormat = "dd/mm/yyyy hh:MM [GMT]tz";
 const localDateFormatting = localDate.wuiToString(localDateFormat, { utc: false });
 localDateOutput.textContent = `local date: ${localDate} - format: ${localDateFormat} - formatting: ${localDateFormatting}`;
 
@@ -3351,7 +3350,7 @@ localDateOutput.textContent = `local date: ${localDate} - format: ${localDateFor
 const utcDateLoadFormat = "yyyy-mm-dd";
 const utcDate = new Date().wuiLoad("2023-12-31", utcDateLoadFormat);
 const utcDateOutput = document.body.querySelector(".my-output.utcDate");
-const utcDateFormat = "dd/mm/yyyy hh:MM gmt";
+const utcDateFormat = "dd/mm/yyyy hh:MM [GMT]tz";
 const utcDateFormatting = utcDate.wuiToString(utcDateFormat, { utc: true });
 utcDateOutput.textContent = `utc date: ${utcDate} - format: ${utcDateFormat} - formatting: ${utcDateFormatting}`;
 ```
