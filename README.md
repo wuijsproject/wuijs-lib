@@ -3152,8 +3152,8 @@ Tool for managing and validating `string`, `number` and `Date` data formats.
 | numberToSizeString    | `string`     | `numberToSizeString(number)`<br><br>Arguments:<br>**• number:** `number`, number to format.<br><br>Formats a number to file size (B, KB, MB, TB). |
 | numberToModule11      | `string`     | `numberToModule11(number, codeTen)`<br><br>Arguments:<br>**• number:** `string`, number to validate (including check digit).<br>**• codeTen:** `string`, character to replace the check digit if it is 10.<br><br>Calculates the module 11 check digit. |
 | numberToModule23      | `string`     | `numberToModule23(number, map)`<br><br>Arguments:<br>**• number:** `string`, number to validate.<br>**• map:** `string`, mapping string.<br><br>Calculates the module 23 check digit. |
-| dateToString          | `string`     | `dateToString(date[, format[, options]])`<br><br>Arguments:<br>**• date:** `Date`, date to format.<br>**• format:** `string` *optional*, expected date format (default `"yyyy-mm-dd"`).<br>**• options:** `Object` *optional*, options of formatting.<br><br>Formats a date to string using `Date.prototype.wuiDefaults`. |
-| validateDate          | `boolean`    | `validateDate(date[, format])`<br><br>Arguments:<br>**• date:** `string`, date to validate.<br>**• format:** `string` *optional*, expected date format (default `"yyyy-mm-dd"`).<br><br>Validates a date in string format. |
+| dateToString          | `string`     | `dateToString(date[, format[, options]])`<br><br>Arguments:<br>**• date:** `Date`, date to format.<br>**• format:** `string` *optional*, expected date format (default value `"yyyy-mm-dd"`).<br>**• options:** `Object` *optional*, options of formatting.<br><br>Formats a date to string using `Date.prototype.wuiDefaults`. |
+| validateDate          | `boolean`    | `validateDate(date[, format])`<br><br>Arguments:<br>**• date:** `string`, date to validate.<br>**• format:** `string` *optional*, expected date format (default value `"yyyy-mm-dd"`).<br><br>Validates a date in string format. |
 | validateEmail         | `boolean`    | `validateEmail(email)`<br><br>Arguments:<br>**• email:** `string`, email address.<br><br>Validates an email address. |
 | validateEmailList     | `boolean`    | `validateEmailList(list[, separator])`<br><br>Arguments:<br>**• list:** `string`, list of email addresses.<br>**• separator:** `string` *optional*, list separator character(s).<br><br>Validates a list of email addresses. |
 | validatePhone         | `boolean`    | `validatePhone(phone[, length])`<br><br>Arguments:<br>**• phone:** `string`, phone number.<br>**• length:** `number` *optional*, length of the telephone number.<br><br>Validates a phone number. |
@@ -3202,7 +3202,7 @@ Tool for managing and validating `string`, `number` and `Date` data formats.
 
 | Method               | Return type  | Description |
 | -------------------- | ------------ | ----------- |
-| wuiValidateDate      | `boolean`    | `wuiValidateDate([format])`<br><br>Arguments:<br>**• format:** `string` *optional*, expected date format (default `"yyyy-mm-dd"`).<br><br>Validates a date in string format. |
+| wuiValidateDate      | `boolean`    | `wuiValidateDate([format])`<br><br>Arguments:<br>**• format:** `string` *optional*, expected date format (default value `"yyyy-mm-dd"`).<br><br>Validates a date in string format. |
 | wuiValidateEmail     | `boolean`    | `wuiValidateEmail()`<br><br>Validates an email address. |
 | wuiValidateEmailList | `boolean`    | `wuiValidateEmailList([separator])`<br><br>Arguments:<br>**• separator:** `string` *optional*, list separator character(s).<br><br>Validates a list of email addresses. |
 | wuiValidatePhone     | `boolean`    | `wuiValidatePhone([length])`<br><br>Arguments:<br>**• length:** `number` *optional*, length of the telephone number.<br><br>Validates a phone number. |
@@ -3281,8 +3281,8 @@ Tool for managing and validating `string`, `number` and `Date` data formats.
 
 | Method         | Return type  | Description |
 | -------------- | ------------ | ----------- |
-| wuiLoad        | `Date`       | `wuiLoad(value[, format[, options]])`<br><br>Arguments:<br>**• value:** `string`, date to load.<br>**• format:** `string` *optional*, date format.<br>**• options:** `object` *optional*, date options, according to the definition of **Default values** `<Date.prototype.wuiDefaults>`.<br><br>Load a date from a string. |
-| wuiToString    | `string`     | `wuiToString([format[, options]])`<br><br>Arguments:<br>**• format:** `string` *optional*, date format.<br>**• options:** `object` *optional*, date options, according to the definition of **Default values** `<Date.prototype.wuiDefaults>`.<br><br>Converts a date to a string. |
+| wuiLoad        | `Date`       | `wuiLoad(value[, format[, options]])`<br><br>Arguments:<br>**• value:** `string`, date to load.<br>**• format:** `string` *optional*, date format (default value `"default"`).<br>**• options:** `object` *optional*, date options, according to the definition of **Default values** `<Date.prototype.wuiDefaults>`.<br><br>Load a date from a string. |
+| wuiToString    | `string`     | `wuiToString([format[, options]])`<br><br>Arguments:<br>**• format:** `string` *optional*, date format (default value `"default"`).<br>**• options:** `object` *optional*, date options, according to the definition of **Default values** `<Date.prototype.wuiDefaults>`.<br><br>Converts a date to a string. |
 
 #### Implementation
 
