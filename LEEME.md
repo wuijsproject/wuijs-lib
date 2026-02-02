@@ -3225,13 +3225,14 @@ Herramienta para manejo y validación de formatos de datos de tipo `string`, `nu
 
 ##### Valores predeterminados `Date.prototype.wuiDefaults`
 
-| Propiedad      | Tipo            | Valor predeterminado    | Descripción |
-| -------------- | --------------- | ----------------------- | ----------- |
-| utc            | `boolean`       | `false`                 | Indica si se debe usar la hora universal coordinada (UTC). |
-| locales        | `string`        | `"en-US"`               | Código de configuración regional en formato `<ISO 639-1>-<ISO 3166-1 alpha-2>`. Por ejemplo: `es-CL`, `en-US`, `fr-FR`, etc. |
-| dateFormat     | `string`        | `"yyyy-mm-dd"`          | Formato de fecha, según la definición de **Partes del formato de fecha/hora**.|
-| timeFormat     | `string`        | `"hh:MM:ss"`            | Formato de hora, según la definición de **Partes del formato de fecha/hora**. |
-| datetimeFormat | `string`        | `"yyyy-mm-dd hh:MM:ss"` | Formato de fecha/hora, según la definición de **Partes del formato de fecha/hora**. |
+| Propiedad        | Tipo            | Valor predeterminado    | Descripción |
+| ---------------- | --------------- | ----------------------- | ----------- |
+| utc              | `boolean`       | `false`                 | Indica si se debe usar la hora universal coordinada (UTC). |
+| locales          | `string`        | `"en-US"`               | Código de configuración regional en formato `<ISO 639-1>-<ISO 3166-1 alpha-2>`. Por ejemplo: `es-CL`, `en-US`, `fr-FR`, etc. |
+| dateFormat       | `string`        | `"yyyy-mm-dd"`          | Formato de fecha, según la definición de **Partes del formato de fecha/hora**.|
+| timeFormat       | `string`        | `"hh:MM:ss"`            | Formato de hora, según la definición de **Partes del formato de fecha/hora**. |
+| datetimeFormat   | `string`        | `"yyyy-mm-dd hh:MM:ss"` | Formato de fecha/hora, según la definición de **Partes del formato de fecha/hora**. |
+| formatDelimiters | `Array<string>` | `["[", "]"]`            | Caracteres de no texto utilizados para delimitar texto fijo en el formato. Se eliminan al convertir un objeto de fecha a cadena. |
 
 ##### Partes del formato de fecha/hora
 
@@ -3268,7 +3269,7 @@ Herramienta para manejo y validación de formatos de datos de tipo `string`, `nu
 | `"datetime\|default"` | `Date.prototype.wuiDefaults.datetimeFormat` |
 | `"numeric"`           | `"yyyymmddhhMMss"` |
 | `"standard"`          | `"yyyy-mm-dd hh:MM:ss"` |
-| `"longtime"`          | `"yyyy-mm-ddThh:MM:ss"` |
+| `"longtime"`          | `"yyyy-mm-dd[T]hh:MM:ss"` |
 
 ##### Formatos de salida predefinidos
 
@@ -3279,8 +3280,8 @@ Herramienta para manejo y validación de formatos de datos de tipo `string`, `nu
 | `"time"`                     | `Date.prototype.wuiDefaults.timeFormat` |
 | `"numeric"`                  | `"yyyymmddhhMMss"` |
 | `"standard"`                 | `"yyyy-mm-dd hh:MM:ss"` |
-| `"longtime"`                 | `"yyyy-mm-ddThh:MM:ss"` |
-| `"rfc3339\|atom"`            | `"yyyy-mm-ddThh:MM:ss.SSSZ"` |
+| `"longtime"`                 | `"yyyy-mm-dd[T]hh:MM:ss"` |
+| `"rfc3339\|atom"`            | `"yyyy-mm-dd[T]hh:MM:ss.SSS[Z]"` |
 | `"rfc1123\|rfc2616\|cookie"` | `"DDD, dd-mmm-yyyy hh:MM:ss GMT"` |
 | `"rfc3501"`                  | `"dd-mmm-yyyy hh:MM:ss tz"` |
 

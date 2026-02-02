@@ -3218,13 +3218,14 @@ Tool for managing and validating `string`, `number` and `Date` data formats.
 
 ##### Defaults `Date.prototype.wuiDefaults`
 
-| Property       | Type            | Default value           | Description |
-| -------------- | --------------- | ----------------------- | ----------- |
-| utc            | `boolean`       | `false`                 | Indicate whether Coordinated Universal Time (UTC) should be used. |
-| locales        | `string`        | `"en-US"`               | Locale code in `<ISO 639-1>-<ISO 3166-1 alpha-2>` format. For example: `es-CL`, `en-US`, `fr-FR`, etc. |
-| dateFormat     | `string`        | `"yyyy-mm-dd"`          | Format of the date, as defined by **Date/time format parts**. |
-| timeFormat     | `string`        | `"hh:MM:ss"`            | Format of the time, as defined by **Date/time format parts**. |
-| datetimeFormat | `string`        | `"yyyy-mm-dd hh:MM:ss"` | Format of the date and time, as defined by **Date/time format parts**. |
+| Property         | Type            | Default value           | Description |
+| ---------------- | --------------- | ----------------------- | ----------- |
+| utc              | `boolean`       | `false`                 | Indicate whether Coordinated Universal Time (UTC) should be used. |
+| locales          | `string`        | `"en-US"`               | Locale code in `<ISO 639-1>-<ISO 3166-1 alpha-2>` format. For example: `es-CL`, `en-US`, `fr-FR`, etc. |
+| dateFormat       | `string`        | `"yyyy-mm-dd"`          | Format of the date, as defined by **Date/time format parts**. |
+| timeFormat       | `string`        | `"hh:MM:ss"`            | Format of the time, as defined by **Date/time format parts**. |
+| datetimeFormat   | `string`        | `"yyyy-mm-dd hh:MM:ss"` | Format of the date and time, as defined by **Date/time format parts**. |
+| formatDelimiters | `Array<string>` | `["[", "]"]`            | No text characters used to delimit fixed text in the format. These are removed when converting to a date object to string. |
 
 ##### Date/time format parts
 
@@ -3261,7 +3262,7 @@ Tool for managing and validating `string`, `number` and `Date` data formats.
 | `"datetime\|default"` | `Date.prototype.wuiDefaults.datetimeFormat` |
 | `"numeric"`           | `"yyyymmddhhMMss"` |
 | `"standard"`          | `"yyyy-mm-dd hh:MM:ss"` |
-| `"longtime"`          | `"yyyy-mm-ddThh:MM:ss"` |
+| `"longtime"`          | `"yyyy-mm-dd[T]hh:MM:ss"` |
 
 ##### Predefined output formats
 
@@ -3272,8 +3273,8 @@ Tool for managing and validating `string`, `number` and `Date` data formats.
 | `"time"`                     | `Date.prototype.wuiDefaults.timeFormat` |
 | `"numeric"`                  | `"yyyymmddhhMMss"` |
 | `"standard"`                 | `"yyyy-mm-dd hh:MM:ss"` |
-| `"longtime"`                 | `"yyyy-mm-ddThh:MM:ss"` |
-| `"rfc3339\|atom"`            | `"yyyy-mm-ddThh:MM:ss.SSSZ"` |
+| `"longtime"`                 | `"yyyy-mm-dd[T]hh:MM:ss"` |
+| `"rfc3339\|atom"`            | `"yyyy-mm-dd[T]hh:MM:ss.SSS[Z]"` |
 | `"rfc1123\|rfc2616\|cookie"` | `"DDD, dd-mmm-yyyy hh:MM:ss GMT"` |
 | `"rfc3501"`                  | `"dd-mmm-yyyy hh:MM:ss tz"` |
 

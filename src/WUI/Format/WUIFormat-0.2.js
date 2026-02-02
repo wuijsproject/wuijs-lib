@@ -327,6 +327,7 @@ Date.prototype.wuiDefaults = {
 	dateFormat: "yyyy-mm-dd",
 	timeFormat: "hh:MM:ss",
 	datetimeFormat: "yyyy-mm-dd hh:MM:ss",
+	formatDelimiters: ["[", "]"],
 	weekDaysNames: [],
 	monthsNames: []
 }
@@ -484,7 +485,7 @@ Date.prototype.wuiToString = function (format = "default", options = {}) {
 		case "standard": string = "yyyy-mm-dd hh:MM:ss"; break;
 		case "longtime": string = "yyyy-mm-dd T hh:MM:ss"; break;
 		/*case "atom":
-		case "rfc3339": string = "yyyy-mm-dd T hh:MM:ss.zzz Z"; break;
+		case "rfc3339": string = "yyyy-mm-dd T hh:MM:ss.sss Z"; break;
 		case "cookie":
 		case "rfc1123":
 		case "rfc2616": string = "DDD, dd mmm yyyy hh:MM:ss GMT"; break;*/
@@ -496,6 +497,10 @@ Date.prototype.wuiToString = function (format = "default", options = {}) {
 	}
 	if (format.match(/^(numeric|longtime|atom|rfc3339)$/i)) {
 		string.replace(/\s/g, "");
+	} else {
+		for (let i = 0; i < options.formatDelimiters.length; i++) {
+			string = string.replace(new RegExp(options.formatDelimiters[i], "g"), "");
+		}
 	}
 	return string;
 }
