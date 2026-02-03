@@ -2852,82 +2852,82 @@ Componente para la implementación de formularios de datos. Este componente perm
 
 #### Variables CSS
 
-| Variable                                       | Descripción |
-| ---------------------------------------------- | ----------- |
-| `--wui-form-header-bordercolor`                |
-| `--wui-form-header-titlecolor`                 |
-| `--wui-form-body-scroll-bgcolor-out`           |
-| `--wui-form-body-scroll-bgcolor-over`          |
-| `--wui-form-line-bordercolor`                  |
-| `--wui-form-fieldset-bgcolor`                  |
-| `--wui-form-legend-texttransform`              |
-| `--wui-form-legend-textcolor`                  |
-| `--wui-form-label-textcolor-out`               |
-| `--wui-form-label-textcolor-focus`             |
-| `--wui-form-label-textcolor-notempty`          |
-| `--wui-form-label-textcolor-disabled`          |
-| `--wui-form-input-height`                      |
-| `--wui-form-input-borderwidth`                 |
-| `--wui-form-input-borderradius`                |
-| `--wui-form-input-bordercolor-out`             |
-| `--wui-form-input-bordercolor-focus`           |
-| `--wui-form-input-bordercolor-invalid`         |
-| `--wui-form-input-bordercolor-disabled`        |
-| `--wui-form-input-bgcolor-out`                 |
-| `--wui-form-input-bgcolor-focus`               |
-| `--wui-form-input-bgcolor-disabled`            |
-| `--wui-form-input-textcolor-out`               |
-| `--wui-form-input-textcolor-over`              |
-| `--wui-form-input-textcolor-disabled`          |
-| `--wui-form-date-opener-iconsize`              |
-| `--wui-form-date-opener-iconcolor-out`         |
-| `--wui-form-date-opener-iconcolor-over`        |
-| `--wui-form-date-opener-iconcolor-disabled`    |
-| `--wui-form-date-opener-openicon-src`          |
-| `--wui-form-date-opener-closeicon-src`         |
-| `--wui-form-time-opener-iconsize`              |
-| `--wui-form-time-opener-iconcolor-out`         |
-| `--wui-form-time-opener-iconcolor-over`        |
-| `--wui-form-time-opener-iconcolor-disabled`    |
-| `--wui-form-time-opener-openicon-src`          |
-| `--wui-form-time-opener-closeicon-src`         |
-| `--wui-form-range-thumb-size`                  |
-| `--wui-form-range-thumb-bgcolor-out`           |
-| `--wui-form-range-thumb-bgcolor-over`          |
-| `--wui-form-range-thumb-bgcolor-disabled`      |
-| `--wui-form-range-trackbar-height`             |
-| `--wui-form-range-trackbar-borderwidth`        |
-| `--wui-form-range-trackbar-bordercolor`        |
-| `--wui-form-range-trackbar-bgcolor-out`        |
-| `--wui-form-range-trackbar-bgcolor-over`       |
-| `--wui-form-range-trackbar-bgcolor-disabled`   |
-| `--wui-form-select-opener-iconsize`            |
-| `--wui-form-select-opener-iconcolor-out`       |
-| `--wui-form-select-opener-iconcolor-over`      |
-| `--wui-form-select-opener-iconcolor-disabled`  |
-| `--wui-form-select-opener-openicon-src`        |
-| `--wui-form-select-opener-closeicon-src`       |
-| `--wui-form-data-textcolor-out`                |
-| `--wui-form-data-textcolor-disabled`           |
-| `--wui-form-progress-borderwidth`              |
-| `--wui-form-progress-bordercolor`              |
-| `--wui-form-progress-valuecolor`               |
-| `--wui-form-progress-bgcolor`                  |
-| `--wui-form-text-textcolor-out`                |
-| `--wui-form-text-textcolor-disabled`           |
-| `--wui-form-text-linkcolor-out`                |
-| `--wui-form-text-linkcolor-highlight`          |
-| `--wui-form-message-shadowcolor`               |
-| `--wui-form-message-bgcolor`                   |
-| `--wui-form-message-textcolor`                 |
-| `--wui-form-message-highlight-bgcolor`         |
-| `--wui-form-message-highlight-textcolor`       |
-| `--wui-form-mobile-field-bordercolor`          |
-| `--wui-form-mobile-label-textcolor`            |
-| `--wui-form-mobile-input-height`               |
-| `--wui-form-mobile-input-bgcolor`              |
-| `--wui-form-mobile-input-height`               |
-| `--wui-form-mobile-input-borderradius`         |
+| Variable                                      | Descripción |
+| --------------------------------------------- | ----------- |
+| `--wui-form-header-bordercolor`               |
+| `--wui-form-header-titlecolor`                |
+| `--wui-form-body-scroll-bgcolor-out`          |
+| `--wui-form-body-scroll-bgcolor-over`         |
+| `--wui-form-line-bordercolor`                 |
+| `--wui-form-fieldset-bgcolor`                 |
+| `--wui-form-legend-texttransform`             |
+| `--wui-form-legend-textcolor`                 |
+| `--wui-form-label-textcolor-out`              |
+| `--wui-form-label-textcolor-focus`            |
+| `--wui-form-label-textcolor-notempty`         |
+| `--wui-form-label-textcolor-disabled`         |
+| `--wui-form-input-height`                     |
+| `--wui-form-input-borderwidth`                |
+| `--wui-form-input-borderradius`               |
+| `--wui-form-input-bordercolor-out`            |
+| `--wui-form-input-bordercolor-focus`          |
+| `--wui-form-input-bordercolor-invalid`        |
+| `--wui-form-input-bordercolor-disabled`       |
+| `--wui-form-input-bgcolor-out`                |
+| `--wui-form-input-bgcolor-focus`              |
+| `--wui-form-input-bgcolor-disabled`           |
+| `--wui-form-input-textcolor-out`              |
+| `--wui-form-input-textcolor-over`             |
+| `--wui-form-input-textcolor-disabled`         |
+| `--wui-form-date-opener-iconsize`             |
+| `--wui-form-date-opener-iconcolor-out`        |
+| `--wui-form-date-opener-iconcolor-over`       |
+| `--wui-form-date-opener-iconcolor-disabled`   |
+| `--wui-form-date-opener-openicon-src`         |
+| `--wui-form-date-opener-closeicon-src`        |
+| `--wui-form-time-opener-iconsize`             |
+| `--wui-form-time-opener-iconcolor-out`        |
+| `--wui-form-time-opener-iconcolor-over`       |
+| `--wui-form-time-opener-iconcolor-disabled`   |
+| `--wui-form-time-opener-openicon-src`         |
+| `--wui-form-time-opener-closeicon-src`        |
+| `--wui-form-range-thumb-size`                 |
+| `--wui-form-range-thumb-bgcolor-out`          |
+| `--wui-form-range-thumb-bgcolor-over`         |
+| `--wui-form-range-thumb-bgcolor-disabled`     |
+| `--wui-form-range-trackbar-height`            |
+| `--wui-form-range-trackbar-borderwidth`       |
+| `--wui-form-range-trackbar-bordercolor`       |
+| `--wui-form-range-trackbar-bgcolor-out`       |
+| `--wui-form-range-trackbar-bgcolor-over`      |
+| `--wui-form-range-trackbar-bgcolor-disabled`  |
+| `--wui-form-select-opener-iconsize`           |
+| `--wui-form-select-opener-iconcolor-out`      |
+| `--wui-form-select-opener-iconcolor-over`     |
+| `--wui-form-select-opener-iconcolor-disabled` |
+| `--wui-form-select-opener-openicon-src`       |
+| `--wui-form-select-opener-closeicon-src`      |
+| `--wui-form-data-textcolor-out`               |
+| `--wui-form-data-textcolor-disabled`          |
+| `--wui-form-progress-borderwidth`             |
+| `--wui-form-progress-bordercolor`             |
+| `--wui-form-progress-valuecolor`              |
+| `--wui-form-progress-bgcolor`                 |
+| `--wui-form-text-textcolor-out`               |
+| `--wui-form-text-textcolor-disabled`          |
+| `--wui-form-text-linkcolor-out`               |
+| `--wui-form-text-linkcolor-highlight`         |
+| `--wui-form-message-shadowcolor`              |
+| `--wui-form-message-bgcolor`                  |
+| `--wui-form-message-textcolor`                |
+| `--wui-form-message-highlight-bgcolor`        |
+| `--wui-form-message-highlight-textcolor`      |
+| `--wui-form-mobile-field-bordercolor`         |
+| `--wui-form-mobile-label-textcolor`           |
+| `--wui-form-mobile-input-height`              |
+| `--wui-form-mobile-input-bgcolor`             |
+| `--wui-form-mobile-input-height`              |
+| `--wui-form-mobile-input-borderradius`        |
 
 #### Implementación
 
@@ -3153,25 +3153,25 @@ Herramienta para manejo y validación de formatos de datos de tipo `string`, `nu
 
 #### Métodos Estáticos
 
-| Método                | Tipo retorno | Descripción |
-| --------------------- | ------------ | ----------- |
-| numberToString        | `string`     | `numberToString(number[, options])`<br><br>Parámetros:<br>**• number:** `number`, número a formatear.<br>**• options:** `Object` *opcional*, opciones de formateo.<br><br>Formatea un número a una cadena. |
-| numberToSizeString    | `string`     | `numberToSizeString(number)`<br><br>Parámetros:<br>**• number:** `number`, número a formatear.<br><br>Formatea un número a una cadena que representa el tamaño de archivo (B, KB, MB, TB). |
-| numberToModule11      | `string`     | `numberToModule11(number, codeTen)`<br><br>Parámetros:<br>**• number:** `string`, número a validar (incluido dígito verificador).<br>**• codeTen:** `string`, carácter por el que se reemplazará el dígito verificador en caso que sea 10.<br><br>Calcula el dígito verificador módulo 11. |
-| numberToModule23      | `string`     | `numberToModule23(number, map)`<br><br>Parámetros:<br>**• number:** `string`, número a validar.<br>**• map:** `string`, cadena de caracteres de mapeo.<br><br>Calcula el dígito verificador módulo 23. |
-| dateToString          | `string`     | `dateToString(date[, format[, options]])`<br><br>Parámetros:<br>**• date:** `Date`, fecha a formatear.<br>**• format:** `string` *opcional*, formato de fecha esperado (valor predeterminado `"yyyy-mm-dd"`).<br>**• options:** `Object` *opcional*, opciones de formateo.<br><br>Formatea una fecha a cadena usando `Date.prototype.wuiDefaults`. |
-| validateDate          | `boolean`    | `validateDate(date[, format])`<br><br>Parámetros:<br>**• date:** `string`, fecha a validar.<br>**• format:** `string` *opcional*, formato de fecha esperado (valor predeterminado `"yyyy-mm-dd"`).<br><br>Valida una fecha en formato cadena. |
-| validateEmail         | `boolean`    | `validateEmail(email)`<br><br>Parámetros:<br>**• email:** `string`, dirección de correo.<br><br>Valida una dirección de correo electrónico. |
-| validateEmailList     | `boolean`    | `validateEmailList(list[, separator])`<br><br>Parámetros:<br>**• list:** `string`, lista de direcciones de correo.<br>**• separator:** `string` *opcional*, carácter(es) de separación de lista.<br><br>Valida una lista de correos electrónicos. |
-| validatePhone         | `boolean`    | `validatePhone(phone[, length])`<br><br>Parámetros:<br>**• phone:** `string`, número telefónico.<br>**• length:** `number` *opcional*, largo del número telefónico.<br><br>Valida un número de teléfono. |
-| validatePhoneList     | `boolean`    | `validatePhoneList(list[, length[, separator]])`<br><br>Parámetros:<br>**• list:** `string`, lista de números telefónicos.<br>**• length:** `number` *opcional*, largo del número telefónico.<br>**• separator:** `string` *opcional*, carácter(es) de separación de lista.<br><br>Valida una lista de números de teléfono. |
-| validateURL           | `boolean`    | `validateURL(url)`<br><br>Parámetros:<br>**• url:** `string`, dirección URL.<br><br>Valida una dirección URL. |
-| validateURLList       | `boolean`    | `validateURLList(list[, separator])`<br><br>Parámetros:<br>**• list:** `string`, lista de direcciones URL.<br>**• separator:** `string` *opcional*, carácter(es) de separación de lista.<br><br>Valida una lista de URLs. |
-| validateIPv4          | `boolean`    | `validateIPv4(ipv4)`<br><br>Parámetros:<br>**• ipv4:** `string`, dirección de IPv4.<br><br>Valida una dirección IPv4. |
-| validateModule11      | `boolean`    | `validateModule11(value, codeTen)`<br><br>Parámetros:<br>**• value:** `string`, cadena a validar (incluido dígito verificador).<br>**• codeTen:** `string`, carácter por el que se reemplazará el dígito verificador en caso que sea 10.<br><br>Valida una cadena incluido el dígito verificador módulo 11. |
-| validateModule23      | `boolean`    | `validateModule23(value, map)`<br><br>Parámetros:<br>**• value:** `string`, cadena a validar (incluido dígito verificador).<br>**• map:** `string`, cadena de caracteres de mapeo.<br><br>Valida una cadena incluido el dígito verificador módulo 23. |
-| validateNID           | `boolean`    | `validateNID(nid, countryCode)`<br><br>Parámetros:<br>**• nid:** `string`, valor a validar.<br>**• countryCode:** `string`, código de país en formato ISO 3166-1 alpha-2 con soporte para CL, PY y ES.<br><br>Valida un documento de identidad nacional. |
-| loadDate              | `Date`       | `loadDate(date[, format[, options]])`<br><br>Parámetros:<br>**• date:** `string`, fecha a cargar.<br>**• format:** `string` *opcional*, formato de fecha.<br>**• options:** `object` *opcional*, opciones de fecha, según la definición de **Valores predeterminados** `<Date.prototype.wuiDefaults>`.<br><br>Carga una fecha a partir de una cadena. |
+| Método             | Tipo retorno | Descripción |
+| ------------------ | ------------ | ----------- |
+| numberToString     | `string`     | `numberToString(number[, options])`<br><br>Parámetros:<br>**• number:** `number`, número a formatear.<br>**• options:** `Object` *opcional*, opciones de formateo.<br><br>Formatea un número a una cadena. |
+| numberToSizeString | `string`     | `numberToSizeString(number)`<br><br>Parámetros:<br>**• number:** `number`, número a formatear.<br><br>Formatea un número a una cadena que representa el tamaño de archivo (B, KB, MB, TB). |
+| numberToModule11   | `string`     | `numberToModule11(number, codeTen)`<br><br>Parámetros:<br>**• number:** `string`, número a validar (incluido dígito verificador).<br>**• codeTen:** `string`, carácter por el que se reemplazará el dígito verificador en caso que sea 10.<br><br>Calcula el dígito verificador módulo 11. |
+| numberToModule23   | `string`     | `numberToModule23(number, map)`<br><br>Parámetros:<br>**• number:** `string`, número a validar.<br>**• map:** `string`, cadena de caracteres de mapeo.<br><br>Calcula el dígito verificador módulo 23. |
+| dateToString       | `string`     | `dateToString(date[, format[, options]])`<br><br>Parámetros:<br>**• date:** `Date`, fecha a formatear.<br>**• format:** `string` *opcional*, formato de fecha esperado (valor predeterminado `"yyyy-mm-dd"`).<br>**• options:** `Object` *opcional*, opciones de formateo.<br><br>Formatea una fecha a cadena usando `Date.prototype.wuiDefaults`. |
+| validateDate       | `boolean`    | `validateDate(date[, format])`<br><br>Parámetros:<br>**• date:** `string`, fecha a validar.<br>**• format:** `string` *opcional*, formato de fecha esperado (valor predeterminado `"yyyy-mm-dd"`).<br><br>Valida una fecha en formato cadena. |
+| validateEmail      | `boolean`    | `validateEmail(email)`<br><br>Parámetros:<br>**• email:** `string`, dirección de correo.<br><br>Valida una dirección de correo electrónico. |
+| validateEmailList  | `boolean`    | `validateEmailList(list[, separator])`<br><br>Parámetros:<br>**• list:** `string`, lista de direcciones de correo.<br>**• separator:** `string` *opcional*, carácter(es) de separación de lista.<br><br>Valida una lista de correos electrónicos. |
+| validatePhone      | `boolean`    | `validatePhone(phone[, length])`<br><br>Parámetros:<br>**• phone:** `string`, número telefónico.<br>**• length:** `number` *opcional*, largo del número telefónico.<br><br>Valida un número de teléfono. |
+| validatePhoneList  | `boolean`    | `validatePhoneList(list[, length[, separator]])`<br><br>Parámetros:<br>**• list:** `string`, lista de números telefónicos.<br>**• length:** `number` *opcional*, largo del número telefónico.<br>**• separator:** `string` *opcional*, carácter(es) de separación de lista.<br><br>Valida una lista de números de teléfono. |
+| validateURL        | `boolean`    | `validateURL(url)`<br><br>Parámetros:<br>**• url:** `string`, dirección URL.<br><br>Valida una dirección URL. |
+| validateURLList    | `boolean`    | `validateURLList(list[, separator])`<br><br>Parámetros:<br>**• list:** `string`, lista de direcciones URL.<br>**• separator:** `string` *opcional*, carácter(es) de separación de lista.<br><br>Valida una lista de URLs. |
+| validateIPv4       | `boolean`    | `validateIPv4(ipv4)`<br><br>Parámetros:<br>**• ipv4:** `string`, dirección de IPv4.<br><br>Valida una dirección IPv4. |
+| validateModule11   | `boolean`    | `validateModule11(value, codeTen)`<br><br>Parámetros:<br>**• value:** `string`, cadena a validar (incluido dígito verificador).<br>**• codeTen:** `string`, carácter por el que se reemplazará el dígito verificador en caso que sea 10.<br><br>Valida una cadena incluido el dígito verificador módulo 11. |
+| validateModule23   | `boolean`    | `validateModule23(value, map)`<br><br>Parámetros:<br>**• value:** `string`, cadena a validar (incluido dígito verificador).<br>**• map:** `string`, cadena de caracteres de mapeo.<br><br>Valida una cadena incluido el dígito verificador módulo 23. |
+| validateNID        | `boolean`    | `validateNID(nid, countryCode)`<br><br>Parámetros:<br>**• nid:** `string`, valor a validar.<br>**• countryCode:** `string`, código de país en formato ISO 3166-1 alpha-2 con soporte para CL, PY y ES.<br><br>Valida un documento de identidad nacional. |
+| loadDate           | `Date`       | `loadDate(date[, format[, options]])`<br><br>Parámetros:<br>**• date:** `string`, fecha a cargar.<br>**• format:** `string` *opcional*, formato de fecha.<br>**• options:** `object` *opcional*, opciones de fecha, según la definición de **Valores predeterminados** `<Date.prototype.wuiDefaults>`.<br><br>Carga una fecha a partir de una cadena. |
 
 #### Extensiones de Prototipo Number `Number.prototype`
 
@@ -3286,10 +3286,10 @@ Herramienta para manejo y validación de formatos de datos de tipo `string`, `nu
 
 ##### Métodos
 
-| Método         | Tipo retorno | Descripción |
-| -------------- | ------------ | ----------- |
-| wuiLoad        | `Date`       | `wuiLoad(value[, format[, options]])`<br><br>Parámetros:<br>**• value:** `string`, fecha a cargar.<br>**• format:** `string` *opcional*, formato de fecha (valor predeterminado `"default"`).<br>**• options:** `object` *opcional*, opciones de fecha, según la definición de **Valores predeterminados** `<Date.prototype.wuiDefaults>`.<br><br>Carga una fecha a partir de una cadena. |
-| wuiToString    | `string`     | `wuiToString([format[, options]])`<br><br>Parámetros:<br>**• format:** `string` *opcional*, formato de fecha (valor predeterminado `"default"`).<br>**• options:** `object` *opcional*, opciones de fecha, según la definición de **Valores predeterminados** `<Date.prototype.wuiDefaults>`.<br><br>Convierte una fecha a cadena. |
+| Método      | Tipo retorno | Descripción |
+| ----------- | ------------ | ----------- |
+| wuiLoad     | `Date`       | `wuiLoad(value[, format[, options]])`<br><br>Parámetros:<br>**• value:** `string`, fecha a cargar.<br>**• format:** `string` *opcional*, formato de fecha (valor predeterminado `"default"`).<br>**• options:** `object` *opcional*, opciones de fecha, según la definición de **Valores predeterminados** `<Date.prototype.wuiDefaults>`.<br><br>Carga una fecha a partir de una cadena. |
+| wuiToString | `string`     | `wuiToString([format[, options]])`<br><br>Parámetros:<br>**• format:** `string` *opcional*, formato de fecha (valor predeterminado `"default"`).<br>**• options:** `object` *opcional*, opciones de fecha, según la definición de **Valores predeterminados** `<Date.prototype.wuiDefaults>`.<br><br>Convierte una fecha a cadena. |
 
 #### Implementación
 

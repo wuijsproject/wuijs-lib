@@ -429,7 +429,7 @@ Date.prototype.wuiToString = function (format = "default", options = {}) {
 			options[name] = value;
 		}
 	});
-	if (format.match(/(rfc1123|rfc2616)/)) {
+	if (format.match(/^(rfc1123|rfc2616)$/i)) {
 		this.wuiLoadNames("en-US");
 		options.utc = true;
 	}
