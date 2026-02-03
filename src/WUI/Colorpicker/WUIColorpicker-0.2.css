@@ -247,12 +247,14 @@ div.wui-colorpicker > .box > .list {
 	overflow: auto;
 	border-top: 1px solid var(--wui-colorpicker-box-bordercolor);
 	border-bottom: 1px solid var(--wui-colorpicker-box-bordercolor);
+	scrollbar-color: var(--wui-colorpicker-box-scroll-bgcolor-out) transparent;
 	padding: 5px;
 	flex-direction: column;
 }
 
-div.wui-colorpicker > .box > .list {
-	scrollbar-color: var(--wui-colorpicker-box-scroll-bgcolor-out) transparent;
+div.wui-colorpicker > .box > div[data-scroll-body="0"].list,
+div.wui-colorpicker > .box > div[data-scroll-body="null"].list {
+	border-top-color: transparent;
 }
 
 div.wui-colorpicker > .box > .list::-webkit-scrollbar {
