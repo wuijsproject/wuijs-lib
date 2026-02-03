@@ -260,7 +260,7 @@ class WUIModal {
 					fn(...params);
 				});
 			}
-		};
+		}
 		this.#initHTML();
 		this.#bodyStyle = {};
 		if (navigator.userAgent.match(/iphone|ipad|android/i) && navigator.maxTouchPoints > 1) {

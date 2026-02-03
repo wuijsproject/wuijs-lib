@@ -689,6 +689,17 @@ class WUIColorpicker {
 	}
 
 	init() {
+		const debounce = (fn) => {
+			let frame;
+			return (...params) => {
+				if (frame) {
+					cancelAnimationFrame(frame);
+				}
+				frame = requestAnimationFrame(() => {
+					fn(...params);
+				});
+			}
+		}
 		const optionOnClick = (option, mode) => {
 			const selected = !Boolean(option.classList.contains("selected"));
 			const targetValue = option.dataset.value || "";
