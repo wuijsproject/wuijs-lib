@@ -252,8 +252,8 @@ div.wui-colorpicker > .box > .list {
 	flex-direction: column;
 }
 
-div.wui-colorpicker > .box > div[data-scroll-body="0"].list,
-div.wui-colorpicker > .box > div[data-scroll-body="null"].list {
+div.wui-colorpicker > .box > div[data-scroll="0"].list,
+div.wui-colorpicker > .box > div[data-scroll="null"].list {
 	border-top-color: transparent;
 }
 

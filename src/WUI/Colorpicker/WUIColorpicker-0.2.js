@@ -789,7 +789,7 @@ class WUIColorpicker {
 			this.#htmlElements.listTab.className = "tab list";
 			this.#htmlElements.listTab.addEventListener("click", () => { this.selectMode("list"); });
 			this.#htmlElements.list.className = "list hidden";
-			this.#htmlElements.list.dataset.scrollBody = 0;
+			this.#htmlElements.list.dataset.scroll = 0;
 			if (this.#htmlElements.list.classList.contains("scroll")) {
 				["scroll", "touchmove"].forEach(type => {
 					this.#htmlElements.list.addEventListener(type, debounce(() => {
@@ -797,7 +797,7 @@ class WUIColorpicker {
 						if (top < 0) {
 							top = 0;
 						}
-						this.#htmlElements.list.dataset.scrollBody = top;
+						this.#htmlElements.list.dataset.scroll = top;
 					}), { passive: true });
 				});
 			}
