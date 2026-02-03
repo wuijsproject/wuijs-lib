@@ -790,17 +790,15 @@ class WUIColorpicker {
 			this.#htmlElements.listTab.addEventListener("click", () => { this.selectMode("list"); });
 			this.#htmlElements.list.className = "list hidden";
 			this.#htmlElements.list.dataset.scroll = 0;
-			if (this.#htmlElements.list.classList.contains("scroll")) {
-				["scroll", "touchmove"].forEach(type => {
-					this.#htmlElements.list.addEventListener(type, debounce(() => {
-						let top = this.#htmlElements.list.scrollTop;
-						if (top < 0) {
-							top = 0;
-						}
-						this.#htmlElements.list.dataset.scroll = top;
-					}), { passive: true });
-				});
-			}
+			["scroll", "touchmove"].forEach(type => {
+				this.#htmlElements.list.addEventListener(type, debounce(() => {
+					let top = this.#htmlElements.list.scrollTop;
+					if (top < 0) {
+						top = 0;
+					}
+					this.#htmlElements.list.dataset.scroll = top;
+				}), { passive: true });
+			});
 			this.#htmlElements.preview.className = "preview";
 			this.#htmlElements.preview.appendChild(this.#htmlElements.previewColor);
 			this.#htmlElements.preview.appendChild(this.#htmlElements.previewText);
