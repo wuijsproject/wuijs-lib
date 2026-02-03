@@ -9,7 +9,7 @@
 
 Versión librería: `0.2.0` ([Registro de Cambio](./REGISTRODECAMBIO.md))
 
-Versión documentación: `0.2.0.20260128.0`
+Versión documentación: `0.2.0.20260202.0`
 
 Licencia: `Licencia Apache 2.0`
 
@@ -1182,6 +1182,7 @@ body {
 
 body {
 	font-family: Arial, Helvetica, Verdana, sans-serif;
+	font-size: 14px;
 }
 
 .wui-scrolly {
@@ -1710,6 +1711,7 @@ Código CSS:
 ```CSS
 body {
 	font-family: Arial, Helvetica, Verdana, sans-serif;
+	font-size: 14px;
 }
 
 .my-link {
@@ -1996,6 +1998,7 @@ Código CSS:
 ```css
 body {
 	font-family: Arial, Helvetica, Verdana, sans-serif;
+	font-size: 14px;
 }
 
 .my-output {
@@ -2276,6 +2279,7 @@ Código CSS:
 ```css
 body {
 	font-family: Arial, Helvetica, Verdana, sans-serif;
+	font-size: 14px;
 }
 
 header {
@@ -2623,6 +2627,7 @@ Código CSS:
 ```css
 body {
 	font-family: Arial, Helvetica, Verdana, sans-serif;
+	font-size: 14px;
 }
 
 header {
@@ -3027,6 +3032,7 @@ Código CSS:
 ```css
 body {
 	font-family: Arial, Helvetica, Verdana, sans-serif;
+	font-size: 14px;
 }
 
 nav {
@@ -3531,6 +3537,7 @@ Código CSS:
 ```css
 body {
 	font-family: Arial, Helvetica, Verdana, sans-serif;
+	font-size: 14px;
 }
 
 .my-selectpicker {
@@ -3791,6 +3798,7 @@ Código CSS:
 ```css
 body {
 	font-family: Arial, Helvetica, Verdana, sans-serif;
+	font-size: 14px;
 }
 
 .my-datepicker {
@@ -3990,6 +3998,7 @@ Código CSS:
 ```css
 body {
 	font-family: Arial, Helvetica, Verdana, sans-serif;
+	font-size: 14px;
 }
 
 .my-timepicker {
@@ -4200,6 +4209,7 @@ Código CSS:
 ```css
 body {
 	font-family: Arial, Helvetica, Verdana, sans-serif;
+	font-size: 14px;
 }
 
 .my-colorpicker {}
@@ -4360,10 +4370,6 @@ Configuración CSS:
 Código CSS:
 
 ```css
-body {
-	font-family: Arial, Helvetica, Verdana, sans-serif;
-}
-
 .my-checkbox {}
 
 .my-output {
@@ -4489,10 +4495,6 @@ Configuración CSS:
 Código CSS:
 
 ```css
-body {
-	font-family: Arial, Helvetica, Verdana, sans-serif;
-}
-
 .my-intensity {}
 
 .my-output {
@@ -4718,6 +4720,7 @@ Código CSS:
 ```css
 body {
 	font-family: Arial, Helvetica, Verdana, sans-serif;
+	font-size: 14px;
 }
 
 .my-button {

@@ -9,7 +9,7 @@
 
 Library version: `0.2.0` ([Change Log](./CHANGELOG.md))
 
-Document version: `0.2.0.20260128.0`
+Document version: `0.2.0.20260202.0`
 
 License: `Apache License 2.0`
 
@@ -1180,6 +1180,7 @@ body {
 
 body {
 	font-family: Arial, Helvetica, Verdana, sans-serif;
+	font-size: 14px;
 }
 
 .wui-scrolly {
@@ -1708,6 +1709,7 @@ CSS code:
 ```CSS
 body {
 	font-family: Arial, Helvetica, Verdana, sans-serif;
+	font-size: 14px;
 }
 
 .my-link {
@@ -1990,6 +1992,7 @@ CSS code:
 ```css
 body {
 	font-family: Arial, Helvetica, Verdana, sans-serif;
+	font-size: 14px;
 }
 
 .my-output {
@@ -2270,6 +2273,7 @@ CSS code:
 ```css
 body {
 	font-family: Arial, Helvetica, Verdana, sans-serif;
+	font-size: 14px;
 }
 
 header {
@@ -2616,6 +2620,7 @@ CSS code:
 ```css
 body {
 	font-family: Arial, Helvetica, Verdana, sans-serif;
+	font-size: 14px;
 }
 
 header {
@@ -3020,6 +3025,7 @@ CSS code:
 ```css
 body {
 	font-family: Arial, Helvetica, Verdana, sans-serif;
+	font-size: 14px;
 }
 
 nav {
@@ -3524,6 +3530,7 @@ CSS Code:
 ```css
 body {
 	font-family: Arial, Helvetica, Verdana, sans-serif;
+	font-size: 14px;
 }
 
 .my-selectpicker {
@@ -3784,6 +3791,7 @@ CSS code:
 ```css
 body {
 	font-family: Arial, Helvetica, Verdana, sans-serif;
+	font-size: 14px;
 }
 
 .my-datepicker {
@@ -3983,6 +3991,7 @@ CSS code:
 ```css
 body {
 	font-family: Arial, Helvetica, Verdana, sans-serif;
+	font-size: 14px;
 }
 
 .my-timepicker {
@@ -4193,6 +4202,7 @@ Código CSS:
 ```css
 body {
 	font-family: Arial, Helvetica, Verdana, sans-serif;
+	font-size: 14px;
 }
 
 .my-colorpicker {}
@@ -4353,10 +4363,6 @@ CSS settings:
 CSS code:
 
 ```css
-body {
-	font-family: Arial, Helvetica, Verdana, sans-serif;
-}
-
 .my-checkbox {}
 
 .my-output {
@@ -4482,10 +4488,6 @@ CSS settings:
 CSS code:
 
 ```css
-body {
-	font-family: Arial, Helvetica, Verdana, sans-serif;
-}
-
 .my-intensity {}
 
 .my-output {
@@ -4711,6 +4713,7 @@ CSS code:
 ```css
 body {
 	font-family: Arial, Helvetica, Verdana, sans-serif;
+	font-size: 14px;
 }
 
 .my-button {
