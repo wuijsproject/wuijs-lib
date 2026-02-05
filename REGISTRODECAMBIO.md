@@ -51,12 +51,24 @@ Características:
 	- Se agregó soporte para paginado.
 	- Se agregó el método `destroy()`.
 	- Se agregó la variable CSS `--wui-list-shadowcolor`.
+	- Se renombró el método `first()` a `firstPage()`.
+	- Se renombró el método `last()` a `lastPage()`.
+	- Se renombró el método `prev()` a `prevPage()`.
+	- Se renombró el método `next()` a `nextPage()`.
+	- Se renombró el método `isPrevEnable()` a `hasPrevPage()`.
+	- Se renombró el método `isNextEnable()` a `hasNextPage()`.
 	- Se corrigió error en el evento de arrastre al aperturar y cerrar la botonoera de cada fila usando el evento `mousedown`, habilitándo únicamente cuando el botón izquierdo permanece presionado.
 14. Actualización versión clase WUITable a 0.2.
 	- Se agregó soporte para valores privados.
 	- Se agregó soporte para formato CSS claro/oscuro.
 	- Se agregó el método `destroy()`.
 	- Se agregó la variable CSS `--wui-table-shadowcolor`.
+	- Se renombró el método `first()` a `firstPage()`.
+	- Se renombró el método `last()` a `lastPage()`.
+	- Se renombró el método `prev()` a `prevPage()`.
+	- Se renombró el método `next()` a `nextPage()`.
+	- Se renombró el método `isPrevEnable()` a `hasPrevPage()`.
+	- Se renombró el método `isNextEnable()` a `hasNextPage()`.
 15. Actualización versión clase WUIForm a 0.2.
 	- Se agregó soporte para valores privados.
 	- Se agregó soporte para formato CSS claro/oscuro.

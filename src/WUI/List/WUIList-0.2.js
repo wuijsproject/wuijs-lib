@@ -325,29 +325,29 @@ class WUIList {
 		}
 	}
 
-	first() {
+	firstPage() {
 		this.print(0);
 	}
 
-	last() {
+	lastPage() {
 		const page = this.#properties.paging == 0 ? 0 : Math.ceil(this.#properties.rows.length / this.#properties.paging) - 1;
 		this.print(page);
 	}
 
-	prev() {
+	prevPage() {
 		this.print(this.#properties.page - 1);
 	}
 
-	next() {
+	nextPage() {
 		this.print(this.#properties.page + 1);
 	}
 
-	isPrevEnable() {
+	hasPrevPage() {
 		const paging = this.#properties.paging == 0 ? this.#properties.rows.length : this.#properties.paging;
 		return Boolean((this.#properties.page - 1) * paging >= 0);
 	}
 
-	isNextEnable() {
+	hasNextPage() {
 		const paging = this.#properties.paging == 0 ? this.#properties.rows.length : this.#properties.paging;
 		return Boolean((this.#properties.page + 1) * paging < this.#properties.rows.length);
 	}

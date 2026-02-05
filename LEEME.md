@@ -2192,12 +2192,12 @@ Componente para la implementación de listas de datos y botoneras para cada fila
 | print        | `void`        | `print([page])`<br><br>Parámetros:<br>**• page:** `number`, número de página. El valor predeterminado corresponde a la propiedad `page`. Si se pasa como parámetro un valor distinto al de la propiedad `page` y si es válido, la propiedad tomará dicho valor.<br><br>Imprime la vista de una lista, esta vista puede ser una página o la lista completa según la propiedad `paging` y el parámetro `page`. |
 | enableRow    | `void`        | `enableRow(index[, enabled])`<br><br>Parámetros:<br>**• index:** `number`, número de fila.<br>**• enabled:** `boolean`, estado de habilitación de la fila. El valor predeterminado `true`.<br><br>Hablita o deshabilita una fila. |
 | openInnerRow | `void`        | `openInnerRow(index[, open])`<br><br>Parámetros:<br>**• index:** `number`, número de fila.<br>**• open:** `boolean`, estado de apertura del contenido opcional de la fila interna. El valor predeterminado `true`.<br><br>Abre o cierra el contenido opcional de la fila interna. |
-| first        | `void`        | `first()`<br><br>Despliega la vista de la primera página. |
-| last         | `void`        | `last()`<br><br>Despliega la vista de la última página. |
-| prev         | `void`        | `prev()`<br><br>Despliega la vista de la página previa si es que esta existe. |
-| next         | `void`        | `next()`<br><br>Despliega la vista de la página siguiente si es que esta existe. |
-| isPrevEnable | `boolean`     | `isPrevEnable()`<br><br>Retorna si existe una página previa. |
-| isNextEnable | `boolean`     | `isNextEnable()`<br><br>Retorna si existe una página siguiente. |
+| firstPage    | `void`        | `firstPage()`<br><br>Despliega la vista de la primera página. |
+| lastPage     | `void`        | `lastPage()`<br><br>Despliega la vista de la última página. |
+| prevPage     | `void`        | `prevPage()`<br><br>Despliega la vista de la página previa si es que esta existe. |
+| nextPage     | `void`        | `nextPage()`<br><br>Despliega la vista de la página siguiente si es que esta existe. |
+| hasPrevPage  | `boolean`     | `hasPrevPage()`<br><br>Retorna si existe una página previa. |
+| hasNextPage  | `boolean`     | `hasNextPage()`<br><br>Retorna si existe una página siguiente. |
 | destroy      | `void`        | `destroy()`<br><br>Destructor. |
 
 #### Variables CSS
@@ -2328,10 +2328,10 @@ Código HTML:
 
 ```html
 <header>
-	<a href="javascript:first();" class="my-link first"><<</a>
-	<a href="javascript:prev();" class="my-link prev"><</a>
-	<a href="javascript:next();" class="my-link next">></a>
-	<a href="javascript:last();" class="my-link last">>></a>
+	<a href="javascript:firstPage();" class="my-link first"><<</a>
+	<a href="javascript:prevPage();" class="my-link prev"><</a>
+	<a href="javascript:nextPage();" class="my-link next">></a>
+	<a href="javascript:lastPage();" class="my-link last">>></a>
 	<div class="my-paging"></div>
 </header>
 
@@ -2379,14 +2379,14 @@ const list = new WUIList({
 	}],
 	buttonsStyle: "stretch",
 	onPrint: (page, pages, total) => {
-		if (list.isPrevEnable()) {
+		if (list.hasPrevPage()) {
 			firstLink.classList.remove("disabled");
 			prevLink.classList.remove("disabled");
 		} else {
 			firstLink.classList.add("disabled");
 			prevLink.classList.add("disabled");
 		}
-		if (list.isNextEnable()) {
+		if (list.hasNextPage()) {
 			lastLink.classList.remove("disabled");
 			nextLink.classList.remove("disabled");
 		} else {
@@ -2399,24 +2399,24 @@ const list = new WUIList({
 		output.textContent = `Click fila - índice: ${index}, id: ${id}, enabled: ${enabled}`;
 	}
 });
-const first = () => {
+const firstPage = () => {
 	if (!firstLink.classList.contains("disabled")) {
-		list.first();
+		list.firstPage();
 	}
 }
-const prev = () => {
+const prevPage = () => {
 	if (!prevLink.classList.contains("disabled")) {
-		list.prev();
+		list.prevPage();
 	}
 }
-const last = () => {
+const lastPage = () => {
 	if (!lastLink.classList.contains("disabled")) {
-		list.last();
+		list.lastPage();
 	}
 }
-const next = () => {
+const nextPage = () => {
 	if (!nextLink.classList.contains("disabled")) {
-		list.next();
+		list.nextPage();
 	}
 }
 
@@ -2527,12 +2527,12 @@ Componente para la implementación de tablas de datos. A diferencia del objeto `
 | sort         | `void`        | `first(index[, direction])`<br><br>Parámetros:<br>**• index:** `number`, número de columns.<br>**• direction:** `string`, dirección de orden, esta puede ser: `"asc"` o `"desc"`. El valor predeterminado `asc`. |
 | selectRow    | `void`        | `selectRow(index[, selected])`<br><br>Parámetros:<br>**• index:** `number`, número de fila.<br>**• selected:** `boolean`, estado de selección de la fila. El valor predeterminado `true`.<br><br>Selecciona o deselecciona una fila. |
 | enableRow    | `void`        | `enableRow(index[, enabled])`<br><br>Parámetros:<br>**• index:** `number`, número de fila.<br>**• enabled:** `boolean`, estado de habilitación de la fila. El valor predeterminado `true`.<br><br>Hablita o deshabilita una fila. |
-| first        | `void`        | `first()`<br><br>Despliega la vista de la primera página. |
-| last         | `void`        | `last()`<br><br>Despliega la vista de la última página. |
-| prev         | `void`        | `prev()`<br><br>Despliega la vista de la página previa si es que esta existe. |
-| next         | `void`        | `next()`<br><br>Despliega la vista de la página siguiente si es que esta existe. |
-| isPrevEnable | `boolean`     | `isPrevEnable()`<br><br>Retorna si existe una página previa. |
-| isNextEnable | `boolean`     | `isNextEnable()`<br><br>Retorna si existe una página siguiente. |
+| firstPage    | `void`        | `firstPage()`<br><br>Despliega la vista de la primera página. |
+| lastPage     | `void`        | `lastPage()`<br><br>Despliega la vista de la última página. |
+| prevPage     | `void`        | `prevPage()`<br><br>Despliega la vista de la página previa si es que esta existe. |
+| nextPage     | `void`        | `nextPage()`<br><br>Despliega la vista de la página siguiente si es que esta existe. |
+| hasPrevPage  | `boolean`     | `hasPrevPage()`<br><br>Retorna si existe una página previa. |
+| hasNextPage  | `boolean`     | `hasNextPage()`<br><br>Retorna si existe una página siguiente. |
 | destroy      | `void`        | `destroy()`<br><br>Destructor. |
 
 #### Variables CSS
@@ -2675,10 +2675,10 @@ Código HTML:
 
 ```html
 <header>
-	<a href="javascript:first();" class="my-link first"><<</a>
-	<a href="javascript:prev();" class="my-link prev"><</a>
-	<a href="javascript:next();" class="my-link next">></a>
-	<a href="javascript:last();" class="my-link last">>></a>
+	<a href="javascript:firstPage();" class="my-link first"><<</a>
+	<a href="javascript:prevPage();" class="my-link prev"><</a>
+	<a href="javascript:nextPage();" class="my-link next">></a>
+	<a href="javascript:lastPage();" class="my-link last">>></a>
 	<div class="my-paging"></div>
 </header>
 
@@ -2726,14 +2726,14 @@ const table = new WUITable({
 	//draggable: true,
 	//selectable: true,
 	onPrint: (page, pages, total) => {
-		if (table.isPrevEnable()) {
+		if (table.hasPrevPage()) {
 			firstLink.classList.remove("disabled");
 			prevLink.classList.remove("disabled");
 		} else {
 			firstLink.classList.add("disabled");
 			prevLink.classList.add("disabled");
 		}
-		if (table.isNextEnable()) {
+		if (table.hasNextPage()) {
 			lastLink.classList.remove("disabled");
 			nextLink.classList.remove("disabled");
 		} else {
@@ -2752,24 +2752,24 @@ const table = new WUITable({
 		output.textContent = `Selección fila - índice: ${index}, id: ${id}, enabled: ${enabled}`;
 	}
 });
-const first = () => {
+const firstPage = () => {
 	if (!firstLink.classList.contains("disabled")) {
-		table.first();
+		table.firstPage();
 	}
 }
-const prev = () => {
+const prevPage = () => {
 	if (!prevLink.classList.contains("disabled")) {
-		table.prev();
+		table.prevPage();
 	}
 }
-const last = () => {
+const lastPage = () => {
 	if (!lastLink.classList.contains("disabled")) {
-		table.last();
+		table.lastPage();
 	}
 }
-const next = () => {
+const nextPage = () => {
 	if (!nextLink.classList.contains("disabled")) {
-		table.next();
+		table.nextPage();
 	}
 }
 
@@ -4819,3 +4819,7 @@ Los ejemplos listados en esta sección, son detallados en la sección "Implement
 | [WUICheckbox](#WUICheckbox)         | [https://codepen.io/wuijsproject/pen/qENNwPa](https://codepen.io/wuijsproject/pen/qENNwPa) |
 | [WUIIntensity](#WUIIntensity)       | [https://codepen.io/wuijsproject/pen/GgqNpxJ](https://codepen.io/wuijsproject/pen/GgqNpxJ) |
 | [WUIButton](#WUIButton)             | [https://codepen.io/wuijsproject/pen/xbOwNzN](https://codepen.io/wuijsproject/pen/xbOwNzN) |
+
+<!--
+| [WUITable](#WUITable)               | [https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUITable-paging ](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUITable-paging ) |
+-->

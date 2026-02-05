@@ -2186,10 +2186,10 @@ Component for the implementation of data lists and buttons for each row optional
 | print        | `void`        | `print([page])`<br><br>Arguments:<br>**• page:** `number`, page number. The default value corresponds to the `page` property. If a value other than the `page` property is passed as a parameter and if it is valid, the property will take that value.<br><br>Prints a list view; this view can be a page or the entire list depending on the `paging` property and the `page` parameter. |
 | enableRow    | `void`        | `enableRow(index[, enabled])`<br><br>Arguments:<br>**• index:** `number`, row number.<br>**• enabled:** `boolean`, row enable state. The default value is `true`.<br><br>Enables or disables a row. |
 | openInnerRow | `void`        | `openInnerRow(index[, open])`<br><br>Arguments:<br>**• index:** `number`, row number.<br>**• open:** `boolean`, open state of the optional inner row content. The default value is `true`.<br><br>Opens or closes the optional inner row content. |
-| first        | `void`        | `first()`<br><br>Displays the view of the first page. |
-| last         | `void`        | `last()`<br><br>Displays the view of the last page. |
-| prev         | `void`        | `prev()`<br><br>Displays the view of the previous page if it exists. |
-| next         | `void`        | `next()`<br><br>Displays the next page view if one exists. |
+| firstPage    | `void`        | `firstPage()`<br><br>Displays the view of the first page. |
+| lastPage     | `void`        | `lastPage()`<br><br>Displays the view of the last page. |
+| prevPage     | `void`        | `prevPage()`<br><br>Displays the view of the previous page if it exists. |
+| nextPage     | `void`        | `nextPage()`<br><br>Displays the next page view if one exists. |
 | isPrevEnable | `boolean`     | `isPrevEnable()`<br><br>Returns whether a previous page exists. |
 | isNextEnable | `boolean`     | `isNextEnable()`<br><br>Returns whether a next page exists. |
 | destroy      | `void`        | `destroy()`<br><br>Destroyer. |
@@ -2322,10 +2322,10 @@ HTML code:
 
 ```html
 <header>
-	<a href="javascript:first();" class="my-link first"><<</a>
-	<a href="javascript:prev();" class="my-link prev"><</a>
-	<a href="javascript:next();" class="my-link next">></a>
-	<a href="javascript:last();" class="my-link last">>></a>
+	<a href="javascript:firstPage();" class="my-link first"><<</a>
+	<a href="javascript:prevPage();" class="my-link prev"><</a>
+	<a href="javascript:nextPage();" class="my-link next">></a>
+	<a href="javascript:lastPage();" class="my-link last">>></a>
 	<div class="my-paging"></div>
 </header>
 
@@ -2393,24 +2393,24 @@ const list = new WUIList({
 		output.textContent = `Click row - index: ${index}, id: ${id}, enabled: ${enabled}`;
 	}
 });
-const first = () => {
+const firstPage = () => {
 	if (!firstLink.classList.contains("disabled")) {
-		list.first();
+		list.firstPage();
 	}
 }
-const prev = () => {
+const prevPage = () => {
 	if (!prevLink.classList.contains("disabled")) {
-		list.prev();
+		list.prevPage();
 	}
 }
-const last = () => {
+const lastPage = () => {
 	if (!lastLink.classList.contains("disabled")) {
-		list.last();
+		list.lastPage();
 	}
 }
-const next = () => {
+const nextPage = () => {
 	if (!nextLink.classList.contains("disabled")) {
-		list.next();
+		list.nextPage();
 	}
 }
 
@@ -2521,10 +2521,10 @@ Component for the implementation of data tables. Unlike the `WUIList` object, th
 | sort         | `void`        | `first(index[, direction])`<br><br>Arguments:<br>**• index:** `number`, rcolumn number.<br>**• direction:** `string`, order direction, this can be: `"asc"` or `"desc"`. The default value is `asc`. |
 | selectRow    | `void`        | `selectRow(index[, selected])`<br><br>Arguments:<br>**• index:** `number`, row number.<br>**• selected:** `boolean`, row selection state. The default is `true`.<br><br>Select or unselect a row. |
 | enableRow    | `void`        | `enableRow(index[, enabled])`<br><br>Arguments:<br>**• index:** `number`, row number.<br>**• enabled:** `boolean`, row enable state. The default value is `true`.<br><br>Enables or disables a row. |
-| first        | `void`        | `first()`<br><br>Displays the view of the first page. |
-| last         | `void`        | `last()`<br><br>Displays the view of the last page. |
-| prev         | `void`        | `prev()`<br><br>Displays the view of the previous page if it exists. |
-| next         | `void`        | `next()`<br><br>Displays the next page view if one exists. |
+| firstPage    | `void`        | `firstPage()`<br><br>Displays the view of the first page. |
+| lastPage     | `void`        | `lastPage()`<br><br>Displays the view of the last page. |
+| prevPage     | `void`        | `prevPage()`<br><br>Displays the view of the previous page if it exists. |
+| nextPage     | `void`        | `nextPage()`<br><br>Displays the next page view if one exists. |
 | isPrevEnable | `boolean`     | `isPrevEnable()`<br><br>Returns whether a previous page exists. |
 | isNextEnable | `boolean`     | `isNextEnable()`<br><br>Returns whether a next page exists. |
 | destroy      | `void`        | `destroy()`<br><br>Destroyer. |
@@ -2668,10 +2668,10 @@ HTML code:
 
 ```html
 <header>
-	<a href="javascript:first();" class="my-link first"><<</a>
-	<a href="javascript:prev();" class="my-link prev"><</a>
-	<a href="javascript:next();" class="my-link next">></a>
-	<a href="javascript:last();" class="my-link last">>></a>
+	<a href="javascript:firstPage();" class="my-link first"><<</a>
+	<a href="javascript:prevPage();" class="my-link prev"><</a>
+	<a href="javascript:nextPage();" class="my-link next">></a>
+	<a href="javascript:lastPage();" class="my-link last">>></a>
 	<div class="my-paging"></div>
 </header>
 
@@ -2745,24 +2745,24 @@ const table = new WUITable({
 		output.textContent = `Select row - index: ${index}, id: ${id}, enabled: ${enabled}`;
 	}
 });
-const first = () => {
+const firstPage = () => {
 	if (!firstLink.classList.contains("disabled")) {
-		table.first();
+		table.firstPage();
 	}
 }
-const prev = () => {
+const prevPage = () => {
 	if (!prevLink.classList.contains("disabled")) {
-		table.prev();
+		table.prevPage();
 	}
 }
-const last = () => {
+const lastPage = () => {
 	if (!lastLink.classList.contains("disabled")) {
-		table.last();
+		table.lastPage();
 	}
 }
-const next = () => {
+const nextPage = () => {
 	if (!nextLink.classList.contains("disabled")) {
-		table.next();
+		table.nextPage();
 	}
 }
 
@@ -4812,3 +4812,7 @@ The examples listed in this section are detailed in the "Implementation" section
 | [WUICheckbox](#WUICheckbox)         | [https://codepen.io/wuijsproject/pen/qENNwPa](https://codepen.io/wuijsproject/pen/qENNwPa) |
 | [WUIIntensity](#WUIIntensity)       | [https://codepen.io/wuijsproject/pen/GgqNpxJ](https://codepen.io/wuijsproject/pen/GgqNpxJ) |
 | [WUIButton](#WUIButton)             | [https://codepen.io/wuijsproject/pen/xbOwNzN](https://codepen.io/wuijsproject/pen/xbOwNzN) |
+
+<!--
+| [WUITable](#WUITable)               | [https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUITable-paging ](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUITable-paging ) |
+-->

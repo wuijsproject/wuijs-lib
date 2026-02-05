@@ -51,6 +51,12 @@ Features:
 	- Added support for paging.
 	- Added `destroy()` method.
 	- Added `--wui-list-shadowcolor` CSS var.
+	- Renamed the `first()` method to `firstPage()`.
+	- Renamed the `last()` method to `lastPage()`.
+	- Renamed the `prev()` method to `prevPage()`.
+	- Renamed the `next()` method to `nextPage()`.
+	- Renamed the `isPrevEnable()` method to `hasPrevPage()`.
+	- Renamed the `isNextEnable()` method to `hasNextPage()`.
 	- Fixed bug in drag event when opening and closing the button bar of each row using the `mousedown` event, enabling it only when the left mouse button remains pressed.
 14. WUITable version class update to 0.2.
 	- Added support for private values.
@@ -62,6 +68,12 @@ Features:
 	- Added support for light/dark CSS formatting.
 	- Added `getIcon()` method.
 	- Added `--wui-form-message-shadowcolor` CSS var.
+	- Renamed the `first()` method to `firstPage()`.
+	- Renamed the `last()` method to `lastPage()`.
+	- Renamed the `prev()` method to `prevPage()`.
+	- Renamed the `next()` method to `nextPage()`.
+	- Renamed the `isPrevEnable()` method to `hasPrevPage()`.
+	- Renamed the `isNextEnable()` method to `hasNextPage()`.
 16. WUIFormat version class update to 0.2.
 	- Added support for `Windows Phone` in the `getOS()` and `getMobileOS()` methods.
 	- Added error handling to the `wuiToString()` method.
