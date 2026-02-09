@@ -4,7 +4,7 @@
 # wuijs-lib
 
 <div align="center">
-	<img src="https://github.com/wuijsproject/wuijs-lib/blob/main/imgs/logo/wuijs-isotype-color.svg" width="128" height="128">
+	<img src="https://github.com/wuijsproject/wuijs-lib/blob/main/imgs/logo/wuijs-logotype-color.svg" width="220" height="220">
 </div>
 
 Library version: `0.2.0` ([Change Log](./CHANGELOG.md))
