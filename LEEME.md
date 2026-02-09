@@ -56,7 +56,7 @@ Autor: `Sergio E. Belmar V. <wuijs.project@gmail.com>`
 
 ## Descripción General
 
-WUI JS Lib, acrónimo del inglés *Web User Interface JavaScript library*, es una biblioteca JavaScript/CSS de código abierto orientada a la implementación rápida de interfaces de usuario Web compuesta por 25 clases, las que pueden ser utilizadas de manera independiente o conjunta.
+WUI JS Lib, acrónimo del inglés *Web User Interface JavaScript library*, es una biblioteca vainilla JavaScript/CSS de código abierto orientada a la implementación rápida de interfaces de usuario Web compuesta por 25 clases, las que pueden ser utilizadas de manera independiente o conjunta.
 
 ### Tabla de Clases
 
