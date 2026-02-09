@@ -2048,7 +2048,7 @@ const menubar = new WUIMenubar({
 menubar.topButtons = [{
 	id: "logo",
 	iconImage: "https://wuijs.dev/wuijs-isotype-color.svg",
-	label: "WUI/JS",
+	label: "WUI /JS Lib",
 	tooltipable: false,
 	selectable: false
 }];
