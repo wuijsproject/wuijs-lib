@@ -2053,7 +2053,7 @@ const menubar = new WUIMenubar({
 // Agregar botones
 menubar.topButtons = [{
 	id: "logo",
-	iconImage: "https://wuijs.dev/wuijs-color.svg",
+	iconImage: "https://wuijs.dev/wuijs-isotype-color.svg",
 	label: "WUI/JS",
 	tooltipable: false,
 	selectable: false
