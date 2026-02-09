@@ -4,12 +4,12 @@
 # wuijs-lib
 
 <div align="center">
-	<img src="https://github.com/wuijsproject/wuijs-lib/blob/main/imgs/logo/wuijs-color.svg" width="128" height="128">
+	<img src="https://github.com/wuijsproject/wuijs-lib/blob/main/imgs/logo/wuijs-isotype-color.svg" width="128" height="128">
 </div>
 
 Library version: `0.2.0` ([Change Log](./CHANGELOG.md))
 
-Document version: `0.2.0.20260202.0`
+Document version: `0.2.0.20260209.0`
 
 License: `Apache License 2.0`
 
@@ -1534,6 +1534,7 @@ Set of pre-designed icons loaded via CSS, for use in interfaces.
 | ![](./imgs/Icons/vimeo-alt-fill.svg)     | .vimeo-alt-fill     | ![](./imgs/Icons/vimeo-alt-color.svg)       | .vimeo-alt-color       | ![](./imgs/Icons/yahoo-fill.svg)        | .yahoo-fill        | ![](./imgs/Icons/yahoo-color.svg)        | .yahoo-color        |
 | ![](./imgs/Icons/yahoo-alt-fill.svg)     | .yahoo-alt-fill     | ![](./imgs/Icons/yahoo-alt-color.svg)       | .yahoo-alt-color       | ![](./imgs/Icons/youtube-fill.svg)      | .youtube-fill      | ![](./imgs/Icons/youtube-color.svg)      | .youtube-color      |
 | ![](./imgs/Icons/whatsapp-fill.svg)      | .whatsapp-fill      | ![](./imgs/Icons/whatsapp-color.svg)        | .whatsapp-color        | ![](./imgs/Icons/whatsapp-alt-fill.svg) | .whatsapp-alt-fill | ![](./imgs/Icons/whatsapp-alt-color.svg) | .whatsapp-alt-color |
+| ![](./imgs/Icons/wuijs-fill.svg)         | .wuijs-fill         | ![](./imgs/Icons/wuijs-color.svg)           | .wuijs-color           |
 
 #### Options Icon Table
 
