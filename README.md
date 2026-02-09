@@ -7,9 +7,9 @@
 	<img src="https://github.com/wuijsproject/wuijs-lib/blob/main/imgs/logo/wuijs-logotype-color.svg" width="220" height="220">
 </div>
 
-Library version: `0.2.0` ([Change Log](./CHANGELOG.md))
+Library version: `0.3.0` ([Change Log](./CHANGELOG.md))
 
-Document version: `0.2.0.20260209.0`
+Document version: `0.3.0.20260209.1`
 
 License: `Apache License 2.0`
 
@@ -47,7 +47,7 @@ Author: `Sergio E. Belmar V. <wuijs.project@gmail.com>`
 	*   [WUIDatepicker](#WUIDatepicker)
 	*   [WUITimepicker](#WUITimepicker)
 	*   [WUIColorpicker](#WUIColorpicker)
-	*   [WUICheckbox](#WUICheckbox)
+	*   [WUISwitch](#WUISwitch)
 	*   [WUIIntensity](#WUIIntensity)
 	*   [WUIButton](#WUIButton)
 *   [Examples](#examples) (CodePen)
@@ -78,13 +78,13 @@ WUI JS Lib, an acronym for *Web User Interface JavaScript library*, is an open s
 | [WUIMenubar](#WUIMenubar)           | `0.1`   | Component for the implementation of menu bars. |
 | [WUIList](#WUIList)                 | `0.2`   | Component for the implementation of data lists and buttons for each row optionally. |
 | [WUITable](#WUITable)               | `0.2`   | Component for the implementation of data tables. Unlike the `WUIList` component, the `WUITable` component includes a column header. |
-| [WUIForm](#WUIForm)                 | `0.2`   | Component for the implementation of data forms. This component allows the implementation of HTML data input elements such as `<input>`, `<select>`, and `<textarea>`, and WUI library objects such as `WUISelectpicker`, `WUIDatepicker`, `WUITimepicker`, `WUIColorpicker`, `WUICheckbox`, `WUIIntensity`, and `WUIButton`. |
+| [WUIForm](#WUIForm)                 | `0.3`   | Component for the implementation of data forms. This component allows the implementation of HTML data input elements such as `<input>`, `<select>`, and `<textarea>`, and WUI library objects such as `WUISelectpicker`, `WUIDatepicker`, `WUITimepicker`, `WUIColorpicker`, `WUISwitch`, `WUIIntensity`, and `WUIButton`. |
 | [WUIFormat](#WUIFormat)             | `0.2`   | Tool for managing and validating `string`, `number` and `Date` data formats. |
 | [WUISelectpicker](#WUISelectpicker) | `0.2`   | Component for the implementation of multiple or exclusive selection list data inputs based on HTML element `<select>`. |
 | [WUIDatepicker](#WUIDatepicker)     | `0.2`   | Component for the implementation of date type data inputs based on HTML element `<input type="date">`. |
 | [WUITimepicker](#WUITimepicker)     | `0.2`   | Component for the implementation of time type data inputs based on HTML element `<input type="time">`. |
 | [WUIColorpicker](#WUIColorpicker)   | `0.2`   | Component for the implementation of color picker type data inputs based on HTML element `<input type="color">`. |
-| [WUICheckbox](#WUICheckbox)         | `0.2`   | Component for the implementation of checkbox type data inputs based on HTML element `<input type="checkbox">`. |
+| [WUISwitch](#WUISwitch)             | `0.3`   | Component for the implementation of checkbox type data inputs based on HTML element `<input type="checkbox">`. |
 | [WUIIntensity](#WUIIntensity)       | `0.1`   | Component for the implementation of 4-level intensity selector type data inputs: none, low, half, and high based on HTML element `<input type="range">`. |
 | [WUIButton](#WUIButton)             | `0.2`   | Component for the implementation of based on HTML element `<button>`. |
 
@@ -559,26 +559,26 @@ CSS code in the `WUI.css` file:
 	--wui-colorpicker-box-button-textcolor-over: #1e90ff;
 	--wui-colorpicker-mobile-overlay-bgcolor: rgb(from #010203 r g b / 20%);
 
-	/* wui-checkbox */
+	/* wui-switch */
 
-	--wui-checkbox-button-size: 30px;
-	--wui-checkbox-bordercolor-out: rgb(from #1e90ff r g b / 20%);
-	--wui-checkbox-bordercolor-over: #1e90ff;
-	--wui-checkbox-bordercolor-checked: #1e90ff;
-	--wui-checkbox-bordercolor-invalid: #f44343;
-	--wui-checkbox-bordercolor-disabled: #d5dce3;
-	--wui-checkbox-bgcolor-out: rgb(from #1e90ff r g b / 4%);
-	--wui-checkbox-bgcolor-over: rgb(from #1e90ff r g b / 4%);
-	--wui-checkbox-bgcolor-checked: #1e90ff;
-	--wui-checkbox-bgcolor-disabled: rgb(from #d5dce3 r g b / 20%);
-	--wui-checkbox-button-bordercolor-out: rgb(from #1e90ff r g b / 20%);
-	--wui-checkbox-button-bordercolor-over: #1e90ff;
-	--wui-checkbox-button-bordercolor-checked: #1e90ff;
-	--wui-checkbox-button-bordercolor-disabled: #d5dce3;
-	--wui-checkbox-button-bgcolor-out: #f6f6fa;
-	--wui-checkbox-button-bgcolor-over: rgb(from #1e90ff r g b / 4%);
-	--wui-checkbox-button-bgcolor-checked: #f6f6fa;
-	--wui-checkbox-button-bgcolor-disabled: #d5dce3;
+	--wui-switch-button-size: 30px;
+	--wui-switch-bordercolor-out: rgb(from #1e90ff r g b / 20%);
+	--wui-switch-bordercolor-over: #1e90ff;
+	--wui-switch-bordercolor-activated: #1e90ff;
+	--wui-switch-bordercolor-invalid: #f44343;
+	--wui-switch-bordercolor-disabled: #d5dce3;
+	--wui-switch-bgcolor-out: rgb(from #1e90ff r g b / 4%);
+	--wui-switch-bgcolor-over: rgb(from #1e90ff r g b / 4%);
+	--wui-switch-bgcolor-activated: #1e90ff;
+	--wui-switch-bgcolor-disabled: rgb(from #d5dce3 r g b / 20%);
+	--wui-switch-button-bordercolor-out: rgb(from #1e90ff r g b / 20%);
+	--wui-switch-button-bordercolor-over: #1e90ff;
+	--wui-switch-button-bordercolor-activated: #1e90ff;
+	--wui-switch-button-bordercolor-disabled: #d5dce3;
+	--wui-switch-button-bgcolor-out: #f6f6fa;
+	--wui-switch-button-bgcolor-over: rgb(from #1e90ff r g b / 4%);
+	--wui-switch-button-bgcolor-activated: #f6f6fa;
+	--wui-switch-button-bgcolor-disabled: #d5dce3;
 
 	/* wui-intensity */
 
@@ -672,12 +672,12 @@ HTML code:
 		<link type="text/css" rel="stylesheet" href="./Libraries/WUI/Menubar/WUIMenubar-0.1.css">
 		<link type="text/css" rel="stylesheet" href="./Libraries/WUI/List/WUIList-0.2.css">
 		<link type="text/css" rel="stylesheet" href="./Libraries/WUI/Table/WUITable-0.1.css">
-		<link type="text/css" rel="stylesheet" href="./Libraries/WUI/Form/WUIForm-0.1.css">
+		<link type="text/css" rel="stylesheet" href="./Libraries/WUI/Form/WUIForm-0.3.css">
 		<link type="text/css" rel="stylesheet" href="./Libraries/WUI/Selectpicker/WUISelectpicker-0.1.css">
 		<link type="text/css" rel="stylesheet" href="./Libraries/WUI/Datepicker/WUIDatepicker-0.1.css">
 		<link type="text/css" rel="stylesheet" href="./Libraries/WUI/Timepicker/WUITimepicker-0.1.css">
 		<link type="text/css" rel="stylesheet" href="./Libraries/WUI/Colorpicker/WUIColorpicker-0.1.css">
-		<link type="text/css" rel="stylesheet" href="./Libraries/WUI/Checkbox/WUICheckbox-0.2.css">
+		<link type="text/css" rel="stylesheet" href="./Libraries/WUI/Switch/WUISwitch-0.3.css">
 		<link type="text/css" rel="stylesheet" href="./Libraries/WUI/Intensity/WUIIntensity-0.1.css">
 		<link type="text/css" rel="stylesheet" href="./Libraries/WUI/Button/WUIButton-0.2.css">
 		<script type="text/javascript" src="./Libraries/WUI/Cookie/WUICookie-0.2.js"></script>
@@ -695,13 +695,13 @@ HTML code:
 		<script type="text/javascript" src="./Libraries/WUI/Menubar/WUIMenubar-0.1.js"></script>
 		<script type="text/javascript" src="./Libraries/WUI/List/WUIList-0.2.js"></script>
 		<script type="text/javascript" src="./Libraries/WUI/Table/WUITable-0.1.js"></script>
-		<script type="text/javascript" src="./Libraries/WUI/Form/WUIForm-0.1.js"></script>
+		<script type="text/javascript" src="./Libraries/WUI/Form/WUIForm-0.3.js"></script>
 		<script type="text/javascript" src="./Libraries/WUI/Format/WUIFormat-0.2.js"></script>
 		<script type="text/javascript" src="./Libraries/WUI/Selectpicker/WUISelectpicker-0.1.js"></script>
 		<script type="text/javascript" src="./Libraries/WUI/Datepicker/WUIDatepicker-0.1.js"></script>
 		<script type="text/javascript" src="./Libraries/WUI/Timepicker/WUITimepicker-0.1.js"></script>
 		<script type="text/javascript" src="./Libraries/WUI/Colorpicker/WUIColorpicker-0.1.js"></script>
-		<script type="text/javascript" src="./Libraries/WUI/Checkbox/WUICheckbox-0.2.js"></script>
+		<script type="text/javascript" src="./Libraries/WUI/Switch/WUISwitch-0.3.js"></script>
 		<script type="text/javascript" src="./Libraries/WUI/Intensity/WUIIntensity-0.1.js"></script>
 		<script type="text/javascript" src="./Libraries/WUI/Button/WUIButton-0.2.js"></script>
 	</head>
@@ -2795,16 +2795,16 @@ table.print();
 
 ### WUIForm
 
-Version: `0.2`
+Version: `0.3`
 
-Component for the implementation of data forms. This component allows the implementation of HTML data input elements such as `<input>`, `<select>`, and `<textarea>`, and WUI library objects such as `WUISelectpicker`, `WUIDatepicker`, `WUITimepicker`, `WUIColorpicker`, `WUICheckbox`, `WUIIntensity`, and `WUIButton`.
+Component for the implementation of data forms. This component allows the implementation of HTML data input elements such as `<input>`, `<select>`, and `<textarea>`, and WUI library objects such as `WUISelectpicker`, `WUIDatepicker`, `WUITimepicker`, `WUIColorpicker`, `WUISwitch`, `WUIIntensity`, and `WUIButton`.
 
 #### Sources
 
 | Type | File |
 | ---- | ---- |
-| JS   | [src/WUI/Form/WUIForm-0.2.js](https://github.com/wuijsproject/wuijs-lib/blob/main/src/WUI/Form/WUIForm-0.2.js) |
-| CSS  | [src/WUI/Form/WUIForm-0.2.css](https://github.com/wuijsproject/wuijs-lib/blob/main/src/WUI/Form/WUIForm-0.2.css) |
+| JS   | [src/WUI/Form/WUIForm-0.3.js](https://github.com/wuijsproject/wuijs-lib/blob/main/src/WUI/Form/WUIForm-0.3.js) |
+| CSS  | [src/WUI/Form/WUIForm-0.3.css](https://github.com/wuijsproject/wuijs-lib/blob/main/src/WUI/Form/WUIForm-0.3.css) |
 
 #### Constructor
 
@@ -3039,8 +3039,8 @@ HTML Head:
 
 ```html
 <link type="text/css" rel="stylesheet" href="https://wuijs.dev/Libraries/WUI/Icon/WUIIcon-0.1.css">
-<link type="text/css" rel="stylesheet" href="https://wuijs.dev/Libraries/WUI/Form/WUIForm-0.2.css">
-<script type="text/javascript" src="https://wuijs.dev/Libraries/WUI/Form/WUIForm-0.2.js"></script>
+<link type="text/css" rel="stylesheet" href="https://wuijs.dev/Libraries/WUI/Form/WUIForm-0.3.css">
+<script type="text/javascript" src="https://wuijs.dev/Libraries/WUI/Form/WUIForm-0.3.js"></script>
 ```
 
 HTML code:
@@ -4266,9 +4266,9 @@ colorpicker.init();
 > [!TIP]
 > You can check out this working example on CodePen at the link: [https://codepen.io/wuijsproject/pen/bNeeobP](https://codepen.io/wuijsproject/pen/bNeeobP).
 
-<a name="WUICheckbox"></a>
+<a name="WUISwitch"></a>
 
-### WUICheckbox
+### WUISwitch
 
 Version: `0.2`
 
@@ -4278,24 +4278,24 @@ Component for the implementation of checkbox type data inputs based on HTML elem
 
 | Type | File |
 | ---- | ---- |
-| CSS  | [src/WUI/Checkbox/WUICheckbox-0.2.css](https://github.com/wuijsproject/wuijs-lib/blob/main/src/WUI/Checkbox/WUICheckbox-0.2.css) |
-| JS   | [src/WUI/Checkbox/WUICheckbox-0.2.js](https://github.com/wuijsproject/wuijs-lib/blob/main/src/WUI/Checkbox/WUICheckbox-0.2.js) |
+| CSS  | [src/WUI/Switch/WUISwitch-0.3.css](https://github.com/wuijsproject/wuijs-lib/blob/main/src/WUI/Switch/WUISwitch-0.3.css) |
+| JS   | [src/WUI/Switch/WUISwitch-0.3.js](https://github.com/wuijsproject/wuijs-lib/blob/main/src/WUI/Switch/WUISwitch-0.3.js) |
 
 #### Constructor
 
 | Type        | Description |
 | ----------- | ----------- |
-| WUICheckbox | `WUICheckbox([properties])`<br><br>Arguments:<br>**• properties:** `object` *optional* |
+| WUISwitch | `WUISwitch([properties])`<br><br>Arguments:<br>**• properties:** `object` *optional* |
 
 #### Properties
 
-| Property | Type       | Default value     | Description |
-| -------- | ---------- | ----------------- | ----------- |
-| selector | `string`   | `".wui-checkbox"` | (get/set)<br><br>CSS selector defining the `HTMLDivElement` HTML element wrapping the `checkbox` type `HTMLInputElement` element that will be converted into the object. If more than one element matches the selector, only the first match will be included. |
-| value    | `string`   | `"1"`             | (get/set)<br><br>Value that the checkbox will take when it is checked. |
-| checked  | `boolean`  | `false`           | (get/set)<br><br>Defines if the checkbox is checked. |
-| enabled  | `boolean`  | `true`            | (get/set)<br><br>Defines if the checkbox is enabled. |
-| onChange | `function` | `null`            | (get/set)<br><br>Function run when the checkbox state changes. The function receives as a parameter the boolean state `checked` and the value of the check box. |
+| Property  | Type       | Default value   | Description |
+| --------- | ---------- | --------------- | ----------- |
+| selector  | `string`   | `".wui-switch"` | (get/set)<br><br>CSS selector defining the `HTMLDivElement` HTML element wrapping the `checkbox` type `HTMLInputElement` element that will be converted into the object. If more than one element matches the selector, only the first match will be included. |
+| value     | `string`   | `"1"`           | (get/set)<br><br>Value that the checkbox will take when it is activated. |
+| activated | `boolean`  | `false`         | (get/set)<br><br>Defines if the checkbox is activated. |
+| enabled   | `boolean`  | `true`          | (get/set)<br><br>Defines if the checkbox is enabled. |
+| onChange  | `function` | `null`          | (get/set)<br><br>Function run when the checkbox state changes. The function receives as a parameter the boolean state `activated` and the value of the check box. |
 
 #### Methods
 
@@ -4305,31 +4305,31 @@ Component for the implementation of checkbox type data inputs based on HTML elem
 | getViewElements | `Array<HTMLElement>` | `getViewElements()`<br><br>Returns an array of the HTML elements that are part of the value display. |
 | getInput        | `HTMLElement`        | `getInput()`<br><br>Returns the HTML element associated with the base data input `<input type="checkbox">`. |
 | init            | `void`               | `init()`<br><br>Initializes the object. |
-| toggle          | `void`               | `toggle()`<br><br>Toggles the checked/unchecked state of the checkbox. |
+| toggle          | `void`               | `toggle()`<br><br>Toggles the activated/deactivated state of the checkbox. |
 | destroy         | `void`               | `destroy()`<br><br>Destroyer. |
 
 #### CSS Variables
 
-| Variable                                      | Description |
-| --------------------------------------------- | ----------- |
-| `--wui-checkbox-button-size`                  |             |
-| `--wui-checkbox-bordercolor-out`              |             |
-| `--wui-checkbox-bordercolor-over`             |             |
-| `--wui-checkbox-bordercolor-checked`          |             |
-| `--wui-checkbox-bordercolor-invalid`          |             |
-| `--wui-checkbox-bordercolor-disabled`         |             |
-| `--wui-checkbox-bgcolor-out`                  |             |
-| `--wui-checkbox-bgcolor-over`                 |             |
-| `--wui-checkbox-bgcolor-checked`              |             |
-| `--wui-checkbox-bgcolor-disabled`             |             |
-| `--wui-checkbox-button-bordercolor-out`       |             |
-| `--wui-checkbox-button-bordercolor-over`      |             |
-| `--wui-checkbox-button-bordercolor-checked`   |             |
-| `--wui-checkbox-button-bordercolor-disabled`  |             |
-| `--wui-checkbox-button-bgcolor-out`           |             |
-| `--wui-checkbox-button-bgcolor-over`          |             |
-| `--wui-checkbox-button-bgcolor-checked`       |             |
-| `--wui-checkbox-button-bgcolor-disabled`      |             |
+| Variable                                    | Description |
+| ------------------------------------------- | ----------- |
+| `--wui-switch-button-size`                  |             |
+| `--wui-switch-bordercolor-out`              |             |
+| `--wui-switch-bordercolor-over`             |             |
+| `--wui-switch-bordercolor-activated`        |             |
+| `--wui-switch-bordercolor-invalid`          |             |
+| `--wui-switch-bordercolor-disabled`         |             |
+| `--wui-switch-bgcolor-out`                  |             |
+| `--wui-switch-bgcolor-over`                 |             |
+| `--wui-switch-bgcolor-activated`            |             |
+| `--wui-switch-bgcolor-disabled`             |             |
+| `--wui-switch-button-bordercolor-out`       |             |
+| `--wui-switch-button-bordercolor-over`      |             |
+| `--wui-switch-button-bordercolor-activated` |             |
+| `--wui-switch-button-bordercolor-disabled`  |             |
+| `--wui-switch-button-bgcolor-out`           |             |
+| `--wui-switch-button-bgcolor-over`          |             |
+| `--wui-switch-button-bgcolor-activated`     |             |
+| `--wui-switch-button-bgcolor-disabled`      |             |
 
 #### Implementation
 
@@ -4338,33 +4338,33 @@ CSS settings:
 ```css
 :root {
 
-	/* wui-checkbox */
+	/* wui-switch */
 
-	--wui-checkbox-button-size: 30px;
-	--wui-checkbox-bordercolor-out: rgb(from #1e90ff r g b / 20%);
-	--wui-checkbox-bordercolor-over: #1e90ff;
-	--wui-checkbox-bordercolor-checked: #1e90ff;
-	--wui-checkbox-bordercolor-invalid: #f44343;
-	--wui-checkbox-bordercolor-disabled: #d5dce3;
-	--wui-checkbox-bgcolor-out: rgb(from #1e90ff r g b / 4%);
-	--wui-checkbox-bgcolor-over: rgb(from #1e90ff r g b / 4%);
-	--wui-checkbox-bgcolor-checked: #1e90ff;
-	--wui-checkbox-bgcolor-disabled: rgb(from #d5dce3 r g b / 20%);
-	--wui-checkbox-button-bordercolor-out: rgb(from #1e90ff r g b / 20%);
-	--wui-checkbox-button-bordercolor-over: #1e90ff;
-	--wui-checkbox-button-bordercolor-checked: #1e90ff;
-	--wui-checkbox-button-bordercolor-disabled: #d5dce3;
-	--wui-checkbox-button-bgcolor-out: #f6f6fa;
-	--wui-checkbox-button-bgcolor-over: rgb(from #1e90ff r g b / 4%);
-	--wui-checkbox-button-bgcolor-checked: #f6f6fa;
-	--wui-checkbox-button-bgcolor-disabled: #d5dce3;
+	--wui-switch-button-size: 30px;
+	--wui-switch-bordercolor-out: rgb(from #1e90ff r g b / 20%);
+	--wui-switch-bordercolor-over: #1e90ff;
+	--wui-switch-bordercolor-activated: #1e90ff;
+	--wui-switch-bordercolor-invalid: #f44343;
+	--wui-switch-bordercolor-disabled: #d5dce3;
+	--wui-switch-bgcolor-out: rgb(from #1e90ff r g b / 4%);
+	--wui-switch-bgcolor-over: rgb(from #1e90ff r g b / 4%);
+	--wui-switch-bgcolor-activated: #1e90ff;
+	--wui-switch-bgcolor-disabled: rgb(from #d5dce3 r g b / 20%);
+	--wui-switch-button-bordercolor-out: rgb(from #1e90ff r g b / 20%);
+	--wui-switch-button-bordercolor-over: #1e90ff;
+	--wui-switch-button-bordercolor-activated: #1e90ff;
+	--wui-switch-button-bordercolor-disabled: #d5dce3;
+	--wui-switch-button-bgcolor-out: #f6f6fa;
+	--wui-switch-button-bgcolor-over: rgb(from #1e90ff r g b / 4%);
+	--wui-switch-button-bgcolor-activated: #f6f6fa;
+	--wui-switch-button-bgcolor-disabled: #d5dce3;
 }
 ```
 
 CSS code:
 
 ```css
-.my-checkbox {}
+.my-switch {}
 
 .my-output {
 	position: absolute;
@@ -4378,14 +4378,14 @@ CSS code:
 HTML head:
 
 ```html
-<link type="text/css" rel="stylesheet" href="https://wuijs.dev/Libraries/WUI/Checkbox/WUICheckbox-0.2.css">
-<script type="text/javascript" src="https://wuijs.dev/Libraries/WUI/Checkbox/WUICheckbox-0.2.js"></script>
+<link type="text/css" rel="stylesheet" href="https://wuijs.dev/Libraries/WUI/Switch/WUISwitch-0.3.css">
+<script type="text/javascript" src="https://wuijs.dev/Libraries/WUI/Switch/WUISwitch-0.3.js"></script>
 ```
 
 HTML code:
 
 ```html
-<div class="wui-checkbox my-checkbox">
+<div class="wui-switch my-switch">
 	<input type="checkbox" name="myCheckbox" value="1">
 </div>
 
@@ -4397,13 +4397,13 @@ JS code:
 ```js
 // Create object
 const output = document.body.querySelector(".my-output");
-const checkbox = new WUICheckbox({
-	selector: ".wui-checkbox.my-checkbox",
+const checkbox = new WUISwitch({
+	selector: ".wui-switch.my-switch",
 	value: "1",
-	checked: true,
+	activated: true,
 	//enabled: true,
-	onChange: (value, checked) => {
-		output.textContent = `Change - value: ${value}, checked: ${checked}`;
+	onChange: (value, activated) => {
+		output.textContent = `Change - value: ${value}, activated: ${activated}`;
 	}
 });
 
@@ -4810,7 +4810,7 @@ The examples listed in this section are detailed in the "Implementation" section
 | [WUIDatepicker](#WUIDatepicker)     | [https://codepen.io/wuijsproject/pen/QwEyyZN](https://codepen.io/wuijsproject/pen/QwEyyZN) |
 | [WUITimepicker](#WUITimepicker)     | [https://codepen.io/wuijsproject/pen/azZdGrY](https://codepen.io/wuijsproject/pen/azZdGrY) |
 | [WUIColorpicker](#WUIColorpicker)   | [https://codepen.io/wuijsproject/pen/bNeeobP](https://codepen.io/wuijsproject/pen/bNeeobP) |
-| [WUICheckbox](#WUICheckbox)         | [https://codepen.io/wuijsproject/pen/qENNwPa](https://codepen.io/wuijsproject/pen/qENNwPa) |
+| [WUISwitch](#WUISwitch)         | [https://codepen.io/wuijsproject/pen/qENNwPa](https://codepen.io/wuijsproject/pen/qENNwPa) |
 | [WUIIntensity](#WUIIntensity)       | [https://codepen.io/wuijsproject/pen/GgqNpxJ](https://codepen.io/wuijsproject/pen/GgqNpxJ) |
 | [WUIButton](#WUIButton)             | [https://codepen.io/wuijsproject/pen/xbOwNzN](https://codepen.io/wuijsproject/pen/xbOwNzN) |
 

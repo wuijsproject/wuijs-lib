@@ -120,3 +120,11 @@ Características:
 	- Se agregó soporte para valores privados.
 	- Se agregó propiedad `onDblClick`.
 	- Se corrigió error para asegurar referencia a elementos del DOM de tipo `HTMLButtonElement`.
+
+## [v0.3.0] - 2026-02-09
+
+Características:
+
+1. Cambio de nombre clase WUICheckbox versión 0.2 a WUISwitch versión 0.3.
+2. Actualización versión clase WUIForm a 0.3.
+	- Se agregó compatibilidad con WUISwitch versión 0.3.
