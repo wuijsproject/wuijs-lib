@@ -859,6 +859,11 @@
 	cursor: text;
 }
 
+.wui-form:is(.fill, .line, .border) fieldset > .field:not(.inline) > label:is(.fixed, .notempty),
+.wui-form:is(.fill, .line, .border) fieldset > .field:not(.inline):focus-within > label {
+	top: calc(-0.8 * var(--wui-form-input-height) - var(--wui-form-input-borderwidth));
+}
+
 /* wui-form fill */
 /* wui-form line */
 
@@ -868,11 +873,6 @@
 
 .wui-form:is(.fill, .line) fieldset > .field:not(.inline):focus-within:after {
 	right: 0px;
-}
-
-.wui-form:is(.fill, .line) fieldset > .field:not(.inline) > label:is(.fixed, .notempty),
-.wui-form:is(.fill, .line) fieldset > .field:not(.inline):focus-within > label {
-	top: calc(-0.7 * var(--wui-form-input-height) - var(--wui-form-input-borderwidth));
 }
 
 @media screen and (max-width: 767px) {
@@ -886,12 +886,18 @@
 /* wui-form fill */
 /* wui-form border */
 
-.wui-form:is(.fill, .border) fieldset > .field:not(.inline) {
+.wui-form:is(.fill, .border) fieldset > .field:not(.inline, .noborder) {
 	border: var(--wui-form-input-borderwidth) solid transparent;
 	-moz-border-radius: var(--wui-form-input-borderradius);
 	-webkit-border-radius: var(--wui-form-input-borderradius);
 	border-radius: var(--wui-form-input-borderradius);
 	background-color: var(--wui-form-input-bgcolor-out);
+}
+
+/* wui-form gill */
+
+.wui-form.fill fieldset > .field:not(.inline, .noborder) {
+	background-color: transparent;
 }
 
 /* wui-form line */
@@ -934,11 +940,6 @@
 .wui-form.border fieldset > .field:not(.inline):focus-within {
 	border-color: var(--wui-form-input-bordercolor-focus);
 	background-color: var(--wui-form-input-bgcolor-focus);
-}
-
-.wui-form.border:not(.grid) fieldset > .field:not(.inline) > label:is(.fixed, .notempty),
-.wui-form.border:not(.grid) fieldset > .field:not(.inline):focus-within > label {
-	top: calc(-0.8 * var(--wui-form-input-height) - var(--wui-form-input-borderwidth));
 }
 
 .wui-form.border:not(.grid) fieldset > .field:not(.inline) > :is(input[type="text"], input[type="number"], input[type="date"], input[type="time"]) {
