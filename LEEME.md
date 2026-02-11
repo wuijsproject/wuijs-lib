@@ -54,7 +54,7 @@ Autor: `Sergio E. Belmar V. <wuijs.project@gmail.com>`
 
 ## Directory Map
 
-```
+```bash
 wuijs-lib/
 ├── imgs/
 │   ├── icons/

@@ -90,7 +90,7 @@ WUI JS Lib, an acronym for *Web User Interface JavaScript library*, is an open s
 
 ### Directory Map
 
-```
+```bash
 wuijs-lib/
 ├── imgs/
 │   ├── icons/
