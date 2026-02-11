@@ -897,7 +897,6 @@
 }
 
 .wui-form:is(.fill, .border) fieldset > .field:not(.inline, .noborder):focus-within {
-	border-color: var(--wui-form-input-bordercolor-focus);
 	background-color: var(--wui-form-input-bgcolor-focus);
 }
 
@@ -908,6 +907,10 @@
 	background-color: transparent;
 }
 
+.wui-form.fill fieldset > .field:not(.inline, .noborder):focus-within {
+	border-color: var(--wui-form-input-bordercolor-focus);
+}
+
 /* wui-form line */
 
 .wui-form.line fieldset > .field:not(.inline, .noborder) {
@@ -915,6 +918,10 @@
 	-webkit-border-radius: 0px;
 	-moz-border-radius: 0px;
 	border-radius: 0px;
+}
+
+.wui-form.line fieldset > .field:not(.inline, .noborder):focus-within {
+	border-bottom-color: var(--wui-form-input-bordercolor-focus);
 }
 
 .wui-form.line fieldset > .field:not(.inline, .noborder):hover {
