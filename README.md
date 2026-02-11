@@ -88,6 +88,25 @@ WUI JS Lib, an acronym for *Web User Interface JavaScript library*, is an open s
 | [WUIIntensity](#WUIIntensity)       | `0.1`   | Component for the implementation of 4-level intensity selector type data inputs: none, low, half, and high based on HTML element `<input type="range">`. |
 | [WUIButton](#WUIButton)             | `0.2`   | Component for the implementation of based on HTML element `<button>`. |
 
+### Directory Map
+
+```
+wuijs-lib/                 Repositirio.
+├── imgs/                  Imagenes utilizadas en la documentación.
+│   ├── icons/             Íconos generada por la herramienta `/tools/svg-icon-maker.py` a partir de la clase WUIIcon.
+│   └── logo/              Logotipo e isotipo del proyecto en formato SVG y PNG.
+├── legacy/                Outdated fonts with previous versions.
+│   └── WUI/               WUI JS Library.
+├── src/                   Main sources of the latest version.
+│   └── WUI/               WUI JS Library.
+├── tools/                 Complementary tools.
+├── CHANGELOG.md           Change log file [EN].
+├── LEEME.md               General documentation [ES].
+├── LICENSE                License.
+├── README.md              General documentation [EN].
+└── REGISTRODECAMBIO.md    Change log file [ES].
+```
+
 <a name="install"></a>
 
 ## Install

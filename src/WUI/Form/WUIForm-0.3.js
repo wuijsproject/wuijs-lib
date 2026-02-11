@@ -439,7 +439,7 @@ class WUIForm {
 
 /*
 HTML output:
-<form name="form" class="wui-form (line|border [curve]) [mobile]">
+<form name="form" class="wui-form (fill|line|border [curve]) [mobile]">
 	<input type="hidden" name="hidden">
 	<div class="header">Header</div>
 	<div class="body [scroll|scroll-x|scroll-y]">
