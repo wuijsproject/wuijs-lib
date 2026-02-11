@@ -358,7 +358,7 @@ Código CSS archivo `WUI.css`:
 	--wui-form-label-textcolor-disabled: #d5dce3;
 	--wui-form-input-height: 30px;
 	--wui-form-input-borderwidth: 1px;
-	--wui-form-input-borderradius: 15px;
+	--wui-form-input-borderradius: 10px;
 	--wui-form-input-bordercolor-out: rgb(from #1e90ff r g b / 20%);
 	--wui-form-input-bordercolor-focus: #1e90ff;
 	--wui-form-input-bordercolor-invalid: #f44343;
@@ -2990,7 +2990,7 @@ Configuración CSS:
 	--wui-form-label-textcolor-disabled: #d5dce3;
 	--wui-form-input-height: 30px;
 	--wui-form-input-borderwidth: 1px;
-	--wui-form-input-borderradius: 15px;
+	--wui-form-input-borderradius: 10px;
 	--wui-form-input-bordercolor-out: rgb(from #1e90ff r g b / 20%);
 	--wui-form-input-bordercolor-focus: #1e90ff;
 	--wui-form-input-bordercolor-invalid: #f44343;
@@ -4842,11 +4842,13 @@ Los ejemplos listados en esta sección, son detallados en la sección "Implement
 | [WUIDatepicker](#WUIDatepicker)     | [https://codepen.io/wuijsproject/pen/QwEyyZN](https://codepen.io/wuijsproject/pen/QwEyyZN) |
 | [WUITimepicker](#WUITimepicker)     | [https://codepen.io/wuijsproject/pen/azZdGrY](https://codepen.io/wuijsproject/pen/azZdGrY) |
 | [WUIColorpicker](#WUIColorpicker)   | [https://codepen.io/wuijsproject/pen/bNeeobP](https://codepen.io/wuijsproject/pen/bNeeobP) |
-| [WUISwitch](#WUISwitch)         | [https://codepen.io/wuijsproject/pen/qENNwPa](https://codepen.io/wuijsproject/pen/qENNwPa) |
+| [WUISwitch](#WUISwitch)             | [https://codepen.io/wuijsproject/pen/qENNwPa](https://codepen.io/wuijsproject/pen/qENNwPa) |
 | [WUIIntensity](#WUIIntensity)       | [https://codepen.io/wuijsproject/pen/GgqNpxJ](https://codepen.io/wuijsproject/pen/GgqNpxJ) |
 | [WUIButton](#WUIButton)             | [https://codepen.io/wuijsproject/pen/xbOwNzN](https://codepen.io/wuijsproject/pen/xbOwNzN) |
 
 <!--
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIList-paging-buttoner
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUITable-paging
+https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIForm-fill
+https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIForm-line
 -->
