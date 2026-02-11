@@ -107,6 +107,11 @@ wuijs-lib/                 Repositirio.
 └── REGISTRODECAMBIO.md    Change log file [ES].
 ```
 
+| Name                      | Description |
+| ------------------------- | ----------- |
+| [imgs](imgs/)             | Imagenes utilizadas en la documentación. |
+| [imgs/icons](imgs/icons/) | Íconos generada por la herramienta `/tools/svg-icon-maker.py` a partir de la clase WUIIcon. |
+
 <a name="install"></a>
 
 ## Install
