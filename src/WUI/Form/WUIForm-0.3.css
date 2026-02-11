@@ -894,9 +894,9 @@
 	background-color: var(--wui-form-input-bgcolor-out);
 }
 
-/* wui-form gill */
+/* wui-form fill */
 
-.wui-form.fill fieldset > .field:not(.inline, .noborder) {
+.wui-form.fill fieldset > .field:is(.inline, .noborder) {
 	background-color: transparent;
 }
 
