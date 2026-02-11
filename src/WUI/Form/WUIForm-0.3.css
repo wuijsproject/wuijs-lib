@@ -261,6 +261,7 @@
 
 .wui-form fieldset > .field > input[type="date"],
 .wui-form fieldset > .field > input[type="time"] {
+	z-index: 2;
 	min-width: 140px;
 	-moz-appearance: none;
 	-webkit-appearance: none;
@@ -270,6 +271,7 @@
 .wui-form fieldset > .field > input[type="date"] + .opener,
 .wui-form fieldset > .field > input[type="time"] + .opener {
 	position: absolute;
+	z-index: 1;
 	right: 0;
 	background-image: none;
 	-moz-mask-image: url();
@@ -513,6 +515,7 @@
 }
 
 .wui-form fieldset > .field > select {
+	z-index: 2;
 	min-width: 140px;
 	padding-right: var(--wui-form-select-opener-iconsize);
 	-moz-appearance: none;
@@ -522,6 +525,7 @@
 
 .wui-form fieldset > .field > select + .opener {
 	position: absolute;
+	z-index: 1;
 	right: 0;
 	width: var(--wui-form-select-opener-iconsize);
 	height: var(--wui-form-select-opener-iconsize);
@@ -899,20 +903,20 @@
 	background-color: var(--wui-form-input-bgcolor-out);
 }
 
-.wui-form:is(.fill, .border) fieldset > .field:not(.inline, .noborder):focus-within {
+.wui-form:is(.fill, .border) fieldset > .field:not(.inline, .noborder) {
+	border-color: var(--wui-form-input-bordercolor-out);
+}
+
+.wui-form:is(.fill, .border) fieldset > .field:is(.inline, .noborder) {
+	background-color: transparent;
+}
+
+.wui-form:is(.fill, .border) fieldset > .field:not(.inline, .noborder):is(:hover, :focus, :focus-within) {
+	border-color: var(--wui-form-input-bordercolor-focus);
 	background-color: var(--wui-form-input-bgcolor-focus);
 }
 
 /* wui-form fill */
-
-.wui-form.fill fieldset > .field:is(.inline, .noborder) {
-	border-color: var(--wui-form-input-bordercolor-out);
-	background-color: transparent;
-}
-
-.wui-form.fill fieldset > .field:not(.inline, .noborder):focus-within {
-	border-color: var(--wui-form-input-bordercolor-focus);
-}
 
 /* wui-form line */
 

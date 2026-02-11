@@ -327,10 +327,6 @@ class WUIForm {
 					const opener = document.createElement("div");
 					opener.className = "opener";
 					opener.style.maskImage = this.#getSRCIcon(input, type.replace(/-(one|multiple)/, "") + "-opener-open");
-					opener.addEventListener("click", () => {
-						const event = new MouseEvent("mousedown");
-						input.dispatchEvent(event);
-					});
 					input.after(opener);
 				}
 				["mouseover", "mouseout", "focus", "blur"].forEach(eventName => {
