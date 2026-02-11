@@ -293,7 +293,8 @@
 	background-color: var(--wui-form-date-opener-iconcolor-out);
 }
 
-.wui-form fieldset > .field:not(.disabled) > input[type="date"]:not(:disabled):is(:hover, :focus, :focus-within) + .opener {
+.wui-form fieldset > .field:not(.disabled) > input[type="date"]:not(:disabled):is(:hover, :focus, :focus-within) + .opener,
+.wui-form fieldset > .field:not(.disabled) > input[type="date"]:not(:disabled) + .opener:is(:hover, :focus, :focus-within) {
 	background-color: var(--wui-form-date-opener-iconcolor-over);
 }
 
@@ -312,7 +313,8 @@
 	background-color: var(--wui-form-time-opener-iconcolor-out);
 }
 
-.wui-form fieldset > .field:not(.disabled) > input[type="time"]:not(:disabled):is(:hover, :focus, :focus-within) + .opener {
+.wui-form fieldset > .field:not(.disabled) > input[type="time"]:not(:disabled):is(:hover, :focus, :focus-within) + .opener,
+.wui-form fieldset > .field:not(.disabled) > input[type="time"]:not(:disabled) + .opener:is(:hover, :focus, :focus-within) {
 	background-color: var(--wui-form-time-opener-iconcolor-over);
 }
 
@@ -535,7 +537,8 @@
 	mask-repeat: no-repeat;
 }
 
-.wui-form fieldset > .field:not(.disabled) > select:not(:disabled):is(:hover, :focus, :focus-within) + .opener {
+.wui-form fieldset > .field:not(.disabled) > select:not(:disabled):is(:hover, :focus, :focus-within) + .opener,
+.wui-form fieldset > .field:not(.disabled) > select:not(:disabled) + .opener:is(:hover, :focus, :focus-within) {
 	background-color: var(--wui-form-select-opener-iconcolor-over);
 }
 
