@@ -888,11 +888,16 @@
 /* wui-form border */
 
 .wui-form:is(.fill, .border) fieldset > .field:not(.inline, .noborder) {
-	border: var(--wui-form-input-borderwidth) solid transparent;
+	border: var(--wui-form-input-borderwidth) solid var(--wui-form-input-bordercolor-out);
 	-moz-border-radius: var(--wui-form-input-borderradius);
 	-webkit-border-radius: var(--wui-form-input-borderradius);
 	border-radius: var(--wui-form-input-borderradius);
 	background-color: var(--wui-form-input-bgcolor-out);
+}
+
+.wui-form:is(.fill, .border) fieldset > .field:not(.inline, .noborder):focus-within {
+	border-color: var(--wui-form-input-bordercolor-focus);
+	background-color: var(--wui-form-input-bgcolor-focus);
 }
 
 /* wui-form fill */
@@ -933,15 +938,6 @@
 }
 
 /* wui-form border */
-
-.wui-form.border fieldset > .field:not(.inline) {
-	border: var(--wui-form-input-borderwidth) solid var(--wui-form-input-bordercolor-out);
-}
-
-.wui-form.border fieldset > .field:not(.inline):focus-within {
-	border-color: var(--wui-form-input-bordercolor-focus);
-	background-color: var(--wui-form-input-bgcolor-focus);
-}
 
 .wui-form.border:not(.grid) fieldset > .field:not(.inline) > :is(input[type="text"], input[type="number"], input[type="date"], input[type="time"]) {
 	top: calc(-1 * var(--wui-form-input-borderwidth));
