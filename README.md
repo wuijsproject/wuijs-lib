@@ -91,26 +91,37 @@ WUI JS Lib, an acronym for *Web User Interface JavaScript library*, is an open s
 ### Directory Map
 
 ```
-wuijs-lib/                 Repositirio.
-├── imgs/                  Imagenes utilizadas en la documentación.
-│   ├── icons/             Íconos generada por la herramienta `/tools/svg-icon-maker.py` a partir de la clase WUIIcon.
-│   └── logo/              Logotipo e isotipo del proyecto en formato SVG y PNG.
-├── legacy/                Outdated fonts with previous versions.
-│   └── WUI/               WUI JS Library.
-├── src/                   Main sources of the latest version.
-│   └── WUI/               WUI JS Library.
-├── tools/                 Complementary tools.
-├── CHANGELOG.md           Change log file [EN].
-├── LEEME.md               General documentation [ES].
-├── LICENSE                License.
-├── README.md              General documentation [EN].
-└── REGISTRODECAMBIO.md    Change log file [ES].
+wuijs-lib/
+├── imgs/
+│   ├── icons/
+│   └── logo/
+├── legacy/
+│   └── WUI/
+├── src/
+│   └── WUI/
+├── tools/
+├── CHANGELOG.md
+├── LEEME.md
+├── LICENSE
+├── README.md
+└── REGISTRODECAMBIO.md
 ```
 
-| Name                      | Description |
-| ------------------------- | ----------- |
-| [imgs](imgs/)             | Imagenes utilizadas en la documentación. |
-| [imgs/icons](imgs/icons/) | Íconos generada por la herramienta `/tools/svg-icon-maker.py` a partir de la clase WUIIcon. |
+| Name                                       | Description |
+| ------------------------------------------ | ----------- |
+| [imgs](imgs/)                              | Imagenes utilizadas en la documentación. |
+| [imgs/icons](imgs/icons/)                  | Íconos generada por la herramienta `/tools/svg-icon-maker.py` a partir de la clase WUIIcon. |
+| [imgs/logo](imgs/logo/)                    | Logotipo e isotipo del proyecto en formato SVG y PNG. |
+| [legacy](legacy/)                          | Outdated fonts with previous versions. |
+| [legacy/WUI](legacy/WUI/)                  | WUI JS Library. |
+| [src](legacy/)                             | Main sources of the latest version. |
+| [src/WUI](src/WUI/)                        | WUI JS Library. |
+| [tools](tools/)                            | Complementary tools. |
+| [CHANGELOG.md](CHANGELOG.md)               | Change log file [EN]. |
+| [LEEME.md](LEEME.md)                       | General documentation [ES]. |
+| [LICENSE](LICENSE)                         | License. |
+| [README.md](README.md)                     | General documentation [EN]. |
+| [REGISTRODECAMBIO.md](REGISTRODECAMBIO.md) | Change log file [ES]. |
 
 <a name="install"></a>
 
