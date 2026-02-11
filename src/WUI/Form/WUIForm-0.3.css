@@ -888,7 +888,7 @@
 /* wui-form border */
 
 .wui-form:is(.fill, .border) fieldset > .field:not(.inline, .noborder) {
-	border: var(--wui-form-input-borderwidth) solid var(--wui-form-input-bordercolor-out);
+	border: var(--wui-form-input-borderwidth) solid transparent;
 	-moz-border-radius: var(--wui-form-input-borderradius);
 	-webkit-border-radius: var(--wui-form-input-borderradius);
 	border-radius: var(--wui-form-input-borderradius);
@@ -903,13 +903,14 @@
 /* wui-form fill */
 
 .wui-form.fill fieldset > .field:is(.inline, .noborder) {
+	border-color: var(--wui-form-input-bordercolor-out);
 	background-color: transparent;
 }
 
 /* wui-form line */
 
 .wui-form.line fieldset > .field:not(.inline, .noborder) {
-	border-bottom: var(--wui-form-input-borderwidth) solid var(--wui-form-input-bordercolor-out);
+	border-bottom-color: var(--wui-form-input-bordercolor-out);
 	-webkit-border-radius: 0px;
 	-moz-border-radius: 0px;
 	border-radius: 0px;
