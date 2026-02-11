@@ -330,7 +330,7 @@ class WUIForm {
 					["mouseover", "mouseout", "click"].forEach(eventName => {
 						opener.addEventListener(eventName, () => {
 							const event = new MouseEvent(eventName);
-							input.dispatchEvent(event);
+							field.dispatchEvent(event);
 						});
 					});
 					input.after(opener);
