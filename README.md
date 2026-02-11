@@ -182,6 +182,9 @@ CSS code in the `WUI.css` file:
 	--wui-modal-body-scroll-bgcolor-out: rgb(from #353a40 r g b / 20%);
 	--wui-modal-body-scroll-bgcolor-over: rgb(from #353a40 r g b / 40%);
 	--wui-modal-footer-bordercolor: transparent;
+	--wui-modal-button-submit-bgcolor-mobile: rgb(from #959da5 r g b / 20%);
+	--wui-modal-button-submit-textcolor-mobile: #1e90ff;
+	--wui-modal-button-warning-textcolor-mobile: #f44343;
 	--wui-modal-message-box-width: 280px;
 	--wui-modal-message-box-bgcolor: rgb(from #efeff6 r g b / 80%);
 	--wui-modal-message-box-textcolor: #2d3a47;
@@ -253,6 +256,7 @@ CSS code in the `WUI.css` file:
 	--wui-menubar-expander-contracticon-src: none;
 	--wui-menubar-opener-iconsize: 16px;
 	--wui-menubar-opener-openicon-src: none;
+	--wui-menubar-opener-closeicon-src: none;
 	--wui-menubar-submenu-bordercolor: #f0f0f3;
 	--wui-menubar-submenu-bgcolor: #fdfdfe;
 	--wui-menubar-submenu-button-bgcolor-out: transparent;
@@ -272,6 +276,7 @@ CSS code in the `WUI.css` file:
 	--wui-menubar-tooltip-textcolor: #fff;
 	--wui-menubar-bubble-bgcolor: #f44343;
 	--wui-menubar-bubble-textcolor: #fff;
+	--wui-menubar-mobile-opener-closeicon-src: none;
 
 	/* wui-list */
 
@@ -410,6 +415,9 @@ CSS code in the `WUI.css` file:
 	--wui-form-message-textcolor: #2d3a47;
 	--wui-form-message-highlight-bgcolor: #1e90ff;
 	--wui-form-message-highlight-textcolor: #fff;
+
+	--wui-form-button-height: 30px;
+
 	--wui-form-mobile-field-bordercolor: rgb(from #1e90ff r g b / 10%);
 	--wui-form-mobile-label-textcolor: #444;
 	--wui-form-mobile-input-height: 40px;
@@ -545,6 +553,12 @@ CSS code in the `WUI.css` file:
 
 	/* wui-colorpicker */
 
+	--wui-colorpicker-opener-iconsize: 30px;
+	--wui-colorpicker-opener-iconcolor-out: #000;
+	--wui-colorpicker-opener-iconcolor-over: #1e90ff;
+	--wui-colorpicker-opener-iconcolor-disabled: #d5dce3;
+	--wui-colorpicker-opener-openicon-src: none;
+	--wui-colorpicker-opener-closeicon-src: none;
 	--wui-colorpicker-viewbutton-size: 30px;
 	--wui-colorpicker-viewbutton-bordercolor-out: rgb(from #1e90ff r g b / 20%);
 	--wui-colorpicker-viewbutton-bordercolor-over: #1e90ff;
@@ -553,12 +567,6 @@ CSS code in the `WUI.css` file:
 	--wui-colorpicker-viewbutton-bgcolor-out: transparent;
 	--wui-colorpicker-viewbutton-bgcolor-over: transparent;
 	--wui-colorpicker-viewbutton-bgcolor-disabled: transparent;
-	--wui-colorpicker-opener-iconsize: 30px;
-	--wui-colorpicker-opener-iconcolor-out: #000;
-	--wui-colorpicker-opener-iconcolor-over: #1e90ff;
-	--wui-colorpicker-opener-iconcolor-disabled: #d5dce3;
-	--wui-colorpicker-opener-openicon-src: none;
-	--wui-colorpicker-opener-closeicon-src: none;
 	--wui-colorpicker-viewcolor-borderwidth: 1px;
 	--wui-colorpicker-viewcolor-bordercolor: rgb(from #1e90ff r g b / 20%);
 	--wui-colorpicker-viewcolor-emptyicon-src: none;
@@ -641,12 +649,10 @@ CSS code in the `WUI.css` file:
 	--wui-button-submit-bordercolor-disabled: #d5dce3;
 	--wui-button-submit-bgcolor-out: #1e90ff;
 	--wui-button-submit-bgcolor-over: #1e90ff;
-	--wui-button-submit-bgcolor-mobile: rgb(from #959da5 r g b / 20%);
 	--wui-button-submit-bgcolor-selected: #1e90ff;
 	--wui-button-submit-bgcolor-disabled: #d5dce3;
 	--wui-button-submit-textcolor-out: #fff;
 	--wui-button-submit-textcolor-over: #fff;
-	--wui-button-submit-textcolor-mobile: #1e90ff;
 	--wui-button-submit-textcolor-selected: #fff;
 	--wui-button-submit-textcolor-disabled: #d5dce3;
 	--wui-button-submit-textsize: 15px;
@@ -660,7 +666,6 @@ CSS code in the `WUI.css` file:
 	--wui-button-warning-bgcolor-disabled: #d5dce3;
 	--wui-button-warning-textcolor-out: #fff;
 	--wui-button-warning-textcolor-over: #fff;
-	--wui-button-warning-textcolor-mobile: #f44343;
 	--wui-button-warning-textcolor-selected: #fff;
 	--wui-button-warning-textcolor-disabled: #d5dce3;
 	--wui-button-icon-float-padding: 5px;
@@ -4637,12 +4642,10 @@ Component for the implementation of.
 | `--wui-button-submit-bordercolor-disabled`  |
 | `--wui-button-submit-bgcolor-out`           |
 | `--wui-button-submit-bgcolor-over`          |
-| `--wui-button-submit-bgcolor-mobile`        |
 | `--wui-button-submit-bgcolor-selected`      |
 | `--wui-button-submit-bgcolor-disabled`      |
 | `--wui-button-submit-textcolor-out`         |
 | `--wui-button-submit-textcolor-over`        |
-| `--wui-button-submit-textcolor-mobile`      |
 | `--wui-button-submit-textcolor-selected`    |
 | `--wui-button-submit-textcolor-disabled`    |
 | `--wui-button-submit-textsize`              |
@@ -4656,7 +4659,6 @@ Component for the implementation of.
 | `--wui-button-warning-bgcolor-disabled`     |
 | `--wui-button-warning-textcolor-out`        |
 | `--wui-button-warning-textcolor-over`       |
-| `--wui-button-warning-textcolor-mobile`     |
 | `--wui-button-warning-textcolor-selected`   |
 | `--wui-button-warning-textcolor-disabled`   |
 | `--wui-button-icon-float-padding`           |
@@ -4683,7 +4685,7 @@ CSS settings:
 
 	--wui-button-default-minwidth: 200px;
 	--wui-button-default-height: 34px;
-	--wui-button-default-bordercolor-out: #d5dce3;
+	--wui-button-default-bordercolor-out: #b5bbc1;
 	--wui-button-default-bordercolor-over: #1e90ff;
 	--wui-button-default-bordercolor-selected: #1e90ff;
 	--wui-button-default-bordercolor-disabled: #d5dce3;
@@ -4704,12 +4706,10 @@ CSS settings:
 	--wui-button-submit-bordercolor-disabled: #d5dce3;
 	--wui-button-submit-bgcolor-out: #1e90ff;
 	--wui-button-submit-bgcolor-over: #1e90ff;
-	--wui-button-submit-bgcolor-mobile: rgb(from #959da5 r g b / 20%);
 	--wui-button-submit-bgcolor-selected: #1e90ff;
 	--wui-button-submit-bgcolor-disabled: #d5dce3;
 	--wui-button-submit-textcolor-out: #fff;
 	--wui-button-submit-textcolor-over: #fff;
-	--wui-button-submit-textcolor-mobile: #1e90ff;
 	--wui-button-submit-textcolor-selected: #fff;
 	--wui-button-submit-textcolor-disabled: #d5dce3;
 	--wui-button-submit-textsize: 15px;
@@ -4723,7 +4723,6 @@ CSS settings:
 	--wui-button-warning-bgcolor-disabled: #d5dce3;
 	--wui-button-warning-textcolor-out: #fff;
 	--wui-button-warning-textcolor-over: #fff;
-	--wui-button-warning-textcolor-mobile: #f44343;
 	--wui-button-warning-textcolor-selected: #fff;
 	--wui-button-warning-textcolor-disabled: #d5dce3;
 	--wui-button-icon-float-padding: 5px;

@@ -234,17 +234,17 @@ div.wui-modal > .box > .footer > a.hidden {
 
 	div.wui-modal > .box > .footer > button:is(:hover, :focus, :focus-within) {
 		border-color: transparent;
-		background-color: var(--wui-button-submit-bgcolor-mobile);
+		background-color: var(--wui-modal-button-submit-bgcolor-mobile);
 	}
 
 	div.wui-modal > .box > .footer > button.submit {
 		font-weight: bold;
-		color: var(--wui-button-submit-textcolor-mobile);
+		color: var(--wui-modal-button-submit-textcolor-mobile);
 	}
 
-	div.wui-modal > .box > .footer > button.highlight {
+	div.wui-modal > .box > .footer > button.warning {
 		font-weight: bold;
-		color: var(--wui-button-highlight-textcolor-mobile);
+		color: var(--wui-modal-button-warning-textcolor-mobile);
 	}
 }
 
