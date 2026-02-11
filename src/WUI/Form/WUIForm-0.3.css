@@ -854,6 +854,10 @@
 /* wui-form line */
 /* wui-form border */
 
+.wui-form:is(.fill, .line, .border) fieldset > .field:not(.inline, .noborder) {
+	border: var(--wui-form-input-borderwidth) solid transparent;
+}
+
 .wui-form:is(.fill, .line, .border) fieldset > .field > label {
 	top: calc(-1 * var(--wui-form-input-borderwidth));
 	display: flex;
@@ -889,7 +893,6 @@
 /* wui-form border */
 
 .wui-form:is(.fill, .border) fieldset > .field:not(.inline, .noborder) {
-	border: var(--wui-form-input-borderwidth) solid transparent;
 	-moz-border-radius: var(--wui-form-input-borderradius);
 	-webkit-border-radius: var(--wui-form-input-borderradius);
 	border-radius: var(--wui-form-input-borderradius);
