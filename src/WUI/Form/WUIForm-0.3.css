@@ -270,7 +270,6 @@
 .wui-form fieldset > .field > input[type="date"] + .opener,
 .wui-form fieldset > .field > input[type="time"] + .opener {
 	position: absolute;
-	z-index: -1;
 	right: 0;
 	background-image: none;
 	-moz-mask-image: url();
@@ -521,7 +520,6 @@
 
 .wui-form fieldset > .field > select + .opener {
 	position: absolute;
-	z-index: -1;
 	right: 0;
 	width: var(--wui-form-select-opener-iconsize);
 	height: var(--wui-form-select-opener-iconsize);

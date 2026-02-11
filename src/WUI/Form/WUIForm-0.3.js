@@ -327,6 +327,12 @@ class WUIForm {
 					const opener = document.createElement("div");
 					opener.className = "opener";
 					opener.style.maskImage = this.#getSRCIcon(input, type.replace(/-(one|multiple)/, "") + "-opener-open");
+					["mouseover", "mouseout", "click"].forEach(eventName => {
+						opener.addEventListener(eventName, () => {
+							const event = new MouseEvent(eventName);
+							input.dispatchEvent(event);
+						});
+					});
 					input.after(opener);
 				}
 				["mouseover", "mouseout", "focus", "blur"].forEach(eventName => {
@@ -339,8 +345,8 @@ class WUIForm {
 							}
 						}
 						if (eventName == "focus") {
-							const open = new MouseEvent("mousedown");
-							input.dispatchEvent(open);
+							const event = new MouseEvent("mousedown");
+							input.dispatchEvent(event);
 						}
 					});
 				});
