@@ -90,7 +90,6 @@ WUI JS Lib, an acronym for *Web User Interface JavaScript library*, is an open s
 
 ### Directory Map
 
-```
 wuijs-lib/                 Repositirio.
 ├── imgs/                  Imagenes utilizadas en la documentación.
 │   ├── icons/             Íconos generada por la herramienta `/tools/svg-icon-maker.py` a partir de la clase WUIIcon.
@@ -105,7 +104,6 @@ wuijs-lib/                 Repositirio.
 ├── LICENSE                License.
 ├── README.md              General documentation [EN].
 └── REGISTRODECAMBIO.md    Change log file [ES].
-```
 
 <a name="install"></a>
 
