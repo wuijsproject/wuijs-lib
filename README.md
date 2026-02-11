@@ -99,29 +99,19 @@ wuijs-lib/
 │   └── WUI/
 ├── src/
 │   └── WUI/
-├── tools/
-├── CHANGELOG.md
-├── LEEME.md
-├── LICENSE
-├── README.md
-└── REGISTRODECAMBIO.md
+└── tools/
 ```
 
-| Name                                       | Description |
-| ------------------------------------------ | ----------- |
-| [imgs](imgs/)                              | Imagenes utilizadas en la documentación. |
-| [imgs/icons](imgs/icons/)                  | Íconos generada por la herramienta `/tools/svg-icon-maker.py` a partir de la clase WUIIcon. |
-| [imgs/logo](imgs/logo/)                    | Logotipo e isotipo del proyecto en formato SVG y PNG. |
-| [legacy](legacy/)                          | Outdated fonts with previous versions. |
-| [legacy/WUI](legacy/WUI/)                  | WUI JS Library. |
-| [src](legacy/)                             | Main sources of the latest version. |
-| [src/WUI](src/WUI/)                        | WUI JS Library. |
-| [tools](tools/)                            | Complementary tools. |
-| [CHANGELOG.md](CHANGELOG.md)               | Change log file [EN]. |
-| [LEEME.md](LEEME.md)                       | General documentation [ES]. |
-| [LICENSE](LICENSE)                         | License. |
-| [README.md](README.md)                     | General documentation [EN]. |
-| [REGISTRODECAMBIO.md](REGISTRODECAMBIO.md) | Change log file [ES]. |
+| Name                      | Description |
+| ------------------------- | ----------- |
+| [imgs](imgs/)             | Imagenes utilizadas en la documentación. |
+| [imgs/icons](imgs/icons/) | Íconos generada por la herramienta `/tools/svg-icon-maker.py` a partir de la clase WUIIcon. |
+| [imgs/logo](imgs/logo/)   | Logotipo e isotipo del proyecto en formato SVG y PNG. |
+| [legacy](legacy/)         | Outdated fonts with previous versions. |
+| [legacy/WUI](legacy/WUI/) | WUI JS Library. |
+| [src](legacy/)            | Main sources of the latest version. |
+| [src/WUI](src/WUI/)       | WUI JS Library. |
+| [tools](tools/)           | Complementary tools. |
 
 <a name="install"></a>
 
