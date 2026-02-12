@@ -7,10 +7,10 @@
 .wui-form,
 .wui-form *,
 .wui-form *::before {
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
 	-webkit-tap-highlight-color: transparent;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 .wui-form,
@@ -179,10 +179,10 @@
 }
 
 .wui-form fieldset > .field > label {
+	--label-webkit-transition: var(--label-transition-base), -khtml-opacity .2s ease-out;
 	--label-moz-transition: var(--label-transition-base), -moz-opacity .2s ease-out;
 	--label-transition: var(--label-transition-base), opacity .2s ease-out;
 	--label-transition-base: top .2s ease-out, color .2s ease-out;
-	--label-webkit-transition: var(--label-transition-base), -khtml-opacity .2s ease-out;
 	position: absolute;
 	top: 11px;
 	left: 10px;
@@ -190,18 +190,18 @@
 	font-size: 13px;
 	color: var(--wui-form-label-textcolor-out);
 	white-space: nowrap;
-	-moz-transition: var(--label-moz-transition);
 	-webkit-transition: var(--label-webkit-transition);
+	-moz-transition: var(--label-moz-transition);
 	transition: var(--label-transition);
 }
 
 .wui-form fieldset > .field > label.pointer {
 	cursor: pointer !important;
-	-moz-user-select: none;
-	-webkit-user-select: none;
-	user-select: none;
-	-khtml-user-select: none;
 	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
 }
 
 .wui-form:not(.grid) fieldset > .field.inline > label {
@@ -247,11 +247,11 @@
 
 .wui-form fieldset > .field > :is(input, select, textarea):is(:-webkit-autofill, :autofill) .wui-form fieldset > .field > :is(input, select, textarea):is(:-webkit-autofill, :autofill):is(:hover, :focus, :active) {
 	--input-transition: color 9999s ease-out, background-color 9999s ease-out;
-	-moz-transition: var(--input-transition);
 	-webkit-transition: var(--input-transition);
-	transition: var(--input-transition);
-	-moz-transition-delay: 9999s;
 	-webkit-transition-delay: 9999s;
+	-moz-transition: var(--input-transition);
+	-moz-transition-delay: 9999s;
+	transition: var(--input-transition);
 	transition-delay: 9999s;
 }
 
@@ -263,8 +263,8 @@
 .wui-form fieldset > .field > input[type="time"] {
 	z-index: 2;
 	min-width: 140px;
-	-moz-appearance: none;
 	-webkit-appearance: none;
+	-moz-appearance: none;
 	appearance: none;
 }
 
@@ -274,14 +274,14 @@
 	z-index: 1;
 	right: 0;
 	background-image: none;
-	-moz-mask-image: url();
 	-webkit-mask-image: url();
-	mask-image: url();
-	-moz-mask-position: center;
 	-webkit-mask-position: center;
-	mask-position: center;
-	-moz-mask-repeat: no-repeat;
 	-webkit-mask-repeat: no-repeat;
+	-moz-mask-image: url();
+	-moz-mask-position: center;
+	-moz-mask-repeat: no-repeat;
+	mask-image: url();
+	mask-position: center;
 	mask-repeat: no-repeat;
 }
 
@@ -334,14 +334,21 @@
 	background: none;
 }
 
+.wui-form fieldset > .field > input[type="color"] {
+	-webkit-border-radius: calc(var(--wui-form-range-trackbar-height) / 2);
+	-moz-border-radius: calc(var(--wui-form-range-trackbar-height) / 2);
+	border-radius: calc(var(--wui-form-range-trackbar-height) / 2);
+	border: var(--wui-form-input-borderwidth) solid var(--wui-form-input-bordercolor-out);
+}
+
 .wui-form fieldset > .field > input[type="range"]::-webkit-slider-thumb,
 .wui-form fieldset > .field > input[type="range"]::-webkit-slider-runnable-track,
 .wui-form fieldset > .field > input[type="range"]::-moz-range-thumb,
 .wui-form fieldset > .field > input[type="range"]::-moz-range-track,
 .wui-form fieldset > .field > input[type="range"]::-ms-thumb,
 .wui-form fieldset > .field > input[type="range"]::-ms-track {
-	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
@@ -351,10 +358,10 @@
 	--range-transition: background .2s ease-in-out;
 	width: 100%;
 	height: var(--wui-form-range-trackbar-height);
-	border: var(--wui-form-range-trackbar-borderwidth) solid var(--wui-form-range-trackbar-bordercolor);
-	-moz-border-radius: calc(var(--wui-form-range-trackbar-height) / 2);
 	-webkit-border-radius: calc(var(--wui-form-range-trackbar-height) / 2);
+	-moz-border-radius: calc(var(--wui-form-range-trackbar-height) / 2);
 	border-radius: calc(var(--wui-form-range-trackbar-height) / 2);
+	border: var(--wui-form-range-trackbar-borderwidth) solid var(--wui-form-range-trackbar-bordercolor);
 	background-color: var(--wui-form-range-trackbar-bgcolor-out);
 	background-image: -webkit-linear-gradient(var(--range-gradient));
 	background-image: -moz-linear-gradient(var(--range-gradient));
@@ -362,8 +369,8 @@
 	background-image: linear-gradient(var(--range-gradient));
 	background-repeat: no-repeat;
 	background-size: 0% 100%;
-	-moz-appearance: none;
 	-webkit-appearance: none;
+	-moz-appearance: none;
 	appearance: none;
 }
 
@@ -473,13 +480,13 @@
 	width: 20px;
 	height: 20px;
 	border: 1px solid var(--wui-form-input-bordercolor-out);
-	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
 	border-radius: 5px;
 	background-color: var(--wui-form-input-bgcolor-out);
+	-webkit-appearance: none;
 	-moz-appearance: none;
 	-o-appearance: none;
-	-webkit-appearance: none;
 	appearance: none;
 }
 
@@ -498,8 +505,8 @@
 .wui-form fieldset > .field > input[type="checkbox"]:checked::before {
 	width: 12px;
 	height: 12px;
-	-moz-border-radius: 4px;
 	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
 	border-radius: 4px;
 	background-color: transparent;
 	cursor: pointer;
@@ -518,8 +525,9 @@
 	z-index: 2;
 	min-width: 140px;
 	padding-right: var(--wui-form-select-opener-iconsize);
-	-moz-appearance: none;
 	-webkit-appearance: none;
+	-moz-appearance: none;
+	-o-appearance: none;
 	appearance: none;
 }
 
@@ -530,14 +538,14 @@
 	width: var(--wui-form-select-opener-iconsize);
 	height: var(--wui-form-select-opener-iconsize);
 	background-color: var(--wui-form-select-opener-iconcolor-out);
-	-moz-mask-image: url();
 	-webkit-mask-image: url();
-	mask-image: url();
-	-moz-mask-position: center;
 	-webkit-mask-position: center;
-	mask-position: center;
-	-moz-mask-repeat: no-repeat;
 	-webkit-mask-repeat: no-repeat;
+	-moz-mask-image: url();
+	-moz-mask-position: center;
+	-moz-mask-repeat: no-repeat;
+	mask-image: url();
+	mask-position: center;
 	mask-repeat: no-repeat;
 }
 
@@ -598,32 +606,32 @@
 .wui-form fieldset > .field > progress[value] {
 	width: 100%;
 	border: var(--wui-form-progress-borderwidth) solid var(--wui-form-progress-bordercolor);
-	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
 	border-radius: 10px;
 	background: var(--wui-form-progress-bgcolor);
-	-moz-appearance: none;
 	-webkit-appearance: none;
+	-moz-appearance: none;
 	appearance: none;
 }
 
 .wui-form fieldset > .field > progress[value]::-webkit-progress-bar {
-	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
 	border-radius: 10px;
 	background: var(--wui-form-progress-bgcolor);
 }
 
 .wui-form fieldset > .field > progress[value]::-webkit-progress-value {
-	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
 	border-radius: 10px;
 	background: var(--wui-form-progress-valuecolor);
 }
 
 .wui-form fieldset > .field > progress[value]::-moz-progress-bar {
-	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
 	border-radius: 10px;
 	background: var(--wui-form-progress-valuecolor);
 }
@@ -656,8 +664,8 @@
 	font-size: 14px;
 	color: var(--wui-form-message-textcolor);
 	background-color: var(--wui-form-message-bgcolor);
-	-moz-box-shadow: var(--message-shadow);
 	-webkit-box-shadow: var(--message-shadow);
+	-moz-box-shadow: var(--message-shadow);
 	box-shadow: var(--message-shadow);
 }
 
@@ -668,8 +676,8 @@
 
 .wui-form fieldset > .message,
 .wui-form fieldset > .message > iframe {
-	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
 	border-radius: 10px;
 }
 
@@ -874,6 +882,14 @@
 	top: calc(-0.8 * var(--wui-form-input-height) - var(--wui-form-input-borderwidth));
 }
 
+@media screen and (max-width: 767px) {
+
+	.wui-form:is(.fill, .line, .border) fieldset > .field:not(.inline) > label:is(.fixed, .notempty),
+	.wui-form:is(.fill, .line, .border) fieldset > .field:not(.inline):focus-within > label {
+		top: calc(-0.8 * var(--wui-form-mobile-input-height) - var(--wui-form-input-borderwidth));
+	}
+}
+
 /* wui-form fill */
 /* wui-form line */
 
@@ -885,26 +901,22 @@
 	right: 0px;
 }
 
-@media screen and (max-width: 767px) {
-
-	.wui-form:is(.fill, .line) fieldset > .field:not(.inline) > label:is(.fixed, .notempty),
-	.wui-form:is(.fill, .line) fieldset > .field:not(.inline):focus-within > label {
-		top: calc(-0.7 * var(--wui-form-mobile-input-height) - var(--wui-form-input-borderwidth));
-	}
-}
-
 /* wui-form fill */
 /* wui-form border */
 
 .wui-form:is(.fill, .border) fieldset > .field:not(.inline, .noborder) {
-	-moz-border-radius: var(--wui-form-input-borderradius);
 	-webkit-border-radius: var(--wui-form-input-borderradius);
+	-moz-border-radius: var(--wui-form-input-borderradius);
 	border-radius: var(--wui-form-input-borderradius);
 	background-color: var(--wui-form-input-bgcolor-out);
 }
 
 .wui-form:is(.fill, .border) fieldset > .field:not(.inline, .noborder) {
+	--field-transition: border-color .4s ease-out, background-color .4s ease-out;
 	border-color: var(--wui-form-input-bordercolor-out);
+	-webkit-transition: var(--field-transition);
+	-moz-transition: var(--field-transition);
+	transition: var(--field-transition);
 }
 
 .wui-form:is(.fill, .border) fieldset > .field:is(.inline, .noborder) {
@@ -916,7 +928,13 @@
 	background-color: var(--wui-form-input-bgcolor-focus);
 }
 
-/* wui-form fill */
+@media screen and (max-width: 767px) {
+	.wui-form:is(.fill, .border) fieldset > .field:not(.inline) {
+		-webkit-border-radius: var(--wui-form-mobile-input-borderradius);
+		-moz-border-radius: var(--wui-form-mobile-input-borderradius);
+		border-radius: var(--wui-form-mobile-input-borderradius);
+	}
+}
 
 /* wui-form line */
 
@@ -942,42 +960,37 @@
 	bottom: -1px;
 	left: 0px;
 	display: block;
-	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	height: var(--wui-form-input-borderwidth);
 	background-color: var(--wui-form-input-bordercolor-focus);
-	-moz-transition: var(--field-transition);
 	-webkit-transition: var(--field-transition);
+	-moz-transition: var(--field-transition);
 	transition: var(--field-transition);
 	content: "";
 }
 
-/* wui-form border */
+@media screen and (max-width: 767px) {
 
-.wui-form.border:not(.grid) fieldset > .field:not(.inline) > :is(input[type="text"], input[type="number"], input[type="date"], input[type="time"]) {
-	top: calc(-1 * var(--wui-form-input-borderwidth));
+	.wui-form.line fieldset > .field:not(.inline) > label:is(.fixed, .notempty),
+	.wui-form.line fieldset > .field:not(.inline):focus-within > label {
+		top: calc(-0.7 * var(--wui-form-mobile-input-height) - var(--wui-form-input-borderwidth));
+	}
 }
 
-@media screen and (max-width: 767px) {
-	.wui-form.border fieldset > .field:not(.inline) {
-		-moz-border-radius: var(--wui-form-mobile-input-borderradius);
-		-webkit-border-radius: var(--wui-form-mobile-input-borderradius);
-		border-radius: var(--wui-form-mobile-input-borderradius);
-	}
+/* wui-form border */
 
-	.wui-form.border:not(.grid) fieldset > .field:not(.inline) > label:is(.fixed, .notempty),
-	.wui-form.border:not(.grid) fieldset > .field:not(.inline):focus-within > label {
-		top: calc(-0.8 * var(--wui-form-mobile-input-height) - var(--wui-form-input-borderwidth));
-	}
+.wui-form.border fieldset > .field:not(.inline) > :is(input[type="text"], input[type="number"], input[type="date"], input[type="time"]) {
+	top: calc(-1 * var(--wui-form-input-borderwidth));
 }
 
 /* wui-form border curve */
 
 .wui-form.border.curve fieldset > .field:not(.inline) {
 	--field-radius: calc(var(--wui-form-input-height) / 2);
-	-moz-border-radius: var(--field-radius);
 	-webkit-border-radius: var(--field-radius);
+	-moz-border-radius: var(--field-radius);
 	border-radius: var(--field-radius);
 }
 
@@ -1000,12 +1013,12 @@
 		--fieldset-shadow: rgba(0, 0, 0, .05) 0px 4px 12px;
 		gap: 0;
 		padding: 0;
-		-moz-border-radius: var(--fieldset-radius) !important;
 		-webkit-border-radius: var(--fieldset-radius) !important;
+		-moz-border-radius: var(--fieldset-radius) !important;
 		border-radius: var(--fieldset-radius) !important;
 		background-color: var(--wui-form-fieldset-bgcolor);
-		-moz-box-shadow: var(--fieldset-shadow);
 		-webkit-box-shadow: var(--fieldset-shadow);
+		-moz-box-shadow: var(--fieldset-shadow);
 		box-shadow: var(--fieldset-shadow);
 	}
 
@@ -1019,8 +1032,8 @@
 		border-right: 0 !important;
 		border-bottom: 0 !important;
 		border-left: 0 !important;
-		-moz-border-radius: 0;
 		-webkit-border-radius: 0;
+		-moz-border-radius: 0;
 		border-radius: 0;
 		background-color: #fff !important;
 	}
@@ -1032,20 +1045,20 @@
 	.wui-form.mobile fieldset > .field:first-child {
 		border-top: 0px !important;
 		-webkit-border-top-left-radius: var(--radius);
-		border-top-left-radius: var(--radius);
 		-webkit-border-top-right-radius: var(--radius);
-		border-top-right-radius: var(--radius);
 		-moz-border-radius-topleft: var(--radius);
 		-moz-border-radius-topright: var(--radius);
+		border-top-left-radius: var(--radius);
+		border-top-right-radius: var(--radius);
 	}
 
 	.wui-form.mobile fieldset > .field:last-child {
 		-webkit-border-bottom-right-radius: var(--radius);
-		border-bottom-right-radius: var(--radius);
 		-webkit-border-bottom-left-radius: var(--radius);
-		border-bottom-left-radius: var(--radius);
 		-moz-border-radius-bottomleft: var(--radius);
 		-moz-border-radius-bottomright: var(--radius);
+		border-bottom-right-radius: var(--radius);
+		border-bottom-left-radius: var(--radius);
 	}
 
 	.wui-form.mobile fieldset > .field:focus-within {
@@ -1081,8 +1094,8 @@
 	.wui-form.mobile fieldset > .field > :is(input, select, textarea) {
 		flex: 1;
 		border: var(--wui-form-input-borderwidth) solid var(--wui-form-input-bgcolor-out);
-		-moz-border-radius: 10px;
 		-webkit-border-radius: 10px;
+		-moz-border-radius: 10px;
 		border-radius: 10px;
 		text-align: right;
 	}
@@ -1092,8 +1105,8 @@
 	}
 
 	.wui-form.mobile fieldset > .field > input[type="checkbox"]:checked::before {
-		-moz-border-radius: 50%;
 		-webkit-border-radius: 50%;
+		-moz-border-radius: 50%;
 		border-radius: 50%;
 	}
 
