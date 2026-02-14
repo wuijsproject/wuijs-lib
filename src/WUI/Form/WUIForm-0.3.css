@@ -936,7 +936,7 @@
 }
 
 .wui-form:is(.fill, .border) fieldset > .field:not(.inline, .noborder),
-.wui-form:is(.fill, .border) fieldset > .field > :is(input[type="color"], input[type="checkbox"]) {
+.wui-form:is(.fill, .border) fieldset > .field > :is(input[type="range"], input[type="color"], input[type="checkbox"]) {
 	--field-transition: border-color .4s ease-out, background-color .4s ease-out;
 	border-color: var(--wui-form-input-bordercolor-out);
 	-webkit-transition: var(--field-transition);
