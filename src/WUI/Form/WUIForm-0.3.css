@@ -341,6 +341,18 @@
 	border: var(--wui-form-input-borderwidth) solid var(--wui-form-input-bordercolor-out);
 }
 
+.wui-form fieldset > .field:hover > input[type="color"]:enabled,
+.wui-form fieldset > .field:focus-within > input[type="color"]:enabled {
+	border-color: var(--wui-form-input-bordercolor-focus);
+	background-color: var(--wui-form-input-bgcolor-focus);
+}
+
+.wui-form fieldset > .field:hover > input[type="color"]:disabled,
+.wui-form fieldset > .field:focus-within > input[type="color"]:disabled {
+	border-color: var(--wui-form-input-bordercolor-disabled) !important;
+	background-color: var(--wui-form-input-bgcolor-disabled) !important;
+}
+
 .wui-form fieldset > .field > input[type="range"]::-webkit-slider-thumb,
 .wui-form fieldset > .field > input[type="range"]::-webkit-slider-runnable-track,
 .wui-form fieldset > .field > input[type="range"]::-moz-range-thumb,
@@ -353,7 +365,7 @@
 }
 
 .wui-form fieldset > .field > input[type="range"] {
-	--range-gradient: var(--wui-form-range-trackbar-bgcolor-out), var(--wui-form-range-trackbar-bgcolor-out);
+	/*--range-gradient: var(--wui-form-range-trackbar-bgcolor-out), var(--wui-form-range-trackbar-bgcolor-out);*/
 	--range-shadow: 0 0 2px 0 rgba(0, 0, 0, .4);
 	--range-transition: background .2s ease-in-out;
 	width: 100%;
@@ -361,17 +373,29 @@
 	-webkit-border-radius: calc(var(--wui-form-range-trackbar-height) / 2);
 	-moz-border-radius: calc(var(--wui-form-range-trackbar-height) / 2);
 	border-radius: calc(var(--wui-form-range-trackbar-height) / 2);
-	border: var(--wui-form-range-trackbar-borderwidth) solid var(--wui-form-range-trackbar-bordercolor);
+	border: var(--wui-form-range-trackbar-borderwidth) solid var(--wui-form-range-trackbar-bordercolor-out);
 	background-color: var(--wui-form-range-trackbar-bgcolor-out);
-	background-image: -webkit-linear-gradient(var(--range-gradient));
+	/*background-image: -webkit-linear-gradient(var(--range-gradient));
 	background-image: -moz-linear-gradient(var(--range-gradient));
 	background-image: -o-linear-gradient(var(--range-gradient));
 	background-image: linear-gradient(var(--range-gradient));
 	background-repeat: no-repeat;
-	background-size: 0% 100%;
+	background-size: 0% 100%;*/
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
+}
+
+.wui-form fieldset > .field:hover > input[type="range"]:enabled,
+.wui-form fieldset > .field:focus-within > input[type="range"]:enabled {
+	border-color: var(--wui-form-range-trackbar-bordercolor-focus);
+	background-color: var(--wui-form-range-trackbar-bgcolor-focus);
+}
+
+.wui-form fieldset > .field:hover > input[type="range"]:disabled,
+.wui-form fieldset > .field:focus-within > input[type="range"]:disabled {
+	border-color: var(--wui-form-range-trackbar-bordercolor-disabled) !important;
+	background-color: var(--wui-form-range-trackbar-bgcolor-disabled) !important;
 }
 
 .wui-form fieldset > .field > input[type="range"]::-webkit-slider-thumb {
@@ -833,7 +857,7 @@
 
 /* wui-form grid */
 
-.wui-form.grid fieldset {
+/*.wui-form.grid fieldset {
 	grid-gap: 10px;
 }
 
@@ -860,7 +884,7 @@
 	.wui-form.grid fieldset > .field {
 		width: auto;
 	}
-}
+}*/
 
 /* wui-form fill */
 /* wui-form line */
@@ -911,7 +935,8 @@
 	background-color: var(--wui-form-input-bgcolor-out);
 }
 
-.wui-form:is(.fill, .border) fieldset > .field:not(.inline, .noborder) {
+.wui-form:is(.fill, .border) fieldset > .field:not(.inline, .noborder),
+.wui-form:is(.fill, .border) fieldset > .field > :is(input[type="color"], input[type="checkbox"]) {
 	--field-transition: border-color .4s ease-out, background-color .4s ease-out;
 	border-color: var(--wui-form-input-bordercolor-out);
 	-webkit-transition: var(--field-transition);

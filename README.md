@@ -390,9 +390,11 @@ CSS code in the `WUI.css` file:
 	--wui-form-range-thumb-bgcolor-disabled: #d5dce3;
 	--wui-form-range-trackbar-height: 7px;
 	--wui-form-range-trackbar-borderwidth: 1px;
-	--wui-form-range-trackbar-bordercolor: #f0f0f3;
+	--wui-form-range-trackbar-bordercolor-out: #f0f0f3;
+	--wui-form-range-trackbar-bordercolor-focus: #1e90ff;
+	--wui-form-range-trackbar-bordercolor-disabled: #d5dce3;
 	--wui-form-range-trackbar-bgcolor-out: #f6f6fa;
-	--wui-form-range-trackbar-bgcolor-over: #1e90ff;
+	--wui-form-range-trackbar-bgcolor-focus: #1e90ff;
 	--wui-form-range-trackbar-bgcolor-disabled: #d5dce3;
 	--wui-form-select-opener-iconsize: 30px;
 	--wui-form-select-opener-iconcolor-out: #000;
@@ -2881,82 +2883,84 @@ Component for the implementation of data forms. This component allows the implem
 
 #### CSS Variables
 
-| Variable                                      | Description |
-| --------------------------------------------- | ----------- |
-| `--wui-form-header-bordercolor`               |
-| `--wui-form-header-titlecolor`                |
-| `--wui-form-body-scroll-bgcolor-out`          |
-| `--wui-form-body-scroll-bgcolor-over`         |
-| `--wui-form-line-bordercolor`                 |
-| `--wui-form-fieldset-bgcolor`                 |
-| `--wui-form-legend-texttransform`             |
-| `--wui-form-legend-textcolor`                 |
-| `--wui-form-label-textcolor-out`              |
-| `--wui-form-label-textcolor-focus`            |
-| `--wui-form-label-textcolor-notempty`         |
-| `--wui-form-label-textcolor-disabled`         |
-| `--wui-form-input-height`                     |
-| `--wui-form-input-borderwidth`                |
-| `--wui-form-input-borderradius`               |
-| `--wui-form-input-bordercolor-out`            |
-| `--wui-form-input-bordercolor-focus`          |
-| `--wui-form-input-bordercolor-invalid`        |
-| `--wui-form-input-bordercolor-disabled`       |
-| `--wui-form-input-bgcolor-out`                |
-| `--wui-form-input-bgcolor-focus`              |
-| `--wui-form-input-bgcolor-disabled`           |
-| `--wui-form-input-textcolor-out`              |
-| `--wui-form-input-textcolor-over`             |
-| `--wui-form-input-textcolor-disabled`         |
-| `--wui-form-date-opener-iconsize`             |
-| `--wui-form-date-opener-iconcolor-out`        |
-| `--wui-form-date-opener-iconcolor-over`       |
-| `--wui-form-date-opener-iconcolor-disabled`   |
-| `--wui-form-date-opener-openicon-src`         |
-| `--wui-form-date-opener-closeicon-src`        |
-| `--wui-form-time-opener-iconsize`             |
-| `--wui-form-time-opener-iconcolor-out`        |
-| `--wui-form-time-opener-iconcolor-over`       |
-| `--wui-form-time-opener-iconcolor-disabled`   |
-| `--wui-form-time-opener-openicon-src`         |
-| `--wui-form-time-opener-closeicon-src`        |
-| `--wui-form-range-thumb-size`                 |
-| `--wui-form-range-thumb-bgcolor-out`          |
-| `--wui-form-range-thumb-bgcolor-over`         |
-| `--wui-form-range-thumb-bgcolor-disabled`     |
-| `--wui-form-range-trackbar-height`            |
-| `--wui-form-range-trackbar-borderwidth`       |
-| `--wui-form-range-trackbar-bordercolor`       |
-| `--wui-form-range-trackbar-bgcolor-out`       |
-| `--wui-form-range-trackbar-bgcolor-over`      |
-| `--wui-form-range-trackbar-bgcolor-disabled`  |
-| `--wui-form-select-opener-iconsize`           |
-| `--wui-form-select-opener-iconcolor-out`      |
-| `--wui-form-select-opener-iconcolor-over`     |
-| `--wui-form-select-opener-iconcolor-disabled` |
-| `--wui-form-select-opener-openicon-src`       |
-| `--wui-form-select-opener-closeicon-src`      |
-| `--wui-form-data-textcolor-out`               |
-| `--wui-form-data-textcolor-disabled`          |
-| `--wui-form-progress-borderwidth`             |
-| `--wui-form-progress-bordercolor`             |
-| `--wui-form-progress-valuecolor`              |
-| `--wui-form-progress-bgcolor`                 |
-| `--wui-form-text-textcolor-out`               |
-| `--wui-form-text-textcolor-disabled`          |
-| `--wui-form-text-linkcolor-out`               |
-| `--wui-form-text-linkcolor-highlight`         |
-| `--wui-form-message-shadowcolor`              |
-| `--wui-form-message-bgcolor`                  |
-| `--wui-form-message-textcolor`                |
-| `--wui-form-message-highlight-bgcolor`        |
-| `--wui-form-message-highlight-textcolor`      |
-| `--wui-form-mobile-field-bordercolor`         |
-| `--wui-form-mobile-label-textcolor`           |
-| `--wui-form-mobile-input-height`              |
-| `--wui-form-mobile-input-bgcolor`             |
-| `--wui-form-mobile-input-height`              |
-| `--wui-form-mobile-input-borderradius`        |
+| Variable                                         | Description |
+| ------------------------------------------------ | ----------- |
+| `--wui-form-header-bordercolor`                  |
+| `--wui-form-header-titlecolor`                   |
+| `--wui-form-body-scroll-bgcolor-out`             |
+| `--wui-form-body-scroll-bgcolor-over`            |
+| `--wui-form-line-bordercolor`                    |
+| `--wui-form-fieldset-bgcolor`                    |
+| `--wui-form-legend-texttransform`                |
+| `--wui-form-legend-textcolor`                    |
+| `--wui-form-label-textcolor-out`                 |
+| `--wui-form-label-textcolor-focus`               |
+| `--wui-form-label-textcolor-notempty`            |
+| `--wui-form-label-textcolor-disabled`            |
+| `--wui-form-input-height`                        |
+| `--wui-form-input-borderwidth`                   |
+| `--wui-form-input-borderradius`                  |
+| `--wui-form-input-bordercolor-out`               |
+| `--wui-form-input-bordercolor-focus`             |
+| `--wui-form-input-bordercolor-invalid`           |
+| `--wui-form-input-bordercolor-disabled`          |
+| `--wui-form-input-bgcolor-out`                   |
+| `--wui-form-input-bgcolor-focus`                 |
+| `--wui-form-input-bgcolor-disabled`              |
+| `--wui-form-input-textcolor-out`                 |
+| `--wui-form-input-textcolor-over`                |
+| `--wui-form-input-textcolor-disabled`            |
+| `--wui-form-date-opener-iconsize`                |
+| `--wui-form-date-opener-iconcolor-out`           |
+| `--wui-form-date-opener-iconcolor-over`          |
+| `--wui-form-date-opener-iconcolor-disabled`      |
+| `--wui-form-date-opener-openicon-src`            |
+| `--wui-form-date-opener-closeicon-src`           |
+| `--wui-form-time-opener-iconsize`                |
+| `--wui-form-time-opener-iconcolor-out`           |
+| `--wui-form-time-opener-iconcolor-over`          |
+| `--wui-form-time-opener-iconcolor-disabled`      |
+| `--wui-form-time-opener-openicon-src`            |
+| `--wui-form-time-opener-closeicon-src`           |
+| `--wui-form-range-thumb-size`                    |
+| `--wui-form-range-thumb-bgcolor-out`             |
+| `--wui-form-range-thumb-bgcolor-over`            |
+| `--wui-form-range-thumb-bgcolor-disabled`        |
+| `--wui-form-range-trackbar-height`               |
+| `--wui-form-range-trackbar-borderwidth`          |
+| `--wui-form-range-trackbar-bordercolor-out`      |
+| `--wui-form-range-trackbar-bordercolor-focus`    |
+| `--wui-form-range-trackbar-bordercolor-disabled` |
+| `--wui-form-range-trackbar-bgcolor-out`          |
+| `--wui-form-range-trackbar-bgcolor-over`         |
+| `--wui-form-range-trackbar-bgcolor-disabled`     |
+| `--wui-form-select-opener-iconsize`              |
+| `--wui-form-select-opener-iconcolor-out`         |
+| `--wui-form-select-opener-iconcolor-over`        |
+| `--wui-form-select-opener-iconcolor-disabled`    |
+| `--wui-form-select-opener-openicon-src`          |
+| `--wui-form-select-opener-closeicon-src`         |
+| `--wui-form-data-textcolor-out`                  |
+| `--wui-form-data-textcolor-disabled`             |
+| `--wui-form-progress-borderwidth`                |
+| `--wui-form-progress-bordercolor`                |
+| `--wui-form-progress-valuecolor`                 |
+| `--wui-form-progress-bgcolor`                    |
+| `--wui-form-text-textcolor-out`                  |
+| `--wui-form-text-textcolor-disabled`             |
+| `--wui-form-text-linkcolor-out`                  |
+| `--wui-form-text-linkcolor-highlight`            |
+| `--wui-form-message-shadowcolor`                 |
+| `--wui-form-message-bgcolor`                     |
+| `--wui-form-message-textcolor`                   |
+| `--wui-form-message-highlight-bgcolor`           |
+| `--wui-form-message-highlight-textcolor`         |
+| `--wui-form-mobile-field-bordercolor`            |
+| `--wui-form-mobile-label-textcolor`              |
+| `--wui-form-mobile-input-height`                 |
+| `--wui-form-mobile-input-bgcolor`                |
+| `--wui-form-mobile-input-height`                 |
+| `--wui-form-mobile-input-borderradius`           |
 
 #### Implementation
 
@@ -3017,7 +3021,9 @@ CSS settings:
 	--wui-form-range-thumb-bgcolor-disabled: #d5dce3;
 	--wui-form-range-trackbar-height: 7px;
 	--wui-form-range-trackbar-borderwidth: 1px;
-	--wui-form-range-trackbar-bordercolor: #f0f0f3;
+	--wui-form-range-trackbar-bordercolor-out: #f0f0f3;
+	--wui-form-range-trackbar-bordercolor-focus: #1e90ff;
+	--wui-form-range-trackbar-bordercolor-disabled: #d5dce3;
 	--wui-form-range-trackbar-bgcolor-out: #f6f6fa;
 	--wui-form-range-trackbar-bgcolor-over: #1e90ff;
 	--wui-form-range-trackbar-bgcolor-disabled: #d5dce3;
