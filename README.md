@@ -3373,9 +3373,10 @@ const numberFormatting = () => {
 	const inputValue = 1234.567;
 	const output = document.body.querySelector(".my-output.number");
 	const outputValue = inputValue.wuiToString({ numberPrefix: "$ " });
-	output.innerHTML = ""
-		+ `input value  : ${inputValue}<br>`
-		+ `output value : ${outputValue}`;
+	output.innerHTML = "<pre>"
+		+ `input value  : ${inputValue}\n`
+		+ `output value : ${outputValue}\n`
+		+ "</pre>";
 }
 
 // Email validation
@@ -3384,9 +3385,10 @@ const emailValidation = () => {
 	const email = "test@example.com";
 	const output = document.body.querySelector(".my-output.email");
 	const valid = email.wuiValidateEmail();
-	output.innerHTML = ""
-		+ `input value : ${email}<br>`
-		+ `valid       : ${valid}`;
+	output.innerHTML = "<pre>"
+		+ `input value : ${email}\n`
+		+ `valid       : ${valid}\n`
+		+ "</pre>";
 }
 
 // Local date/time formatting
@@ -3398,12 +3400,13 @@ const localDateFormatting = () => {
 	const output = document.body.querySelector(".my-output.localDate");
 	const format = "dd/mm/yyyy hh:MM [GMT]zz";
 	const outputValue = date.wuiToString(format, { utc: false });
-	output.innerHTML = ""
-		+ `input value   : ${inputValue}<br>`
-		+ `input format  : ${inputFormat}<br>`
-		+ `local date    : ${date}<br>`
-		+ `output format : ${format}<br>`
-		+ `output value  : ${outputValue}`;
+	output.innerHTML = "<pre>"
+		+ `input value   : ${inputValue}\n`
+		+ `input format  : ${inputFormat}\n`
+		+ `local date    : ${date}\n`
+		+ `output format : ${format}\n`
+		+ `output value  : ${outputValue}\n`
+		+ "</pre>";
 }
 
 const utcDateFormatting = () => {
@@ -3413,12 +3416,13 @@ const utcDateFormatting = () => {
 	const output = document.body.querySelector(".my-output.utcDate");
 	const format = "dd/mm/yyyy hh:MM [GMT]zz";
 	const outputValue = date.wuiToString(format, { utc: true });
-	output.innerHTML = ""
-		+ `input value   : ${inputValue}<br>`
-		+ `input format  : ${inputFormat}<br>`
-		+ `utc date      : ${date}<br>`
-		+ `output format : ${format}<br>`
-		+ `output value  : ${outputValue}`;
+	output.innerHTML = "<pre>"
+		+ `input value   : ${inputValue}\n`
+		+ `input format  : ${inputFormat}\n`
+		+ `utc date      : ${date}\n`
+		+ `output format : ${format}\n`
+		+ `output value  : ${outputValue}\n`
+		+ "</pre>";
 }
 
 // Init
