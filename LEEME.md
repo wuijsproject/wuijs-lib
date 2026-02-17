@@ -3364,7 +3364,7 @@ HTML code:
 Código JS:
 
 ```js
-// Formateo de números
+// Formato números
 
 const numberDefaults = () => {
 	//Number.prototype.wuiDefaults.numberPrefix = "";
@@ -3384,7 +3384,7 @@ const numberFormatting = () => {
 		+ "</pre>";
 }
 
-// Email validation
+// Formato cadenas
 
 const emailValidation = () => {
 	const email = "test@example.com";
@@ -3396,36 +3396,36 @@ const emailValidation = () => {
 		+ "</pre>";
 }
 
-// Local date/time formatting
+// Formato fechas
 
 const localDateFormatting = () => {
-	const inputValue = "2023-12-31";
 	const inputFormat = "yyyy-mm-dd";
+	const inputValue = "2023-12-31";
 	const date = new Date().wuiLoad(inputValue, inputFormat);
 	const output = document.body.querySelector(".my-output.localDate");
-	const format = "dd/mm/yyyy hh:MM [GMT]zz";
-	const outputValue = date.wuiToString(format, { utc: false });
+	const outputFormat = "dd/mm/yyyy hh:MM [GMT]zz";
+	const outputValue = date.wuiToString(outputFormat, { utc: false });
 	output.innerHTML = "<pre>"
 		+ `formato entrada : ${inputFormat}\n`
 		+ `valor entrada   : ${inputValue}\n`
 		+ `fecha local     : ${date}\n`
-		+ `formato salida  : ${format}\n`
+		+ `formato salida  : ${outputFormat}\n`
 		+ `valor salida    : ${outputValue}\n`
 		+ "</pre>";
 }
 
 const utcDateFormatting = () => {
-	const inputValue = "2023-12-31";
 	const inputFormat = "yyyy-mm-dd";
+	const inputValue = "2023-12-31";
 	const date = new Date().wuiLoad(inputValue, inputFormat);
 	const output = document.body.querySelector(".my-output.utcDate");
-	const format = "dd/mm/yyyy hh:MM [GMT]zz";
-	const outputValue = date.wuiToString(format, { utc: true });
+	const outputFormat = "dd/mm/yyyy hh:MM [GMT]zz";
+	const outputValue = date.wuiToString(outputFormat, { utc: true });
 	output.innerHTML = "<pre>"
 		+ `formato entrada : ${inputFormat}\n`
 		+ `valor entrada   : ${inputValue}\n`
 		+ `fecha utc       : ${date}\n`
-		+ `formato salida  : ${format}\n`
+		+ `formato salida  : ${outputFormat}\n`
 		+ `valor salida    : ${outputValue}\n`
 		+ "</pre>";
 }

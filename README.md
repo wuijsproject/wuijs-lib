@@ -3379,7 +3379,7 @@ const numberFormatting = () => {
 		+ "</pre>";
 }
 
-// Email validation
+// String format
 
 const emailValidation = () => {
 	const email = "test@example.com";
@@ -3391,15 +3391,15 @@ const emailValidation = () => {
 		+ "</pre>";
 }
 
-// Local date/time formatting
+// Date format
 
 const localDateFormatting = () => {
-	const inputValue = "2023-12-31";
 	const inputFormat = "yyyy-mm-dd";
+	const inputValue = "2023-12-31";
 	const date = new Date().wuiLoad(inputValue, inputFormat);
 	const output = document.body.querySelector(".my-output.localDate");
-	const format = "dd/mm/yyyy hh:MM [GMT]zz";
-	const outputValue = date.wuiToString(format, { utc: false });
+	const outputFormat = "dd/mm/yyyy hh:MM [GMT]zz";
+	const outputValue = date.wuiToString(outputFormat, { utc: false });
 	output.innerHTML = "<pre>"
 		+ `input format  : ${inputFormat}\n`
 		+ `input value   : ${inputValue}\n`
@@ -3410,17 +3410,17 @@ const localDateFormatting = () => {
 }
 
 const utcDateFormatting = () => {
-	const inputValue = "2023-12-31";
 	const inputFormat = "yyyy-mm-dd";
+	const inputValue = "2023-12-31";
 	const date = new Date().wuiLoad(inputValue, inputFormat);
 	const output = document.body.querySelector(".my-output.utcDate");
-	const format = "dd/mm/yyyy hh:MM [GMT]zz";
-	const outputValue = date.wuiToString(format, { utc: true });
+	const outputFormat = "dd/mm/yyyy hh:MM [GMT]zz";
+	const outputValue = date.wuiToString(outputFormat, { utc: true });
 	output.innerHTML = "<pre>"
 		+ `input format  : ${inputFormat}\n`
 		+ `input value   : ${inputValue}\n`
 		+ `utc date      : ${date}\n`
-		+ `output format : ${format}\n`
+		+ `output format : ${outputFormat}\n`
 		+ `output value  : ${outputValue}\n`
 		+ "</pre>";
 }
