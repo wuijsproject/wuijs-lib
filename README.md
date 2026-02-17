@@ -3370,7 +3370,7 @@ const numberDefaults = () => {
 }
 
 const numberFormatting = () => {
-	const numberinputValue = 1234.567;
+	const inputValue = 1234.567;
 	const output = document.body.querySelector(".my-output.number");
 	const outputValue = inputValue.wuiToString({ numberPrefix: "$ " });
 	output.textContent = `input value: ${inputValue} - output value: ${outputValue}`;
