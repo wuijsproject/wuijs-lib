@@ -3373,7 +3373,9 @@ const numberFormatting = () => {
 	const inputValue = 1234.567;
 	const output = document.body.querySelector(".my-output.number");
 	const outputValue = inputValue.wuiToString({ numberPrefix: "$ " });
-	output.textContent = `input value: ${inputValue} - output value: ${outputValue}`;
+	output.innerHTML = ""
+		+ `input value  : ${inputValue}<br>`
+		+ `output value : ${outputValue}`;
 }
 
 // Email validation
@@ -3381,8 +3383,10 @@ const numberFormatting = () => {
 const emailValidation = () => {
 	const email = "test@example.com";
 	const output = document.body.querySelector(".my-output.email");
-	const validation = email.wuiValidateEmail();
-	output.textContent = `email: ${email} - validation: ${validation}`;
+	const valid = email.wuiValidateEmail();
+	output.innerHTML = ""
+		+ `input value : ${email}<br>`
+		+ `valid       : ${valid}`;
 }
 
 // Local date/time formatting
@@ -3394,7 +3398,12 @@ const localDateFormatting = () => {
 	const output = document.body.querySelector(".my-output.localDate");
 	const format = "dd/mm/yyyy hh:MM [GMT]zz";
 	const outputValue = date.wuiToString(format, { utc: false });
-	output.textContent = `input value: ${inputValue} - local date: ${date} - output format: ${format} - output value: ${outputValue}`;
+	output.innerHTML = ""
+		+ `input value   : ${inputValue}<br>`
+		+ `input format  : ${inputFormat}<br>`
+		+ `local date    : ${date}<br>`
+		+ `output format : ${format}<br>`
+		+ `output value  : ${outputValue}`;
 }
 
 const utcDateFormatting = () => {
@@ -3404,7 +3413,12 @@ const utcDateFormatting = () => {
 	const output = document.body.querySelector(".my-output.utcDate");
 	const format = "dd/mm/yyyy hh:MM [GMT]zz";
 	const outputValue = date.wuiToString(format, { utc: true });
-	output.textContent = `input value: ${inputValue} - utc date: ${date} - output format: ${format} - output value: ${outputValue}`;
+	output.innerHTML = ""
+		+ `input value   : ${inputValue}<br>`
+		+ `input format  : ${inputFormat}<br>`
+		+ `utc date      : ${date}<br>`
+		+ `output format : ${format}<br>`
+		+ `output value  : ${outputValue}`;
 }
 
 // Init

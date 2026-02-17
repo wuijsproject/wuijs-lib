@@ -3378,7 +3378,9 @@ const numberFormatting = () => {
 	const inputValue = 1234.567;
 	const output = document.body.querySelector(".my-output.number");
 	const outputValue = inputValue.wuiToString({ numberPrefix: "$ " });
-	output.textContent = `valor entrada: ${inputValue} - valor salida: ${outputValue}`;
+	output.innerHTML = ""
+		+ `valor entrada : ${inputValue}<br>`
+		+ `valor salida  : ${outputValue}`;
 }
 
 // Email validation
@@ -3386,8 +3388,10 @@ const numberFormatting = () => {
 const emailValidation = () => {
 	const email = "test@example.com";
 	const output = document.body.querySelector(".my-output.email");
-	const validation = email.wuiValidateEmail();
-	output.textContent = `correo: ${email} - validación: ${validation}`;
+	const valid = email.wuiValidateEmail();
+	output.innerHTML = ""
+		+ `valor entrada : ${email}<br>`
+		+ `válido        : ${valid}`;
 }
 
 // Local date/time formatting
@@ -3399,7 +3403,12 @@ const localDateFormatting = () => {
 	const output = document.body.querySelector(".my-output.localDate");
 	const format = "dd/mm/yyyy hh:MM [GMT]zz";
 	const outputValue = date.wuiToString(format, { utc: false });
-	output.textContent = `valor entrada: ${inputValue} - fecha local: ${date} - formato salida: ${format} - valor salida: ${outputValue}`;
+	output.innerHTML = ""
+		+ `valor entrada   : ${inputValue}<br>`
+		+ `formato entrada : ${inputFormat}<br>`
+		+ `fecha local     : ${date}<br>`
+		+ `formato salida  : ${format}<br>`
+		+ `valor salida    : ${outputValue}`;
 }
 
 const utcDateFormatting = () => {
@@ -3409,7 +3418,12 @@ const utcDateFormatting = () => {
 	const output = document.body.querySelector(".my-output.utcDate");
 	const format = "dd/mm/yyyy hh:MM [GMT]zz";
 	const outputValue = date.wuiToString(format, { utc: true });
-	output.textContent = `valor entrada: ${inputValue} - fecha utc: ${date} - formato salida: ${format} - valor salida: ${outputValue}`;
+	output.innerHTML = ""
+		+ `valor entrada   : ${inputValue}<br>`
+		+ `formato entrada : ${inputFormat}<br>`
+		+ `fecha utc       : ${date}<br>`
+		+ `formato salida  : ${format}<br>`
+		+ `valor salida    : ${outputValue}`;
 }
 
 // Inicio
