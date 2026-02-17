@@ -459,6 +459,7 @@ Date.prototype.wuiToString = function (format = "default", options = {}) {
 		"m": month,
 		"dd": ("0" + day).slice(-2),
 		"d": day,
+		"w": weekDay,
 		"DDDD": weekDayName,
 		"DDD": weekDayName.substr(0, 3),
 		"DD": weekDayName.substr(0, 2),
@@ -471,8 +472,9 @@ Date.prototype.wuiToString = function (format = "default", options = {}) {
 		"s": second,
 		"SSS": ("0" + milliseconds).slice(-3),
 		"S": milliseconds,
-		"o": offset,
-		"tz": timezone
+		"zzz": timezone.replace(/(\d{2})$/, ":$1"),
+		"zz": timezone,
+		"z": offset
 	};
 	let string = "";
 	switch (format.toLowerCase()) {

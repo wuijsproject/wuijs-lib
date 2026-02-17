@@ -3280,8 +3280,9 @@ Tool for managing and validating `string`, `number` and `Date` data formats.
 | mmm  | Month in 3 initials format. |
 | mm   | Month in 2 digits format. |
 | m    | Month in integer number format. |
-| dd   | Day in 2 digits format. |
-| d    | Day in integer number format. |
+| dd   | Day of the month in 2 digits format. |
+| d    | Day of the month in integer number format. |
+| w    | Day of the week in integer number format, where Sunday is `0`. |
 | DDDD | Day of the week in full name format. |
 | DDD  | Day of the week in 3 initials format. |
 | DD   | Day of the week in 2 initials format. |
@@ -3294,8 +3295,9 @@ Tool for managing and validating `string`, `number` and `Date` data formats.
 | s    | Second in integer number format. |
 | SSS  | Millisecond in 3 digits format. |
 | S    | Millisecond in integer number format. |
-| o    | Time zone offset in integer number format. |
-| tz   | Time zone offset in "±hhMM" format. |
+| zzz  | Time zone offset in "±hh:MM" format. |
+| zz   | Time zone offset in "±hhMM" format. |
+| z    | Time zone offset in integer number format measured in minutes. |
 
 ##### Predefined load formats
 
@@ -3357,38 +3359,63 @@ HTML code:
 JS code:
 
 ```js
-// Number formatting
-//Number.prototype.wuiDefaults.numberPrefix = "";
-//Number.prototype.wuiDefaults.numberSufix = "";
-//Number.prototype.wuiDefaults.thousandsSeparator = ",";
-Number.prototype.wuiDefaults.decimalLength = 2;
-//Number.prototype.wuiDefaults.decimalSeparator = ".";
-const number = 1234.567;
-const numberOutput = document.body.querySelector(".my-output.number");
-const numberFormatting = number.wuiToString({ numberPrefix: "$ " });
-numberOutput.textContent = `number: ${number} - formatting: ${numberFormatting}`;
+// Number format
+
+const numberDefaults = () => {
+	//Number.prototype.wuiDefaults.numberPrefix = "";
+	//Number.prototype.wuiDefaults.numberSufix = "";
+	//Number.prototype.wuiDefaults.thousandsSeparator = ",";
+	Number.prototype.wuiDefaults.decimalLength = 2;
+	//Number.prototype.wuiDefaults.decimalSeparator = ".";
+}
+
+const numberFormatting = () => {
+	const numberinputValue = 1234.567;
+	const output = document.body.querySelector(".my-output.number");
+	const outputValue = inputValue.wuiToString({ numberPrefix: "$ " });
+	output.textContent = `input value: ${inputValue} - output value: ${outputValue}`;
+}
 
 // Email validation
-const email = "test@example.com";
-const emailOutput = document.body.querySelector(".my-output.email");
-const emailValidation = email.wuiValidateEmail();
-emailOutput.textContent = `email: ${email} - validation: ${emailValidation}`;
+
+const emailValidation = () => {
+	const email = "test@example.com";
+	const output = document.body.querySelector(".my-output.email");
+	const validation = email.wuiValidateEmail();
+	output.textContent = `email: ${email} - validation: ${validation}`;
+}
 
 // Local date/time formatting
-const localDateLoadFormat = "yyyy-mm-dd";
-const localDate = new Date().wuiLoad("2023-12-31", localDateLoadFormat);
-const localDateOutput = document.body.querySelector(".my-output.localDate");
-const localDateFormat = "dd/mm/yyyy hh:MM [GMT]tz";
-const localDateFormatting = localDate.wuiToString(localDateFormat, { utc: false });
-localDateOutput.textContent = `local date: ${localDate} - format: ${localDateFormat} - formatting: ${localDateFormatting}`;
 
-// UTC date/time formatting
-const utcDateLoadFormat = "yyyy-mm-dd";
-const utcDate = new Date().wuiLoad("2023-12-31", utcDateLoadFormat);
-const utcDateOutput = document.body.querySelector(".my-output.utcDate");
-const utcDateFormat = "dd/mm/yyyy hh:MM [GMT]tz";
-const utcDateFormatting = utcDate.wuiToString(utcDateFormat, { utc: true });
-utcDateOutput.textContent = `utc date: ${utcDate} - format: ${utcDateFormat} - formatting: ${utcDateFormatting}`;
+const localDateFormatting = () => {
+	const inputValue = "2023-12-31";
+	const inputFormat = "yyyy-mm-dd";
+	const date = new Date().wuiLoad(inputValue, inputFormat);
+	const output = document.body.querySelector(".my-output.localDate");
+	const format = "dd/mm/yyyy hh:MM [GMT]zz";
+	const outputValue = date.wuiToString(format, { utc: false });
+	output.textContent = `input value: ${inputValue} - local date: ${date} - output format: ${format} - output value: ${outputValue}`;
+}
+
+const utcDateFormatting = () => {
+	const inputValue = "2023-12-31";
+	const inputFormat = "yyyy-mm-dd";
+	const date = new Date().wuiLoad(inputValue, inputFormat);
+	const output = document.body.querySelector(".my-output.utcDate");
+	const format = "dd/mm/yyyy hh:MM [GMT]zz";
+	const outputValue = date.wuiToString(format, { utc: true });
+	output.textContent = `input value: ${inputValue} - utc date: ${date} - output format: ${format} - output value: ${outputValue}`;
+}
+
+// Init
+
+window.addEventListener("DOMContentLoaded", () => {
+	numberDefaults();
+	numberFormatting();
+	emailValidation();
+	localDateFormatting();
+	utcDateFormatting();
+});
 ```
 
 > [!TIP]

@@ -3287,6 +3287,7 @@ Herramienta para manejo y validación de formatos de datos de tipo `string`, `nu
 | m     | Mes en formato de número entero. |
 | dd    | Día del mes en formato de 2 digitos. |
 | d     | Día del mes en formato de número entero. |
+| w     | Día de la semana en formato de número entero, donde domingo es `0`. |
 | DDDD  | Nombre del día de la semana en formato nombre completo. |
 | DDD   | Nombre del día de la semana en formato de las primeras 3 iniciales del nombre. |
 | DD    | Nombre del día de la semana en formato de las primeras 2 iniciales del nombre. |
@@ -3299,8 +3300,9 @@ Herramienta para manejo y validación de formatos de datos de tipo `string`, `nu
 | s     | Segundo en formato de número entero. |
 | SSS   | Milisegundo en formato de 3 digitos. |
 | S     | Milisegundo en formato de número entero. |
-| o     | Desplazamiento de zona horaria en formato de número entero. |
-| tz    | Desplazamiento de zona horaria en formato "±hhMM". |
+| zzz   | Desplazamiento de zona horaria en formato "±hh:MM". |
+| zz    | Desplazamiento de zona horaria en formato "±hhMM". |
+| z     | Desplazamiento de zona horaria en formato de número entero medido en minutos. |
 
 ##### Formatos de carga predefinidos
 
@@ -3323,7 +3325,7 @@ Herramienta para manejo y validación de formatos de datos de tipo `string`, `nu
 | `"longtime"`                 | `"yyyy-mm-dd[T]hh:MM:ss"` |
 | `"rfc3339\|atom"`            | `"yyyy-mm-dd[T]hh:MM:ss.SSS[Z]"` |
 | `"rfc1123\|rfc2616\|cookie"` | `"DDD, dd-mmm-yyyy hh:MM:ss GMT"` |
-| `"rfc3501"`                  | `"dd-mmm-yyyy hh:MM:ss tz"` |
+| `"rfc3501"`                  | `"dd-mmm-yyyy hh:MM:ss zz"` |
 
 ##### Métodos
 
@@ -3383,7 +3385,7 @@ emailOutput.textContent = `email: ${email} - validation: ${emailValidation}`;
 const localDateLoadFormat = "yyyy-mm-dd";
 const localDate = new Date().wuiLoad("2023-12-31", localDateLoadFormat);
 const localDateOutput = document.body.querySelector(".my-output.localDate");
-const localDateFormat = "dd/mm/yyyy hh:MM [GMT]tz";
+const localDateFormat = "dd/mm/yyyy hh:MM [GMT]zz";
 const localDateFormatting = localDate.wuiToString(localDateFormat, { utc: false });
 localDateOutput.textContent = `local date: ${localDate} - format: ${localDateFormat} - formatting: ${localDateFormatting}`;
 
@@ -3391,7 +3393,7 @@ localDateOutput.textContent = `local date: ${localDate} - format: ${localDateFor
 const utcDateLoadFormat = "yyyy-mm-dd";
 const utcDate = new Date().wuiLoad("2023-12-31", utcDateLoadFormat);
 const utcDateOutput = document.body.querySelector(".my-output.utcDate");
-const utcDateFormat = "dd/mm/yyyy hh:MM [GMT]tz";
+const utcDateFormat = "dd/mm/yyyy hh:MM [GMT]zz";
 const utcDateFormatting = utcDate.wuiToString(utcDateFormat, { utc: true });
 utcDateOutput.textContent = `utc date: ${utcDate} - format: ${utcDateFormat} - formatting: ${utcDateFormatting}`;
 ```
