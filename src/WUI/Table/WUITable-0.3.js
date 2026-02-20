@@ -487,8 +487,10 @@ class WUITable {
 		const onMouseMove = (event) => {
 			const rows = Array.from(this.#htmlElements.tbody.querySelectorAll("tr"));
 			const width = startWidth + (event.pageX - startX);
+			thTarget.style.minWidth = width + "px";
 			thTarget.style.maxWidth = width + "px";
 			rows.forEach(row => {
+				row.children[index].style.minWidth = width + "px";
 				row.children[index].style.maxWidth = width + "px";
 			});
 		}
