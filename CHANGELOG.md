@@ -126,6 +126,8 @@ Features:
 Features:
 
 1. Changed the name of the WUICheckbox class from version 0.2 to WUISwitch version 0.3.
-2. WUIForm version class update to 0.3.
+2. WUITable version class update to 0.3.
+	- Added filler column to maintain table width.
+3. WUIForm version class update to 0.3.
 	- Added compatibility with WUISwitch version 0.3.
 	- Added "fill" form style.
