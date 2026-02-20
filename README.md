@@ -3425,24 +3425,26 @@ const numberModule23Formatting = () => {
 // String format
 
 const stringDateValidation = () => {
-	const date = "2023-12-31";
+	const inputFormat = "yyyy-mm-dd";
+	const inputValue = "2023-12-31";
 	const output = document.body.querySelector(".my-output.stringDateValidation");
-	const valid = date.wuiValidateDate("yyyy-mm-dd");
+	const outputValid = inputValue.wuiValidateDate(inputFormat);
 	output.innerHTML = "<pre>"
 		+ `<b>Date validation</b>\n`
-		+ `input value : ${date}\n`
-		+ `valid       : ${valid}\n`
+		+ `input format : ${inputFormat}\n`
+		+ `input value  : ${inputValue}\n`
+		+ `output valid : ${outputValid}\n`
 		+ "</pre>";
 }
 
 const stringEmailValidation = () => {
-	const email = "test@example.com";
+	const inputValue = "test@example.com";
 	const output = document.body.querySelector(".my-output.stringEmailValidation");
-	const valid = email.wuiValidateEmail();
+	const outputValid = inputValue.wuiValidateEmail();
 	output.innerHTML = "<pre>"
 		+ `<b>Email validation</b>\n`
-		+ `input value : ${email}\n`
-		+ `valid       : ${valid}\n`
+		+ `input value : ${inputValue}\n`
+		+ `output valid : ${outputValid}\n`
 		+ "</pre>";
 }
 
