@@ -394,7 +394,7 @@ CSS code in the `WUI.css` file:
 	--wui-form-range-trackbar-bordercolor-focus: #1e90ff;
 	--wui-form-range-trackbar-bordercolor-disabled: #d5dce3;
 	--wui-form-range-trackbar-bgcolor-out: #f6f6fa;
-	--wui-form-range-trackbar-bgcolor-focus: #1e90ff;
+	--wui-form-range-trackbar-bgcolor-focus: #f6f6fa;
 	--wui-form-range-trackbar-bgcolor-disabled: #d5dce3;
 	--wui-form-select-opener-iconsize: 30px;
 	--wui-form-select-opener-iconcolor-out: #000;
@@ -417,9 +417,6 @@ CSS code in the `WUI.css` file:
 	--wui-form-message-textcolor: #2d3a47;
 	--wui-form-message-highlight-bgcolor: #1e90ff;
 	--wui-form-message-highlight-textcolor: #fff;
-
-	--wui-form-button-height: 30px;
-
 	--wui-form-mobile-field-bordercolor: rgb(from #1e90ff r g b / 10%);
 	--wui-form-mobile-label-textcolor: #444;
 	--wui-form-mobile-input-height: 40px;
@@ -3026,7 +3023,7 @@ CSS settings:
 	--wui-form-range-trackbar-bordercolor-focus: #1e90ff;
 	--wui-form-range-trackbar-bordercolor-disabled: #d5dce3;
 	--wui-form-range-trackbar-bgcolor-out: #f6f6fa;
-	--wui-form-range-trackbar-bgcolor-over: #1e90ff;
+	--wui-form-range-trackbar-bgcolor-focus: #f6f6fa;
 	--wui-form-range-trackbar-bgcolor-disabled: #d5dce3;
 	--wui-form-select-opener-iconsize: 30px;
 	--wui-form-select-opener-iconcolor-out: #000;
