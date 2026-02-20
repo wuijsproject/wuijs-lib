@@ -50,6 +50,7 @@ Autor: `Sergio E. Belmar V. <wuijs.project@gmail.com>`
 	*   [WUISwitch](#WUISwitch)
 	*   [WUIIntensity](#WUIIntensity)
 	*   [WUIButton](#WUIButton)
+*	[Buenas prácticas de codificación](#goodpractices)
 *   [Ejemplos](#examples) (CodePen)
 
 ## Directory Map
@@ -5019,6 +5020,42 @@ button2.init();
 
 > [!TIP]
 > Puede revisar este ejemplo funcional en CodePen en el enlace: [https://codepen.io/wuijsproject/pen/xbOwNzN](https://codepen.io/wuijsproject/pen/xbOwNzN).
+
+<a name="goodpractices"></a>
+
+## Buenas prácticas de codificación
+
+### 1. Inicialización de objetos
+
+Para evitar problemas en los tiempos de ejecución, se recomienda inicializar los objetos WUI una vez que se hayan cargado los elementos del DOM.
+
+```js
+const init = () => {
+	const form = new WUIForm({ ... });
+	form.init();
+}
+
+window.addEventListener("DOMContentLoaded", init);
+```
+
+### 2. Uso de componentes referenciados
+
+Cuando una vista posee varios componentes WUI de la misma o distintas clases, se recomienda referenciarlos mediante un array en el código JS para manejarlos de manera coherente.
+
+```js
+const wuiComponents = [];
+
+const init = () => {
+	wuiComponents.form1 = new WUIForm({ ... });
+	wuiComponents.button1 = new WUIButton({ ... });
+	wuiComponents.button2 = new WUIButton({ ... });
+	Object.values(wuiComponents).forEach((component) => {
+		component.init();
+	});
+}
+
+window.addEventListener("DOMContentLoaded", init);
+```
 
 <a name="examples"></a>
 

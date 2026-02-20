@@ -50,6 +50,7 @@ Author: `Sergio E. Belmar V. <wuijs.project@gmail.com>`
 	*   [WUISwitch](#WUISwitch)
 	*   [WUIIntensity](#WUIIntensity)
 	*   [WUIButton](#WUIButton)
+*	[Good coding practices](#goodpractices)
 *   [Examples](#examples) (CodePen)
 
 <a name="overview"></a>
@@ -5014,6 +5015,42 @@ button2.init();
 
 > [!TIP]
 > You can check this functional example on CodePen at the link: [https://codepen.io/wuijsproject/pen/xbOwNzN](https://codepen.io/wuijsproject/pen/xbOwNzN).
+
+<a name="goodpractices"></a>
+
+## Good coding practices
+
+### 1. Object initialization
+
+To avoid runtime problems, it is recommended to initialize WUI objects once the DOM elements have been loaded.
+
+```js
+const init = () => {
+	const form = new WUIForm({ ... });
+	form.init();
+}
+
+window.addEventListener("DOMContentLoaded", init);
+```
+
+### 2. Referencing components
+
+When a view has several WUI components of the same or different classes, it is recommended to reference them through an array in the JS code to handle them coherently.
+
+```js
+const wuiComponents = [];
+
+const init = () => {
+	wuiComponents.form1 = new WUIForm({ ... });
+	wuiComponents.button1 = new WUIButton({ ... });
+	wuiComponents.button2 = new WUIButton({ ... });
+	Object.values(wuiComponents).forEach((component) => {
+		component.init();
+	});
+}
+
+window.addEventListener("DOMContentLoaded", init);
+```
 
 <a name="examples"></a>
 
