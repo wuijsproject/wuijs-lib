@@ -1226,14 +1226,9 @@
 	white-space: normal;
 }
 
-.wui-form fieldset > .field.inline > :is(.wui-colorpicker, .wui-switch) {
-	position: absolute;
-}
-
-.wui-form:is(.line, .border) fieldset > .field.inline > :is(.wui-colorpicker, .wui-switch) {
+.wui-form fieldset > .field.inline > :is(.wui-colorpicker, .wui-switch, .wui-intensity) {
 	position: absolute;
 	right: 0;
-	width: auto;
 }
 
 .wui-form fieldset > .field.inline.invalid > .wui-colorpicker:not(.disabled) > button {
@@ -1242,11 +1237,6 @@
 
 .wui-form fieldset > .field.inline.invalid > .wui-switch:not(.disabled) {
 	border-color: var(--wui-switch-bordercolor-invalid) !important;
-}
-
-.wui-form fieldset > .field.inline > :is(.wui-colorpicker, .wui-switch) {
-	position: absolute;
-	right: 0;
 }
 
 @media screen and (max-width: 767px) {
