@@ -200,7 +200,7 @@ div.wui-table > table > tbody > tr > td.filler {
 	background-color: var(--wui-table-row-bgcolor-out);
 }
 
-div.wui-table > table > tbody > tr:is(:hover, :focus, :focus-within) > td:not(.filler) {
+div.wui-table > table > tbody > tr:is(:hover, :focus, :focus-within) > td {
 	border-color: var(--wui-table-row-bordercolor-over);
 	background-color: var(--wui-table-row-bgcolor-over);
 	color: var(--wui-table-row-textcolor-over);
