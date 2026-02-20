@@ -3357,6 +3357,9 @@ HTML code:
 
 ```html
 <div class="my-output number"></div>
+<div class="my-output numberSize"></div>
+<div class="my-output numberModule11"></div>
+<div class="my-output numberModule23"></div>
 <div class="my-output email"></div>
 <div class="my-output localDate"></div>
 <div class="my-output utcDate"></div>
@@ -3380,9 +3383,46 @@ const numberFormatting = () => {
 	const output = document.body.querySelector(".my-output.number");
 	const outputValue = inputValue.wuiToString({ numberPrefix: "$ " });
 	output.innerHTML = "<pre>"
-		+ `<b>Formateo de número</b>\n`
+		+ `<b>Formateo numérico</b>\n`
 		+ `valor entrada : ${inputValue}\n`
 		+ `valor salida  : ${outputValue}\n`
+		+ "</pre>";
+}
+
+const numberSizeFormatting = () => {
+	const inputValue = 1234.567;
+	const output = document.body.querySelector(".my-output.numberSize");
+	const outputValue = inputValue.wuiToSizeString({});
+	output.innerHTML = "<pre>"
+		+ `<b>Formateo numérico de tamaño digital</b>\n`
+		+ `valor entrada : ${inputValue}\n`
+		+ `valor salida  : ${outputValue}\n`
+		+ "</pre>";
+}
+
+const numberModule11Formatting = () => {
+	const inputValue = 1234567;
+	const inputCode10 = "K";
+	const output = document.body.querySelector(".my-output.numberModule11");
+	const outputValue = inputValue.wuiToModule11(inputCode10);
+	output.innerHTML = "<pre>"
+		+ `<b>Formateo numérico de módulo 11</b>\n`
+		+ `valor entrada     : ${inputValue}\n`
+		+ `código 10 entrada : ${inputCode10}\n`
+		+ `valor salida      : ${outputValue}\n`
+		+ "</pre>";
+}
+
+const numberModule23Formatting = () => {
+	const inputValue = 1234567;
+	const inputMap = "TRWAGMYFPDXBNJZSQVHLCKET";
+	const output = document.body.querySelector(".my-output.numberModule23");
+	const outputValue = inputValue.wuiToModule23(inputMap);
+	output.innerHTML = "<pre>"
+		+ `<b>Numeric module 23 formatting</b>\n`
+		+ `input value    : ${inputValue}\n`
+		+ `input map      : ${inputMap}\n`
+		+ `output value   : ${outputValue}\n`
 		+ "</pre>";
 }
 
@@ -3440,6 +3480,9 @@ const utcDateFormatting = () => {
 window.addEventListener("DOMContentLoaded", () => {
 	numberDefaults();
 	numberFormatting();
+	numberSizeFormatting();
+	numberModule11Formatting();
+	numberModule23Formatting();
 	emailValidation();
 	localDateFormatting();
 	utcDateFormatting();
