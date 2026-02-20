@@ -498,12 +498,13 @@ class WUITable {
 			document.documentElement.removeEventListener("mousemove", onMouseMove);
 			document.documentElement.removeEventListener("mouseup", onMouseUp);
 			setTimeout(() => {
-				this.#updateFiller();
+				//this.#updateFiller();
 				this.#resizing = false;
 				thTarget.draggable = draggable;
 			}, 100);
 		}
 		event.preventDefault();
+		this.#updateFiller();
 		this.#resizing = true;
 		thTarget.draggable = false;
 		document.documentElement.addEventListener("mousemove", onMouseMove);
