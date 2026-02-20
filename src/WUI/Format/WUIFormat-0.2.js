@@ -118,7 +118,7 @@ Number.prototype.wuiToSizeString = function () {
 	const size = this;
 	const div = size < 1024 ? 1 : size < Math.pow(1024, 2) ? 1024 : size < Math.pow(1024, 3) ? Math.pow(1024, 2) : Math.pow(1024, 3);
 	const uni = size < 1024 ? "B" : size < Math.pow(1024, 2) ? "KB" : size < Math.pow(1024, 3) ? "MB" : "TB";
-	return parseInt(size / div).wuiToString() + " " + uni;
+	return parseFloat(size / div).wuiToString() + " " + uni;
 };
 
 Number.prototype.wuiToModule11 = function (codeTen) {
