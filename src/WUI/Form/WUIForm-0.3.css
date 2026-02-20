@@ -890,26 +890,26 @@
 /* wui-form line */
 /* wui-form border */
 
-.wui-form fieldset > .field:not(.inline, .noborder) {
+.wui-form:is(.fill, .line, .border) fieldset > .field:not(.inline, .noborder) {
 	border: var(--wui-form-input-borderwidth) solid transparent;
 }
 
-.wui-form fieldset > .field > label {
+.wui-form:is(.fill, .line, .border) fieldset > .field > label {
 	top: calc(-1 * var(--wui-form-input-borderwidth));
 	display: flex;
 	align-items: center;
 	cursor: text;
 }
 
-.wui-form fieldset > .field:not(.inline) > label:is(.fixed, .notempty),
-.wui-form fieldset > .field:not(.inline):focus-within > label {
+.wui-form:is(.fill, .line, .border) fieldset > .field:not(.inline) > label:is(.fixed, .notempty),
+.wui-form:is(.fill, .line, .border) fieldset > .field:not(.inline):focus-within > label {
 	top: calc(-0.8 * var(--wui-form-input-height) - var(--wui-form-input-borderwidth));
 }
 
 @media screen and (max-width: 767px) {
 
-	.wui-form fieldset > .field:not(.inline) > label:is(.fixed, .notempty),
-	.wui-form fieldset > .field:not(.inline):focus-within > label {
+	.wui-form:is(.fill, .line, .border) fieldset > .field:not(.inline) > label:is(.fixed, .notempty),
+	.wui-form:is(.fill, .line, .border) fieldset > .field:not(.inline):focus-within > label {
 		top: calc(-0.8 * var(--wui-form-mobile-input-height) - var(--wui-form-input-borderwidth));
 	}
 }
