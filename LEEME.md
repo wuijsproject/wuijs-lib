@@ -2477,7 +2477,7 @@ window.addEventListener("DOMContentLoaded", init);
 ```
 
 > [!TIP]
-> Puede revisar este ejemplo funcional en CodeSandbox en el enlace: [https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIList-paging-buttoner](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIList-paging-buttoner).
+> Puede revisar este ejemplo funcional en CodeSandbox en el enlace: [https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIList-paging-buttongroup](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIList-paging-buttongroup).
 
 <a name="WUITable"></a>
 
@@ -4900,7 +4900,7 @@ Los ejemplos listados en esta sección, son detallados en la sección "Implement
 | [WUIButton](#WUIButton)             | [https://codepen.io/wuijsproject/pen/xbOwNzN](https://codepen.io/wuijsproject/pen/xbOwNzN) |
 
 <!--
-https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIList-paging-buttoner
+https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIList-paging-buttongroup
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUITable-paging
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIForm-fill
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIForm-line
