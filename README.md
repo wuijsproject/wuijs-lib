@@ -2413,14 +2413,14 @@ const init = () => {
 			iconClass: "wui-icon pencil-fill",
 			bgcolor: "#1e90ff",
 			onClick: (index, id) => {
-				output.textContent = `Click button - index: ${index}, id: ${id}`;
+				output.textContent = `Click edit button - index: ${index}, id: ${id}`;
 			},
 			enabled: true
 		}, {
 			iconClass: "wui-icon trash-fill",
 			bgcolor: "#f44343",
 			onClick: (index, id) => {
-				output.textContent = `Click button - index: ${index}, id: ${id}`;
+				output.textContent = `Click delete button - index: ${index}, id: ${id}`;
 			},
 			enabled: true
 		}],

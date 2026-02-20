@@ -2417,14 +2417,14 @@ const init = () => {
 			iconClass: "wui-icon pencil-fill",
 			bgcolor: "#1e90ff",
 			onClick: (index, id) => {
-				output.textContent = `Clic botón - índice: ${index}, id: ${id}`;
+				output.textContent = `Clic botón editar - índice: ${index}, id: ${id}`;
 			},
 			enabled: true
 		}, {
 			iconClass: "wui-icon trash-fill",
 			bgcolor: "#f44343",
 			onClick: (index, id) => {
-				output.textContent = `Clic botón - índice: ${index}, id: ${id}`;
+				output.textContent = `Clic botón borrar - índice: ${index}, id: ${id}`;
 			},
 			enabled: true
 		}],
