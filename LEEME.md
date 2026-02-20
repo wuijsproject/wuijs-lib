@@ -2063,85 +2063,83 @@ Cuerpo HTML:
 JS code:
 
 ```js
-// Crear objeto
-const output = document.body.querySelector(".my-output");
-const menubar = new WUIMenubar({
-	selector: ".wui-menubar.my-menubar",
-	//expansive: true,
-	autoClose: false,
-	//topButtons: [],
-	//mainButtons: [],
-	//bottomButtons: [],
-	onClick: (id) => {
-		output.textContent = `Clic - id botón: "${id}"`;
-	},
-	//onSelect: null
-});
+const init = () => {
+	const output = document.body.querySelector(".my-output");
+	const menubar = new WUIMenubar({
+		selector: ".wui-menubar.my-menubar",
+		//expansive: true,
+		autoClose: false,
+		topButtons: [{
+			id: "logo",
+			iconImage: "https://wuijs.dev/wuijs-isotype-color.svg",
+			label: "WUI /JS Lib",
+			tooltipable: false,
+			selectable: false
+		}],
+		mainButtons: [{
+			id: "home",
+			iconClass: "wui-icon home-fill",
+			label: "Inicio",
+			selected: true
+		}, {
+			id: "tools",
+			iconClass: "wui-icon pencil-fill",
+			label: "Herramientas",
+			buttons: [{
+				id: "users",
+				iconClass: "wui-icon palette-fill",
+				label: "Colores"
+			}, {
+				id: "zoomin",
+				iconClass: "wui-icon zoomin-line",
+				label: "Zoom in"
+			}, {
+				id: "zoomout",
+				iconClass: "wui-icon zoomout-line",
+				label: "Zoom out"
+			}, {
+				id: "images",
+				iconClass: "wui-icon image-fill",
+				label: "Imágenes"
+			}]
+		}, {
+			id: "settings",
+			iconClass: "wui-icon gear-fill",
+			label: "Configuración",
+			selectable: false
+		}, {
+			id: "account",
+			iconClass: "wui-icon person-circle-fill",
+			photoImage: "",
+			label: "Cuenta",
+			selectable: false
+		}, {
+			id: "notifications",
+			iconClass: "wui-icon bell-fill",
+			label: "Notificaciones",
+			radio: false
+		}],
+		bottomButtons: [{
+			id: "logout",
+			iconClass: "wui-icon logout-line",
+			label: "Cerrar sesión",
+			selectable: false
+		}],
+		onClick: (id) => {
+			output.textContent = `Clic - id botón: "${id}"`;
+		},
+		onSelect: (id) => {
+			output.textContent = `Selección - id botón: "${id}"`;
+		}
+	});
+	menubar.init();
+}
 
-// Agregar botones
-menubar.topButtons = [{
-	id: "logo",
-	iconImage: "https://wuijs.dev/wuijs-isotype-color.svg",
-	label: "WUI /JS Lib",
-	tooltipable: false,
-	selectable: false
-}];
-menubar.mainButtons = [{
-	id: "home",
-	iconClass: "wui-icon home-fill",
-	label: "Inicio",
-	selected: true
-}, {
-	id: "tools",
-	iconClass: "wui-icon pencil-fill",
-	label: "Herramientas",
-	buttons: [{
-		id: "users",
-		iconClass: "wui-icon palette-fill",
-		label: "Colores"
-	}, {
-		id: "zoomin",
-		iconClass: "wui-icon zoomin-line",
-		label: "Zoom in"
-	}, {
-		id: "zoomout",
-		iconClass: "wui-icon zoomout-line",
-		label: "Zoom out"
-	}, {
-		id: "images",
-		iconClass: "wui-icon image-fill",
-		label: "Imágenes"
-	}]
-}, {
-	id: "settings",
-	iconClass: "wui-icon gear-fill",
-	label: "Configuración",
-	selectable: false
-}, {
-	id: "account",
-	iconClass: "wui-icon person-circle-fill",
-	photoImage: "",
-	label: "Cuenta",
-	selectable: false
-}, {
-	id: "notifications",
-	iconClass: "wui-icon bell-fill",
-	label: "Notificaciones",
-	radio: false
-}];
-menubar.bottomButtons = [{
-	id: "logout",
-	iconClass: "wui-icon logout-line",
-	label: "Cerrar sesión",
-	selectable: false
-}];
-
-// Inicializar objeto
-menubar.init();
+window.addEventListener("DOMContentLoaded", init);
 ```
 
 > [!TIP]
-> Puede revisar este ejemplo funcional en CodePen en el enlace: [https://codepen.io/wuijsproject/pen/JoKYVQm](https://codepen.io/wuijsproject/pen/JoKYVQm).
+> Puede revisar este ejemplo funcional en CodePen en el enlace: [https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIMenubar-submenu](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIMenubar-submenu).
 
 <a name="WUIList"></a>
 
@@ -5082,6 +5080,7 @@ Los ejemplos listados en esta sección, son detallados en la sección "Implement
 | [WUIButton](#WUIButton)             | [https://codepen.io/wuijsproject/pen/xbOwNzN](https://codepen.io/wuijsproject/pen/xbOwNzN) |
 
 <!--
+https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIMenubar-submenu
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIList-paging-buttongroup
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUITable-paging
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIForm-fill
