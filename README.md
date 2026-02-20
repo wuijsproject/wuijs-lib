@@ -3355,9 +3355,10 @@ HTML code:
 <div class="my-output numberSize"></div>
 <div class="my-output numberModule11"></div>
 <div class="my-output numberModule23"></div>
-<div class="my-output email"></div>
-<div class="my-output localDate"></div>
-<div class="my-output utcDate"></div>
+<div class="my-output stringDateValidation"></div>
+<div class="my-output stringEmailValidation"></div>
+<div class="my-output dateLocal"></div>
+<div class="my-output dateUTC"></div>
 ```
 
 JS code:
@@ -3423,9 +3424,20 @@ const numberModule23Formatting = () => {
 
 // String format
 
-const emailValidation = () => {
+const stringDateValidation = () => {
+	const date = "2023-12-31";
+	const output = document.body.querySelector(".my-output.stringDateValidation");
+	const valid = date.wuiValidateDate("yyyy-mm-dd");
+	output.innerHTML = "<pre>"
+		+ `<b>Date validation</b>\n`
+		+ `input value : ${date}\n`
+		+ `valid       : ${valid}\n`
+		+ "</pre>";
+}
+
+const stringEmailValidation = () => {
 	const email = "test@example.com";
-	const output = document.body.querySelector(".my-output.email");
+	const output = document.body.querySelector(".my-output.stringEmailValidation");
 	const valid = email.wuiValidateEmail();
 	output.innerHTML = "<pre>"
 		+ `<b>Email validation</b>\n`
@@ -3436,11 +3448,11 @@ const emailValidation = () => {
 
 // Date format
 
-const localDateFormatting = () => {
+const dateLocalFormatting = () => {
 	const inputFormat = "yyyy-mm-dd";
 	const inputValue = "2023-12-31";
 	const date = new Date().wuiLoad(inputValue, inputFormat);
-	const output = document.body.querySelector(".my-output.localDate");
+	const output = document.body.querySelector(".my-output.dateLocal");
 	const outputFormat = "dd/mm/yyyy hh:MM [GMT]zz";
 	const outputValue = date.wuiToString(outputFormat, { utc: false });
 	output.innerHTML = "<pre>"
@@ -3453,11 +3465,11 @@ const localDateFormatting = () => {
 		+ "</pre>";
 }
 
-const utcDateFormatting = () => {
+const dateUTCFormatting = () => {
 	const inputFormat = "yyyy-mm-dd";
 	const inputValue = "2023-12-31";
 	const date = new Date().wuiLoad(inputValue, inputFormat);
-	const output = document.body.querySelector(".my-output.utcDate");
+	const output = document.body.querySelector(".my-output.dateUTC");
 	const outputFormat = "dd/mm/yyyy hh:MM [GMT]zz";
 	const outputValue = date.wuiToString(outputFormat, { utc: true });
 	output.innerHTML = "<pre>"
@@ -3477,9 +3489,10 @@ window.addEventListener("DOMContentLoaded", () => {
 	numberFormatting();
 	numberSizeFormatting();
 	numberModule11Formatting();
-	emailValidation();
-	localDateFormatting();
-	utcDateFormatting();
+	stringDateValidation();
+	stringEmailValidation();
+	dateLocalFormatting();
+	dateUTCFormatting();
 });
 ```
 
