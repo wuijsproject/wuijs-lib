@@ -3164,20 +3164,21 @@ Código HTML:
 Código JS:
 
 ```js
-// Crear objeto
-const form = new WUIForm({
-	selector: ".wui-form.my-form",
-	submit: false,
-	onScrolling: (top) => {},
-	onSubmit: () => {}
-});
+const init = () => {
+	const form = new WUIForm({
+		selector: ".wui-form.my-form",
+		submit: false,
+		onScrolling: (top) => { },
+		onSubmit: () => { }
+	});
+	form.init();
+}
 
-// Inicializar objeto
-form.init();
+window.addEventListener("DOMContentLoaded", init);
 ```
 
 > [!TIP]
-> Puede revisar este ejemplo funcional en CodePen en el enlace: [https://codepen.io/wuijsproject/pen/YPWxexK](https://codepen.io/wuijsproject/pen/YPWxexK).
+> Puede revisar este ejemplo funcional en CodeSandbox en el enlace: [https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIForm-line](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIForm-line).
 
 <a name="WUIFormat"></a>
 

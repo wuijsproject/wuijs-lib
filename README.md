@@ -1396,7 +1396,7 @@ scrolly.init();
 ```
 
 > [!TIP]
-> You can check out this working example on CodePen at the link: [https://codepen.io/wuijsproject/pen/azZvxMK](https://codepen.io/wuijsproject/pen/azZvxMK).
+> You can check this functional example on CodePen at the link: [https://codepen.io/wuijsproject/pen/azZvxMK](https://codepen.io/wuijsproject/pen/azZvxMK).
 
 <a name="WUIIcon"></a>
 
@@ -1686,7 +1686,7 @@ HTML code:
 ```
 
 > [!TIP]
-> You can check out this working example on CodePen at the link: [https://codepen.io/wuijsproject/pen/gbMayJO](https://codepen.io/wuijsproject/pen/gbMayJO).
+> You can check this functional example on CodePen at the link: [https://codepen.io/wuijsproject/pen/gbMayJO](https://codepen.io/wuijsproject/pen/gbMayJO).
 
 <a name="WUIFade"></a>
 
@@ -1793,7 +1793,7 @@ const fadeout = () => {
 ```
 
 > [!TIP]
-> You can check out this working example on CodePen at the link: [https://codepen.io/wuijsproject/pen/LEZpvoX](https://codepen.io/wuijsproject/pen/LEZpvoX).
+> You can check this functional example on CodePen at the link: [https://codepen.io/wuijsproject/pen/LEZpvoX](https://codepen.io/wuijsproject/pen/LEZpvoX).
 
 <a name="WUILoader"></a>
 
@@ -2139,7 +2139,7 @@ menubar.init();
 ```
 
 > [!TIP]
-> You can check out this working example on CodePen at the link: [https://codepen.io/wuijsproject/pen/JoKYVQm](https://codepen.io/wuijsproject/pen/JoKYVQm).
+> You can check this functional example on CodePen at the link: [https://codepen.io/wuijsproject/pen/JoKYVQm](https://codepen.io/wuijsproject/pen/JoKYVQm).
 
 <a name="WUIList"></a>
 
@@ -3159,20 +3159,21 @@ HTML code:
 JS Code:
 
 ```js
-// Create object
-const form = new WUIForm({
-	selector: ".wui-form.my-form",
-	submit: false,
-	onScrolling: (top) => {},
-	onSubmit: () => {}
-});
+const init = () => {
+	const form = new WUIForm({
+		selector: ".wui-form.my-form",
+		submit: false,
+		onScrolling: (top) => { },
+		onSubmit: () => { }
+	});
+	form.init();
+}
 
-// Initialize object
-form.init();
+window.addEventListener("DOMContentLoaded", init);
 ```
 
 > [!TIP]
-> You can check this functional example in CodePen at the link: [https://codepen.io/wuijsproject/pen/YPWxexK](https://codepen.io/wuijsproject/pen/YPWxexK).
+> You can check this functional example in CodeSandbox at the link: [https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIForm-line](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIForm-line).
 
 <a name="WUIFormat"></a>
 
@@ -3852,7 +3853,7 @@ selectpicker.init();
 > If the selector defines an element that is not of type `HTMLDivElement`, the object will not be initialized.
 
 > [!TIP]
-> You can check out this working example on CodePen at the link: [https://codepen.io/wuijsproject/pen/WbxQBKX](https://codepen.io/wuijsproject/pen/WbxQBKX).
+> You can check this functional example on CodePen at the link: [https://codepen.io/wuijsproject/pen/WbxQBKX](https://codepen.io/wuijsproject/pen/WbxQBKX).
 
 <a name="WUIDatepicker"></a>
 
@@ -4091,7 +4092,7 @@ datepicker.init();
 > If the selector defines an element that is not of type `HTMLDivElement`, the object will not be initialized.
 
 > [!TIP]
-> You can check out this working example on CodePen at the link: [https://codepen.io/wuijsproject/pen/QwEyyZN](https://codepen.io/wuijsproject/pen/QwEyyZN).
+> You can check this functional example on CodePen at the link: [https://codepen.io/wuijsproject/pen/QwEyyZN](https://codepen.io/wuijsproject/pen/QwEyyZN).
 
 <a name="WUITimepicker"></a>
 
@@ -4289,7 +4290,7 @@ timepicker.init();
 > If the selector defines an element that is not of type `HTMLDivElement`, the object will not be initialized.
 
 > [!TIP]
-> You can check out this working example on CodePen at the link: [https://codepen.io/wuijsproject/pen/azZdGrY](https://codepen.io/wuijsproject/pen/azZdGrY).
+> You can check this functional example on CodePen at the link: [https://codepen.io/wuijsproject/pen/azZdGrY](https://codepen.io/wuijsproject/pen/azZdGrY).
 
 <a name="WUIColorpicker"></a>
 
@@ -4497,7 +4498,7 @@ colorpicker.init();
 > If the selector defines an element that is not of type `HTMLDivElement`, the object will not be initialized.
 
 > [!TIP]
-> You can check out this working example on CodePen at the link: [https://codepen.io/wuijsproject/pen/bNeeobP](https://codepen.io/wuijsproject/pen/bNeeobP).
+> You can check this functional example on CodePen at the link: [https://codepen.io/wuijsproject/pen/bNeeobP](https://codepen.io/wuijsproject/pen/bNeeobP).
 
 <a name="WUISwitch"></a>
 
@@ -4648,7 +4649,7 @@ checkbox.init();
 > If the selector defines an element that is not of type `HTMLDivElement`, the object will not be initialized.
 
 > [!TIP]
-> You can check out this working example on CodePen at the link: [https://codepen.io/wuijsproject/pen/qENNwPa](https://codepen.io/wuijsproject/pen/qENNwPa).
+> You can check this functional example on CodePen at the link: [https://codepen.io/wuijsproject/pen/qENNwPa](https://codepen.io/wuijsproject/pen/qENNwPa).
 
 <a name="WUIIntensity"></a>
 
@@ -4772,7 +4773,7 @@ intensity.init();
 > If the selector defines an element that is not of type `HTMLDivElement`, the object will not be initialized.
 
 > [!TIP]
-> You can check out this working example on CodePen at the link: [https://codepen.io/wuijsproject/pen/GgqNpxJ](https://codepen.io/wuijsproject/pen/GgqNpxJ).
+> You can check this functional example on CodePen at the link: [https://codepen.io/wuijsproject/pen/GgqNpxJ](https://codepen.io/wuijsproject/pen/GgqNpxJ).
 
 <a name="WUIButton"></a>
 
@@ -5015,7 +5016,7 @@ button2.init();
 > If the selector defines an element that is not of type `HTMLButtonElement`, the object will not be initialized.
 
 > [!TIP]
-> You can check out this working example on CodePen at the link: [https://codepen.io/wuijsproject/pen/xbOwNzN](https://codepen.io/wuijsproject/pen/xbOwNzN).
+> You can check this functional example on CodePen at the link: [https://codepen.io/wuijsproject/pen/xbOwNzN](https://codepen.io/wuijsproject/pen/xbOwNzN).
 
 <a name="examples"></a>
 
