@@ -328,8 +328,8 @@ Date.prototype.wuiDefaults = {
 	timeFormat: "hh:MM:ss",
 	datetimeFormat: "yyyy-mm-dd hh:MM:ss",
 	formatDelimiters: ["[", "]"],
-	weekDaysNames: [],
-	monthsNames: []
+	_weekDaysNames: [],
+	_monthsNames: []
 }
 
 Date.prototype.wuiLoadNames = function (locales = this.wuiDefaults.locales) {
@@ -337,11 +337,11 @@ Date.prototype.wuiLoadNames = function (locales = this.wuiDefaults.locales) {
 		let i;
 		for (i = 0; i < 7; i++) {
 			const name = new Date(2023, 0, i + 1).toLocaleString(locales, { weekday: "long" }); // 2023-01-01: sunday
-			this.wuiDefaults.weekDaysNames[i] = name.replace(/^\s*(\w)/, letter => letter.toUpperCase());
+			this.wuiDefaults._weekDaysNames[i] = name.replace(/^\s*(\w)/, letter => letter.toUpperCase());
 		}
 		for (i = 0; i < 12; i++) {
 			const name = new Date(2023, i, 1).toLocaleString(locales, { month: "long" });
-			this.wuiDefaults.monthsNames[i] = name.replace(/^\s*(\w)/, letter => letter.toUpperCase());
+			this.wuiDefaults._monthsNames[i] = name.replace(/^\s*(\w)/, letter => letter.toUpperCase());
 		}
 	}
 }
@@ -436,10 +436,10 @@ Date.prototype.wuiToString = function (format = "default", options = {}) {
 	const utc = options.utc || false;
 	const year = utc ? this.getUTCFullYear() : this.getFullYear(),
 		month = utc ? this.getUTCMonth() + 1 : this.getMonth() + 1,
-		monthName = options.monthsNames[month - 1],
+		monthName = options._monthsNames[month - 1],
 		day = utc ? this.getUTCDate() : this.getDate(),
 		weekDay = utc ? this.getUTCDay() : this.getDay(),
-		weekDayName = options.weekDaysNames[weekDay],
+		weekDayName = options._weekDaysNames[weekDay],
 		hour = utc ? this.getUTCHours() : this.getHours(),
 		minute = utc ? this.getUTCMinutes() : this.getMinutes(),
 		second = utc ? this.getUTCSeconds() : this.getSeconds(),

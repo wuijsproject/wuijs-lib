@@ -3374,9 +3374,9 @@ HTML code:
 Código JS:
 
 ```js
-// Formato números
+// Métodos de números
 
-const numberDefaults = () => {
+const numberSetDefaults = () => {
 	//Number.prototype.wuiDefaults.numberPrefix = "";
 	//Number.prototype.wuiDefaults.numberSufix = "";
 	Number.prototype.wuiDefaults.thousandsSeparator = ".";
@@ -3432,7 +3432,7 @@ const numberModule23Formatting = () => {
 		+ "</pre>";
 }
 
-// Formato cadenas
+// Métodos de cadenas
 
 const stringDateValidation = () => {
 	const inputFormat = "yyyy-mm-dd";
@@ -3519,7 +3519,16 @@ const stringNIDValidation = () => {
 		+ "</pre>";
 }
 
-// Formato fechas
+// Métodos de fechas
+
+const dateSetDefaults = () => {
+	//Date.prototype.wuiDefaults.utc = false;
+	//Date.prototype.wuiDefaults.locales = "en-US";
+	//Date.prototype.wuiDefaults.dateFormat = "yyyy-mm-dd";
+	//Date.prototype.wuiDefaults.timeFormat = "hh:MM:ss";
+	//Date.prototype.wuiDefaults.datetimeFormat = "yyyy-mm-dd hh:MM:ss";
+	//Date.prototype.wuiDefaults.formatDelimiters = ["[", "]"];
+}
 
 const dateLocalFormatting = () => {
 	const inputFormat = "yyyy-mm-dd";
@@ -3558,10 +3567,12 @@ const dateUTCFormatting = () => {
 // Inicio
 
 window.addEventListener("DOMContentLoaded", () => {
-	numberDefaults();
+
+	numberSetDefaults();
 	numberFormatting();
 	numberSizeFormatting();
 	numberModule11Formatting();
+
 	stringDateValidation();
 	stringEmailValidation();
 	stringURLValidation();
@@ -3569,8 +3580,11 @@ window.addEventListener("DOMContentLoaded", () => {
 	stringModule11Validation();
 	stringModule23Validation();
 	stringNIDValidation();
+
+	dateSetDefaults();
 	dateLocalFormatting();
 	dateUTCFormatting();
+
 });
 ```
 
