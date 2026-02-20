@@ -627,7 +627,7 @@ CSS code in the `WUI.css` file:
 
 	--wui-button-default-minwidth: 200px;
 	--wui-button-default-height: 34px;
-	--wui-button-default-bordercolor-out: #b5bbc1;
+	--wui-button-default-bordercolor-out: rgb(from #1e90ff r g b / 20%);
 	--wui-button-default-bordercolor-over: #1e90ff;
 	--wui-button-default-bordercolor-selected: #1e90ff;
 	--wui-button-default-bordercolor-disabled: #d5dce3;
@@ -4886,7 +4886,7 @@ CSS settings:
 
 	--wui-button-default-minwidth: 200px;
 	--wui-button-default-height: 34px;
-	--wui-button-default-bordercolor-out: #b5bbc1;
+	--wui-button-default-bordercolor-out: rgb(from #1e90ff r g b / 20%);
 	--wui-button-default-bordercolor-over: #1e90ff;
 	--wui-button-default-bordercolor-selected: #1e90ff;
 	--wui-button-default-bordercolor-disabled: #d5dce3;
@@ -5044,5 +5044,6 @@ https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/W
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUITable-paging
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIForm-fill
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIForm-line
+https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIForm-wuiinputs
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIFormat-basic
 -->

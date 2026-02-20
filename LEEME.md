@@ -627,7 +627,7 @@ Código CSS archivo `WUI.css`:
 
 	--wui-button-default-minwidth: 200px;
 	--wui-button-default-height: 34px;
-	--wui-button-default-bordercolor-out: #b5bbc1;
+	--wui-button-default-bordercolor-out: rgb(from #1e90ff r g b / 20%);
 	--wui-button-default-bordercolor-over: #1e90ff;
 	--wui-button-default-bordercolor-selected: #1e90ff;
 	--wui-button-default-bordercolor-disabled: #d5dce3;
@@ -4891,7 +4891,7 @@ Configuración CSS:
 
 	--wui-button-default-minwidth: 200px;
 	--wui-button-default-height: 34px;
-	--wui-button-default-bordercolor-out: #b5bbc1;
+	--wui-button-default-bordercolor-out: rgb(from #1e90ff r g b / 20%);
 	--wui-button-default-bordercolor-over: #1e90ff;
 	--wui-button-default-bordercolor-selected: #1e90ff;
 	--wui-button-default-bordercolor-disabled: #d5dce3;
