@@ -376,7 +376,6 @@
 }
 
 .wui-form fieldset > .field > input[type="range"] {
-	/*--range-gradient: var(--wui-form-range-trackbar-bgcolor-out), var(--wui-form-range-trackbar-bgcolor-out);*/
 	--range-shadow: 0 0 2px 0 rgba(0, 0, 0, .4);
 	--range-transition: background .2s ease-in-out;
 	width: 100%;
@@ -386,12 +385,6 @@
 	border-radius: calc(var(--wui-form-range-trackbar-height) / 2);
 	border: var(--wui-form-range-trackbar-borderwidth) solid var(--wui-form-range-trackbar-bordercolor-out);
 	background-color: var(--wui-form-range-trackbar-bgcolor-out);
-	/*background-image: -webkit-linear-gradient(var(--range-gradient));
-	background-image: -moz-linear-gradient(var(--range-gradient));
-	background-image: -o-linear-gradient(var(--range-gradient));
-	background-image: linear-gradient(var(--range-gradient));
-	background-repeat: no-repeat;
-	background-size: 0% 100%;*/
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
@@ -992,12 +985,6 @@
 	}
 }
 
-/* wui-form border */
-
-/*.wui-form.border fieldset > .field:not(.inline) > :is(input[type="text"], input[type="number"], input[type="date"], input[type="time"]) {
-	top: calc(-1 * var(--wui-form-input-borderwidth));
-}*/
-
 /* wui-form border curve */
 
 .wui-form.border.curve fieldset > .field:not(.inline) {
@@ -1239,13 +1226,11 @@
 	white-space: normal;
 }
 
-.wui-form fieldset > .field.inline > .wui-colorpicker,
-.wui-form fieldset > .field.inline > .wui-switch {
+.wui-form fieldset > .field.inline > :is(.wui-colorpicker, .wui-switch) {
 	position: absolute;
 }
 
-.wui-form:is(.line, .border) fieldset > .field.inline > .wui-colorpicker,
-.wui-form:is(.line, .border) fieldset > .field.inline > .wui-switch {
+.wui-form:is(.line, .border) fieldset > .field.inline > :is(.wui-colorpicker, .wui-switch) {
 	position: absolute;
 	right: 0;
 	width: auto;
@@ -1259,10 +1244,14 @@
 	border-color: var(--wui-switch-bordercolor-invalid) !important;
 }
 
+.wui-form fieldset > .field.inline > :is(.wui-colorpicker, .wui-switch) {
+	position: absolute;
+	right: 0;
+}
+
 @media screen and (max-width: 767px) {
 
-	.wui-form.mobile fieldset > .field.inline > .wui-colorpicker,
-	.wui-form.mobile fieldset > .field.inline > .wui-switch {
+	.wui-form.mobile fieldset > .field.inline > :is(.wui-colorpicker, .wui-switch) {
 		right: 10px;
 	}
 }
