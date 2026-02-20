@@ -890,26 +890,26 @@
 /* wui-form line */
 /* wui-form border */
 
-.wui-form:is(.fill, .line, .border) fieldset > .field:not(.inline, .noborder) {
+.wui-form fieldset > .field:not(.inline, .noborder) {
 	border: var(--wui-form-input-borderwidth) solid transparent;
 }
 
-.wui-form:is(.fill, .line, .border) fieldset > .field > label {
+.wui-form fieldset > .field > label {
 	top: calc(-1 * var(--wui-form-input-borderwidth));
 	display: flex;
 	align-items: center;
 	cursor: text;
 }
 
-.wui-form:is(.fill, .line, .border) fieldset > .field:not(.inline) > label:is(.fixed, .notempty),
-.wui-form:is(.fill, .line, .border) fieldset > .field:not(.inline):focus-within > label {
+.wui-form fieldset > .field:not(.inline) > label:is(.fixed, .notempty),
+.wui-form fieldset > .field:not(.inline):focus-within > label {
 	top: calc(-0.8 * var(--wui-form-input-height) - var(--wui-form-input-borderwidth));
 }
 
 @media screen and (max-width: 767px) {
 
-	.wui-form:is(.fill, .line, .border) fieldset > .field:not(.inline) > label:is(.fixed, .notempty),
-	.wui-form:is(.fill, .line, .border) fieldset > .field:not(.inline):focus-within > label {
+	.wui-form fieldset > .field:not(.inline) > label:is(.fixed, .notempty),
+	.wui-form fieldset > .field:not(.inline):focus-within > label {
 		top: calc(-0.8 * var(--wui-form-mobile-input-height) - var(--wui-form-input-borderwidth));
 	}
 }
@@ -1200,7 +1200,7 @@
 /* wui-datepicker */
 /* wui-timepicker */
 
-.wui-form:is(.line, .border) fieldset > .field > .wui-selectpicker {
+.wui-form fieldset > .field > .wui-selectpicker {
 	--wui-selectpicker-bgcolor: transparent;
 	--wui-selectpicker-bordercolor: transparent;
 	--wui-selectpicker-borderradius: 0px;
@@ -1208,7 +1208,7 @@
 	--wui-selectpicker-viewinput-paddingleft: 0px;
 }
 
-.wui-form:is(.line, .border) fieldset > .field > .wui-datepicker {
+.wui-form fieldset > .field > .wui-datepicker {
 	--wui-datepicker-bgcolor: transparent;
 	--wui-datepicker-bordercolor: transparent;
 	--wui-datepicker-borderradius: 0px;
@@ -1216,7 +1216,7 @@
 	--wui-datepicker-viewinput-paddingleft: 0px;
 }
 
-.wui-form:is(.line, .border) fieldset > .field > .wui-timepicker {
+.wui-form fieldset > .field > .wui-timepicker {
 	--wui-timepicker-bgcolor: transparent;
 	--wui-timepicker-bordercolor: transparent;
 	--wui-timepicker-borderradius: 0px;
@@ -1224,28 +1224,22 @@
 	--wui-timepicker-viewinput-paddingleft: 0px;
 }
 
-.wui-form:is(.line, .border) fieldset > .field > :is(.wui-selectpicker, .wui-datepicker, .wui-timepicker) {
+.wui-form fieldset > .field > :is(.wui-selectpicker, .wui-datepicker, .wui-timepicker) {
 	left: 0;
 }
 
-.wui-form:is(.line, .border) fieldset > .field.icon-left > :is(.wui-selectpicker, .wui-datepicker, .wui-timepicker) {
+.wui-form fieldset > .field.icon-left > :is(.wui-selectpicker, .wui-datepicker, .wui-timepicker) {
 	left: 0;
 	padding-left: 40px !important;
 }
 
-.wui-form:is(.line, .border) fieldset > .field.icon-right > :is(.wui-selectpicker, .wui-datepicker, .wui-timepicker) {
+.wui-form fieldset > .field.icon-right > :is(.wui-selectpicker, .wui-datepicker, .wui-timepicker) {
 	padding-right: 40px !important;
 }
 
-.wui-form.border fieldset > .field > .wui-selectpicker > input[type="text"] {
+.wui-form fieldset > .field > .wui-selectpicker > input[type="text"] {
 	padding-right: 10px;
 	padding-left: 10px;
-}
-
-/* wui-selectpicker */
-
-.wui-form:is(.line, .border) fieldset > .field.invalid > .wui-selectpicker {
-	background-image: none !important;
 }
 
 /* wui-colorpicker */
