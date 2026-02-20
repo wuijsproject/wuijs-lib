@@ -3357,6 +3357,11 @@ HTML code:
 <div class="my-output numberModule23"></div>
 <div class="my-output stringDateValidation"></div>
 <div class="my-output stringEmailValidation"></div>
+<div class="my-output stringURLValidation"></div>
+<div class="my-output stringIPv4Validation"></div>
+<div class="my-output stringModule11Validation"></div>
+<div class="my-output stringModule23Validation"></div>
+<div class="my-output stringNIDValidation"></div>
 <div class="my-output dateLocal"></div>
 <div class="my-output dateUTC"></div>
 ```
@@ -3443,8 +3448,69 @@ const stringEmailValidation = () => {
 	const outputValid = inputValue.wuiValidateEmail();
 	output.innerHTML = "<pre>"
 		+ `<b>Email validation</b>\n`
-		+ `input value : ${inputValue}\n`
+		+ `input value  : ${inputValue}\n`
 		+ `output valid : ${outputValid}\n`
+		+ "</pre>";
+}
+
+const stringIPv4Validation = () => {
+	const inputValue = "127.0.0.1";
+	const output = document.body.querySelector(".my-output.stringIPv4Validation");
+	const outputValid = inputValue.wuiValidateIPv4();
+	output.innerHTML = "<pre>"
+		+ `<b>IPv4 validation</b>\n`
+		+ `input value  : ${inputValue}\n`
+		+ `output valid : ${outputValid}\n`
+		+ "</pre>";
+}
+
+const stringURLValidation = () => {
+	const inputValue = "https://www.example.com";
+	const output = document.body.querySelector(".my-output.stringURLValidation");
+	const outputValid = inputValue.wuiValidateURL();
+	output.innerHTML = "<pre>"
+		+ `<b>URL validation</b>\n`
+		+ `input value  : ${inputValue}\n`
+		+ `output valid : ${outputValid}\n`
+		+ "</pre>";
+}
+
+const stringModule11Validation = () => {
+	const inputValue = "1234567";
+	const inputCode10 = "K";
+	const output = document.body.querySelector(".my-output.stringModule11Validation");
+	const outputValid = inputValue.wuiValidateModule11(inputCode10);
+	output.innerHTML = "<pre>"
+		+ `<b>Module 11 validation</b>\n`
+		+ `input value   : ${inputValue}\n`
+		+ `input code 10 : ${inputCode10}\n`
+		+ `output valid  : ${outputValid}\n`
+		+ "</pre>";
+}
+
+const stringModule23Validation = () => {
+	const inputValue = "1234567";
+	const inputMap = "TRWAGMYFPDXBNJZSQVHLCKET";
+	const output = document.body.querySelector(".my-output.stringModule23Validation");
+	const outputValid = inputValue.wuiValidateModule23(inputMap);
+	output.innerHTML = "<pre>"
+		+ `<b>Module 23 validation</b>\n`
+		+ `input value  : ${inputValue}\n`
+		+ `input map    : ${inputMap}\n`
+		+ `output valid : ${outputValid}\n`
+		+ "</pre>";
+}
+
+const stringNIDValidation = () => {
+	const inputValue = "1234567";
+	const inputCountryCode = "CL";
+	const output = document.body.querySelector(".my-output.stringNIDValidation");
+	const outputValid = inputValue.wuiValidateNID(inputCountryCode);
+	output.innerHTML = "<pre>"
+		+ `<b>NID validation</b>\n`
+		+ `input value        : ${inputValue}\n`
+		+ `input country code : ${inputCountryCode}\n`
+		+ `output valid       : ${outputValid}\n`
 		+ "</pre>";
 }
 
@@ -3493,6 +3559,11 @@ window.addEventListener("DOMContentLoaded", () => {
 	numberModule11Formatting();
 	stringDateValidation();
 	stringEmailValidation();
+	stringIPv4Validation();
+	stringURLValidation();
+	stringModule11Validation();
+	stringModule23Validation();
+	stringNIDValidation();
 	dateLocalFormatting();
 	dateUTCFormatting();
 });

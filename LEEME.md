@@ -3362,6 +3362,11 @@ HTML code:
 <div class="my-output numberModule23"></div>
 <div class="my-output stringDateValidation"></div>
 <div class="my-output stringEmailValidation"></div>
+<div class="my-output stringURLValidation"></div>
+<div class="my-output stringIPv4Validation"></div>
+<div class="my-output stringModule11Validation"></div>
+<div class="my-output stringModule23Validation"></div>
+<div class="my-output stringNIDValidation"></div>
 <div class="my-output dateLocal"></div>
 <div class="my-output dateUTC"></div>
 ```
@@ -3421,9 +3426,9 @@ const numberModule23Formatting = () => {
 	const outputValue = inputValue.wuiToModule23(inputMap);
 	output.innerHTML = "<pre>"
 		+ `<b>Numeric module 23 formatting</b>\n`
-		+ `input value    : ${inputValue}\n`
-		+ `input map      : ${inputMap}\n`
-		+ `output value   : ${outputValue}\n`
+		+ `valor entrada : ${inputValue}\n`
+		+ `mapa entrada  : ${inputMap}\n`
+		+ `valor salida  : ${outputValue}\n`
 		+ "</pre>";
 }
 
@@ -3436,9 +3441,9 @@ const stringDateValidation = () => {
 	const outputValid = inputValue.wuiValidateDate(inputFormat);
 	output.innerHTML = "<pre>"
 		+ `<b>Validación de fecha</b>\n`
-		+ `input format : ${inputFormat}\n`
-		+ `input value  : ${inputValue}\n`
-		+ `output valid : ${outputValid}\n`
+		+ `formato entrada   : ${inputFormat}\n`
+		+ `valor entrada     : ${inputValue}\n`
+		+ `validación salida : ${outputValid}\n`
 		+ "</pre>";
 }
 
@@ -3448,8 +3453,69 @@ const stringEmailValidation = () => {
 	const outputValid = inputValue.wuiValidateEmail();
 	output.innerHTML = "<pre>"
 		+ `<b>Validación de correo</b>\n`
-		+ `input value : ${inputValue}\n`
-		+ `output valid : ${outputValid}\n`
+		+ `valor entrada     : ${inputValue}\n`
+		+ `validación salida : ${outputValid}\n`
+		+ "</pre>";
+}
+
+const stringIPv4Validation = () => {
+	const inputValue = "127.0.0.1";
+	const output = document.body.querySelector(".my-output.stringIPv4Validation");
+	const outputValid = inputValue.wuiValidateIPv4();
+	output.innerHTML = "<pre>"
+		+ `<b>Validación de IP v4</b>\n`
+		+ `valor entrada     : ${inputValue}\n`
+		+ `validación salida : ${outputValid}\n`
+		+ "</pre>";
+}
+
+const stringURLValidation = () => {
+	const inputValue = "https://www.example.com";
+	const output = document.body.querySelector(".my-output.stringURLValidation");
+	const outputValid = inputValue.wuiValidateURL();
+	output.innerHTML = "<pre>"
+		+ `<b>Validación de URL</b>\n`
+		+ `valor entrada     : ${inputValue}\n`
+		+ `validación salida : ${outputValid}\n`
+		+ "</pre>";
+}
+
+const stringModule11Validation = () => {
+	const inputValue = "1234567";
+	const inputCode10 = "K";
+	const output = document.body.querySelector(".my-output.stringModule11Validation");
+	const outputValid = inputValue.wuiValidateModule11(inputCode10);
+	output.innerHTML = "<pre>"
+		+ `<b>Validación de módulo 11</b>\n`
+		+ `valor entrada     : ${inputValue}\n`
+		+ `código 10 entrada : ${inputCode10}\n`
+		+ `validación salida : ${outputValid}\n`
+		+ "</pre>";
+}
+
+const stringModule23Validation = () => {
+	const inputValue = "1234567";
+	const inputMap = "TRWAGMYFPDXBNJZSQVHLCKET";
+	const output = document.body.querySelector(".my-output.stringModule23Validation");
+	const outputValid = inputValue.wuiValidateModule23(inputMap);
+	output.innerHTML = "<pre>"
+		+ `<b>Validación de módulo 23</b>\n`
+		+ `valor entrada     : ${inputValue}\n`
+		+ `mapa entrada      : ${inputMap}\n`
+		+ `validación salida : ${outputValid}\n`
+		+ "</pre>";
+}
+
+const stringNIDValidation = () => {
+	const inputValue = "1234567";
+	const inputCountryCode = "CL";
+	const output = document.body.querySelector(".my-output.stringNIDValidation");
+	const outputValid = inputValue.wuiValidateNID(inputCountryCode);
+	output.innerHTML = "<pre>"
+		+ `<b>Validación de DNI</b>\n`
+		+ `valor entrada       : ${inputValue}\n`
+		+ `código país entrada : ${inputCountryCode}\n`
+		+ `validación salida   : ${outputValid}\n`
 		+ "</pre>";
 }
 
@@ -3496,9 +3562,13 @@ window.addEventListener("DOMContentLoaded", () => {
 	numberFormatting();
 	numberSizeFormatting();
 	numberModule11Formatting();
-	numberModule23Formatting();
 	stringDateValidation();
 	stringEmailValidation();
+	stringIPv4Validation();
+	stringURLValidation();
+	stringModule11Validation();
+	stringModule23Validation();
+	stringNIDValidation();
 	dateLocalFormatting();
 	dateUTCFormatting();
 });
