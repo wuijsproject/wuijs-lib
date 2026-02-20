@@ -114,11 +114,11 @@ Number.prototype.wuiToString = function (options = {}) {
 	return prefix + symbol + (j ? i.toString().substr(0, j) + thoSep : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + thoSep) + (decLen ? decSep + Math.abs(number - i).toFixed(decLen).slice(2) : "") + sufix;
 }
 
-Number.prototype.wuiToSizeString = function () {
+Number.prototype.wuiToSizeString = function (options = {}) {
 	const size = this;
 	const div = size < 1024 ? 1 : size < Math.pow(1024, 2) ? 1024 : size < Math.pow(1024, 3) ? Math.pow(1024, 2) : Math.pow(1024, 3);
 	const uni = size < 1024 ? "B" : size < Math.pow(1024, 2) ? "KB" : size < Math.pow(1024, 3) ? "MB" : "TB";
-	return parseFloat(size / div).wuiToString() + " " + uni;
+	return parseFloat(size / div).wuiToString(Object.assign(options, { prefix: "", sufix: "" })) + " " + uni;
 };
 
 Number.prototype.wuiToModule11 = function (codeTen) {
