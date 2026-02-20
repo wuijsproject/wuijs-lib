@@ -3356,10 +3356,13 @@ Cabecera HTML:
 HTML code:
 
 ```html
-<div class="my-output number"></div>
-<div class="my-output numberSize"></div>
-<div class="my-output numberModule11"></div>
-<div class="my-output numberModule23"></div>
+<h2>Number methods</h2>
+<div class="my-output numberFormatting"></div>
+<div class="my-output numberSizeFormatting"></div>
+<div class="my-output numberModule11Formatting"></div>
+<div class="my-output numberModule23Formatting"></div>
+
+<h2>String methods</h2>
 <div class="my-output stringDateValidation"></div>
 <div class="my-output stringEmailValidation"></div>
 <div class="my-output stringURLValidation"></div>
@@ -3367,8 +3370,10 @@ HTML code:
 <div class="my-output stringModule11Validation"></div>
 <div class="my-output stringModule23Validation"></div>
 <div class="my-output stringNIDValidation"></div>
-<div class="my-output dateLocal"></div>
-<div class="my-output dateUTC"></div>
+
+<h2>Date methods</h2>
+<div class="my-output dateLocalFormatting"></div>
+<div class="my-output dateUTCFormatting"></div>
 ```
 
 Código JS:
@@ -3386,7 +3391,7 @@ const numberSetDefaults = () => {
 
 const numberFormatting = () => {
 	const inputValue = 1234.567;
-	const output = document.body.querySelector(".my-output.number");
+	const output = document.body.querySelector(".my-output.numberFormatting");
 	const outputValue = inputValue.wuiToString({ numberPrefix: "$ " });
 	output.innerHTML = "<pre>"
 		+ `<b>Formateo numérico</b>\n`
@@ -3397,7 +3402,7 @@ const numberFormatting = () => {
 
 const numberSizeFormatting = () => {
 	const inputValue = 1234.567;
-	const output = document.body.querySelector(".my-output.numberSize");
+	const output = document.body.querySelector(".my-output.numberSizeFormatting");
 	const outputValue = inputValue.wuiToSizeString({});
 	output.innerHTML = "<pre>"
 		+ `<b>Formateo numérico de tamaño digital</b>\n`
@@ -3409,7 +3414,7 @@ const numberSizeFormatting = () => {
 const numberModule11Formatting = () => {
 	const inputValue = 1234567;
 	const inputCode10 = "K";
-	const output = document.body.querySelector(".my-output.numberModule11");
+	const output = document.body.querySelector(".my-output.numberModule11Formatting");
 	const outputValue = inputValue.wuiToModule11(inputCode10);
 	output.innerHTML = "<pre>"
 		+ `<b>Formateo numérico de módulo 11</b>\n`
@@ -3422,7 +3427,7 @@ const numberModule11Formatting = () => {
 const numberModule23Formatting = () => {
 	const inputValue = 1234567;
 	const inputMap = "TRWAGMYFPDXBNJZSQVHLCKET";
-	const output = document.body.querySelector(".my-output.numberModule23");
+	const output = document.body.querySelector(".my-output.numberModule23Formatting");
 	const outputValue = inputValue.wuiToModule23(inputMap);
 	output.innerHTML = "<pre>"
 		+ `<b>Numeric module 23 formatting</b>\n`
@@ -3534,7 +3539,7 @@ const dateLocalFormatting = () => {
 	const inputFormat = "yyyy-mm-dd";
 	const inputValue = "2023-12-31";
 	const date = new Date().wuiLoad(inputValue, inputFormat);
-	const output = document.body.querySelector(".my-output.dateLocal");
+	const output = document.body.querySelector(".my-output.dateLocalFormatting");
 	const outputFormat = "dd/mm/yyyy hh:MM [GMT]zz";
 	const outputValue = date.wuiToString(outputFormat, { utc: false });
 	output.innerHTML = "<pre>"
@@ -3551,7 +3556,7 @@ const dateUTCFormatting = () => {
 	const inputFormat = "yyyy-mm-dd";
 	const inputValue = "2023-12-31";
 	const date = new Date().wuiLoad(inputValue, inputFormat);
-	const output = document.body.querySelector(".my-output.dateUTC");
+	const output = document.body.querySelector(".my-output.dateUTCFormatting");
 	const outputFormat = "dd/mm/yyyy hh:MM [GMT]zz";
 	const outputValue = date.wuiToString(outputFormat, { utc: true });
 	output.innerHTML = "<pre>"
