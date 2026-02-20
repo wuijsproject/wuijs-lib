@@ -148,6 +148,22 @@
 	border-color: transparent !important;
 }
 
+.wui-form fieldset > .field:not(.inline, .noborder) {
+	border: var(--wui-form-input-borderwidth) solid transparent;
+}
+
+.wui-form fieldset > .field > label {
+	top: calc(-1 * var(--wui-form-input-borderwidth));
+	display: flex;
+	align-items: center;
+	cursor: text;
+}
+
+.wui-form fieldset > .field:not(.inline) > label:is(.fixed, .notempty),
+.wui-form fieldset > .field:not(.inline):focus-within > label {
+	top: calc(-0.8 * var(--wui-form-input-height) - var(--wui-form-input-borderwidth));
+}
+
 .wui-form fieldset > .field.autosize {
 	height: auto !important;
 }
@@ -184,7 +200,7 @@
 	--label-transition: var(--label-transition-base), opacity .2s ease-out;
 	--label-transition-base: top .2s ease-out, color .2s ease-out;
 	position: absolute;
-	top: 11px;
+	top: 0px;
 	left: 10px;
 	width: auto;
 	font-size: 13px;
@@ -204,13 +220,8 @@
 	user-select: none;
 }
 
-.wui-form:not(.grid) fieldset > .field.inline > label {
+.wui-form fieldset > .field.inline > label {
 	top: 0;
-}
-
-.wui-form:not(.grid) fieldset > .field:not(.inline) > label.notempty,
-.wui-form:not(.grid) fieldset > .field:not(.inline):focus-within > label {
-	top: -12px;
 }
 
 .wui-form fieldset > .field:not(.inline) > label.notempty {
@@ -845,6 +856,11 @@
 		font-size: 15px;
 	}
 
+	.wui-form fieldset > .field:not(.inline) > label:is(.fixed, .notempty),
+	.wui-form fieldset > .field:not(.inline):focus-within > label {
+		top: calc(-0.8 * var(--wui-form-mobile-input-height) - var(--wui-form-input-borderwidth));
+	}
+
 	.wui-form a.link {
 		font-size: 15px;
 	}
@@ -885,34 +901,6 @@
 		width: auto;
 	}
 }*/
-
-/* wui-form fill */
-/* wui-form line */
-/* wui-form border */
-
-.wui-form:is(.fill, .line, .border) fieldset > .field:not(.inline, .noborder) {
-	border: var(--wui-form-input-borderwidth) solid transparent;
-}
-
-.wui-form:is(.fill, .line, .border) fieldset > .field > label {
-	top: calc(-1 * var(--wui-form-input-borderwidth));
-	display: flex;
-	align-items: center;
-	cursor: text;
-}
-
-.wui-form:is(.fill, .line, .border) fieldset > .field:not(.inline) > label:is(.fixed, .notempty),
-.wui-form:is(.fill, .line, .border) fieldset > .field:not(.inline):focus-within > label {
-	top: calc(-0.8 * var(--wui-form-input-height) - var(--wui-form-input-borderwidth));
-}
-
-@media screen and (max-width: 767px) {
-
-	.wui-form:is(.fill, .line, .border) fieldset > .field:not(.inline) > label:is(.fixed, .notempty),
-	.wui-form:is(.fill, .line, .border) fieldset > .field:not(.inline):focus-within > label {
-		top: calc(-0.8 * var(--wui-form-mobile-input-height) - var(--wui-form-input-borderwidth));
-	}
-}
 
 /* wui-form fill */
 /* wui-form line */
@@ -1006,9 +994,9 @@
 
 /* wui-form border */
 
-.wui-form.border fieldset > .field:not(.inline) > :is(input[type="text"], input[type="number"], input[type="date"], input[type="time"]) {
+/*.wui-form.border fieldset > .field:not(.inline) > :is(input[type="text"], input[type="number"], input[type="date"], input[type="time"]) {
 	top: calc(-1 * var(--wui-form-input-borderwidth));
-}
+}*/
 
 /* wui-form border curve */
 
