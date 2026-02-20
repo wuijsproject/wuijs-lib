@@ -243,13 +243,13 @@ div.wui-table > table > :is(thead, tbody) > tr > :is(th, td).valign-bottom {
 	vertical-align: bottom;
 }
 
-div.wui-table > table > tbody > tr.selected > td:not(.filler) {
+div.wui-table > table > tbody > tr.selected > td {
 	border-color: var(--wui-table-row-bordercolor-selected);
 	background-color: var(--wui-table-row-bgcolor-selected);
 	color: var(--wui-table-row-textcolor-selected);
 }
 
-div.wui-table > table > tbody > tr.disabled > td:not(.filler),
+div.wui-table > table > tbody > tr.disabled > td,
 div.wui-table > table > tbody > tr > td.disabled {
 	border-color: var(--wui-table-row-bordercolor-disabled);
 	background-color: var(--wui-table-row-bgcolor-disabled);
