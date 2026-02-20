@@ -3453,23 +3453,23 @@ const stringEmailValidation = () => {
 		+ "</pre>";
 }
 
-const stringIPv4Validation = () => {
-	const inputValue = "127.0.0.1";
-	const output = document.body.querySelector(".my-output.stringIPv4Validation");
-	const outputValid = inputValue.wuiValidateIPv4();
-	output.innerHTML = "<pre>"
-		+ `<b>IPv4 validation</b>\n`
-		+ `input value  : ${inputValue}\n`
-		+ `output valid : ${outputValid}\n`
-		+ "</pre>";
-}
-
 const stringURLValidation = () => {
 	const inputValue = "https://www.example.com";
 	const output = document.body.querySelector(".my-output.stringURLValidation");
 	const outputValid = inputValue.wuiValidateURL();
 	output.innerHTML = "<pre>"
 		+ `<b>URL validation</b>\n`
+		+ `input value  : ${inputValue}\n`
+		+ `output valid : ${outputValid}\n`
+		+ "</pre>";
+}
+
+const stringIPv4Validation = () => {
+	const inputValue = "127.0.0.1";
+	const output = document.body.querySelector(".my-output.stringIPv4Validation");
+	const outputValid = inputValue.wuiValidateIPv4();
+	output.innerHTML = "<pre>"
+		+ `<b>IPv4 validation</b>\n`
 		+ `input value  : ${inputValue}\n`
 		+ `output valid : ${outputValid}\n`
 		+ "</pre>";
@@ -3559,8 +3559,8 @@ window.addEventListener("DOMContentLoaded", () => {
 	numberModule11Formatting();
 	stringDateValidation();
 	stringEmailValidation();
-	stringIPv4Validation();
 	stringURLValidation();
+	stringIPv4Validation();
 	stringModule11Validation();
 	stringModule23Validation();
 	stringNIDValidation();

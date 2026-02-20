@@ -283,7 +283,7 @@ String.prototype.wuiValidateModule11 = function (codeTen) {
 	const number = value.slice(0, -1);
 	const control = value.slice(-1).toUpperCase();
 	if (!/^\d+$/.test(number)) return false;
-	return BigInt(number).wuiToModule11(codeTen) == control;
+	return (1 * number).wuiToModule11(codeTen) == control;
 }
 
 String.prototype.wuiValidateModule23 = function (map) {
@@ -293,7 +293,7 @@ String.prototype.wuiValidateModule23 = function (map) {
 	const number = value.slice(0, -1);
 	const control = value.slice(-1);
 	if (!/^\d+$/.test(number) || !map.includes(control)) return false;
-	return BigInt(number).wuiToModule23(map) == control;
+	return (1 * number).wuiToModule23(map) == control;
 }
 
 String.prototype.wuiValidateNID = function (countryCode) {
