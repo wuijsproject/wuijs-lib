@@ -3502,7 +3502,7 @@ const stringModule23Validation = () => {
 }
 
 const stringNIDValidation = () => {
-	const inputValue = "1234567";
+	const inputValue = "1.234.567-4";
 	const inputCountryCode = "CL";
 	const output = document.body.querySelector(".my-output.stringNIDValidation");
 	const outputValid = inputValue.wuiValidateNID(inputCountryCode);
