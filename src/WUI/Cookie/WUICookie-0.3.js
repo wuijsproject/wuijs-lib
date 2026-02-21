@@ -9,7 +9,7 @@ class WUICookie {
 	static version = "0.3";
 	static #defaults = {
 		domain: location.hostname,
-		path: "",
+		path: "./",
 		minutes: 365 * 24 * 60,
 		overssl: false
 	};
