@@ -835,7 +835,7 @@ const init = () => {
 	});
 	const encode = cookie.set("mycookie", "test");
 	const value = cookie.get("mycookie");
-	output.textContent = "<pre>"
+	output.innerHTML = "<pre>"
 		+ `Value codificado : ${encode}\n`
 		+ `Value leído.     : ${value}\n`
 		+ "</pre>";
