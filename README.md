@@ -2340,7 +2340,7 @@ header {
 
 nav {
 	width: 600px;
-	margin: 10px 0;
+	margin: 10px;
 }
 
 footer {
@@ -2701,7 +2701,7 @@ header {
 
 nav {
 	width: 600px;
-	margin: 10px 0;
+	margin: 10px;
 }
 
 footer {
