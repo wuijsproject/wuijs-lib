@@ -432,24 +432,24 @@ class WUITable {
 	sort(index, direction = null) {
 		if (this.#resizing) return;
 		const theadRow = this.#htmlElements.thead.rows[0];
-		const rows = Array.from(this.#htmlElements.tbody.querySelectorAll("tr"));
-		const parseValue = (value, cell) => {
-			if (!value.trim()) return {
+		const parseValue = (value) => {
+			const text = typeof value === "string" ? value : String(value);
+			if (!text.trim()) return {
 				value: null,
-				raw: cell.innerHTML.trim()
+				raw: text.trim()
 			};
-			if (!isNaN(value)) return {
-				value: parseFloat(value),
-				raw: value
+			if (!isNaN(text)) return {
+				value: parseFloat(text),
+				raw: text
 			};
-			const date = Date.parse(value);
+			const date = Date.parse(text);
 			if (!isNaN(date)) return {
 				value: date,
-				raw: value.toLowerCase()
+				raw: text.toLowerCase()
 			};
 			return {
-				value: value.toLowerCase(),
-				raw: value
+				value: text.toLowerCase(),
+				raw: text
 			};
 		}
 		if (direction == null) {
@@ -459,13 +459,11 @@ class WUITable {
 			sorter.style.maskImage = "url()";
 		});
 		theadRow.children[index].querySelector(".sorter").style.maskImage = this.#getSRCIcon(`column-sorter-${direction == "asc" ? "asc" : "desc"}`);
-		rows.sort((rowA, rowB) => {
-			const cellA = rowA.cells[index];
-			const cellB = rowB.cells[index];
-			const textA = cellA.textContent.trim();
-			const textB = cellB.textContent.trim();
-			const valueA = parseValue(textA, cellA);
-			const valueB = parseValue(textB, cellB);
+		this.#properties.rows.sort((rowA, rowB) => {
+			const textA = rowA.data[index] !== undefined ? String(rowA.data[index]) : "";
+			const textB = rowB.data[index] !== undefined ? String(rowB.data[index]) : "";
+			const valueA = parseValue(textA);
+			const valueB = parseValue(textB);
 			if (valueA.value == null && valueB.value != null) return direction == "asc" ? -1 : 1;
 			if (valueA.value != null && valueB.value == null) return direction == "asc" ? 1 : -1;
 			if (valueA.value == null && valueB.value == null) return direction == "asc" ? valueA.raw.length - valueB.raw.length : valueB.raw.length - valueA.raw.length;
@@ -473,7 +471,11 @@ class WUITable {
 			if (valueA.value < valueB.value) return direction == "asc" ? -1 : 1;
 			return 0;
 		});
-		rows.forEach(row => this.#htmlElements.tbody.appendChild(row));
+		if (this.#properties.paging > 0) {
+			this.#printBody(this.#properties.page);
+		} else {
+			this.#printBody(0);
+		}
 		this.#sortingIndex = index;
 		this.#sortingDirection = direction;
 	}

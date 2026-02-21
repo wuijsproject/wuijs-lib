@@ -5098,7 +5098,29 @@ body {
 </html>
 ```
 
-### 2. Inicialización de objetos
+### 2. Personalización de los componentes
+
+Los componentes WUI pueden ser personalizados mediante CSS. Para ello, se recomienda la utilización de un archivo CSS independiente donde se carguen las variables CSS de los componentes.
+
+```css
+:root {
+
+	/* wui-scrolly */
+
+	--wui-scrolly-paging-bgcolor: #f6f6fa;
+
+	/* wui-icon */
+
+	--wui-icon-size: 24px;
+	--wui-icon-smallsize: 14px;
+	--wui-icon-bgcolor-out: rgb(from #353a40 r g b / 70%);
+	--wui-icon-bgcolor-over: #353a40;
+
+	/* ... */
+}
+```
+
+### 3. Inicialización de objetos
 
 Para evitar problemas en los tiempos de ejecución, se recomienda inicializar los objetos WUI una vez que se hayan cargado los elementos del DOM.
 
@@ -5111,7 +5133,7 @@ const init = () => {
 window.addEventListener("DOMContentLoaded", init);
 ```
 
-### 3. Uso de componentes referenciados
+### 4. Uso de componentes referenciados
 
 Cuando una vista posee varios componentes WUI de la misma o distintas clases, se recomienda referenciarlos mediante un array en el código JS para manejarlos de manera coherente.
 
