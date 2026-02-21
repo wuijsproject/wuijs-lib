@@ -4818,6 +4818,9 @@ CSS settings:
 
 ```css
 :root {
+
+	/* wui-intensity */
+
 	--wui-intensity-height: 30px;
 	--wui-intensity-borderradius: 15px;
 	--wui-intensity-bordercolor-out: rgb(from #1e90ff r g b / 20%);
@@ -4832,13 +4835,23 @@ CSS settings:
 CSS code:
 
 ```css
+html,
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+nav {
+	display: flex;
+	margin: 10px;
+	align-items: center;
+	gap: 10px;
+}
+
 .my-intensity {}
 
 .my-output {
-	position: absolute;
-	top: 4px;
-	left: 210px;
-	margin: 10px;
 	font-family: monospace;
 }
 ```
@@ -4853,36 +4866,38 @@ HTML head:
 HTML code:
 
 ```html
-<div class="wui-intensity my-intensity">
-	<input type="range" name="myIntensity" value="0" min="0" max="3" step="1">
-</div>
-
-<div class="my-output"></div>
+<nav>
+	<div class="wui-intensity my-intensity">
+		<input type="range" name="myIntensity" value="0" min="0" max="3" step="1">
+	</div>
+	<div class="my-output"></div>
+</nav>
 ```
 
 JS code:
 
 ```js
-// Create object
-const output = document.body.querySelector(".my-output");
-const intensity = new WUIIntensity({
-	selector: ".wui-intensity.my-intensity",
-	value: 1,
-	//enabled: true,
-	onChange: (event, value) => {
-		output.textContent = `Change - value: ${value}`;
-	}
-});
+const init = () => {
+	const output = document.body.querySelector(".my-output");
+	const intensity = new WUIIntensity({
+		selector: ".wui-intensity.my-intensity",
+		value: 1,
+		//enabled: true,
+		onChange: (event, value) => {
+			output.textContent = `Change - value: ${value}`;
+		}
+	});
+	intensity.init();
+}
 
-// Initialize object
-intensity.init();
+window.addEventListener("DOMContentLoaded", init);
 ```
 
 > [!IMPORTANT]
 > If the selector defines an element that is not of type `HTMLDivElement`, the object will not be initialized.
 
 > [!TIP]
-> You can check this functional example on CodePen at the link: [https://codepen.io/wuijsproject/pen/GgqNpxJ](https://codepen.io/wuijsproject/pen/GgqNpxJ).
+> You can check this functional example on CodeSandbox at the link: [https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIIntensity-basic](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIIntensity-basic).
 
 <a name="WUIButton"></a>
 
@@ -5249,7 +5264,6 @@ https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/W
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUITimepicker-basic
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIColorpicker-basic
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUISwitch-basic
-
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIIntensity-basic
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIButton-basic
 -->
