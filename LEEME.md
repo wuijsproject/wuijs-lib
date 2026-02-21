@@ -1645,6 +1645,9 @@ Configuración CSS:
 
 ```css
 :root {
+
+	/* wui-icon */
+
 	--wui-icon-size: 24px;
 	--wui-icon-smallsize: 14px;
 	--wui-icon-bgcolor-out: rgb(from #353a40 r g b / 70%);
@@ -1655,8 +1658,18 @@ Configuración CSS:
 Código CSS:
 
 ```css
+html,
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
 nav {
 	display: flex;
+	margin: 10px;
+	align-items: center;
+	gap: 10px;
 }
 
 .my-icon {
@@ -1686,7 +1699,7 @@ Código HTML:
 ```
 
 > [!TIP]
-> Puede revisar este ejemplo funcional en CodePen en el enlace: [https://codepen.io/wuijsproject/pen/gbMayJO](https://codepen.io/wuijsproject/pen/gbMayJO).
+> Puede revisar este ejemplo funcional en CodeSandbox en el enlace: [https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIIcon-basic](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIIcon-basic).
 
 <a name="WUIFade"></a>
 
@@ -5307,7 +5320,7 @@ Esta sección recoge los ejemplos de las implementaciones de la documentación y
 | [WUIButton](#WUIButton)             | [https://codepen.io/wuijsproject/pen/xbOwNzN](https://codepen.io/wuijsproject/pen/xbOwNzN) |
 -->
 <!--
-https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIIcon-list
+https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIIcon-basic
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIFade-basic
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIMenubar-submenu
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIList-paging-buttongroup

@@ -1645,6 +1645,9 @@ CSS settings:
 
 ```css
 :root {
+
+	/* wui-icon */
+
 	--wui-icon-size: 24px;
 	--wui-icon-smallsize: 14px;
 	--wui-icon-bgcolor-out: rgb(from #353a40 r g b / 70%);
@@ -1685,53 +1688,19 @@ HTML head:
 HTML code:
 
 ```html
-<nav id="iconList"></nav>
+<nav>
+	<div class="my-icon">
+		<div class="wui-icon patch-check-fill"></div>
+	</div>
+	<div class="my-icon">
+		<div class="wui-icon patch-question-fill"></div>
+	</div>
+</nav>
 ```
 
-
-JS Code:
-```js
-const init = () => {
-	const iconList = document.getElementById("iconList");
-	const results = new Set();
-	for (const sheet of document.styleSheets) {
-		let rules;
-		try {
-			rules = sheet.cssRules;
-		} catch (e) {
-			continue;
-		}
-		if (!rules) continue;
-		for (const rule of rules) {
-			if (rule.selectorText) {
-				const selectors = rule.selectorText.split(",");
-				for (let selector of selectors) {
-					selector = selector.trim();
-					if (selector.startsWith(".wui-icon")) {
-						const match = selector.match(/\.wui-icon\./);
-						if (match) {
-							results.add(match[0].substring(1));
-						}
-					}
-				}
-			}
-		}
-	}
-	Array.from(results).sort().forEach(className => {
-		const iconBox = document.createElement("div");
-		const icon = document.createElement("div");
-		icon.className = `wui-icon ${className}`;
-		iconBox.className = "my-icon";
-		iconBox.appendChild(icon);
-		iconList.appendChild(iconBox);
-	});
-}
-
-window.addEventListener("DOMContentLoaded", init);
-```
 
 > [!TIP]
-> You can check this functional example on CodePen at the link: [https://codepen.io/wuijsproject/pen/gbMayJO](https://codepen.io/wuijsproject/pen/gbMayJO).
+> You can check this functional example on CodeSandbox at the link: [https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIIcon-basic](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIIcon-basic).
 
 <a name="WUIFade"></a>
 
@@ -5363,6 +5332,7 @@ This section contains examples of the implementations from the documentation and
 | [WUIButton](#WUIButton)             | [https://codepen.io/wuijsproject/pen/xbOwNzN](https://codepen.io/wuijsproject/pen/xbOwNzN) |
 -->
 <!--
+https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIIcon-basic
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIFade-basic
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIMenubar-submenu
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIList-paging-buttongroup
