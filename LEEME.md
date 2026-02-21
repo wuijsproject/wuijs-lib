@@ -5054,9 +5054,18 @@ Configuración CSS:
 Código CSS:
 
 ```css
+html,
 body {
-	font-family: Arial, Helvetica, Verdana, sans-serif;
-	font-size: 14px;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+nav {
+	display: flex;
+	margin: 10px;
+	align-items: center;
+	gap: 10px;
 }
 
 .my-button {
@@ -5064,7 +5073,6 @@ body {
 }
 
 .my-output {
-	margin: 10px;
 	font-family: monospace;
 }
 ```
@@ -5080,57 +5088,59 @@ Cabecera HTML:
 Código HTML:
 
 ```html
-<button class="wui-button my-button button1">botón 1</button>
-<button class="wui-button my-button button2 submit">
-	<div class="wui-icon float-left mappointer-fill"></div>
-	<span>botón 2</span>
-</button>
-
-<div class="my-output"></div>
+<nav>
+	<button class="wui-button my-button button1">button 1</button>
+	<button class="wui-button my-button button2 submit">
+		<div class="wui-icon float-left mappointer-fill"></div>
+		<span>button 2</span>
+	</button>
+	<div class="my-output"></div>
+</nav>
 ```
 
 Código JS:
 
 ```js
-// Crear objetos
-const output = document.body.querySelector(".my-output");
-const button1 = new WUIButton({
-	selector: ".wui-button.button1",
-	//text: "",
-	//selectable: false,
-	//locked: false,
-	//enabled: true,
-	onClick: () => {
-		output.textContent = "Clic button 1";
-	},
-	onDblClick: () => {
-		output.textContent = "Double-Clic button 1";
-	}
-});
-const button2 = new WUIButton({
-	selector: ".wui-button.button2",
-	//text: "",
-	//selectable: false,
-	//locked: false,
-	//enabled: true,
-	onClick: () => {
-		output.textContent = "Clic button 2";
-	},
-	onDblClick: () => {
-		output.textContent = "Double-Clic button 2";
-	}
-});
+const init = () => {
+	const output = document.body.querySelector(".my-output");
+	const button1 = new WUIButton({
+		selector: ".wui-button.button1",
+		//text: "",
+		//selectable: false,
+		//locked: false,
+		//enabled: true,
+		onClick: () => {
+			output.textContent = "Clic button 1";
+		},
+		onDblClick: () => {
+			output.textContent = "Double-Clic button 1";
+		}
+	});
+	const button2 = new WUIButton({
+		selector: ".wui-button.button2",
+		//text: "",
+		//selectable: false,
+		//locked: false,
+		//enabled: true,
+		onClick: () => {
+			output.textContent = "Clic button 2";
+		},
+		onDblClick: () => {
+			output.textContent = "Double-Clic button 2";
+		}
+	});
+	button1.init();
+	button2.init();
+}
 
-// Inicializar objetos
-button1.init();
-button2.init();
+window.addEventListener("DOMContentLoaded", init);
 ```
 
 > [!IMPORTANT]
 > Si el selector define un elemento que no es de tipo `HTMLButtonElement`, el objeto no se inicializará.
 
 > [!TIP]
-> Puede revisar este ejemplo funcional en CodePen en el enlace: [https://codepen.io/wuijsproject/pen/xbOwNzN](https://codepen.io/wuijsproject/pen/xbOwNzN).
+> Puede revisar este ejemplo funcional en CodeSandbox en el enlace: [https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIButton-basic](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIButton-basic).
 
 <a name="goodpractices"></a>
 
