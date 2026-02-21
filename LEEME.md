@@ -1740,13 +1740,26 @@ Otro modo alternativo es mediante métodos extendidos de la clase `HTMLElement` 
 Código CSS:
 
 ```CSS
+html,
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
 body {
 	font-family: Arial, Helvetica, Verdana, sans-serif;
 	font-size: 14px;
 }
 
+nav {
+	display: flex;
+	margin: 10px;
+	align-items: center;
+	gap: 10px;
+}
+
 .my-link {
-	margin: 0 10px;
 	text-decoration: none;
 }
 
@@ -1768,28 +1781,36 @@ Cabecera HTML:
 Código HTML:
 
 ```html
-<a href="javascript:fadein();" class="my-link">fade-in</a>
-<a href="javascript:fadeout();" class="my-link">fade-out</a>
+<nav>
+	<a href="javascript:" class="my-link fadein">fade-in</a>
+	<a href="javascript:" class="my-link fadeout">fade-out</a>
+</nav>
 <div id="myElement" class="my-element"></div>
 ```
 
 Código JS:
 ```js
-const element = document.getElementById("myElement");
-const options = {
-	delay: 200,
-	//display: "block"
-};
-const fadein = () => {
-	element.wuiFadein(options);
-	// or alternatively
-	//WUIFade.in(element, options);
+const init = () => {
+	const element = document.getElementById("myElement");
+	const fadeinLink = document.querySelector(".my-link.fadein");
+	const fadeoutLink = document.querySelector(".my-link.fadeout");
+	const options = {
+		delay: 200,
+		//display: "block"
+	};
+	fadeinLink.addEventListener("click", () => {
+		element.wuiFadein(options);
+		// o alternativamente
+		//WUIFade.in(element, options);
+	});
+	fadeoutLink.addEventListener("click", () => {
+		element.wuiFadeout(options);
+		// o alternativamente
+		//WUIFade.out(element, options);
+	});
 }
-const fadeout = () => {
-	element.wuiFadeout(options); 
-	// or alternatively
-	//WUIFade.out(element, options);
-}
+
+window.addEventListener("DOMContentLoaded", init);
 ```
 
 > [!TIP]
