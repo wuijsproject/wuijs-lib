@@ -184,10 +184,6 @@ div.wui-table > table > tbody > tr:last-child > td:last-child {
 div.wui-table > table > :is(thead, tbody) > tr > :is(th, td).filler {
 	cursor: default;
 	width: 100%;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	user-select: none;
-	pointer-events: none;
 }
 
 div.wui-table > table > thead > tr > th.filler {
