@@ -87,17 +87,23 @@ class WUICookie {
 	}
 
 	set(name, value, options = {}) {
-		const cookie = this.encode(name, value, options);
+		const encode = this.encode(name, value, options);
+		let detail = "";
 		if (navigator.cookieEnabled) {
 			try {
-				document.cookie = cookie;
+				document.cookie = encode;
 			} catch (error) {
-				console.error("WUICookie error:", error);
+				detail = error;
 			}
 		} else {
-			console.error("WUICookie error: navigator.cookieEnabled undefined");
+			detail = "navigator.cookieEnabled undefined";
 		}
-		return cookie;
+		if (detail != "") {
+			console.error("WUICookie error:", detail);
+			return "error=detail";
+		} else {
+			return encode;
+		}
 	}
 
 	get(name) {
