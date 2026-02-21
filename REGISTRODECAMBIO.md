@@ -126,9 +126,12 @@ Características:
 Características:
 
 1. Cambio de nombre clase WUICheckbox versión 0.2 a WUISwitch versión 0.3.
-2. Actualización versión clase WUITable a 0.3.
+2. Actualización versión clase WUICookie a 0.3.
+	- Se agregó el método `encode()`.
+	- Se agregó un retorno tipo `cadena` al método `set()` con la cookie codificada.
+3. Actualización versión clase WUITable a 0.3.
 	- Se agregó propiedad `resetPaging`.
 	- Se agregó columna de relleno para mantener el ancho de la tabla.
-3. Actualización versión clase WUIForm a 0.3.
+4. Actualización versión clase WUIForm a 0.3.
 	- Se agregó compatibilidad con WUISwitch versión 0.3.
 	- Se agregó el estilo de formulario "fill".

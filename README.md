@@ -63,7 +63,7 @@ WUI JS Lib, an acronym for *Web User Interface JavaScript library*, is an open s
 
 | Class                               | Version | Description |
 | ----------------------------------- | -------:| ----------- |
-| [WUICookie](#WUICookie)             | `0.2`   | Utilities for cookies management. |
+| [WUICookie](#WUICookie)             | `0.3`   | Utilities for cookies management. |
 | [WUIHead](#WUIHead)                 | `0.2`   | Utilities for HTML head management. |
 | [WUIBody](#WUIBody)                 | `0.2`   | Utilities for HTML body management. Allows the import of CSS/JS/HTML content and facilitates implementation in native mobile environments. |
 | [WUILanguage](#WUILanguage)         | `0.2`   | Utilities for interfaces with different languages managment. Allows you to load language files in JS or JSON format and dynamically update the content of HTML elements based on the language. |
@@ -712,7 +712,7 @@ HTML code:
 		<link type="text/css" rel="stylesheet" href="./Libraries/WUI/Switch/WUISwitch-0.3.css">
 		<link type="text/css" rel="stylesheet" href="./Libraries/WUI/Intensity/WUIIntensity-0.1.css">
 		<link type="text/css" rel="stylesheet" href="./Libraries/WUI/Button/WUIButton-0.2.css">
-		<script type="text/javascript" src="./Libraries/WUI/Cookie/WUICookie-0.2.js"></script>
+		<script type="text/javascript" src="./Libraries/WUI/Cookie/WUICookie-0.3.js"></script>
 		<script type="text/javascript" src="./Libraries/WUI/Head/WUIHead-0.2.js"></script>
 		<script type="text/javascript" src="./Libraries/WUI/Body/WUIBody-0.2.js"></script>
 		<script type="text/javascript" src="./Libraries/WUI/Language/WUILanguage-0.2.js"></script>
@@ -759,7 +759,7 @@ This implementation method allows for standardization of an application's user i
 
 ### WUICookie
 
-Version: `0.2`
+Version: `0.3`
 
 Utilities for cookies management.
 
@@ -767,7 +767,7 @@ Utilities for cookies management.
 
 | Type | File |
 | ---- | ---- |
-| JS   | [src/WUI/Cookie/WUICookie-0.2.js](https://github.com/wuijsproject/wuijs-lib/blob/main/src/WUI/Cookie/WUICookie-0.2.js) |
+| JS   | [src/WUI/Cookie/WUICookie-0.3.js](https://github.com/wuijsproject/wuijs-lib/blob/main/src/WUI/Cookie/WUICookie-0.3.js) |
 
 #### Constructor
 
@@ -788,7 +788,8 @@ Utilities for cookies management.
 
 | Method | Return type | Description |
 | ------ | ----------- | ----------- |
-| set    | `void`      | `set(name, value[, options])`<br><br>Arguments:<br>**• name:** `string` <br>**• value:** `string` <br>**• options:** `object` *optional*<br><br>Add or modify a cookie. |
+| encode | `string`    | `encode(name, value[, options])`<br><br>Arguments:<br>**• name:** `string` <br>**• value:** `string` <br>**• options:** `object` *optional*<br><br>Returns the encoded string of a cookie. |
+| set    | `string`    | `set(name, value[, options])`<br><br>Arguments:<br>**• name:** `string` <br>**• value:** `string` <br>**• options:** `object` *optional*<br><br>Add or modify a cookie and returns its encoded string. |
 | get    | `string`    | `get(name)`<br><br>Arguments:<br>**• name:** `string`<br><br>Reads the contents of a cookie by its name. |
 | remove | `void`      | `remove(name)`<br><br>Arguments:<br>**• name:** `string`<br><br>Removes a cookie by its name. |
 
@@ -812,7 +813,7 @@ body {
 HTML head:
 
 ```html
-<script type="text/javascript" src="https://wuijs.dev/Libraries/WUI/Cookie/WUICookie-0.2.js"></script>
+<script type="text/javascript" src="https://wuijs.dev/Libraries/WUI/Cookie/WUICookie-0.3.js"></script>
 ```
 
 HTML code:
@@ -832,8 +833,12 @@ const init = () => {
 		//minutes: 365*24*60,
 		//overssl: false
 	});
-	cookie.set("mycookie", "test");
-	output.textContent = "Value read from the cookie: " + cookie.get("mycookie");
+	const encode = cookie.set("mycookie", "test");
+	const value = cookie.get("mycookie");
+	output.textContent = "<pre>"
+		+ `Encoded value : ${encode}\n`
+		+ `Readed value  : ${value}\n`
+		+ "</pre>";
 }
 
 window.addEventListener("DOMContentLoaded", init);

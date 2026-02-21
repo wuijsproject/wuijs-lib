@@ -126,9 +126,12 @@ Features:
 Features:
 
 1. Changed the name of the WUICheckbox class from version 0.2 to WUISwitch version 0.3.
-2. WUITable version class update to 0.3.
+2. WUICookie version class update to 0.3.
+	- Added `encode()` method.
+	- Added a `string` return type to the `set()` method with the encoded cookie.
+3. WUITable version class update to 0.3.
 	- Added `resetPaging` property.
 	- Added filler column to maintain table width.
-3. WUIForm version class update to 0.3.
+4. WUIForm version class update to 0.3.
 	- Added compatibility with WUISwitch version 0.3.
 	- Added "fill" form style.

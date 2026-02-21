@@ -88,7 +88,7 @@ WUI JS Lib, acrónimo del inglés *Web User Interface JavaScript library*, es un
 
 | Clase                               | Version | Descripción |
 | ----------------------------------- | -------:| ----------- |
-| [WUICookie](#WUICookie)             | `0.2`   | Utilidades para el manejo de cookies. |
+| [WUICookie](#WUICookie)             | `0.3`   | Utilidades para el manejo de cookies. |
 | [WUIHead](#WUIHead)                 | `0.2`   | Utilidades para el manejo de la cabecera HTML. |
 | [WUIBody](#WUIBody)                 | `0.2`   | Utilidades para el manejo del cuerpo HTML. Permite la importación de contenido CSS/JS/HTML y facilita la implementación en entornos nativos móviles. |
 | [WUILanguage](#WUILanguage)         | `0.2`   | Utilidades para el manejo de interfaces con distintos lenguajes. Permite cargar archivos de idioma en formato JS o JSON y actualizar dinámicamente el contenido de los elementos HTML según el idioma. |
@@ -712,7 +712,7 @@ Código HTML:
 		<link type="text/css" rel="stylesheet" href="./Libraries/WUI/Switch/WUISwitch-0.3.css">
 		<link type="text/css" rel="stylesheet" href="./Libraries/WUI/Intensity/WUIIntensity-0.1.css">
 		<link type="text/css" rel="stylesheet" href="./Libraries/WUI/Button/WUIButton-0.2.css">
-		<script type="text/javascript" src="./Libraries/WUI/Cookie/WUICookie-0.2.js"></script>
+		<script type="text/javascript" src="./Libraries/WUI/Cookie/WUICookie-0.3.js"></script>
 		<script type="text/javascript" src="./Libraries/WUI/Head/WUIHead-0.2.js"></script>
 		<script type="text/javascript" src="./Libraries/WUI/Body/WUIBody-0.2.js"></script>
 		<script type="text/javascript" src="./Libraries/WUI/Language/WUILanguage-0.2.js"></script>
@@ -759,7 +759,7 @@ Este método de implementación permite la estandarización del diseño de la in
 
 ### WUICookie
 
-Versión: `0.2`
+Versión: `0.3`
 
 Utilidades para el manejo de cookies.
 
@@ -767,7 +767,7 @@ Utilidades para el manejo de cookies.
 
 | Tipo | Archivo |
 | ---- | ------- |
-| JS   | [src/WUI/Cookie/WUICookie-0.2.js](https://github.com/wuijsproject/wuijs-lib/blob/main/src/WUI/Cookie/WUICookie-0.2.js) |
+| JS   | [src/WUI/Cookie/WUICookie-0.3.js](https://github.com/wuijsproject/wuijs-lib/blob/main/src/WUI/Cookie/WUICookie-0.3.js) |
 
 #### Constructor
 
@@ -788,7 +788,8 @@ Utilidades para el manejo de cookies.
 
 | Método | Tipo retorno | Descripción |
 | ------ | ------------ | ----------- |
-| set    | `void`       | `set(name, value[, options])`<br><br>Parámetros:<br>**• name:** `string` <br>**• value:** `string` <br>**• options:** `object` *opcional*<br><br>Agrega o modifica una cookie. |
+| encode | `string`     | `encode(name, value[, options])`<br><br>Parámetros:<br>**• name:** `string` <br>**• value:** `string` <br>**• options:** `object` *opcional*<br><br>Retorna la cadena codificada de una cookie. |
+| set    | `string`     | `set(name, value[, options])`<br><br>Parámetros:<br>**• name:** `string` <br>**• value:** `string` <br>**• options:** `object` *opcional*<br><br>Agrega o modifica una cookie y retorna su cadena codificada. |
 | get    | `string`     | `get(name)`<br><br>Parámetros:<br>**• name:** `string`<br><br>Lee el contenido de una cookie mediante su nombre. |
 | remove | `void`       | `remove(name)`<br><br>Parámetros:<br>**• name:** `string`<br><br>Elimina una cookie mediante su nombre. |
 
@@ -812,7 +813,7 @@ body {
 Cabecera HTML:
 
 ```html
-<script type="text/javascript" src="https://wuijs.dev/Libraries/WUI/Cookie/WUICookie-0.2.js"></script>
+<script type="text/javascript" src="https://wuijs.dev/Libraries/WUI/Cookie/WUICookie-0.3.js"></script>
 ```
 
 HTML code:
@@ -832,8 +833,12 @@ const init = () => {
 		//minutes: 365*24*60,
 		//overssl: false
 	});
-	cookie.set("mycookie", "test");
-	output.textContent = "Valor leído de la cookie: " + cookie.get("mycookie");
+	const encode = cookie.set("mycookie", "test");
+	const value = cookie.get("mycookie");
+	output.textContent = "<pre>"
+		+ `Value codificado : ${encode}\n`
+		+ `Value leído.     : ${value}\n`
+		+ "</pre>";
 }
 
 window.addEventListener("DOMContentLoaded", init);
