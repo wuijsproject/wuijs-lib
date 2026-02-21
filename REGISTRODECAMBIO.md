@@ -129,6 +129,7 @@ Características:
 2. Actualización versión clase WUICookie a 0.3.
 	- Se agregó el método `encode()`.
 	- Se agregó un retorno tipo `cadena` al método `set()` con la cookie codificada.
+	- Se reemplazó la sentencia `max-age` por `expires` en la codificación de la cookie.
 3. Actualización versión clase WUITable a 0.3.
 	- Se agregó propiedad `resetPaging`.
 	- Se agregó columna de relleno para mantener el ancho de la tabla.

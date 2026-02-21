@@ -76,13 +76,13 @@ class WUICookie {
 		const cookie = encodeURIComponent(name) + "=" + encodeURIComponent(value)
 			+ (domain != "" ? "; domain=" + domain : "")
 			+ (path != "" ? "; path=" + path : "")
-			+ "; expires=" + (() => {
+			//+ "; max-age=" + (60 * minutes)
+			+ (minutes > 0 ? "; expires=" + (() => {
 				const date = new Date();
 				date.setTime(date.getTime() + (minutes * 60 * 1000));
 				return date.toUTCString();
-			})()
-			+ "; max-age=" + (60 * minutes)
-			+ (overssl ? " secure" : "")
+			})() : "")
+			+ (overssl ? "; secure" : "")
 		return cookie;
 	}
 
