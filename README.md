@@ -3805,15 +3805,18 @@ body {
 	font-size: 14px;
 }
 
+nav {
+	display: flex;
+	margin: 10px;
+	align-items: center;
+	gap: 10px;
+}
+
 .my-selectpicker {
 	max-width: 200px;
 }
 
 .my-output {
-	position: absolute;
-	top: 4px;
-	left: 210px;
-	margin: 10px;
 	font-family: monospace;
 }
 ```
@@ -3828,33 +3831,35 @@ HTML head:
 HTML code:
 
 ```html
-<div class="wui-selectpicker my-selectpicker">
-	<select name="mySelectpicker">
-		<option value=""></option>
-		<option value="1">Option 1</option>
-		<option value="2">Option 2</option>
-		<option value="3">Option 3</option>
-		<!--
-		<option value="4">Option 4</option>
-		<option value="5">Option 5</option>
-		<option value="6">Option 6</option>
-		<option value="7">Option 7</option>
-		<option value="8">Option 8</option>
-		<option value="9">Option 9</option>
-		<option value="10">Option 10</option>
-		<option value="11">Option 11</option>
-		<option value="12">Option 12</option>
-		<option value="13">Option 13</option>
-		<option value="14">Option 14</option>
-		<option value="15">Option 15</option>
-		<option value="16">Option 16</option>
-		<option value="17">Option 17</option>
-		<option value="18">Option 18</option>
-		<option value="19">Option 19</option>
-		-->
-	</select>
-</div>
-<div class="my-output"></div>
+<nav>
+	<div class="wui-selectpicker my-selectpicker">
+		<select name="mySelectpicker">
+			<option value=""></option>
+			<option value="1">Option 1</option>
+			<option value="2">Option 2</option>
+			<option value="3">Option 3</option>
+			<!--
+			<option value="4">Option 4</option>
+			<option value="5">Option 5</option>
+			<option value="6">Option 6</option>
+			<option value="7">Option 7</option>
+			<option value="8">Option 8</option>
+			<option value="9">Option 9</option>
+			<option value="10">Option 10</option>
+			<option value="11">Option 11</option>
+			<option value="12">Option 12</option>
+			<option value="13">Option 13</option>
+			<option value="14">Option 14</option>
+			<option value="15">Option 15</option>
+			<option value="16">Option 16</option>
+			<option value="17">Option 17</option>
+			<option value="18">Option 18</option>
+			<option value="19">Option 19</option>
+			-->
+		</select>
+	</div>
+	<div class="my-output"></div>
+</nav>
 ```
 
 JS code:
@@ -4076,15 +4081,18 @@ body {
 	font-size: 14px;
 }
 
+nav {
+	display: flex;
+	margin: 10px;
+	align-items: center;
+	gap: 10px;
+}
+
 .my-datepicker {
 	max-width: 130px;
 }
 
 .my-output {
-	position: absolute;
-	top: 4px;
-	left: 210px;
-	margin: 10px;
 	font-family: monospace;
 }
 ```
@@ -4099,11 +4107,12 @@ HTML head:
 HTML code:
 
 ```html
-<div class="wui-datepicker my-datepicker">
-	<input type="date" name="myDate">
-</div>
-
-<div class="my-output"></div>
+<nav>
+	<div class="wui-datepicker my-datepicker">
+		<input type="date" name="myDate">
+	</div>
+	<div class="my-output"></div>
+</nav>
 ```
 
 JS code:
