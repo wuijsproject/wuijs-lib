@@ -67,9 +67,9 @@ WUI JS Lib, an acronym for *Web User Interface JavaScript library*, is an open s
 | [WUIHead](#WUIHead)                 | `0.2`   | HTML header manager. |
 | [WUIBody](#WUIBody)                 | `0.2`   | HTML body manager. Allows the import of CSS/JS/HTML content and facilitates implementation in native mobile environments. |
 | [WUILanguage](#WUILanguage)         | `0.2`   | Language manager for web interfaces. Allows you to load language files in JS or JSON format and dynamically update the content of HTML elements based on the language. |
-| [WUIScrolly](#WUIScrolly)           | `0.2`   | Tool for animating HTML elements using the "onscroll" event of the HTML page body. |
-| [WUIIcon](#WUIIcon)                 | `0.1`   | Set of pre-designed icons loaded via CSS, for use in interfaces. |
-| [WUIFade](#WUIFade)                 | `0.1`   | Tool for fading out and fading control in HTML elements with opacity. |
+| [WUIScrolly](#WUIScrolly)           | `0.2`   | Utilities for animating HTML elements using the "onscroll" event of the HTML page body. |
+| [WUIIcon](#WUIIcon)                 | `0.1`   | Pre-designed icons set loaded via CSS, for use in interfaces. |
+| [WUIFade](#WUIFade)                 | `0.1`   | Utilities for fading out and fading control in HTML elements with opacity. |
 | [WUILoader](#WUILoader)             | `0.2`   | Component for the implementation of loading animations. |
 | WUITooltip                          | `0.1`   | Component for the implementation of tooltip texts. |
 | WUIModal                            | `0.2`   | Component for the implementation of dialog boxes (type `message`) and pop-up windows (type `page`). |
@@ -80,7 +80,7 @@ WUI JS Lib, an acronym for *Web User Interface JavaScript library*, is an open s
 | [WUIList](#WUIList)                 | `0.2`   | Component for the implementation of data lists and buttons for each row optionally. |
 | [WUITable](#WUITable)               | `0.3`   | Component for the implementation of data tables. Unlike the `WUIList` component, the `WUITable` component includes a column header. |
 | [WUIForm](#WUIForm)                 | `0.3`   | Component for the implementation of data forms. This component allows the implementation of HTML data input elements such as `<input>`, `<select>`, and `<textarea>`, and WUI library objects such as `WUISelectpicker`, `WUIDatepicker`, `WUITimepicker`, `WUIColorpicker`, `WUISwitch`, `WUIIntensity`, and `WUIButton`. |
-| [WUIFormat](#WUIFormat)             | `0.2`   | Tool for managing and validating `string`, `number` and `Date` data formats. |
+| [WUIFormat](#WUIFormat)             | `0.2`   | Utilities for managing and validating `string`, `number` and `Date` data formats. |
 | [WUISelectpicker](#WUISelectpicker) | `0.2`   | Component for the implementation of multiple or exclusive selection list data inputs based on HTML element `<select>`. |
 | [WUIDatepicker](#WUIDatepicker)     | `0.2`   | Component for the implementation of date type data inputs based on HTML element `<input type="date">`. |
 | [WUITimepicker](#WUITimepicker)     | `0.2`   | Component for the implementation of time type data inputs based on HTML element `<input type="time">`. |
@@ -1115,7 +1115,7 @@ language.load("en", ["main", "main2"]);
 
 Versión: `0.2`
 
-Tool for animating HTML elements using the "onscroll" event of the HTML page body.
+Utilities for animating HTML elements using the "onscroll" event of the HTML page body.
 
 #### Sources
 
@@ -1198,6 +1198,9 @@ CSS settings:
 
 ```css
 :root {
+
+	/* wui-scrolly */
+
 	--wui-scrolly-paging-bgcolor: #888;
 }
 ```
@@ -1404,7 +1407,7 @@ scrolly.init();
 
 Version: `0.1`
 
-Set of pre-designed icons loaded via CSS, for use in interfaces.
+Pre-designed icons set loaded via CSS, for use in interfaces.
 
 #### Sources
 
@@ -1708,7 +1711,7 @@ HTML code:
 
 Version: `0.1`
 
-Tool for fading out and fading control in HTML elements with opacity.
+Utilities for fading out and fading control in HTML elements with opacity.
 
 It is a static class that does not have a constructor or properties.
 
@@ -3253,7 +3256,7 @@ window.addEventListener("DOMContentLoaded", init);
 
 Version: `0.2`
 
-Tool for managing and validating `string`, `number` and `Date` data formats.
+Utilities for managing and validating `string`, `number` and `Date` data formats.
 
 #### Sources
 
@@ -5278,6 +5281,8 @@ window.addEventListener("DOMContentLoaded", init);
 
 This section contains examples of the implementations from the documentation and other complementary demos, all available in the **WUI/JS Lab** repository [https://github.com/wuijsproject/wuijs-lab](https://github.com/wuijsproject/wuijs-lab).
 
+-	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIIcon-basic](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIIcon-basic)
+	This demo shows the use of WUIIcon's basic implementation.
 -	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIFade-basic](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIFade-basic)
 	This demo shows the use of WUIFade's basic functionality.
 -	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIMenubar-submenu](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIMenubar-submenu)

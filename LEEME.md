@@ -92,9 +92,9 @@ WUI JS Lib, acrónimo del inglés *Web User Interface JavaScript library*, es un
 | [WUIHead](#WUIHead)                 | `0.2`   | Administrador de cabecera HTML. |
 | [WUIBody](#WUIBody)                 | `0.2`   | Administrador de cuerpo HTML. Permite la importación de contenido CSS/JS/HTML y facilita la implementación en entornos nativos móviles. |
 | [WUILanguage](#WUILanguage)         | `0.2`   | Administrador de idioma para interfaces web. Permite cargar archivos de idioma en formato JS o JSON y actualizar dinámicamente el contenido de los elementos HTML según el idioma. |
-| [WUIScrolly](#WUIScrolly)           | `0.2`   | Herramienta para animación de elementos HTML mediante el evento "onscroll" del cuerpo de la página HTML. |
+| [WUIScrolly](#WUIScrolly)           | `0.2`   | Utilidades para animación de elementos HTML mediante el evento "onscroll" del cuerpo de la página HTML. |
 | [WUIIcon](#WUIIcon)                 | `0.1`   | Conjunto de íconos prediseñados y carga mediante CSS, para uso en interfaces. |
-| [WUIFade](#WUIFade)                 | `0.1`   | Herramienta para control de salida y entrada con opacidad (fade-out y fade-in respectivamente) de elementos HTML. |
+| [WUIFade](#WUIFade)                 | `0.1`   | Utilidades para control de salida y entrada con opacidad (fade-out y fade-in respectivamente) de elementos HTML. |
 | [WUILoader](#WUILoader)             | `0.2`   | Componente para la implementación de animaciones de carga. |
 | WUITooltip                          | `0.1`   | Componente para la implementación de textos emergentes. |
 | WUIModal                            | `0.2`   | Componente para la implementación de cuadros de diálogo (tipo `message`) y ventanas emergentes (tipo `page`). |
@@ -105,7 +105,7 @@ WUI JS Lib, acrónimo del inglés *Web User Interface JavaScript library*, es un
 | [WUIList](#WUIList)                 | `0.2`   | Componente para la implementación de listas de datos y botoneras para cada fila de manera opcional. |
 | [WUITable](#WUITable)               | `0.3`   | Componente para la implementación de tablas de datos. A diferencia del componente `WUIList`, el componente `WUITable` incluye una cabecera de columnas. |
 | [WUIForm](#WUIForm)                 | `0.3`   | Componente para la implementación de formularios de datos. Este componente permite la implementación de elementos HTML de entrada de datos tales como `<input>`, `<select>` y `<textarea>` y objetos de la librería WUI como `WUISelectpicker`, `WUIDatepicker`, `WUITimepicker`, `WUIColorpicker`, `WUISwitch`, `WUIIntensity` y `WUIButton`. |
-| [WUIFormat](#WUIFormat)             | `0.2`   | Herramienta para manejo y validación de formatos de datos de tipo `string`, `number` y `Date`. |
+| [WUIFormat](#WUIFormat)             | `0.2`   | Utilidades para manejo y validación de formatos de datos de tipo `string`, `number` y `Date`. |
 | [WUISelectpicker](#WUISelectpicker) | `0.2`   | Componente para la implementación de entradas de datos de tipo lista de selección múltiple o excluyente basada en el elemento HTML `<select>`. |
 | [WUIDatepicker](#WUIDatepicker)     | `0.2`   | Componente para la implementación de entradas de datos de tipo fecha basada en el elemento HTML `<input type="date">`. |
 | [WUITimepicker](#WUITimepicker)     | `0.2`   | Componente para la implementación de entradas de datos de tipo hora basada en el elemento HTML `<input type="time">`. |
@@ -1115,7 +1115,7 @@ language.load("es", ["main", "main2"]);
 
 Versión: `0.2`
 
-Herramienta para animación de elementos HTML mediante el evento "onscroll" del cuerpo de la página HTML.
+Utilidades para animación de elementos HTML mediante el evento "onscroll" del cuerpo de la página HTML.
 
 #### Fuentes
 
@@ -1198,6 +1198,9 @@ Configuración CSS:
 
 ```css
 :root {
+
+	/* wui-scrolly */
+
 	--wui-scrolly-paging-bgcolor: #888;
 }
 ```
@@ -1261,7 +1264,7 @@ body {
 	width: 50px;
 	height: 50px;
 	margin: 5px;
-	pargin: 20px;
+	margin: 20px;
 	background-color: dodgerblue;
 	align-items: center;
 	justify-content: center;
@@ -1707,7 +1710,7 @@ Código HTML:
 
 Versión: `0.1`
 
-Herramienta para control de salida y entrada con opacidad (fade-out y fade-in respectivamente) de elementos HTML. |
+Utilidades para control de salida y entrada con opacidad (fade-out y fade-in respectivamente) de elementos HTML. |
 
 Es una clase estática que no posee un constructor ni propiedades.
 
@@ -3242,7 +3245,7 @@ window.addEventListener("DOMContentLoaded", init);
 
 Versión: `0.2`
 
-Herramienta para manejo y validación de formatos de datos de tipo `string`, `number` y `Date`.
+Utilidades para manejo y validación de formatos de datos de tipo `string`, `number` y `Date`.
 
 #### Fuentes
 
@@ -5267,6 +5270,8 @@ window.addEventListener("DOMContentLoaded", init);
 
 Esta sección recoge los ejemplos de las implementaciones de la documentación y otros demos complementarios, todos disponibles en el repositorio **WUI/JS Lab** [https://github.com/wuijsproject/wuijs-lab](https://github.com/wuijsproject/wuijs-lab).
 
+-	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIIcon-basic](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIIcon-basic)
+	Esta demostración muestra el uso de la funcionalidad básica de WUIIcon.
 -	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIFade-basic](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIFade-basic)
 	Esta demostración muestra el uso de la funcionalidad básica de WUIFade.
 -	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIMenubar-submenu](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIMenubar-submenu)
