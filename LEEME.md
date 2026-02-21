@@ -311,6 +311,8 @@ Código CSS archivo `WUI.css`:
 
 	--wui-table-shadowcolor: #959da5;
 	--wui-table-borderradius: 10px;
+	--wui-table-scroll-bgcolor-out: rgb(from #353a40 r g b / 20%);
+	--wui-table-scroll-bgcolor-over: rgb(from #353a40 r g b / 40%);
 	--wui-table-column-bordercolor-width: 1px;
 	--wui-table-column-bordercolor-out: rgb(from #1e90ff r g b / 10%);
 	--wui-table-column-bordercolor-over: #1e90ff;
@@ -2588,6 +2590,8 @@ Componente para la implementación de tablas de datos. A diferencia del objeto `
 | ---------------------------------------------- | ----------- |
 | `--wui-table-shadowcolor`                      |
 | `--wui-table-borderradius`                     |
+| `--wui-table-scroll-bgcolor-out`               |
+| `--wui-table-scroll-bgcolor-over`              |
 | `--wui-table-column-bordercolor-width`         |
 | `--wui-table-column-bordercolor-out`           |
 | `--wui-table-column-bordercolor-over`          |
@@ -2634,6 +2638,8 @@ Configuración CSS:
 
 	--wui-table-shadowcolor: #959da5;
 	--wui-table-borderradius: 10px;
+	--wui-table-scroll-bgcolor-out: rgb(from #353a40 r g b / 20%);
+	--wui-table-scroll-bgcolor-over: rgb(from #353a40 r g b / 40%);
 	--wui-table-column-bordercolor-width: 1px;
 	--wui-table-column-bordercolor-out: rgb(from #1e90ff r g b / 10%);
 	--wui-table-column-bordercolor-over: #1e90ff;

@@ -27,7 +27,29 @@ div.wui-table {
 	justify-content: flex-start;
 }
 
-div.wui-table::before {
+div.wui-table {
+	scrollbar-color: var(--wui-table-scroll-bgcolor-out) transparent;
+}
+
+div.wui-table::-webkit-scrollbar {
+	width: 4px;
+	background-color: transparent;
+}
+
+div.wui-table::-webkit-scrollbar-thumb {
+	border-radius: 2px;
+	background-color: var(--wui-table-scroll-bgcolor-out);
+}
+
+div.wui-table::-webkit-scrollbar-thumb:is(:hover, :active) {
+	background-color: var(--wui-table-scroll-bgcolor-over);
+}
+
+div.wui-table::-webkit-scrollbar-track {
+	background-color: transparent;
+}
+
+/*div.wui-table::before {
 	content: "&ensp;";
 	position: absolute;
 	z-index: 1;
@@ -43,7 +65,7 @@ div.wui-table::before {
 	border-bottom-color: var(--wui-table-column-bordercolor-out);
 	background-color: var(--wui-table-column-bgcolor-out);
 	padding: 5px 0;
-}
+}*/
 
 div.wui-table > table {
 	z-index: 2;
