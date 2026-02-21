@@ -2325,6 +2325,7 @@ body {
 
 header {
 	width: 600px;
+	margin: 10px;
 	text-align: right;
 }
 
@@ -2679,6 +2680,7 @@ body {
 
 header {
 	width: 600px;
+	margin: 10px;
 	text-align: right;
 }
 
