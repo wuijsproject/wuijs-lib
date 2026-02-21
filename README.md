@@ -2514,6 +2514,7 @@ Component for the implementation of data tables. Unlike the `WUIList` object, th
 | selector     | `string`   | `".wui-table"` | (get/set)<br><br>CSS selector that defines the HTML element that will be converted into the object. If more than one element matches the selector, only the first match will be included. |
 | width        | `string`   | `"auto"`       | (get/set)<br><br>Table width in CSS compatible format. |
 | paging       | `number`   | `0`            | (get/set)<br><br>Paging, or the number of rows per page in the table. A value of `0` indicates that the pagination will be the same length as rows; in other words, a value of `0` disables paging. |
+| resetPaging  | `boolean`  | `false`        | (get/set)<br><br>Define whether pagination is reset when sorting by column. |
 | page         | `number`   | `0`            | (get)<br><br>Current page displayed in the table, where page `0` corresponds to the first page and the last to the total number of rows minus 1. |
 | pages        | `number`   | `0`            | (get)<br><br>Total number of pages. |
 | total        | `number`   | `0`            | (get)<br><br>Total number of rows. |
@@ -2757,6 +2758,7 @@ const init = () => {
 		selector: ".wui-table.my-table",
 		//width: "auto",
 		paging: 5,
+		resetPaging: true,
 		columns: [{
 			label: "A Column",
 			width: 100

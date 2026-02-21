@@ -127,6 +127,7 @@ Características:
 
 1. Cambio de nombre clase WUICheckbox versión 0.2 a WUISwitch versión 0.3.
 2. Actualización versión clase WUITable a 0.3.
+	- Se agregó propiedad `resetPaging`.
 	- Se agregó columna de relleno para mantener el ancho de la tabla.
 3. Actualización versión clase WUIForm a 0.3.
 	- Se agregó compatibilidad con WUISwitch versión 0.3.

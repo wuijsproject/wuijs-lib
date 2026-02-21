@@ -2518,6 +2518,7 @@ Componente para la implementación de tablas de datos. A diferencia del objeto `
 | selector     | `string`   | `".wui-table"`       | (get/set)<br><br>Selector CSS que define el elemento HTML que serán convertido en el objeto. En caso de existir más de un elemento coincidente con el selector se incluirá únicamente la primera coincidencia. |
 | width        | `string`   | `"auto"`             | (get/set)<br><br>Ancho de la tabla en formato compatible CSS. |
 | paging       | `number`   | `0`                  | (get/set)<br><br>Paginado o número de filas por pagina de la tabla. El valor `0` indica que el paginado tendrá el mismo largo que filas, dicho de tra manera, el valor `0` desactiva el paginado. |
+| resetPaging  | `boolean`  | `false`              | (get/set)<br><br>Define si el paginado se reinicia al ordenar por columna. |
 | page         | `number`   | `0`                  | (get)<br><br>Página actual mostrada en la tabla, donde la página `0` corresponde a la primera página y la última al número total de filas menos 1. |
 | pages        | `number`   | `0`                  | (get)<br><br>Número total de páginas. |
 | total        | `number`   | `0`                  | (get)<br><br>Número total de filas. |
@@ -2754,6 +2755,7 @@ const init = () => {
 		selector: ".wui-table.my-table",
 		//width: "auto",
 		paging: 5,
+		resetPaging: true,
 		columns: [{
 			label: "Columna A",
 			width: 100

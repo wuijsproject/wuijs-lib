@@ -11,6 +11,7 @@ class WUITable {
 		selector: ".wui-table",
 		width: "auto",
 		paging: 0,
+		resetPaging: false,
 		columns: [],
 		rows: [],
 		align: "left",
@@ -72,6 +73,10 @@ class WUITable {
 
 	get paging() {
 		return this.#properties.paging;
+	}
+
+	get resetPaging() {
+		return this.#properties.resetPaging;
 	}
 
 	get page() {
@@ -150,6 +155,12 @@ class WUITable {
 	set paging(value) {
 		if (typeof (value) == "number" && value >= 0) {
 			this.#properties.paging = parseInt(value);
+		}
+	}
+
+	set resetPaging(value) {
+		if (typeof (value) == "boolean") {
+			this.#properties.resetPaging = value;
 		}
 	}
 
@@ -471,7 +482,7 @@ class WUITable {
 			if (valueA.value < valueB.value) return direction == "asc" ? -1 : 1;
 			return 0;
 		});
-		if (this.#properties.paging > 0) {
+		if (this.#properties.paging > 0 && !this.#properties.resetPaging) {
 			this.#printBody(this.#properties.page);
 		} else {
 			this.#printBody(0);
