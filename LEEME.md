@@ -51,7 +51,7 @@ Autor: `Sergio E. Belmar V. <wuijs.project@gmail.com>`
 	*   [WUIIntensity](#WUIIntensity)
 	*   [WUIButton](#WUIButton)
 *	[Buenas prácticas de codificación](#goodpractices)
-*   [Ejemplos](#examples) (CodePen)
+*   [Demos](#demos) (CodeSandbox)
 
 ## Directory Map
 
@@ -5227,12 +5227,44 @@ const init = () => {
 window.addEventListener("DOMContentLoaded", init);
 ```
 
-<a name="examples"></a>
+<a name="demos"></a>
 
-## Ejemplos
+## Demos
 
-Los ejemplos listados en esta sección, son detallados en la sección "Implementavión" de cada clase.
+Esta sección recoge los ejemplos de las implementaciones de la documentación y otros demos complementarios, todos disponibles en el repositorio **WUI/JS Lab** [https://github.com/wuijsproject/wuijs-lab](https://github.com/wuijsproject/wuijs-lab).
 
+-	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIMenubar-submenu](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIMenubar-submenu)
+	Esta demostración muestra el uso de la funcionalidad de submenú de WUIMenubar.
+-	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIList-paging-buttongroup](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIList-paging-buttongroup)
+	Esta demostración muestra el uso de la funcionalidad de paginación de WUIList mediante enlaces de navegación.
+	El grupo de botones laterales con tapa extraíble está configurado con dos botones: uno asociado con una posible función de edición y el otro con la de eliminación.
+	Los datos de la lista se cargan directamente durante la creación del componente.
+-	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUITable-paging](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUITable-paging)
+	Esta demostración muestra el uso de la función de paginación de WUITable mediante enlaces de navegación.
+	Los datos de la tabla se cargan directamente durante la creación del componente.
+-	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIForm-fillstyle](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIForm-fillstyle)
+	Esta demo muestra el uso de WUIForm con estilo de relleno y entradas HTML nativas.
+-	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIForm-linestyle](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIForm-linestyle)
+	Esta demo muestra el uso de WUIForm con estilo de línea y entradas HTML nativas.
+-	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIForm-wuiinputs](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIForm-wuiinputs)
+	Esta demostración muestra el uso de WUIForm con estilo de relleno y componentes de entrada WUI.
+-	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIFormat-basic](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIFormat-basic)
+	Esta demostración muestra el uso de WUIFormat para el formato de números, cadenas y fechas.
+-	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUISelectpicker-basic](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUISelectpicker-basic)
+	Esta demo muestra el uso de las funciones básicas de WUISelectpicker.
+-	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIDatepicker-basic](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIDatepicker-basic)
+	Esta demo muestra el uso de las funciones básicas de WUIDatepicker.
+-	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUITimepicker-basic](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIDatepicker-basic)
+	Esta demo muestra el uso de las funciones básicas de WUITimepicker.
+-	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIColorpicker-basic](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIDatepicker-basic)
+	Esta demo muestra el uso de las funciones básicas de WUIColorpicker.
+-	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUISwitch-basic](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUISwitch-basic)
+	Esta demo muestra el uso de las funciones básicas de WUISwitch.
+-	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIIntensity-basic](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIIntensity-basic)
+	Esta demo muestra el uso de las funciones básicas de WUIIntensity.
+-	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIButton-basic](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIButton-basic)
+	Esta demostración muestra el uso de las funciones básicas de WUIButton.
+<!--
 | Clase                               | Enlace |
 | ----------------------------------- | ------ |
 | [WUIScrolly](#WUIScrolly)           | [https://codepen.io/wuijsproject/pen/azZvxMK](https://codepen.io/wuijsproject/pen/azZvxMK) |
@@ -5250,7 +5282,7 @@ Los ejemplos listados en esta sección, son detallados en la sección "Implement
 | [WUISwitch](#WUISwitch)             | [https://codepen.io/wuijsproject/pen/qENNwPa](https://codepen.io/wuijsproject/pen/qENNwPa) |
 | [WUIIntensity](#WUIIntensity)       | [https://codepen.io/wuijsproject/pen/GgqNpxJ](https://codepen.io/wuijsproject/pen/GgqNpxJ) |
 | [WUIButton](#WUIButton)             | [https://codepen.io/wuijsproject/pen/xbOwNzN](https://codepen.io/wuijsproject/pen/xbOwNzN) |
-
+-->
 <!--
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIMenubar-submenu
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIList-paging-buttongroup
