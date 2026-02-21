@@ -1325,81 +1325,77 @@ Código HTML:
 Código JS:
 
 ```js
-// Crear objeto
-const element5 = document.body.querySelector(".section3 .my-element.element5");
-const element6 = document.body.querySelector(".section3 .my-element.element6");
-const element7 = document.body.querySelector(".section3 .my-element.element7");
-const output = document.body.querySelector(".section3 .my-output");
-const scrolly = new WUIScrolly({
-	//sections: [],
-	//behavior: "smooth",
-	//dataScrollY: "scrollY",
-	//dataDelay: "delay",
-	//onStart: null,
-	onMove: (index, step, progress) => {
-		if (index == 1) {
-			element5.style.left = "-100px";
-		}
-	},
-	//onStop: null,
-	debug: true
-});
+const init = () => {
+	const element5 = document.body.querySelector(".section3 .my-element.element5");
+	const element6 = document.body.querySelector(".section3 .my-element.element6");
+	const element7 = document.body.querySelector(".section3 .my-element.element7");
+	const output = document.body.querySelector(".section3 .my-output");
+	const scrolly = new WUIScrolly({
+		sections: [{
+			selector: ".section1",
+			target: "cover",
+			type: "static",
+			height: "100%"
+		}, {
+			selector: ".section2",
+			target: "css-animation",
+			type: "static",
+			height: 400
+		}, {
+			selector: ".section3",
+			target: "js-animation",
+			type: "auto",
+			height: 4500,
+			steps: 3,
+			pages: 3,
+			animation: (step, progress) => {
+				const direction = scrolly.direction;
+				const left = step != null ? parseInt(200 * progress - 100) + "px" : "100px";
+				const text = `paso: ${step}, progreso: ${progress}, dirección: ${direction}`;
+				scrolly.selectPage(2, step);
+				if (step == 0) {
+					if (direction == "up") {
+						element6.style.left = "-100px";
+					}
+					element5.style.left = left;
+				} else if (step == 1) {
+					if (direction == "down") {
+						element5.style.left = "100px";
+					} else if (direction == "up") {
+						element7.style.left = "-100px";
+					}
+					element6.style.left = left;
+				} else if (step == 2) {
+					if (direction == "down") {
+						element6.style.left = "100px";
+					}
+					element7.style.left = left;
+				} else if (step == null) {
+					element7.style.left = left;
+				}
+				output.textContent = text;
+			}
+		}],
+		//behavior: "smooth",
+		//dataScrollY: "scrollY",
+		//dataDelay: "delay",
+		//onStart: null,
+		onMove: (index, step, progress) => {
+			if (index == 1) {
+				element5.style.left = "-100px";
+			}
+		},
+		//onStop: null,
+		debug: true
+	});
+	scrolly.init();
+}
 
-// Agregar secciones
-scrolly.addSection({
-	selector: ".section1",
-	target: "cover",
-	type: "static",
-	height: "100%"
-});
-scrolly.addSection({
-	selector: ".section2",
-	target: "css-animation",
-	type: "static",
-	height: 400
-});
-scrolly.addSection({
-	selector: ".section3",
-	target: "js-animation",
-	type: "auto",
-	height: 4500,
-	steps: 3,
-	pages: 3,
-	animation: (step, progress) => {
-		const direction = scrolly.direction;
-		const left = step != null ? parseInt(200 * progress - 100)+"px" : "100px";
-		const text = `step: ${step}, progress: ${progress}, direction: ${direction}`;
-		scrolly.selectPage(2, step);
-		if (step == 0) {
-			if (direction == "up") {
-				element6.style.left = "-100px";
-			}
-			element5.style.left = left;
-		} else if (step == 1) {
-			if (direction == "down") {
-				element5.style.left = "100px";
-			} else if (direction == "up") {
-				element7.style.left = "-100px";
-			}
-			element6.style.left = left;
-		} else if (step == 2) {
-			if (direction == "down") {
-				element6.style.left = "100px";
-			}
-			element7.style.left = left;
-		} else if (step == null) {
-			element7.style.left = left;
-		}
-		output.textContent = text;
-	}
-});
-
-// Inicializar objeto
-scrolly.init();
+window.addEventListener("DOMContentLoaded", init);
 ```
 
 > [!TIP]
-> Puede revisar este ejemplo funcional en CodePen en el enlace: [https://codepen.io/wuijsproject/pen/azZvxMK](https://codepen.io/wuijsproject/pen/azZvxMK).
+> Puede revisar este ejemplo funcional en CodeSandbox en el enlace: [https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIScrolly-basic](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIScrolly-basic).
 
 <a name="WUIIcon"></a>
 
@@ -5270,6 +5266,8 @@ window.addEventListener("DOMContentLoaded", init);
 
 Esta sección recoge los ejemplos de las implementaciones de la documentación y otros demos complementarios, todos disponibles en el repositorio **WUI/JS Lab** [https://github.com/wuijsproject/wuijs-lab](https://github.com/wuijsproject/wuijs-lab).
 
+-	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIScrolly-basic](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIScrolly-basic)
+	Esta demostración muestra el uso de la funcionalidad básica de WUIScrolly.
 -	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIIcon-basic](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIIcon-basic)
 	Esta demostración muestra el uso de la funcionalidad básica de WUIIcon.
 -	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIFade-basic](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIFade-basic)
@@ -5325,6 +5323,7 @@ Esta sección recoge los ejemplos de las implementaciones de la documentación y
 | [WUIButton](#WUIButton)             | [https://codepen.io/wuijsproject/pen/xbOwNzN](https://codepen.io/wuijsproject/pen/xbOwNzN) |
 -->
 <!--
+https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIScrolly-basic
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIIcon-basic
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIFade-basic
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIMenubar-submenu

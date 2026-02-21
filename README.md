@@ -1264,7 +1264,7 @@ body {
 	width: 50px;
 	height: 50px;
 	margin: 5px;
-	pargin: 20px;
+	margin: 20px;
 	background-color: dodgerblue;
 	align-items: center;
 	justify-content: center;
@@ -1325,81 +1325,77 @@ HTML code:
 JS code:
 
 ```js
-// Create object
-const element5 = document.body.querySelector(".section3 .my-element.element5");
-const element6 = document.body.querySelector(".section3 .my-element.element6");
-const element7 = document.body.querySelector(".section3 .my-element.element7");
-const output = document.body.querySelector(".section3 .my-output");
-const scrolly = new WUIScrolly({
-	//sections: [],
-	//behavior: "smooth",
-	//dataScrollY: "scrollY",
-	//dataDelay: "delay",
-	//onStart: null,
-	onMove: (index, step, progress) => {
-		if (index == 1) {
-			element5.style.left = "-100px";
-		}
-	},
-	//onStop: null,
-	debug: true
-});
+const init = () => {
+	const element5 = document.body.querySelector(".section3 .my-element.element5");
+	const element6 = document.body.querySelector(".section3 .my-element.element6");
+	const element7 = document.body.querySelector(".section3 .my-element.element7");
+	const output = document.body.querySelector(".section3 .my-output");
+	const scrolly = new WUIScrolly({
+		sections: [{
+			selector: ".section1",
+			target: "cover",
+			type: "static",
+			height: "100%"
+		}, {
+			selector: ".section2",
+			target: "css-animation",
+			type: "static",
+			height: 400
+		}, {
+			selector: ".section3",
+			target: "js-animation",
+			type: "auto",
+			height: 4500,
+			steps: 3,
+			pages: 3,
+			animation: (step, progress) => {
+				const direction = scrolly.direction;
+				const left = step != null ? parseInt(200 * progress - 100) + "px" : "100px";
+				const text = `step: ${step}, progress: ${progress}, direction: ${direction}`;
+				scrolly.selectPage(2, step);
+				if (step == 0) {
+					if (direction == "up") {
+						element6.style.left = "-100px";
+					}
+					element5.style.left = left;
+				} else if (step == 1) {
+					if (direction == "down") {
+						element5.style.left = "100px";
+					} else if (direction == "up") {
+						element7.style.left = "-100px";
+					}
+					element6.style.left = left;
+				} else if (step == 2) {
+					if (direction == "down") {
+						element6.style.left = "100px";
+					}
+					element7.style.left = left;
+				} else if (step == null) {
+					element7.style.left = left;
+				}
+				output.textContent = text;
+			}
+		}],
+		//behavior: "smooth",
+		//dataScrollY: "scrollY",
+		//dataDelay: "delay",
+		//onStart: null,
+		onMove: (index, step, progress) => {
+			if (index == 1) {
+				element5.style.left = "-100px";
+			}
+		},
+		//onStop: null,
+		debug: true
+	});
+	scrolly.init();
+}
 
-// Add sections
-scrolly.addSection({
-	selector: ".section1",
-	target: "cover",
-	type: "static",
-	height: "100%"
-});
-scrolly.addSection({
-	selector: ".section2",
-	target: "css-animation",
-	type: "static",
-	height: 400
-});
-scrolly.addSection({
-	selector: ".section3",
-	target: "js-animation",
-	type: "auto",
-	height: 4500,
-	steps: 3,
-	pages: 3,
-	animation: (step, progress) => {
-		const direction = scrolly.direction;
-		const left = step != null ? parseInt(200 * progress - 100)+"px" : "100px";
-		const text = `step: ${step}, progress: ${progress}, direction: ${direction}`;
-		scrolly.selectPage(2, step);
-		if (step == 0) {
-			if (direction == "up") {
-				element6.style.left = "-100px";
-			}
-			element5.style.left = left;
-		} else if (step == 1) {
-			if (direction == "down") {
-				element5.style.left = "100px";
-			} else if (direction == "up") {
-				element7.style.left = "-100px";
-			}
-			element6.style.left = left;
-		} else if (step == 2) {
-			if (direction == "down") {
-				element6.style.left = "100px";
-			}
-			element7.style.left = left;
-		} else if (step == null) {
-			element7.style.left = left;
-		}
-		output.textContent = text;
-	}
-});
-
-// Initialize object
-scrolly.init();
+window.addEventListener("DOMContentLoaded", init);
 ```
 
 > [!TIP]
-> You can check this functional example on CodePen at the link: [https://codepen.io/wuijsproject/pen/azZvxMK](https://codepen.io/wuijsproject/pen/azZvxMK).
+> You can check this functional example on CodeSandbox at the link: [https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIScrolly-basic](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIScrolly-basic).
 
 <a name="WUIIcon"></a>
 
@@ -5281,6 +5277,8 @@ window.addEventListener("DOMContentLoaded", init);
 
 This section contains examples of the implementations from the documentation and other complementary demos, all available in the **WUI/JS Lab** repository [https://github.com/wuijsproject/wuijs-lab](https://github.com/wuijsproject/wuijs-lab).
 
+-	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIScrolly-basic](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIScrolly-basic)
+	This demo shows the use of WUIScrolly's basic functionality.
 -	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIIcon-basic](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIIcon-basic)
 	This demo shows the use of WUIIcon's basic implementation.
 -	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIFade-basic](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIFade-basic)
@@ -5337,6 +5335,7 @@ This section contains examples of the implementations from the documentation and
 | [WUIButton](#WUIButton)             | [https://codepen.io/wuijsproject/pen/xbOwNzN](https://codepen.io/wuijsproject/pen/xbOwNzN) |
 -->
 <!--
+https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIScrolly-basic
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIIcon-basic
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIFade-basic
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIMenubar-submenu
