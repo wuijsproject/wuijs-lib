@@ -2021,6 +2021,13 @@ CSS settings:
 CSS code:
 
 ```css
+html,
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
 body {
 	font-family: Arial, Helvetica, Verdana, sans-serif;
 	font-size: 14px;
@@ -2135,7 +2142,7 @@ window.addEventListener("DOMContentLoaded", init);
 ```
 
 > [!TIP]
-> You can check this functional example on CodePen at the link: [https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIMenubar-submenu](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIMenubar-submenu).
+> You can check this functional example on CodeSandbox at the link: [https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIMenubar-submenu](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIMenubar-submenu).
 
 <a name="WUIList"></a>
 
@@ -2300,6 +2307,13 @@ CSS settings:
 CSS code:
 
 ```css
+html,
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
 body {
 	font-family: Arial, Helvetica, Verdana, sans-serif;
 	font-size: 14px;
@@ -2609,6 +2623,9 @@ CSS settings:
 
 ```css
 :root {
+
+	/* wui-table */
+
 	--wui-table-shadowcolor: #959da5;
 	--wui-table-borderradius: 10px;
 	--wui-table-column-bordercolor-width: 1px;
@@ -2651,6 +2668,13 @@ CSS settings:
 CSS code:
 
 ```css
+html,
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
 body {
 	font-family: Arial, Helvetica, Verdana, sans-serif;
 	font-size: 14px;
@@ -3057,6 +3081,13 @@ CSS settings:
 CSS code:
 
 ```css
+html,
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
 body {
 	font-family: Arial, Helvetica, Verdana, sans-serif;
 	font-size: 14px;
@@ -3711,6 +3742,9 @@ CSS Settings:
 
 ```css
 :root {
+
+	/* wui-selectpicker */
+
 	--wui-selectpicker-borderradius: 10px;
 	--wui-selectpicker-borderwidth: 0px;
 	--wui-selectpicker-bordercolor: transparent;
@@ -3759,6 +3793,13 @@ CSS Settings:
 CSS Code:
 
 ```css
+html,
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
 body {
 	font-family: Arial, Helvetica, Verdana, sans-serif;
 	font-size: 14px;
@@ -3813,43 +3854,43 @@ HTML code:
 		-->
 	</select>
 </div>
-
 <div class="my-output"></div>
 ```
 
 JS code:
 
 ```js
-// Create object
-const output = document.body.querySelector(".my-output");
-const selectpicker = new WUISelectpicker({
-	selector: ".wui-selectpicker.my-selectpicker",
-	value: "2",
-	//lang: "en",
-	//texts: {},
-	//openDirection: "down",
-	//multiple: false,
-	//separatorValue: ",",
-	//separatorText: ", ",
-	//filterable: true,
-	//enabled: true,
-	onOpen: (value) => {
-		output.textContent = `Opened - value: ${value}`;
-	},
-	onChange: (value) => {
-		output.textContent = `Changed - value: ${value}`;
-	}
-});
+const init = () => {
+	const output = document.body.querySelector(".my-output");
+	const selectpicker = new WUISelectpicker({
+		selector: ".wui-selectpicker.my-selectpicker",
+		value: "2",
+		//lang: "en",
+		//texts: {},
+		//openDirection: "down",
+		//multiple: false,
+		//separatorValue: ",",
+		//separatorText: ", ",
+		//filterable: true,
+		//enabled: true,
+		onOpen: (value) => {
+			output.textContent = `Opened - value: ${value}`;
+		},
+		onChange: (value) => {
+			output.textContent = `Changed - value: ${value}`;
+		}
+	});
+	selectpicker.init();
+}
 
-// Initialize object
-selectpicker.init();
+window.addEventListener("DOMContentLoaded", init);
 ```
 
 > [!IMPORTANT]
 > If the selector defines an element that is not of type `HTMLDivElement`, the object will not be initialized.
 
 > [!TIP]
-> You can check this functional example on CodePen at the link: [https://codepen.io/wuijsproject/pen/WbxQBKX](https://codepen.io/wuijsproject/pen/WbxQBKX).
+> You can check this functional example on CodeSandbox at the link: [https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUISelectpicker-basic](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUISelectpicker-basic).
 
 <a name="WUIDatepicker"></a>
 
@@ -5018,7 +5059,34 @@ button2.init();
 
 ## Good coding practices
 
-### 1. Object initialization
+### 1. Responsive HTML5
+
+All WUI components are designed to work on mobile and desktop devices. Therefore, it is recommended to initialize the responsive HTML5.
+
+```css
+html,
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+```
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+	...
+</head>
+<body>
+	...
+</body>
+</html>
+```
+
+### 2. Object initialization
 
 To avoid runtime problems, it is recommended to initialize WUI objects once the DOM elements have been loaded.
 
@@ -5031,7 +5099,7 @@ const init = () => {
 window.addEventListener("DOMContentLoaded", init);
 ```
 
-### 2. Referencing components
+### 3. Referencing components
 
 When a view has several WUI components of the same or different classes, it is recommended to reference them through an array in the JS code to handle them coherently.
 
@@ -5082,4 +5150,12 @@ https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/W
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIForm-line
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIForm-wuiinputs
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIFormat-basic
+https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUISelectpicker-basic
+
+https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIDatepicker-basic
+https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUITimepicker-basic
+https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIColorpicker-basic
+https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUISwitch-basic
+https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIIntensity-basic
+https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIButton-basic
 -->
