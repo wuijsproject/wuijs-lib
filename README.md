@@ -3210,7 +3210,7 @@ window.addEventListener("DOMContentLoaded", init);
 ```
 
 > [!TIP]
-> You can check this functional example in CodeSandbox at the link: [https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIForm-line](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIForm-line).
+> You can check this functional example in CodeSandbox at the link: [https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIForm-linestyle](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIForm-linestyle).
 
 <a name="WUIFormat"></a>
 
@@ -4473,6 +4473,9 @@ CSS code:
 
 ```css
 :root {
+
+	/* wui-colorpicker */
+
 	--wui-colorpicker-opener-iconsize: 30px;
 	--wui-colorpicker-opener-iconcolor-out: #000;
 	--wui-colorpicker-opener-iconcolor-over: #1e90ff;
@@ -4517,18 +4520,28 @@ CSS code:
 Código CSS:
 
 ```css
+html,
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
 body {
 	font-family: Arial, Helvetica, Verdana, sans-serif;
 	font-size: 14px;
 }
 
+nav {
+	display: flex;
+	margin: 10px;
+	align-items: center;
+	gap: 10px;
+}
+
 .my-colorpicker {}
 
 .my-output {
-	position: absolute;
-	top: 4px;
-	left: 210px;
-	margin: 10px;
 	font-family: monospace;
 }
 ```
@@ -4543,44 +4556,46 @@ HTML head:
 HTML code:
 
 ```html
-<div class="wui-colorpicker my-colorpicker">
-	<input type="color" name="myColor">
-</div>
-
-<div class="my-output"></div>
+<nav>
+	<div class="wui-colorpicker my-colorpicker">
+		<input type="color" name="myColor">
+	</div>
+	<div class="my-output"></div>
+</nav>
 ```
 
 JS code:
 
 ```js
-// Create object
-const output = document.body.querySelector(".my-output");
-const colorpicker = new WUIColorpicker({
-	selector: ".wui-colorpicker.my-colorpicker",
-	value: "#1e90ff",
-	//emptyValue: "#000001",
-	//lang: "en",
-	//texts: {},
-	//openDirection: "down",
-	//boxAlign: "left",
-	//enabled: true,
-	onOpen: (value) => {
-		output.textContent = `Opened - value: ${value}`;
-	},
-	onChange: (value) => {
-		output.textContent = `Changed - value: ${value}`;
-	}
-});
+const init = () => {
+	const output = document.body.querySelector(".my-output");
+	const colorpicker = new WUIColorpicker({
+		selector: ".wui-colorpicker.my-colorpicker",
+		value: "#1e90ff",
+		//emptyValue: "#000001",
+		//lang: "en",
+		//texts: {},
+		//openDirection: "down",
+		//boxAlign: "left",
+		//enabled: true,
+		onOpen: (value) => {
+			output.textContent = `Opened - value: ${value}`;
+		},
+		onChange: (value) => {
+			output.textContent = `Changed - value: ${value}`;
+		}
+	});
+	colorpicker.init();
+}
 
-// Initialize object
-colorpicker.init();
+window.addEventListener("DOMContentLoaded", init);
 ```
 
 > [!IMPORTANT]
 > If the selector defines an element that is not of type `HTMLDivElement`, the object will not be initialized.
 
 > [!TIP]
-> You can check this functional example on CodePen at the link: [https://codepen.io/wuijsproject/pen/bNeeobP](https://codepen.io/wuijsproject/pen/bNeeobP).
+> You can check this functional example on CodeSandbox at the link: [https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIColorpicker-basic](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIColorpicker-basic).
 
 <a name="WUISwitch"></a>
 
@@ -5213,15 +5228,15 @@ The examples listed in this section are detailed in the "Implementation" section
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIMenubar-submenu
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIList-paging-buttongroup
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUITable-paging
-https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIForm-fill
-https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIForm-line
+https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIForm-fillstyle
+https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIForm-linestyle
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIForm-wuiinputs
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIFormat-basic
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUISelectpicker-basic
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIDatepicker-basic
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUITimepicker-basic
-
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIColorpicker-basic
+
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUISwitch-basic
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIIntensity-basic
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIButton-basic
