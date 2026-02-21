@@ -88,11 +88,11 @@ WUI JS Lib, acrónimo del inglés *Web User Interface JavaScript library*, es un
 
 | Clase                               | Version | Descripción |
 | ----------------------------------- | -------:| ----------- |
-| [WUICookie](#WUICookie)             | `0.2`   | Administrador de cookies. |
-| [WUIHead](#WUIHead)                 | `0.2`   | Administrador de cabecera HTML. |
-| [WUIBody](#WUIBody)                 | `0.2`   | Administrador de cuerpo HTML. Permite la importación de contenido CSS/JS/HTML y facilita la implementación en entornos nativos móviles. |
-| [WUILanguage](#WUILanguage)         | `0.2`   | Administrador de idioma para interfaces web. Permite cargar archivos de idioma en formato JS o JSON y actualizar dinámicamente el contenido de los elementos HTML según el idioma. |
-| [WUIScrolly](#WUIScrolly)           | `0.2`   | Utilidades para animación de elementos HTML mediante el evento "onscroll" del cuerpo de la página HTML. |
+| [WUICookie](#WUICookie)             | `0.2`   | Utilidades para el manejo de cookies. |
+| [WUIHead](#WUIHead)                 | `0.2`   | Utilidades para el manejo de la cabecera HTML. |
+| [WUIBody](#WUIBody)                 | `0.2`   | Utilidades para el manejo del cuerpo HTML. Permite la importación de contenido CSS/JS/HTML y facilita la implementación en entornos nativos móviles. |
+| [WUILanguage](#WUILanguage)         | `0.2`   | Utilidades para el manejo de interfaces con distintos lenguajes. Permite cargar archivos de idioma en formato JS o JSON y actualizar dinámicamente el contenido de los elementos HTML según el idioma. |
+| [WUIScrolly](#WUIScrolly)           | `0.2`   | Utilidades para el manejo de animación de elementos HTML mediante el evento "onscroll" del cuerpo de la página HTML. |
 | [WUIIcon](#WUIIcon)                 | `0.1`   | Conjunto de íconos prediseñados y carga mediante CSS, para uso en interfaces. |
 | [WUIFade](#WUIFade)                 | `0.1`   | Utilidades para control de salida y entrada con opacidad (fade-out y fade-in respectivamente) de elementos HTML. |
 | [WUILoader](#WUILoader)             | `0.2`   | Componente para la implementación de animaciones de carga. |
@@ -761,7 +761,7 @@ Este método de implementación permite la estandarización del diseño de la in
 
 Versión: `0.2`
 
-Administrador de cookies.
+Utilidades para el manejo de cookies.
 
 #### Fuentes
 
@@ -794,28 +794,49 @@ Administrador de cookies.
 
 #### Implementación
 
+CSS Code:
+
+```css
+html,
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.my-output {
+	font-family: monospace;
+}
+```
+
 Cabecera HTML:
 
 ```html
 <script type="text/javascript" src="https://wuijs.dev/Libraries/WUI/Cookie/WUICookie-0.2.js"></script>
 ```
 
+HTML code:
+
+```html
+<div class="my-output"></div>
+```
+
 Código JS:
 
 ```js
-// Crear objeto
-const cookie = new WUICookie({
-	//domain: location.hostname,
-	//path: "./",
-	//minutes: 365*24*60,
-	//overssl: false
-});
+const init = () => {
+	const output = document.body.querySelector(".my-output");
+	const cookie = new WUICookie({
+		//domain: location.hostname,
+		//path: "./",
+		//minutes: 365*24*60,
+		//overssl: false
+	});
+	cookie.set("mycookie", "test");
+	output.textContent = "Valor leído de la cookie: " + cookie.get("mycookie");
+}
 
-// Guardar cookie
-cookie.set("mycookie", "prueba");
-
-// Leer cookie
-console.log(cookie.get("mycookie"));
+window.addEventListener("DOMContentLoaded", init);
 ```
 
 <a name="WUIHead"></a>
@@ -824,7 +845,7 @@ console.log(cookie.get("mycookie"));
 
 Versión: `0.2`
 
-Administrador de cabecera HTML.
+Utilidades para el manejo de la cabecera HTML.
 
 #### Fuentes
 
@@ -885,7 +906,7 @@ head.setThemeColor("#1e90ff");
 
 Versión: `0.2`
 
-Administrador de cuerpo HTML. Permite la importación de contenido CSS/JS/HTML y facilita la implementación en entornos nativos móviles.
+Utilidades para el manejo del cuerpo HTML. Permite la importación de contenido CSS/JS/HTML y facilita la implementación en entornos nativos móviles.
 
 #### Fuentes
 
@@ -984,7 +1005,7 @@ body.import("testContent", "test-content", () => {
 
 Versión: `0.2`
 
-Administrador de idioma para interfaces web. Permite cargar archivos de idioma en formato JS o JSON y actualizar dinámicamente el contenido de los elementos HTML según el idioma seleccionado.
+Utilidades para el manejo de interfaces con distintos lenguajes. Permite cargar archivos de idioma en formato JS o JSON y actualizar dinámicamente el contenido de los elementos HTML según el idioma seleccionado.
 
 #### Fuentes
 
@@ -1115,7 +1136,7 @@ language.load("es", ["main", "main2"]);
 
 Versión: `0.2`
 
-Utilidades para animación de elementos HTML mediante el evento "onscroll" del cuerpo de la página HTML.
+Utilidades para el manejo de animación de elementos HTML mediante el evento "onscroll" del cuerpo de la página HTML.
 
 #### Fuentes
 
@@ -5323,6 +5344,7 @@ Esta sección recoge los ejemplos de las implementaciones de la documentación y
 | [WUIButton](#WUIButton)             | [https://codepen.io/wuijsproject/pen/xbOwNzN](https://codepen.io/wuijsproject/pen/xbOwNzN) |
 -->
 <!--
+https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUICookie-basic
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIScrolly-basic
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIIcon-basic
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIFade-basic

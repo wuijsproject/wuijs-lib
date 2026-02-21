@@ -63,11 +63,11 @@ WUI JS Lib, an acronym for *Web User Interface JavaScript library*, is an open s
 
 | Class                               | Version | Description |
 | ----------------------------------- | -------:| ----------- |
-| [WUICookie](#WUICookie)             | `0.2`   | Cookie manager. |
-| [WUIHead](#WUIHead)                 | `0.2`   | HTML header manager. |
-| [WUIBody](#WUIBody)                 | `0.2`   | HTML body manager. Allows the import of CSS/JS/HTML content and facilitates implementation in native mobile environments. |
-| [WUILanguage](#WUILanguage)         | `0.2`   | Language manager for web interfaces. Allows you to load language files in JS or JSON format and dynamically update the content of HTML elements based on the language. |
-| [WUIScrolly](#WUIScrolly)           | `0.2`   | Utilities for animating HTML elements using the "onscroll" event of the HTML page body. |
+| [WUICookie](#WUICookie)             | `0.2`   | Utilities for cookies management. |
+| [WUIHead](#WUIHead)                 | `0.2`   | Utilities for HTML head management. |
+| [WUIBody](#WUIBody)                 | `0.2`   | Utilities for HTML body management. Allows the import of CSS/JS/HTML content and facilitates implementation in native mobile environments. |
+| [WUILanguage](#WUILanguage)         | `0.2`   | Utilities for interfaces with different languages managment. Allows you to load language files in JS or JSON format and dynamically update the content of HTML elements based on the language. |
+| [WUIScrolly](#WUIScrolly)           | `0.2`   | Utilities for animating HTML elements managment using the "onscroll" event of the HTML page body. |
 | [WUIIcon](#WUIIcon)                 | `0.1`   | Pre-designed icons set loaded via CSS, for use in interfaces. |
 | [WUIFade](#WUIFade)                 | `0.1`   | Utilities for fading out and fading control in HTML elements with opacity. |
 | [WUILoader](#WUILoader)             | `0.2`   | Component for the implementation of loading animations. |
@@ -80,7 +80,7 @@ WUI JS Lib, an acronym for *Web User Interface JavaScript library*, is an open s
 | [WUIList](#WUIList)                 | `0.2`   | Component for the implementation of data lists and buttons for each row optionally. |
 | [WUITable](#WUITable)               | `0.3`   | Component for the implementation of data tables. Unlike the `WUIList` component, the `WUITable` component includes a column header. |
 | [WUIForm](#WUIForm)                 | `0.3`   | Component for the implementation of data forms. This component allows the implementation of HTML data input elements such as `<input>`, `<select>`, and `<textarea>`, and WUI library objects such as `WUISelectpicker`, `WUIDatepicker`, `WUITimepicker`, `WUIColorpicker`, `WUISwitch`, `WUIIntensity`, and `WUIButton`. |
-| [WUIFormat](#WUIFormat)             | `0.2`   | Utilities for managing and validating `string`, `number` and `Date` data formats. |
+| [WUIFormat](#WUIFormat)             | `0.2`   | Utilities for management and validation `string`, `number` and `Date` data formats. |
 | [WUISelectpicker](#WUISelectpicker) | `0.2`   | Component for the implementation of multiple or exclusive selection list data inputs based on HTML element `<select>`. |
 | [WUIDatepicker](#WUIDatepicker)     | `0.2`   | Component for the implementation of date type data inputs based on HTML element `<input type="date">`. |
 | [WUITimepicker](#WUITimepicker)     | `0.2`   | Component for the implementation of time type data inputs based on HTML element `<input type="time">`. |
@@ -761,7 +761,7 @@ This implementation method allows for standardization of an application's user i
 
 Version: `0.2`
 
-Cookie manager.
+Utilities for cookies management.
 
 #### Sources
 
@@ -794,28 +794,49 @@ Cookie manager.
 
 #### Implementation
 
+CSS Code:
+
+```css
+html,
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.my-output {
+	font-family: monospace;
+}
+```
+
 HTML head:
 
 ```html
 <script type="text/javascript" src="https://wuijs.dev/Libraries/WUI/Cookie/WUICookie-0.2.js"></script>
 ```
 
+HTML code:
+
+```html
+<div class="my-output"></div>
+```
+
 JS code:
 
 ```js
-// Create object
-const cookie = new WUICookie({
-	//domain: location.hostname,
-	//path: "./",
-	//minutes: 365*24*60,
-	//overssl: false
-});
+const init = () => {
+	const output = document.body.querySelector(".my-output");
+	const cookie = new WUICookie({
+		//domain: location.hostname,
+		//path: "./",
+		//minutes: 365*24*60,
+		//overssl: false
+	});
+	cookie.set("mycookie", "test");
+	output.textContent = "Value read from the cookie: " + cookie.get("mycookie");
+}
 
-// Save cookie
-cookie.set("mycookie", "test");
-
-// Read cookie
-console.log(cookie.get("mycookie"));
+window.addEventListener("DOMContentLoaded", init);
 ```
 
 <a name="WUIHead"></a>
@@ -824,7 +845,7 @@ console.log(cookie.get("mycookie"));
 
 Version: `0.2`
 
-HTML header manager.
+Utilities for HTML head management.
 
 #### Sources
 
@@ -885,7 +906,7 @@ head.setThemeColor("#1e90ff");
 
 Version: `0.2`
 
-HTML body manager. Allows the import of CSS/JS/HTML content and facilitates implementation in native mobile environments.
+Utilities for HTML body management. Allows the import of CSS/JS/HTML content and facilitates implementation in native mobile environments.
 
 #### Sources
 
@@ -984,7 +1005,7 @@ body.import("testContent", "test-content", () => {
 
 Version: `0.2`
 
-Language manager for web interfaces. Allows you to load language files in JS or JSON format and dynamically update the content of HTML elements based on the language.
+Utilities for interfaces with different languages managment. Allows you to load language files in JS or JSON format and dynamically update the content of HTML elements based on the language.
 
 #### Sources
 
@@ -1115,7 +1136,7 @@ language.load("en", ["main", "main2"]);
 
 Versión: `0.2`
 
-Utilities for animating HTML elements using the "onscroll" event of the HTML page body.
+Utilities for animating HTML elements managment using the "onscroll" event of the HTML page body.
 
 #### Sources
 
@@ -3252,7 +3273,7 @@ window.addEventListener("DOMContentLoaded", init);
 
 Version: `0.2`
 
-Utilities for managing and validating `string`, `number` and `Date` data formats.
+Utilities for management and validation `string`, `number` and `Date` data formats.
 
 #### Sources
 
