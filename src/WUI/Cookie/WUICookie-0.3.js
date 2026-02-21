@@ -71,13 +71,16 @@ class WUICookie {
 	encode(name, value, options = {}) {
 		const domain = typeof (options.domain) == "string" ? options.domain : this.domain;
 		const path = typeof (options.path) == "string" ? options.path : this.path;
-		const date = new Date();
 		const minutes = typeof (options.minutes) == "number" ? options.minutes : this.minutes;
 		const overssl = typeof (options.overssl) == "boolean" ? options.overssl : this.overssl;
 		const cookie = encodeURIComponent(name) + "=" + encodeURIComponent(value)
 			+ (domain != "" ? "; domain=" + domain : "")
 			+ (path != "" ? "; path=" + path : "")
-			+ "; expires=" + date.setTime(date.getTime() + (minutes * 60 * 1000)).toUTCString()
+			+ "; expires=" + (() => {
+				const date = new Date();
+				date.setTime(date.getTime() + (minutes * 60 * 1000));
+				return date.toUTCString();
+			})()
 			+ "; max-age=" + (60 * minutes)
 			+ (overssl ? " secure" : "")
 		return cookie;
