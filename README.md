@@ -4009,6 +4009,9 @@ CSS settings:
 
 ```css
 :root {
+
+	/* wui-datepicker */
+
 	--wui-datepicker-borderradius: 10px;
 	--wui-datepicker-borderwidth: 0px;
 	--wui-datepicker-bordercolor: transparent;
@@ -4061,6 +4064,13 @@ CSS settings:
 CSS code:
 
 ```css
+html,
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
 body {
 	font-family: Arial, Helvetica, Verdana, sans-serif;
 	font-size: 14px;
@@ -4099,37 +4109,38 @@ HTML code:
 JS code:
 
 ```js
-// Create object
-const output = document.body.querySelector(".my-output");
-const datepicker = new WUIDatepicker({
-	selector: ".wui-datepicker.my-datepicker",
-	value: "2026-01-01",
-	//locales: "en-US",
-	//min: "",
-	//max: "",
-	//monthsNames: [],
-	//weekDaysNames: [],
-	//texts: {},
-	//openDirection: "down",
-	//boxAlign: "left",
-	//enabled: true,
-	onOpen: (value) => {
-		output.textContent = `Opened - value: ${value}`;
-	},
-	onChange: (value) => {
-		output.textContent = `Changed - value: ${value}`;
-	}
-});
+const init = () => {
+	const output = document.body.querySelector(".my-output");
+	const datepicker = new WUIDatepicker({
+		selector: ".wui-datepicker.my-datepicker",
+		value: "2026-01-01",
+		//locales: "en-US",
+		//min: "",
+		//max: "",
+		//monthsNames: [],
+		//weekDaysNames: [],
+		//texts: {},
+		//openDirection: "down",
+		//boxAlign: "left",
+		//enabled: true,
+		onOpen: (value) => {
+			output.textContent = `Opened - value: ${value}`;
+		},
+		onChange: (value) => {
+			output.textContent = `Changed - value: ${value}`;
+		}
+	});
+	datepicker.init();
+}
 
-// Initialize object
-datepicker.init();
+window.addEventListener("DOMContentLoaded", init);
 ```
 
 > [!IMPORTANT]
 > If the selector defines an element that is not of type `HTMLDivElement`, the object will not be initialized.
 
 > [!TIP]
-> You can check this functional example on CodePen at the link: [https://codepen.io/wuijsproject/pen/QwEyyZN](https://codepen.io/wuijsproject/pen/QwEyyZN).
+> You can check this functional example on CodeSendbox at the link: [https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIDatepicker-basic](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIDatepicker-basic).
 
 <a name="WUITimepicker"></a>
 
@@ -5151,8 +5162,8 @@ https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/W
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIForm-wuiinputs
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIFormat-basic
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUISelectpicker-basic
-
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIDatepicker-basic
+
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUITimepicker-basic
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIColorpicker-basic
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUISwitch-basic
