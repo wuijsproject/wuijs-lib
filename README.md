@@ -4256,6 +4256,9 @@ CSS settings:
 
 ```css
 :root {
+
+	/* wui-timepicker */
+
 	--wui-timepicker-borderradius: 10px;
 	--wui-timepicker-borderwidth: 0px;
 	--wui-timepicker-bordercolor: transparent;
@@ -4291,9 +4294,23 @@ CSS settings:
 CSS code:
 
 ```css
+html,
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
 body {
 	font-family: Arial, Helvetica, Verdana, sans-serif;
 	font-size: 14px;
+}
+
+nav {
+	display: flex;
+	margin: 10px;
+	align-items: center;
+	gap: 10px;
 }
 
 .my-timepicker {
@@ -4301,10 +4318,6 @@ body {
 }
 
 .my-output {
-	position: absolute;
-	top: 4px;
-	left: 210px;
-	margin: 10px;
 	font-family: monospace;
 }
 ```
@@ -4319,45 +4332,47 @@ HTML head:
 HTML code:
 
 ```html
-<div class="wui-timepicker my-timepicker">
-	<input type="time" name="myTime">
-</div>
-
-<div class="my-output"></div>
+<nav>
+	<div class="wui-timepicker my-timepicker">
+		<input type="time" name="myTime">
+	</div>
+	<div class="my-output"></div>
+</nav>
 ```
 
 JS code:
 
 ```js
-// Create object
-const output = document.body.querySelector(".my-output");
-const timepicker = new WUITimepicker({
-	selector: ".wui-timepicker.my-timepicker",
-	value: "10:30",
-	//min: "00:00",
-	//max: "23:59",
-	//lang: "en",
-	//texts: {},
-	//openDirection: "down",
-	//boxAlign: "left",
-	//enabled: true,
-	onOpen: (value) => {
-		output.textContent = `Opened - value: ${value}`;
-	},
-	onChange: (value) => {
-		output.textContent = `Changed - value: ${value}`;
-	}
-});
+const init = () => {
+	const output = document.body.querySelector(".my-output");
+	const timepicker = new WUITimepicker({
+		selector: ".wui-timepicker.my-timepicker",
+		value: "10:30",
+		//min: "00:00",
+		//max: "23:59",
+		//lang: "en",
+		//texts: {},
+		//openDirection: "down",
+		//boxAlign: "left",
+		//enabled: true,
+		onOpen: (value) => {
+			output.textContent = `Opened - value: ${value}`;
+		},
+		onChange: (value) => {
+			output.textContent = `Changed - value: ${value}`;
+		}
+	});
+	timepicker.init();
+}
 
-// Initialize object
-timepicker.init();
+window.addEventListener("DOMContentLoaded", init);
 ```
 
 > [!IMPORTANT]
 > If the selector defines an element that is not of type `HTMLDivElement`, the object will not be initialized.
 
 > [!TIP]
-> You can check this functional example on CodePen at the link: [https://codepen.io/wuijsproject/pen/azZdGrY](https://codepen.io/wuijsproject/pen/azZdGrY).
+> You can check this functional example on CodeSandbox at the link: [https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUITimepicker-basic](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUITimepicker-basic).
 
 <a name="WUIColorpicker"></a>
 
@@ -5204,8 +5219,8 @@ https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/W
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIFormat-basic
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUISelectpicker-basic
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIDatepicker-basic
-
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUITimepicker-basic
+
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIColorpicker-basic
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUISwitch-basic
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIIntensity-basic
