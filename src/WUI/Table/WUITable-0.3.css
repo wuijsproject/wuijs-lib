@@ -23,7 +23,6 @@ div.wui-table {
 	-moz-border-radius: var(--wui-table-borderradius);
 	border-radius: var(--wui-table-borderradius);
 	background-color: var(--wui-table-row-bgcolor-out);
-	/*padding-bottom: var(--wui-table-borderradius);*/
 	justify-content: flex-start;
 }
 
@@ -48,24 +47,6 @@ div.wui-table::-webkit-scrollbar-thumb:is(:hover, :active) {
 div.wui-table::-webkit-scrollbar-track {
 	background-color: transparent;
 }
-
-/*div.wui-table::before {
-	content: "&ensp;";
-	position: absolute;
-	z-index: 1;
-	width: var(--wui-table-width);
-	-webkit-border-top-left-radius: var(--wui-table-borderradius);
-	-moz-border-radius-topleft: var(--wui-table-borderradius);
-	border-top-left-radius: var(--wui-table-borderradius);
-	-webkit-border-top-right-radius: var(--wui-table-borderradius);
-	-moz-border-radius-topright: var(--wui-table-borderradius);
-	border-top-right-radius: var(--wui-table-borderradius);
-	border-bottom-width: 1px;
-	border-bottom-style: solid;
-	border-bottom-color: var(--wui-table-column-bordercolor-out);
-	background-color: var(--wui-table-column-bgcolor-out);
-	padding: 5px 0;
-}*/
 
 div.wui-table > table {
 	z-index: 2;
@@ -189,18 +170,6 @@ div.wui-table > table > tbody > tr > td {
 	border-color: var(--wui-table-row-bordercolor-out);
 	background-color: var(--wui-table-row-bgcolor-out);
 	color: var(--wui-table-row-textcolor-out);
-}
-
-div.wui-table > table > tbody > tr:last-child > td:first-child {
-	-webkit-border-bottom-left-radius: var(--wui-table-borderradius);
-	-moz-border-radius-bottomleft: var(--wui-table-borderradius);
-	border-bottom-left-radius: var(--wui-table-borderradius);
-}
-
-div.wui-table > table > tbody > tr:last-child > td:last-child {
-	-webkit-border-bottom-right-radius: var(--wui-table-borderradius);
-	-moz-border-radius-bottomright: var(--wui-table-borderradius);
-	border-bottom-right-radius: var(--wui-table-borderradius);
 }
 
 div.wui-table > table > :is(thead, tbody) > tr > :is(th, td).filler {
