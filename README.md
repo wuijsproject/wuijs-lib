@@ -892,17 +892,14 @@ HTML head:
 JS code:
 
 ```js
-// Create object
-const head = new WUIHead();
+const init = () => {
+	const head = new WUIHead();
+	head.setTitle("Test title");
+	head.setApplicationName("Test app");
+	head.setThemeColor("#1e90ff");
+}
 
-// Change page title
-head.setTitle("Test title");
-
-// Change application name metadata
-head.setApplicationName("Test app");
-
-// Change the metadata of the browser's top bar color
-head.setThemeColor("#1e90ff");
+window.addEventListener("DOMContentLoaded", init);
 ```
 
 <a name="WUIBody"></a>
@@ -987,21 +984,22 @@ HTML code:
 JS code:
 
 ```js
-// Create object
-const body = new WUIBody({
-	//environment: "web",
-	importDirectory: "./Imports/",
-	//importMode: "fetch",
-	onCompleted: () => {
-		body.prepare();
-	},
-	debug: true
-});
+const init = () => {
+	const body = new WUIBody({
+		//environment: "web",
+		importDirectory: "./Imports/",
+		//importMode: "fetch",
+		onCompleted: () => {
+			body.prepare();
+		},
+		debug: true
+	});
+	body.import("testContent", "test-content", () => {
+		testContentLog("test content loaded");
+	});
+}
 
-// Import CSS/HTML/JS content from the ./Imports directory
-body.import("testContent", "test-content", () => {
-	testContentLog("test content loaded");
-});
+window.addEventListener("DOMContentLoaded", init);
 ```
 
 <a name="WUILanguage"></a>
@@ -1091,29 +1089,28 @@ HTML code:
 JS code:
 
 ```js
-// Create object
-const language = new WUILanguage({
-    //selector: ".wui-language",
-    //directory: "./Languages/",
-    //sets: ["main"],
-    //lang: "en",
-    //mode: "js",
-    //dataKey: "key",
-    //dataOutput: "text",
-    onLoad: (...args) => {
-		[lang, languages] = args;
-        console.log("Language loaded:", lang, languages);
-    }
-});
+const init = () => {
+	const language = new WUILanguage({
+		//selector: ".wui-language",
+		//directory: "./Languages/",
+		//sets: ["main"],
+		lang: "es",
+		//mode: "js",
+		//dataKey: "key",
+		//dataOutput: "text",
+		onLoad: (...args) => {
+			[lang, languages] = args;
+			console.log("Language loaded:", lang, languages);
+		}
+	});
+	let lang = language.lang;
+	let languages = {};
+	language.load();                  // Option 1
+	//language.load("es");            // Option 2
+	//language.load("es", ["main"]);  // Option 3
+}
 
-// Declaring global variables
-let lang = language.lang;
-let languages = {};
-
-// Load content from the main-en.js file
-language.load();                // Option 1
-language.load("en");            // Option 2 equivalent to option 1
-language.load("en", ["main"]);  // Option 3 equivalent to option 1
+window.addEventListener("DOMContentLoaded", init);
 ```
 
 > [!IMPORTANT]

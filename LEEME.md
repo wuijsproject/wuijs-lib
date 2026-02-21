@@ -892,17 +892,14 @@ Cabecera HTML:
 Código JS:
 
 ```js
-// Crear objeto
-const head = new WUIHead();
+const init = () => {
+	const head = new WUIHead();
+	head.setTitle("Título de prueba");
+	head.setApplicationName("Aplicación de prueba");
+	head.setThemeColor("#1e90ff");
+}
 
-// Cambiar titulo de la página
-head.setTitle("Título de prueba");
-
-// Cambiar metadato del nombre de la aplicación
-head.setApplicationName("Aplicación de prueba");
-
-// Cambiar metadato del color de la barra superior del navegador
-head.setThemeColor("#1e90ff");
+window.addEventListener("DOMContentLoaded", init);
 ```
 
 <a name="WUIBody"></a>
@@ -987,21 +984,22 @@ Código HTML:
 Código JS:
 
 ```js
-// Crear objeto
-const body = new WUIBody({
-	//environment: "web",
-	importDirectory: "./Imports/",
-	//importMode: "fetch",
-	onCompleted: () => {
-		body.prepare();
-	},
-	debug: true
-});
+const init = () => {
+	const body = new WUIBody({
+		//environment: "web",
+		importDirectory: "./Imports/",
+		//importMode: "fetch",
+		onCompleted: () => {
+			body.prepare();
+		},
+		debug: true
+	});
+	body.import("testContent", "test-content", () => {
+		testContentLog("contenido de prueba cargado");
+	});
+}
 
-// Importar contenido CSS/HTML/JS del directorio ./Imports
-body.import("testContent", "test-content", () => {
-	testContentLog("contenido de prueba cargado");
-});
+window.addEventListener("DOMContentLoaded", init);
 ```
 
 <a name="WUILanguage"></a>
@@ -1091,29 +1089,28 @@ Código HTML:
 Código JS:
 
 ```js
-// Crear objeto
-const language = new WUILanguage({
-    //selector: ".wui-language",
-    //directory: "./Languages/",
-    //sets: ["main"],
-    lang: "es",
-    //mode: "js",
-    //dataKey: "key",
-    //dataOutput: "text",
-    onLoad: (...args) => {
-		[lang, languages] = args;
-        console.log("Idioma cargado:", lang, languages);
-    }
-});
+const init = () => {
+	const language = new WUILanguage({
+		//selector: ".wui-language",
+		//directory: "./Languages/",
+		//sets: ["main"],
+		lang: "es",
+		//mode: "js",
+		//dataKey: "key",
+		//dataOutput: "text",
+		onLoad: (...args) => {
+			[lang, languages] = args;
+			console.log("Idioma cargado:", lang, languages);
+		}
+	});
+	let lang = language.lang;
+	let languages = {};
+	language.load();                  // Opción 1
+	//language.load("es");            // Opción 2
+	//language.load("es", ["main"]);  // Opción 3
+}
 
-// Declarar variables globales
-let lang = language.lang;
-let languages = {};
-
-// Cargar contenido del archivo main-es.js 
-language.load();                // Opción 1
-language.load("es");            // Opción 2 equivalente a opción 1
-language.load("es", ["main"]);  // Opción 3 equivalente a opción 1
+window.addEventListener("DOMContentLoaded", init);
 ```
 
 > [!IMPORTANT]
