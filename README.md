@@ -4601,7 +4601,7 @@ window.addEventListener("DOMContentLoaded", init);
 
 ### WUISwitch
 
-Version: `0.2`
+Version: `0.3`
 
 Component for the implementation of checkbox type data inputs based on HTML element `<input type="checkbox">`.
 
@@ -4695,13 +4695,23 @@ CSS settings:
 CSS code:
 
 ```css
+html,
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+nav {
+	display: flex;
+	margin: 10px;
+	align-items: center;
+	gap: 10px;
+}
+
 .my-switch {}
 
 .my-output {
-	position: absolute;
-	top: 4px;
-	left: 210px;
-	margin: 10px;
 	font-family: monospace;
 }
 ```
@@ -4716,37 +4726,39 @@ HTML head:
 HTML code:
 
 ```html
-<div class="wui-switch my-switch">
-	<input type="checkbox" name="myCheckbox" value="1">
-</div>
-
-<div class="my-output"></div>
+<nav>
+	<div class="wui-switch my-switch">
+		<input type="checkbox" name="myCheckbox" value="1">
+	</div>
+	<div class="my-output"></div>
+</nav>
 ```
 
 JS code:
 
 ```js
-// Create object
-const output = document.body.querySelector(".my-output");
-const checkbox = new WUISwitch({
-	selector: ".wui-switch.my-switch",
-	value: "1",
-	activated: true,
-	//enabled: true,
-	onChange: (value, activated) => {
-		output.textContent = `Change - value: ${value}, activated: ${activated}`;
-	}
-});
+const init = () => {
+	const output = document.body.querySelector(".my-output");
+	const checkbox = new WUISwitch({
+		selector: ".wui-switch.my-switch",
+		value: "1",
+		activated: true,
+		//enabled: true,
+		onChange: (value, activated) => {
+			output.textContent = `Change - value: ${value}, activated: ${activated}`;
+		}
+	});
+	checkbox.init();
+}
 
-// Initialize object
-checkbox.init();
+window.addEventListener("DOMContentLoaded", init);
 ```
 
 > [!IMPORTANT]
 > If the selector defines an element that is not of type `HTMLDivElement`, the object will not be initialized.
 
 > [!TIP]
-> You can check this functional example on CodePen at the link: [https://codepen.io/wuijsproject/pen/qENNwPa](https://codepen.io/wuijsproject/pen/qENNwPa).
+> You can check this functional example on CodeSandbox at the link: [https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUISwitch-basic](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUISwitch-basic).
 
 <a name="WUIIntensity"></a>
 
@@ -5236,8 +5248,8 @@ https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/W
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIDatepicker-basic
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUITimepicker-basic
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIColorpicker-basic
-
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUISwitch-basic
+
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIIntensity-basic
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIButton-basic
 -->
