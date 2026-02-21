@@ -94,6 +94,8 @@ class WUICookie {
 			} catch (error) {
 				console.error("WUICookie error:", error);
 			}
+		} else {
+			console.error("WUICookie error: navigator.cookieEnabled undefined");
 		}
 		return cookie;
 	}
