@@ -154,8 +154,6 @@ CSS code in the `WUI.css` file:
 
 	/* wui-icon */
 
-	--wui-icon-size: 24px;
-	--wui-icon-smallsize: 14px;
 	--wui-icon-bgcolor-out: rgb(from #353a40 r g b / 70%);
 	--wui-icon-bgcolor-over: #353a40;
 
@@ -1094,7 +1092,7 @@ const init = () => {
 		//selector: ".wui-language",
 		//directory: "./Languages/",
 		//sets: ["main"],
-		lang: "es",
+		lang: "en",
 		//mode: "js",
 		//dataKey: "key",
 		//dataOutput: "text",
@@ -1106,8 +1104,8 @@ const init = () => {
 	let lang = language.lang;
 	let languages = {};
 	language.load();                  // Option 1
-	//language.load("es");            // Option 2
-	//language.load("es", ["main"]);  // Option 3
+	//language.load("en");            // Option 2
+	//language.load("en", ["main"]);  // Option 3
 }
 
 window.addEventListener("DOMContentLoaded", init);
@@ -1201,7 +1199,7 @@ Utilities for animating HTML elements managment using the "onscroll" event of th
 
 | Variable                       | Description |
 | ------------------------------ | ----------- |
-| `--wui-scrolly-paging-bgcolor` |
+| `--wui-scrolly-paging-bgcolor` | Page indicator color. |
 
 #### CSS Styles for Animation
 
@@ -1656,10 +1654,8 @@ Pre-designed icons set loaded via CSS, for use in interfaces.
 
 | Variable                  | Description |
 | ------------------------- | ----------- |
-| `--wui-icon-size`         |
-| `--wui-icon-smallsize`    |
-| `--wui-icon-bgcolor-out`  |
-| `--wui-icon-bgcolor-over` |
+| `--wui-icon-bgcolor-out`  | Color of enabled monochrome icons in normal state. |
+| `--wui-icon-bgcolor-over` | Color of the monochromatic icons in hover/focus state. |
 
 #### Implementation
 
@@ -1670,8 +1666,6 @@ CSS settings:
 
 	/* wui-icon */
 
-	--wui-icon-size: 24px;
-	--wui-icon-smallsize: 14px;
 	--wui-icon-bgcolor-out: rgb(from #353a40 r g b / 70%);
 	--wui-icon-bgcolor-over: #353a40;
 }
@@ -1963,53 +1957,55 @@ Component for the implementation of menu bars.
 
 | Variable                                          | Description |
 | ------------------------------------------------- | ----------- |
-| `--wui-menubar-shadowcolor`                       | 
-| `--wui-menubar-margin`                            | 
-| `--wui-menubar-borderradius`                      | 
-| `--wui-menubar-bar-bordercolor`                   | 
-| `--wui-menubar-bar-bgcolor-top`                   | 
-| `--wui-menubar-bar-bgcolor-bottom`                | 
-| `--wui-menubar-bar-button-bgcolor-out`            | 
-| `--wui-menubar-bar-button-bgcolor-over`           | 
-| `--wui-menubar-bar-button-bgcolor-selected`       | 
-| `--wui-menubar-bar-button-bgcolor-disabled`       | 
-| `--wui-menubar-bar-button-iconsize`               | 
-| `--wui-menubar-bar-button-iconcolor-out`          | 
-| `--wui-menubar-bar-button-iconcolor-over`         | 
-| `--wui-menubar-bar-button-iconcolor-selected`     | 
-| `--wui-menubar-bar-button-iconcolor-disabled`     | 
-| `--wui-menubar-bar-button-textcolor-out`          | 
-| `--wui-menubar-bar-button-textcolor-over`         | 
-| `--wui-menubar-bar-button-textcolor-selected`     | 
-| `--wui-menubar-bar-button-textcolor-disabled`     | 
-| `--wui-menubar-expander-bgcolor-out`              | 
-| `--wui-menubar-expander-bgcolor-over`             | 
-| `--wui-menubar-expander-iconsize`                 | 
-| `--wui-menubar-expander-iconcolor-out`            | 
-| `--wui-menubar-expander-iconcolor-over`           | 
-| `--wui-menubar-expander-expandicon-src`           | 
-| `--wui-menubar-expander-contracticon-src`         | 
-| `--wui-menubar-opener-iconsize`           | 
-| `--wui-menubar-opener-openicon-src`       | 
-| `--wui-menubar-submenu-bordercolor`               | 
-| `--wui-menubar-submenu-bgcolor`                   | 
-| `--wui-menubar-submenu-button-bgcolor-out`        | 
-| `--wui-menubar-submenu-button-bgcolor-over`       | 
-| `--wui-menubar-submenu-button-bgcolor-selected`   | 
-| `--wui-menubar-submenu-button-bgcolor-disabled`   | 
-| `--wui-menubar-submenu-button-iconsize`           | 
-| `--wui-menubar-submenu-button-iconcolor-out`      | 
-| `--wui-menubar-submenu-button-iconcolor-over`     | 
-| `--wui-menubar-submenu-button-iconcolor-selected` | 
-| `--wui-menubar-submenu-button-iconcolor-disabled` | 
-| `--wui-menubar-submenu-button-textcolor-out`      | 
-| `--wui-menubar-submenu-button-textcolor-over`     | 
-| `--wui-menubar-submenu-button-textcolor-selected` | 
-| `--wui-menubar-submenu-button-textcolor-disabled` | 
-| `--wui-menubar-tooltip-bgcolor`                   | 
-| `--wui-menubar-tooltip-textcolor`                 | 
-| `--wui-menubar-bubble-bgcolor`                    | 
-| `--wui-menubar-bubble-textcolor`                  | 
+| `--wui-menubar-shadowcolor`                       | Shadow color for the menu bar and submenu. |
+| `--wui-menubar-margin`                            | Outer margin of the menu bar relative to the window edges. |
+| `--wui-menubar-borderradius`                      | Border radius for the menu bar, submenu, and buttons. |
+| `--wui-menubar-bar-bordercolor`                   | Border color of the main menu bar. |
+| `--wui-menubar-bar-bgcolor-top`                   | Top background color of the main bar (used in gradient). |
+| `--wui-menubar-bar-bgcolor-bottom`                | Bottom background color of the main bar (used in gradient). |
+| `--wui-menubar-bar-button-bgcolor-out`            | Background color of main bar buttons in normal state. |
+| `--wui-menubar-bar-button-bgcolor-over`           | Background color of main bar buttons in hover/focus state. |
+| `--wui-menubar-bar-button-bgcolor-selected`       | Background color of main bar buttons in selected state. |
+| `--wui-menubar-bar-button-bgcolor-disabled`       | Background color of main bar buttons in disabled state. |
+| `--wui-menubar-bar-button-iconsize`               | Icon size for main bar buttons. |
+| `--wui-menubar-bar-button-iconcolor-out`          | Icon color of main bar buttons in normal state. |
+| `--wui-menubar-bar-button-iconcolor-over`         | Icon color of main bar buttons in hover/focus state. |
+| `--wui-menubar-bar-button-iconcolor-selected`     | Icon color of main bar buttons in selected state. |
+| `--wui-menubar-bar-button-iconcolor-disabled`     | Icon color of main bar buttons in disabled state. |
+| `--wui-menubar-bar-button-textcolor-out`          | Text color of main bar buttons in normal state. |
+| `--wui-menubar-bar-button-textcolor-over`         | Text color of main bar buttons in hover/focus state. |
+| `--wui-menubar-bar-button-textcolor-selected`     | Text color of main bar buttons in selected state. |
+| `--wui-menubar-bar-button-textcolor-disabled`     | Text color of main bar buttons in disabled state. |
+| `--wui-menubar-expander-bgcolor-out`              | Background color of the expander/contractor button in normal state. |
+| `--wui-menubar-expander-bgcolor-over`             | Background color of the expander/contractor button in hover state. |
+| `--wui-menubar-expander-iconsize`                 | Icon size of the expander/contractor button. |
+| `--wui-menubar-expander-iconcolor-out`            | Icon color of the expander/contractor button in normal state. |
+| `--wui-menubar-expander-iconcolor-over`           | Icon color of the expander/contractor button in hover state. |
+| `--wui-menubar-expander-expandicon-src`           | Source for the expand icon (format: `url()` or `none` for the default source). |
+| `--wui-menubar-expander-contracticon-src`         | Source for the contract icon (format: `url()` or `none` for the default source). |
+| `--wui-menubar-opener-iconsize`                   | Icon size of the submenu opener button. |
+| `--wui-menubar-opener-openicon-src`               | Source for the submenu open icon (format: `url()` or `none` for the default source). |
+| `--wui-menubar-opener-closeicon-src`              | Source for the submenu close icon (format: `url()` or `none` for the default source). |
+| `--wui-menubar-submenu-bordercolor`               | Border color of the submenu. |
+| `--wui-menubar-submenu-bgcolor`                   | Background color of the submenu. |
+| `--wui-menubar-submenu-button-bgcolor-out`        | Background color of submenu buttons in normal state. |
+| `--wui-menubar-submenu-button-bgcolor-over`       | Background color of submenu buttons in hover/focus state. |
+| `--wui-menubar-submenu-button-bgcolor-selected`   | Background color of submenu buttons in selected state. |
+| `--wui-menubar-submenu-button-bgcolor-disabled`   | Background color of submenu buttons in disabled state. |
+| `--wui-menubar-submenu-button-iconsize`           | Icon size for submenu buttons. |
+| `--wui-menubar-submenu-button-iconcolor-out`      | Icon color of submenu buttons in normal state. |
+| `--wui-menubar-submenu-button-iconcolor-over`     | Icon color of submenu buttons in hover/focus state. |
+| `--wui-menubar-submenu-button-iconcolor-selected` | Icon color of submenu buttons in selected state. |
+| `--wui-menubar-submenu-button-iconcolor-disabled` | Icon color of submenu buttons in disabled state. |
+| `--wui-menubar-submenu-button-textcolor-out`      | Text color of submenu buttons in normal state. |
+| `--wui-menubar-submenu-button-textcolor-over`     | Text color of submenu buttons in hover/focus state. |
+| `--wui-menubar-submenu-button-textcolor-selected` | Text color of submenu buttons in selected state. |
+| `--wui-menubar-submenu-button-textcolor-disabled` | Text color of submenu buttons in disabled state. |
+| `--wui-menubar-tooltip-bgcolor`                   | Background color of the tooltip that appears when hovering over a collapsed button (desktop only). |
+| `--wui-menubar-tooltip-textcolor`                 | Text color of the tooltip. |
+| `--wui-menubar-bubble-bgcolor`                    | Background color of the notification bubble on buttons. |
+| `--wui-menubar-bubble-textcolor`                  | Text color of the notification bubble. |
+| `--wui-menubar-mobile-opener-closeicon-src`       | Source for the submenu close icon in mobile mode (format: `url()` or `none` for the default source). | 
 
 #### Implementation
 
@@ -2020,8 +2016,6 @@ CSS settings:
 
 	/* wui-icon */
 
-	--wui-icon-size: 24px;
-	--wui-icon-smallsize: 14px;
 	--wui-icon-bgcolor-out: rgb(from #353a40 r g b / 70%);
 	--wui-icon-bgcolor-over: #353a40;
 
@@ -2293,31 +2287,31 @@ Component for the implementation of data lists and buttons for each row optional
 
 | Variable                             | Description |
 | ------------------------------------ | ----------- |
-| `--wui-list-shadowcolor`             | 
-| `--wui-list-borderradius`            | 
-| `--wui-list-borderwidth`             | 
-| `--wui-list-bordercolor`             | 
-| `--wui-list-scroll-bgcolor-out`      | 
-| `--wui-list-scroll-bgcolor-over`     | 
-| `--wui-list-row-height`              | 
-| `--wui-list-row-borderwidth`         | 
-| `--wui-list-row-bordercolor-out`     | 
-| `--wui-list-row-bordercolor-over`    | 
-| `--wui-list-row-bgcolor-out`         | 
-| `--wui-list-row-bgcolor-over`        | 
-| `--wui-list-row-textcolor-out`       | 
-| `--wui-list-row-textcolor-over`      | 
-| `--wui-list-row-textcolor-disabled`  | 
-| `--wui-list-innerrow-borderwidth`    | 
-| `--wui-list-innerrow-bordercolor`    | 
-| `--wui-list-innerrow-bgcolor`        | 
-| `--wui-list-innerrow-textcolor`      | 
-| `--wui-list-buttons-bgcolor`         | 
-| `--wui-list-button-size`             | 
-| `--wui-list-button-hmargin`          | 
-| `--wui-list-button-borderradius`     | 
-| `--wui-list-button-bgcolor-enabled`  | 
-| `--wui-list-button-bgcolor-disabled` | 
+| `--wui-list-shadowcolor`             | Shadow color for the list. |
+| `--wui-list-borderradius`            | Border radius for the list. |
+| `--wui-list-borderwidth`             | Border width for the list. |
+| `--wui-list-bordercolor`             | Border color for the list. |
+| `--wui-list-scroll-bgcolor-out`      | Background color of the scrollbar in normal state. |
+| `--wui-list-scroll-bgcolor-over`     | Background color of the scrollbar in hover/active state. |
+| `--wui-list-row-height`              | Height of list rows. |
+| `--wui-list-row-borderwidth`         | Border width for rows. |
+| `--wui-list-row-bordercolor-out`     | Border color of rows in normal state. |
+| `--wui-list-row-bordercolor-over`    | Border color of rows in hover/focus state. |
+| `--wui-list-row-bgcolor-out`         | Background color of rows in normal state. |
+| `--wui-list-row-bgcolor-over`        | Background color of rows in hover/focus state. |
+| `--wui-list-row-textcolor-out`       | Text color of rows in normal state. |
+| `--wui-list-row-textcolor-over`      | Text color of rows in hover/focus state. |
+| `--wui-list-row-textcolor-disabled`  | Text color of rows in disabled state. |
+| `--wui-list-innerrow-borderwidth`    | Border width for inner rows (expandable content). |
+| `--wui-list-innerrow-bordercolor`    | Border color for inner rows (expandable content). |
+| `--wui-list-innerrow-bgcolor`        | Background color for inner rows (expandable content). |
+| `--wui-list-innerrow-textcolor`      | Text color for inner rows (expandable content). |
+| `--wui-list-buttons-bgcolor`         | Background color of the slidable row buttons area. |
+| `--wui-list-button-size`             | Size of row buttons. |
+| `--wui-list-button-hmargin`          | Horizontal margin between row buttons. |
+| `--wui-list-button-borderradius`     | Border radius for row buttons. |
+| `--wui-list-button-bgcolor-enabled`  | Background color of row buttons in enabled state. |
+| `--wui-list-button-bgcolor-disabled` | Background color of row buttons in disabled state. | 
 
 #### Implementation
 
@@ -2328,8 +2322,6 @@ CSS settings:
 
 	/* wui-icon */
 
-	--wui-icon-size: 24px;
-	--wui-icon-smallsize: 14px;
 	--wui-icon-bgcolor-out: rgb(from #353a40 r g b / 70%);
 	--wui-icon-bgcolor-over: #353a40;
 
@@ -2641,44 +2633,44 @@ Component for the implementation of data tables. Unlike the `WUIList` object, th
 
 | Variable                                       | Description |
 | ---------------------------------------------- | ----------- |
-| `--wui-table-shadowcolor`                      |
-| `--wui-table-borderradius`                     |
-| `--wui-table-scroll-bgcolor-out`               |
-| `--wui-table-scroll-bgcolor-over`              |
-| `--wui-table-column-bordercolor-width`         |
-| `--wui-table-column-bordercolor-out`           |
-| `--wui-table-column-bordercolor-over`          |
-| `--wui-table-column-bordercolor-selected`      |
-| `--wui-table-column-bgcolor-out`               |
-| `--wui-table-column-bgcolor-over`              |
-| `--wui-table-column-bgcolor-selected`          |
-| `--wui-table-column-textcolor-out`             |
-| `--wui-table-column-textcolor-over`            |
-| `--wui-table-column-textcolor-selected`        |
-| `--wui-table-column-textcolor-disabled`        |
-| `--wui-table-column-sorter-iconsize`           |
-| `--wui-table-column-sorter-iconcolor-out`      |
-| `--wui-table-column-sorter-iconcolor-over`     |
-| `--wui-table-column-sorter-iconcolor-disabled` |
-| `--wui-table-column-sorter-ascicon-src`        |
-| `--wui-table-column-sorter-descicon-src`       |
-| `--wui-table-column-resizer-bordercolor-out`   |
-| `--wui-table-column-resizer-bordercolor-over`  |
-| `--wui-table-column-dragger-bordercolor-over`  |
-| `--wui-table-column-dragger-bgcolor-drop`      |
-| `--wui-table-row-bordercolor-width`            |
-| `--wui-table-row-bordercolor-out`              |
-| `--wui-table-row-bordercolor-over`             |
-| `--wui-table-row-bordercolor-selected`         |
-| `--wui-table-row-bordercolor-disabled`         |
-| `--wui-table-row-bgcolor-out`                  |
-| `--wui-table-row-bgcolor-over`                 |
-| `--wui-table-row-bgcolor-selected`             |
-| `--wui-table-row-bgcolor-disabled`             |
-| `--wui-table-row-textcolor-out`                |
-| `--wui-table-row-textcolor-over`               |
-| `--wui-table-row-textcolor-selected`           |
-| `--wui-table-row-textcolor-disabled`           |
+| `--wui-table-shadowcolor`                      | Shadow color for the table. |
+| `--wui-table-borderradius`                     | Border radius for the table. |
+| `--wui-table-scroll-bgcolor-out`               | Background color of the horizontal scrollbar in normal state. |
+| `--wui-table-scroll-bgcolor-over`              | Background color of the horizontal scrollbar in hover/active state. |
+| `--wui-table-column-bordercolor-width`         | Border width for columns. |
+| `--wui-table-column-bordercolor-out`           | Border color of columns in normal state. |
+| `--wui-table-column-bordercolor-over`          | Border color of columns in hover/focus state. |
+| `--wui-table-column-bordercolor-selected`      | Border color of columns in selected state. |
+| `--wui-table-column-bgcolor-out`               | Background color of columns in normal state. |
+| `--wui-table-column-bgcolor-over`              | Background color of columns in hover/focus state. |
+| `--wui-table-column-bgcolor-selected`          | Background color of columns in selected state. |
+| `--wui-table-column-textcolor-out`             | Text color of columns in normal state. |
+| `--wui-table-column-textcolor-over`            | Text color of columns in hover/focus state. |
+| `--wui-table-column-textcolor-selected`        | Text color of columns in selected state. |
+| `--wui-table-column-textcolor-disabled`        | Text color of columns in disabled state. |
+| `--wui-table-column-sorter-iconsize`           | Icon size for column sorting. |
+| `--wui-table-column-sorter-iconcolor-out`      | Color of the sorting icon in normal state. |
+| `--wui-table-column-sorter-iconcolor-over`     | Color of the sorting icon in hover state. |
+| `--wui-table-column-sorter-iconcolor-disabled` | Color of the sorting icon in disabled state. |
+| `--wui-table-column-sorter-ascicon-src`        | Source for the ascending sort icon (format: `url()` or `none` for the default source). |
+| `--wui-table-column-sorter-descicon-src`       | Source for the descending sort icon (format: `url()` or `none` for the default source). |
+| `--wui-table-column-resizer-bordercolor-out`   | Border color of the column resizer in normal state. |
+| `--wui-table-column-resizer-bordercolor-over`  | Border color of the column resizer in hover state. |
+| `--wui-table-column-dragger-bordercolor-over`  | Border color of the column during drag in hover state. |
+| `--wui-table-column-dragger-bgcolor-drop`      | Background color of the column when dropping during drag. |
+| `--wui-table-row-bordercolor-width`            | Border width for rows. |
+| `--wui-table-row-bordercolor-out`              | Border color of rows in normal state. |
+| `--wui-table-row-bordercolor-over`             | Border color of rows in hover/focus state. |
+| `--wui-table-row-bordercolor-selected`         | Border color of rows in selected state. |
+| `--wui-table-row-bordercolor-disabled`         | Border color of rows in disabled state. |
+| `--wui-table-row-bgcolor-out`                  | Background color of rows in normal state. |
+| `--wui-table-row-bgcolor-over`                 | Background color of rows in hover/focus state. |
+| `--wui-table-row-bgcolor-selected`             | Background color of rows in selected state. |
+| `--wui-table-row-bgcolor-disabled`             | Background color of rows in disabled state. |
+| `--wui-table-row-textcolor-out`                | Text color of rows in normal state. |
+| `--wui-table-row-textcolor-over`               | Text color of rows in hover/focus state. |
+| `--wui-table-row-textcolor-selected`           | Text color of rows in selected state. |
+| `--wui-table-row-textcolor-disabled`           | Text color of rows in disabled state. |
 
 #### Implementation
 
@@ -2973,82 +2965,81 @@ Component for the implementation of data forms. This component allows the implem
 
 | Variable                                         | Description |
 | ------------------------------------------------ | ----------- |
-| `--wui-form-header-bordercolor`                  |
-| `--wui-form-header-titlecolor`                   |
-| `--wui-form-body-scroll-bgcolor-out`             |
-| `--wui-form-body-scroll-bgcolor-over`            |
-| `--wui-form-line-bordercolor`                    |
-| `--wui-form-fieldset-bgcolor`                    |
-| `--wui-form-legend-texttransform`                |
-| `--wui-form-legend-textcolor`                    |
-| `--wui-form-label-textcolor-out`                 |
-| `--wui-form-label-textcolor-focus`               |
-| `--wui-form-label-textcolor-notempty`            |
-| `--wui-form-label-textcolor-disabled`            |
-| `--wui-form-input-height`                        |
-| `--wui-form-input-borderwidth`                   |
-| `--wui-form-input-borderradius`                  |
-| `--wui-form-input-bordercolor-out`               |
-| `--wui-form-input-bordercolor-focus`             |
-| `--wui-form-input-bordercolor-invalid`           |
-| `--wui-form-input-bordercolor-disabled`          |
-| `--wui-form-input-bgcolor-out`                   |
-| `--wui-form-input-bgcolor-focus`                 |
-| `--wui-form-input-bgcolor-disabled`              |
-| `--wui-form-input-textcolor-out`                 |
-| `--wui-form-input-textcolor-over`                |
-| `--wui-form-input-textcolor-disabled`            |
-| `--wui-form-date-opener-iconsize`                |
-| `--wui-form-date-opener-iconcolor-out`           |
-| `--wui-form-date-opener-iconcolor-over`          |
-| `--wui-form-date-opener-iconcolor-disabled`      |
-| `--wui-form-date-opener-openicon-src`            |
-| `--wui-form-date-opener-closeicon-src`           |
-| `--wui-form-time-opener-iconsize`                |
-| `--wui-form-time-opener-iconcolor-out`           |
-| `--wui-form-time-opener-iconcolor-over`          |
-| `--wui-form-time-opener-iconcolor-disabled`      |
-| `--wui-form-time-opener-openicon-src`            |
-| `--wui-form-time-opener-closeicon-src`           |
-| `--wui-form-range-thumb-size`                    |
-| `--wui-form-range-thumb-bgcolor-out`             |
-| `--wui-form-range-thumb-bgcolor-over`            |
-| `--wui-form-range-thumb-bgcolor-disabled`        |
-| `--wui-form-range-trackbar-height`               |
-| `--wui-form-range-trackbar-borderwidth`          |
-| `--wui-form-range-trackbar-bordercolor-out`      |
-| `--wui-form-range-trackbar-bordercolor-focus`    |
-| `--wui-form-range-trackbar-bordercolor-disabled` |
-| `--wui-form-range-trackbar-bgcolor-out`          |
-| `--wui-form-range-trackbar-bgcolor-over`         |
-| `--wui-form-range-trackbar-bgcolor-disabled`     |
-| `--wui-form-select-opener-iconsize`              |
-| `--wui-form-select-opener-iconcolor-out`         |
-| `--wui-form-select-opener-iconcolor-over`        |
-| `--wui-form-select-opener-iconcolor-disabled`    |
-| `--wui-form-select-opener-openicon-src`          |
-| `--wui-form-select-opener-closeicon-src`         |
-| `--wui-form-data-textcolor-out`                  |
-| `--wui-form-data-textcolor-disabled`             |
-| `--wui-form-progress-borderwidth`                |
-| `--wui-form-progress-bordercolor`                |
-| `--wui-form-progress-valuecolor`                 |
-| `--wui-form-progress-bgcolor`                    |
-| `--wui-form-text-textcolor-out`                  |
-| `--wui-form-text-textcolor-disabled`             |
-| `--wui-form-text-linkcolor-out`                  |
-| `--wui-form-text-linkcolor-highlight`            |
-| `--wui-form-message-shadowcolor`                 |
-| `--wui-form-message-bgcolor`                     |
-| `--wui-form-message-textcolor`                   |
-| `--wui-form-message-highlight-bgcolor`           |
-| `--wui-form-message-highlight-textcolor`         |
-| `--wui-form-mobile-field-bordercolor`            |
-| `--wui-form-mobile-label-textcolor`              |
-| `--wui-form-mobile-input-height`                 |
-| `--wui-form-mobile-input-bgcolor`                |
-| `--wui-form-mobile-input-height`                 |
-| `--wui-form-mobile-input-borderradius`           |
+| `--wui-form-header-bordercolor`                  | Border color of the form header. |
+| `--wui-form-header-titlecolor`                   | Text color of the title in the form header. |
+| `--wui-form-body-scroll-bgcolor-out`             | Background color of the body scrollbar in normal state. |
+| `--wui-form-body-scroll-bgcolor-over`            | Background color of the body scrollbar in hover/active state. |
+| `--wui-form-line-bordercolor`                    | Border color of the form divider lines. |
+| `--wui-form-fieldset-bgcolor`                    | Background color of fieldsets. |
+| `--wui-form-legend-texttransform`                | Text transformation for fieldset legends. |
+| `--wui-form-legend-textcolor`                    | Text color of fieldset legends. |
+| `--wui-form-label-textcolor-out`                 | Text color of labels in normal state. |
+| `--wui-form-label-textcolor-focus`               | Text color of labels in focus state. |
+| `--wui-form-label-textcolor-notempty`            | Text color of labels when the field is not empty. |
+| `--wui-form-label-textcolor-disabled`            | Text color of labels in disabled state. |
+| `--wui-form-input-height`                        | Height of input fields. |
+| `--wui-form-input-borderwidth`                   | Border width of input fields. |
+| `--wui-form-input-borderradius`                  | Border radius of input fields. |
+| `--wui-form-input-bordercolor-out`               | Border color of input fields in normal state. |
+| `--wui-form-input-bordercolor-focus`             | Border color of input fields in focus state. |
+| `--wui-form-input-bordercolor-invalid`           | Border color of input fields when invalid. |
+| `--wui-form-input-bordercolor-disabled`          | Border color of input fields in disabled state. |
+| `--wui-form-input-bgcolor-out`                   | Background color of input fields in normal state. |
+| `--wui-form-input-bgcolor-focus`                 | Background color of input fields in focus state. |
+| `--wui-form-input-bgcolor-disabled`              | Background color of input fields in disabled state. |
+| `--wui-form-input-textcolor-out`                 | Text color of input fields in normal state. |
+| `--wui-form-input-textcolor-over`                | Text color of input fields in hover state. |
+| `--wui-form-input-textcolor-disabled`            | Text color of input fields in disabled state. |
+| `--wui-form-date-opener-iconsize`                | Icon size for the date picker opener. |
+| `--wui-form-date-opener-iconcolor-out`           | Icon color for the date picker opener in normal state. |
+| `--wui-form-date-opener-iconcolor-over`          | Icon color for the date picker opener in hover state. |
+| `--wui-form-date-opener-iconcolor-disabled`      | Icon color for the date picker opener in disabled state. |
+| `--wui-form-date-opener-openicon-src`            | Source for the date picker open icon (format: `url()` or `none` for the default source). |
+| `--wui-form-date-opener-closeicon-src`           | Source for the date picker close icon (format: `url()` or `none` for the default source). |
+| `--wui-form-time-opener-iconsize`                | Icon size for the time picker opener. |
+| `--wui-form-time-opener-iconcolor-out`           | Icon color for the time picker opener in normal state. |
+| `--wui-form-time-opener-iconcolor-over`          | Icon color for the time picker opener in hover state. |
+| `--wui-form-time-opener-iconcolor-disabled`      | Icon color for the time picker opener in disabled state. |
+| `--wui-form-time-opener-openicon-src`            | Source for the time picker open icon (format: `url()` or `none` for the default source). |
+| `--wui-form-time-opener-closeicon-src`           | Source for the time picker close icon (format: `url()` or `none` for the default source). |
+| `--wui-form-range-thumb-size`                    | Size of the range control thumb. |
+| `--wui-form-range-thumb-bgcolor-out`             | Background color of the range thumb in normal state. |
+| `--wui-form-range-thumb-bgcolor-over`            | Background color of the range thumb in hover state. |
+| `--wui-form-range-thumb-bgcolor-disabled`        | Background color of the range thumb in disabled state. |
+| `--wui-form-range-trackbar-height`               | Height of the range control trackbar. |
+| `--wui-form-range-trackbar-borderwidth`          | Border width of the range trackbar. |
+| `--wui-form-range-trackbar-bordercolor-out`      | Border color of the range trackbar in normal state. |
+| `--wui-form-range-trackbar-bordercolor-focus`    | Border color of the range trackbar in focus state. |
+| `--wui-form-range-trackbar-bordercolor-disabled` | Border color of the range trackbar in disabled state. |
+| `--wui-form-range-trackbar-bgcolor-out`          | Background color of the range trackbar in normal state. |
+| `--wui-form-range-trackbar-bgcolor-over`         | Background color of the range trackbar in hover state. |
+| `--wui-form-range-trackbar-bgcolor-disabled`     | Background color of the range trackbar in disabled state. |
+| `--wui-form-select-opener-iconsize`              | Icon size for the select dropdown opener. |
+| `--wui-form-select-opener-iconcolor-out`         | Icon color for the select opener in normal state. |
+| `--wui-form-select-opener-iconcolor-over`        | Icon color for the select opener in hover state. |
+| `--wui-form-select-opener-iconcolor-disabled`    | Icon color for the select opener in disabled state. |
+| `--wui-form-select-opener-openicon-src`          | Source for the select open icon (format: `url()` or `none` for the default source). |
+| `--wui-form-select-opener-closeicon-src`         | Source for the select close icon (format: `url()` or `none` for the default source). |
+| `--wui-form-data-textcolor-out`                  | Text color of data elements in normal state. |
+| `--wui-form-data-textcolor-disabled`             | Text color of data elements in disabled state. |
+| `--wui-form-progress-borderwidth`                | Border width of progress bars. |
+| `--wui-form-progress-bordercolor`                | Border color of progress bars. |
+| `--wui-form-progress-valuecolor`                 | Color of the progress bar value/fill. |
+| `--wui-form-progress-bgcolor`                    | Background color of progress bars. |
+| `--wui-form-text-textcolor-out`                  | Text color of auxiliary text in normal state. |
+| `--wui-form-text-textcolor-disabled`             | Text color of auxiliary text in disabled state. |
+| `--wui-form-text-linkcolor-out`                  | Color of links in auxiliary text in normal state. |
+| `--wui-form-text-linkcolor-highlight`            | Color of links in auxiliary text when highlighted. |
+| `--wui-form-message-shadowcolor`                 | Shadow color of form messages. |
+| `--wui-form-message-bgcolor`                     | Background color of form messages. |
+| `--wui-form-message-textcolor`                   | Text color of form messages. |
+| `--wui-form-message-highlight-bgcolor`           | Highlighted background color of form messages. |
+| `--wui-form-message-highlight-textcolor`         | Highlighted text color of form messages. |
+| `--wui-form-mobile-field-bordercolor`            | Border color of fields in mobile mode. |
+| `--wui-form-mobile-label-textcolor`              | Text color of labels in mobile mode. |
+| `--wui-form-mobile-input-height`                 | Height of input fields in mobile mode. |
+| `--wui-form-mobile-input-bgcolor`                | Background color of input fields in mobile mode. |
+| `--wui-form-mobile-input-borderradius`           | Border radius of input fields in mobile mode. |
 
 #### Implementation
 
@@ -3059,8 +3050,6 @@ CSS settings:
 
 	/* wui-icon */
 
-	--wui-icon-size: 24px;
-	--wui-icon-smallsize: 14px;
 	--wui-icon-bgcolor-out: rgb(from #353a40 r g b / 70%);
 	--wui-icon-bgcolor-over: #353a40;
 
@@ -5061,8 +5050,6 @@ CSS settings:
 
 	/* wui-icon */
 
-	--wui-icon-size: 24px;
-	--wui-icon-smallsize: 14px;
 	--wui-icon-bgcolor-out: rgb(from #353a40 r g b / 70%);
 	--wui-icon-bgcolor-over: #353a40;
 
@@ -5253,8 +5240,6 @@ WUI components can be customized using CSS. To do this, it is recommended to use
 
 	/* wui-icon */
 
-	--wui-icon-size: 24px;
-	--wui-icon-smallsize: 14px;
 	--wui-icon-bgcolor-out: rgb(from #353a40 r g b / 70%);
 	--wui-icon-bgcolor-over: #353a40;
 
