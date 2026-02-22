@@ -3736,48 +3736,48 @@ Componente para la implementación de entradas de datos de tipo lista de selecci
 
 | Variable                                            | Descripción |
 | --------------------------------------------------- | ----------- |
-| `--wui-selectpicker-borderradius`                   |
-| `--wui-selectpicker-borderwidth`                    |
-| `--wui-selectpicker-bordercolor`                    |
-| `--wui-selectpicker-bgcolor`                        |
-| `--wui-selectpicker-opener-iconsize`                |
-| `--wui-selectpicker-opener-iconcolor-out`           |
-| `--wui-selectpicker-opener-iconcolor-over`          |
-| `--wui-selectpicker-opener-iconcolor-disabled`      |
-| `--wui-selectpicker-opener-openicon-src`            |
-| `--wui-selectpicker-opener-closeicon-src`           |
-| `--wui-selectpicker-viewinput-paddingleft`          |
-| `--wui-selectpicker-viewinput-textcolor-out`        |
-| `--wui-selectpicker-viewinput-textcolor-over`       |
-| `--wui-selectpicker-viewinput-textcolor-disabled`   |
-| `--wui-selectpicker-box-shadowcolor`                |
-| `--wui-selectpicker-box-borderradius`               |
-| `--wui-selectpicker-box-bordercolor`                |
-| `--wui-selectpicker-box-bgcolor`                    |
-| `--wui-selectpicker-box-scroll-bgcolor-out`         |
-| `--wui-selectpicker-box-scroll-bgcolor-over`        |
-| `--wui-selectpicker-box-option-borderradius`        |
-| `--wui-selectpicker-box-option-bordercolor-out`     |
-| `--wui-selectpicker-box-option-bordercolor-over`    |
-| `--wui-selectpicker-box-option-bgcolor-out`         |
-| `--wui-selectpicker-box-option-bgcolor-over`        |
-| `--wui-selectpicker-box-option-iconsize`            |
-| `--wui-selectpicker-box-option-iconcolor-out`       |
-| `--wui-selectpicker-box-option-iconcolor-over`      |
-| `--wui-selectpicker-box-option-iconcolor-selected`  |
-| `--wui-selectpicker-box-option-iconcolor-disabled`  |
-| `--wui-selectpicker-box-option-checkicon-src`       |
-| `--wui-selectpicker-box-option-textcolor-empty`     |
-| `--wui-selectpicker-box-option-textcolor-out`       |
-| `--wui-selectpicker-box-option-textcolor-over`      |
-| `--wui-selectpicker-box-option-textcolor-selected`  |
-| `--wui-selectpicker-box-option-textcolor-disabled`  |
-| `--wui-selectpicker-box-button-bordercolor`         |
-| `--wui-selectpicker-box-button-textcolor-out`       |
-| `--wui-selectpicker-box-button-textcolor-over`      |
-| `--wui-selectpicker-mobile-overlay-bgcolor`         |
-| `--wui-selectpicker-mobile-box-width`               |
-| `--wui-selectpicker-mobile-box-borderradius`        |
+| `--wui-selectpicker-borderradius`                   | Radio de borde del contenedor del selectpicker. |
+| `--wui-selectpicker-borderwidth`                    | Ancho del borde del contenedor del selectpicker. |
+| `--wui-selectpicker-bordercolor`                    | Color del borde del contenedor del selectpicker. |
+| `--wui-selectpicker-bgcolor`                        | Color de fondo del contenedor del selectpicker. |
+| `--wui-selectpicker-opener-iconsize`                | Tamaño del icono del abridor del selectpicker. |
+| `--wui-selectpicker-opener-iconcolor-out`           | Color del icono del abridor del selectpicker en estado normal. |
+| `--wui-selectpicker-opener-iconcolor-over`          | Color del icono del abridor del selectpicker en estado hover. |
+| `--wui-selectpicker-opener-iconcolor-disabled`      | Color del icono del abridor del selectpicker en estado deshabilitado. |
+| `--wui-selectpicker-opener-openicon-src`            | Fuente de la imagen del icono de apertura del selectpicker<br>(formato: `url()` o `none` para utilizar la fuente predeterminada). |
+| `--wui-selectpicker-opener-closeicon-src`           | Fuente de la imagen del icono de cierre del selectpicker<br>(formato: `url()` o `none` para utilizar la fuente predeterminada). |
+| `--wui-selectpicker-viewinput-paddingleft`          | Padding izquierdo del campo de entrada de visualización. |
+| `--wui-selectpicker-viewinput-textcolor-out`        | Color del texto del campo de entrada de visualización en estado normal. |
+| `--wui-selectpicker-viewinput-textcolor-over`       | Color del texto del campo de entrada de visualización en estado hover. |
+| `--wui-selectpicker-viewinput-textcolor-disabled`   | Color del texto del campo de entrada de visualización en estado deshabilitado. |
+| `--wui-selectpicker-box-shadowcolor`                | Color de la sombra de la caja desplegable. |
+| `--wui-selectpicker-box-borderradius`               | Radio de borde de la caja desplegable. |
+| `--wui-selectpicker-box-bordercolor`                | Color del borde de la caja desplegable. |
+| `--wui-selectpicker-box-bgcolor`                    | Color de fondo de la caja desplegable. |
+| `--wui-selectpicker-box-scroll-bgcolor-out`         | Color de la barra de desplazamiento de la caja desplegable en estado normal. |
+| `--wui-selectpicker-box-scroll-bgcolor-over`        | Color de la barra de desplazamiento de la caja desplegable en estado hover. |
+| `--wui-selectpicker-box-option-borderradius`        | Radio de borde de las opciones de la caja desplegable. |
+| `--wui-selectpicker-box-option-bordercolor-out`     | Color del borde de las opciones de la caja desplegable en estado normal. |
+| `--wui-selectpicker-box-option-bordercolor-over`    | Color del borde de las opciones de la caja desplegable en estado hover. |
+| `--wui-selectpicker-box-option-bgcolor-out`         | Color de fondo de las opciones de la caja desplegable en estado normal. |
+| `--wui-selectpicker-box-option-bgcolor-over`        | Color de fondo de las opciones de la caja desplegable en estado hover. |
+| `--wui-selectpicker-box-option-iconsize`            | Tamaño del icono de las opciones de la caja desplegable. |
+| `--wui-selectpicker-box-option-iconcolor-out`       | Color del icono de las opciones de la caja desplegable en estado normal. |
+| `--wui-selectpicker-box-option-iconcolor-over`      | Color del icono de las opciones de la caja desplegable en estado hover. |
+| `--wui-selectpicker-box-option-iconcolor-selected`  | Color del icono de las opciones de la caja desplegable en estado seleccionado. |
+| `--wui-selectpicker-box-option-iconcolor-disabled`  | Color del icono de las opciones de la caja desplegable en estado deshabilitado. |
+| `--wui-selectpicker-box-option-checkicon-src`       | Fuente de la imagen del icono de verificación de las opciones<br>(formato: `url()` o `none` para utilizar la fuente predeterminada). |
+| `--wui-selectpicker-box-option-textcolor-empty`     | Color del texto de las opciones vacías de la caja desplegable. |
+| `--wui-selectpicker-box-option-textcolor-out`       | Color del texto de las opciones de la caja desplegable en estado normal. |
+| `--wui-selectpicker-box-option-textcolor-over`      | Color del texto de las opciones de la caja desplegable en estado hover. |
+| `--wui-selectpicker-box-option-textcolor-selected`  | Color del texto de las opciones de la caja desplegable en estado seleccionado. |
+| `--wui-selectpicker-box-option-textcolor-disabled`  | Color del texto de las opciones de la caja desplegable en estado deshabilitado. |
+| `--wui-selectpicker-box-button-bordercolor`         | Color del borde de los botones de la caja desplegable. |
+| `--wui-selectpicker-box-button-textcolor-out`       | Color del texto de los botones de la caja desplegable en estado normal. |
+| `--wui-selectpicker-box-button-textcolor-over`      | Color del texto de los botones de la caja desplegable en estado hover. |
+| `--wui-selectpicker-mobile-overlay-bgcolor`         | Color de fondo del overlay en modo móvil (ancho de pantalla menor a 768px). |
+| `--wui-selectpicker-mobile-box-width`               | Ancho de la caja desplegable en modo móvil (ancho de pantalla menor a 768px). |
+| `--wui-selectpicker-mobile-box-borderradius`        | Radio de borde de la caja desplegable en modo móvil (ancho de pantalla menor a 768px). |
 
 #### Implementación
 
@@ -4004,52 +4004,52 @@ Componente para la implementación de entradas de datos de tipo fecha basada en 
 
 | Variable                                         | Descripción |
 | ------------------------------------------------ | ----------- |
-| `--wui-datepicker-borderradius`                  |
-| `--wui-datepicker-borderwidth`                   |
-| `--wui-datepicker-bordercolor`                   |
-| `--wui-datepicker-bgcolor`                       |
-| `--wui-datepicker-opener-iconsize`               | 
-| `--wui-datepicker-opener-iconcolor-out`          | 
-| `--wui-datepicker-opener-iconcolor-over`         | 
-| `--wui-datepicker-opener-iconcolor-disabled`     | 
-| `--wui-datepicker-opener-openicon-src`           | 
-| `--wui-datepicker-opener-closeicon-src`          | 
-| `--wui-datepicker-viewinput-paddingleft`         |
-| `--wui-datepicker-viewinput-textcolor-out`       |
-| `--wui-datepicker-viewinput-textcolor-over`      |
-| `--wui-datepicker-viewinput-textcolor-disabled`  |
-| `--wui-datepicker-box-shadowcolor`               | 
-| `--wui-datepicker-box-borderradius`              | 
-| `--wui-datepicker-box-bordercolor`               | 
-| `--wui-datepicker-box-bgcolor`                   | 
-| `--wui-datepicker-box-period-iconsize`           | 
-| `--wui-datepicker-box-period-iconcolor-out`      | 
-| `--wui-datepicker-box-period-iconcolor-over`     | 
-| `--wui-datepicker-box-period-iconcolor-disabled` | 
-| `--wui-datepicker-box-period-upicon-src`         | 
-| `--wui-datepicker-box-period-downicon-src`       | 
-| `--wui-datepicker-box-paging-iconsize`           | 
-| `--wui-datepicker-box-paging-iconcolor-out`      | 
-| `--wui-datepicker-box-paging-iconcolor-over`     | 
-| `--wui-datepicker-box-paging-iconcolor-disabled` | 
-| `--wui-datepicker-box-paging-previcon-src`       | 
-| `--wui-datepicker-box-paging-nexticon-src`       | 
-| `--wui-datepicker-box-month-titlecolor`          | 
-| `--wui-datepicker-box-month-bgcolor-today`       | 
-| `--wui-datepicker-box-month-bgcolor-over`        | 
-| `--wui-datepicker-box-month-bgcolor-selected`    | 
-| `--wui-datepicker-box-month-textcolor-out`       | 
-| `--wui-datepicker-box-month-textcolor-over`      | 
-| `--wui-datepicker-box-month-textcolor-selected`  | 
-| `--wui-datepicker-box-day-bgcolor-today`         | 
-| `--wui-datepicker-box-day-bgcolor-over`          | 
-| `--wui-datepicker-box-day-bgcolor-selected`      | 
-| `--wui-datepicker-box-day-textcolor-out`         | 
-| `--wui-datepicker-box-day-textcolor-over`        | 
-| `--wui-datepicker-box-day-textcolor-selected`    | 
-| `--wui-datepicker-box-button-textcolor-out`      | 
-| `--wui-datepicker-box-button-textcolor-over`     | 
-| `--wui-datepicker-mobile-overlay-bgcolor`        | 
+| `--wui-datepicker-borderradius`                  | Radio de borde del contenedor del datepicker. |
+| `--wui-datepicker-borderwidth`                   | Ancho del borde del contenedor del datepicker. |
+| `--wui-datepicker-bordercolor`                   | Color del borde del contenedor del datepicker. |
+| `--wui-datepicker-bgcolor`                       | Color de fondo del contenedor del datepicker. |
+| `--wui-datepicker-opener-iconsize`               | Tamaño del icono del abridor del datepicker. |
+| `--wui-datepicker-opener-iconcolor-out`          | Color del icono del abridor del datepicker en estado normal. |
+| `--wui-datepicker-opener-iconcolor-over`         | Color del icono del abridor del datepicker en estado hover. |
+| `--wui-datepicker-opener-iconcolor-disabled`     | Color del icono del abridor del datepicker en estado deshabilitado. |
+| `--wui-datepicker-opener-openicon-src`           | Fuente de la imagen del icono de apertura del datepicker<br>(formato: `url()` o `none` para utilizar la fuente predeterminada). |
+| `--wui-datepicker-opener-closeicon-src`          | Fuente de la imagen del icono de cierre del datepicker<br>(formato: `url()` o `none` para utilizar la fuente predeterminada). |
+| `--wui-datepicker-viewinput-paddingleft`         | Padding izquierdo de los campos de entrada de visualización. |
+| `--wui-datepicker-viewinput-textcolor-out`       | Color del texto de los campos de entrada de visualización en estado normal. |
+| `--wui-datepicker-viewinput-textcolor-over`      | Color del texto de los campos de entrada de visualización en estado hover. |
+| `--wui-datepicker-viewinput-textcolor-disabled`  | Color del texto de los campos de entrada de visualización en estado deshabilitado. |
+| `--wui-datepicker-box-shadowcolor`               | Color de la sombra del calendario desplegable. |
+| `--wui-datepicker-box-borderradius`              | Radio de borde del calendario desplegable. |
+| `--wui-datepicker-box-bordercolor`               | Color del borde del calendario desplegable. |
+| `--wui-datepicker-box-bgcolor`                   | Color de fondo del calendario desplegable. |
+| `--wui-datepicker-box-period-iconsize`           | Tamaño del icono del selector de periodo (mes/año) del calendario. |
+| `--wui-datepicker-box-period-iconcolor-out`      | Color del icono del selector de periodo del calendario en estado normal. |
+| `--wui-datepicker-box-period-iconcolor-over`     | Color del icono del selector de periodo del calendario en estado hover. |
+| `--wui-datepicker-box-period-iconcolor-disabled` | Color del icono del selector de periodo del calendario en estado deshabilitado. |
+| `--wui-datepicker-box-period-upicon-src`         | Fuente de la imagen del icono de cambio hacia arriba del selector de periodo<br>(formato: `url()` o `none` para utilizar la fuente predeterminada). |
+| `--wui-datepicker-box-period-downicon-src`       | Fuente de la imagen del icono de cambio hacia abajo del selector de periodo<br>(formato: `url()` o `none` para utilizar la fuente predeterminada). |
+| `--wui-datepicker-box-paging-iconsize`           | Tamaño de los iconos de paginación del calendario. |
+| `--wui-datepicker-box-paging-iconcolor-out`      | Color de los iconos de paginación del calendario en estado normal. |
+| `--wui-datepicker-box-paging-iconcolor-over`     | Color de los iconos de paginación del calendario en estado hover. |
+| `--wui-datepicker-box-paging-iconcolor-disabled` | Color de los iconos de paginación del calendario en estado deshabilitado. |
+| `--wui-datepicker-box-paging-previcon-src`       | Fuente de la imagen del icono de paginación anterior del calendario<br>(formato: `url()` o `none` para utilizar la fuente predeterminada). |
+| `--wui-datepicker-box-paging-nexticon-src`       | Fuente de la imagen del icono de paginación siguiente del calendario<br>(formato: `url()` o `none` para utilizar la fuente predeterminada). |
+| `--wui-datepicker-box-month-titlecolor`          | Color del título de los meses del calendario. |
+| `--wui-datepicker-box-month-bgcolor-today`       | Color de fondo del mes actual del calendario. |
+| `--wui-datepicker-box-month-bgcolor-over`        | Color de fondo de los meses del calendario en estado hover. |
+| `--wui-datepicker-box-month-bgcolor-selected`    | Color de fondo del mes seleccionado del calendario. |
+| `--wui-datepicker-box-month-textcolor-out`       | Color del texto de los meses del calendario en estado normal. |
+| `--wui-datepicker-box-month-textcolor-over`      | Color del texto de los meses del calendario en estado hover. |
+| `--wui-datepicker-box-month-textcolor-selected`  | Color del texto del mes seleccionado del calendario. |
+| `--wui-datepicker-box-day-bgcolor-today`         | Color de fondo del día actual del calendario. |
+| `--wui-datepicker-box-day-bgcolor-over`          | Color de fondo de los días del calendario en estado hover. |
+| `--wui-datepicker-box-day-bgcolor-selected`      | Color de fondo del día seleccionado del calendario. |
+| `--wui-datepicker-box-day-textcolor-out`         | Color del texto de los días del calendario en estado normal. |
+| `--wui-datepicker-box-day-textcolor-over`        | Color del texto de los días del calendario en estado hover. |
+| `--wui-datepicker-box-day-textcolor-selected`    | Color del texto del día seleccionado del calendario. |
+| `--wui-datepicker-box-button-textcolor-out`      | Color del texto de los botones del calendario en estado normal. |
+| `--wui-datepicker-box-button-textcolor-over`     | Color del texto de los botones del calendario en estado hover. |
+| `--wui-datepicker-mobile-overlay-bgcolor`        | Color de fondo del overlay en modo móvil (ancho de pantalla menor a 768px). | 
 
 #### Implementación
 
@@ -4253,35 +4253,35 @@ Componente para la implementación de entradas de datos de tipo hora basada en e
 
 | Variable                                         | Descripción |
 | ------------------------------------------------ | ----------- |
-| `--wui-timepicker-borderradius`                  |
-| `--wui-timepicker-borderwidth`                   |
-| `--wui-timepicker-bordercolor`                   |
-| `--wui-timepicker-bgcolor`                       |
-| `--wui-timepicker-opener-iconsize`               |
-| `--wui-timepicker-opener-iconcolor-out`          |
-| `--wui-timepicker-opener-iconcolor-over`         |
-| `--wui-timepicker-opener-iconcolor-disabled`     |
-| `--wui-timepicker-opener-openicon-src`           |
-| `--wui-timepicker-opener-closeicon-src`          |
-| `--wui-timepicker-viewinput-paddingleft`         |
-| `--wui-timepicker-viewinput-textcolor-out`       |
-| `--wui-timepicker-viewinput-textcolor-over`      |
-| `--wui-timepicker-viewinput-textcolor-disabled`  |
-| `--wui-timepicker-box-shadowcolor`               |
-| `--wui-timepicker-box-borderradius`              |
-| `--wui-timepicker-box-bordercolor`               |
-| `--wui-timepicker-box-bgcolor`                   |
-| `--wui-timepicker-box-scroll-bgcolor-out`        | 
-| `--wui-timepicker-box-scroll-bgcolor-over`       |
-| `--wui-timepicker-box-option-textcolor-out`      |
-| `--wui-timepicker-box-option-bgcolor-over`       |
-| `--wui-timepicker-box-option-textcolor-over`     |
-| `--wui-timepicker-box-option-bgcolor-now`        |
-| `--wui-timepicker-box-option-bgcolor-selected`   |
-| `--wui-timepicker-box-option-textcolor-selected` |
-| `--wui-timepicker-box-button-textcolor-out`      |
-| `--wui-timepicker-box-button-textcolor-over`     |
-| `--wui-timepicker-mobile-overlay-bgcolor`        |
+| `--wui-timepicker-borderradius`                  | Radio de borde del contenedor del timepicker. |
+| `--wui-timepicker-borderwidth`                   | Ancho del borde del contenedor del timepicker. |
+| `--wui-timepicker-bordercolor`                   | Color del borde del contenedor del timepicker. |
+| `--wui-timepicker-bgcolor`                       | Color de fondo del contenedor del timepicker. |
+| `--wui-timepicker-opener-iconsize`               | Tamaño del icono del abridor del timepicker. |
+| `--wui-timepicker-opener-iconcolor-out`          | Color del icono del abridor del timepicker en estado normal. |
+| `--wui-timepicker-opener-iconcolor-over`         | Color del icono del abridor del timepicker en estado hover. |
+| `--wui-timepicker-opener-iconcolor-disabled`     | Color del icono del abridor del timepicker en estado deshabilitado. |
+| `--wui-timepicker-opener-openicon-src`           | Fuente de la imagen del icono de apertura del timepicker<br>(formato: `url()` o `none` para utilizar la fuente predeterminada). |
+| `--wui-timepicker-opener-closeicon-src`          | Fuente de la imagen del icono de cierre del timepicker<br>(formato: `url()` o `none` para utilizar la fuente predeterminada). |
+| `--wui-timepicker-viewinput-paddingleft`         | Padding izquierdo de los campos de entrada de visualización. |
+| `--wui-timepicker-viewinput-textcolor-out`       | Color del texto de los campos de entrada de visualización en estado normal. |
+| `--wui-timepicker-viewinput-textcolor-over`      | Color del texto de los campos de entrada de visualización en estado hover. |
+| `--wui-timepicker-viewinput-textcolor-disabled`  | Color del texto de los campos de entrada de visualización en estado deshabilitado. |
+| `--wui-timepicker-box-shadowcolor`               | Color de la sombra del selector de hora desplegable. |
+| `--wui-timepicker-box-borderradius`              | Radio de borde del selector de hora desplegable. |
+| `--wui-timepicker-box-bordercolor`               | Color del borde del selector de hora desplegable. |
+| `--wui-timepicker-box-bgcolor`                   | Color de fondo del selector de hora desplegable. |
+| `--wui-timepicker-box-scroll-bgcolor-out`        | Color de la barra de desplazamiento del selector de hora en estado normal. |
+| `--wui-timepicker-box-scroll-bgcolor-over`       | Color de la barra de desplazamiento del selector de hora en estado hover. |
+| `--wui-timepicker-box-option-textcolor-out`      | Color del texto de las opciones del selector de hora en estado normal. |
+| `--wui-timepicker-box-option-bgcolor-over`       | Color de fondo de las opciones del selector de hora en estado hover. |
+| `--wui-timepicker-box-option-textcolor-over`     | Color del texto de las opciones del selector de hora en estado hover. |
+| `--wui-timepicker-box-option-bgcolor-now`        | Color de fondo de la opción de hora actual del selector. |
+| `--wui-timepicker-box-option-bgcolor-selected`   | Color de fondo de la opción de hora seleccionada del selector. |
+| `--wui-timepicker-box-option-textcolor-selected` | Color del texto de la opción de hora seleccionada del selector. |
+| `--wui-timepicker-box-button-textcolor-out`      | Color del texto de los botones del selector de hora en estado normal. |
+| `--wui-timepicker-box-button-textcolor-over`     | Color del texto de los botones del selector de hora en estado hover. |
+| `--wui-timepicker-mobile-overlay-bgcolor`        | Color de fondo del overlay en modo móvil (ancho de pantalla menor a 768px). |
 
 #### Implementación
 
@@ -4466,39 +4466,39 @@ Componente para la implementación de entradas de datos de tipo selector de colo
 
 | Variable                                            | Descripción |
 | --------------------------------------------------- | ----------- |
-| `--wui-colorpicker-opener-iconsize`                 |
-| `--wui-colorpicker-opener-iconcolor-out`            |
-| `--wui-colorpicker-opener-iconcolor-over`           |
-| `--wui-colorpicker-opener-iconcolor-disabled`       |
-| `--wui-colorpicker-viewbutton-size`                 |
-| `--wui-colorpicker-viewbutton-bordercolor-out`      |
-| `--wui-colorpicker-viewbutton-bgcolor-out`          |
-| `--wui-colorpicker-viewbutton-bordercolor-over`     |
-| `--wui-colorpicker-viewbutton-bgcolor-over`         |
-| `--wui-colorpicker-viewbutton-bordercolor-disabled` |
-| `--wui-colorpicker-viewbutton-bgcolor-disabled`     |
-| `--wui-colorpicker-viewcolor-borderwidth`           |
-| `--wui-colorpicker-viewcolor-bordercolor`           |
-| `--wui-colorpicker-box-shadowcolor`                 |
-| `--wui-colorpicker-box-borderradius`                |
-| `--wui-colorpicker-box-bordercolor`                 |
-| `--wui-colorpicker-box-bgcolor`                     |
-| `--wui-colorpicker-box-scroll-bgcolor-out`          |
-| `--wui-colorpicker-box-scroll-bgcolor-over`         |
-| `--wui-colorpicker-box-tab-textcolor-out`           |
-| `--wui-colorpicker-box-tab-textcolor-selected`      |
-| `--wui-colorpicker-box-option-bgcolor-out`          |
-| `--wui-colorpicker-box-option-bordercolor-over`     |
-| `--wui-colorpicker-box-option-bgcolor-over`         |
-| `--wui-colorpicker-box-option-bgcolor-selected`     |
-| `--wui-colorpicker-box-option-textcolor-out`        |
-| `--wui-colorpicker-box-option-textcolor-over`       |
-| `--wui-colorpicker-box-option-textcolor-selected`   |
-| `--wui-colorpicker-box-preview-textcolor-out`       |
-| `--wui-colorpicker-box-preview-textcolor-empty`     |
-| `--wui-colorpicker-box-button-textcolor-out`        |
-| `--wui-colorpicker-box-button-textcolor-over`       |
-| `--wui-colorpicker-mobile-overlay-bgcolor`          |
+| `--wui-colorpicker-opener-iconsize`                 | Tamaño del icono del abridor del colorpicker. |
+| `--wui-colorpicker-opener-iconcolor-out`            | Color del icono del abridor del colorpicker en estado normal. |
+| `--wui-colorpicker-opener-iconcolor-over`           | Color del icono del abridor del colorpicker en estado hover. |
+| `--wui-colorpicker-opener-iconcolor-disabled`       | Color del icono del abridor del colorpicker en estado deshabilitado. |
+| `--wui-colorpicker-viewbutton-size`                 | Tamaño del botón de visualización del color. |
+| `--wui-colorpicker-viewbutton-bordercolor-out`      | Color del borde del botón de visualización en estado normal. |
+| `--wui-colorpicker-viewbutton-bgcolor-out`          | Color de fondo del botón de visualización en estado normal. |
+| `--wui-colorpicker-viewbutton-bordercolor-over`     | Color del borde del botón de visualización en estado hover. |
+| `--wui-colorpicker-viewbutton-bgcolor-over`         | Color de fondo del botón de visualización en estado hover. |
+| `--wui-colorpicker-viewbutton-bordercolor-disabled` | Color del borde del botón de visualización en estado deshabilitado. |
+| `--wui-colorpicker-viewbutton-bgcolor-disabled`     | Color de fondo del botón de visualización en estado deshabilitado. |
+| `--wui-colorpicker-viewcolor-borderwidth`           | Ancho del borde del indicador de color en el botón de visualización. |
+| `--wui-colorpicker-viewcolor-bordercolor`           | Color del borde del indicador de color en el botón de visualización. |
+| `--wui-colorpicker-box-shadowcolor`                 | Color de la sombra del selector de color desplegable. |
+| `--wui-colorpicker-box-borderradius`                | Radio de borde del selector de color desplegable. |
+| `--wui-colorpicker-box-bordercolor`                 | Color del borde del selector de color desplegable. |
+| `--wui-colorpicker-box-bgcolor`                     | Color de fondo del selector de color desplegable. |
+| `--wui-colorpicker-box-scroll-bgcolor-out`          | Color de la barra de desplazamiento del selector en estado normal. |
+| `--wui-colorpicker-box-scroll-bgcolor-over`         | Color de la barra de desplazamiento del selector en estado hover. |
+| `--wui-colorpicker-box-tab-textcolor-out`           | Color del texto de las pestañas del selector en estado normal. |
+| `--wui-colorpicker-box-tab-textcolor-selected`      | Color del texto de las pestañas del selector en estado seleccionado. |
+| `--wui-colorpicker-box-option-bgcolor-out`          | Color de fondo de las opciones del selector en estado normal. |
+| `--wui-colorpicker-box-option-bordercolor-over`     | Color del borde de las opciones del selector en estado hover. |
+| `--wui-colorpicker-box-option-bgcolor-over`         | Color de fondo de las opciones del selector en estado hover. |
+| `--wui-colorpicker-box-option-bgcolor-selected`     | Color de fondo de las opciones del selector en estado seleccionado. |
+| `--wui-colorpicker-box-option-textcolor-out`        | Color del texto de las opciones del selector en estado normal. |
+| `--wui-colorpicker-box-option-textcolor-over`       | Color del texto de las opciones del selector en estado hover. |
+| `--wui-colorpicker-box-option-textcolor-selected`   | Color del texto de las opciones del selector en estado seleccionado. |
+| `--wui-colorpicker-box-preview-textcolor-out`       | Color del texto de la vista previa del selector en estado normal. |
+| `--wui-colorpicker-box-preview-textcolor-empty`     | Color del texto de la vista previa del selector cuando está vacía. |
+| `--wui-colorpicker-box-button-textcolor-out`        | Color del texto de los botones del selector en estado normal. |
+| `--wui-colorpicker-box-button-textcolor-over`       | Color del texto de los botones del selector en estado hover. |
+| `--wui-colorpicker-mobile-overlay-bgcolor`          | Color de fondo del overlay en modo móvil (ancho de pantalla menor a 768px). |
 
 #### Implementación
 
@@ -4676,24 +4676,24 @@ Componente para la implementación de entradas de datos de tipo casilla de verif
 
 | Variable                                    | Descripción |
 | ------------------------------------------- | ----------- |
-| `--wui-switch-button-size`                  |             |
-| `--wui-switch-bordercolor-out`              |             |
-| `--wui-switch-bordercolor-over`             |             |
-| `--wui-switch-bordercolor-activated`        |             |
-| `--wui-switch-bordercolor-invalid`          |             |
-| `--wui-switch-bordercolor-disabled`         |             |
-| `--wui-switch-bgcolor-out`                  |             |
-| `--wui-switch-bgcolor-over`                 |             |
-| `--wui-switch-bgcolor-activated`            |             |
-| `--wui-switch-bgcolor-disabled`             |             |
-| `--wui-switch-button-bordercolor-out`       |             |
-| `--wui-switch-button-bordercolor-over`      |             |
-| `--wui-switch-button-bordercolor-activated` |             |
-| `--wui-switch-button-bordercolor-disabled`  |             |
-| `--wui-switch-button-bgcolor-out`           |             |
-| `--wui-switch-button-bgcolor-over`          |             |
-| `--wui-switch-button-bgcolor-activated`     |             |
-| `--wui-switch-button-bgcolor-disabled`      |             |
+| `--wui-switch-button-size`                  | Tamaño del botón del switch. |
+| `--wui-switch-bordercolor-out`              | Color del borde del switch en estado normal. |
+| `--wui-switch-bordercolor-over`             | Color del borde del switch en estado hover. |
+| `--wui-switch-bordercolor-activated`        | Color del borde del switch en estado activado. |
+| `--wui-switch-bordercolor-invalid`          | Color del borde del switch en estado inválido. |
+| `--wui-switch-bordercolor-disabled`         | Color del borde del switch en estado deshabilitado. |
+| `--wui-switch-bgcolor-out`                  | Color de fondo del switch en estado normal. |
+| `--wui-switch-bgcolor-over`                 | Color de fondo del switch en estado hover. |
+| `--wui-switch-bgcolor-activated`            | Color de fondo del switch en estado activado. |
+| `--wui-switch-bgcolor-disabled`             | Color de fondo del switch en estado deshabilitado. |
+| `--wui-switch-button-bordercolor-out`       | Color del borde del botón del switch en estado normal. |
+| `--wui-switch-button-bordercolor-over`      | Color del borde del botón del switch en estado hover. |
+| `--wui-switch-button-bordercolor-activated` | Color del borde del botón del switch en estado activado. |
+| `--wui-switch-button-bordercolor-disabled`  | Color del borde del botón del switch en estado deshabilitado. |
+| `--wui-switch-button-bgcolor-out`           | Color de fondo del botón del switch en estado normal. |
+| `--wui-switch-button-bgcolor-over`          | Color de fondo del botón del switch en estado hover. |
+| `--wui-switch-button-bgcolor-activated`     | Color de fondo del botón del switch en estado activado. |
+| `--wui-switch-button-bgcolor-disabled`      | Color de fondo del botón del switch en estado deshabilitado. |
 
 #### Implementación
 
@@ -4837,13 +4837,13 @@ Componente para la implementación de entradas de datos de tipo selector de inte
 
 | Variable                          | Descripción |
 | --------------------------------- | ----------- |
-| `--wui-intensity-height`          |             |
-| `--wui-intensity-borderradius`    |             |
-| `--wui-intensity-bordercolor-out` |             |
-| `--wui-intensity-bgcolor-none`    |             |
-| `--wui-intensity-bgcolor-low`     |             |
-| `--wui-intensity-bgcolor-half`    |             |
-| `--wui-intensity-bgcolor-high`    |             |
+| `--wui-intensity-height`          | Altura del control de intensidad. |
+| `--wui-intensity-borderradius`    | Radio de borde del control de intensidad. |
+| `--wui-intensity-bordercolor-out` | Color del borde del control de intensidad en estado normal. |
+| `--wui-intensity-bgcolor-none`    | Color de fondo del control de intensidad en nivel ninguno. |
+| `--wui-intensity-bgcolor-low`     | Color de fondo del control de intensidad en nivel bajo. |
+| `--wui-intensity-bgcolor-half`    | Color de fondo del control de intensidad en nivel medio. |
+| `--wui-intensity-bgcolor-high`    | Color de fondo del control de intensidad en nivel alto. |
 
 #### Implementación
 
@@ -4980,53 +4980,53 @@ Componente para la implementación de botones.
 
 | Variable                                    | Descripción |
 | ------------------------------------------- | ----------- |
-| `--wui-button-default-minwidth`             |
-| `--wui-button-default-height`               |
-| `--wui-button-default-bordercolor-out`      |
-| `--wui-button-default-bordercolor-over`     |
-| `--wui-button-default-bordercolor-selected` |
-| `--wui-button-default-bordercolor-disabled` |
-| `--wui-button-default-bgcolor-out`          |
-| `--wui-button-default-bgcolor-over`         |
-| `--wui-button-default-bgcolor-selected`     |
-| `--wui-button-default-bgcolor-disabled`     |
-| `--wui-button-default-textcolor-out`        |
-| `--wui-button-default-textcolor-over`       |
-| `--wui-button-default-textcolor-selected`   |
-| `--wui-button-default-textcolor-disabled`   |
-| `--wui-button-default-textsize`             |
-| `--wui-button-submit-minwidth`              |
-| `--wui-button-submit-height`                |
-| `--wui-button-submit-bordercolor-out`       |
-| `--wui-button-submit-bordercolor-over`      |
-| `--wui-button-submit-bordercolor-selected`  |
-| `--wui-button-submit-bordercolor-disabled`  |
-| `--wui-button-submit-bgcolor-out`           |
-| `--wui-button-submit-bgcolor-over`          |
-| `--wui-button-submit-bgcolor-selected`      |
-| `--wui-button-submit-bgcolor-disabled`      |
-| `--wui-button-submit-textcolor-out`         |
-| `--wui-button-submit-textcolor-over`        |
-| `--wui-button-submit-textcolor-selected`    |
-| `--wui-button-submit-textcolor-disabled`    |
-| `--wui-button-submit-textsize`              |
-| `--wui-button-warning-bordercolor-out`      |
-| `--wui-button-warning-bordercolor-over`     |
-| `--wui-button-warning-bordercolor-selected` |
-| `--wui-button-warning-bordercolor-disabled` |
-| `--wui-button-warning-bgcolor-out`          |
-| `--wui-button-warning-bgcolor-over`         |
-| `--wui-button-warning-bgcolor-selected`     |
-| `--wui-button-warning-bgcolor-disabled`     |
-| `--wui-button-warning-textcolor-out`        |
-| `--wui-button-warning-textcolor-over`       |
-| `--wui-button-warning-textcolor-selected`   |
-| `--wui-button-warning-textcolor-disabled`   |
-| `--wui-button-icon-float-padding`           |
-| `--wui-button-mobile-default-height`        |
-| `--wui-button-mobile-submit-height`         |
-| `--wui-button-mobile-icon-float-padding`    |
-| `--wui-button-form-default-minwidth`        |
+| `--wui-button-default-minwidth`             | Ancho mínimo del botón por defecto. |
+| `--wui-button-default-height`               | Altura del botón por defecto. |
+| `--wui-button-default-bordercolor-out`      | Color del borde del botón por defecto en estado normal. |
+| `--wui-button-default-bordercolor-over`     | Color del borde del botón por defecto en estado hover. |
+| `--wui-button-default-bordercolor-selected` | Color del borde del botón por defecto en estado seleccionado. |
+| `--wui-button-default-bordercolor-disabled` | Color del borde del botón por defecto en estado deshabilitado. |
+| `--wui-button-default-bgcolor-out`          | Color de fondo del botón por defecto en estado normal. |
+| `--wui-button-default-bgcolor-over`         | Color de fondo del botón por defecto en estado hover. |
+| `--wui-button-default-bgcolor-selected`     | Color de fondo del botón por defecto en estado seleccionado. |
+| `--wui-button-default-bgcolor-disabled`     | Color de fondo del botón por defecto en estado deshabilitado. |
+| `--wui-button-default-textcolor-out`        | Color del texto del botón por defecto en estado normal. |
+| `--wui-button-default-textcolor-over`       | Color del texto del botón por defecto en estado hover. |
+| `--wui-button-default-textcolor-selected`   | Color del texto del botón por defecto en estado seleccionado. |
+| `--wui-button-default-textcolor-disabled`   | Color del texto del botón por defecto en estado deshabilitado. |
+| `--wui-button-default-textsize`             | Tamaño del texto del botón por defecto. |
+| `--wui-button-submit-minwidth`              | Ancho mínimo del botón de envío. |
+| `--wui-button-submit-height`                | Altura del botón de envío. |
+| `--wui-button-submit-bordercolor-out`       | Color del borde del botón de envío en estado normal. |
+| `--wui-button-submit-bordercolor-over`      | Color del borde del botón de envío en estado hover. |
+| `--wui-button-submit-bordercolor-selected`  | Color del borde del botón de envío en estado seleccionado. |
+| `--wui-button-submit-bordercolor-disabled`  | Color del borde del botón de envío en estado deshabilitado. |
+| `--wui-button-submit-bgcolor-out`           | Color de fondo del botón de envío en estado normal. |
+| `--wui-button-submit-bgcolor-over`          | Color de fondo del botón de envío en estado hover. |
+| `--wui-button-submit-bgcolor-selected`      | Color de fondo del botón de envío en estado seleccionado. |
+| `--wui-button-submit-bgcolor-disabled`      | Color de fondo del botón de envío en estado deshabilitado. |
+| `--wui-button-submit-textcolor-out`         | Color del texto del botón de envío en estado normal. |
+| `--wui-button-submit-textcolor-over`        | Color del texto del botón de envío en estado hover. |
+| `--wui-button-submit-textcolor-selected`    | Color del texto del botón de envío en estado seleccionado. |
+| `--wui-button-submit-textcolor-disabled`    | Color del texto del botón de envío en estado deshabilitado. |
+| `--wui-button-submit-textsize`              | Tamaño del texto del botón de envío. |
+| `--wui-button-warning-bordercolor-out`      | Color del borde del botón de advertencia en estado normal. |
+| `--wui-button-warning-bordercolor-over`     | Color del borde del botón de advertencia en estado hover. |
+| `--wui-button-warning-bordercolor-selected` | Color del borde del botón de advertencia en estado seleccionado. |
+| `--wui-button-warning-bordercolor-disabled` | Color del borde del botón de advertencia en estado deshabilitado. |
+| `--wui-button-warning-bgcolor-out`          | Color de fondo del botón de advertencia en estado normal. |
+| `--wui-button-warning-bgcolor-over`         | Color de fondo del botón de advertencia en estado hover. |
+| `--wui-button-warning-bgcolor-selected`     | Color de fondo del botón de advertencia en estado seleccionado. |
+| `--wui-button-warning-bgcolor-disabled`     | Color de fondo del botón de advertencia en estado deshabilitado. |
+| `--wui-button-warning-textcolor-out`        | Color del texto del botón de advertencia en estado normal. |
+| `--wui-button-warning-textcolor-over`       | Color del texto del botón de advertencia en estado hover. |
+| `--wui-button-warning-textcolor-selected`   | Color del texto del botón de advertencia en estado seleccionado. |
+| `--wui-button-warning-textcolor-disabled`   | Color del texto del botón de advertencia en estado deshabilitado. |
+| `--wui-button-icon-float-padding`           | Padding de los iconos flotantes del botón. |
+| `--wui-button-mobile-default-height`        | Altura del botón por defecto en modo móvil (ancho de pantalla menor a 768px). |
+| `--wui-button-mobile-submit-height`         | Altura del botón de envío en modo móvil (ancho de pantalla menor a 768px). |
+| `--wui-button-mobile-icon-float-padding`    | Padding de los iconos flotantes del botón en modo móvil (ancho de pantalla menor a 768px). |
+| `--wui-button-form-default-minwidth`        | Ancho mínimo del botón por defecto cuando se usa en formularios. |
 
 #### Implementación
 
