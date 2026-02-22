@@ -2105,15 +2105,19 @@ const init = () => {
 	const modal = new WUIModal({
 		selector: ".wui-modal.my-modal",
 		//openDelay: 200,
-		//onStartOpen: null,
+		onStartOpen: () => {
+			output.textContent = "Abriendo modal";
+		},
 		onOpen: () => {
-			output.textContent = `Modal abierto"`;
+			output.textContent = "Modal abierto";
 		},
 		//onMaximize: null,
 		//onScrolling: null,
-		//onStartClose: null,
+		onStartClose: () => {
+			output.textContent = "Cerrando modal";
+		},
 		onClose: () => {
-			output.textContent = `Modal cerrado"`;
+			output.textContent = "Modal cerrado";
 		}
 		//onBack: null
 	});
