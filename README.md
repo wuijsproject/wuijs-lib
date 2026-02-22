@@ -50,7 +50,7 @@ Author: `Sergio E. Belmar V. <wuijs.project@gmail.com>`
 	*   [WUISwitch](#WUISwitch)
 	*   [WUIIntensity](#WUIIntensity)
 	*   [WUIButton](#WUIButton)
-*	[Good coding practices](#goodpractices)
+*	[Good Coding Practices](#goodpractices)
 *   [Demos](#demos) (CodeSandbox)
 
 <a name="overview"></a>
@@ -5198,7 +5198,7 @@ window.addEventListener("DOMContentLoaded", init);
 
 <a name="goodpractices"></a>
 
-## Good coding practices
+## Good Coding Practices
 
 ### 1. Responsive HTML5
 
@@ -5343,6 +5343,7 @@ This section contains examples of the implementations from the documentation and
 | [WUIButton](#WUIButton)             | [https://codepen.io/wuijsproject/pen/xbOwNzN](https://codepen.io/wuijsproject/pen/xbOwNzN) |
 -->
 <!--
+https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUICookie-basic
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIScrolly-basic
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIIcon-basic
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIFade-basic

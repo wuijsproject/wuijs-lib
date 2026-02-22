@@ -50,7 +50,7 @@ Autor: `Sergio E. Belmar V. <wuijs.project@gmail.com>`
 	*   [WUISwitch](#WUISwitch)
 	*   [WUIIntensity](#WUIIntensity)
 	*   [WUIButton](#WUIButton)
-*	[Buenas prácticas de codificación](#goodpractices)
+*	[Buenas Prácticas de Codificación](#goodpractices)
 *   [Demos](#demos) (CodeSandbox)
 
 ## Directory Map
@@ -5185,7 +5185,7 @@ window.addEventListener("DOMContentLoaded", init);
 
 <a name="goodpractices"></a>
 
-## Buenas prácticas de codificación
+## Buenas Prácticas de Codificación
 
 ### 1. Iniciar HTML5 responsivo
 
