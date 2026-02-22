@@ -2626,14 +2626,17 @@ body {
 }
 
 header {
-	width: 600px;
+	display: flex;
+    width: 600px;
 	margin: 10px;
-	text-align: right;
+	justify-content: flex-end;
+    align-items: center;
+    gap: 5px;
 }
 
 .my-button {
 	margin: 0;
-	padding: 2px 8px;
+	padding: 0px 5px;
 }
 
 .my-button.disabled {
@@ -2641,7 +2644,6 @@ header {
 }
 
 .my-paging {
-	display: inline;
 	font-size: 16px;
 }
 
@@ -2989,14 +2991,17 @@ body {
 }
 
 header {
-	width: 600px;
+	display: flex;
+    width: 600px;
 	margin: 10px;
-	text-align: right;
+	justify-content: flex-end;
+    align-items: center;
+    gap: 5px;
 }
 
 .my-button {
 	margin: 0;
-	padding: 2px 8px;
+	padding: 0px 5px;
 }
 
 .my-button.disabled {
@@ -3004,7 +3009,6 @@ header {
 }
 
 .my-paging {
-	display: inline;
 	font-size: 16px;
 }
 
