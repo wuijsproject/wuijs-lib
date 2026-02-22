@@ -34,7 +34,7 @@ Autor: `Sergio E. Belmar V. <wuijs.project@gmail.com>`
 	*   [WUIFade](#WUIFade)
 	*   [WUILoader](#WUILoader)
 	*   WUITooltip
-	*   WUIModal
+	*   [WUIModal](#WUIModal)
 	*   WUIPaging
 	*   WUISlider
 	*   WUITabs
@@ -72,7 +72,7 @@ WUI JS Lib, acrónimo del inglés *Web User Interface JavaScript library*, es un
 | [WUIFade](#WUIFade)                 | `0.1`   | Utilidades para control de salida y entrada con opacidad (fade-out y fade-in respectivamente) de elementos HTML. |
 | [WUILoader](#WUILoader)             | `0.2`   | Componente para la implementación de animaciones de carga. |
 | WUITooltip                          | `0.1`   | Componente para la implementación de textos emergentes. |
-| WUIModal                            | `0.2`   | Componente para la implementación de cuadros de diálogo (tipo `message`) y ventanas emergentes (tipo `page`). |
+| [WUIModal](#WUIModal)               | `0.2`   | Componente para la implementación de cuadros de diálogo (tipo `message`) y ventanas emergentes (tipo `page`). |
 | WUIPaging                           | `0.2`   | Componente para la implementación de vistas accesibles paginadamente. |
 | WUISlider                           | `0.2`   | Componente para la implementación de persianas controladas por ratón y/o por evento. |
 | WUITabs                             | `0.1`   | Componente para la implementación de vistas accesibles mediante selección por pestaña. |
@@ -1885,6 +1885,235 @@ Componente para la implementación de animaciones de carga
 
 <a name="WUITooltip"></a>
 <a name="WUIModal"></a>
+
+### WUIModal
+
+Versión: `0.2`
+
+Componente para la implementación de cuadros de diálogo (tipo `message`) y ventanas emergentes (tipo `page`).
+
+#### Fuentes
+
+| Tipo | Archivo |
+| ---- | ------- |
+| CSS  | [src/WUI/Modal/WUIModal-0.2.css](https://github.com/wuijsproject/wuijs-lib/blob/main/src/WUI/Modal/WUIModal-0.2.css) |
+| JS   | [src/WUI/Modal/WUIModal-0.2.js](https://github.com/wuijsproject/wuijs-lib/blob/main/src/WUI/Modal/WUIModal-0.2.js) |
+
+#### Constructor
+
+| Tipo     | Descripción |
+| -------- | ----------- |
+| WUIModal | `WUIModal([properties])`<br><br>Parámetros:<br>**• properties:** `object` *opcional* |
+
+#### Propiedades
+
+| Propiedad    | Tipo       | Valor predeterminado | Descripción |
+| ------------ | ---------- | -------------------- | ----------- |
+| selector     | `string`   | `""`                 | (get/set)<br><br>Selector CSS que define el elemento HTML contenedor del objeto. En caso de existir más de un elemento coincidente con el selector se incluirá únicamente la primera coincidencia. |
+| openDelay    | `number`   | `200`                | (get/set)<br><br>Duración de apertura del modal en milisegundos. |
+| onStartOpen  | `function` | `null`               | (get/set)<br><br>Función que se ejecuta cuando inicia la apertura del modal. |
+| onOpen       | `function` | `null`               | (get/set)<br><br>Función que se ejecuta cuando el modal se ha abierto completamente. |
+| onMaximize   | `function` | `null`               | (get/set)<br><br>Función que se ejecuta cuando el modal se maximiza. |
+| onScrolling  | `function` | `null`               | (get/set)<br><br>Función que se ejecuta durante el scroll del cuerpo del modal. |
+| onStartClose | `function` | `null`               | (get/set)<br><br>Función que se ejecuta cuando inicia el cierre del modal. |
+| onClose      | `function` | `null`               | (get/set)<br><br>Función que se ejecuta cuando el modal se ha cerrado completamente. |
+| onBack       | `function` | `null`               | (get/set)<br><br>Función que se ejecuta cuando se pulsa el botón de retroceso del modal. |
+
+#### Métodos de la Clase
+
+| Método           | Tipo retorno | Descripción |
+| ---------------- | ------------ | ----------- |
+| getAllInstances  | `Array`      | `WUIModal.getAllInstances()` *(método estático)*<br><br>Retorna todas las instancias de WUIModal. |
+| getOpenInstances | `Array`      | `WUIModal.getOpenInstances()` *(método estático)*<br><br>Retorna todas las instancias abiertas de WUIModal. |
+| closeAll         | `void`       | `WUIModal.closeAll([except])` *(método estático)*<br><br>Parámetros:<br>**• except:** `string` *opcional*, selector del modal que se excluirá de la secuencia de cierre.<br><br>Cierra todos los modales excepto el especificado por selector. |
+
+#### Métodos del Objecto
+
+| Método        | Tipo retorno  | Descripción |
+| ------------- | ------------- | ----------- |
+| getElement    | `HTMLElement` | `getElement()`<br><br>Retorna el elemento HTML contenedor del objeto. |
+| getBox        | `HTMLElement` | `getBox()`<br><br>Retorna el elemento HTML de la caja del modal. |
+| getHeader     | `HTMLElement` | `getHeader()`<br><br>Retorna el elemento HTML de la cabecera del modal. |
+| getBack       | `HTMLElement` | `getBack()`<br><br>Retorna el elemento HTML del botón de retroceso del modal. |
+| getTopbar     | `HTMLElement` | `getTopbar()`<br><br>Retorna el elemento HTML de la barra superior del modal. |
+| getTitle      | `HTMLElement` | `getTitle()`<br><br>Retorna el elemento HTML del título del modal. |
+| getClose      | `HTMLElement` | `getClose()`<br><br>Retorna el elemento HTML del botón de cierre del modal. |
+| getBody       | `HTMLElement` | `getBody()`<br><br>Retorna el elemento HTML del cuerpo del modal. |
+| getFooter     | `HTMLElement` | `getFooter()`<br><br>Retorna el elemento HTML del pie del modal. |
+| getStatus     | `string`      | `getStatus()`<br><br>Retorna el estado actual del modal como cadena separada por comas. Posibles valores: `"opened"`, `"maximized"`, `"under"`, `"close"`. |
+| setHeadBorder | `void`        | `setHeadBorder(border)`<br><br>Parámetros:<br>**• border:** `boolean`.<br><br>Establece si la cabecera tiene borde inferior. |
+| init          | `void`        | `init()`<br><br>Inicializa el objeto. |
+| open          | `void`        | `open([onOpen[, delay]])`<br><br>Parámetros:<br>**• onOpen:** `function` *opcional*, función que se ejecuta al abrir el modal. El valor predeterminado corresponde al de la propiedad `onOpen`.<br>**• delay:** `number` *opcional*, duración de apertura del modal en milisegundos. El valor predeterminado corresponde al de la propiedad `openDelay`.<br><br>Abre el modal. |
+| resposive     | `void`        | `resposive()`<br><br>Ajusta el modal al tamaño de la ventana. |
+| maximize      | `void`        | `maximize([onMaximize[, delay]])`<br><br>Parámetros:<br>**• onMaximize:** `function` *opcional*, función que se ejecuta al maximizar el modal. El valor predeterminado corresponde al de la propiedad `onMaximize`.<br>**• delay:** `number` *opcional*, duración de apertura del modal en milisegundos. El valor predeterminado corresponde al de la propiedad `openDelay`.<br><br>Maximiza el modal. |
+| close         | `void`        | `close([onClose[, delay]])`<br><br>Parámetros:<br>**• onClose:** `function` *opcional*, función que se ejecuta al cerrar el modal. El valor predeterminado corresponde al de la propiedad `onClose`.<br>**• delay:** `number` *opcional*, duración de apertura del modal en milisegundos. El valor predeterminado corresponde al de la propiedad `openDelay`.<br><br>Cierra el modal. |
+| isOpen        | `boolean`     | `isOpen()`<br><br>Retorna si el modal está abierto. |
+| destroy       | `void`        | `destroy()`<br><br>Destructor. |
+
+#### Variables CSS
+
+| Variable                                         | Descripción |
+| ------------------------------------------------ | ----------- |
+| `--wui-modal-overlay-bgcolor`                    | Color de fondo del overlay del modal. |
+| `--wui-modal-box-borderradius`                   | Radio de borde de la caja del modal. |
+| `--wui-modal-box-bgcolor`                        | Color de fondo de la caja del modal. |
+| `--wui-modal-back-textcolor`                     | Color del texto del botón de retroceso. |
+| `--wui-modal-close-bgcolor`                      | Color de fondo del botón de cierre. |
+| `--wui-modal-topbar-height`                      | Altura de la barra superior del modal. |
+| `--wui-modal-title-textfont`                     | Fuente del texto del título del modal. |
+| `--wui-modal-title-textcase`                     | Transformación del texto del título (uppercase, lowercase, none). |
+| `--wui-modal-title-textcolor`                    | Color del texto del título del modal. |
+| `--wui-modal-body-scroll-bgcolor-out`            | Color de la barra de desplazamiento del cuerpo en estado normal. |
+| `--wui-modal-body-scroll-bgcolor-over`           | Color de la barra de desplazamiento del cuerpo en estado hover. |
+| `--wui-modal-footer-bordercolor`                 | Color del borde del pie del modal. |
+| `--wui-modal-button-submit-bgcolor-mobile`       | Color de fondo del botón de envío en modo móvil. |
+| `--wui-modal-button-submit-textcolor-mobile`     | Color del texto del botón de envío en modo móvil. |
+| `--wui-modal-button-warning-textcolor-mobile`    | Color del texto del botón de advertencia en modo móvil. |
+| `--wui-modal-message-box-width`                  | Ancho de la caja del modal tipo mensaje. |
+| `--wui-modal-message-box-bgcolor`                | Color de fondo de la caja del modal tipo mensaje. |
+| `--wui-modal-message-box-textcolor`              | Color del texto de la caja del modal tipo mensaje. |
+| `--wui-modal-message-linkcolor`                  | Color de los enlaces en el modal tipo mensaje. |
+| `--wui-modal-message-mobile-box-width`           | Ancho de la caja del modal tipo mensaje en modo móvil. |
+| `--wui-modal-message-mobile-footer-bordercolor`  | Color del borde del pie del modal tipo mensaje en modo móvil. |
+| `--wui-modal-message-mobile-button-bordercolor`  | Color del borde de los botones del modal tipo mensaje en modo móvil. |
+| `--wui-modal-page-box-width`                     | Ancho de la caja del modal tipo página. |
+| `--wui-modal-page-box-height`                    | Altura de la caja del modal tipo página. |
+| `--wui-modal-page-box-borderradius`              | Radio de borde de la caja del modal tipo página. |
+| `--wui-modal-page-box-maxheight`                 | Altura máxima de la caja del modal tipo página. |
+| `--wui-modal-page-box-bgcolor`                   | Color de fondo de la caja del modal tipo página. |
+| `--wui-modal-page-header-topbar-bgcolor`         | Color de fondo de la barra superior de la cabecera del modal tipo página. |
+| `--wui-modal-page-header-bordercolor`            | Color del borde de la cabecera del modal tipo página. |
+| `--wui-modal-slidepage-box-margin`               | Margen de la caja del modal tipo página deslizante. |
+| `--wui-modal-smallpage-box-width`                | Ancho de la caja del modal tipo página pequeña. |
+| `--wui-modal-smallpage-box-height`               | Altura de la caja del modal tipo página pequeña. |
+
+#### Implementación
+
+Configuración CSS:
+
+```css
+:root {
+
+	/* wui-icon */
+
+	--wui-icon-bgcolor-out: rgb(from #353a40 r g b / 70%);
+	--wui-icon-bgcolor-over: #353a40;
+
+	/* wui-modal */
+
+	--wui-modal-overlay-bgcolor: rgb(from #010203 r g b / 20%);
+	--wui-modal-box-borderradius: 17px;
+	--wui-modal-box-bgcolor: rgb(from #efeff6 r g b / 100%);
+	--wui-modal-back-textcolor: #1e90ff;
+	--wui-modal-close-bgcolor: #353a40;
+	--wui-modal-topbar-height: 4px;
+	--wui-modal-title-textfont: Arial, Helvetica, Verdana, sans-serif;
+	--wui-modal-title-textcase: none;
+	--wui-modal-title-textcolor: #000;
+	--wui-modal-body-scroll-bgcolor-out: rgb(from #353a40 r g b / 20%);
+	--wui-modal-body-scroll-bgcolor-over: rgb(from #353a40 r g b / 40%);
+	--wui-modal-footer-bordercolor: transparent;
+	--wui-modal-button-submit-bgcolor-mobile: rgb(from #959da5 r g b / 20%);
+	--wui-modal-button-submit-textcolor-mobile: #1e90ff;
+	--wui-modal-button-warning-textcolor-mobile: #f44343;
+	--wui-modal-message-box-width: 280px;
+	--wui-modal-message-box-bgcolor: rgb(from #efeff6 r g b / 80%);
+	--wui-modal-message-box-textcolor: #2d3a47;
+	--wui-modal-message-mobile-box-width: 280px;
+	--wui-modal-message-mobile-footer-bordercolor: #d5dce3;
+	--wui-modal-message-mobile-button-bordercolor: #d5dce3;
+	--wui-modal-message-linkcolor: #1e90ff;
+	--wui-modal-page-box-width: 800px;
+	--wui-modal-page-box-height: 90%;
+	--wui-modal-page-box-borderradius: 10px;
+	--wui-modal-page-box-maxheight: 640px;
+	--wui-modal-page-box-bgcolor: rgb(from #efeff6 r g b / 100%);
+	--wui-modal-page-header-topbar-bgcolor: #d5dce3;
+	--wui-modal-page-header-bordercolor: #d5dce3;
+	--wui-modal-slidepage-box-margin: 10px;
+	--wui-modal-smallpage-box-width: 340px;
+	--wui-modal-smallpage-box-height: 280px;
+}
+```
+
+Código CSS:
+
+```css
+html,
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: Arial, Helvetica, Verdana, sans-serif;
+	font-size: 14px;
+}
+```
+
+Cabecera HTML:
+
+```html
+<link type="text/css" rel="stylesheet" href="https://wuijs.dev/Libraries/WUI/Icon/WUIIcon-0.1.css">
+<link type="text/css" rel="stylesheet" href="https://wuijs.dev/Libraries/WUI/Modal/WUIModal-0.2.css">
+<script type="text/javascript" src="https://wuijs.dev/Libraries/WUI/Modal/WUIModal-0.2.js"></script>
+```
+
+Código HTML:
+
+```html
+<button id="my-button">abrir modal</button>
+
+<div class="wui-modal my-modal page">
+	<div class="box">
+		<div class="header">
+			<div class="topbar"></div>
+			<div class="title">Título del Modal</div>
+			<div class="close wui-icon close-lg-line"></div>
+		</div>
+		<div class="body">
+			<p>Contenido del modal...</p>
+		</div>
+		<div class="footer">
+			Pié de página
+		</div>
+	</div>
+</div>
+```
+
+Código JS:
+
+```js
+const init = () => {
+	const button = document.getElementById("my-button");
+	const modal = new WUIModal({
+		selector: ".wui-modal.my-modal",
+		//openDelay: 200,
+		//onStartOpen: null,
+		onOpen: () => {
+			console.log("Modal abierto");
+		},
+		//onMaximize: null,
+		//onScrolling: null,
+		//onStartClose: null,
+		onClose: () => {
+			console.log("Modal cerrado");
+		}
+		//onBack: null
+	});
+	modal.init();
+	button.addEventListener("click", () => {
+		modal.open();
+	});
+}
+
+window.addEventListener("DOMContentLoaded", init);
+```
+
+> [!TIP]
+> Puede revisar este ejemplo funcional en CodeSandbox en el enlace: [https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIModal-basic](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIModal-basic).
+
 <a name="WUIPaging"></a>
 <a name="WUISlider"></a>
 <a name="WUITabs"></a>
@@ -5334,6 +5563,7 @@ https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/W
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIScrolly-basic
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIIcon-basic
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIFade-basic
+https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIModal-basic
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIMenubar-submenu
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIList-paging-buttongroup
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUITable-paging

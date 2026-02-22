@@ -34,7 +34,7 @@ Author: `Sergio E. Belmar V. <wuijs.project@gmail.com>`
 	*   [WUIFade](#WUIFade)
 	*   [WUILoader](#WUILoader)
 	*   WUITooltip
-	*   WUIModal
+	*   [WUIModal](#WUIModal)
 	*   WUIPaging
 	*   WUISlider
 	*   WUITabs
@@ -72,7 +72,7 @@ WUI JS Lib, an acronym for *Web User Interface JavaScript library*, is an open s
 | [WUIFade](#WUIFade)                 | `0.1`   | Utilities for fading out and fading control in HTML elements with opacity. |
 | [WUILoader](#WUILoader)             | `0.2`   | Component for the implementation of loading animations. |
 | WUITooltip                          | `0.1`   | Component for the implementation of tooltip texts. |
-| WUIModal                            | `0.2`   | Component for the implementation of dialog boxes (type `message`) and pop-up windows (type `page`). |
+| [WUIModal](#WUIModal)               | `0.2`   | Component for the implementation of dialog boxes (type `message`) and pop-up windows (type `page`). |
 | WUIPaging                           | `0.2`   | Component for the implementation of paginated views. |
 | WUISlider                           | `0.2`   | Component for the implementation of mouse-controlled and/or event-controlled blinds. |
 | WUITabs                             | `0.1`   | Component for the implementation of views accessible by tab selection. |
@@ -1886,6 +1886,235 @@ Component for the implementation of loading animations.
 
 <a name="WUITooltip"></a>
 <a name="WUIModal"></a>
+
+### WUIModal
+
+Version: `0.2`
+
+Component for the implementation of dialog boxes (type `message`) and pop-up windows (type `page`).
+
+#### Sources
+
+| Type | File |
+| ---- | ---- |
+| CSS  | [src/WUI/Modal/WUIModal-0.2.css](https://github.com/wuijsproject/wuijs-lib/blob/main/src/WUI/Modal/WUIModal-0.2.css) |
+| JS   | [src/WUI/Modal/WUIModal-0.2.js](https://github.com/wuijsproject/wuijs-lib/blob/main/src/WUI/Modal/WUIModal-0.2.js) |
+
+#### Constructor
+
+| Type     | Description |
+| -------- | ----------- |
+| WUIModal | `WUIModal([properties])`<br><br>Arguments:<br>**• properties:** `object` *optional* |
+
+#### Properties
+
+| Property     | Type       | Default value | Description |
+| ------------ | ---------- | ------------- | ----------- |
+| selector     | `string`   | `""`          | (get/set)<br><br>CSS selector that defines the HTML container element of the object. If there is more than one matching element with the selector, only the first match will be included. |
+| openDelay    | `number`   | `200`         | (get/set)<br><br>Modal opening duration in milliseconds. |
+| onStartOpen  | `function` | `null`        | (get/set)<br><br>Function that is executed when the modal starts opening. |
+| onOpen       | `function` | `null`        | (get/set)<br><br>Function that is executed when the modal has completely opened. |
+| onMaximize   | `function` | `null`        | (get/set)<br><br>Function that is executed when the modal is maximized. |
+| onScrolling  | `function` | `null`        | (get/set)<br><br>Function that is executed during scrolling of the modal body. |
+| onStartClose | `function` | `null`        | (get/set)<br><br>Function that is executed when the modal starts closing. |
+| onClose      | `function` | `null`        | (get/set)<br><br>Function that is executed when the modal has completely closed. |
+| onBack       | `function` | `null`        | (get/set)<br><br>Function that is executed when the modal back button is pressed. |
+
+#### Class Methods
+
+| Method           | Return type | Description |
+| ---------------- | ----------- | ----------- |
+| getAllInstances  | `Array`     | `WUIModal.getAllInstances()` *(static method)*<br><br>Returns all instances of WUIModal. |
+| getOpenInstances | `Array`     | `WUIModal.getOpenInstances()` *(static method)*<br><br>Returns all open instances of WUIModal. |
+| closeAll         | `void`      | `WUIModal.closeAll([except])` *(static method)*<br><br>Arguments:<br>**• except:** `string` *optional*, selector of the modal that will be excluded from the closing sequence.<br><br>Closes all modals except the one specified by selector. |
+
+#### Object Methods
+
+| Method        | Return type   | Description |
+| ------------- | ------------- | ----------- |
+| getElement    | `HTMLElement` | `getElement()`<br><br>Returns the HTML container element of the object. |
+| getBox        | `HTMLElement` | `getBox()`<br><br>Returns the HTML element of the modal box. |
+| getHeader     | `HTMLElement` | `getHeader()`<br><br>Returns the HTML element of the modal header. |
+| getBack       | `HTMLElement` | `getBack()`<br><br>Returns the HTML element of the modal back button. |
+| getTopbar     | `HTMLElement` | `getTopbar()`<br><br>Returns the HTML element of the modal top bar. |
+| getTitle      | `HTMLElement` | `getTitle()`<br><br>Returns the HTML element of the modal title. |
+| getClose      | `HTMLElement` | `getClose()`<br><br>Returns the HTML element of the modal close button. |
+| getBody       | `HTMLElement` | `getBody()`<br><br>Returns the HTML element of the modal body. |
+| getFooter     | `HTMLElement` | `getFooter()`<br><br>Returns the HTML element of the modal footer. |
+| getStatus     | `string`      | `getStatus()`<br><br>Returns the current modal status as a comma-separated string. Possible values: `"opened"`, `"maximized"`, `"under"`, `"close"`. |
+| setHeadBorder | `void`        | `setHeadBorder(border)`<br><br>Arguments:<br>**• border:** `boolean`.<br><br>Sets whether the header has a bottom border. |
+| init          | `void`        | `init()`<br><br>Initializes the object. |
+| open          | `void`        | `open([onOpen[, delay]])`<br><br>Arguments:<br>**• onOpen:** `function` *optional*, this function is executed when the modal is opened. The default value corresponds to the `onOpen` property.<br>**• delay:** `number` *optional*, modal opening duration in milliseconds. The default value corresponds to that of the `openDelay` property.<br><br>Opens the modal. |
+| resposive     | `void`        | `resposive()`<br><br>Adjusts the modal to the window size. |
+| maximize      | `void`        | `maximize([onMaximize[, delay]])`<br><br>Arguments:<br>**• onMaximize:** `function` *optional*, this function is executed when the modal is maximized. The default value corresponds to the `onMaximize` property.<br>**• delay:** `number` *optional*, modal opening duration in milliseconds. The default value corresponds to that of the `openDelay` property.<br><br>Maximizes the modal. |
+| close         | `void`        | `close([onClose[, delay]])`<br><br>Arguments:<br>**• onClose:** `function` *optional*, this function is executed when the modal closes. The default value corresponds to the `onClose` property.<br>**• delay:** `number` *optional*, modal opening duration in milliseconds. The default value corresponds to that of the `openDelay` property.<br><br>Closes the modal. |
+| isOpen        | `boolean`     | `isOpen()`<br><br>Returns whether the modal is open. |
+| destroy       | `void`        | `destroy()`<br><br>Destructor. |
+
+#### CSS Variables
+
+| Variable                                         | Description |
+| ------------------------------------------------ | ----------- |
+| `--wui-modal-overlay-bgcolor`                    | Background color of the modal overlay. |
+| `--wui-modal-box-borderradius`                   | Border radius of the modal box. |
+| `--wui-modal-box-bgcolor`                        | Background color of the modal box. |
+| `--wui-modal-back-textcolor`                     | Text color of the back button. |
+| `--wui-modal-close-bgcolor`                      | Background color of the close button. |
+| `--wui-modal-topbar-height`                      | Height of the modal top bar. |
+| `--wui-modal-title-textfont`                     | Font of the modal title text. |
+| `--wui-modal-title-textcase`                     | Text transformation of the title (uppercase, lowercase, none). |
+| `--wui-modal-title-textcolor`                    | Text color of the modal title. |
+| `--wui-modal-body-scroll-bgcolor-out`            | Scrollbar color of the body in normal state. |
+| `--wui-modal-body-scroll-bgcolor-over`           | Scrollbar color of the body in hover state. |
+| `--wui-modal-footer-bordercolor`                 | Border color of the modal footer. |
+| `--wui-modal-button-submit-bgcolor-mobile`       | Background color of the submit button in mobile mode. |
+| `--wui-modal-button-submit-textcolor-mobile`     | Text color of the submit button in mobile mode. |
+| `--wui-modal-button-warning-textcolor-mobile`    | Text color of the warning button in mobile mode. |
+| `--wui-modal-message-box-width`                  | Width of the message type modal box. |
+| `--wui-modal-message-box-bgcolor`                | Background color of the message type modal box. |
+| `--wui-modal-message-box-textcolor`              | Text color of the message type modal box. |
+| `--wui-modal-message-linkcolor`                  | Link color in the message type modal. |
+| `--wui-modal-message-mobile-box-width`           | Width of the message type modal box in mobile mode. |
+| `--wui-modal-message-mobile-footer-bordercolor`  | Footer border color of the message type modal in mobile mode. |
+| `--wui-modal-message-mobile-button-bordercolor`  | Button border color of the message type modal in mobile mode. |
+| `--wui-modal-page-box-width`                     | Width of the page type modal box. |
+| `--wui-modal-page-box-height`                    | Height of the page type modal box. |
+| `--wui-modal-page-box-borderradius`              | Border radius of the page type modal box. |
+| `--wui-modal-page-box-maxheight`                 | Maximum height of the page type modal box. |
+| `--wui-modal-page-box-bgcolor`                   | Background color of the page type modal box. |
+| `--wui-modal-page-header-topbar-bgcolor`         | Background color of the page type modal header top bar. |
+| `--wui-modal-page-header-bordercolor`            | Border color of the page type modal header. |
+| `--wui-modal-slidepage-box-margin`               | Margin of the slide page type modal box. |
+| `--wui-modal-smallpage-box-width`                | Width of the small page type modal box. |
+| `--wui-modal-smallpage-box-height`               | Height of the small page type modal box. |
+
+#### Implementation
+
+CSS settings:
+
+```css
+:root {
+
+	/* wui-icon */
+
+	--wui-icon-bgcolor-out: rgb(from #353a40 r g b / 70%);
+	--wui-icon-bgcolor-over: #353a40;
+
+	/* wui-modal */
+
+	--wui-modal-overlay-bgcolor: rgb(from #010203 r g b / 20%);
+	--wui-modal-box-borderradius: 17px;
+	--wui-modal-box-bgcolor: rgb(from #efeff6 r g b / 100%);
+	--wui-modal-back-textcolor: #1e90ff;
+	--wui-modal-close-bgcolor: #353a40;
+	--wui-modal-topbar-height: 4px;
+	--wui-modal-title-textfont: Arial, Helvetica, Verdana, sans-serif;
+	--wui-modal-title-textcase: none;
+	--wui-modal-title-textcolor: #000;
+	--wui-modal-body-scroll-bgcolor-out: rgb(from #353a40 r g b / 20%);
+	--wui-modal-body-scroll-bgcolor-over: rgb(from #353a40 r g b / 40%);
+	--wui-modal-footer-bordercolor: transparent;
+	--wui-modal-button-submit-bgcolor-mobile: rgb(from #959da5 r g b / 20%);
+	--wui-modal-button-submit-textcolor-mobile: #1e90ff;
+	--wui-modal-button-warning-textcolor-mobile: #f44343;
+	--wui-modal-message-box-width: 280px;
+	--wui-modal-message-box-bgcolor: rgb(from #efeff6 r g b / 80%);
+	--wui-modal-message-box-textcolor: #2d3a47;
+	--wui-modal-message-mobile-box-width: 280px;
+	--wui-modal-message-mobile-footer-bordercolor: #d5dce3;
+	--wui-modal-message-mobile-button-bordercolor: #d5dce3;
+	--wui-modal-message-linkcolor: #1e90ff;
+	--wui-modal-page-box-width: 800px;
+	--wui-modal-page-box-height: 90%;
+	--wui-modal-page-box-borderradius: 10px;
+	--wui-modal-page-box-maxheight: 640px;
+	--wui-modal-page-box-bgcolor: rgb(from #efeff6 r g b / 100%);
+	--wui-modal-page-header-topbar-bgcolor: #d5dce3;
+	--wui-modal-page-header-bordercolor: #d5dce3;
+	--wui-modal-slidepage-box-margin: 10px;
+	--wui-modal-smallpage-box-width: 340px;
+	--wui-modal-smallpage-box-height: 280px;
+}
+```
+
+CSS Code:
+
+```css
+html,
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: Arial, Helvetica, Verdana, sans-serif;
+	font-size: 14px;
+}
+```
+
+HTML head:
+
+```html
+<link type="text/css" rel="stylesheet" href="https://wuijs.dev/Libraries/WUI/Icon/WUIIcon-0.1.css">
+<link type="text/css" rel="stylesheet" href="https://wuijs.dev/Libraries/WUI/Modal/WUIModal-0.2.css">
+<script type="text/javascript" src="https://wuijs.dev/Libraries/WUI/Modal/WUIModal-0.2.js"></script>
+```
+
+HTML code:
+
+```html
+<button id="btn-open-modal">open modal</button>
+
+<div class="wui-modal my-modal page">
+	<div class="box">
+		<div class="header">
+			<div class="topbar"></div>
+			<div class="title">Modal Title</div>
+			<div class="close wui-icon close-lg-line"></div>
+		</div>
+		<div class="body">
+			<p>Modal content...</p>
+		</div>
+		<div class="footer">
+			Footer
+		</div>
+	</div>
+</div>
+```
+
+JS code:
+
+```js
+const init = () => {
+	const button = document.getElementById("my-button");
+	const modal = new WUIModal({
+		selector: ".wui-modal.my-modal",
+		//openDelay: 200,
+		//onStartOpen: null,
+		onOpen: () => {
+			console.log("Modal opened");
+		},
+		//onMaximize: null,
+		//onScrolling: null,
+		//onStartClose: null,
+		onClose: () => {
+			console.log("Modal closed");
+		}
+		//onBack: null
+	});
+	modal.init();
+	button.addEventListener("click", () => {
+		modal.open();
+	});
+}
+
+window.addEventListener("DOMContentLoaded", init);
+```
+
+> [!TIP]
+> You can check this working example on CodeSandbox at the link: [https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIModal-basic](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIModal-basic).
+
 <a name="WUIPaging"></a>
 <a name="WUISlider"></a>
 <a name="WUITabs"></a>
@@ -5347,6 +5576,7 @@ https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/W
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIScrolly-basic
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIIcon-basic
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIFade-basic
+https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIModal-basic
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIMenubar-submenu
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIList-paging-buttongroup
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUITable-paging
