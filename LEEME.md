@@ -4,7 +4,7 @@
 # wuijs-lib
 
 <div align="center">
-	<img src="https://github.com/wuijsproject/wuijs-lib/blob/main/imgs/logo/wuijs-logotipe-color.svg" width="220" height="220">
+	<img src="https://github.com/wuijsproject/wuijs-lib/blob/main/imgs/logo/wuijs-logotype-color.svg" width="220" height="220">
 </div>
 
 Versión librería: `0.3.0` ([Registro de Cambio](./REGISTRODECAMBIO.md))
