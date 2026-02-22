@@ -2051,6 +2051,17 @@ body {
 	font-family: Arial, Helvetica, Verdana, sans-serif;
 	font-size: 14px;
 }
+
+nav {
+	display: flex;
+	margin: 10px;
+	align-items: center;
+	gap: 10px;
+}
+
+.my-output {
+	font-family: monospace;
+}
 ```
 
 HTML head:
@@ -2064,7 +2075,10 @@ HTML head:
 HTML code:
 
 ```html
-<button id="btn-open-modal">open modal</button>
+<nav>
+	<button id="btn-open-modal">open modal</button>
+	<div class="my-output"></div>
+</nav>
 
 <div class="wui-modal my-modal page">
 	<div class="box">
@@ -2088,18 +2102,19 @@ JS code:
 ```js
 const init = () => {
 	const button = document.querySelector(".my-button");
+	const output = document.body.querySelector(".my-output");
 	const modal = new WUIModal({
 		selector: ".wui-modal.my-modal",
 		//openDelay: 200,
 		//onStartOpen: null,
 		onOpen: () => {
-			console.log("Modal opened");
+			output.textContent = `Modal opened"`;
 		},
 		//onMaximize: null,
 		//onScrolling: null,
 		//onStartClose: null,
 		onClose: () => {
-			console.log("Modal closed");
+			output.textContent = `Modal closed"`;
 		}
 		//onBack: null
 	});
