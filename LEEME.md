@@ -2111,6 +2111,9 @@ const init = () => {
 window.addEventListener("DOMContentLoaded", init);
 ```
 
+> [!IMPORTANT]
+> Si el selector define un elemento que no es de tipo `HTMLDivElement`, el objeto no se inicializará.
+
 > [!TIP]
 > Puede revisar este ejemplo funcional en CodeSandbox en el enlace: [https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIModal-basic](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIModal-basic).
 
@@ -2423,6 +2426,9 @@ const init = () => {
 
 window.addEventListener("DOMContentLoaded", init);
 ```
+
+> [!IMPORTANT]
+> Si el selector define un elemento que no es de tipo `HTMLDivElement`, el objeto no se inicializará.
 
 > [!TIP]
 > Puede revisar este ejemplo funcional en CodeSandbox en el enlace: [https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIMenubar-submenu](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIMenubar-submenu).
@@ -2763,6 +2769,9 @@ const init = () => {
 
 window.addEventListener("DOMContentLoaded", init);
 ```
+
+> [!IMPORTANT]
+> Si el selector define un elemento que no es de tipo `HTMLDivElement`, el objeto no se inicializará.
 
 > [!TIP]
 > Puede revisar este ejemplo funcional en CodeSandbox en el enlace: [https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIList-paging-buttongroup](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIList-paging-buttongroup).
@@ -3122,6 +3131,9 @@ const init = () => {
 
 window.addEventListener("DOMContentLoaded", init);
 ```
+
+> [!IMPORTANT]
+> Si el selector define un elemento que no es de tipo `HTMLDivElement`, el objeto no se inicializará.
 
 > [!TIP]
 > Puede revisar este ejemplo funcional en CodeSandbox en el enlace: [https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUITable-paging](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUITable-paging).

@@ -2112,6 +2112,9 @@ const init = () => {
 window.addEventListener("DOMContentLoaded", init);
 ```
 
+> [!IMPORTANT]
+> If the selector defines an element that is not of type `HTMLDivElement`, the object will not be initialized.
+
 > [!TIP]
 > You can check this working example on CodeSandbox at the link: [https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIModal-basic](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIModal-basic).
 
@@ -2422,6 +2425,9 @@ const init = () => {
 
 window.addEventListener("DOMContentLoaded", init);
 ```
+
+> [!IMPORTANT]
+> If the selector defines an element that is not of type `HTMLDivElement`, the object will not be initialized.
 
 > [!TIP]
 > You can check this functional example on CodeSandbox at the link: [https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIMenubar-submenu](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIMenubar-submenu).
@@ -2762,6 +2768,9 @@ const init = () => {
 
 window.addEventListener("DOMContentLoaded", init);
 ```
+
+> [!IMPORTANT]
+> If the selector defines an element that is not of type `HTMLDivElement`, the object will not be initialized.
 
 > [!TIP]
 > You can check this functional example in CodeSandbox at the link: [https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIList-paging-buttongroup](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIList-paging-buttongroup).
@@ -3128,6 +3137,9 @@ const init = () => {
 
 window.addEventListener("DOMContentLoaded", init);
 ```
+
+> [!IMPORTANT]
+> If the selector defines an element that is not of type `HTMLDivElement`, the object will not be initialized.
 
 > [!TIP]
 > You can check this functional example in CodeSandbox at the link: [https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUITable-paging](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUITable-paging).
