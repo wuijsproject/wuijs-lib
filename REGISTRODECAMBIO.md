@@ -1,10 +1,20 @@
 # Registro de Cambio
 
-## [v0.1.0] - 2024-05-01
+## [v0.3.0] - 2026-02-09
 
 Características:
 
-1. Versión de lanzamiento.
+1. Cambio de nombre clase WUICheckbox versión 0.2 a WUISwitch versión 0.3.
+2. Actualización versión clase WUICookie a 0.3.
+	- Se agregó el método `encode()`.
+	- Se agregó un retorno tipo `cadena` al método `set()` con la cookie codificada.
+	- Se reemplazó la sentencia `max-age` por `expires` en la codificación de la cookie.
+3. Actualización versión clase WUITable a 0.3.
+	- Se agregó propiedad `resetPaging`.
+	- Se agregó columna de relleno para mantener el ancho de la tabla.
+4. Actualización versión clase WUIForm a 0.3.
+	- Se agregó compatibilidad con WUISwitch versión 0.3.
+	- Se agregó el estilo de formulario "fill".
 
 ## [v0.2.0] - 2025-12-01
 
@@ -121,18 +131,8 @@ Características:
 	- Se agregó propiedad `onDblClick`.
 	- Se corrigió error para asegurar referencia a elementos del DOM de tipo `HTMLButtonElement`.
 
-## [v0.3.0] - 2026-02-09
+## [v0.1.0] - 2024-05-01
 
 Características:
 
-1. Cambio de nombre clase WUICheckbox versión 0.2 a WUISwitch versión 0.3.
-2. Actualización versión clase WUICookie a 0.3.
-	- Se agregó el método `encode()`.
-	- Se agregó un retorno tipo `cadena` al método `set()` con la cookie codificada.
-	- Se reemplazó la sentencia `max-age` por `expires` en la codificación de la cookie.
-3. Actualización versión clase WUITable a 0.3.
-	- Se agregó propiedad `resetPaging`.
-	- Se agregó columna de relleno para mantener el ancho de la tabla.
-4. Actualización versión clase WUIForm a 0.3.
-	- Se agregó compatibilidad con WUISwitch versión 0.3.
-	- Se agregó el estilo de formulario "fill".
+1. Versión de lanzamiento.
