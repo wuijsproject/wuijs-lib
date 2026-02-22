@@ -5539,42 +5539,44 @@ window.addEventListener("DOMContentLoaded", init);
 Esta sección recoge los ejemplos de las implementaciones de la documentación y otros demos complementarios, todos disponibles en el repositorio **WUI/JS Lab** [https://github.com/wuijsproject/wuijs-lab](https://github.com/wuijsproject/wuijs-lab).
 
 -	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIScrolly-basic](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIScrolly-basic)<br>
-	Esta demostración muestra el uso de la funcionalidad básica de WUIScrolly.<br>
+	Esta demostración muestra el uso de la funcionalidad básica de WUIScrolly.<br><br>
 -	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIIcon-basic](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIIcon-basic)<br>
-	Esta demostración muestra el uso de la funcionalidad básica de WUIIcon.<br>
+	Esta demostración muestra el uso de la funcionalidad básica de WUIIcon.<br><br>
 -	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIFade-basic](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIFade-basic)<br>
-	Esta demostración muestra el uso de la funcionalidad básica de WUIFade.<br>
+	Esta demostración muestra el uso de la funcionalidad básica de WUIFade.<br><br>
+-	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIModal-basic](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIModal-basic)<br>
+	Esta demostración muestra el uso de la funcionalidad básica de WUIModal.<br><br>
 -	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIMenubar-submenu](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIMenubar-submenu)<br>
-	Esta demostración muestra el uso de la funcionalidad de submenú de WUIMenubar.<br>
+	Esta demostración muestra el uso de la funcionalidad de submenú de WUIMenubar.<br><br>
 -	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIList-paging-buttongroup](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIList-paging-buttongroup)<br>
 	Esta demostración muestra el uso de la funcionalidad de paginación de WUIList mediante enlaces de navegación.<br>
 	El grupo de botones laterales con tapa extraíble está configurado con dos botones: uno asociado con una posible función de edición y el otro con la de eliminación.<br>
-	Los datos de la lista se cargan directamente durante la creación del componente.<br>
+	Los datos de la lista se cargan directamente durante la creación del componente.<br><br>
 -	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUITable-paging](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUITable-paging)<br>
 	Esta demostración muestra el uso de la función de paginación de WUITable mediante enlaces de navegación.<br>
-	Los datos de la tabla se cargan directamente durante la creación del componente.<br>
+	Los datos de la tabla se cargan directamente durante la creación del componente.<br><br>
 -	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIForm-fillstyle](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIForm-fillstyle)<br>
-	Esta demo muestra el uso de WUIForm con estilo de relleno y entradas HTML nativas.
+	Esta demo muestra el uso de WUIForm con estilo de relleno y entradas HTML nativas.<br><br>
 -	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIForm-linestyle](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIForm-linestyle)<br>
-	Esta demo muestra el uso de WUIForm con estilo de línea y entradas HTML nativas.<br>
+	Esta demo muestra el uso de WUIForm con estilo de línea y entradas HTML nativas.<br><br>
 -	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIForm-wuiinputs](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIForm-wuiinputs)<br>
-	Esta demostración muestra el uso de WUIForm con estilo de relleno y componentes de entrada WUI.<br>
+	Esta demostración muestra el uso de WUIForm con estilo de relleno y componentes de entrada WUI.<br><br>
 -	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIFormat-basic](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIFormat-basic)<br>
-	Esta demostración muestra el uso de WUIFormat para el formato de números, cadenas y fechas.<br>
+	Esta demostración muestra el uso de WUIFormat para el formato de números, cadenas y fechas.<br><br>
 -	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUISelectpicker-basic](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUISelectpicker-basic)<br>
-	Esta demo muestra el uso de las funciones básicas de WUISelectpicker.<br>
+	Esta demo muestra el uso de las funciones básicas de WUISelectpicker.<br><br>
 -	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIDatepicker-basic](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIDatepicker-basic)<br>
-	Esta demo muestra el uso de las funciones básicas de WUIDatepicker.<br>
+	Esta demo muestra el uso de las funciones básicas de WUIDatepicker.<br><br>
 -	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUITimepicker-basic](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIDatepicker-basic)<br>
-	Esta demo muestra el uso de las funciones básicas de WUITimepicker.<br>
+	Esta demo muestra el uso de las funciones básicas de WUITimepicker.<br><br>
 -	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIColorpicker-basic](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIDatepicker-basic)<br>
-	Esta demo muestra el uso de las funciones básicas de WUIColorpicker.<br>
+	Esta demo muestra el uso de las funciones básicas de WUIColorpicker.<br><br>
 -	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUISwitch-basic](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUISwitch-basic)<br>
-	Esta demo muestra el uso de las funciones básicas de WUISwitch.<br>
+	Esta demo muestra el uso de las funciones básicas de WUISwitch.<br><br>
 -	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIIntensity-basic](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIIntensity-basic)<br>
-	Esta demo muestra el uso de las funciones básicas de WUIIntensity.<br>
+	Esta demo muestra el uso de las funciones básicas de WUIIntensity.<br><br>
 -	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIButton-basic](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIButton-basic)<br>
-	Esta demostración muestra el uso de las funciones básicas de WUIButton.<br>
+	Esta demostración muestra el uso de las funciones básicas de WUIButton.<br><br>
 <!--
 | Clase                               | Enlace |
 | ----------------------------------- | ------ |
