@@ -681,7 +681,7 @@ Assuming the CSS settings file is installed in the relative path `./Settings/WUI
 HTML code:
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html>
 	<head>
 		<title></title>
@@ -2087,7 +2087,7 @@ JS code:
 
 ```js
 const init = () => {
-	const button = document.getElementById("my-button");
+	const button = document.querySelector(".my-button");
 	const modal = new WUIModal({
 		selector: ".wui-modal.my-modal",
 		//openDelay: 200,

@@ -681,7 +681,7 @@ Suponiendo que los archivos de configuración de estilos CSS son instalados en e
 Código HTML:
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html>
 	<head>
 		<title></title>
@@ -2086,7 +2086,7 @@ Código JS:
 
 ```js
 const init = () => {
-	const button = document.getElementById("my-button");
+	const button = document.querySelector(".my-button");
 	const modal = new WUIModal({
 		selector: ".wui-modal.my-modal",
 		//openDelay: 200,
