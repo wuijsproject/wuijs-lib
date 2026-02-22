@@ -2076,7 +2076,7 @@ HTML code:
 
 ```html
 <nav>
-	<button id="btn-open-modal">open modal</button>
+	<button class="my-button">open modal</button>
 	<div class="my-output"></div>
 </nav>
 
