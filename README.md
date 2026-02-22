@@ -1981,11 +1981,11 @@ Component for the implementation of menu bars.
 | `--wui-menubar-expander-iconsize`                 | Icon size of the expander/contractor button. |
 | `--wui-menubar-expander-iconcolor-out`            | Icon color of the expander/contractor button in normal state. |
 | `--wui-menubar-expander-iconcolor-over`           | Icon color of the expander/contractor button in hover state. |
-| `--wui-menubar-expander-expandicon-src`           | Source for the expand icon (format: `url()` or `none` for the default source). |
-| `--wui-menubar-expander-contracticon-src`         | Source for the contract icon (format: `url()` or `none` for the default source). |
+| `--wui-menubar-expander-expandicon-src`           | Source for the expand icon<br>(format: `url()` or `none` for the default source). |
+| `--wui-menubar-expander-contracticon-src`         | Source for the contract icon<br>(format: `url()` or `none` for the default source). |
 | `--wui-menubar-opener-iconsize`                   | Icon size of the submenu opener button. |
-| `--wui-menubar-opener-openicon-src`               | Source for the submenu open icon (format: `url()` or `none` for the default source). |
-| `--wui-menubar-opener-closeicon-src`              | Source for the submenu close icon (format: `url()` or `none` for the default source). |
+| `--wui-menubar-opener-openicon-src`               | Source for the submenu open icon<br>(format: `url()` or `none` for the default source). |
+| `--wui-menubar-opener-closeicon-src`              | Source for the submenu close icon<br>(format: `url()` or `none` for the default source). |
 | `--wui-menubar-submenu-bordercolor`               | Border color of the submenu. |
 | `--wui-menubar-submenu-bgcolor`                   | Background color of the submenu. |
 | `--wui-menubar-submenu-button-bgcolor-out`        | Background color of submenu buttons in normal state. |
@@ -2005,7 +2005,7 @@ Component for the implementation of menu bars.
 | `--wui-menubar-tooltip-textcolor`                 | Text color of the tooltip. |
 | `--wui-menubar-bubble-bgcolor`                    | Background color of the notification bubble on buttons. |
 | `--wui-menubar-bubble-textcolor`                  | Text color of the notification bubble. |
-| `--wui-menubar-mobile-opener-closeicon-src`       | Source for the submenu close icon in mobile mode (format: `url()` or `none` for the default source). | 
+| `--wui-menubar-mobile-opener-closeicon-src`       | Source for the submenu close icon in mobile mode<br>(format: `url()` or `none` for the default source). | 
 
 #### Implementation
 
@@ -2652,8 +2652,8 @@ Component for the implementation of data tables. Unlike the `WUIList` object, th
 | `--wui-table-column-sorter-iconcolor-out`      | Color of the sorting icon in normal state. |
 | `--wui-table-column-sorter-iconcolor-over`     | Color of the sorting icon in hover state. |
 | `--wui-table-column-sorter-iconcolor-disabled` | Color of the sorting icon in disabled state. |
-| `--wui-table-column-sorter-ascicon-src`        | Source for the ascending sort icon (format: `url()` or `none` for the default source). |
-| `--wui-table-column-sorter-descicon-src`       | Source for the descending sort icon (format: `url()` or `none` for the default source). |
+| `--wui-table-column-sorter-ascicon-src`        | Source for the ascending sort icon<br>(format: `url()` or `none` for the default source). |
+| `--wui-table-column-sorter-descicon-src`       | Source for the descending sort icon<br>(format: `url()` or `none` for the default source). |
 | `--wui-table-column-resizer-bordercolor-out`   | Border color of the column resizer in normal state. |
 | `--wui-table-column-resizer-bordercolor-over`  | Border color of the column resizer in hover state. |
 | `--wui-table-column-dragger-bordercolor-over`  | Border color of the column during drag in hover state. |
@@ -2994,14 +2994,14 @@ Component for the implementation of data forms. This component allows the implem
 | `--wui-form-date-opener-iconcolor-out`           | Icon color for the date picker opener in normal state. |
 | `--wui-form-date-opener-iconcolor-over`          | Icon color for the date picker opener in hover state. |
 | `--wui-form-date-opener-iconcolor-disabled`      | Icon color for the date picker opener in disabled state. |
-| `--wui-form-date-opener-openicon-src`            | Source for the date picker open icon (format: `url()` or `none` for the default source). |
-| `--wui-form-date-opener-closeicon-src`           | Source for the date picker close icon (format: `url()` or `none` for the default source). |
+| `--wui-form-date-opener-openicon-src`            | Source for the date picker open icon<br>(format: `url()` or `none` for the default source). |
+| `--wui-form-date-opener-closeicon-src`           | Source for the date picker close icon<br>(format: `url()` or `none` for the default source). |
 | `--wui-form-time-opener-iconsize`                | Icon size for the time picker opener. |
 | `--wui-form-time-opener-iconcolor-out`           | Icon color for the time picker opener in normal state. |
 | `--wui-form-time-opener-iconcolor-over`          | Icon color for the time picker opener in hover state. |
 | `--wui-form-time-opener-iconcolor-disabled`      | Icon color for the time picker opener in disabled state. |
-| `--wui-form-time-opener-openicon-src`            | Source for the time picker open icon (format: `url()` or `none` for the default source). |
-| `--wui-form-time-opener-closeicon-src`           | Source for the time picker close icon (format: `url()` or `none` for the default source). |
+| `--wui-form-time-opener-openicon-src`            | Source for the time picker open icon<br>(format: `url()` or `none` for the default source). |
+| `--wui-form-time-opener-closeicon-src`           | Source for the time picker close icon<br>(format: `url()` or `none` for the default source). |
 | `--wui-form-range-thumb-size`                    | Size of the range control thumb. |
 | `--wui-form-range-thumb-bgcolor-out`             | Background color of the range thumb in normal state. |
 | `--wui-form-range-thumb-bgcolor-over`            | Background color of the range thumb in hover state. |
@@ -3018,8 +3018,8 @@ Component for the implementation of data forms. This component allows the implem
 | `--wui-form-select-opener-iconcolor-out`         | Icon color for the select opener in normal state. |
 | `--wui-form-select-opener-iconcolor-over`        | Icon color for the select opener in hover state. |
 | `--wui-form-select-opener-iconcolor-disabled`    | Icon color for the select opener in disabled state. |
-| `--wui-form-select-opener-openicon-src`          | Source for the select open icon (format: `url()` or `none` for the default source). |
-| `--wui-form-select-opener-closeicon-src`         | Source for the select close icon (format: `url()` or `none` for the default source). |
+| `--wui-form-select-opener-openicon-src`          | Source for the select open icon<br>(format: `url()` or `none` for the default source). |
+| `--wui-form-select-opener-closeicon-src`         | Source for the select close icon<br>(format: `url()` or `none` for the default source). |
 | `--wui-form-data-textcolor-out`                  | Text color of data elements in normal state. |
 | `--wui-form-data-textcolor-disabled`             | Text color of data elements in disabled state. |
 | `--wui-form-progress-borderwidth`                | Border width of progress bars. |

@@ -1980,11 +1980,11 @@ Componente para la implementación de barras de menú.
 | `--wui-menubar-expander-iconsize`                 | Tamaño del ícono del botón expansor/contrator. |
 | `--wui-menubar-expander-iconcolor-out`            | Color del ícono del botón expansor/contrator en estado normal. |
 | `--wui-menubar-expander-iconcolor-over`           | Color del ícono del botón expansor/contrator en estado hover. |
-| `--wui-menubar-expander-expandicon-src`           | Fuente del ícono de expansión (formato: `url()` o `none` para utilizar la fuente predeterminada). |
-| `--wui-menubar-expander-contracticon-src`         | Fuente del ícono de contracción (formato: `url()` o `none` para utilizar la fuente predeterminada). |
+| `--wui-menubar-expander-expandicon-src`           | Fuente del ícono de expansión<br>(formato: `url()` o `none` para utilizar la fuente predeterminada). |
+| `--wui-menubar-expander-contracticon-src`         | Fuente del ícono de contracción<br>(formato: `url()` o `none` para utilizar la fuente predeterminada). |
 | `--wui-menubar-opener-iconsize`                   | Tamaño del ícono del botón abridor de submenú. |
-| `--wui-menubar-opener-openicon-src`               | Fuente del ícono de apertura de submenú (formato: `url()` o `none` para utilizar la fuente predeterminada). |
-| `--wui-menubar-opener-closeicon-src`              | Fuente del ícono de cierre de submenú (formato: `url()` o `none` para utilizar la fuente predeterminada). |
+| `--wui-menubar-opener-openicon-src`               | Fuente del ícono de apertura de submenú<br>(formato: `url()` o `none` para utilizar la fuente predeterminada). |
+| `--wui-menubar-opener-closeicon-src`              | Fuente del ícono de cierre de submenú<br>(formato: `url()` o `none` para utilizar la fuente predeterminada). |
 | `--wui-menubar-submenu-bordercolor`               | Color del borde del submenú. |
 | `--wui-menubar-submenu-bgcolor`                   | Color de fondo del submenú. |
 | `--wui-menubar-submenu-button-bgcolor-out`        | Color de fondo de los botones del submenú en estado normal. |
@@ -2004,7 +2004,7 @@ Componente para la implementación de barras de menú.
 | `--wui-menubar-tooltip-textcolor`                 | Color del texto del tooltip. |
 | `--wui-menubar-bubble-bgcolor`                    | Color de fondo de la burbuja de notificación en los botones. |
 | `--wui-menubar-bubble-textcolor`                  | Color del texto de la burbuja de notificación. |
-| `--wui-menubar-mobile-opener-closeicon-src`       | Fuente del ícono de cierre del submenú en modo móvil (formato: `url()` o `none` para utilizar la fuente predeterminada). | 
+| `--wui-menubar-mobile-opener-closeicon-src`       | Fuente del ícono de cierre del submenú en modo móvil<br>(formato: `url()` o `none` para utilizar la fuente predeterminada). | 
 
 #### Implementación
 
@@ -2653,8 +2653,8 @@ Componente para la implementación de tablas de datos. A diferencia del objeto `
 | `--wui-table-column-sorter-iconcolor-out`      | Color del ícono de ordenamiento en estado normal. |
 | `--wui-table-column-sorter-iconcolor-over`     | Color del ícono de ordenamiento en estado hover. |
 | `--wui-table-column-sorter-iconcolor-disabled` | Color del ícono de ordenamiento en estado deshabilitado. |
-| `--wui-table-column-sorter-ascicon-src`        | Fuente del ícono de ordenamiento ascendente (formato: `url()` o `none` para utilizar la fuente predeterminada). |
-| `--wui-table-column-sorter-descicon-src`       | Fuente del ícono de ordenamiento descendente (formato: `url()` o `none` para utilizar la fuente predeterminada). |
+| `--wui-table-column-sorter-ascicon-src`        | Fuente del ícono de ordenamiento ascendente<br>(formato: `url()` o `none` para utilizar la fuente predeterminada). |
+| `--wui-table-column-sorter-descicon-src`       | Fuente del ícono de ordenamiento descendente<br>(formato: `url()` o `none` para utilizar la fuente predeterminada). |
 | `--wui-table-column-resizer-bordercolor-out`   | Color del borde del redimensionador de columna en estado normal. |
 | `--wui-table-column-resizer-bordercolor-over`  | Color del borde del redimensionador de columna en estado hover. |
 | `--wui-table-column-dragger-bordercolor-over`  | Color del borde de la columna durante el arrastre en estado hover. |
@@ -2988,14 +2988,14 @@ Componente para la implementación de formularios de datos. Este componente perm
 | `--wui-form-date-opener-iconcolor-out`           | Color del ícono de apertura del selector de fecha en estado normal. |
 | `--wui-form-date-opener-iconcolor-over`          | Color del ícono de apertura del selector de fecha en estado hover. |
 | `--wui-form-date-opener-iconcolor-disabled`      | Color del ícono de apertura del selector de fecha en estado deshabilitado. |
-| `--wui-form-date-opener-openicon-src`            | Fuente del ícono de apertura del selector de fecha (formato: `url()` o `none` para utilizar la fuente predeterminada). |
-| `--wui-form-date-opener-closeicon-src`           | Fuente del ícono de cierre del selector de fecha (formato: `url()` o `none` para utilizar la fuente predeterminada). |
+| `--wui-form-date-opener-openicon-src`            | Fuente del ícono de apertura del selector de fecha<br>(formato: `url()` o `none` para utilizar la fuente predeterminada). |
+| `--wui-form-date-opener-closeicon-src`           | Fuente del ícono de cierre del selector de fecha<br>(formato: `url()` o `none` para utilizar la fuente predeterminada). |
 | `--wui-form-time-opener-iconsize`                | Tamaño del ícono de apertura del selector de hora. |
 | `--wui-form-time-opener-iconcolor-out`           | Color del ícono de apertura del selector de hora en estado normal. |
 | `--wui-form-time-opener-iconcolor-over`          | Color del ícono de apertura del selector de hora en estado hover. |
 | `--wui-form-time-opener-iconcolor-disabled`      | Color del ícono de apertura del selector de hora en estado deshabilitado. |
-| `--wui-form-time-opener-openicon-src`            | Fuente del ícono de apertura del selector de hora (formato: `url()` o `none` para utilizar la fuente predeterminada). |
-| `--wui-form-time-opener-closeicon-src`           | Fuente del ícono de cierre del selector de hora (formato: `url()` o `none` para utilizar la fuente predeterminada). |
+| `--wui-form-time-opener-openicon-src`            | Fuente del ícono de apertura del selector de hora<br>(formato: `url()` o `none` para utilizar la fuente predeterminada). |
+| `--wui-form-time-opener-closeicon-src`           | Fuente del ícono de cierre del selector de hora<br>(formato: `url()` o `none` para utilizar la fuente predeterminada). |
 | `--wui-form-range-thumb-size`                    | Tamaño del pulgar (thumb) del control de rango (range). |
 | `--wui-form-range-thumb-bgcolor-out`             | Color de fondo del pulgar del control de rango en estado normal. |
 | `--wui-form-range-thumb-bgcolor-over`            | Color de fondo del pulgar del control de rango en estado hover. |
@@ -3012,8 +3012,8 @@ Componente para la implementación de formularios de datos. Este componente perm
 | `--wui-form-select-opener-iconcolor-out`         | Color del ícono de apertura del selector en estado normal. |
 | `--wui-form-select-opener-iconcolor-over`        | Color del ícono de apertura del selector en estado hover. |
 | `--wui-form-select-opener-iconcolor-disabled`    | Color del ícono de apertura del selector en estado deshabilitado. |
-| `--wui-form-select-opener-openicon-src`          | Fuente del ícono de apertura del selector (formato: `url()` o `none` para utilizar la fuente predeterminada). |
-| `--wui-form-select-opener-closeicon-src`         | Fuente del ícono de cierre del selector (formato: `url()` o `none` para utilizar la fuente predeterminada). |
+| `--wui-form-select-opener-openicon-src`          | Fuente del ícono de apertura del selector<br>(formato: `url()` o `none` para utilizar la fuente predeterminada). |
+| `--wui-form-select-opener-closeicon-src`         | Fuente del ícono de cierre del selector<br>(formato: `url()` o `none` para utilizar la fuente predeterminada). |
 | `--wui-form-data-textcolor-out`                  | Color del texto de los elementos de datos (data) en estado normal. |
 | `--wui-form-data-textcolor-disabled`             | Color del texto de los elementos de datos (data) en estado deshabilitado. |
 | `--wui-form-progress-borderwidth`                | Ancho del borde de las barras de progreso (progress). |
