@@ -5556,9 +5556,9 @@ This section contains examples of the implementations from the documentation and
 -	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIIcon-basic](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIIcon-basic)<br>
 	This demo shows the use of WUIIcon's basic implementation.<br><br>
 -	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIFade-basic](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIFade-basic)<br>
-	This demo shows the use of WUIFade's basic functionality.<br>
+	This demo shows the use of WUIFade's basic functionality.<br><br>
 -	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIModal-basic](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIModal-basic)<br>
-	This demo shows the use of WUIModal's basic functionality.<br>
+	This demo shows the use of WUIModal's basic functionality.<br><br>
 -	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIMenubar-submenu](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIMenubar-submenu)<br>
 	This demo shows the use of WUIMenubar's submenu functionality.<br><br>
 -	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIList-paging-buttongroup](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIList-paging-buttongroup)<br>
