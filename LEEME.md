@@ -1929,7 +1929,7 @@ Componente para la implementación de cuadros de diálogo (tipo `message`) y ven
 | getOpenInstances | `Array`      | `WUIModal.getOpenInstances()` *(método estático)*<br><br>Retorna todas las instancias abiertas de WUIModal. |
 | closeAll         | `void`       | `WUIModal.closeAll([except])` *(método estático)*<br><br>Parámetros:<br>**• except:** `string` *opcional*, selector del modal que se excluirá de la secuencia de cierre.<br><br>Cierra todos los modales excepto el especificado por selector. |
 
-#### Métodos del Objecto
+#### Métodos de la Instancia
 
 | Método        | Tipo retorno  | Descripción |
 | ------------- | ------------- | ----------- |

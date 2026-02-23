@@ -776,6 +776,12 @@ Utilities for cookies management.
 | --------- | ----------- |
 | WUICookie | `WUICookie([properties])`<br><br>Arguments:<br>**• properties:** `object` |
 
+#### Propiedades Públicas
+
+| Nombre  | Tipo     | Descripción |
+| ------- | -------- | ----------- |
+| version | `string` | Versión del plugin. |
+
 #### Properties
 
 | Property | Type      | Default value       | Description |
@@ -1933,7 +1939,7 @@ Component for the implementation of dialog boxes (type `message`) and pop-up win
 | getOpenInstances | `Array`     | `WUIModal.getOpenInstances()` *(static method)*<br><br>Returns all open instances of WUIModal. |
 | closeAll         | `void`      | `WUIModal.closeAll([except])` *(static method)*<br><br>Arguments:<br>**• except:** `string` *optional*, selector of the modal that will be excluded from the closing sequence.<br><br>Closes all modals except the one specified by selector. |
 
-#### Object Methods
+#### Instance Methods
 
 | Method        | Return type   | Description |
 | ------------- | ------------- | ----------- |
