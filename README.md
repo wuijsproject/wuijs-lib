@@ -2229,14 +2229,20 @@ body {
 
 .my-paging {
 	position: absolute;
-	top: 0;
-	left: 0;
-	bottom: 50px;
-	width: 600px;
+}
+
+.my-paging > .page > nav {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	display: flex;
+	gap: 10px;
+	transform: translate(-50%, -50%);
 }
 
 .my-output {
 	position: absolute;
+	left: 0;
 	bottom: 0;
 	margin: 10px;
 	font-family: monospace;
@@ -2257,20 +2263,20 @@ HTML code:
 	<div class="page scroll" data-target="page1">
 		<h1>Page 1</h1>
 		<nav>
-			<button class="my-button go-page2">go to page 2</button>
+			<button class="my-button go-page2">go to page 2 &#9205;</button>
 		</nav>
 	</div>
 	<div class="page scroll" data-target="page2">
 		<h1>Page 2</h1>
 		<nav>
-			<button class="my-button go-page1">go to page 1</button>
-			<button class="my-button go-page3">go to page 3</button>
+			<button class="my-button go-page1">&#9204; go to page 1</button>
+			<button class="my-button go-page3">go to page 3 &#9205;</button>
 		</nav>
 	</div>
 	<div class="page scroll" data-target="page3">
 		<h1>Page 3</h1>
 		<nav>
-			<button class="my-button go-page2">go to page 2</button>
+			<button class="my-button go-page2">&#9204; go to page 2</button>
 		</nav>
 	</div>
 </div>
