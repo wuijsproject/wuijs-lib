@@ -16,8 +16,8 @@ parser = argparse.ArgumentParser(
 )
 parser.add_argument("--css", type=str, help="Path to the CSS file.", default=default_css_path)
 parser.add_argument("-o", "--out", type=str, help="Output directory for SVG icons.", default=default_out_dir)
-parser.add_argument("-c", "--color", type=str, help="Color to replace 'currentColor' in SVGs.", default=default_icon_color)
-parser.add_argument("-s", "--size", type=int, help="Size (width and height) to set in SVGs.", default=default_icon_size)
+parser.add_argument("-c", "--color", type=str, help="CSS-compatible color format that will replace the 'currentColor' statement in the SVG code.", default=default_icon_color)
+parser.add_argument("-s", "--size", type=int, help="Size (width and height) of the images in the set.", default=default_icon_size)
 args = parser.parse_args()
 
 # Create output directory if it doesn't exist

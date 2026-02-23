@@ -1666,6 +1666,23 @@ Pre-designed icons set loaded via CSS, for use in interfaces.
 | `--wui-icon-bgcolor-out`  | Color of enabled monochrome icons in normal state. |
 | `--wui-icon-bgcolor-over` | Color of the monochromatic icons in hover/focus state. |
 
+#### SVG Image generation tool
+
+The `tools/svg-icon-maker.py` script crea el set de archivos SVG en base a todos los estilos de icono disponibles en la librería WUIIcon.
+
+```bash
+python tools/svg-icon-maker.py
+
+python tools/svg-icon-maker.py --css <css-path> -o <output-directory> -c <color> -s <size>
+```
+
+| Option          | Default value                     | Description |
+| --------------- | --------------------------------- | ----------- |
+| `--css`         | `../src/WUI/Icon/WUIIcon-0.1.css` | Path to the source CSS file. |
+| `-o`, `--out`   | `../imgs/Icons/`                  | Output directory for the generated files. |
+| `-c`, `--color` | `#a2a9b6`                         | CSS-compatible color format that will replace the 'currentColor' statement in the SVG code. |
+| `-s`, `--size`  | `24`                              | Size (width and height) of the images in the set. |
+
 #### Implementation
 
 CSS settings:
