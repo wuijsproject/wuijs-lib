@@ -1,3 +1,6 @@
+> [!NOTE]
+> Para la versión en español de este documento, consulte [LEEME.md](./LEEME.md).
+
 > [!WARNING]
 > This document has not yet been finalized and is in a preliminary version.
 
