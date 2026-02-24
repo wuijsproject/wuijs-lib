@@ -9,38 +9,38 @@ class WUIPaginator {
 	static version = "0.1";
 	static #defaults = {
 		selector: "",
-		currentPage: 1,
-		totalPages: 1,
-		totalRecords: 0,
+		total: 0,
 		firstPageButton: true,
 		prevPageButton: true,
 		numberedButtons: false,
 		maxNumberedButtons: 5,
 		nextPageButton: true,
 		lastPageButton: true,
-		paging: [],
-		info: "p/t (r)",
+		pagingOptions: [10, 30, 50, 100],
+		pagingValue: 30,
+		label: "p/P (t)",
 		onChange: null
 	};
 
 	static #icons = {
-		firstPage: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='11 17 6 12 11 7'%3E%3C/polyline%3E%3Cpolyline points='18 17 13 12 18 7'%3E%3C/polyline%3E%3C/svg%3E",
-		prevPage: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='15 18 9 12 15 6'%3E%3C/polyline%3E%3C/svg%3E",
-		nextPage: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='9 18 15 12 9 6'%3E%3C/polyline%3E%3C/svg%3E",
-		lastPage: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='13 17 18 12 13 7'%3E%3C/polyline%3E%3Cpolyline points='6 17 11 12 6 7'%3E%3C/polyline%3E%3C/svg%3E"
+		"first-page": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='11 17 6 12 11 7'%3E%3C/polyline%3E%3Cpolyline points='18 17 13 12 18 7'%3E%3C/polyline%3E%3C/svg%3E",
+		"prev-page": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='15 18 9 12 15 6'%3E%3C/polyline%3E%3C/svg%3E",
+		"next-page": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='9 18 15 12 9 6'%3E%3C/polyline%3E%3C/svg%3E",
+		"last-page": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='13 17 18 12 13 7'%3E%3C/polyline%3E%3Cpolyline points='6 17 11 12 6 7'%3E%3C/polyline%3E%3C/svg%3E"
 	};
 
 	#properties = {};
 	#htmlElement;
-	#elements = {
+	#htmlElements = {
 		firstPageBtn: null,
 		prevPageBtn: null,
 		numberedContainer: null,
 		nextPageBtn: null,
 		lastPageBtn: null,
 		pagingSelect: null,
-		infoLabel: null
+		label: null
 	};
+	#currentPage = 0;
 
 	constructor(properties = {}) {
 		const defaults = structuredClone(WUIPaginator.#defaults);
@@ -53,16 +53,8 @@ class WUIPaginator {
 		return this.#properties.selector;
 	}
 
-	get currentPage() {
-		return this.#properties.currentPage;
-	}
-
-	get totalPages() {
-		return this.#properties.totalPages;
-	}
-
-	get totalRecords() {
-		return this.#properties.totalRecords;
+	get total() {
+		return this.#properties.total;
 	}
 
 	get firstPageButton() {
@@ -89,12 +81,16 @@ class WUIPaginator {
 		return this.#properties.lastPageButton;
 	}
 
-	get paging() {
-		return this.#properties.paging;
+	get pagingOptions() {
+		return this.#properties.pagingOptions;
 	}
 
-	get info() {
-		return this.#properties.info;
+	get pagingValue() {
+		return this.#properties.pagingValue;
+	}
+
+	get label() {
+		return this.#properties.label;
 	}
 
 	get onChange() {
@@ -108,21 +104,9 @@ class WUIPaginator {
 		}
 	}
 
-	set currentPage(value) {
-		if (typeof (value) == "number" && value >= 1) {
-			this.#properties.currentPage = value;
-		}
-	}
-
-	set totalPages(value) {
-		if (typeof (value) == "number" && value >= 1) {
-			this.#properties.totalPages = value;
-		}
-	}
-
-	set totalRecords(value) {
+	set total(value) {
 		if (typeof (value) == "number" && value >= 0) {
-			this.#properties.totalRecords = value;
+			this.#properties.total = value;
 		}
 	}
 
@@ -162,15 +146,21 @@ class WUIPaginator {
 		}
 	}
 
-	set paging(value) {
+	set pagingOptions(value) {
 		if (Array.isArray(value)) {
-			this.#properties.paging = value;
+			this.#properties.pagingOptions = value;
 		}
 	}
 
-	set info(value) {
+	set pagingValue(value) {
+		if (typeof (value) == "number" && value >= 1) {
+			this.#properties.pagingValue = value;
+		}
+	}
+
+	set label(value) {
 		if (typeof (value) == "string") {
-			this.#properties.info = value;
+			this.#properties.label = value;
 		}
 	}
 
@@ -178,6 +168,17 @@ class WUIPaginator {
 		if (typeof (value) == "function" || value == null) {
 			this.#properties.onChange = value;
 		}
+	}
+
+	get #totalPages() {
+		if (!this.#properties.pagingValue || this.#properties.pagingValue <= 0) return 0;
+		return Math.max(0, Math.ceil(this.#properties.total / this.#properties.pagingValue) - 1);
+	}
+
+	#getSRCIcon(name) {
+		const element = this.#htmlElement || document.documentElement;
+		const src = getComputedStyle(element).getPropertyValue("--wui-paginator-" + name + "icon-src");
+		return src != "" && !src.match(/^(none|url\(\))$/) ? src : "url(\"data:image/svg+xml," + WUIPaginator.#icons[name] + "\")";
 	}
 
 	#createButton(iconUrl, className, onClick) {
@@ -194,80 +195,74 @@ class WUIPaginator {
 	}
 
 	#updateButtonStates() {
-		if (this.#elements.firstPageBtn) {
-			this.#elements.firstPageBtn.disabled = this.currentPage <= 1;
+		if (this.#htmlElements.firstPageBtn) {
+			this.#htmlElements.firstPageBtn.disabled = this.#currentPage <= 0;
 		}
-		if (this.#elements.prevPageBtn) {
-			this.#elements.prevPageBtn.disabled = this.currentPage <= 1;
+		if (this.#htmlElements.prevPageBtn) {
+			this.#htmlElements.prevPageBtn.disabled = this.#currentPage <= 0;
 		}
-		if (this.#elements.nextPageBtn) {
-			this.#elements.nextPageBtn.disabled = this.currentPage >= this.totalPages;
+		if (this.#htmlElements.nextPageBtn) {
+			this.#htmlElements.nextPageBtn.disabled = this.#currentPage >= this.#totalPages;
 		}
-		if (this.#elements.lastPageBtn) {
-			this.#elements.lastPageBtn.disabled = this.currentPage >= this.totalPages;
+		if (this.#htmlElements.lastPageBtn) {
+			this.#htmlElements.lastPageBtn.disabled = this.#currentPage >= this.#totalPages;
 		}
 	}
 
 	#updateNumberedButtons() {
-		if (!this.numberedButtons || !this.#elements.numberedContainer) return;
-
-		this.#elements.numberedContainer.innerHTML = "";
-
-		const totalButtons = Math.min(this.totalPages, this.maxNumberedButtons);
+		if (!this.numberedButtons || !this.#htmlElements.numberedContainer) return;
+		this.#htmlElements.numberedContainer.innerHTML = "";
+		const totalPages = this.#totalPages + 1;
+		const currentPageVisible = this.#currentPage + 1;
+		const totalButtons = Math.min(totalPages, this.maxNumberedButtons);
 		let startPage = 1;
 		let endPage = totalButtons;
-
-		if (this.totalPages > this.maxNumberedButtons) {
+		if (totalPages > this.maxNumberedButtons) {
 			const half = Math.floor(this.maxNumberedButtons / 2);
-			startPage = Math.max(1, this.currentPage - half);
-			endPage = Math.min(this.totalPages, startPage + this.maxNumberedButtons - 1);
-
+			startPage = Math.max(1, currentPageVisible - half);
+			endPage = Math.min(totalPages, startPage + this.maxNumberedButtons - 1);
 			if (endPage - startPage + 1 < this.maxNumberedButtons) {
 				startPage = Math.max(1, endPage - this.maxNumberedButtons + 1);
 			}
 		}
-
 		for (let i = startPage; i <= endPage; i++) {
 			const button = document.createElement("button");
+			const page = i;
 			button.className = "wui-paginator-button numbered";
 			button.type = "button";
 			button.textContent = i;
-			if (i === this.currentPage) {
+			if (i === currentPageVisible) {
 				button.classList.add("active");
 			}
-			const page = i;
 			button.addEventListener("click", () => this.goPage(page));
-			this.#elements.numberedContainer.appendChild(button);
+			this.#htmlElements.numberedContainer.appendChild(button);
 		}
 	}
 
 	#updatePagingSelect() {
-		if (!this.#elements.pagingSelect || this.paging.length === 0) return;
-
-		this.#elements.pagingSelect.innerHTML = "";
-
-		this.paging.forEach(option => {
+		if (!this.#htmlElements.pagingSelect || this.pagingOptions.length === 0) return;
+		this.#htmlElements.pagingSelect.innerHTML = "";
+		this.pagingOptions.forEach(option => {
 			const opt = document.createElement("option");
 			opt.value = option.value || option;
 			opt.textContent = option.label || option;
-			this.#elements.pagingSelect.appendChild(opt);
+			this.#htmlElements.pagingSelect.appendChild(opt);
 		});
+		this.#htmlElements.pagingSelect.value = String(this.pagingValue);
 	}
 
-	#updateInfoLabel() {
-		if (!this.#elements.infoLabel) return;
-
-		let infoText = this.info;
-		infoText = infoText.replace(/\bp\b/g, this.currentPage);
-		infoText = infoText.replace(/\bt\b/g, this.totalPages);
-		infoText = infoText.replace(/\br\b/g, this.totalRecords);
-
-		this.#elements.infoLabel.textContent = infoText;
+	#updateLabel() {
+		if (!this.#htmlElements.label) return;
+		let label = this.label;
+		label = label.replace(/\bp\b/g, this.#currentPage + 1);
+		label = label.replace(/\bP\b/g, this.#totalPages + 1);
+		label = label.replace(/\bt\b/g, this.total);
+		this.#htmlElements.label.textContent = label;
 	}
 
-	#triggerChange(newPage) {
+	#triggerChange(oldPage, button) {
 		if (typeof (this.onChange) == "function") {
-			this.onChange(newPage, this.currentPage);
+			this.onChange(oldPage + 1, this.#currentPage + 1, button);
 		}
 	}
 
@@ -277,127 +272,121 @@ class WUIPaginator {
 
 	init() {
 		if (!(this.#htmlElement instanceof HTMLDivElement)) return;
-
 		this.#htmlElement.classList.add("wui-paginator");
 		this.#htmlElement.innerHTML = "";
-
+		this.#currentPage = 0;
 		if (this.firstPageButton) {
-			this.#elements.firstPageBtn = this.#createButton(
-				WUIPaginator.#icons.firstPage,
+			this.#htmlElements.firstPageBtn = this.#createButton(
+				WUIPaginator.#icons["first-page"],
 				"first",
 				() => this.firstPage()
 			);
-			this.#htmlElement.appendChild(this.#elements.firstPageBtn);
+			this.#htmlElement.appendChild(this.#htmlElements.firstPageBtn);
 		}
-
 		if (this.prevPageButton) {
-			this.#elements.prevPageBtn = this.#createButton(
-				WUIPaginator.#icons.prevPage,
+			this.#htmlElements.prevPageBtn = this.#createButton(
+				WUIPaginator.#icons["prev-page"],
 				"prev",
 				() => this.prevPage()
 			);
-			this.#htmlElement.appendChild(this.#elements.prevPageBtn);
+			this.#htmlElement.appendChild(this.#htmlElements.prevPageBtn);
 		}
-
 		if (this.numberedButtons) {
-			this.#elements.numberedContainer = document.createElement("div");
-			this.#elements.numberedContainer.className = "wui-paginator-numbered";
-			this.#htmlElement.appendChild(this.#elements.numberedContainer);
+			this.#htmlElements.numberedContainer = document.createElement("div");
+			this.#htmlElements.numberedContainer.className = "wui-paginator-numbered";
+			this.#htmlElement.appendChild(this.#htmlElements.numberedContainer);
 		}
-
 		if (this.nextPageButton) {
-			this.#elements.nextPageBtn = this.#createButton(
-				WUIPaginator.#icons.nextPage,
+			this.#htmlElements.nextPageBtn = this.#createButton(
+				WUIPaginator.#icons["next-page"],
 				"next",
 				() => this.nextPage()
 			);
-			this.#htmlElement.appendChild(this.#elements.nextPageBtn);
+			this.#htmlElement.appendChild(this.#htmlElements.nextPageBtn);
 		}
-
 		if (this.lastPageButton) {
-			this.#elements.lastPageBtn = this.#createButton(
-				WUIPaginator.#icons.lastPage,
+			this.#htmlElements.lastPageBtn = this.#createButton(
+				WUIPaginator.#icons["last-page"],
 				"last",
 				() => this.lastPage()
 			);
-			this.#htmlElement.appendChild(this.#elements.lastPageBtn);
+			this.#htmlElement.appendChild(this.#htmlElements.lastPageBtn);
 		}
-
-		if (this.paging.length > 0) {
-			this.#elements.pagingSelect = document.createElement("select");
-			this.#elements.pagingSelect.className = "wui-paginator-select";
-			this.#elements.pagingSelect.addEventListener("change", (e) => {
-				if (typeof (this.onChange) == "function") {
-					this.onChange(this.currentPage, this.currentPage, e.target.value);
-				}
+		if (this.pagingOptions.length > 0) {
+			this.#htmlElements.pagingSelect = document.createElement("select");
+			this.#htmlElements.pagingSelect.className = "wui-paginator-select";
+			this.#htmlElements.pagingSelect.addEventListener("change", (e) => {
+				this.#properties.pagingValue = parseInt(e.target.value);
+				this.#currentPage = 0;
+				this.#updateButtonStates();
+				this.#updateNumberedButtons();
+				this.#updateLabel();
 			});
-			this.#htmlElement.appendChild(this.#elements.pagingSelect);
+			this.#htmlElement.appendChild(this.#htmlElements.pagingSelect);
 			this.#updatePagingSelect();
 		}
-
-		if (this.info && this.info !== "") {
-			this.#elements.infoLabel = document.createElement("span");
-			this.#elements.infoLabel.className = "wui-paginator-info";
-			this.#htmlElement.appendChild(this.#elements.infoLabel);
+		if (this.label && this.label !== "") {
+			this.#htmlElements.label = document.createElement("span");
+			this.#htmlElements.label.className = "wui-paginator-label";
+			this.#htmlElement.appendChild(this.#htmlElements.label);
 		}
-
 		this.#updateButtonStates();
 		this.#updateNumberedButtons();
-		this.#updateInfoLabel();
+		this.#updateLabel();
 	}
 
 	firstPage() {
-		if (this.currentPage > 1) {
-			const oldPage = this.currentPage;
-			this.currentPage = 1;
+		if (this.#currentPage > 0) {
+			const oldPage = this.#currentPage;
+			this.#currentPage = 0;
 			this.#updateButtonStates();
 			this.#updateNumberedButtons();
-			this.#updateInfoLabel();
-			this.#triggerChange(oldPage);
+			this.#updateLabel();
+			this.#triggerChange(oldPage, "first");
 		}
 	}
 
 	prevPage() {
-		if (this.currentPage > 1) {
-			const oldPage = this.currentPage;
-			this.currentPage--;
+		if (this.#currentPage > 0) {
+			const oldPage = this.#currentPage;
+			this.#currentPage--;
 			this.#updateButtonStates();
 			this.#updateNumberedButtons();
-			this.#updateInfoLabel();
-			this.#triggerChange(oldPage);
+			this.#updateLabel();
+			this.#triggerChange(oldPage, "prev");
 		}
 	}
 
 	nextPage() {
-		if (this.currentPage < this.totalPages) {
-			const oldPage = this.currentPage;
-			this.currentPage++;
+		if (this.#currentPage < this.#totalPages) {
+			const oldPage = this.#currentPage;
+			this.#currentPage++;
 			this.#updateButtonStates();
 			this.#updateNumberedButtons();
-			this.#updateInfoLabel();
-			this.#triggerChange(oldPage);
+			this.#updateLabel();
+			this.#triggerChange(oldPage, "next");
 		}
 	}
 
 	lastPage() {
-		if (this.currentPage < this.totalPages) {
-			const oldPage = this.currentPage;
-			this.currentPage = this.totalPages;
+		if (this.#currentPage < this.#totalPages) {
+			const oldPage = this.#currentPage;
+			this.#currentPage = this.#totalPages;
 			this.#updateButtonStates();
 			this.#updateNumberedButtons();
-			this.#updateInfoLabel();
-			this.#triggerChange(oldPage);
+			this.#updateLabel();
+			this.#triggerChange(oldPage, "last");
 		}
 	}
 
 	goPage(page = 0) {
-		if (typeof (page) == "number" && page >= 1 && page <= this.totalPages && page !== this.currentPage) {
-			const oldPage = this.currentPage;
-			this.currentPage = page;
+		if (typeof (page) == "number" && page >= 0 && page <= this.#totalPages && page !== this.#currentPage) {
+			const oldPage = this.#currentPage;
+			this.#currentPage = page;
 			this.#updateButtonStates();
 			this.#updateNumberedButtons();
-			this.#updateInfoLabel();
-			this.#triggerChange(oldPage);
+			this.#updateLabel();
+			this.#triggerChange(oldPage, "numbered");
 		}
 	}
 
@@ -406,14 +395,14 @@ class WUIPaginator {
 			this.#htmlElement.innerHTML = "";
 			this.#htmlElement.classList.remove("wui-paginator");
 		}
-		this.#elements = {
+		this.#htmlElements = {
 			firstPageBtn: null,
 			prevPageBtn: null,
 			numberedContainer: null,
 			nextPageBtn: null,
 			lastPageBtn: null,
 			pagingSelect: null,
-			infoLabel: null
+			label: null
 		};
 	}
 }
@@ -432,9 +421,10 @@ HTML output:
 	<button class="wui-paginator-button last"><span class="icon"></span></button>
 	<select class="wui-paginator-select">
 		<option value="10">10</option>
-		<option value="25">25</option>
+		<option value="30">30</option>
 		<option value="50">50</option>
+		<option value="100">100</option>
 	</select>
-	<span class="wui-paginator-info">2/10 (243)</span>
+	<span class="wui-paginator-label">1/4 (100)</span>
 </div>
 */

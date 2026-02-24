@@ -143,18 +143,18 @@ class WUIMenubar {
 		}
 	}
 
+	#getSRCIcon(name) {
+		const element = this.#htmlElement || document.documentElement;
+		const src = getComputedStyle(element).getPropertyValue("--wui-menubar-" + name + "icon-src");
+		return src != "" && !src.match(/^(none|url\(\))$/) ? src : "url(\"data:image/svg+xml," + WUIMenubar.#icons[name] + "\")";
+	}
+
 	getElement() {
 		return this.#htmlElement;
 	}
 
 	getButton(id = "") {
 		return (this.#buttons.find(options => options.id == id) || null);
-	}
-
-	#getSRCIcon(name) {
-		const element = this.#htmlElement || document.documentElement;
-		const src = getComputedStyle(element).getPropertyValue("--wui-menubar-" + name + "icon-src");
-		return src != "" && !src.match(/^(none|url\(\))$/) ? src : "url(\"data:image/svg+xml," + WUIMenubar.#icons[name] + "\")";
 	}
 
 	init() {
