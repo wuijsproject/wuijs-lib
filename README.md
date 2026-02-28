@@ -12,7 +12,7 @@
 
 Library version: `0.3.0` ([Change Log](./CHANGELOG.md))
 
-Document version: `0.3.0.20260223.0`
+Document version: `0.3.0.20260228.0`
 
 License: `Apache License 2.0`
 
@@ -141,6 +141,8 @@ cp -r ./wuijs-lib-main/src/WUI ../src/Libraries/
 <a name="implementation"></a>
 
 ## Implementation
+
+### Standard Implementation
 
 To enable all classes, the CSS and JS dependencies of the libraries must be implemented in the HTML header of the web page in the `WUI.css` configuration file.
 
@@ -753,7 +755,10 @@ This implementation method allows for standardization of an application's user i
 > If you only want to implement part of the WUI library set, you must add calls to the JS and CSS files in the HTML header as indicated in each section.
 > On the other hand, the `WUI.css` file will only require the definition of the objects you want to implement.
 
-Since version 0.3.0, simple loading scripts `WUI.js` and `WUI-0.3.0.js` have been added.
+### Abbreviated Implementation
+
+Starting with version 0.3.0, a resource loader was added for the simplified implementation of WUI libraries.
+This loader allows you to integrate all WUI libraries into a web page, either full or partial, without requiring the manual inclusion of the corresponding JavaScript and CSS files for each library.
 
 ```html
 <!DOCTYPE html>
@@ -773,7 +778,22 @@ Since version 0.3.0, simple loading scripts `WUI.js` and `WUI-0.3.0.js` have bee
 </html>
 ```
 
-In case you want to implement only part of the WUI library set, you must specify the names of the classes or libraries required in the `class` parameter (or its short alias `c`) separated by commas.
+To specify the WUI library version, you must add the `version` parameter (or its short alias `v`) to the URL of the `WUI.js` file.
+
+> [!NOTE]
+> Optionally, you can use the resource loading script `WUI-0.3.0.js` which directly specifies the WUI JS Lib version in the script name.
+
+#### Full mode
+
+In full mode, all WUI libraries will be loaded into a web page, without requiring the manual inclusion of the JavaScript and CSS files corresponding to each library.
+
+```html
+<script type="text/javascript" src="./Libraries/WUI/WUI.js?v=0.3.0"></script>
+```
+
+#### Partial mode
+
+In partial mode, only the WUI libraries specified in the `class` parameter (or its short alias `c`) will be loaded into a web page, without requiring the manual inclusion of the JavaScript and CSS files corresponding to each library.
 
 ```html
 <script type="text/javascript" src="./Libraries/WUI/WUI.js?v=0.3.0&c=head,icon,body,table"></script>
@@ -781,6 +801,8 @@ In case you want to implement only part of the WUI library set, you must specify
 
 > [!NOTE]
 > The names of the libraries passed in the `class` parameter do not have to contain the version suffix (`-x.x`). The version will be defined automatically by the simple loading script.
+
+> [!NOTE]
 > The `class` parameter does not distinguish between uppercase and lowercase.
 
 <a name="classes"></a>

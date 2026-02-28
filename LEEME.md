@@ -16,7 +16,7 @@ Licencia: `Licencia Apache 2.0`
 Autor: `Sergio E. Belmar V. <wuijs.project@gmail.com>`
 
 > [!NOTE]
-> Las dos primeras secciones del número de versión de la biblioteca corresponde a la versión más alta de las clases que componen la biblioteca,
+> Las dos primeras secciones del número de versión de la librería corresponde a la versión más alta de las clases que componen la librería,
 > mientras que la tercera sección corresponde al número de modificación de la versión general.
 
 ## Índice
@@ -57,7 +57,7 @@ Autor: `Sergio E. Belmar V. <wuijs.project@gmail.com>`
 
 ## Descripción General
 
-WUI JS Lib, acrónimo del inglés *Web User Interface JavaScript library*, es una biblioteca vainilla JavaScript/CSS de código abierto orientada a la implementación rápida de interfaces de usuario Web compuesta por 25 clases, las que pueden ser utilizadas de manera independiente o conjunta.
+WUI JS Lib, acrónimo del inglés *Web User Interface JavaScript library*, es una librería vainilla JavaScript/CSS de código abierto orientada a la implementación rápida de interfaces de usuario Web compuesta por 25 clases, las que pueden ser utilizadas de manera independiente o conjunta.
 
 ### Tabla de Clases
 
@@ -118,7 +118,7 @@ wuijs-lib/
 
 ## Instalación
 
-Para instalar la biblioteca WUIJS, debe ser clonada desde el repositorio oficial en GitHib (`wuijsproject/wuijs-lib`). Suponiendo que el proyecto donde se implementará tenga un directorio de descargas: `./downloads`, un directorio de código fuente `./src` y, dentro de este, un directorio de bibliotecas `./src/Libraries`, debe escribir lo siguiente en la terminal:
+Para instalar la librería WUIJS, debe ser clonada desde el repositorio oficial en GitHib (`wuijsproject/wuijs-lib`). Suponiendo que el proyecto donde se implementará tenga un directorio de descargas: `./downloads`, un directorio de código fuente `./src` y, dentro de este, un directorio de librerías `./src/Libraries`, debe escribir lo siguiente en la terminal:
 
 ```bash
 cd ./downloads
@@ -138,6 +138,8 @@ cp -r ./wuijs-lib-main/src/WUI ../src/Libraries/
 <a name="implementation"></a>
 
 ## Implementación
+
+### Implementación Estándar
 
 Para habilitar todas las clases se deben implementar las dependencias CSS y JS de las librerías en la cabecera HTML de la página web el archivos de configuración de `WUI.css`.
 
@@ -750,7 +752,10 @@ Este método de implementación permite la estandarización del diseño de la in
 > En caso que sólo se desee implementar una parte del conjunto de librerías WUI, se sebe agregar en la cabecera HTML los llamados a los archivos JS y CSS según se indique en cada sección.
 > Por otra parte, el archivo `WUI.css` sólo requerirá la definición de los objetos que se deseen implementar.
 
-Desde la vesrión 0.3.0 se han agregado los scripts de carga simple `WUI.js` y `WUI-0.3.0.js`.
+### Implementación Abrebiada
+
+Desde la vesrión 0.3.0 se agregó un cargador de recursos para la implementación abrebiada de las librerías WUI.
+Este cargador permite integrar todas las librerías WUI en una página web, ya sea de manera completa o parcial, sin requerir la inclusión manual de los archivos JavaScript y CSS correspondientes a cada librería.
 
 ```html
 <!DOCTYPE html>
@@ -770,16 +775,31 @@ Desde la vesrión 0.3.0 se han agregado los scripts de carga simple `WUI.js` y `
 </html>
 ```
 
-Mediante el uso de `WUI.js` se pueden implementar todas las librerías WUI en una aplicación, sin necesidad de agregar los llamados a cada una de las librerías. Por otra parte, el archivo `WUI.css` sólo requerirá la definición de los objetos que se deseen implementar.
+Para especificar la versión de la librería WUI, se debe agregar el parámetro `version` (o su alias corto `v`) en la URL del archivo `WUI.js`.
 
-En caso que se desee implementar sólo una parte de las librerías WUI, se deben especificar los nombres de las clases o librerías requeridas en el parámetro `class` (o su alias corto `c`) separados por comas.
+> [!NOTE]
+> Opcionalmente se puede utilizar el script de carga de recursos `WUI-0.3.0.js` que especifica diréctamente la versión de WUI JS Lib en el nombre del script.
+
+#### Modo completo
+
+En el modo completo, se cargarán todas las librerías WUI en una página web, sin requerir la inclusión manual de los archivos JavaScript y CSS correspondientes a cada librería.
+
+```html
+<script type="text/javascript" src="./Libraries/WUI/WUI.js?v=0.3.0"></script>
+```
+
+#### Modo parcial
+
+En el modo parcial, solo las librerías WUI especificadas en el parámetro `class` (o su alias corto `c`) se cargarán en la página web, sin necesidad de incluir manualmente los archivos JavaScript y CSS correspondientes a cada librería.
 
 ```html
 <script type="text/javascript" src="./Libraries/WUI/WUI.js?v=0.3.0&c=head,icon,body,table"></script>
 ```
 
 > [!NOTE]
-> Los nombres de las librerías pasadas en el parámetro `class` no deben contener el sufijo de versión (`-x.x`). La versión será definida automáticamente por el script de carga simple.
+> Los nombres de las librerías pasadas en el parámetro `class` no deben contener el sufijo de versión (`-x.x`) ya que la versión será definida automáticamente por el script de carga simple.
+
+> [!NOTE]
 > El parámetro `class` no distingue entre mayúsculas y minúsculas.
 
 <a name="classes"></a>
