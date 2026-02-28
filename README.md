@@ -753,6 +753,26 @@ This implementation method allows for standardization of an application's user i
 > If you only want to implement part of the WUI library set, you must add calls to the JS and CSS files in the HTML header as indicated in each section.
 > On the other hand, the `WUI.css` file will only require the definition of the objects you want to implement.
 
+Since version 0.3.0, simple loading scripts `WUI.js` and `WUI-0.3.0.js` have been added.
+
+```html
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+		<meta name="application-name" content="">
+		<meta name="theme-color" content="">
+		<link type="text/css" rel="stylesheet" href="./Settings/Main.css">
+		<link type="text/css" rel="stylesheet" href="./Settings/WUI.css">
+		<script type="text/javascript" src="./Libraries/WUI/WUI.js?v=0.3.0"></script>
+	</head>
+	<body>
+	</body>
+</html>
+```
+
 <a name="classes"></a>
 
 ## Classes

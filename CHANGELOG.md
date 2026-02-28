@@ -4,22 +4,23 @@
 
 Features:
 
-1. Changed the name of the WUICheckbox class from version 0.2 to WUISwitch version 0.3.
-2. WUICookie version class update to 0.3.
+1. Added simple loading scripts `WUI.js` and `WUI-0.3.0.js`.
+2. Changed the name of the WUICheckbox class from version 0.2 to WUISwitch version 0.3.
+3. WUICookie version class update to 0.3.
 	- Added `encode()` method.
 	- Added a `string` return type to the `set()` method with the encoded cookie.
 	- Changed the `max-age` statement by `expires` in the cookie encoding..
-3. WUIScrolly version class update to 0.3.
+4. WUIScrolly version class update to 0.3.
 	- Changed the name of the CSS variable `--wui-scrolly-paging-bgcolor` to `--wui-scrolly-paging-bgcolor-hidden`.
 	- Added the CSS variable `--wui-scrolly-paging-bgcolor-visible`.
-4. WUISlider version class update to 0.3.
+5. WUISlider version class update to 0.3.
 	- Changed the name of the CSS variable `--wui-slider-dot-bgcolor` to `--wui-slider-paging-bgcolor-hidden`.
 	- Changed the name of the CSS variable `--wui-slider-dot-bgcolor-selected` to `--wui-slider-paging-bgcolor-visible`.
 	- Removed the CSS variable `--wui-slider-dots-bgcolor`.
-5. WUITable version class update to 0.3.
+6. WUITable version class update to 0.3.
 	- Added `resetPaging` property.
 	- Added filler column to maintain table width.
-6. WUIForm version class update to 0.3.
+7. WUIForm version class update to 0.3.
 	- Added compatibility with WUISwitch version 0.3.
 	- Added "fill" form style.
 

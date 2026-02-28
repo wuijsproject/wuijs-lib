@@ -750,6 +750,26 @@ Este método de implementación permite la estandarización del diseño de la in
 > En caso que sólo se desee implementar sólo una parte del conjunto de librerías WUI, se sebe agregar en la cabecera HTML los llamados a los archivos JS y CSS según se indique en cada sección.
 > Por otra parte, el archivo `WUI.css` sólo requerirá la definición de los objetos que se deseen implementar.
 
+Desde la vesrión 0.3.0 se han agregado los scripts de carga simple `WUI.js` y `WUI-0.3.0.js`.
+
+```html
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+		<meta name="application-name" content="">
+		<meta name="theme-color" content="">
+		<link type="text/css" rel="stylesheet" href="./Settings/Main.css">
+		<link type="text/css" rel="stylesheet" href="./Settings/WUI.css">
+		<script type="text/javascript" src="./Libraries/WUI/WUI.js?v=0.3.0"></script>
+	</head>
+	<body>
+	</body>
+</html>
+```
+
 <a name="classes"></a>
 
 ## Clases
