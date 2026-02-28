@@ -770,6 +770,14 @@ Desde la vesrión 0.3.0 se han agregado los scripts de carga simple `WUI.js` y `
 </html>
 ```
 
+Mediante el uso de `WUI.js` se pueden implementar todas las librerías WUI en una aplicación, sin necesidad de agregar los llamados a cada una de las librerías. Por otra parte, el archivo `WUI.css` sólo requerirá la definición de los objetos que se deseen implementar.
+
+En caso que se desee implementar sólo una parte de las librerías WUI, se deben especificar los nombres de las clases o librerías requeridas en el parámetro `class` (o su alias corto `c`) separados por comas.
+
+```html
+<script type="text/javascript" src="./Libraries/WUI/WUI.js?v=0.3.0&c=Cookie,Head,Body"></script>
+```
+
 <a name="classes"></a>
 
 ## Clases

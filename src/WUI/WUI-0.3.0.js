@@ -46,7 +46,7 @@
 			jsParams[param[0]] = param[1];
 		}
 		for (param in jsParams) {
-			if (param.match(/^(c|class|load)$/i)) {
+			if (param.match(/^(c|class)$/i)) {
 				load = jsParams[param];
 			}
 		}

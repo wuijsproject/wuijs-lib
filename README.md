@@ -773,6 +773,12 @@ Since version 0.3.0, simple loading scripts `WUI.js` and `WUI-0.3.0.js` have bee
 </html>
 ```
 
+In case you want to implement only part of the WUI library set, you must specify the names of the classes or libraries required in the `class` parameter (or its short alias `c`) separated by commas.
+
+```html
+<script type="text/javascript" src="./Libraries/WUI/WUI.js?v=0.3.0&c=Cookie,Head,Body"></script>
+```
+
 <a name="classes"></a>
 
 ## Classes
