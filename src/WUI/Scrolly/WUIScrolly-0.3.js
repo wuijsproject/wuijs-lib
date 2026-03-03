@@ -331,8 +331,8 @@ class WUIScrolly {
 				}
 				if (this.#properties.sections[i]._paging && typeof (section.pages) == "number" && section.pages > 0) {
 					for (let j = 0; j < section.pages; j++) {
-						const child = document.createElement("div");
-						this.#properties.sections[i]._paging.appendChild(child);
+						const indicator = document.createElement("div");
+						this.#properties.sections[i]._paging.appendChild(indicator);
 					}
 				}
 			}

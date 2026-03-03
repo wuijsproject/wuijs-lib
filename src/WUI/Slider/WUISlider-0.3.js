@@ -68,6 +68,17 @@ class WUISlider {
 	}
 
 	load() {
+		const debounce = (fn) => {
+			let frame;
+			return (...params) => {
+				if (frame) {
+					cancelAnimationFrame(frame);
+				}
+				frame = requestAnimationFrame(() => {
+					fn(...params);
+				});
+			}
+		};
 		if (this.#htmlElements.body instanceof HTMLElement) {
 			if (this.#htmlElements.paging instanceof HTMLElement) {
 				this.#htmlElements.paging.innerHTML = "";
@@ -77,7 +88,7 @@ class WUISlider {
 			this.#htmlElements.body.querySelectorAll(".slide").forEach((slide, i) => {
 				this.#data[i] = {
 					slide: slide,
-					dot: document.createElement("div"),
+					indicator: document.createElement("div"),
 					drag: false,
 					initX: null,
 					direction: null,
@@ -89,43 +100,43 @@ class WUISlider {
 					this.#index = i;
 					this.#data[i].slide.style.left = "0px";
 					if (this.#htmlElements.paging instanceof HTMLElement) {
-						this.#data[i].dot.classList.add("selected");
+						this.#data[i].indicator.classList.add("selected");
 					}
 				}
 				["touchstart", "mousedown"].forEach(type => {
 					this.#data[i].slide.addEventListener(type, event => {
 						if (!this.#data[i].drag) {
 							const initX = (event.type == "touchstart" ? event.touches[0].clientX : event.clientX || event.pageX) - event.target.offsetParent.offsetLeft;
-							this.#data[i].initX = initX;
 							this.#data[i].drag = Boolean(type == "touchstart" || event.buttons == 1);
+							this.#data[i].dragInitX = initX;
 						}
 					});
 				});
 				["touchmove", "mousemove"].forEach(type => {
 					this.#data[i].slide.addEventListener(type, event => {
 						if (this.#data[i].drag && !this.#data[i].lock) {
-							const initX = parseFloat(this.#data[i].initX);
+							const initX = parseFloat(this.#data[i].dragInitX);
 							const moveX = (event.type == "touchmove" ? event.touches[0].clientX : event.clientX || event.pageX) - event.target.offsetParent.offsetLeft;
 							const diffX = moveX - initX;
-							this.#data[i].direction = diffX > 10 ? "prev" : diffX < -10 ? "next" : null;
+							this.#data[i].dragDirection = diffX > 10 ? "right" : diffX < -10 ? "left" : null;
 						}
 					});
 				});
 				["touchend", "mouseup"].forEach(type => {
-					document.addEventListener(type, () => {
+					document.addEventListener(type, debounce(() => {
 						if (typeof (this.#data[i]) == "object" && this.#data[i].drag) {
-							this.#data[i].initX = null;
 							this.#data[i].drag = false;
-							if (this.#data[i].direction == "next" && i < this.#data.length - 1) {
+							this.#data[i].dragInitX = null;
+							if (this.#data[i].dragDirection == "left" && i < this.#data.length - 1) {
 								this.next();
-							} else if (this.#data[i].direction == "prev" && i > 0) {
+							} else if (this.#data[i].dragDirection == "right" && i > 0) {
 								this.prev();
 							}
 						}
-					});
+					}), { passive: true });
 				});
 				if (this.#htmlElements.paging instanceof HTMLElement) {
-					this.#htmlElements.paging.append(this.#data[i].dot);
+					this.#htmlElements.paging.append(this.#data[i].indicator);
 				}
 			}
 		}
@@ -147,8 +158,8 @@ class WUISlider {
 				if (step == 1) {
 					this.#index = index - 1;
 					if (this.#htmlElements.paging instanceof HTMLElement) {
-						this.#data[index].dot.classList.remove("selected");
-						this.#data[index - 1].dot.classList.add("selected");
+						this.#data[index].indicator.classList.remove("selected");
+						this.#data[index - 1].indicator.classList.add("selected");
 					}
 					if (typeof (this.#properties.onChange) == "function") {
 						this.#properties.onChange(this.#index);
@@ -176,8 +187,8 @@ class WUISlider {
 				if (step == 1) {
 					this.#index = index + 1;
 					if (this.#htmlElements.paging instanceof HTMLElement) {
-						this.#data[index].dot.classList.remove("selected");
-						this.#data[index + 1].dot.classList.add("selected");
+						this.#data[index].indicator.classList.remove("selected");
+						this.#data[index + 1].indicator.classList.add("selected");
 					}
 					if (typeof (this.#properties.onChange) == "function") {
 						this.#properties.onChange(this.#index);
@@ -202,8 +213,8 @@ class WUISlider {
 			}
 			this.#data[index].slide.style.left = "0%";
 			if (this.#htmlElements.paging instanceof HTMLElement) {
-				this.#data[this.#index].dot.classList.remove("selected");
-				this.#data[index].dot.classList.add("selected");
+				this.#data[this.#index].indicator.classList.remove("selected");
+				this.#data[index].indicator.classList.add("selected");
 			}
 			this.#index = index;
 		}
