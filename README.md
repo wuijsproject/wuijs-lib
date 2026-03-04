@@ -2471,7 +2471,9 @@ Component for the implementation of slide presentations controlled by mouse/touc
 
 #### Implementation
 
-Slides are defined as `.slide` elements within the `.body` container. The pagination indicator is optional and is added via the `.paging` element with the class `dots` (dots) or `lines` (lines). Slides support the additional classes `image` (for backgrounds using `background-image`) and `scroll` (for vertically scrollable content).
+Slides are defined as `.slide` elements within the `.body` container.
+The pagination indicator is optional and is added via the `.paging` element with the class `dots` (dots) or `lines` (lines).
+Slides support the additional classes `image` (for backgrounds using `background-image`) and `scroll` (for vertically scrollable content).
 
 CSS Configuration:
 

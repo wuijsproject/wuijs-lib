@@ -2461,7 +2461,9 @@ Componente para la implementación de presentaciones de diapositivas controladas
 
 #### Implementación
 
-Las diapositivas se definen como elementos `.slide` dentro del contenedor `.body`. El indicador de paginación es opcional y se agrega mediante el elemento `.paging` con la clase `dots` (puntos) o `lines` (líneas). Las diapositivas soportan las clases adicionales `image` (para fondos con `background-image`) y `scroll` (para contenido con desplazamiento vertical).
+Las diapositivas se definen como elementos `.slide` dentro del contenedor `.body`.
+El indicador de paginación es opcional y se agrega mediante el elemento `.paging` con la clase `dots` (puntos) o `lines` (líneas).
+Las diapositivas soportan las clases adicionales `image` (para fondos con `background-image`) y `scroll` (para contenido con desplazamiento vertical).
 
 Configuración CSS:
 
