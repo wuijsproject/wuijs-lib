@@ -56,7 +56,7 @@ div.wui-paging > .page.right {
 	left: 100%;
 }
 
-div.wui-paging.opacity,
+/*div.wui-paging.opacity,
 div.wui-paging.opacity > .page {
 	overflow: visible;
 }
@@ -66,7 +66,7 @@ div.wui-paging.opacity > .page.right {
 	-khtml-opacity: 0;
 	-moz-opacity: 0;
 	opacity: 0;
-}
+}*/
 
 div.wui-paging > .page.scroll {
 	scrollbar-color: var(--wui-paging-page-scroll-bgcolor-out) transparent;

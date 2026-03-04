@@ -146,6 +146,8 @@ cp -r ./wuijs-lib-main/src/WUI ../src/Libraries/
 
 ## Implementation
 
+The WUI library can be included in a project in two ways: in standard mode, by linking the CSS and JS files of each component individually, or in abbreviated mode, using the `WUI.js` script that automatically manages the loading of the indicated components. In both cases it is necessary to create the `WUI.css` configuration file with the CSS variables of the components used.
+
 <a name="standard"></a>
 
 ### Standard Implementation
@@ -867,6 +869,8 @@ Utilities for cookies management.
 
 #### Implementation
 
+Utility class with no graphical representation or associated CSS files. It is only necessary to include the JS file in the HTML header to have access to cookie management operations anywhere in the code.
+
 CSS Code:
 
 ```css
@@ -952,6 +956,9 @@ Class without properties.
 
 #### Implementation
 
+Utility class with no graphical representation or associated CSS files.
+It is only necessary to include the JS file in the HTML header to access the dynamic manipulation methods of the document's `<head>` tag.
+
 HTML head:
 
 ```html
@@ -1013,6 +1020,9 @@ Utilities for HTML body management. Allows the import of CSS/JS/HTML content and
 | openURL | `void`      | `openURL(url[, download])`<br><br>Arguments:<br><br>**• id:** `string`, specifies the URL that is required to be opened or downloaded.<br>**• download:** `string` *optional*, specifies the name of the file that will be used to download the content referenced by the URL.<br><br>Open or download content using a URL. This method is required in native environments since WebView on Android or WebKit on iOS aren't always supported. |
 
 #### Implementation
+
+Utility class with no graphical representation or associated CSS files.
+It facilitates the dynamic import of CSS, JS and HTML files, and is especially useful in native mobile environments (Android/iOS) where resource loading via WebView or WebKit requires specific management.
 
 CSS content of the `./Imports/test-content.css` file:
 
@@ -1115,6 +1125,10 @@ Utilities for interfaces with different languages managment. Allows you to load 
 | refresh | `void`      | `refresh([selector[, lang]])`<br><br>Arguments:**• selector:** `string` *optional* (default value corresponds to the `selector` property of the object)<br>**• lang:** `string` *optional* (default value corresponds to the `lang` property of the object)<br><br>Reloads the text contained in the nested elements of the HTML element specified in the `selector` argument. |
 
 #### Implementation
+
+The implementation requires at least one language file in JS or JSON format for each supported language.
+Language files define an object with the structure of keys and text values that are linked to HTML elements via the `data-key` attribute (The attribute name can be modified using the `dataKey` property.).
+Detection and switching of the active language is managed through the class properties.
 
 JS code file `main-en.js`:
 
@@ -1752,6 +1766,10 @@ python tools/svg-icon-maker.py --css <css-path> -o <output-directory> -c <color>
 
 #### Implementation
 
+CSS-only component, no JavaScript instantiation required.
+Icons are applied directly to HTML elements via the `wui-icon [name]` class and their color is controlled through the `background-color` property or via the component's CSS variables.
+The icon set can be exported to SVG format using the script `tools/svg-icon-maker.py`.
+
 CSS settings:
 
 ```css
@@ -1859,6 +1877,9 @@ Another alternative way is through extended methods of the `HTMLElement` class t
 | force   | `boolean` | `false`       | Both the entrance and exit effects are executed as long as the CSS `display` property is different from `options.display` and `none`, respectively. The `force` option ignores this validation. |
 
 #### Implementation
+
+The component acts on any existing HTML element in the DOM via the `in()` and `out()` methods.
+Opacity transitions use the element's CSS `opacity` and `display` properties, so the animation duration and easing curve can be customized directly in the project stylesheet using the `transition` property.
 
 CSS code:
 
@@ -2085,6 +2106,10 @@ Component for the implementation of dialog boxes (type `message`) and pop-up win
 
 #### Implementation
 
+The component supports two modal types: `message` for dialog boxes with a message and action buttons, and `page` for pop-up windows with free content.
+The dark background (overlay or backdrop) is generated automatically.
+Closing can occur by pressing the escape key, via the built-in close button, or by calling the `close()` method programmatically.
+
 CSS settings:
 
 ```css
@@ -2290,6 +2315,10 @@ Component for the implementation of paginated views with animated transitions.
 | `--wui-paging-page-scroll-bgcolor-over` | Scrollbar color in hover state (pages with `scroll` class). |
 
 #### Implementation
+
+Pages are defined as `.page` elements inside the component's root container, each identified by the `data-target` attribute.
+Navigation between pages is handled with the `select()` method and supports a navigable history manageable with `setHistory()` and `back()`.
+Pages can have the `scroll` class to enable internal vertical scrolling.
 
 CSS settings:
 
@@ -2717,9 +2746,13 @@ Component for the implementation of menu bars.
 | `--wui-menubar-tooltip-textcolor`                 | Text color of the tooltip. |
 | `--wui-menubar-bubble-bgcolor`                    | Background color of the notification bubble on buttons. |
 | `--wui-menubar-bubble-textcolor`                  | Text color of the notification bubble. |
-| `--wui-menubar-mobile-opener-closeicon-src`       | Source for the submenu close icon in mobile mode<br>(format: `url()` or `none` for the default source). | 
+| `--wui-menubar-mobile-opener-closeicon-src`       | Source for the submenu close icon in mobile mode<br>(format: `url()` or `none` for the default source). |
 
 #### Implementation
+
+The HTML structure of the menu must be defined before calling the `init()` method.
+The component applies the open/close behavior of submenus and automatic adaptation to mobile mode when the screen width is less than 768px.
+The menu open and close icons are configurable via CSS variables.
 
 CSS settings:
 
@@ -3027,9 +3060,13 @@ Component for the implementation of data lists and buttons for each row optional
 | `--wui-list-button-hmargin`          | Horizontal margin between row buttons. |
 | `--wui-list-button-borderradius`     | Border radius for row buttons. |
 | `--wui-list-button-bgcolor-enabled`  | Background color of row buttons in enabled state. |
-| `--wui-list-button-bgcolor-disabled` | Background color of row buttons in disabled state. | 
+| `--wui-list-button-bgcolor-disabled` | Background color of row buttons in disabled state. |
 
 #### Implementation
+
+The list data is loaded directly into the `rows` property when creating the instance before the execution of the `init()` method, or after it followed by the execution of the `print()` method.
+Each column is defined in the `columns` property specifying the data key and header.
+Optionally, action buttons per row can be added via the `buttons` property.
 
 CSS settings:
 
@@ -3394,6 +3431,10 @@ Component for the implementation of data tables. Unlike the `WUIList` object, th
 | `--wui-table-row-textcolor-disabled`           | Text color of rows in disabled state. |
 
 #### Implementation
+
+The table data is loaded directly into the `rows` property when creating the instance before the execution of the `init()` method, or after it followed by the execution of the `print()` method.
+Columns are defined in the `columns` property specifying name, data key, and width.
+The table supports column resizing and drag-and-drop reordering, row selection, and pagination.
 
 CSS settings:
 
@@ -3769,6 +3810,9 @@ Component for the implementation of data forms. This component allows the implem
 
 #### Implementation
 
+The component manages a set of input fields defined in the `fields` property.
+Each field can be a native HTML element (`input`, `select`, `textarea`) or a compatible WUI component (`WUISelectpicker`, `WUIDatepicker`, `WUITimepicker`, `WUIColorpicker`, `WUISwitch`, `WUIIntensity`, `WUIButton`).
+
 CSS settings:
 
 ```css
@@ -4141,6 +4185,10 @@ Utilities for management and validation `string`, `number` and `Date` data forma
 | wuiToString | `string`    | `wuiToString([format[, options]])`<br><br>Arguments:<br>**• format:** `string` *optional*, date format (default value `"default"`).<br>**• options:** `object` *optional*, date options, according to the definition of **Default values** `<Date.prototype.wuiDefaults>`.<br><br>Converts a date to a string. |
 
 #### Implementation
+
+Utility class that extends the native JavaScript prototypes `String`, `Number` and `Date` with formatting and validation methods.
+No instantiation or CSS files required.
+The methods will be available directly on any value of the corresponding type once the JS file is included in the page.
 
 CSS Code:
 
@@ -4520,6 +4568,10 @@ Component for the implementation of multiple or exclusive selection list data in
 
 #### Implementation
 
+The component visually replaces the native HTML `<select>` element while preserving its value and options.
+It supports single or multiple selection based on the `multiple` property, option searching, and options loading from an array via `loadOptions()`.
+On mobile devices (width less than 768px) the dropdown adapts to a touch-screen optimized presentation.
+
 CSS Settings:
 
 ```css
@@ -4788,9 +4840,13 @@ Component for the implementation of date type data inputs based on HTML element 
 | `--wui-datepicker-box-day-textcolor-selected`    | Text color of the selected day in the calendar. |
 | `--wui-datepicker-box-button-textcolor-out`      | Text color of calendar buttons in normal state. |
 | `--wui-datepicker-box-button-textcolor-over`     | Text color of calendar buttons in hover state. |
-| `--wui-datepicker-mobile-overlay-bgcolor`        | Background color of the overlay in mobile mode (screen width less than 768px). | 
+| `--wui-datepicker-mobile-overlay-bgcolor`        | Background color of the overlay in mobile mode (screen width less than 768px). |
 
 #### Implementation
+
+The component visually replaces the native HTML `<input type="date">` element while preserving its value.
+The dropdown calendar automatically adapts to mobile mode (screen width less than 768px) by showing a full-screen overlay.
+The range of selectable dates can be limited via the `min` and `max` properties.
 
 CSS settings:
 
@@ -5024,6 +5080,9 @@ Component for the implementation of time type data inputs based on HTML element 
 
 #### Implementation
 
+The component visually replaces the native HTML `<input type="time">` element while preserving its value.
+The time selector automatically adapts to mobile mode (screen width less than 768px) via a full-screen overlay.
+
 CSS settings:
 
 ```css
@@ -5241,6 +5300,9 @@ Component for the implementation of color picker type data inputs based on HTML 
 
 #### Implementation
 
+The component visually replaces the native HTML `<input type="color">` element while preserving its value in hexadecimal format.
+The dropdown selector automatically adapts to mobile mode (screen width less than 768px) via a full-screen overlay.
+
 CSS code:
 
 ```css
@@ -5436,6 +5498,8 @@ Component for the implementation of checkbox type data inputs based on HTML elem
 
 #### Implementation
 
+The component visually replaces the native HTML `<input type="checkbox">` element while preserving its state.
+
 CSS settings:
 
 ```css
@@ -5585,6 +5649,9 @@ Component for the implementation of 4-level intensity selector type data inputs:
 | `--wui-intensity-bgcolor-high`    | Background color of the intensity control at high level. |
 
 #### Implementation
+
+The component visually replaces the native HTML `<input type="range">` element, restricting the selection to four intensity levels: none, low, medium, and high.
+The colors for each level are configurable via CSS variables.
 
 CSS settings:
 
@@ -5768,6 +5835,8 @@ Component for the implementation of.
 | `--wui-button-form-default-minwidth`        | Minimum width of the default button when used in forms. |
 
 #### Implementation
+
+The component extends the native HTML `<button>` element with support for icons, multiple visual variants, and a loading state.
 
 CSS settings:
 
