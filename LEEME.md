@@ -9,7 +9,7 @@
 
 Versión librería: `0.3.0` ([Registro de Cambio](./REGISTRODECAMBIO.md))
 
-Versión documentación: `0.3.0.20260228.0`
+Versión documentación: `0.3.0.20260304.0`
 
 Licencia: `Licencia Apache 2.0`
 
@@ -40,7 +40,7 @@ Autor: `Sergio E. Belmar V. <wuijs.project@gmail.com>`
 	*   WUITooltip
 	*   [WUIModal](#WUIModal)
 	*   [WUIPaging](#WUIPaging)
-	*   WUISlider
+	*   [WUISlider](#WUISlider)
 	*   WUITabs
 	*   [WUIMenubar](#WUIMenubar)
 	*   [WUIList](#WUIList)
@@ -78,7 +78,7 @@ WUI JS Lib, acrónimo del inglés *Web User Interface JavaScript library*, es un
 | WUITooltip                          | `0.1`   | Componente para la implementación de textos emergentes. |
 | [WUIModal](#WUIModal)               | `0.2`   | Componente para la implementación de cuadros de diálogo (tipo `message`) y ventanas emergentes (tipo `page`). |
 | [WUIPaging](#WUIPaging)             | `0.2`   | Componente para la implementación de vistas accesibles paginadamente con transiciones animadas. |
-| WUISlider                           | `0.3`   | Componente para la implementación de persianas controladas por ratón y/o por evento. |
+| [WUISlider](#WUISlider)             | `0.3`   | Componente para la implementación de presentaciones de diapositivas controladas por arrastre de ratón/táctil y/o por evento. |
 | WUITabs                             | `0.1`   | Componente para la implementación de vistas accesibles mediante selección por pestaña. |
 | [WUIMenubar](#WUIMenubar)           | `0.1`   | Componente para la implementación de barras de menú. |
 | [WUIList](#WUIList)                 | `0.2`   | Componente para la implementación de listas de datos y botoneras para cada fila de manera opcional. |
@@ -220,9 +220,8 @@ Código CSS archivo `WUI.css`:
 
 	/* wui-slider */
 
-	--wui-slider-dots-bgcolor: transparent;
-	--wui-slider-dot-bgcolor: rgb(from #fff r g b / 60%);
-	--wui-slider-dot-bgcolor-selected: rgb(from #fff r g b / 90%);
+	--wui-slider-paging-bgcolor-hidden: rgb(from #fff r g b / 20%);
+	--wui-slider-paging-bgcolor-visible: rgb(from #fff r g b / 80%);
 
 	/* wui-tabs */
 
@@ -2282,7 +2281,7 @@ Componente para la implementación de vistas accesibles paginadamente con transi
 
 #### Implementación
 
-Variables CSS:
+Configuración CSS:
 
 ```css
 :root {
@@ -2413,6 +2412,173 @@ window.addEventListener("DOMContentLoaded", init);
 > Puede revisar este ejemplo funcional en CodeSandbox en el enlace: [https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIPaging-basic](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIPaging-basic).
 
 <a name="WUISlider"></a>
+
+### WUISlider
+
+Versión: `0.3`
+
+Componente para la implementación de presentaciones de diapositivas controladas por arrastre de ratón/táctil y/o por evento.
+
+#### Fuentes
+
+| Tipo | Archivo |
+| ---- | ------- |
+| JS   | [src/WUI/Slider/WUISlider-0.3.js](https://github.com/wuijsproject/wuijs-lib/blob/main/src/WUI/Slider/WUISlider-0.3.js) |
+| CSS  | [src/WUI/Slider/WUISlider-0.3.css](https://github.com/wuijsproject/wuijs-lib/blob/main/src/WUI/Slider/WUISlider-0.3.css) |
+
+#### Constructor
+
+| Tipo      | Descripción |
+| --------- | ----------- |
+| WUISlider | `WUISlider([properties])`<br><br>Parámetros:<br>**• properties:** `object` *opcional* |
+
+#### Propiedades
+
+| Propiedad | Tipo       | Valor predeterminado | Descripción |
+| --------- | ---------- | -------------------- | ----------- |
+| selector  | `string`   | `".wui-slider"`      | (get/set)<br><br>Selector CSS del elemento HTML contenedor del slider. Al asignarse, localiza también los subelementos `.body` y `.paging` internos. |
+| onChange  | `function` | `null`               | (get/set)<br><br>Función que se ejecuta cuando cambia la diapositiva activa.<br><br>Parámetros de la función:<br>**• index:** `number`, índice de la diapositiva activa (comienza en `0`). |
+
+#### Métodos
+
+| Método     | Tipo retorno  | Descripción |
+| ---------- | ------------- | ----------- |
+| getElement | `HTMLElement` | `getElement()`<br><br>Retorna el elemento HTML raíz del slider. |
+| getBody    | `HTMLElement` | `getBody()`<br><br>Retorna el elemento HTML interno `.body` que contiene las diapositivas. |
+| getIndex   | `number`      | `getIndex()`<br><br>Retorna el índice de la diapositiva activa (comienza en `0`). |
+| init       | `void`        | `init()`<br><br>Inicializa el slider. Equivale a llamar `load()`. |
+| load       | `void`        | `load()`<br><br>Carga o recarga las diapositivas, reinicia los indicadores de paginación y vuelve a adjuntar los eventos de interacción (arrastre y táctil). |
+| prev       | `void`        | `prev()`<br><br>Desplaza el slider hacia la diapositiva anterior con animación. No tiene efecto si ya está en la primera diapositiva. |
+| next       | `void`        | `next()`<br><br>Desplaza el slider hacia la siguiente diapositiva con animación. No tiene efecto si ya está en la última diapositiva. |
+| go         | `void`        | `go(index)`<br><br>Parámetros:<br>**• index:** `number`, índice de la diapositiva destino (comienza en `0`)<br><br>Salta directamente a la diapositiva indicada sin animación de transición. |
+
+#### Variables CSS
+
+| Variable                              | Descripción |
+| ------------------------------------- | ----------- |
+| `--wui-slider-paging-bgcolor-hidden`  | Color del indicador de paginación en estado no seleccionado. |
+| `--wui-slider-paging-bgcolor-visible` | Color del indicador de paginación en estado seleccionado. |
+
+#### Implementación
+
+Las diapositivas se definen como elementos `.slide` dentro del contenedor `.body`. El indicador de paginación es opcional y se agrega mediante el elemento `.paging` con la clase `dots` (puntos) o `lines` (líneas). Las diapositivas soportan las clases adicionales `image` (para fondos con `background-image`) y `scroll` (para contenido con desplazamiento vertical).
+
+Configuración CSS:
+
+```css
+:root {
+
+	/* wui-slider */
+
+	--wui-slider-paging-bgcolor-hidden: rgb(from #fff r g b / 20%);
+	--wui-slider-paging-bgcolor-visible: rgb(from #fff r g b / 80%);
+}
+```
+
+```css
+html,
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: Arial, Helvetica, Verdana, sans-serif;
+	font-size: 14px;
+}
+
+.my-slider {
+	width: 100%;
+	height: 400px;
+}
+
+.slide1 {
+	background-color: #FF5C8A;
+}
+
+.slide2 {
+	background-color: #8B5CF6;
+}
+
+.slide3 {
+	background-color: #4DA3FF;
+}
+
+nav {
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	margin-top: 10px;
+	gap: 10px;
+}
+
+.my-output {
+	width: 100%;
+	height: 40px;
+	margin: 10px;
+	font-family: monospace;
+}
+```
+
+Cabecera HTML:
+
+```html
+<link type="text/css" rel="stylesheet" href="./Libraries/WUI/Slider/WUISlider-0.3.css">
+<script type="text/javascript" src="./Libraries/WUI/Slider/WUISlider-0.3.js"></script>
+```
+
+Código HTML:
+
+```html
+<div class="wui-slider">
+	<div class="body">
+		<div class="slide slide1">Diapositiva 1</div>
+		<div class="slide slide2">Diapositiva 2</div>
+		<div class="slide slide3">Diapositiva 3</div>
+	</div>
+	<div class="paging dots"></div>
+</div>
+
+<nav>
+	<button class="my-button prev">&#9204; enterior</button>
+	<button class="my-button next">siguiente &#9205;</button>
+</nav>
+
+<div class="my-output"></div>
+```
+
+Código JS:
+
+```js
+const init = () => {
+	const prevButton = document.body.querySelector(".my-button.prev");
+	const nextButton = document.body.querySelector(".my-button.next");
+	const output = document.body.querySelector(".my-output");
+	const slider = new WUISlider({
+		selector: ".wui-slider.my-slider",
+		onChange: (index) => {
+			output.textContent = `Cambio a: ${index}`;
+		}
+	});
+	slider.init();
+	prevButton.addEventListener("click", () => {
+		slider.prev();
+	});
+	nextButton.addEventListener("click", () => {
+		slider.next();
+	});
+}
+
+window.addEventListener("DOMContentLoaded", init);
+```
+
+> [!IMPORTANT]
+> Si el selector define un elemento que no es de tipo `HTMLDivElement`, el objeto no se inicializará.
+
+> [!TIP]
+> Puede revisar este ejemplo funcional en CodeSandbox en el enlace: [https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUISlider-basic](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUISlider-basic).
+
 <a name="WUITabs"></a>
 <a name="WUIMenubar"></a>
 
@@ -5831,6 +5997,8 @@ Esta sección recoge los ejemplos de las implementaciones de la documentación y
 	Esta demostración muestra el uso de la funcionalidad básica de WUIModal.<br><br>
 -	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIPaging-basic](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIPaging-basic)<br>
 	Esta demostración muestra el uso de la funcionalidad de submenú de WUIPaging.<br><br>
+-	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUISlider-basic](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUISlider-basic)<br>
+	Esta demostración muestra el uso de la funcionalidad de submenú de WUISlider.<br><br>
 -	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIMenubar-submenu](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIMenubar-submenu)<br>
 	Esta demostración muestra el uso de la funcionalidad de submenú de WUIMenubar.<br><br>
 -	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIList-paging-buttongroup](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIList-paging-buttongroup)<br>
@@ -5889,6 +6057,7 @@ https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/W
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIFade-basic
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIModal-basic
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIPaging-basic
+https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUISlider-basic
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIMenubar-submenu
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIList-paging-buttongroup
 https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUITable-paging

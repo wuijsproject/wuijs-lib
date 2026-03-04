@@ -79,8 +79,8 @@ class WUISlider {
 				});
 			}
 		};
-		if (this.#htmlElements.body instanceof HTMLElement) {
-			if (this.#htmlElements.paging instanceof HTMLElement) {
+		if (this.#htmlElements.body instanceof HTMLDivElement) {
+			if (this.#htmlElements.paging instanceof HTMLDivElement) {
 				this.#htmlElements.paging.innerHTML = "";
 			}
 			this.#index = null;
@@ -99,7 +99,7 @@ class WUISlider {
 				if (i == 0) {
 					this.#index = i;
 					this.#data[i].slide.style.left = "0px";
-					if (this.#htmlElements.paging instanceof HTMLElement) {
+					if (this.#htmlElements.paging instanceof HTMLDivElement) {
 						this.#data[i].indicator.classList.add("selected");
 					}
 				}
@@ -135,7 +135,7 @@ class WUISlider {
 						}
 					}), { passive: true });
 				});
-				if (this.#htmlElements.paging instanceof HTMLElement) {
+				if (this.#htmlElements.paging instanceof HTMLDivElement) {
 					this.#htmlElements.paging.append(this.#data[i].indicator);
 				}
 			}
@@ -157,7 +157,7 @@ class WUISlider {
 				this.#data[index].slide.style.left = (100 * step) + "%";
 				if (step == 1) {
 					this.#index = index - 1;
-					if (this.#htmlElements.paging instanceof HTMLElement) {
+					if (this.#htmlElements.paging instanceof HTMLDivElement) {
 						this.#data[index].indicator.classList.remove("selected");
 						this.#data[index - 1].indicator.classList.add("selected");
 					}
@@ -186,7 +186,7 @@ class WUISlider {
 				this.#data[index + 1].slide.style.left = (100 * (1 - step)) + "%";
 				if (step == 1) {
 					this.#index = index + 1;
-					if (this.#htmlElements.paging instanceof HTMLElement) {
+					if (this.#htmlElements.paging instanceof HTMLDivElement) {
 						this.#data[index].indicator.classList.remove("selected");
 						this.#data[index + 1].indicator.classList.add("selected");
 					}
@@ -212,7 +212,7 @@ class WUISlider {
 				}
 			}
 			this.#data[index].slide.style.left = "0%";
-			if (this.#htmlElements.paging instanceof HTMLElement) {
+			if (this.#htmlElements.paging instanceof HTMLDivElement) {
 				this.#data[this.#index].indicator.classList.remove("selected");
 				this.#data[index].indicator.classList.add("selected");
 			}
