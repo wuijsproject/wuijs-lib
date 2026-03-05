@@ -6,6 +6,15 @@
 
 (() => {
 	const load = () => {
+		const createResource = (tag, atributos) => {
+			return new Promise((resolve, reject) => {
+				const resource = document.createElement(tag);
+				Object.assign(resource, atributos);
+				resource.onload = () => resolve(resource);
+				resource.onerror = () => reject(new Error(`WUI loading resource error: ${atributos.src || atributos.href}`));
+				document.head.appendChild(resource);
+			});
+		};
 		const scripts = document.getElementsByTagName("script");
 		const script = scripts[scripts.length - 1];
 		const dir = script.src.replace(new RegExp(/[^\/]+$/), "");
@@ -43,6 +52,7 @@
 				"Button-0.2"
 			]
 		};
+		let tasks = [];
 		let ver = version;
 		let res = "";
 		if (script.src.match(/\?/)) {
@@ -63,17 +73,18 @@
 				const name = lib.replace(/-[\d\.]+$/, "");
 				if (res == "" || Boolean(res.match(new RegExp("\b" + name + "\b", "i")))) {
 					if (!name.match(/Icon/)) {
-						const js = document.createElement("script");
-						js.setAttribute("src", dir + name + "/WUI" + name + ".js?" + d);
-						js.setAttribute("type", "text/javascript");
-						document.head.appendChild(js);
+						tasks.push(createResource("script", {
+							src: `${dir}${name}/WUI${name}.js?${d}`,
+							type: "text/javascript",
+							async: false
+						}));
 					}
 					if (!name.match(/(Cookie|Head|Body|Language|Fade)/)) {
-						const css = document.createElement("link");
-						css.setAttribute("rel", "stylesheet");
-						css.setAttribute("type", "text/css");
-						css.setAttribute("href", dir + name + "/WUI" + name + ".css?" + d);
-						document.head.appendChild(css);
+						tasks.push(createResource("link", {
+							href: `${dir}${name}/WUI${name}.css?${d}`,
+							type: "text/css",
+							rel: "stylesheet"
+						}));
 					}
 				}
 			});
@@ -83,7 +94,7 @@
 		const event = new CustomEvent("wuiLoad");
 		window.dispatchEvent(event);
 	}
-	Promise.all([load]).then(() => {
+	Promise.all(tasks).then(() => {
 		if (document.readyState == "complete" || document.readyState == "interactive") {
 			onLoad();
 		} else {
