@@ -76,9 +76,9 @@ WUI JS Lib, an acronym for *Web User Interface JavaScript library*, is an open s
 WUI JS Lib is part of the WUI JS project, which currently consists of 3 repositories:
 
 -	[https://github.com/wuijsproject/wuijs-lib](https://github.com/wuijsproject/wuijs-lib)<br>
-	Main UI library.<br><br>
+	UI main library.<br><br>
 -	[https://github.com/wuijsproject/wuijs-plugins-lib](https://github.com/wuijsproject/wuijs-plugins-lib)<br>
-	Main UI library plugins.<br><br>
+	UI main library plugins.<br><br>
 -	[https://github.com/wuijsproject/wuijs-lab](https://github.com/wuijsproject/wuijs-lab)<br>
 	Repository with demos and usage examples of both the main UI library classes and the plugins.<br><br>
 
