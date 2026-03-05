@@ -71,17 +71,17 @@
 		if (ver in libraries) {
 			libraries[ver].forEach(lib => {
 				const name = lib.replace(/-[\d\.]+$/, "");
-				if (res == "" || Boolean(res.match(new RegExp("\b" + name + "\b", "i")))) {
+				if (res == "" || res.match(new RegExp("\\b" + name + "\\b", "i"))) {
 					if (!name.match(/Icon/)) {
 						tasks.push(createResource("script", {
-							src: `${dir}${name}/WUI${name}.js?${d}`,
+							src: `${dir}${name}/WUI${lib}.js?${d}`,
 							type: "text/javascript",
 							async: false
 						}));
 					}
 					if (!name.match(/(Cookie|Head|Body|Language|Fade)/)) {
 						tasks.push(createResource("link", {
-							href: `${dir}${name}/WUI${name}.css?${d}`,
+							href: `${dir}${name}/WUI${lib}.css?${d}`,
 							type: "text/css",
 							rel: "stylesheet"
 						}));
@@ -89,16 +89,17 @@
 				}
 			});
 		}
+		Promise.all(tasks).then(() => {
+			if (document.readyState == "complete" || document.readyState == "interactive") {
+				onLoad();
+			} else {
+				window.addEventListener("DOMContentLoaded", onLoad);
+			}
+		}).catch(err => console.error("WUI loading error:", err));
 	}
 	const onLoad = () => {
 		const event = new CustomEvent("wuiLoad");
 		window.dispatchEvent(event);
 	}
-	Promise.all(tasks).then(() => {
-		if (document.readyState == "complete" || document.readyState == "interactive") {
-			onLoad();
-		} else {
-			window.addEventListener("DOMContentLoaded", onLoad);
-		}
-	}).catch(err => console.error("WUI loading error:", err));
+	load();
 })();
