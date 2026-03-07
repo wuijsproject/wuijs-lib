@@ -810,6 +810,9 @@ Si no se especifica el parámetro `version` se asumirá la versión instalada.
 > [!TIP]
 > Para una correcta implementación abreviada revise la sección [Buenas Prácticas de Codificación](#goodpractices).
 
+> [!TIP]
+> Para una implementación simplificada del archivo `WUI.css`, opcionalmente se puede utilizar el plugin [WUIPluginsThemes](https://github.com/wuijsproject/wuijs-plugins-lib?tab=readme-ov-file#wuipluginsthemes) proporcionado en la librería [wuijs-plugins-lib](https://github.com/wuijsproject/wuijs-plugins-lib).
+
 <a name="fullmode"></a>
 
 #### Modo completo
@@ -827,7 +830,7 @@ En el modo completo, se cargarán todas las librerías WUI en una página web, s
 En el modo parcial, solo las librerías WUI especificadas en el parámetro `class` (o su alias corto `c`) se cargarán en la página web, sin necesidad de incluir manualmente los archivos JavaScript y CSS correspondientes a cada librería.
 
 ```html
-<script type="text/javascript" src="./Libraries/WUI/WUI.js?v=0.3.0&c=head,icon,body,table"></script>
+<script type="text/javascript" src="./Libraries/WUI/WUI.js?v=0.3.0&c=selectpicker,switch"></script>
 ```
 
 > [!NOTE]
@@ -835,6 +838,9 @@ En el modo parcial, solo las librerías WUI especificadas en el parámetro `clas
 
 > [!NOTE]
 > El parámetro `class` no distingue entre mayúsculas y minúsculas.
+
+> [!TIP]
+> Puede revisar este ejemplo funcional en CodeSandbox en el enlace: [https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIResourceLoader-basic](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIResourceLoader-basic).
 
 <a name="classes"></a>
 
@@ -880,9 +886,6 @@ Utilidades para el manejo de cookies.
 
 #### Implementación
 
-Clase de utilidad sin representación gráfica ni archivos CSS asociados.
-Solo es necesario incluir el archivo JS en la cabecera HTML para disponer de las operaciones de gestión de cookies en cualquier parte del código.
-
 CSS Code:
 
 ```css
@@ -904,7 +907,7 @@ Cabecera HTML:
 <script type="text/javascript" src="./Libraries/WUI/Cookie/WUICookie-0.3.js"></script>
 ```
 
-HTML code:
+Código HTML:
 
 ```html
 <div class="my-output"></div>
@@ -968,9 +971,6 @@ Clase sin propiedades.
 
 #### Implementación
 
-Clase de utilidad sin representación gráfica ni archivos CSS asociados.
-Solo es necesario incluir el archivo JS en la cabecera HTML para acceder a los métodos de manipulación dinámica de la etiqueta `<head>` del documento.
-
 Cabecera HTML:
 
 ```html
@@ -1032,9 +1032,6 @@ Utilidades para el manejo del cuerpo HTML. Permite la importación de contenido 
 | openURL  | `void`       | `openURL(url[, download])`<br><br>Parámetros:<br>**• id:** `string`, especifica la dirección URL que se requiere abrir o descargar.<br>**• download:** `string` *opcional*, especifica el nombre del archivo con que se descargará el contenido referido mediante la URL.<br><br>Abre o descarga un contenido mediante una dirección URL. Este método es requerido en entornos nativos ya que no se siempre se cuenta con soporte mediante WebView sobre Android o WebKit sobre iOS. |
 
 #### Implementación
-
-Clase de utilidad sin representación gráfica ni archivos CSS asociados.
-Facilita la importación dinámica de archivos CSS, JS y HTML, y resulta especialmente útil en entornos nativos móviles (Android/iOS) donde la carga de recursos mediante WebView o WebKit requiere una gestión específica.
 
 Contenido CSS del archivo `./Imports/test-content.css`:
 
@@ -1137,10 +1134,6 @@ Utilidades para el manejo de interfaces con distintos lenguajes. Permite cargar 
 | refresh | `void`       | `refresh([selector[, lang]])`<br><br>Parámetros:<br>**• selector:** `string` *opcional* (valor predeterminado corresponde a la propiedad `selector` del objeto)<br>**• lang:** `string` *opcional* (valor predeterminado corresponde a la propiedad `lang` del objeto)<br><br>Recarga el texto contenido en los elementos anidados de el elemento HTML especificado en el argumento `selector`. |
 
 #### Implementación
-
-La implementación requiere al menos un archivo de idioma en formato JS o JSON por cada idioma soportado.
-Los archivos de idioma definen un objeto con la estructura de claves y valores textuales que se enlazan a los elementos HTML mediante el atributo `data-key` (el nombre del atributo puede ser modificado mediante la propiedad `dataKey`).
-La detección y cambio del idioma activo se gestiona a través de las propiedades de la clase.
 
 Código JS archivo `main-es.js`:
 
@@ -1313,8 +1306,6 @@ Utilidades para el manejo de animación de elementos HTML mediante el evento "on
 | .fadein-right | Entra y sale con opacidad desde la derecha. |
 
 #### Implementación
-
-Existen dos modos de implementación de la librería de animación, la más sencilla es por medio de etiquetas de animación CSS, la segunda es mediante la programación de funciones JS de animación que se cargan mediante la configuración de secciones.
 
 Configuración CSS:
 
@@ -1774,13 +1765,9 @@ python tools/svg-icon-maker.py --css <css-path> -o <output-directory> -c <color>
 | `--css`            | `../src/WUI/Icon/WUIIcon-0.1.css` | Ruta al archivo CSS fuente. |
 | `-o`,<br>`--out`   | `../imgs/Icons/`                  | Directorio de salida para los archivos generados. |
 | `-c`,<br>`--color` | `#a2a9b6`                         | Color en formato CSS compatible que reemplazará a la sentencia 'currentColor' en el código SVG. |
-| `-s`,<br>`--size`  | `24`                              | Tamaño (ancho y alto) de las imágenes del set. |
+| `-s`,<br>`--size`  | `24`                              | Tamaño en píxeles (ancho y alto) de las imágenes del set. |
 
 #### Implementación
-
-Componente exclusivamente CSS, sin instanciación JavaScript.
-Los íconos se aplican directamente sobre elementos HTML mediante la clase `wui-icon [nombre]` y su color se controla a través de la propiedad `background-color` o mediante las variables CSS del componente.
-El set de íconos puede exportarse a formato SVG con el script `tools/svg-icon-maker.py`.
 
 Configuración CSS:
 
@@ -1888,9 +1875,6 @@ Otro modo alternativo es mediante métodos extendidos de la clase `HTMLElement` 
 | force   | `boolean` | `false`              | Ambos efectos, entrada y salida, son ejecutadas siempre y cuando la propiedad CSS `display` sea distinta a `options.display` y a `"none"` respectivamente. La opción `force` ignora esta validación. |
 
 #### Implementación
-
-El componente actúa sobre cualquier elemento HTML existente en el DOM mediante los métodos `in()` y `out()`.
-Las transiciones de opacidad utilizan las propiedades CSS `opacity` y `display` del elemento, por lo que el tiempo y la curva de animación pueden personalizarse directamente en la hoja de estilos del proyecto mediante la propiedad `transition`.
 
 Código CSS:
 
@@ -2117,10 +2101,6 @@ Componente para la implementación de cuadros de diálogo (tipo `message`) y ven
 
 #### Implementación
 
-El componente soporta dos tipos de modal: `message` para cuadros de diálogo con mensaje y botones de acción, y `page` para ventanas emergentes de contenido libre.
-El fondo oscuro (overlay o backdrop) se genera automáticamente.
-El cierre puede producirse al pulsar la tecla escape, mediante el botón de cierre integrado o llamando al método `close()` programáticamente.
-
 Configuración CSS:
 
 ```css
@@ -2327,10 +2307,6 @@ Componente para la implementación de vistas accesibles paginadamente con transi
 
 #### Implementación
 
-Las páginas se definen como elementos `.page` dentro del contenedor raíz del componente, cada una identificada mediante el atributo `data-target`.
-La navegación entre páginas se realiza con el método `select()` y soporta un historial de navegación gestionable con `setHistory()` y `back()`.
-Las páginas pueden llevar la clase `scroll` para habilitar el desplazamiento vertical interno.
-
 Configuración CSS:
 
 ```css
@@ -2510,10 +2486,6 @@ Componente para la implementación de presentaciones de diapositivas controladas
 | `--wui-slider-paging-bgcolor-visible` | Color del indicador de paginación en estado seleccionado. |
 
 #### Implementación
-
-Las diapositivas se definen como elementos `.slide` dentro del contenedor `.body`.
-El indicador de paginación es opcional y se agrega mediante el elemento `.paging` con la clase `dots` (puntos) o `lines` (líneas).
-Las diapositivas soportan las clases adicionales `image` (para fondos con `background-image`) y `scroll` (para contenido con desplazamiento vertical).
 
 Configuración CSS:
 
@@ -2758,10 +2730,6 @@ Componente para la implementación de barras de menú.
 | `--wui-menubar-mobile-opener-closeicon-src`       | Fuente del ícono de cierre del submenú en modo móvil<br>(formato: `url()` o `none` para utilizar la fuente predeterminada). |
 
 #### Implementación
-
-La estructura HTML del menú debe definirse previamente antes de llamar al método `init()`.
-El componente aplica el comportamiento de apertura y cierre de submenús y la adaptación automática al modo móvil cuando el ancho de pantalla es inferior a 768px.
-Los íconos de apertura y cierre del menú son configurables mediante variables CSS.
 
 Configuración CSS:
 
@@ -3074,10 +3042,6 @@ Componente para la implementación de listas de datos y botoneras para cada fila
 | `--wui-list-button-bgcolor-disabled` | Color de fondo de los botones de fila en estado deshabilitado. |
 
 #### Implementación
-
-Los datos de la lista se cargan directamente en la propiedad `rows` al crear la instancia antes de la ejecución del método `init()`, o posterior a ella seguida de la ejecución del método `print()`.
-Cada columna se define en la propiedad `columns` especificando la clave de datos y el encabezado.
-De forma opcional se pueden agregar botones de acción por fila mediante la propiedad `buttons`.
 
 Configuración CSS:
 
@@ -3442,10 +3406,6 @@ Componente para la implementación de tablas de datos. A diferencia del objeto `
 | `--wui-table-row-textcolor-disabled`           | Color del texto de las filas en estado deshabilitado. |
 
 #### Implementación
-
-Los datos de la tabla se cargan directamente en la propiedad `rows` al crear la instancia antes de la ejecución del método `init()`, o posterior a ella seguida de la ejecución del método `print()`.
-Las columnas se definen en la propiedad `columns` especificando nombre, clave de datos y ancho.
-La tabla soporta redimensionado y reordenamiento de columnas por arrastre, selección de filas y paginación.
 
 Configuración CSS:
 
@@ -3814,9 +3774,6 @@ Componente para la implementación de formularios de datos. Este componente perm
 
 #### Implementación
 
-El componente gestiona un conjunto de campos de entrada definidos en la propiedad `fields`.
-Cada campo puede ser un elemento HTML nativo (`input`, `select`, `textarea`) o un componente WUI compatible (`WUISelectpicker`, `WUIDatepicker`, `WUITimepicker`, `WUIColorpicker`, `WUISwitch`, `WUIIntensity`, `WUIButton`).
-
 Configuración CSS:
 
 ```css
@@ -4182,10 +4139,6 @@ Utilidades para manejo y validación de formatos de datos de tipo `string`, `num
 | wuiToString | `string`     | `wuiToString([format[, options]])`<br><br>Parámetros:<br>**• format:** `string` *opcional*, formato de fecha (valor predeterminado `"default"`).<br>**• options:** `object` *opcional*, opciones de fecha, según la definición de **Valores predeterminados** `<Date.prototype.wuiDefaults>`.<br><br>Convierte una fecha a cadena. |
 
 #### Implementación
-
-Clase de utilidad que extiende los prototipos nativos de JavaScript `String`, `Number` y `Date` con métodos de formato y validación.
-No requiere instanciación ni archivos CSS.
-Los métodos estarán disponibles directamente sobre cualquier valor del tipo correspondiente una vez incluido el archivo JS en la página.
 
 CSS Code:
 
@@ -4565,10 +4518,6 @@ Componente para la implementación de entradas de datos de tipo lista de selecci
 
 #### Implementación
 
-El componente reemplaza visualmente el elemento HTML `<select>` nativo conservando su valor y opciones.
-Admite selección simple o múltiple según la propiedad `multiple`, búsqueda de opciones y carga las opciones desde un array mediante `loadOptions()`.
-En dispositivos móviles (ancho menor a 768px) el desplegable se adapta a una presentación optimizada para pantalla táctil.
-
 Configuración CSS:
 
 ```css
@@ -4841,10 +4790,6 @@ Componente para la implementación de entradas de datos de tipo fecha basada en 
 
 #### Implementación
 
-El componente reemplaza visualmente el elemento HTML `<input type="date">` nativo conservando su valor.
-El calendario desplegable se adapta automáticamente a modo móvil (ancho menor a 768px) mostrando un overlay de pantalla completa.
-El rango de fechas seleccionables puede limitarse mediante las propiedades `min` y `max`.
-
 Configuración CSS:
 
 ```css
@@ -5077,9 +5022,6 @@ Componente para la implementación de entradas de datos de tipo hora basada en e
 
 #### Implementación
 
-El componente reemplaza visualmente el elemento HTML `<input type="time">` nativo conservando su valor.
-El selector de hora se adapta automáticamente a modo móvil (ancho menor a 768px) mediante un overlay de pantalla completa.
-
 Configuración CSS:
 
 ```css
@@ -5297,9 +5239,6 @@ Componente para la implementación de entradas de datos de tipo selector de colo
 
 #### Implementación
 
-El componente reemplaza visualmente el elemento HTML `<input type="color">` nativo conservando su valor en formato hexadecimal.
-El selector desplegable se adapta automáticamente a modo móvil (ancho menor a 768px) mediante un overlay de pantalla completa.
-
 Código CSS:
 
 ```css
@@ -5495,8 +5434,6 @@ Componente para la implementación de entradas de datos de tipo casilla de verif
 
 #### Implementación
 
-El componente reemplaza visualmente el elemento HTML `<input type="checkbox">` nativo conservando su estado.
-
 Configuración CSS:
 
 ```css
@@ -5646,9 +5583,6 @@ Componente para la implementación de entradas de datos de tipo selector de inte
 | `--wui-intensity-bgcolor-high`    | Color de fondo del control de intensidad en nivel alto. |
 
 #### Implementación
-
-El componente reemplaza visualmente el elemento HTML `<input type="range">` nativo, restringiendo la selección a cuatro niveles de intensidad: ninguno, bajo, medio y alto.
-Los colores de cada nivel son configurables mediante variables CSS.
 
 Configuración CSS:
 
@@ -5832,8 +5766,6 @@ Componente para la implementación de botones.
 | `--wui-button-form-default-minwidth`        | Ancho mínimo del botón por defecto cuando se usa en formularios. |
 
 #### Implementación
-
-El componente extiende el elemento HTML `<button>` nativo con soporte para íconos, múltiples variantes visuales y estado de carga.
 
 Configuración CSS:
 
@@ -6086,6 +6018,8 @@ window.addEventListener("DOMContentLoaded", init);
 
 Esta sección recoge los ejemplos de las implementaciones de la documentación y otros demos complementarios, todos disponibles en el repositorio **WUI/JS Lab** [https://github.com/wuijsproject/wuijs-lab](https://github.com/wuijsproject/wuijs-lab).
 
+-	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIResourceLoader-basic](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIResourceLoader-basic)<br>
+	Esta demostración muestra el uso del script cargador de recursos de WUI.<br><br>
 -	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIScrolly-basic](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIScrolly-basic)<br>
 	Esta demostración muestra el uso de la funcionalidad básica de WUIScrolly.<br><br>
 -	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIIcon-basic](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/WUIIcon-basic)<br>
