@@ -185,10 +185,6 @@
 	border-color: var(--wui-form-input-bordercolor-invalid) !important;
 }
 
-.wui-form fieldset > .field:is(:hover, :focus, :focus-within) {
-	border-color: var(--wui-form-input-bordercolor-focus);
-}
-
 .wui-form fieldset > .field:not(.autosize),
 .wui-form fieldset > .field > label {
 	height: var(--wui-form-input-height);
@@ -908,6 +904,10 @@
 
 /* wui-form fill */
 /* wui-form border */
+
+.wui-form:is(.fill, .border) fieldset > .field:is(:hover, :focus, :focus-within) {
+	border-color: var(--wui-form-input-bordercolor-focus);
+}
 
 .wui-form:is(.fill, .border) fieldset > .field:not(.inline, .noborder) {
 	-webkit-border-radius: var(--wui-form-input-borderradius);
