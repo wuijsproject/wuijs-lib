@@ -12,7 +12,7 @@
 
 Library version: `0.3.0` ([Change Log](./CHANGELOG.md))
 
-Document version: `0.3.0.20260314.0`
+Document version: `0.3.0.20260314.1`
 
 License: `Apache License 2.0`
 
