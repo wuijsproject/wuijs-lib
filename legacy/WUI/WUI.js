@@ -1,5 +1,5 @@
 /*
- * WUI JS Lib - v0.4.0
+ * WUI JS Lib - v0.3.0
  * Author: Sergio E. Belmar (wuijs.project@gmail.com)
  * Copyright (c) Sergio E. Belmar (wuijs.project@gmail.com)
  */
@@ -22,39 +22,39 @@
 		const getParams = get.split("&");
 		const jsParams = {};
 		const d = new Date().getTime();
-		const version = "0.4.0";
+		const version = "0.3.0";
 		const libraries = {
-			"0.4.0": [
-				"cookie-0.4",
-				"head-0.3",
-				"body-0.3",
-				"language-0.3",
-				"scrolly-0.4",
-				"icon-0.2",
-				"fade-0.2",
-				"loader-0.3",
-				"tooltip-0.2",
-				"modal-0.3",
-				"paging-0.3",
-				"slider-0.4",
-				"tabs-0.2",
-				"menubar-0.2",
-				"list-0.3",
-				"table-0.4",
-				"form-0.4",
-				"format-0.3",
-				"selectpicker-0.3",
-				"datepicker-0.3",
-				"timepicker-0.3",
-				"colorpicker-0.3",
-				"switch-0.4",
-				"intensity-0.2",
-				"button-0.3"
+			"0.3.0": [
+				"Cookie-0.3",
+				"Head-0.2",
+				"Body-0.2",
+				"Language-0.2",
+				"Scrolly-0.3",
+				"Icon-0.1",
+				"Fade-0.1",
+				"Loader-0.2",
+				"Tooltip-0.1",
+				"Modal-0.2",
+				"Paging-0.2",
+				"Slider-0.3",
+				"Tabs-0.1",
+				"Menubar-0.1",
+				"List-0.2",
+				"Table-0.3",
+				"Form-0.3",
+				"Format-0.2",
+				"Selectpicker-0.2",
+				"Datepicker-0.2",
+				"Timepicker-0.2",
+				"Colorpicker-0.2",
+				"Switch-0.3",
+				"Intensity-0.1",
+				"Button-0.2"
 			]
 		};
 		let tasks = [];
 		let ver = version;
-		let cls = "";
+		let res = "";
 		if (script.src.match(/\?/)) {
 			for (let i in getParams) {
 				const param = getParams[i].split("=");
@@ -63,25 +63,25 @@
 			for (let param in jsParams) {
 				if (param.match(/^(v|version)$/i)) {
 					ver = jsParams[param];
-				} else if (param.match(/^(c|class)$/i)) {
-					cls = jsParams[param];
+				} else if (param.match(/^(r|resources|c|class)$/i)) {
+					res = jsParams[param];
 				}
 			}
 		}
 		if (ver in libraries) {
 			libraries[ver].forEach(lib => {
 				const name = lib.replace(/-[\d\.]+$/, "");
-				if (cls == "" || cls.match(new RegExp("\\b" + name + "\\b", "i"))) {
-					if (!name.match(/icon/)) {
+				if (res == "" || res.match(new RegExp("\\b" + name + "\\b", "i"))) {
+					if (!name.match(/Icon/)) {
 						tasks.push(createResource("script", {
-							src: `${dir}${name}/wui-${lib}.js?${d}`,
+							src: `${dir}${name}/WUI${lib}.js?${d}`,
 							type: "text/javascript",
 							async: false
 						}));
 					}
-					if (!name.match(/(cookie|head|body|language|fade)/)) {
+					if (!name.match(/(Cookie|Head|Body|Language|Fade)/)) {
 						tasks.push(createResource("link", {
-							href: `${dir}${name}/wui-${lib}.css?${d}`,
+							href: `${dir}${name}/WUI${lib}.css?${d}`,
 							type: "text/css",
 							rel: "stylesheet"
 						}));
@@ -95,7 +95,7 @@
 			} else {
 				window.addEventListener("DOMContentLoaded", onLoad);
 			}
-		}).catch(error => console.error("WUI loading error:", error));
+		}).catch(err => console.error("WUI loading error:", err));
 	}
 	const onLoad = () => {
 		const event = new CustomEvent("wuiLoad");
