@@ -12,7 +12,7 @@
 
 Library version: `0.4.0` ([Change Log](./CHANGELOG.md))
 
-Document version: `0.4.0.20260320.1`
+Document version: `0.4.0.20260320.2`
 
 License: `Apache License 2.0`
 
@@ -150,7 +150,7 @@ To install the WUIJS library, must be cloned from the GitHib official distributi
 ```bash
 cd ./downloads
 git clone https://git@github.com/wuijsproject/wuijs-lib.git
-cp -r ./wuijs-lib/src/wui ../src/Libraries/
+cp -r ./wuijs-lib/src/wui ../src/libraries/
 ```
 
 Optionally, it can be downloaded from the same repositories in ZIP format.
@@ -159,22 +159,22 @@ Optionally, it can be downloaded from the same repositories in ZIP format.
 cd ./downloads
 wget https://github.com/wuijsproject/wuijs-lib/archive/refs/heads/main.zip
 unzip main.zip
-cp -r ./wuijs-lib-main/src/wui ../src/Libraries/
+cp -r ./wuijs-lib-main/src/wui ../src/libraries/
 ```
 
 <a name="implementation"></a>
 
 ## Implementation
 
-The WUI library can be included in a project in two ways: in standard mode, by linking the CSS and JS files of each component individually, or in abbreviated mode, using the `WUI.js` script that automatically manages the loading of the indicated components. In both cases it is necessary to create the `WUI.css` configuration file with the CSS variables of the components used.
+The WUI library can be included in a project in two ways: in standard mode, by linking the CSS and JS files of each component individually, or in abbreviated mode, using the `WUI.js` script that automatically manages the loading of the indicated components. In both cases it is necessary to create the `wui.css` configuration file with the CSS variables of the components used.
 
 <a name="standard"></a>
 
 ### Standard Implementation
 
-To enable all classes, the CSS and JS dependencies of the libraries must be implemented in the HTML header of the web page in the `WUI.css` configuration file.
+To enable all classes, the CSS and JS dependencies of the libraries must be implemented in the HTML header of the web page in the `wui.css` configuration file.
 
-CSS code in the `WUI.css` file:
+CSS code in the `wui.css` file:
 
 ```css
 /* WUI settings */
@@ -709,7 +709,7 @@ CSS code in the `WUI.css` file:
 }
 ```
 
-Assuming the CSS settings file is installed in the relative path `./Settings/WUI.css` and the libraries are installed in the relative path `./Libraries/WUI`, the HTML header looks like this:
+Assuming the CSS settings file is installed in the relative path `./Settings/wui.css` and the libraries are installed in the relative path `./libraries/WUI`, the HTML header looks like this:
 
 HTML code:
 
@@ -723,64 +723,64 @@ HTML code:
 		<meta name="application-name" content="">
 		<meta name="theme-color" content="">
 		<link type="text/css" rel="stylesheet" href="./Settings/Main.css">
-		<link type="text/css" rel="stylesheet" href="./Settings/WUI.css">
-		<link type="text/css" rel="stylesheet" href="./Libraries/wui/scrolly/wui-scrolly-0.4.css">
-		<link type="text/css" rel="stylesheet" href="./Libraries/wui/icon/wui-icon-0.2.css">
-		<link type="text/css" rel="stylesheet" href="./Libraries/wui/loader/wui-loader-0.3.css">
-		<link type="text/css" rel="stylesheet" href="./Libraries/wui/tooltip/wui-tooltip-0.2.css">
-		<link type="text/css" rel="stylesheet" href="./Libraries/wui/modal/wui-modal-0.3.css">
-		<link type="text/css" rel="stylesheet" href="./Libraries/wui/paging/wui-paging-0.3.css">
-		<link type="text/css" rel="stylesheet" href="./Libraries/wui/slider/wui-slider-0.4.css">
-		<link type="text/css" rel="stylesheet" href="./Libraries/wui/tabs/wui-tabs-0.2.css">
-		<link type="text/css" rel="stylesheet" href="./Libraries/wui/menubar/wui-menubar-0.2.css">
-		<link type="text/css" rel="stylesheet" href="./Libraries/wui/list/wui-list-0.3.css">
-		<link type="text/css" rel="stylesheet" href="./Libraries/wui/table/wui-table-0.4.css">
-		<link type="text/css" rel="stylesheet" href="./Libraries/wui/form/wui-form-0.4.css">
-		<link type="text/css" rel="stylesheet" href="./Libraries/wui/selectpicker/wui-selectpicker-0.3.css">
-		<link type="text/css" rel="stylesheet" href="./Libraries/wui/datepicker/wui-datepicker-0.3.css">
-		<link type="text/css" rel="stylesheet" href="./Libraries/wui/timepicker/wui-timepicker-0.3.css">
-		<link type="text/css" rel="stylesheet" href="./Libraries/wui/colorpicker/wui-colorpicker-0.3.css">
-		<link type="text/css" rel="stylesheet" href="./Libraries/wui/switch/wui-switch-0.4.css">
-		<link type="text/css" rel="stylesheet" href="./Libraries/wui/intensity/wui-intensity-0.2.css">
-		<link type="text/css" rel="stylesheet" href="./Libraries/wui/button/wui-button-0.3.css">
-		<script type="text/javascript" src="./Libraries/wui/cookie/wui-cookie-0.4.js"></script>
-		<script type="text/javascript" src="./Libraries/wui/head/wui-head-0.3.js"></script>
-		<script type="text/javascript" src="./Libraries/wui/body/wui-body-0.3.js"></script>
-		<script type="text/javascript" src="./Libraries/wui/language/wui-language-0.3.js"></script>
-		<script type="text/javascript" src="./Libraries/wui/scrolly/wui-scrolly-0.4.js"></script>
-		<script type="text/javascript" src="./Libraries/wui/fade/wui-fade-0.2.js"></script>
-		<script type="text/javascript" src="./Libraries/wui/loader/wui-loader-0.3.js"></script>
-		<script type="text/javascript" src="./Libraries/wui/tooltip/wui-tooltip-0.2.js"></script>
-		<script type="text/javascript" src="./Libraries/wui/modal/wui-modal-0.3.js"></script>
-		<script type="text/javascript" src="./Libraries/wui/paging/wui-paging-0.3.js"></script>
-		<script type="text/javascript" src="./Libraries/wui/slider/wui-slider-0.4.js"></script>
-		<script type="text/javascript" src="./Libraries/wui/tabs/wui-tabs-0.2.js"></script>
-		<script type="text/javascript" src="./Libraries/wui/menubar/wui-menubar-0.2.js"></script>
-		<script type="text/javascript" src="./Libraries/wui/list/wui-list-0.3.js"></script>
-		<script type="text/javascript" src="./Libraries/wui/table/wui-table-0.4.js"></script>
-		<script type="text/javascript" src="./Libraries/wui/form/wui-form-0.4.js"></script>
-		<script type="text/javascript" src="./Libraries/wui/format/wui-format-0.3.js"></script>
-		<script type="text/javascript" src="./Libraries/wui/selectpicker/wui-selectpicker-0.3.js"></script>
-		<script type="text/javascript" src="./Libraries/wui/datepicker/wui-datepicker-0.3.js"></script>
-		<script type="text/javascript" src="./Libraries/wui/timepicker/wui-timepicker-0.3.js"></script>
-		<script type="text/javascript" src="./Libraries/wui/colorpicker/wui-colorpicker-0.3.js"></script>
-		<script type="text/javascript" src="./Libraries/wui/switch/wui-switch-0.4.js"></script>
-		<script type="text/javascript" src="./Libraries/wui/intensity/wui-intensity-0.2.js"></script>
-		<script type="text/javascript" src="./Libraries/wui/button/wui-button-0.3.js"></script>
+		<link type="text/css" rel="stylesheet" href="./Settings/wui.css">
+		<link type="text/css" rel="stylesheet" href="./libraries/wui/scrolly/wui-scrolly-0.4.css">
+		<link type="text/css" rel="stylesheet" href="./libraries/wui/icon/wui-icon-0.2.css">
+		<link type="text/css" rel="stylesheet" href="./libraries/wui/loader/wui-loader-0.3.css">
+		<link type="text/css" rel="stylesheet" href="./libraries/wui/tooltip/wui-tooltip-0.2.css">
+		<link type="text/css" rel="stylesheet" href="./libraries/wui/modal/wui-modal-0.3.css">
+		<link type="text/css" rel="stylesheet" href="./libraries/wui/paging/wui-paging-0.3.css">
+		<link type="text/css" rel="stylesheet" href="./libraries/wui/slider/wui-slider-0.4.css">
+		<link type="text/css" rel="stylesheet" href="./libraries/wui/tabs/wui-tabs-0.2.css">
+		<link type="text/css" rel="stylesheet" href="./libraries/wui/menubar/wui-menubar-0.2.css">
+		<link type="text/css" rel="stylesheet" href="./libraries/wui/list/wui-list-0.3.css">
+		<link type="text/css" rel="stylesheet" href="./libraries/wui/table/wui-table-0.4.css">
+		<link type="text/css" rel="stylesheet" href="./libraries/wui/form/wui-form-0.4.css">
+		<link type="text/css" rel="stylesheet" href="./libraries/wui/selectpicker/wui-selectpicker-0.3.css">
+		<link type="text/css" rel="stylesheet" href="./libraries/wui/datepicker/wui-datepicker-0.3.css">
+		<link type="text/css" rel="stylesheet" href="./libraries/wui/timepicker/wui-timepicker-0.3.css">
+		<link type="text/css" rel="stylesheet" href="./libraries/wui/colorpicker/wui-colorpicker-0.3.css">
+		<link type="text/css" rel="stylesheet" href="./libraries/wui/switch/wui-switch-0.4.css">
+		<link type="text/css" rel="stylesheet" href="./libraries/wui/intensity/wui-intensity-0.2.css">
+		<link type="text/css" rel="stylesheet" href="./libraries/wui/button/wui-button-0.3.css">
+		<script type="text/javascript" src="./libraries/wui/cookie/wui-cookie-0.4.js"></script>
+		<script type="text/javascript" src="./libraries/wui/head/wui-head-0.3.js"></script>
+		<script type="text/javascript" src="./libraries/wui/body/wui-body-0.3.js"></script>
+		<script type="text/javascript" src="./libraries/wui/language/wui-language-0.3.js"></script>
+		<script type="text/javascript" src="./libraries/wui/scrolly/wui-scrolly-0.4.js"></script>
+		<script type="text/javascript" src="./libraries/wui/fade/wui-fade-0.2.js"></script>
+		<script type="text/javascript" src="./libraries/wui/loader/wui-loader-0.3.js"></script>
+		<script type="text/javascript" src="./libraries/wui/tooltip/wui-tooltip-0.2.js"></script>
+		<script type="text/javascript" src="./libraries/wui/modal/wui-modal-0.3.js"></script>
+		<script type="text/javascript" src="./libraries/wui/paging/wui-paging-0.3.js"></script>
+		<script type="text/javascript" src="./libraries/wui/slider/wui-slider-0.4.js"></script>
+		<script type="text/javascript" src="./libraries/wui/tabs/wui-tabs-0.2.js"></script>
+		<script type="text/javascript" src="./libraries/wui/menubar/wui-menubar-0.2.js"></script>
+		<script type="text/javascript" src="./libraries/wui/list/wui-list-0.3.js"></script>
+		<script type="text/javascript" src="./libraries/wui/table/wui-table-0.4.js"></script>
+		<script type="text/javascript" src="./libraries/wui/form/wui-form-0.4.js"></script>
+		<script type="text/javascript" src="./libraries/wui/format/wui-format-0.3.js"></script>
+		<script type="text/javascript" src="./libraries/wui/selectpicker/wui-selectpicker-0.3.js"></script>
+		<script type="text/javascript" src="./libraries/wui/datepicker/wui-datepicker-0.3.js"></script>
+		<script type="text/javascript" src="./libraries/wui/timepicker/wui-timepicker-0.3.js"></script>
+		<script type="text/javascript" src="./libraries/wui/colorpicker/wui-colorpicker-0.3.js"></script>
+		<script type="text/javascript" src="./libraries/wui/switch/wui-switch-0.4.js"></script>
+		<script type="text/javascript" src="./libraries/wui/intensity/wui-intensity-0.2.js"></script>
+		<script type="text/javascript" src="./libraries/wui/button/wui-button-0.3.js"></script>
 	</head>
 	<body>
 	</body>
 </html>
 ```
 
-This implementation method allows for standardization of an application's user interface design, using the `WUI.css` file.
+This implementation method allows for standardization of an application's user interface design, using the `wui.css` file.
 
 > [!IMPORTANT]
-> The styles settings file must be in the path `./Settings/WUI.css`.
+> The styles settings file must be in the path `./Settings/wui.css`.
 
 > [!TIP]
 > If you only want to implement part of the WUI library set, you must add calls to the JS and CSS files in the HTML header as indicated in each section.
-> On the other hand, the `WUI.css` file will only require the definition of the objects you want to implement.
+> On the other hand, the `wui.css` file will only require the definition of the objects you want to implement.
 
 <a name="abbreviated"></a>
 
@@ -799,8 +799,8 @@ This loader allows you to integrate all WUI libraries into a web page, either fu
 		<meta name="application-name" content="">
 		<meta name="theme-color" content="">
 		<link type="text/css" rel="stylesheet" href="./Settings/Main.css">
-		<link type="text/css" rel="stylesheet" href="./Settings/WUI.css">
-		<script type="text/javascript" src="./Libraries/wui/wui.js?v=0.4.0"></script>
+		<link type="text/css" rel="stylesheet" href="./Settings/wui.css">
+		<script type="text/javascript" src="./libraries/wui/wui.js?v=0.4.0"></script>
 	</head>
 	<body>
 	</body>
@@ -814,7 +814,7 @@ If the `version` parameter is not specified, the installed version will be assum
 > For a correct abbreviated implementation, review the [Good Coding Practices](#goodpractices) section.
 
 > [!TIP]
-> For a simplified implementation of the `WUI.css` file, you can optionally use the [WUIPluginsThemes](https://github.com/wuijsproject/wuijs-plugins-lib?tab=readme-ov-file#wuipluginsthemes) plugin provided in the [wuijs-plugins-lib](https://github.com/wuijsproject/wuijs-plugins-lib) library.
+> For a simplified implementation of the `wui.css` file, you can optionally use the [WUIPluginsThemes](https://github.com/wuijsproject/wuijs-plugins-lib?tab=readme-ov-file#wuipluginsthemes) plugin provided in the [wuijs-plugins-lib](https://github.com/wuijsproject/wuijs-plugins-lib) library.
 
 <a name="fullmode"></a>
 
@@ -823,7 +823,7 @@ If the `version` parameter is not specified, the installed version will be assum
 In full mode, all WUI libraries will be loaded into a web page, without requiring the manual inclusion of the JavaScript and CSS files corresponding to each library.
 
 ```html
-<script type="text/javascript" src="./Libraries/wui/wui.js?v=0.4.0"></script>
+<script type="text/javascript" src="./libraries/wui/wui.js?v=0.4.0"></script>
 ```
 
 <a name="partialmode"></a>
@@ -833,7 +833,7 @@ In full mode, all WUI libraries will be loaded into a web page, without requirin
 In partial mode, only the WUI libraries specified in the `class` parameter (or its short alias `c`) will be loaded into a web page, without requiring the manual inclusion of the JavaScript and CSS files corresponding to each library.
 
 ```html
-<script type="text/javascript" src="./Libraries/wui/wui.js?v=0.4.0&c=selectpicker,switch"></script>
+<script type="text/javascript" src="./libraries/wui/wui.js?v=0.4.0&c=selectpicker,switch"></script>
 ```
 
 > [!NOTE]
@@ -913,7 +913,7 @@ body {
 HTML head:
 
 ```html
-<script type="text/javascript" src="./Libraries/wui/cookie/wui-cookie-0.4.js"></script>
+<script type="text/javascript" src="./libraries/wui/cookie/wui-cookie-0.4.js"></script>
 ```
 
 HTML code:
@@ -986,7 +986,7 @@ HTML head:
 <title></title>
 <meta name="application-name" content="">
 <meta name="theme-color" content="">
-<script type="text/javascript" src="./Libraries/wui/head/wui-head-0.3.js"></script>
+<script type="text/javascript" src="./libraries/wui/head/wui-head-0.3.js"></script>
 ```
 
 JS code:
@@ -1042,7 +1042,7 @@ Utilities for HTML body management. Allows the import of CSS/JS/HTML content and
 
 #### Implementation
 
-CSS content of the `./Imports/test-content.css` file:
+CSS content of the `./views/test-content.css` file:
 
 ```css
 .test a,
@@ -1053,7 +1053,7 @@ CSS content of the `./Imports/test-content.css` file:
 }
 ```
 
-HTML content of the `./Imports/test-content.htm` file:
+HTML content of the `./views/test-content.htm` file:
 
 ```html
 <section id="testContent" class="test">
@@ -1061,7 +1061,7 @@ HTML content of the `./Imports/test-content.htm` file:
 </section>
 ```
 
-JS content of the `./Imports/test-content.js` file:
+JS content of the `./views/test-content.js` file:
 
 ```js
 const testContentLog = (content) => {
@@ -1072,7 +1072,7 @@ const testContentLog = (content) => {
 HTML head:
 
 ```html
-<script type="text/javascript" src="./Libraries/wui/body/wui-body-0.3.js"></script>
+<script type="text/javascript" src="./libraries/wui/body/wui-body-0.3.js"></script>
 ```
 
 HTML code:
@@ -1087,7 +1087,7 @@ JS code:
 const init = () => {
 	const body = new WUIBody({
 		//environment: "web",
-		importDirectory: "./Imports/",
+		importDirectory: "./views/",
 		//importMode: "fetch",
 		onCompleted: () => {
 			body.prepare();
@@ -1127,7 +1127,7 @@ Utilities for interfaces with different languages managment. Allows you to load 
 | Property   | Type       | Default value     | Description |
 | ---------- | ---------- | ----------------- | ----------- |
 | selector   | `string`   | `".wui-language"` | (get/set)<br><br>CSS selector for HTML elements to be loaded. This can be applied to the `content` attribute of the `meta` element, to the `innerHTML` property of the elements: `h1`, `h2`, `h3`, `h4`, `h5`, `h6`, `div`, `span`, `p`, `i`, `li`, `a`, `legend`, `label`, `option`, `data`, `button`, and to the `placeholder` attribute of the `input` and `textarea` elements. |
-| directory  | `string`   | `"Languages/"`    | (get/set)<br><br>Path to the directory where the language files are located. |
+| directory  | `string`   | `"languages/"`    | (get/set)<br><br>Path to the directory where the language files are located. |
 | sets       | `array`    | `["main"]`        | (get/set)<br><br>List of language set names to load. |
 | lang       | `string`   | `"en"`            | (get/set)<br><br>Language code in ISO 639-1 format. |
 | mode       | `string`   | `"js"`            | (get/set)<br><br>Language file format.<br><br>Values:<br>• `"js"`<br>• `"json"` |
@@ -1176,7 +1176,7 @@ JSON code file `main-en.json`:
 HTML head:
 
 ```html
-<script type="text/javascript" src="./Libraries/wui/language/wui-language-0.3.js"></script>
+<script type="text/javascript" src="./libraries/wui/language/wui-language-0.3.js"></script>
 ```
 
 HTML code:
@@ -1192,7 +1192,7 @@ JS code:
 const init = () => {
 	const language = new WUILanguage({
 		//selector: ".wui-language",
-		//directory: "./Languages/",
+		//directory: "./languages/",
 		//sets: ["main"],
 		lang: "en",
 		//mode: "js",
@@ -1214,7 +1214,7 @@ window.addEventListener("DOMContentLoaded", init);
 ```
 
 > [!IMPORTANT]
-> The language file must be in the path `./Languages/main-en.js` or `./Languages/main-en.json` depending on the set, language and mode used. It is important that language files are in the form `{set}-{lang}.{mode}`, otherwise the file cannot be imported.
+> The language file must be in the path `./languages/main-en.js` or `./languages/main-en.json` depending on the set, language and mode used. It is important that language files are in the form `{set}-{lang}.{mode}`, otherwise the file cannot be imported.
 
 It is possible to combine sets of files from the same language, for example, if you have a `main-es.js` file and another `main2-es.js` file that complements the first, they can be called simultaneously using the `sets` property.
 
@@ -1403,8 +1403,8 @@ body {
 HTML head:
 
 ```html
-<link type="text/css" rel="stylesheet" href="./Libraries/wui/scrolly/wui-scrolly-0.4.css">
-<script type="text/javascript" src="./Libraries/wui/scrolly/wui-scrolly-0.4.js"></script>
+<link type="text/css" rel="stylesheet" href="./libraries/wui/scrolly/wui-scrolly-0.4.css">
+<script type="text/javascript" src="./libraries/wui/scrolly/wui-scrolly-0.4.js"></script>
 ```
 
 HTML code:
@@ -1817,7 +1817,7 @@ nav {
 HTML head:
 
 ```html
-<link type="text/css" rel="stylesheet" href="./Libraries/wui/icon/wui-icon-0.2.css">
+<link type="text/css" rel="stylesheet" href="./libraries/wui/icon/wui-icon-0.2.css">
 ```
 
 HTML code:
@@ -1925,7 +1925,7 @@ nav {
 HTML head:
 
 ```html
-<script type="text/javascript" src="./Libraries/wui/fade/wui-fade-0.2.js"></script>
+<script type="text/javascript" src="./libraries/wui/fade/wui-fade-0.2.js"></script>
 ```
 
 HTML code:
@@ -2188,9 +2188,9 @@ nav {
 HTML head:
 
 ```html
-<link type="text/css" rel="stylesheet" href="./Libraries/wui/icon/wui-icon-0.2.css">
-<link type="text/css" rel="stylesheet" href="./Libraries/wui/modal/wui-modal-0.3.css">
-<script type="text/javascript" src="./Libraries/wui/modal/wui-modal-0.3.js"></script>
+<link type="text/css" rel="stylesheet" href="./libraries/wui/icon/wui-icon-0.2.css">
+<link type="text/css" rel="stylesheet" href="./libraries/wui/modal/wui-modal-0.3.css">
+<script type="text/javascript" src="./libraries/wui/modal/wui-modal-0.3.js"></script>
 ```
 
 HTML code:
@@ -2371,8 +2371,8 @@ body {
 HTML header:
 
 ```html
-<link rel="stylesheet" type="text/css" href="./Libraries/wui/paging/wui-paging-0.3.css">
-<script type="text/javascript" src="./Libraries/wui/paging/wui-paging-0.3.js"></script>
+<link rel="stylesheet" type="text/css" href="./libraries/wui/paging/wui-paging-0.3.css">
+<script type="text/javascript" src="./libraries/wui/paging/wui-paging-0.3.js"></script>
 ```
 
 HTML code:
@@ -2567,8 +2567,8 @@ nav {
 HTML Header:
 
 ```html
-<link type="text/css" rel="stylesheet" href="./Libraries/wui/slider/wui-slider-0.4.css">
-<script type="text/javascript" src="./Libraries/wui/slider/wui-slider-0.4.js"></script>
+<link type="text/css" rel="stylesheet" href="./libraries/wui/slider/wui-slider-0.4.css">
+<script type="text/javascript" src="./libraries/wui/slider/wui-slider-0.4.js"></script>
 ```
 
 HTML Code:
@@ -2839,9 +2839,9 @@ body {
 HTML head:
 
 ```html
-<link type="text/css" rel="stylesheet" href="./Libraries/wui/icon/wui-icon-0.2.css">
-<link type="text/css" rel="stylesheet" href="./Libraries/wui/menubar/wui-menubar-0.2.css">
-<script type="text/javascript" src="./Libraries/wui/menubar/wui-menubar-0.2.js"></script>
+<link type="text/css" rel="stylesheet" href="./libraries/wui/icon/wui-icon-0.2.css">
+<link type="text/css" rel="stylesheet" href="./libraries/wui/menubar/wui-menubar-0.2.css">
+<script type="text/javascript" src="./libraries/wui/menubar/wui-menubar-0.2.js"></script>
 ```
 
 HTML code:
@@ -3148,9 +3148,9 @@ footer {
 HTML head:
 
 ```html
-<link type="text/css" rel="stylesheet" href="./Libraries/wui/icon/wui-icon-0.2.css">
-<link type="text/css" rel="stylesheet" href="./Libraries/wui/list/wui-list-0.3.css">
-<script type="text/javascript" src="./Libraries/wui/list/wui-list-0.3.js"></script>
+<link type="text/css" rel="stylesheet" href="./libraries/wui/icon/wui-icon-0.2.css">
+<link type="text/css" rel="stylesheet" href="./libraries/wui/list/wui-list-0.3.css">
+<script type="text/javascript" src="./libraries/wui/list/wui-list-0.3.js"></script>
 ```
 
 HTML code:
@@ -3520,8 +3520,8 @@ footer {
 HTML head:
 
 ```html
-<link type="text/css" rel="stylesheet" href="./Libraries/wui/table/wui-table-0.4.css">
-<script type="text/javascript" src="./Libraries/wui/table/wui-table-0.4.js"></script>
+<link type="text/css" rel="stylesheet" href="./libraries/wui/table/wui-table-0.4.css">
+<script type="text/javascript" src="./libraries/wui/table/wui-table-0.4.js"></script>
 ```
 
 HTML code:
@@ -3906,9 +3906,9 @@ nav {
 HTML Head:
 
 ```html
-<link type="text/css" rel="stylesheet" href="./Libraries/wui/icon/wui-icon-0.2.css">
-<link type="text/css" rel="stylesheet" href="./Libraries/wui/form/wui-form-0.4.css">
-<script type="text/javascript" src="./Libraries/wui/form/wui-form-0.4.js"></script>
+<link type="text/css" rel="stylesheet" href="./libraries/wui/icon/wui-icon-0.2.css">
+<link type="text/css" rel="stylesheet" href="./libraries/wui/form/wui-form-0.4.css">
+<script type="text/javascript" src="./libraries/wui/form/wui-form-0.4.js"></script>
 ```
 
 HTML code:
@@ -4179,7 +4179,7 @@ CSS Code:
 HTML head:
 
 ```html
-<script type="text/javascript" src="./Libraries/wui/format/wui-format-0.3.js"></script>
+<script type="text/javascript" src="./libraries/wui/format/wui-format-0.3.js"></script>
 ```
 
 HTML code:
@@ -4630,8 +4630,8 @@ nav {
 HTML head:
 
 ```html
-<link type="text/css" rel="stylesheet" href="./Libraries/wui/selectpicker/wui-selectpicker-0.3.css">
-<script type="text/javascript" src="./Libraries/wui/selectpicker/wui-selectpicker-0.3.js"></script>
+<link type="text/css" rel="stylesheet" href="./libraries/wui/selectpicker/wui-selectpicker-0.3.css">
+<script type="text/javascript" src="./libraries/wui/selectpicker/wui-selectpicker-0.3.js"></script>
 ```
 
 HTML code:
@@ -4906,8 +4906,8 @@ nav {
 HTML head:
 
 ```html
-<link type="text/css" rel="stylesheet" href="./Libraries/wui/datepicker/wui-datepicker-0.3.css">
-<script type="text/javascript" src="./Libraries/wui/datepicker/wui-datepicker-0.3.js"></script>
+<link type="text/css" rel="stylesheet" href="./libraries/wui/datepicker/wui-datepicker-0.3.css">
+<script type="text/javascript" src="./libraries/wui/datepicker/wui-datepicker-0.3.js"></script>
 ```
 
 HTML code:
@@ -5121,8 +5121,8 @@ nav {
 HTML head:
 
 ```html
-<link type="text/css" rel="stylesheet" href="./Libraries/wui/timepicker/wui-timepicker-0.3.css">
-<script type="text/javascript" src="./Libraries/wui/timepicker/wui-timepicker-0.3.js"></script>
+<link type="text/css" rel="stylesheet" href="./libraries/wui/timepicker/wui-timepicker-0.3.css">
+<script type="text/javascript" src="./libraries/wui/timepicker/wui-timepicker-0.3.js"></script>
 ```
 
 HTML code:
@@ -5345,8 +5345,8 @@ nav {
 HTML head:
 
 ```html
-<link type="text/css" rel="stylesheet" href="./Libraries/wui/colorpicker/wui-colorpicker-0.3.css">
-<script type="text/javascript" src="./Libraries/wui/colorpicker/wui-colorpicker-0.3.js"></script>
+<link type="text/css" rel="stylesheet" href="./libraries/wui/colorpicker/wui-colorpicker-0.3.css">
+<script type="text/javascript" src="./libraries/wui/colorpicker/wui-colorpicker-0.3.js"></script>
 ```
 
 HTML code:
@@ -5515,8 +5515,8 @@ nav {
 HTML head:
 
 ```html
-<link type="text/css" rel="stylesheet" href="./Libraries/wui/switch/wui-switch-0.4.css">
-<script type="text/javascript" src="./Libraries/wui/switch/wui-switch-0.4.js"></script>
+<link type="text/css" rel="stylesheet" href="./libraries/wui/switch/wui-switch-0.4.css">
+<script type="text/javascript" src="./libraries/wui/switch/wui-switch-0.4.js"></script>
 ```
 
 HTML code:
@@ -5655,8 +5655,8 @@ nav {
 HTML head:
 
 ```html
-<link type="text/css" rel="stylesheet" href="./Libraries/wui/intensity/wui-intensity-0.2.css">
-<script type="text/javascript" src="./Libraries/wui/intensity/wui-intensity-0.2.js"></script>
+<link type="text/css" rel="stylesheet" href="./libraries/wui/intensity/wui-intensity-0.2.css">
+<script type="text/javascript" src="./libraries/wui/intensity/wui-intensity-0.2.js"></script>
 ```
 
 HTML code:
@@ -5884,9 +5884,9 @@ nav {
 HTML head:
 
 ```html
-<link type="text/css" rel="stylesheet" href="./Libraries/wui/icon/wui-icon-0.2.css">
-<link type="text/css" rel="stylesheet" href="./Libraries/wui/button/wui-button-0.3.css">
-<script type="text/javascript" src="./Libraries/wui/button/wui-button-0.3.js"></script>
+<link type="text/css" rel="stylesheet" href="./libraries/wui/icon/wui-icon-0.2.css">
+<link type="text/css" rel="stylesheet" href="./libraries/wui/button/wui-button-0.3.css">
+<script type="text/javascript" src="./libraries/wui/button/wui-button-0.3.js"></script>
 ```
 
 HTML code:

@@ -9,7 +9,7 @@ class WUILanguage {
 	static version = "0.2";
 	static #defaults = {
 		selector: ".wui-language",
-		directory: "Languages/",
+		directory: "languages/",
 		sets: ["main"],
 		lang: "en",
 		mode: "js",
