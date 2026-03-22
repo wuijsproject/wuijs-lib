@@ -1,12 +1,12 @@
 /*
- * WUIFade - v0.1
+ * WUIFade - v0.2
  * Author: Sergio E. Belmar (wuijs.project@gmail.com)
  * Copyright (c) Sergio E. Belmar (wuijs.project@gmail.com)
  */
 
 class WUIFade {
 
-	static version = "0.1";
+	static version = "0.2";
 	static defaults = {
 		delay: 400,
 		display: "block"

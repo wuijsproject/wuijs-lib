@@ -1,12 +1,12 @@
 /*
- * WUILoader - v0.2
+ * WUILoader - v0.3
  * Author: Sergio E. Belmar (wuijs.project@gmail.com)
  * Copyright (c) Sergio E. Belmar (wuijs.project@gmail.com)
  */
 
 class WUILoader {
 
-	static version = "0.2";
+	static version = "0.3";
 	static #defaults = {
 		selector: ".wui-loader",
 		style: "ring",

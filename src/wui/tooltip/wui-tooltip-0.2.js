@@ -1,12 +1,12 @@
 /*
- * WUITooltip - v0.1
+ * WUITooltip - v0.2
  * Author: Sergio E. Belmar (wuijs.project@gmail.com)
  * Copyright (c) Sergio E. Belmar (wuijs.project@gmail.com)
  */
 
 class WUITooltip {
 
-	static version = "0.1";
+	static version = "0.2";
 	static #defaults = {
 		selector: ".wui-tooltip-target"
 	};

@@ -1,12 +1,12 @@
 /*
- * WUIIntensity - v0.1
+ * WUIIntensity - v0.2
  * Author: Sergio E. Belmar (wuijs.project@gmail.com)
  * Copyright (c) Sergio E. Belmar (wuijs.project@gmail.com)
  */
 
 class WUIIntensity {
 
-	static version = "0.1";
+	static version = "0.2";
 	static #defaults = {
 		selector: ".wui-intensity",
 		value: 0,

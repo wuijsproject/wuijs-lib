@@ -1,12 +1,12 @@
 /*
- * WUIScrolly - v0.3
+ * WUIScrolly - v0.4
  * Author: Sergio E. Belmar (wuijs.project@gmail.com)
  * Copyright (c) Sergio E. Belmar (wuijs.project@gmail.com)
  */
 
 class WUIScrolly {
 
-	static version = "0.3";
+	static version = "0.4";
 	static #defaults = {
 		sections: [],
 		behavior: "smooth",

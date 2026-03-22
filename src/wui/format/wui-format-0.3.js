@@ -1,12 +1,12 @@
 /*
- * WUIFormat - v0.2
+ * WUIFormat - v0.3
  * Author: Sergio E. Belmar (wuijs.project@gmail.com)
  * Copyright (c) Sergio E. Belmar (wuijs.project@gmail.com)
  */
 
 class WUIFormat {
 
-	static version = "0.2";
+	static version = "0.3";
 
 	static _initClass() {
 		Date.prototype.wuiLoadNames();

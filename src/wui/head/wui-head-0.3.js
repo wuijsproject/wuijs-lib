@@ -1,12 +1,12 @@
 /*
- * WUIHead - v0.2
+ * WUIHead - v0.3
  * Author: Sergio E. Belmar (wuijs.project@gmail.com)
  * Copyright (c) Sergio E. Belmar (wuijs.project@gmail.com)
  */
 
 class WUIHead {
 
-	static version = "0.2";
+	static version = "0.3";
 
 	setTitle(value = "") {
 		const title = document.querySelector("head > title");

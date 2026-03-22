@@ -1,12 +1,12 @@
 /*
- * WUIMenubar - v0.1
+ * WUIMenubar - v0.2
  * Author: Sergio E. Belmar (wuijs.project@gmail.com)
  * Copyright (c) Sergio E. Belmar (wuijs.project@gmail.com)
  */
 
 class WUIMenubar {
 
-	static version = "0.1";
+	static version = "0.2";
 	static #defaults = {
 		selector: ".wui-menubar",
 		expansive: true,

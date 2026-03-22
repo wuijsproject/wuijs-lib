@@ -1,12 +1,12 @@
 /*
- * WUISlider - v0.3
+ * WUISlider - v0.4
  * Author: Sergio E. Belmar (wuijs.project@gmail.com)
  * Copyright (c) Sergio E. Belmar (wuijs.project@gmail.com)
  */
 
 class WUISlider {
 
-	static version = "0.3";
+	static version = "0.4";
 	static #defaults = {
 		selector: ".wui-slider",
 		onChange: null
