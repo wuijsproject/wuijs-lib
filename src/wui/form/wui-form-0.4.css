@@ -177,14 +177,6 @@
 	display: none !important;
 }
 
-.wui-form fieldset > .field.disabled {
-	border-color: var(--wui-form-input-bordercolor-disabled) !important;
-}
-
-.wui-form fieldset > .field.invalid {
-	border-color: var(--wui-form-input-bordercolor-invalid) !important;
-}
-
 .wui-form fieldset > .field:not(.autosize),
 .wui-form fieldset > .field > label {
 	height: var(--wui-form-input-height);
@@ -905,10 +897,6 @@
 /* wui-form fill */
 /* wui-form border */
 
-.wui-form:is(.fill, .border) fieldset > .field:is(:hover, :focus, :focus-within) {
-	border-color: var(--wui-form-input-bordercolor-focus);
-}
-
 .wui-form:is(.fill, .border) fieldset > .field:not(.inline, .noborder) {
 	-webkit-border-radius: var(--wui-form-input-borderradius);
 	-moz-border-radius: var(--wui-form-input-borderradius);
@@ -925,13 +913,21 @@
 	transition: var(--field-transition);
 }
 
-.wui-form:is(.fill, .border) fieldset > .field:is(.inline, .noborder) {
-	background-color: transparent;
-}
-
 .wui-form:is(.fill, .border) fieldset > .field:not(.inline, .noborder):is(:hover, :focus, :focus-within) {
 	border-color: var(--wui-form-input-bordercolor-focus);
 	background-color: var(--wui-form-input-bgcolor-focus);
+}
+
+.wui-form:is(.fill, .border) fieldset > .field:not(.inline, .noborder).invalid {
+	border-color: var(--wui-form-input-bordercolor-invalid) !important;
+}
+
+.wui-form:is(.fill, .border) fieldset > .field:not(.inline, .noborder).disabled {
+	border-color: var(--wui-form-input-bordercolor-disabled) !important;
+}
+
+.wui-form:is(.fill, .border) fieldset > .field:is(.inline, .noborder) {
+	background-color: transparent;
 }
 
 @media screen and (max-width: 767px) {
@@ -951,12 +947,20 @@
 	border-radius: 0px;
 }
 
+.wui-form.line fieldset > .field:not(.inline, .noborder):is(:hover, :focus) {
+	border-bottom-color: var(--wui-form-input-bordercolor-out);
+}
+
 .wui-form.line fieldset > .field:not(.inline, .noborder):focus-within {
 	border-bottom-color: var(--wui-form-input-bordercolor-focus);
 }
 
-.wui-form.line fieldset > .field:not(.inline, .noborder):hover {
-	border-bottom-color: var(--wui-form-input-bordercolor-out);
+.wui-form.line fieldset > .field:not(.inline, .noborder).invalid {
+	border-bottom-color: var(--wui-form-input-bordercolor-invalid) !important;
+}
+
+.wui-form.line fieldset > .field:not(.inline, .noborder).disabled {
+	border-bottom-color: var(--wui-form-input-bordercolor-disabled) !important;
 }
 
 .wui-form.line fieldset > .field:not(.inline, .noborder):after {
