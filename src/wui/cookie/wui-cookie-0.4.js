@@ -119,7 +119,7 @@ class WUICookie {
 				const trimmed = part.trim();
 				return trimmed.indexOf(cname) == 0;
 			});
-			return cookie ? cookie.substring(cname.length) : "";
+			return cookie ? cookie.trim().substring(cname.length) : "";
 		}
 		return "";
 	}

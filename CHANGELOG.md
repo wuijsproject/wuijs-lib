@@ -7,6 +7,7 @@ Features:
 1. Renamed source directories and files to lowercase (e.g. `src/WUI/Slider/WUISlider-0.3.js` → `src/wui/slider/wui-slider-0.4.js`).
 2. WUICookie version class update to 0.4.
 	- Renamed the directory and files to lowercase.
+	- Fixed bug in the `get()` method where a leading space in the cookie string caused an off-by-one error, returning `=value` instead of `value`.
 3. WUIScrolly version class update to 0.4.
 	- Renamed the directory and files to lowercase.
 4. WUISlider version class update to 0.4.

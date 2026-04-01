@@ -7,6 +7,7 @@ Características:
 1. Se renombraron los directorios y archivos fuente a minúscula (ej: `src/WUI/Slider/WUISlider-0.3.js` → `src/wui/slider/wui-slider-0.4.js`).
 2. Actualización versión clase WUICookie a 0.4.
 	- Se renombró el directorio y archivos a minúscula.
+	- Se corrigió error en el método `get()` donde un espacio inicial en la cadena de la cookie causaba un desplazamiento de índice, retornando `=valor` en lugar de `valor`.
 3. Actualización versión clase WUIScrolly a 0.4.
 	- Se renombró el directorio y archivos a minúscula.
 4. Actualización versión clase WUISlider a 0.4.
