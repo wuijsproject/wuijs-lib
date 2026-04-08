@@ -53,6 +53,6 @@
 	],
 	"scripts": {
 		"prepack": "cp README.md _README.bak && cp NPM.md README.md && cp -r src/wui/. .",
-		"postpack": "mv _README.bak README.md && ls src/wui/ | xargs rm -rf"
+		"postpack": "mv _README.bak README.md && ls src/wui/ | xargs rm -rf && cp src/wui/LICENSE ."
 	}
 }
