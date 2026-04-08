@@ -132,7 +132,7 @@ wuijs-lib/
 | [imgs/icons](imgs/icons/) | Íconos generados por la herramienta `/tools/svg-icon-maker.py` a partir de la clase WUIIcon. |
 | [imgs/logo](imgs/logo/)   | Logotipo e isotipo del proyecto en formato SVG y PNG. |
 | [legacy](legacy/)         | Fuentes obsoletas con versiones anteriores. |
-| [legacy/WUI](legacy/WUI/) | Librería WUI/JS. |
+| [legacy/WUI](legacy/WUI/) | Librería WUI/JS (versión anterior a la 0.4.0). |
 | [src](src/)               | Fuentes principales de la última versión. |
 | [src/wui](src/wui/)       | Librería WUI/JS. |
 | [tools](tools/)           | Herramientas complementarias. |
@@ -141,7 +141,17 @@ wuijs-lib/
 
 ## Instalación
 
-Para instalar la librería WUI/JS, debe ser clonada desde el repositorio oficial en GitHib (`wuijsproject/wuijs-lib`). Suponiendo que el proyecto donde se implementará tenga un directorio de descargas: `./downloads`, un directorio de código fuente `./src` y, dentro de este, un directorio de librerías `./src/Libraries`, debe escribir lo siguiente en la terminal:
+**Opción 1: Instalar mediante npm**
+
+Para instalar la librería WUI/JS mediante npm:
+
+```bash
+npm i @wuijsproject/wui
+```
+
+**Opción 2: Instalar desde fuente**
+
+Alternativamente, puede ser clonada desde el repositorio oficial en GitHib (`wuijsproject/wuijs-lib`). Suponiendo que el proyecto donde se implementará tenga un directorio de descargas: `./downloads`, un directorio de código fuente `./src` y, dentro de este, un directorio de librerías `./src/Libraries`, debe escribir lo siguiente en la terminal:
 
 ```bash
 cd ./downloads
@@ -6095,9 +6105,3 @@ Esta sección recoge los ejemplos de las implementaciones de la documentación y
 
 > [!NOTE]
 > Todos los demos del repositorio [wuijs-lab](https://github.com/wuijsproject/wuijs-lab) se pueden revisar en CodeSandbox en el enlace [https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/wui](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/wui).
-
-## Autor
-
-**Sergio E. Belmar V.**
-- GitHub: [https://github.com/sbelmar](https://github.com/sbelmar)
-- LinkedIn: [https://www.linkedin.com/in/sbelmarv/](https://www.linkedin.com/in/sbelmarv/)
