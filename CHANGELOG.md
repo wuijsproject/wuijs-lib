@@ -1,97 +1,107 @@
 # Change Log
 
+## [v0.5.1] - 2026-04-09
+
+Features:
+
+1. Updated the resource loader `wui.js`.
+
 ## [v0.5.0] - 2026-04-09
 
 Features:
 
-1. Change the name of the repository from `wuijs-lib` to `wuijs-main-lib`.
-2. Enable installation via NPM.
+> [!NOTE]
+> The owner of the official repository changed from **@wuijsproject** to **@wui-js** in order to have integrity between the GitHub and NPM accounts.
+
+1. Enable installation via NPM.
+2. Change the name of the repository from `wuijs-lib` to `wuijs-main-lib` so that the paths for the installation methods via GitHub and NPM were analogous.
+3. Updated the resource loader `wui.js`.
 
 ## [v0.4.0] - 2026-03-20
 
 Features:
 
 1. Renamed source directories and files to lowercase (e.g. `src/WUI/Slider/WUISlider-0.3.js` → `src/wui/slider/wui-slider-0.4.js`).
-2. WUICookie version class update to 0.4.
+2. Added simple loading scripts `wui.js`.
+3. WUICookie version class update to 0.4.
 	- Renamed the directory and files to lowercase.
 	- Fixed bug in the `get()` method where a leading space in the cookie string caused an off-by-one error, returning `=value` instead of `value`.
-3. WUIHead version class update to 0.3.
+4. WUIHead version class update to 0.3.
 	- Renamed the directory and files to lowercase.
-4. WUIBody version class update to 0.3.
+5. WUIBody version class update to 0.3.
 	- Renamed the directory and files to lowercase.
-5. WUILanguage version class update to 0.3.
+6. WUILanguage version class update to 0.3.
 	- Renamed the directory and files to lowercase.
-6. WUIScrolly version class update to 0.4.
+7. WUIScrolly version class update to 0.4.
 	- Renamed the directory and files to lowercase.
-7. WUIIcon version class update to 0.2.
+8. WUIIcon version class update to 0.2.
 	- Renamed the directory and files to lowercase.
 	- Fixed typo in CSS icon class names: `excamation` → `exclamation` (affected classes: `exclamation-line`, `exclamation-lg-line`, `exclamation-circle-line`, `exclamation-circle-fill`, `exclamation-triangle-line`, `exclamation-triangle-fill`).
-8. WUIFade version class update to 0.2.
+9. WUIFade version class update to 0.2.
 	- Renamed the directory and files to lowercase.
-9. WUILoader version class update to 0.3.
+10. WUILoader version class update to 0.3.
 	- Renamed the directory and files to lowercase.
-10. WUITooltip version class update to 0.2.
+11. WUITooltip version class update to 0.2.
 	- Renamed the directory and files to lowercase.
-11. WUIModal version class update to 0.3.
+12. WUIModal version class update to 0.3.
 	- Renamed the directory and files to lowercase.
 	- Added a dedicated `.overlay` child element to handle the overlay background, replacing the previous approach based on the `.over` CSS class.
 	- Fixed mobile page modal animation by correcting the `top` position calculation on the underlying modal when stacking.
 	- Fixed bug in the `.slide` class for mobile page modals in the responsive media query.
-12. WUIPaging version class update to 0.3.
+13. WUIPaging version class update to 0.3.
 	- Renamed the directory and files to lowercase.
-13. WUISlider version class update to 0.4.
+14. WUISlider version class update to 0.4.
 	- Renamed the directory and files to lowercase.
-14. WUITabs version class update to 0.2.
+15. WUITabs version class update to 0.2.
 	- Renamed the directory and files to lowercase.
-15. WUIMenubar version class update to 0.2.
+16. WUIMenubar version class update to 0.2.
 	- Renamed the directory and files to lowercase.
-16. WUIList version class update to 0.3.
+17. WUIList version class update to 0.3.
 	- Renamed the directory and files to lowercase.
-17. WUITable version class update to 0.4.
+18. WUITable version class update to 0.4.
 	- Renamed the directory and files to lowercase.
-18. WUIForm version class update to 0.4.
+19. WUIForm version class update to 0.4.
 	- Renamed the directory and files to lowercase.
-19. WUIFormat version class update to 0.3.
+20. WUIFormat version class update to 0.3.
 	- Renamed the directory and files to lowercase.
-20. WUISelectpicker version class update to 0.3.
+21. WUISelectpicker version class update to 0.3.
 	- Renamed the directory and files to lowercase.
-21. WUIDatepicker version class update to 0.3.
+22. WUIDatepicker version class update to 0.3.
 	- Renamed the directory and files to lowercase.
-22. WUITimepicker version class update to 0.3.
+23. WUITimepicker version class update to 0.3.
 	- Renamed the directory and files to lowercase.
-23. WUIColorpicker version class update to 0.3.
+24. WUIColorpicker version class update to 0.3.
 	- Renamed the directory and files to lowercase.
-24. WUISwitch version class update to 0.4.
+25. WUISwitch version class update to 0.4.
 	- Renamed the directory and files to lowercase.
-25. WUIIntensity version class update to 0.2.
+26. WUIIntensity version class update to 0.2.
 	- Renamed the directory and files to lowercase.
-26. WUIButton version class update to 0.3.
+27. WUIButton version class update to 0.3.
 	- Renamed the directory and files to lowercase.
 
 ## [v0.3.0] - 2026-02-09
 
 Features:
 
-1. Added simple loading scripts `WUI.js`.
-2. Changed the name of the WUICheckbox class from version 0.2 to WUISwitch version 0.3.
-3. WUICookie version class update to 0.3.
+1. Changed the name of the WUICheckbox class from version 0.2 to WUISwitch version 0.3.
+2. WUICookie version class update to 0.3.
 	- Added `encode()` method.
 	- Added a `string` return type to the `set()` method with the encoded cookie.
 	- Changed the `max-age` statement by `expires` in the cookie encoding..
-4. WUIScrolly version class update to 0.3.
+3. WUIScrolly version class update to 0.3.
 	- Changed the name of the CSS variable `--wui-scrolly-paging-bgcolor` to `--wui-scrolly-paging-bgcolor-hidden`.
 	- Added the CSS variable `--wui-scrolly-paging-bgcolor-visible`.
-5. WUISlider version class update to 0.3.
+4. WUISlider version class update to 0.3.
 	- Changed the name of the CSS variable `--wui-slider-dot-bgcolor` to `--wui-slider-paging-bgcolor-hidden`.
 	- Changed the name of the CSS variable `--wui-slider-dot-bgcolor-selected` to `--wui-slider-paging-bgcolor-visible`.
 	- Removed the CSS variable `--wui-slider-dots-bgcolor`.
-6. WUITable version class update to 0.3.
+5. WUITable version class update to 0.3.
 	- Added `resetPaging` property.
 	- Added filler column to maintain table width.
-7. WUIForm version class update to 0.3.
+6. WUIForm version class update to 0.3.
 	- Added compatibility with WUISwitch version 0.3.
 	- Added "fill" form style.
-8. WUIFormat version class update to 0.3.
+7. WUIFormat version class update to 0.3.
 	- Added the `wuiDayName()` method to the `Date` data type.
 	- Added the `wuiMonthName()` method to the `Date` data type.
 

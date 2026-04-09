@@ -1,97 +1,107 @@
 # Registro de Cambio
 
+## [v0.5.1] - 2026-04-09
+
+Características:
+
+1. Se actualizó el cargador de recursos `wui.js`.
+
 ## [v0.5.0] - 2026-04-09
 
 Características:
 
-1. Cambio de nombre del repositorio de `wuijs-lib` a `wuijs-main-lib`.
-2. Habilitación de instalación vía NPM.
+> [!NOET]
+> Se cambió el dueño del repositorio oficial de **@wuijsproject** a **@wui-js** con el fin de tener integridad entre las cuentas en GitHub y NPM.
+
+1. Habilitación de instalación vía NPM.
+2. Cambio de nombre del repositorio de `wuijs-lib` a `wuijs-main-lib` para que las tutas de los modos de instalación vía GitHub y NPM fuesen análogas.
+3. Se actualizó el cargador de recursos `wui.js`.
 
 ## [v0.4.0] - 2026-03-20
 
 Características:
 
 1. Se renombraron los directorios y archivos fuente a minúscula (ej: `src/WUI/Slider/WUISlider-0.3.js` → `src/wui/slider/wui-slider-0.4.js`).
-2. Actualización versión clase WUICookie a 0.4.
+2. Se agregó el cargador de recursos `wui.js`.
+3. Actualización versión clase WUICookie a 0.4.
 	- Se renombró el directorio y archivos a minúscula.
 	- Se corrigió error en el método `get()` donde un espacio inicial en la cadena de la cookie causaba un desplazamiento de índice, retornando `=valor` en lugar de `valor`.
-3. Actualización versión clase WUIHead a 0.3.
+4. Actualización versión clase WUIHead a 0.3.
 	- Se renombró el directorio y archivos a minúscula.
-4. Actualización versión clase WUIBody a 0.3.
+5. Actualización versión clase WUIBody a 0.3.
 	- Se renombró el directorio y archivos a minúscula.
-5. Actualización versión clase WUILanguage a 0.3.
+6. Actualización versión clase WUILanguage a 0.3.
 	- Se renombró el directorio y archivos a minúscula.
-6. Actualización versión clase WUIScrolly a 0.4.
+7. Actualización versión clase WUIScrolly a 0.4.
 	- Se renombró el directorio y archivos a minúscula.
-7. Actualización versión clase WUIIcon a 0.2.
+8. Actualización versión clase WUIIcon a 0.2.
 	- Se renombró el directorio y archivos a minúscula.
 	- Se corrigió error tipográfico en los nombres de clases CSS de iconos: `excamation` → `exclamation` (clases afectadas: `exclamation-line`, `exclamation-lg-line`, `exclamation-circle-line`, `exclamation-circle-fill`, `exclamation-triangle-line`, `exclamation-triangle-fill`).
-8. Actualización versión clase WUIFade a 0.2.
+9. Actualización versión clase WUIFade a 0.2.
 	- Se renombró el directorio y archivos a minúscula.
-9. Actualización versión clase WUILoader a 0.3.
+10. Actualización versión clase WUILoader a 0.3.
 	- Se renombró el directorio y archivos a minúscula.
-10. Actualización versión clase WUITooltip a 0.2.
+11. Actualización versión clase WUITooltip a 0.2.
 	- Se renombró el directorio y archivos a minúscula.
-11. Actualización versión clase WUIModal a 0.3.
+12. Actualización versión clase WUIModal a 0.3.
 	- Se renombró el directorio y archivos a minúscula.
 	- Se agregó un elemento hijo `.overlay` dedicado para gestionar el fondo de superposición, reemplazando el enfoque anterior basado en la clase CSS `.over`.
 	- Se corrigió la animación del modal de página en móvil, corrigiendo el cálculo de la posición `top` del modal subyacente al apilar modales.
 	- Se corrigió error de la clase `.slide` en modales de página en móvil en la media query responsive.
-12. Actualización versión clase WUIPaging a 0.3.
+13. Actualización versión clase WUIPaging a 0.3.
 	- Se renombró el directorio y archivos a minúscula.
-13. Actualización versión clase WUISlider a 0.4.
+14. Actualización versión clase WUISlider a 0.4.
 	- Se renombró el directorio y archivos a minúscula.
-14. Actualización versión clase WUITabs a 0.2.
+15. Actualización versión clase WUITabs a 0.2.
 	- Se renombró el directorio y archivos a minúscula.
-15. Actualización versión clase WUIMenubar a 0.2.
+16. Actualización versión clase WUIMenubar a 0.2.
 	- Se renombró el directorio y archivos a minúscula.
-16. Actualización versión clase WUIList a 0.3.
+17. Actualización versión clase WUIList a 0.3.
 	- Se renombró el directorio y archivos a minúscula.
-17. Actualización versión clase WUITable a 0.4.
+18. Actualización versión clase WUITable a 0.4.
 	- Se renombró el directorio y archivos a minúscula.
-18. Actualización versión clase WUIForm a 0.4.
+19. Actualización versión clase WUIForm a 0.4.
 	- Se renombró el directorio y archivos a minúscula.
-19. Actualización versión clase WUIFormat a 0.3.
+20. Actualización versión clase WUIFormat a 0.3.
 	- Se renombró el directorio y archivos a minúscula.
-20. Actualización versión clase WUISelectpicker a 0.3.
+21. Actualización versión clase WUISelectpicker a 0.3.
 	- Se renombró el directorio y archivos a minúscula.
-21. Actualización versión clase WUIDatepicker a 0.3.
+22. Actualización versión clase WUIDatepicker a 0.3.
 	- Se renombró el directorio y archivos a minúscula.
-22. Actualización versión clase WUITimepicker a 0.3.
+23. Actualización versión clase WUITimepicker a 0.3.
 	- Se renombró el directorio y archivos a minúscula.
-23. Actualización versión clase WUIColorpicker a 0.3.
+24. Actualización versión clase WUIColorpicker a 0.3.
 	- Se renombró el directorio y archivos a minúscula.
-24. Actualización versión clase WUISwitch a 0.4.
+25. Actualización versión clase WUISwitch a 0.4.
 	- Se renombró el directorio y archivos a minúscula.
-25. Actualización versión clase WUIIntensity a 0.2.
+26. Actualización versión clase WUIIntensity a 0.2.
 	- Se renombró el directorio y archivos a minúscula.
-26. Actualización versión clase WUIButton a 0.3.
+27. Actualización versión clase WUIButton a 0.3.
 	- Se renombró el directorio y archivos a minúscula.
 
 ## [v0.3.0] - 2026-02-09
 
 Características:
 
-1. Se agregaron los scripts de carga simple `WUI.js`.
-2. Cambio de nombre clase WUICheckbox versión 0.2 a WUISwitch versión 0.3.
-3. Actualización versión clase WUICookie a 0.3.
+1. Cambio de nombre clase WUICheckbox versión 0.2 a WUISwitch versión 0.3.
+2. Actualización versión clase WUICookie a 0.3.
 	- Se agregó el método `encode()`.
 	- Se agregó un retorno tipo `cadena` al método `set()` con la cookie codificada.
 	- Se reemplazó la sentencia `max-age` por `expires` en la codificación de la cookie.
-4. Actualización versión clase WUIScrolly a 0.3.
+3. Actualización versión clase WUIScrolly a 0.3.
 	- Se cambié el nombre de la variable CSS `--wui-scrolly-paging-bgcolor` a `--wui-scrolly-paging-bgcolor-hidden`.
 	- Se agregó la variable CSS `--wui-scrolly-paging-bgcolor-visible`.
-5. Actualización versión clase WUISlider a 0.3.
+4. Actualización versión clase WUISlider a 0.3.
 	- Se cambié el nombre de la variable CSS `--wui-slider-dot-bgcolor` a `--wui-slider-paging-bgcolor-hidden`.
 	- Se cambié el nombre de la variable CSS `--wui-slider-dot-bgcolor-selected` a `--wui-slider-paging-bgcolor-visible`.
 	- Se eliminó la variable CSS `--wui-slider-dots-bgcolor`.
-6. Actualización versión clase WUITable a 0.3.
+5. Actualización versión clase WUITable a 0.3.
 	- Se agregó propiedad `resetPaging`.
 	- Se agregó columna de relleno para mantener el ancho de la tabla.
-7. Actualización versión clase WUIForm a 0.3.
+6. Actualización versión clase WUIForm a 0.3.
 	- Se agregó compatibilidad con WUISwitch versión 0.3.
 	- Se agregó el estilo de formulario "fill".
-8. Actualización versión clase WUIFormat a 0.3.
+7. Actualización versión clase WUIFormat a 0.3.
 	- Se agregó el método `wuiDayName()` al tipo de dato `Date`.
 	- Se agregó el método `wuiMonthName()` al tipo de dato `Date`.
 

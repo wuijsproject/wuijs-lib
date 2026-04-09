@@ -799,7 +799,7 @@ Este método de implementación permite la estandarización del diseño de la in
 
 ### Implementación Abreviada
 
-Desde la vesrión 0.3.0 se agregó un cargador de recursos para la implementación abreviada de las librerías WUI.
+Desde la vesrión 0.4.0 se agregó un cargador de recursos para la implementación abreviada de las librerías WUI.
 Este cargador permite integrar todas las librerías WUI en una página web, ya sea de manera completa o parcial, sin requerir la inclusión manual de los archivos JavaScript y CSS correspondientes a cada librería.
 
 ```html

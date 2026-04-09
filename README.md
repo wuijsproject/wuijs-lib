@@ -799,7 +799,7 @@ This implementation method allows for standardization of an application's user i
 
 ### Abbreviated Implementation
 
-Starting with version 0.3.0, a resource loader was added for the simplified implementation of WUI libraries.
+Starting with version 0.4.0, a resource loader was added for the simplified implementation of WUI libraries.
 This loader allows you to integrate all WUI libraries into a web page, either full or partial, without requiring the manual inclusion of the corresponding JavaScript and CSS files for each library.
 
 ```html

@@ -1,7 +1,7 @@
 /*
  * @file wui.js
  * @class WUI
- * @version 0.4.0
+ * @version 0.5.1
  * @author Sergio E. Belmar V. (wuijs.project@gmail.com)
  * @copyright Sergio E. Belmar V. (wuijs.project@gmail.com)
  */
@@ -24,7 +24,7 @@
 		const getParams = get.split("&");
 		const jsParams = {};
 		const d = new Date().getTime();
-		const version = "0.4.0";
+		const version = "0.5.0";
 		const libraries = {
 			"0.4.0": [
 				"cookie-0.4",
@@ -54,6 +54,8 @@
 				"button-0.3"
 			]
 		};
+		libraries["0.5.0"] = libraries["0.4.0"];
+		libraries["0.5.1"] = libraries["0.5.0"];
 		let tasks = [];
 		let ver = version;
 		let cls = "";
