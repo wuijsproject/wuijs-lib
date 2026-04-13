@@ -830,7 +830,7 @@ Si no se especifica el parámetro `version` se asumirá la versión instalada.
 > Para una correcta implementación abreviada revise la sección [Buenas Prácticas de Codificación](#goodpractices).
 
 > [!TIP]
-> Para una implementación simplificada del archivo `wui.css`, opcionalmente se puede utilizar el plugin [WUIPluginsThemes](https://github.com/wui-js/wuijs-plugins-lib?tab=readme-ov-file#wuipluginsthemes) proporcionado en la librería [wuijs-plugins-lib](https://github.com/wui-js/wuijs-plugins-lib).
+> Para una implementación simplificada del archivo `wui.css`, opcionalmente se puede utilizar el plugin [WUIPluginThemes](https://github.com/wui-js/wuijs-plugins-lib?tab=readme-ov-file#wuipluginthemes) proporcionado en la librería [wuijs-plugins-lib](https://github.com/wui-js/wuijs-plugins-lib).
 
 <a name="fullmode"></a>
 
