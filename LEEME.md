@@ -133,7 +133,7 @@ wuijs-main-lib/
 | [imgs/icons](imgs/icons/)           | Íconos generados por la herramienta `/tools/svg-icon-maker.py` a partir de la clase WUIIcon. |
 | [imgs/logo](imgs/logo/)             | Logotipo e isotipo del proyecto en formato SVG y PNG. |
 | [legacy](legacy/)                   | Fuentes obsoletas con versiones anteriores. |
-| [legacy/WUI](legacy/WUI/)           | Librería WUI/JS (versión anterior a la 0.4.0). |
+| [legacy/wui](legacy/wui/)           | Librería WUI/JS (versión anterior a la 0.4.0). |
 | [src](src/)                         | Fuentes principales de la última versión. |
 | [src/wui-js](src/wui-js)            | Directorio del proyecto WUI/JS. |
 | [src/wui-js/main](src/wui-js/main/) | Librería WUI/JS. |
