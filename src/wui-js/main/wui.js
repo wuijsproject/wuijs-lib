@@ -1,7 +1,7 @@
 /*
  * @file wui.js
  * @class WUI
- * @version 0.5.1
+ * @version 0.5.2
  * @author Sergio E. Belmar V. (wuijs.project@gmail.com)
  * @copyright Sergio E. Belmar V. (wuijs.project@gmail.com)
  */
@@ -24,38 +24,45 @@
 		const getParams = get.split("&");
 		const jsParams = {};
 		const d = new Date().getTime();
-		const version = "0.5.0";
+		const version = "0.5.2";
 		const libraries = {
-			"0.4.0": [
-				"cookie-0.4",
-				"head-0.3",
-				"body-0.3",
-				"language-0.3",
-				"scrolly-0.4",
-				"icon-0.2",
-				"fade-0.2",
-				"loader-0.3",
-				"tooltip-0.2",
-				"modal-0.3",
-				"paging-0.3",
-				"slider-0.4",
-				"tabs-0.2",
-				"menubar-0.2",
-				"list-0.3",
-				"table-0.4",
-				"form-0.4",
-				"format-0.3",
-				"selectpicker-0.3",
-				"datepicker-0.3",
-				"timepicker-0.3",
-				"colorpicker-0.3",
-				"switch-0.4",
-				"intensity-0.2",
-				"button-0.3"
-			]
+			"0.4.0": {
+				"cookie": { v: "0.4", js: true, css: false },
+				"head": { v: "0.3", js: true, css: false },
+				"body": { v: "0.3", js: true, css: false },
+				"language": { v: "0.3", js: true, css: false },
+				"scrolly": { v: "0.4", js: true, css: true },
+				"icon": { v: "0.2", js: false, css: true },
+				"fade": { v: "0.2", js: true, css: false },
+				"loader": { v: "0.3", js: true, css: true },
+				"tooltip": { v: "0.2", js: true, css: true },
+				"modal": { v: "0.3", js: true, css: true },
+				"paging": { v: "0.3", js: true, css: true },
+				"slider": { v: "0.4", js: true, css: true },
+				"tabs": { v: "0.2", js: true, css: true },
+				"menubar": { v: "0.2", js: true, css: true },
+				"list": { v: "0.3", js: true, css: true },
+				"table": { v: "0.4", js: true, css: true },
+				"form": { v: "0.4", js: true, css: true },
+				"format": { v: "0.3", js: true, css: true },
+				"selectpicker": { v: "0.3", js: true, css: true },
+				"datepicker": { v: "0.3", js: true, css: true },
+				"timepicker": { v: "0.3", js: true, css: true },
+				"colorpicker": { v: "0.3", js: true, css: true },
+				"switch": { v: "0.4", js: true, css: true },
+				"intensity": { v: "0.2", js: true, css: true },
+				"button": { v: "0.3", js: true, css: true }
+			}
 		};
-		libraries["0.5.0"] = libraries["0.4.0"];
-		libraries["0.5.1"] = libraries["0.5.0"];
+		libraries["0.5.0"] = Object.assign({}, libraries["0.4.0"]);
+		libraries["0.5.1"] = Object.assign({}, libraries["0.5.0"]);
+		libraries["0.5.2"] = Object.assign({}, libraries["0.5.1"], {
+			"modal": { v: "0.4", js: true, css: true },
+			"menubar": { v: "0.3", js: true, css: true },
+			"selectpicker": { v: "0.4", js: true, css: true },
+			"datepicker": { v: "0.4", js: true, css: true },
+			"timepicker": { v: "0.4", js: true, css: true }
+		});
 		let tasks = [];
 		let ver = version;
 		let cls = "";
@@ -73,19 +80,18 @@
 			}
 		}
 		if (ver in libraries) {
-			libraries[ver].forEach(lib => {
-				const name = lib.replace(/-[\d\.]+$/, "");
+			Object.entries(libraries[ver]).forEach(([name, lib]) => {
 				if (cls == "" || cls.match(new RegExp("\\b" + name + "\\b", "i"))) {
-					if (!name.match(/icon/)) {
+					if (lib.js) {
 						tasks.push(createResource("script", {
-							src: `${dir}${name}/wui-${lib}.js?${d}`,
+							src: `${dir}${name}/wui-${name}-${lib.v}.js?${d}`,
 							type: "text/javascript",
 							async: false
 						}));
 					}
-					if (!name.match(/(cookie|head|body|language|fade)/)) {
+					if (lib.css) {
 						tasks.push(createResource("link", {
-							href: `${dir}${name}/wui-${lib}.css?${d}`,
+							href: `${dir}${name}/wui-${name}-${lib.v}.css?${d}`,
 							type: "text/css",
 							rel: "stylesheet"
 						}));

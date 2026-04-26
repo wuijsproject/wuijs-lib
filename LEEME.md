@@ -13,9 +13,9 @@
 	<img src="https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/logo/wuijs-main-logotype-color.svg" width="220" height="220">
 </div>
 
-**Versión librería**: `0.5.1` ([Registro de Cambios](./REGISTRODECAMBIOS.md))
+**Versión librería**: `0.5.2` ([Registro de Cambios](./REGISTRODECAMBIOS.md))
 
-**Versión documentación**: `0.5.1.20260417.1`
+**Versión documentación**: `0.5.2.20260419.0`
 
 **Licencia**: `Licencia Apache 2.0`
 
@@ -96,7 +96,7 @@ WUI/JS Main Lib es parte del proyecto WUI/JS, que consta actualmente de 3 reposi
 | [WUIFade](#WUIFade)                 | `0.2`   | Utilidades para control de salida y entrada con opacidad (fade-out y fade-in respectivamente) de elementos HTML. |
 | [WUILoader](#WUILoader)             | `0.3`   | Componente para la implementación de animaciones de carga. |
 | WUITooltip                          | `0.2`   | Componente para la implementación de textos emergentes. |
-| [WUIModal](#WUIModal)               | `0.3`   | Componente para la implementación de cuadros de diálogo (tipo `message`) y ventanas emergentes (tipo `page`). |
+| [WUIModal](#WUIModal)               | `0.4`   | Componente para la implementación de cuadros de diálogo (tipo `message`) y ventanas emergentes (tipo `page`). |
 | [WUIPaging](#WUIPaging)             | `0.3`   | Componente para la implementación de vistas accesibles paginadamente con transiciones animadas. |
 | [WUISlider](#WUISlider)             | `0.4`   | Componente para la implementación de presentaciones de diapositivas controladas por arrastre de ratón/táctil y/o por evento. |
 | WUITabs                             | `0.2`   | Componente para la implementación de vistas accesibles mediante selección por pestaña. |
@@ -105,13 +105,13 @@ WUI/JS Main Lib es parte del proyecto WUI/JS, que consta actualmente de 3 reposi
 | [WUITable](#WUITable)               | `0.4`   | Componente para la implementación de tablas de datos. A diferencia del componente `WUIList`, el componente `WUITable` incluye una cabecera de columnas. |
 | [WUIForm](#WUIForm)                 | `0.4`   | Componente para la implementación de formularios de datos. Este componente permite la implementación de elementos HTML de entrada de datos tales como `<input>`, `<select>` y `<textarea>` y objetos de la librería WUI como `WUISelectpicker`, `WUIDatepicker`, `WUITimepicker`, `WUIColorpicker`, `WUISwitch`, `WUIIntensity` y `WUIButton`. |
 | [WUIFormat](#WUIFormat)             | `0.3`   | Utilidades para manejo y validación de formatos de datos de tipo `string`, `number` y `Date`. |
-| [WUISelectpicker](#WUISelectpicker) | `0.3`   | Componente para la implementación de entradas de datos de tipo lista de selección múltiple o excluyente basada en el elemento HTML `<select>`. |
-| [WUIDatepicker](#WUIDatepicker)     | `0.3`   | Componente para la implementación de entradas de datos de tipo fecha basada en el elemento HTML `<input type="date">`. |
-| [WUITimepicker](#WUITimepicker)     | `0.3`   | Componente para la implementación de entradas de datos de tipo hora basada en el elemento HTML `<input type="time">`. |
-| [WUIColorpicker](#WUIColorpicker)   | `0.3`   | Componente para la implementación de entradas de datos de tipo selector de color basada en el elemento HTML `<input type="color">`. |
-| [WUISwitch](#WUISwitch)             | `0.4`   | Componente para la implementación de entradas de datos de tipo casilla de verificación basada en el elemento HTML `<input type="checkbox">`. |
-| [WUIIntensity](#WUIIntensity)       | `0.2`   | Componente para la implementación de entradas de datos de tipo selector de intensidad de 4 niveles: nada, bajo, medio y alto basada en el elemento HTML `<input type="range">`. |
-| [WUIButton](#WUIButton)             | `0.3`   | Componente para la implementación de botones basada en el elemento HTML `<button>`. |
+| [WUISelectpicker](#WUISelectpicker) | `0.4`   | Componente para la implementación de entradas de datos de tipo lista de selección múltiple o excluyente basada en el elemento HTML `<select>`. |
+| [WUIDatepicker](#WUIDatepicker)     | `0.4`   | Componente para la implementación de entradas de datos de tipo fecha basada en el elemento HTML `<input type="date">`. |
+| [WUITimepicker](#WUITimepicker)     | `0.4`   | Componente para la implementación de entradas de datos de tipo hora basada en el elemento HTML `<input type="time">`. |
+| [WUIColorpicker](#WUIColorpicker)   | `0.4`   | Componente para la implementación de entradas de datos de tipo selector de color basada en el elemento HTML `<input type="color">`. |
+| [WUISwitch](#WUISwitch)             | `0.5`   | Componente para la implementación de entradas de datos de tipo casilla de verificación basada en el elemento HTML `<input type="checkbox">`. |
+| [WUIIntensity](#WUIIntensity)       | `0.3`   | Componente para la implementación de entradas de datos de tipo selector de intensidad de 4 niveles: nada, bajo, medio y alto basada en el elemento HTML `<input type="range">`. |
+| [WUIButton](#WUIButton)             | `0.4`   | Componente para la implementación de botones basada en el elemento HTML `<button>`. |
 
 <a name="dirmap"></a>
 
@@ -229,8 +229,8 @@ Código CSS archivo `wui.css`:
 	--wui-modal-body-scroll-bgcolor-out: rgb(from #353a40 r g b / 20%);
 	--wui-modal-body-scroll-bgcolor-over: rgb(from #353a40 r g b / 40%);
 	--wui-modal-footer-bordercolor: transparent;
-	--wui-modal-button-submit-bgcolor-mobile: rgb(from #959da5 r g b / 20%);
-	--wui-modal-button-submit-textcolor-mobile: #1e90ff;
+	--wui-modal-button-submittable-bgcolor-mobile: rgb(from #959da5 r g b / 20%);
+	--wui-modal-button-submittable-textcolor-mobile: #1e90ff;
 	--wui-modal-button-warning-textcolor-mobile: #f44343;
 	--wui-modal-message-box-width: 280px;
 	--wui-modal-message-box-bgcolor: rgb(from #efeff6 r g b / 80%);
@@ -249,6 +249,8 @@ Código CSS archivo `wui.css`:
 	--wui-modal-slidepage-box-margin: 10px;
 	--wui-modal-smallpage-box-width: 340px;
 	--wui-modal-smallpage-box-height: 280px;
+	--wui-modal-mobile-page-box-topmargin: 0px;
+	--wui-modal-mobile-page-box-borderradius-maximized: 0px;
 
 	/* wui-paging */
 
@@ -322,13 +324,15 @@ Código CSS archivo `wui.css`:
 	--wui-menubar-tooltip-textcolor: #fff;
 	--wui-menubar-bubble-bgcolor: #f44343;
 	--wui-menubar-bubble-textcolor: #fff;
+	--wui-menubar-mobile-bar-horizpadding: 10px;
+	--wui-menubar-mobile-bar-vertpadding: 0px;
 	--wui-menubar-mobile-opener-closeicon-src: none;
 
 	/* wui-list */
 
 	--wui-list-shadowcolor: #959da5;
 	--wui-list-borderradius: 10px;
-	--wui-list-borderwidth: 0;
+	--wui-list-borderwidth: 0px;
 	--wui-list-bordercolor: #f0f0f3;
 	--wui-list-scroll-bgcolor-out: rgb(from #353a40 r g b / 20%);
 	--wui-list-scroll-bgcolor-over: rgb(from #353a40 r g b / 40%);
@@ -484,7 +488,7 @@ Código CSS archivo `wui.css`:
 	--wui-selectpicker-opener-iconcolor-disabled: #d5dce3;
 	--wui-selectpicker-opener-openicon-src: none;
 	--wui-selectpicker-opener-closeicon-src: none;
-	--wui-selectpicker-viewinput-paddingleft: 10px;
+	--wui-selectpicker-viewinput-leftpadding: 10px;
 	--wui-selectpicker-viewinput-textcolor-out: #2d3a47;
 	--wui-selectpicker-viewinput-textcolor-over: #1f2937;
 	--wui-selectpicker-viewinput-textcolor-disabled: #d5dce3;
@@ -529,7 +533,7 @@ Código CSS archivo `wui.css`:
 	--wui-datepicker-opener-iconcolor-disabled: #d5dce3;
 	--wui-datepicker-opener-openicon-src: none;
 	--wui-datepicker-opener-closeicon-src: none;
-	--wui-datepicker-viewinput-paddingleft: 10px;
+	--wui-datepicker-viewinput-leftpadding: 10px;
 	--wui-datepicker-viewinput-textcolor-out: #2d3a47;
 	--wui-datepicker-viewinput-textcolor-over: #1f2937;
 	--wui-datepicker-viewinput-textcolor-disabled: #d5dce3;
@@ -578,7 +582,7 @@ Código CSS archivo `wui.css`:
 	--wui-timepicker-opener-iconcolor-disabled: #d5dce3;
 	--wui-timepicker-opener-openicon-src: none;
 	--wui-timepicker-opener-closeicon-src: none;
-	--wui-timepicker-viewinput-paddingleft: 10px;
+	--wui-timepicker-viewinput-leftpadding: 10px;
 	--wui-timepicker-viewinput-textcolor-out: #2d3a47;
 	--wui-timepicker-viewinput-textcolor-over: #1f2937;
 	--wui-timepicker-viewinput-textcolor-disabled: #d5dce3;
@@ -688,21 +692,21 @@ Código CSS archivo `wui.css`:
 	--wui-button-default-textcolor-selected: #fff;
 	--wui-button-default-textcolor-disabled: #d5dce3;
 	--wui-button-default-textsize: 15px;
-	--wui-button-submit-minwidth: 200px;
-	--wui-button-submit-height: 34px;
-	--wui-button-submit-bordercolor-out: rgb(from #1e90ff r g b / 20%);
-	--wui-button-submit-bordercolor-over: #1e90ff;
-	--wui-button-submit-bordercolor-selected: #1e90ff;
-	--wui-button-submit-bordercolor-disabled: #d5dce3;
-	--wui-button-submit-bgcolor-out: #1e90ff;
-	--wui-button-submit-bgcolor-over: #1e90ff;
-	--wui-button-submit-bgcolor-selected: #1e90ff;
-	--wui-button-submit-bgcolor-disabled: #d5dce3;
-	--wui-button-submit-textcolor-out: #fff;
-	--wui-button-submit-textcolor-over: #fff;
-	--wui-button-submit-textcolor-selected: #fff;
-	--wui-button-submit-textcolor-disabled: #d5dce3;
-	--wui-button-submit-textsize: 15px;
+	--wui-button-submittable-minwidth: 200px;
+	--wui-button-submittable-height: 34px;
+	--wui-button-submittable-bordercolor-out: rgb(from #1e90ff r g b / 20%);
+	--wui-button-submittable-bordercolor-over: #1e90ff;
+	--wui-button-submittable-bordercolor-selected: #1e90ff;
+	--wui-button-submittable-bordercolor-disabled: #d5dce3;
+	--wui-button-submittable-bgcolor-out: #1e90ff;
+	--wui-button-submittable-bgcolor-over: #1e90ff;
+	--wui-button-submittable-bgcolor-selected: #1e90ff;
+	--wui-button-submittable-bgcolor-disabled: #d5dce3;
+	--wui-button-submittable-textcolor-out: #fff;
+	--wui-button-submittable-textcolor-over: #fff;
+	--wui-button-submittable-textcolor-selected: #fff;
+	--wui-button-submittable-textcolor-disabled: #d5dce3;
+	--wui-button-submittable-textsize: 15px;
 	--wui-button-warning-bordercolor-out: rgb(from #f44343 r g b / 25%);
 	--wui-button-warning-bordercolor-over: #f44343;
 	--wui-button-warning-bordercolor-selected: #f44343;
@@ -717,7 +721,7 @@ Código CSS archivo `wui.css`:
 	--wui-button-warning-textcolor-disabled: #d5dce3;
 	--wui-button-icon-float-padding: 5px;
 	--wui-button-mobile-default-height: 40px;
-	--wui-button-mobile-submit-height: 40px;
+	--wui-button-mobile-submittable-height: 40px;
 	--wui-button-mobile-icon-float-padding: 10px;
 	--wui-button-form-default-minwidth: 100px;
 }
@@ -742,20 +746,20 @@ Código HTML:
 		<link type="text/css" rel="stylesheet" href="./libraries/wui-js/main/icon/wui-icon-0.2.css">
 		<link type="text/css" rel="stylesheet" href="./libraries/wui-js/main/loader/wui-loader-0.3.css">
 		<link type="text/css" rel="stylesheet" href="./libraries/wui-js/main/tooltip/wui-tooltip-0.2.css">
-		<link type="text/css" rel="stylesheet" href="./libraries/wui-js/main/modal/wui-modal-0.3.css">
+		<link type="text/css" rel="stylesheet" href="./libraries/wui-js/main/modal/wui-modal-0.4.css">
 		<link type="text/css" rel="stylesheet" href="./libraries/wui-js/main/paging/wui-paging-0.3.css">
 		<link type="text/css" rel="stylesheet" href="./libraries/wui-js/main/slider/wui-slider-0.4.css">
 		<link type="text/css" rel="stylesheet" href="./libraries/wui-js/main/tabs/wui-tabs-0.2.css">
-		<link type="text/css" rel="stylesheet" href="./libraries/wui-js/main/menubar/wui-menubar-0.2.css">
+		<link type="text/css" rel="stylesheet" href="./libraries/wui-js/main/menubar/wui-menubar-0.3.css">
 		<link type="text/css" rel="stylesheet" href="./libraries/wui-js/main/list/wui-list-0.3.css">
 		<link type="text/css" rel="stylesheet" href="./libraries/wui-js/main/table/wui-table-0.4.css">
 		<link type="text/css" rel="stylesheet" href="./libraries/wui-js/main/form/wui-form-0.4.css">
-		<link type="text/css" rel="stylesheet" href="./libraries/wui-js/main/selectpicker/wui-selectpicker-0.3.css">
-		<link type="text/css" rel="stylesheet" href="./libraries/wui-js/main/datepicker/wui-datepicker-0.3.css">
-		<link type="text/css" rel="stylesheet" href="./libraries/wui-js/main/timepicker/wui-timepicker-0.3.css">
-		<link type="text/css" rel="stylesheet" href="./libraries/wui-js/main/colorpicker/wui-colorpicker-0.3.css">
-		<link type="text/css" rel="stylesheet" href="./libraries/wui-js/main/switch/wui-switch-0.4.css">
-		<link type="text/css" rel="stylesheet" href="./libraries/wui-js/main/intensity/wui-intensity-0.2.css">
+		<link type="text/css" rel="stylesheet" href="./libraries/wui-js/main/selectpicker/wui-selectpicker-0.4.css">
+		<link type="text/css" rel="stylesheet" href="./libraries/wui-js/main/datepicker/wui-datepicker-0.4.css">
+		<link type="text/css" rel="stylesheet" href="./libraries/wui-js/main/timepicker/wui-timepicker-0.4.css">
+		<link type="text/css" rel="stylesheet" href="./libraries/wui-js/main/colorpicker/wui-colorpicker-0.4.css">
+		<link type="text/css" rel="stylesheet" href="./libraries/wui-js/main/switch/wui-switch-0.5.css">
+		<link type="text/css" rel="stylesheet" href="./libraries/wui-js/main/intensity/wui-intensity-0.3.css">
 		<link type="text/css" rel="stylesheet" href="./libraries/wui-js/main/button/wui-button-0.3.css">
 		<script type="text/javascript" src="./libraries/wui-js/main/cookie/wui-cookie-0.4.js"></script>
 		<script type="text/javascript" src="./libraries/wui-js/main/head/wui-head-0.3.js"></script>
@@ -765,21 +769,21 @@ Código HTML:
 		<script type="text/javascript" src="./libraries/wui-js/main/fade/wui-fade-0.2.js"></script>
 		<script type="text/javascript" src="./libraries/wui-js/main/loader/wui-loader-0.3.js"></script>
 		<script type="text/javascript" src="./libraries/wui-js/main/tooltip/wui-tooltip-0.2.js"></script>
-		<script type="text/javascript" src="./libraries/wui-js/main/modal/wui-modal-0.3.js"></script>
+		<script type="text/javascript" src="./libraries/wui-js/main/modal/wui-modal-0.4.js"></script>
 		<script type="text/javascript" src="./libraries/wui-js/main/paging/wui-paging-0.3.js"></script>
 		<script type="text/javascript" src="./libraries/wui-js/main/slider/wui-slider-0.4.js"></script>
 		<script type="text/javascript" src="./libraries/wui-js/main/tabs/wui-tabs-0.2.js"></script>
-		<script type="text/javascript" src="./libraries/wui-js/main/menubar/wui-menubar-0.2.js"></script>
+		<script type="text/javascript" src="./libraries/wui-js/main/menubar/wui-menubar-0.3.js"></script>
 		<script type="text/javascript" src="./libraries/wui-js/main/list/wui-list-0.3.js"></script>
 		<script type="text/javascript" src="./libraries/wui-js/main/table/wui-table-0.4.js"></script>
 		<script type="text/javascript" src="./libraries/wui-js/main/form/wui-form-0.4.js"></script>
 		<script type="text/javascript" src="./libraries/wui-js/main/format/wui-format-0.3.js"></script>
-		<script type="text/javascript" src="./libraries/wui-js/main/selectpicker/wui-selectpicker-0.3.js"></script>
-		<script type="text/javascript" src="./libraries/wui-js/main/datepicker/wui-datepicker-0.3.js"></script>
-		<script type="text/javascript" src="./libraries/wui-js/main/timepicker/wui-timepicker-0.3.js"></script>
-		<script type="text/javascript" src="./libraries/wui-js/main/colorpicker/wui-colorpicker-0.3.js"></script>
-		<script type="text/javascript" src="./libraries/wui-js/main/switch/wui-switch-0.4.js"></script>
-		<script type="text/javascript" src="./libraries/wui-js/main/intensity/wui-intensity-0.2.js"></script>
+		<script type="text/javascript" src="./libraries/wui-js/main/selectpicker/wui-selectpicker-0.4.js"></script>
+		<script type="text/javascript" src="./libraries/wui-js/main/datepicker/wui-datepicker-0.4.js"></script>
+		<script type="text/javascript" src="./libraries/wui-js/main/timepicker/wui-timepicker-0.4.js"></script>
+		<script type="text/javascript" src="./libraries/wui-js/main/colorpicker/wui-colorpicker-0.4.js"></script>
+		<script type="text/javascript" src="./libraries/wui-js/main/switch/wui-switch-0.5.js"></script>
+		<script type="text/javascript" src="./libraries/wui-js/main/intensity/wui-intensity-0.3.js"></script>
 		<script type="text/javascript" src="./libraries/wui-js/main/button/wui-button-0.3.js"></script>
 	</head>
 	<body>
@@ -821,7 +825,7 @@ Este cargador permite integrar todas las librerías WUI en una página web, ya s
 		<meta name="theme-color" content="">
 		<link type="text/css" rel="stylesheet" href="./Settings/Main.css">
 		<link type="text/css" rel="stylesheet" href="./Settings/wui.css">
-		<script type="text/javascript" src="./libraries/wui-js/main/wui.js?v=0.4.0"></script>
+		<script type="text/javascript" src="./libraries/wui-js/main/wui.js?v=0.5.2"></script>
 	</head>
 	<body>
 	</body>
@@ -2009,7 +2013,7 @@ window.addEventListener("DOMContentLoaded", init);
 
 ### WUILoader
 
-Version: `0.2`
+Version: `0.3`
 
 Componente para la implementación de animaciones de carga
 
@@ -2048,7 +2052,7 @@ Componente para la implementación de animaciones de carga
 
 ### WUIModal
 
-Versión: `0.2`
+Versión: `0.4`
 
 Componente para la implementación de cuadros de diálogo (tipo `message`) y ventanas emergentes (tipo `page`).
 
@@ -2056,8 +2060,8 @@ Componente para la implementación de cuadros de diálogo (tipo `message`) y ven
 
 | Tipo | Archivo |
 | ---- | ------- |
-| CSS  | [src/wui-js/main/modal/wui-modal-0.3.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/modal/wui-modal-0.3.css) |
-| JS   | [src/wui-js/main/modal/wui-modal-0.3.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/modal/wui-modal-0.3.js) |
+| CSS  | [src/wui-js/main/modal/wui-modal-0.4.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/modal/wui-modal-0.4.css) |
+| JS   | [src/wui-js/main/modal/wui-modal-0.4.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/modal/wui-modal-0.4.js) |
 
 #### Constructor
 
@@ -2112,40 +2116,42 @@ Componente para la implementación de cuadros de diálogo (tipo `message`) y ven
 
 #### Variables CSS
 
-| Variable                                         | Descripción |
-| ------------------------------------------------ | ----------- |
-| `--wui-modal-overlay-bgcolor`                    | Color de fondo del overlay del modal. |
-| `--wui-modal-box-borderradius`                   | Radio de borde de la caja del modal. |
-| `--wui-modal-box-bgcolor`                        | Color de fondo de la caja del modal. |
-| `--wui-modal-back-textcolor`                     | Color del texto del botón de retroceso. |
-| `--wui-modal-close-bgcolor`                      | Color de fondo del botón de cierre. |
-| `--wui-modal-topbar-height`                      | Altura de la barra superior del modal. |
-| `--wui-modal-title-textfont`                     | Fuente del texto del título del modal. |
-| `--wui-modal-title-textcase`                     | Transformación del texto del título (uppercase, lowercase, none). |
-| `--wui-modal-title-textcolor`                    | Color del texto del título del modal. |
-| `--wui-modal-body-scroll-bgcolor-out`            | Color de la barra de desplazamiento del cuerpo en estado normal. |
-| `--wui-modal-body-scroll-bgcolor-over`           | Color de la barra de desplazamiento del cuerpo en estado hover. |
-| `--wui-modal-footer-bordercolor`                 | Color del borde del pie del modal. |
-| `--wui-modal-button-submit-bgcolor-mobile`       | Color de fondo del botón de envío en modo móvil. |
-| `--wui-modal-button-submit-textcolor-mobile`     | Color del texto del botón de envío en modo móvil. |
-| `--wui-modal-button-warning-textcolor-mobile`    | Color del texto del botón de advertencia en modo móvil. |
-| `--wui-modal-message-box-width`                  | Ancho de la caja del modal tipo mensaje. |
-| `--wui-modal-message-box-bgcolor`                | Color de fondo de la caja del modal tipo mensaje. |
-| `--wui-modal-message-box-textcolor`              | Color del texto de la caja del modal tipo mensaje. |
-| `--wui-modal-message-linkcolor`                  | Color de los enlaces en el modal tipo mensaje. |
-| `--wui-modal-message-mobile-box-width`           | Ancho de la caja del modal tipo mensaje en modo móvil. |
-| `--wui-modal-message-mobile-footer-bordercolor`  | Color del borde del pie del modal tipo mensaje en modo móvil. |
-| `--wui-modal-message-mobile-button-bordercolor`  | Color del borde de los botones del modal tipo mensaje en modo móvil. |
-| `--wui-modal-page-box-width`                     | Ancho de la caja del modal tipo página. |
-| `--wui-modal-page-box-height`                    | Altura de la caja del modal tipo página. |
-| `--wui-modal-page-box-borderradius`              | Radio de borde de la caja del modal tipo página. |
-| `--wui-modal-page-box-maxheight`                 | Altura máxima de la caja del modal tipo página. |
-| `--wui-modal-page-box-bgcolor`                   | Color de fondo de la caja del modal tipo página. |
-| `--wui-modal-page-header-topbar-bgcolor`         | Color de fondo de la barra superior de la cabecera del modal tipo página. |
-| `--wui-modal-page-header-bordercolor`            | Color del borde de la cabecera del modal tipo página. |
-| `--wui-modal-slidepage-box-margin`               | Margen de la caja del modal tipo página deslizante. |
-| `--wui-modal-smallpage-box-width`                | Ancho de la caja del modal tipo página pequeña. |
-| `--wui-modal-smallpage-box-height`               | Altura de la caja del modal tipo página pequeña. |
+| Variable                                             | Descripción |
+| ---------------------------------------------------- | ----------- |
+| `--wui-modal-overlay-bgcolor`                        | Color de fondo del overlay del modal. |
+| `--wui-modal-box-borderradius`                       | Radio de borde de la caja del modal. |
+| `--wui-modal-box-bgcolor`                            | Color de fondo de la caja del modal. |
+| `--wui-modal-back-textcolor`                         | Color del texto del botón de retroceso. |
+| `--wui-modal-close-bgcolor`                          | Color de fondo del botón de cierre. |
+| `--wui-modal-topbar-height`                          | Altura de la barra superior del modal. |
+| `--wui-modal-title-textfont`                         | Fuente del texto del título del modal. |
+| `--wui-modal-title-textcase`                         | Transformación del texto del título (uppercase, lowercase, none). |
+| `--wui-modal-title-textcolor`                        | Color del texto del título del modal. |
+| `--wui-modal-body-scroll-bgcolor-out`                | Color de la barra de desplazamiento del cuerpo en estado normal. |
+| `--wui-modal-body-scroll-bgcolor-over`               | Color de la barra de desplazamiento del cuerpo en estado hover. |
+| `--wui-modal-footer-bordercolor`                     | Color del borde del pie del modal. |
+| `--wui-modal-button-submittable-bgcolor-mobile`           | Color de fondo del botón de envío en modo móvil. |
+| `--wui-modal-button-submittable-textcolor-mobile`         | Color del texto del botón de envío en modo móvil. |
+| `--wui-modal-button-warning-textcolor-mobile`        | Color del texto del botón de advertencia en modo móvil. |
+| `--wui-modal-message-box-width`                      | Ancho de la caja del modal tipo mensaje. |
+| `--wui-modal-message-box-bgcolor`                    | Color de fondo de la caja del modal tipo mensaje. |
+| `--wui-modal-message-box-textcolor`                  | Color del texto de la caja del modal tipo mensaje. |
+| `--wui-modal-message-linkcolor`                      | Color de los enlaces en el modal tipo mensaje. |
+| `--wui-modal-message-mobile-box-width`               | Ancho de la caja del modal tipo mensaje en modo móvil. |
+| `--wui-modal-message-mobile-footer-bordercolor`      | Color del borde del pie del modal tipo mensaje en modo móvil. |
+| `--wui-modal-message-mobile-button-bordercolor`      | Color del borde de los botones del modal tipo mensaje en modo móvil. |
+| `--wui-modal-page-box-width`                         | Ancho de la caja del modal tipo página. |
+| `--wui-modal-page-box-height`                        | Altura de la caja del modal tipo página. |
+| `--wui-modal-page-box-borderradius`                  | Radio de borde de la caja del modal tipo página. |
+| `--wui-modal-page-box-maxheight`                     | Altura máxima de la caja del modal tipo página. |
+| `--wui-modal-page-box-bgcolor`                       | Color de fondo de la caja del modal tipo página. |
+| `--wui-modal-page-header-topbar-bgcolor`             | Color de fondo de la barra superior de la cabecera del modal tipo página. |
+| `--wui-modal-page-header-bordercolor`                | Color del borde de la cabecera del modal tipo página. |
+| `--wui-modal-slidepage-box-margin`                   | Margen de la caja del modal tipo página deslizante. |
+| `--wui-modal-smallpage-box-width`                    | Ancho de la caja del modal tipo página pequeña. |
+| `--wui-modal-smallpage-box-height`                   | Altura de la caja del modal tipo página pequeña. |
+| `--wui-modal-mobile-page-box-topmargin`              | Margen superior de la caja del modal tipo página en modo móvil. |
+| `--wui-modal-mobile-page-box-borderradius-maximized` | Radio de borde máximizado de la caja del modal tipo página en modo móvil. |
 
 #### Implementación
 
@@ -2173,8 +2179,8 @@ Configuración CSS:
 	--wui-modal-body-scroll-bgcolor-out: rgb(from #353a40 r g b / 20%);
 	--wui-modal-body-scroll-bgcolor-over: rgb(from #353a40 r g b / 40%);
 	--wui-modal-footer-bordercolor: transparent;
-	--wui-modal-button-submit-bgcolor-mobile: rgb(from #959da5 r g b / 20%);
-	--wui-modal-button-submit-textcolor-mobile: #1e90ff;
+	--wui-modal-button-submittable-bgcolor-mobile: rgb(from #959da5 r g b / 20%);
+	--wui-modal-button-submittable-textcolor-mobile: #1e90ff;
 	--wui-modal-button-warning-textcolor-mobile: #f44343;
 	--wui-modal-message-box-width: 280px;
 	--wui-modal-message-box-bgcolor: rgb(from #efeff6 r g b / 80%);
@@ -2193,6 +2199,8 @@ Configuración CSS:
 	--wui-modal-slidepage-box-margin: 10px;
 	--wui-modal-smallpage-box-width: 340px;
 	--wui-modal-smallpage-box-height: 280px;
+	--wui-modal-mobile-page-box-topmargin: 0px;
+	--wui-modal-mobile-page-box-borderradius-maximized: 0px;
 }
 ```
 
@@ -2227,8 +2235,8 @@ Cabecera HTML:
 
 ```html
 <link type="text/css" rel="stylesheet" href="./libraries/wui-js/main/icon/wui-icon-0.2.css">
-<link type="text/css" rel="stylesheet" href="./libraries/wui-js/main/modal/wui-modal-0.3.css">
-<script type="text/javascript" src="./libraries/wui-js/main/modal/wui-modal-0.3.js"></script>
+<link type="text/css" rel="stylesheet" href="./libraries/wui-js/main/modal/wui-modal-0.4.css">
+<script type="text/javascript" src="./libraries/wui-js/main/modal/wui-modal-0.4.js"></script>
 ```
 
 Código HTML:
@@ -2671,8 +2679,8 @@ Componente para la implementación de barras de menú.
 
 | Tipo | Archivo |
 | ---- | ------- |
-| CSS  | [src/wui-js/main/menubar/wui-menubar-0.2.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/menubar/wui-menubar-0.2.css) |
-| JS   | [src/wui-js/main/menubar/wui-menubar-0.2.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/menubar/wui-menubar-0.2.js) |
+| CSS  | [src/wui-js/main/menubar/wui-menubar-0.3.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/menubar/wui-menubar-0.3.css) |
+| JS   | [src/wui-js/main/menubar/wui-menubar-0.3.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/menubar/wui-menubar-0.3.js) |
 
 #### Constructor
 
@@ -2685,6 +2693,7 @@ Componente para la implementación de barras de menú.
 | Propiedad     | Tipo       | Valor predeterminado | Descripción |
 | ------------- | ---------- | -------------------- | ----------- |
 | selector      | `string`   | `".wui-menubar"`     | (get/set)<br><br>Selector CSS que define el elemento HTML que serán convertido en el objeto. En caso de existir más de un elemento coincidente con el selector se incluirá únicamente la primera coincidencia. |
+| compacted     | `boolean`  | `false`              | (get/set)<br><br>Define si el menú se muestra en formato compacto. |
 | expansive     | `boolean`  | `true`               | (get/set)<br><br>Define si el menú se expande. La función de expansión es no es visible en modo móvil (cuando el ancho de la pantalla es inferior a `768px`). |
 | autoClose     | `boolean`  | `true`               | (get/set)<br><br>Define si el submenú se cierra automáticamente hacer click en un botón de él. Si la propiedad es `false` se cargará en la parte superior del submenú un botón para cerrarlo manualmente. |
 | topButtons    | `array`    | `[]`                 | (get/set)<br><br>Lista de botones de menú superior, según la definición de **Opciones de Botón**. Los botónes de esta sección no son visibles en modo móvil (cuando el ancho de la pantalla es inferior a `768px`). |
@@ -2775,6 +2784,8 @@ Componente para la implementación de barras de menú.
 | `--wui-menubar-tooltip-textcolor`                 | Color del texto del tooltip. |
 | `--wui-menubar-bubble-bgcolor`                    | Color de fondo de la burbuja de notificación en los botones. |
 | `--wui-menubar-bubble-textcolor`                  | Color del texto de la burbuja de notificación. |
+| `--wui-menubar-mobile-bar-horizpadding`           | Margen horizontal interno de la barra principal de menú en modo móvil. |
+| `--wui-menubar-mobile-bar-vertpadding`            | Margen vertical interno de la barra principal de menú en modo móvil. |
 | `--wui-menubar-mobile-opener-closeicon-src`       | Fuente del ícono de cierre del submenú en modo móvil<br>(formato: `url()` o `none` para utilizar la fuente predeterminada). |
 
 #### Implementación
@@ -2839,6 +2850,8 @@ Configuración CSS:
 	--wui-menubar-tooltip-textcolor: #fff;
 	--wui-menubar-bubble-bgcolor: #f44343;
 	--wui-menubar-bubble-textcolor: #fff;
+	--wui-menubar-mobile-bar-horizpadding: 10px;
+	--wui-menubar-mobile-bar-vertpadding: 0px;
 	--wui-menubar-mobile-opener-closeicon-src: none;
 }
 ```
@@ -2878,8 +2891,8 @@ Cabecera HTML:
 
 ```html
 <link type="text/css" rel="stylesheet" href="./libraries/wui-js/main/icon/wui-icon-0.2.css">
-<link type="text/css" rel="stylesheet" href="./libraries/wui-js/main/menubar/wui-menubar-0.2.css">
-<script type="text/javascript" src="./libraries/wui-js/main/menubar/wui-menubar-0.2.js"></script>
+<link type="text/css" rel="stylesheet" href="./libraries/wui-js/main/menubar/wui-menubar-0.3.css">
+<script type="text/javascript" src="./libraries/wui-js/main/menubar/wui-menubar-0.3.js"></script>
 ```
 
 Cuerpo HTML:
@@ -3105,7 +3118,7 @@ Configuración CSS:
 
 	--wui-list-shadowcolor: #959da5;
 	--wui-list-borderradius: 10px;
-	--wui-list-borderwidth: 0;
+	--wui-list-borderwidth: 0px;
 	--wui-list-bordercolor: #f0f0f3;
 	--wui-list-scroll-bgcolor-out: rgb(from #353a40 r g b / 20%);
 	--wui-list-scroll-bgcolor-over: rgb(from #353a40 r g b / 40%);
@@ -3708,7 +3721,7 @@ Componente para la implementación de formularios de datos. Este componente perm
 | Propiedad   | Tipo       | Valor predeterminado | Descripción |
 | ----------- | ---------- | -------------------- | ----------- |
 | selector    | `string`   | `".wui-form"`        | (get/set)<br><br>Selector CSS que define el elemento HTML contenedor del formulario. En caso de existir más de un elemento coincidente con el selector se incluirá únicamente la primera coincidencia. |
-| submit      | `boolean`  | `true`               | (get/set)<br><br>Define si el formulario debe enviarse de forma nativa al ocurrir el evento submit. |
+| submittable      | `boolean`  | `true`               | (get/set)<br><br>Define si el formulario debe enviarse de forma nativa al ocurrir el evento submittable. |
 | onScrolling | `function` | `null`               | (get/set)<br><br>Función que se ejecuta al desplazar el contenido del cuerpo del formulario. |
 | onSubmit    | `function` | `null`               | (get/set)<br><br>Función que se ejecuta al enviar el formulario. |
 
@@ -4005,7 +4018,7 @@ Código HTML:
 		</div>
 		<div class="footer">
 			<button class="wui-button cancel">cancel</button>
-			<button class="wui-button submit">submit</button>
+			<button class="wui-button submittable">submittable</button>
 		</div>
 	</form>
 </nav>
@@ -4017,7 +4030,7 @@ Código JS:
 const init = () => {
 	const form = new WUIForm({
 		selector: ".wui-form.my-form",
-		submit: false,
+		submittable: false,
 		onScrolling: (top) => { },
 		onSubmit: () => { }
 	});
@@ -4461,8 +4474,8 @@ Componente para la implementación de entradas de datos de tipo lista de selecci
 
 | Tipo | Archivo |
 | ---- | ------- |
-| CSS  | [src/wui-js/main/selectpicker/wui-selectpicker-0.3.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/selectpicker/wui-selectpicker-0.3.css) |
-| JS   | [src/wui-js/main/selectpicker/wui-selectpicker-0.3.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/selectpicker/wui-selectpicker-0.3.js) |
+| CSS  | [src/wui-js/main/selectpicker/wui-selectpicker-0.4.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/selectpicker/wui-selectpicker-0.4.css) |
+| JS   | [src/wui-js/main/selectpicker/wui-selectpicker-0.4.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/selectpicker/wui-selectpicker-0.4.js) |
 
 #### Constructor
 
@@ -4533,7 +4546,7 @@ Componente para la implementación de entradas de datos de tipo lista de selecci
 | `--wui-selectpicker-opener-iconcolor-disabled`      | Color del icono del abridor del selectpicker en estado deshabilitado. |
 | `--wui-selectpicker-opener-openicon-src`            | Fuente de la imagen del icono de apertura del selectpicker<br>(formato: `url()` o `none` para utilizar la fuente predeterminada). |
 | `--wui-selectpicker-opener-closeicon-src`           | Fuente de la imagen del icono de cierre del selectpicker<br>(formato: `url()` o `none` para utilizar la fuente predeterminada). |
-| `--wui-selectpicker-viewinput-paddingleft`          | Padding izquierdo del campo de entrada de visualización. |
+| `--wui-selectpicker-viewinput-leftpadding`          | Padding izquierdo del campo de entrada de visualización. |
 | `--wui-selectpicker-viewinput-textcolor-out`        | Color del texto del campo de entrada de visualización en estado normal. |
 | `--wui-selectpicker-viewinput-textcolor-over`       | Color del texto del campo de entrada de visualización en estado hover. |
 | `--wui-selectpicker-viewinput-textcolor-disabled`   | Color del texto del campo de entrada de visualización en estado deshabilitado. |
@@ -4585,7 +4598,7 @@ Configuración CSS:
 	--wui-selectpicker-opener-iconcolor-disabled: #d5dce3;
 	--wui-selectpicker-opener-openicon-src: none;
 	--wui-selectpicker-opener-closeicon-src: none;
-	--wui-selectpicker-viewinput-paddingleft: 10px;
+	--wui-selectpicker-viewinput-leftpadding: 10px;
 	--wui-selectpicker-viewinput-textcolor-out: #2d3a47;
 	--wui-selectpicker-viewinput-textcolor-over: #1f2937;
 	--wui-selectpicker-viewinput-textcolor-disabled: #d5dce3;
@@ -4654,8 +4667,8 @@ nav {
 Cabecera HTML:
 
 ```html
-<link type="text/css" rel="stylesheet" href="./libraries/wui-js/main/selectpicker/wui-selectpicker-0.3.css">
-<script type="text/javascript" src="./libraries/wui-js/main/selectpicker/wui-selectpicker-0.3.js"></script>
+<link type="text/css" rel="stylesheet" href="./libraries/wui-js/main/selectpicker/wui-selectpicker-0.4.css">
+<script type="text/javascript" src="./libraries/wui-js/main/selectpicker/wui-selectpicker-0.4.js"></script>
 ```
 
 Código HTML:
@@ -4739,8 +4752,8 @@ Componente para la implementación de entradas de datos de tipo fecha basada en 
 
 | Tipo | Archivo |
 | ---- | ------- |
-| CSS  | [src/wui-js/main/datepicker/wui-datepicker-0.3.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/datepicker/wui-datepicker-0.3.css) |
-| JS   | [src/wui-js/main/datepicker/wui-datepicker-0.3.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/datepicker/wui-datepicker-0.3.js) |
+| CSS  | [src/wui-js/main/datepicker/wui-datepicker-0.4.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/datepicker/wui-datepicker-0.4.css) |
+| JS   | [src/wui-js/main/datepicker/wui-datepicker-0.4.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/datepicker/wui-datepicker-0.4.js) |
 
 #### Constructor
 
@@ -4801,7 +4814,7 @@ Componente para la implementación de entradas de datos de tipo fecha basada en 
 | `--wui-datepicker-opener-iconcolor-disabled`     | Color del icono del abridor del datepicker en estado deshabilitado. |
 | `--wui-datepicker-opener-openicon-src`           | Fuente de la imagen del icono de apertura del datepicker<br>(formato: `url()` o `none` para utilizar la fuente predeterminada). |
 | `--wui-datepicker-opener-closeicon-src`          | Fuente de la imagen del icono de cierre del datepicker<br>(formato: `url()` o `none` para utilizar la fuente predeterminada). |
-| `--wui-datepicker-viewinput-paddingleft`         | Padding izquierdo de los campos de entrada de visualización. |
+| `--wui-datepicker-viewinput-leftpadding`         | Padding izquierdo de los campos de entrada de visualización. |
 | `--wui-datepicker-viewinput-textcolor-out`       | Color del texto de los campos de entrada de visualización en estado normal. |
 | `--wui-datepicker-viewinput-textcolor-over`      | Color del texto de los campos de entrada de visualización en estado hover. |
 | `--wui-datepicker-viewinput-textcolor-disabled`  | Color del texto de los campos de entrada de visualización en estado deshabilitado. |
@@ -4857,7 +4870,7 @@ Configuración CSS:
 	--wui-datepicker-opener-iconcolor-disabled: #d5dce3;
 	--wui-datepicker-opener-openicon-src: none;
 	--wui-datepicker-opener-closeicon-src: none;
-	--wui-datepicker-viewinput-paddingleft: 10px;
+	--wui-datepicker-viewinput-leftpadding: 10px;
 	--wui-datepicker-viewinput-textcolor-out: #2d3a47;
 	--wui-datepicker-viewinput-textcolor-over: #1f2937;
 	--wui-datepicker-viewinput-textcolor-disabled: #d5dce3;
@@ -4930,8 +4943,8 @@ nav {
 Cabecera HTML:
 
 ```html
-<link type="text/css" rel="stylesheet" href="./libraries/wui-js/main/datepicker/wui-datepicker-0.3.css">
-<script type="text/javascript" src="./libraries/wui-js/main/datepicker/wui-datepicker-0.3.js"></script>
+<link type="text/css" rel="stylesheet" href="./libraries/wui-js/main/datepicker/wui-datepicker-0.4.css">
+<script type="text/javascript" src="./libraries/wui-js/main/datepicker/wui-datepicker-0.4.js"></script>
 ```
 
 Código HTML:
@@ -4993,8 +5006,8 @@ Componente para la implementación de entradas de datos de tipo hora basada en e
 
 | Tipo | Archivo |
 | ---- | ------- |
-| CSS  | [src/wui-js/main/timepicker/wui-timepicker-0.3.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/timepicker/wui-timepicker-0.3.css) |
-| JS   | [src/wui-js/main/timepicker/wui-timepicker-0.3.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/timepicker/wui-timepicker-0.3.js) |
+| CSS  | [src/wui-js/main/timepicker/wui-timepicker-0.4.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/timepicker/wui-timepicker-0.4.css) |
+| JS   | [src/wui-js/main/timepicker/wui-timepicker-0.4.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/timepicker/wui-timepicker-0.4.js) |
 
 #### Constructor
 
@@ -5050,7 +5063,7 @@ Componente para la implementación de entradas de datos de tipo hora basada en e
 | `--wui-timepicker-opener-iconcolor-disabled`     | Color del icono del abridor del timepicker en estado deshabilitado. |
 | `--wui-timepicker-opener-openicon-src`           | Fuente de la imagen del icono de apertura del timepicker<br>(formato: `url()` o `none` para utilizar la fuente predeterminada). |
 | `--wui-timepicker-opener-closeicon-src`          | Fuente de la imagen del icono de cierre del timepicker<br>(formato: `url()` o `none` para utilizar la fuente predeterminada). |
-| `--wui-timepicker-viewinput-paddingleft`         | Padding izquierdo de los campos de entrada de visualización. |
+| `--wui-timepicker-viewinput-leftpadding`         | Padding izquierdo de los campos de entrada de visualización. |
 | `--wui-timepicker-viewinput-textcolor-out`       | Color del texto de los campos de entrada de visualización en estado normal. |
 | `--wui-timepicker-viewinput-textcolor-over`      | Color del texto de los campos de entrada de visualización en estado hover. |
 | `--wui-timepicker-viewinput-textcolor-disabled`  | Color del texto de los campos de entrada de visualización en estado deshabilitado. |
@@ -5089,7 +5102,7 @@ Configuración CSS:
 	--wui-timepicker-opener-iconcolor-disabled: #d5dce3;
 	--wui-timepicker-opener-openicon-src: none;
 	--wui-timepicker-opener-closeicon-src: none;
-	--wui-timepicker-viewinput-paddingleft: 10px;
+	--wui-timepicker-viewinput-leftpadding: 10px;
 	--wui-timepicker-viewinput-textcolor-out: #2d3a47;
 	--wui-timepicker-viewinput-textcolor-over: #1f2937;
 	--wui-timepicker-viewinput-textcolor-disabled: #d5dce3;
@@ -5145,8 +5158,8 @@ nav {
 Cabecera HTML:
 
 ```html
-<link type="text/css" rel="stylesheet" href="./libraries/wui-js/main/timepicker/wui-timepicker-0.3.css">
-<script type="text/javascript" src="./libraries/wui-js/main/timepicker/wui-timepicker-0.3.js"></script>
+<link type="text/css" rel="stylesheet" href="./libraries/wui-js/main/timepicker/wui-timepicker-0.4.css">
+<script type="text/javascript" src="./libraries/wui-js/main/timepicker/wui-timepicker-0.4.js"></script>
 ```
 
 Código HTML:
@@ -5198,7 +5211,7 @@ window.addEventListener("DOMContentLoaded", init);
 
 ### WUIColorpicker
 
-Versión: `0.2`
+Versión: `0.3`
 
 Componente para la implementación de entradas de datos de tipo selector de color basada en el elemento HTML `<input type="color">`.
 
@@ -5206,8 +5219,8 @@ Componente para la implementación de entradas de datos de tipo selector de colo
 
 | Tipo | Archivo |
 | ---- | ------- |
-| CSS  | [src/wui-js/main/colorpicker/wui-colorpicker-0.3.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/colorpicker/wui-colorpicker-0.3.css) |
-| JS   | [src/wui-js/main/colorpicker/wui-colorpicker-0.3.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/colorpicker/wui-colorpicker-0.3.js) |
+| CSS  | [src/wui-js/main/colorpicker/wui-colorpicker-0.4.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/colorpicker/wui-colorpicker-0.4.css) |
+| JS   | [src/wui-js/main/colorpicker/wui-colorpicker-0.4.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/colorpicker/wui-colorpicker-0.4.js) |
 
 #### Constructor
 
@@ -5369,8 +5382,8 @@ nav {
 Código HTML:
 
 ```html
-<link type="text/css" rel="stylesheet" href="./libraries/wui-js/main/colorpicker/wui-colorpicker-0.3.css">
-<script type="text/javascript" src="./libraries/wui-js/main/colorpicker/wui-colorpicker-0.3.js"></script>
+<link type="text/css" rel="stylesheet" href="./libraries/wui-js/main/colorpicker/wui-colorpicker-0.4.css">
+<script type="text/javascript" src="./libraries/wui-js/main/colorpicker/wui-colorpicker-0.4.js"></script>
 ```
 
 Código HTML:
@@ -5421,7 +5434,7 @@ window.addEventListener("DOMContentLoaded", init);
 
 ### WUISwitch
 
-Versión: `0.3`
+Versión: `0.4`
 
 Componente para la implementación de entradas de datos de tipo casilla de verificación basada en el elemento HTML `<input type="checkbox">`.
 
@@ -5429,8 +5442,8 @@ Componente para la implementación de entradas de datos de tipo casilla de verif
 
 | Tipo | Archivo |
 | ---- | ------- |
-| CSS  | [src/wui-js/main/switch/wui-switch-0.4.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/switch/wui-switch-0.4.css) |
-| JS   | [src/wui-js/main/switch/wui-switch-0.4.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/switch/wui-switch-0.4.js) |
+| CSS  | [src/wui-js/main/switch/wui-switch-0.5.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/switch/wui-switch-0.5.css) |
+| JS   | [src/wui-js/main/switch/wui-switch-0.5.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/switch/wui-switch-0.5.js) |
 
 #### Constructor
 
@@ -5539,8 +5552,8 @@ nav {
 Cabecera HTML:
 
 ```html
-<link type="text/css" rel="stylesheet" href="./libraries/wui-js/main/switch/wui-switch-0.4.css">
-<script type="text/javascript" src="./libraries/wui-js/main/switch/wui-switch-0.4.js"></script>
+<link type="text/css" rel="stylesheet" href="./libraries/wui-js/main/switch/wui-switch-0.5.css">
+<script type="text/javascript" src="./libraries/wui-js/main/switch/wui-switch-0.5.js"></script>
 ```
 
 Código HTML:
@@ -5584,7 +5597,7 @@ window.addEventListener("DOMContentLoaded", init);
 
 ### WUIIntensity
 
-Versión: `0.1`
+Versión: `0.2`
 
 Componente para la implementación de entradas de datos de tipo selector de intensidad de 4 niveles: nada, bajo, medio y alto basada en el elemento HTML `<input type="range">`.
 
@@ -5592,8 +5605,8 @@ Componente para la implementación de entradas de datos de tipo selector de inte
 
 | Tipo | Archivo |
 | ---- | ------- |
-| CSS  | [src/wui-js/main/intensity/wui-intensity-0.2.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/intensity/wui-intensity-0.2.css) |
-| JS   | [src/wui-js/main/intensity/wui-intensity-0.2.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/intensity/wui-intensity-0.2.js) |
+| CSS  | [src/wui-js/main/intensity/wui-intensity-0.3.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/intensity/wui-intensity-0.3.css) |
+| JS   | [src/wui-js/main/intensity/wui-intensity-0.3.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/intensity/wui-intensity-0.3.js) |
 
 #### Constructor
 
@@ -5679,8 +5692,8 @@ nav {
 Cabecera HTML:
 
 ```html
-<link type="text/css" rel="stylesheet" href="./libraries/wui-js/main/intensity/wui-intensity-0.2.css">
-<script type="text/javascript" src="./libraries/wui-js/main/intensity/wui-intensity-0.2.js"></script>
+<link type="text/css" rel="stylesheet" href="./libraries/wui-js/main/intensity/wui-intensity-0.3.css">
+<script type="text/javascript" src="./libraries/wui-js/main/intensity/wui-intensity-0.3.js"></script>
 ```
 
 Código HTML:
@@ -5723,16 +5736,16 @@ window.addEventListener("DOMContentLoaded", init);
 
 ### WUIButton
 
-Versión: `0.2`
+Versión: `0.4`
 
-Componente para la implementación de botones.
+Componente para la implementación de botones basada en el elemento HTML `<button>`.
 
 #### Fuentes
 
 | Tipo | Archivo |
 | ---- | ------- |
-| CSS  | [src/wui-js/main/button/wui-button-0.3.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/button/wui-button-0.3.css) |
-| JS   | [src/wui-js/main/button/wui-button-0.3.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/button/wui-button-0.3.js) |
+| CSS  | [src/wui-js/main/button/wui-button-0.4.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/button/wui-button-0.4.css) |
+| JS   | [src/wui-js/main/button/wui-button-0.4.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/button/wui-button-0.4.js) |
 
 #### Constructor
 
@@ -5745,8 +5758,14 @@ Componente para la implementación de botones.
 | Propiedad    | Tipo       | Valor predeterminado | Descripción |
 | ------------ | ---------- | -------------------- | ----------- |
 | selector     | `string`   | `".wui-button"`      | (get/set)<br><br>Selector CSS que define el elemento HTML de tipo `HTMLButtonElement` que serán convertido en el objeto. En caso de existir más de un elemento coincidente con el selector se incluirá únicamente la primera coincidencia. |
-| text         | `string`   | `""`                 | (get/set)<br><br>Texto o contenido HTML del elemento. |
-| selectable   | `boolean`  | `true`               | (get/set)<br><br>Define si el botón es seleccionable. |
+| text         | `string`   | `""`                 | (get/set)<br><br>Texto o contenido HTML del elemento. Se usa solo cuando `textClass` es `null`. |
+| textClass    | `string`   | `null`               | (get/set)<br><br>Clase CSS aplicada al elemento `<span>` renderizado dentro del botón. Cuando no es `null`, se renderiza `<span class="{textClass}">` en lugar del texto plano. |
+| textData     | `array`    | `null`               | (get/set)<br><br>Arreglo de pares `[key, value]` agregados como atributos `data-*` al elemento `<span>`. Requiere que `textClass` esté definido. Ejemplo: `[["id", "42"], ["lang", "es"]]` genera `data-id="42" data-lang="es"`. |
+| iconClass    | `string`   | `null`               | (get/set)<br><br>Clase CSS aplicada a un elemento `<div>` renderizado antes del `<span>` dentro del botón. Cuando no es `null`, se antepone `<div class="{iconClass}">` al contenido del botón. Tiene precedencia sobre `iconImage`. |
+| iconImage    | `string`   | `null`               | (get/set)<br><br>URL de una imagen renderizada como `<img src="{iconImage}">` antes del `<span>` dentro del botón. Se usa solo cuando `iconClass` es `null`. |
+| submittable  | `boolean`  | `false`              | (get/set)<br><br>Cuando es `true`, agrega la clase CSS `submittable` al elemento `<button>`, aplicando los estilos de botón de envío. |
+| warnable     | `boolean`  | `false`              | (get/set)<br><br>Cuando es `true`, agrega la clase CSS `warnable` al elemento `<button>`, aplicando los estilos de botón de advertencia. |
+| selectable   | `boolean`  | `false`              | (get/set)<br><br>Define si el botón es seleccionable. |
 | locked       | `boolean`  | `false`              | (get/set)<br><br>Define si el botón está bloqueado. |
 | enabled      | `boolean`  | `true`               | (get/set)<br><br>Define si el botón está habilitado. |
 | onClick      | `function` | `null`               | (get/set)<br><br>Función que se ejecuta cuando el botón es presionado. La función no recibe parámetros. |
@@ -5782,21 +5801,21 @@ Componente para la implementación de botones.
 | `--wui-button-default-textcolor-selected`   | Color del texto del botón por defecto en estado seleccionado. |
 | `--wui-button-default-textcolor-disabled`   | Color del texto del botón por defecto en estado deshabilitado. |
 | `--wui-button-default-textsize`             | Tamaño del texto del botón por defecto. |
-| `--wui-button-submit-minwidth`              | Ancho mínimo del botón de envío. |
-| `--wui-button-submit-height`                | Altura del botón de envío. |
-| `--wui-button-submit-bordercolor-out`       | Color del borde del botón de envío en estado normal. |
-| `--wui-button-submit-bordercolor-over`      | Color del borde del botón de envío en estado hover. |
-| `--wui-button-submit-bordercolor-selected`  | Color del borde del botón de envío en estado seleccionado. |
-| `--wui-button-submit-bordercolor-disabled`  | Color del borde del botón de envío en estado deshabilitado. |
-| `--wui-button-submit-bgcolor-out`           | Color de fondo del botón de envío en estado normal. |
-| `--wui-button-submit-bgcolor-over`          | Color de fondo del botón de envío en estado hover. |
-| `--wui-button-submit-bgcolor-selected`      | Color de fondo del botón de envío en estado seleccionado. |
-| `--wui-button-submit-bgcolor-disabled`      | Color de fondo del botón de envío en estado deshabilitado. |
-| `--wui-button-submit-textcolor-out`         | Color del texto del botón de envío en estado normal. |
-| `--wui-button-submit-textcolor-over`        | Color del texto del botón de envío en estado hover. |
-| `--wui-button-submit-textcolor-selected`    | Color del texto del botón de envío en estado seleccionado. |
-| `--wui-button-submit-textcolor-disabled`    | Color del texto del botón de envío en estado deshabilitado. |
-| `--wui-button-submit-textsize`              | Tamaño del texto del botón de envío. |
+| `--wui-button-submittable-minwidth`              | Ancho mínimo del botón de envío. |
+| `--wui-button-submittable-height`                | Altura del botón de envío. |
+| `--wui-button-submittable-bordercolor-out`       | Color del borde del botón de envío en estado normal. |
+| `--wui-button-submittable-bordercolor-over`      | Color del borde del botón de envío en estado hover. |
+| `--wui-button-submittable-bordercolor-selected`  | Color del borde del botón de envío en estado seleccionado. |
+| `--wui-button-submittable-bordercolor-disabled`  | Color del borde del botón de envío en estado deshabilitado. |
+| `--wui-button-submittable-bgcolor-out`           | Color de fondo del botón de envío en estado normal. |
+| `--wui-button-submittable-bgcolor-over`          | Color de fondo del botón de envío en estado hover. |
+| `--wui-button-submittable-bgcolor-selected`      | Color de fondo del botón de envío en estado seleccionado. |
+| `--wui-button-submittable-bgcolor-disabled`      | Color de fondo del botón de envío en estado deshabilitado. |
+| `--wui-button-submittable-textcolor-out`         | Color del texto del botón de envío en estado normal. |
+| `--wui-button-submittable-textcolor-over`        | Color del texto del botón de envío en estado hover. |
+| `--wui-button-submittable-textcolor-selected`    | Color del texto del botón de envío en estado seleccionado. |
+| `--wui-button-submittable-textcolor-disabled`    | Color del texto del botón de envío en estado deshabilitado. |
+| `--wui-button-submittable-textsize`              | Tamaño del texto del botón de envío. |
 | `--wui-button-warning-bordercolor-out`      | Color del borde del botón de advertencia en estado normal. |
 | `--wui-button-warning-bordercolor-over`     | Color del borde del botón de advertencia en estado hover. |
 | `--wui-button-warning-bordercolor-selected` | Color del borde del botón de advertencia en estado seleccionado. |
@@ -5811,7 +5830,7 @@ Componente para la implementación de botones.
 | `--wui-button-warning-textcolor-disabled`   | Color del texto del botón de advertencia en estado deshabilitado. |
 | `--wui-button-icon-float-padding`           | Padding de los iconos flotantes del botón. |
 | `--wui-button-mobile-default-height`        | Altura del botón por defecto en modo móvil (ancho de pantalla menor a 768px). |
-| `--wui-button-mobile-submit-height`         | Altura del botón de envío en modo móvil (ancho de pantalla menor a 768px). |
+| `--wui-button-mobile-submittable-height`         | Altura del botón de envío en modo móvil (ancho de pantalla menor a 768px). |
 | `--wui-button-mobile-icon-float-padding`    | Padding de los iconos flotantes del botón en modo móvil (ancho de pantalla menor a 768px). |
 | `--wui-button-form-default-minwidth`        | Ancho mínimo del botón por defecto cuando se usa en formularios. |
 
@@ -5844,21 +5863,21 @@ Configuración CSS:
 	--wui-button-default-textcolor-selected: #fff;
 	--wui-button-default-textcolor-disabled: #d5dce3;
 	--wui-button-default-textsize: 15px;
-	--wui-button-submit-minwidth: 200px;
-	--wui-button-submit-height: 34px;
-	--wui-button-submit-bordercolor-out: rgb(from #1e90ff r g b / 20%);
-	--wui-button-submit-bordercolor-over: #1e90ff;
-	--wui-button-submit-bordercolor-selected: #1e90ff;
-	--wui-button-submit-bordercolor-disabled: #d5dce3;
-	--wui-button-submit-bgcolor-out: #1e90ff;
-	--wui-button-submit-bgcolor-over: #1e90ff;
-	--wui-button-submit-bgcolor-selected: #1e90ff;
-	--wui-button-submit-bgcolor-disabled: #d5dce3;
-	--wui-button-submit-textcolor-out: #fff;
-	--wui-button-submit-textcolor-over: #fff;
-	--wui-button-submit-textcolor-selected: #fff;
-	--wui-button-submit-textcolor-disabled: #d5dce3;
-	--wui-button-submit-textsize: 15px;
+	--wui-button-submittable-minwidth: 200px;
+	--wui-button-submittable-height: 34px;
+	--wui-button-submittable-bordercolor-out: rgb(from #1e90ff r g b / 20%);
+	--wui-button-submittable-bordercolor-over: #1e90ff;
+	--wui-button-submittable-bordercolor-selected: #1e90ff;
+	--wui-button-submittable-bordercolor-disabled: #d5dce3;
+	--wui-button-submittable-bgcolor-out: #1e90ff;
+	--wui-button-submittable-bgcolor-over: #1e90ff;
+	--wui-button-submittable-bgcolor-selected: #1e90ff;
+	--wui-button-submittable-bgcolor-disabled: #d5dce3;
+	--wui-button-submittable-textcolor-out: #fff;
+	--wui-button-submittable-textcolor-over: #fff;
+	--wui-button-submittable-textcolor-selected: #fff;
+	--wui-button-submittable-textcolor-disabled: #d5dce3;
+	--wui-button-submittable-textsize: 15px;
 	--wui-button-warning-bordercolor-out: rgb(from #f44343 r g b / 25%);
 	--wui-button-warning-bordercolor-over: #f44343;
 	--wui-button-warning-bordercolor-selected: #f44343;
@@ -5873,7 +5892,7 @@ Configuración CSS:
 	--wui-button-warning-textcolor-disabled: #d5dce3;
 	--wui-button-icon-float-padding: 5px;
 	--wui-button-mobile-default-height: 40px;
-	--wui-button-mobile-submit-height: 40px;
+	--wui-button-mobile-submittable-height: 40px;
 	--wui-button-mobile-icon-float-padding: 10px;
 	--wui-button-form-default-minwidth: 100px;
 }
@@ -5909,19 +5928,16 @@ Cabecera HTML:
 
 ```html
 <link type="text/css" rel="stylesheet" href="./libraries/wui-js/main/icon/wui-icon-0.2.css">
-<link type="text/css" rel="stylesheet" href="./libraries/wui-js/main/button/wui-button-0.3.css">
-<script type="text/javascript" src="./libraries/wui-js/main/button/wui-button-0.3.js"></script>
+<link type="text/css" rel="stylesheet" href="./libraries/wui-js/main/button/wui-button-0.4.css">
+<script type="text/javascript" src="./libraries/wui-js/main/button/wui-button-0.4.js"></script>
 ```
 
 Código HTML:
 
 ```html
 <nav>
-	<button class="wui-button my-button button1">button 1</button>
-	<button class="wui-button my-button button2 submit">
-		<div class="wui-icon float-left mappointer-fill"></div>
-		<span>button 2</span>
-	</button>
+	<button class="wui-button my-button button1"></button>
+	<button class="wui-button my-button button2"></button>
 	<div class="my-output"></div>
 </nav>
 ```
@@ -5933,7 +5949,12 @@ const init = () => {
 	const output = document.body.querySelector(".my-output");
 	const button1 = new WUIButton({
 		selector: ".wui-button.button1",
-		//text: "",
+		text: "button 1",
+		//textClass: null,
+		//textData: null,
+		//iconClass: null,
+		//iconImage: null,
+		//submittable: false,
 		//selectable: false,
 		//locked: false,
 		//enabled: true,
@@ -5946,10 +5967,10 @@ const init = () => {
 	});
 	const button2 = new WUIButton({
 		selector: ".wui-button.button2",
-		//text: "",
-		//selectable: false,
-		//locked: false,
-		//enabled: true,
+		iconClass: "wui-icon float-left mappointer-fill",
+		textClass: "my-label",
+		textData: [["action", "navigate"]],
+		submittable: true,
 		onClick: () => {
 			output.textContent = "Clic button 2";
 		},

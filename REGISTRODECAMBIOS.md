@@ -1,10 +1,44 @@
 # Registro de Cambios
 
+## [v0.5.2] - 2026-04-19
+
+Características:
+
+1. Se actualizó cargador de recursos `wui.js`.
+2. Se actualizó versión clase WUIModal a 0.4.
+	- Se agregó la variable CSS `--wui-modal-mobile-page-box-topmargin` para mejorar compatibilidad con pantallas iPhone.
+	- Se agregó la variable CSS `--wui-modal-mobile-page-box-borderradius-maximized` para mejorar compatibilidad con pantallas iPhone.
+	- Se corrigió error en el método `close()` donde no se redimensionaba el modal subyacente al cerrar el modal actual.
+3. Se actualizó versión clase WUIMenubar a 0.3.
+	- Se agregó la propiedad `compacted`.
+	- Se agregó la variable CSS `--wui-menubar-mobile-bar-horizpadding` para mejorar compatibilidad con pantallas iPhone.
+	- Se agregó la variable CSS `--wui-menubar-mobile-bar-vertpadding` para mejorar compatibilidad con pantallas iPhone.
+4. Actualización versión clase WUISelectpicker a 0.4.
+	- Se mejoró el método `init()` para soporte de elementos HTML vacíos.
+5. Actualización versión clase WUIDatepicker a 0.4.
+	- Se mejoró el método `init()` para soporte de elementos HTML vacíos.
+6. Actualización versión clase WUITimepicker a 0.4.
+	- Se mejoró el método `init()` para soporte de elementos HTML vacíos.
+7. Actualización versión clase WUIColorpicker a 0.4.
+	- Se mejoró el método `init()` para soporte de elementos HTML vacíos.
+8. Actualización versión clase WUISwitch a 0.5.
+	- Se mejoró el método `init()` para soporte de elementos HTML vacíos.
+9. Actualización versión clase WUIIntensity a 0.3.
+	- Se mejoró el método `init()` para soporte de elementos HTML vacíos.
+10. Actualización versión clase WUIButton a 0.4.
+	- Se agregó la propiedad `textClass`.
+	- Se agregó la propiedad `textData`.
+	- Se agregó la propiedad `iconClass`.
+	- Se agregó la propiedad `iconImage`.
+	- Se agregó la propiedad `submittable`.
+	- Se agregó la propiedad `warnable`.
+	- Se mejoró el método `init()` para soporte de elementos HTML vacíos.
+
 ## [v0.5.1] - 2026-04-09
 
 Características:
 
-1. Se actualizó el cargador de recursos `wui.js`.
+1. Se actualizó cargador de recursos `wui.js`.
 
 ## [v0.5.0] - 2026-04-09
 
@@ -97,7 +131,7 @@ Características:
 	- Se cambié el nombre de la variable CSS `--wui-slider-dot-bgcolor-selected` a `--wui-slider-paging-bgcolor-visible`.
 	- Se eliminó la variable CSS `--wui-slider-dots-bgcolor`.
 5. Actualización versión clase WUITable a 0.3.
-	- Se agregó propiedad `resetPaging`.
+	- Se agregó la propiedad `resetPaging`.
 	- Se agregó columna de relleno para mantener el ancho de la tabla.
 6. Actualización versión clase WUIForm a 0.3.
 	- Se agregó compatibilidad con WUISwitch versión 0.3.
@@ -218,7 +252,7 @@ Características:
 	- Se corrigió error para asegurar referencia a elementos del DOM de tipo `HTMLInputElement`.
 22. Actualización versión clase WUIButton a 0.2.
 	- Se agregó soporte para valores privados.
-	- Se agregó propiedad `onDblClick`.
+	- Se agregó la propiedad `onDblClick`.
 	- Se corrigió error para asegurar referencia a elementos del DOM de tipo `HTMLButtonElement`.
 
 ## [v0.1.0] - 2024-05-01

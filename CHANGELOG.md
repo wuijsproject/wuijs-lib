@@ -1,5 +1,39 @@
 # Change Log
 
+## [v0.5.2] - 2026-04-19
+
+Features:
+
+1. Updated the resource loader `wui.js`.
+2. WUIModal version class update to 0.4.
+	- Added the CSS variable `--wui-modal-mobile-page-box-topmargin` to improve compatibility with iPhone screens.
+	- Added the CSS variable `--wui-modal-mobile-page-box-borderradius-maximized` to improve compatibility with iPhone screens.
+	- Fixed bug in the `close()` method where the underlying modal was not resized when the current modal was closed.
+3. WUIMenubar version class update to 0.3.
+	- Added the `compacted` property.
+	- Added the CSS variable `--wui-menubar-mobile-bar-horizpadding` to improve compatibility with iPhone screens.
+	- Added the CSS variable `--wui-menubar-mobile-bar-vertpadding` to improve compatibility with iPhone screens.
+4. WUISelectpicker version class update to 0.4.
+	- Improved the `init()` method for support of empty HTML elements.
+5. WUIDatepicker version class update to 0.4.
+	- Improved the `init()` method for support of empty HTML elements.
+6. WUITimepicker version class update to 0.4.
+	- Improved the `init()` method for support of empty HTML elements.
+7. WUIColorpicker version class update to 0.4.
+	- Improved the `init()` method for support of empty HTML elements.
+8. WUISwitch version class update to 0.5.
+	- Improved the `init()` method for support of empty HTML elements.
+9. WUIIntensity version class update to 0.2.
+	- Improved the `init()` method for support of empty HTML elements.
+10. WUIButton version class update to 0.4.
+	- Added the `textClass` property.
+	- Added the `textData` property.
+	- Added the `iconClass` property.
+	- Added the `iconImage` property.
+	- Added the `submittable` property.
+	- Added the `warnable` property.
+	- Improved the `init()` method for support of empty HTML elements.
+
 ## [v0.5.1] - 2026-04-09
 
 Features:
