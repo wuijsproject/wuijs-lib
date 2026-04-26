@@ -5,7 +5,7 @@
 > Este documento aún no ha sido terminado y esta en una versión preliminar.
 
 > [!NOTE]
-> For the English version of this document, see [README.md](./README.md).
+> For the English version of this document, see [README-en.md](https://github.com/wui-js/wuijs-main-lib/blob/main/docs/README-en.md)
 
 # wuijs-main-lib
 
@@ -13,9 +13,9 @@
 	<img src="https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/logo/wuijs-main-logotype-color.svg" width="220" height="220">
 </div>
 
-**Versión librería**: `0.5.2` ([Registro de Cambios](./REGISTRODECAMBIOS.md))
+**Versión librería**: `0.5.2` ([Registro de Cambios](https://github.com/wui-js/wuijs-main-lib/blob/main/docs/CHANGELOG-es.md))
 
-**Versión documentación**: `0.5.2.20260419.0`
+**Versión documentación**: `0.5.2.20260425.0`
 
 **Licencia**: `Licencia Apache 2.0`
 
