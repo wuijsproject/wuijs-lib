@@ -30,8 +30,9 @@ Features:
 	- Added the `textData` property.
 	- Added the `iconClass` property.
 	- Added the `iconImage` property.
-	- Added the `submittable` property.
-	- Added the `warnable` property.
+	- Added the `submit` property.
+	- Added the `warning` property.
+	- Added the `flat` property.
 	- Improved the `init()` method for support of empty HTML elements.
 
 ## [v0.5.1] - 2026-04-09

@@ -30,8 +30,9 @@ Características:
 	- Se agregó la propiedad `textData`.
 	- Se agregó la propiedad `iconClass`.
 	- Se agregó la propiedad `iconImage`.
-	- Se agregó la propiedad `submittable`.
-	- Se agregó la propiedad `warnable`.
+	- Se agregó la propiedad `submit`.	
+	- Se agregó la propiedad `warning`.
+	- Se agregó la propiedad `flat`.
 	- Se mejoró el método `init()` para soporte de elementos HTML vacíos.
 
 ## [v0.5.1] - 2026-04-09

@@ -229,8 +229,8 @@ CSS code in the `wui.css` file:
 	--wui-modal-body-scroll-bgcolor-out: rgb(from #353a40 r g b / 20%);
 	--wui-modal-body-scroll-bgcolor-over: rgb(from #353a40 r g b / 40%);
 	--wui-modal-footer-bordercolor: transparent;
-	--wui-modal-button-submittable-bgcolor-mobile: rgb(from #959da5 r g b / 20%);
-	--wui-modal-button-submittable-textcolor-mobile: #1e90ff;
+	--wui-modal-button-submit-bgcolor-mobile: rgb(from #959da5 r g b / 20%);
+	--wui-modal-button-submit-textcolor-mobile: #1e90ff;
 	--wui-modal-button-warning-textcolor-mobile: #f44343;
 	--wui-modal-message-box-width: 280px;
 	--wui-modal-message-box-bgcolor: rgb(from #efeff6 r g b / 80%);
@@ -692,21 +692,21 @@ CSS code in the `wui.css` file:
 	--wui-button-default-textcolor-selected: #fff;
 	--wui-button-default-textcolor-disabled: #d5dce3;
 	--wui-button-default-textsize: 15px;
-	--wui-button-submittable-minwidth: 200px;
-	--wui-button-submittable-height: 34px;
-	--wui-button-submittable-bordercolor-out: rgb(from #1e90ff r g b / 20%);
-	--wui-button-submittable-bordercolor-over: #1e90ff;
-	--wui-button-submittable-bordercolor-selected: #1e90ff;
-	--wui-button-submittable-bordercolor-disabled: #d5dce3;
-	--wui-button-submittable-bgcolor-out: #1e90ff;
-	--wui-button-submittable-bgcolor-over: #1e90ff;
-	--wui-button-submittable-bgcolor-selected: #1e90ff;
-	--wui-button-submittable-bgcolor-disabled: #d5dce3;
-	--wui-button-submittable-textcolor-out: #fff;
-	--wui-button-submittable-textcolor-over: #fff;
-	--wui-button-submittable-textcolor-selected: #fff;
-	--wui-button-submittable-textcolor-disabled: #d5dce3;
-	--wui-button-submittable-textsize: 15px;
+	--wui-button-submit-minwidth: 200px;
+	--wui-button-submit-height: 34px;
+	--wui-button-submit-bordercolor-out: rgb(from #1e90ff r g b / 20%);
+	--wui-button-submit-bordercolor-over: #1e90ff;
+	--wui-button-submit-bordercolor-selected: #1e90ff;
+	--wui-button-submit-bordercolor-disabled: #d5dce3;
+	--wui-button-submit-bgcolor-out: #1e90ff;
+	--wui-button-submit-bgcolor-over: #1e90ff;
+	--wui-button-submit-bgcolor-selected: #1e90ff;
+	--wui-button-submit-bgcolor-disabled: #d5dce3;
+	--wui-button-submit-textcolor-out: #fff;
+	--wui-button-submit-textcolor-over: #fff;
+	--wui-button-submit-textcolor-selected: #fff;
+	--wui-button-submit-textcolor-disabled: #d5dce3;
+	--wui-button-submit-textsize: 15px;
 	--wui-button-warning-bordercolor-out: rgb(from #f44343 r g b / 25%);
 	--wui-button-warning-bordercolor-over: #f44343;
 	--wui-button-warning-bordercolor-selected: #f44343;
@@ -721,7 +721,7 @@ CSS code in the `wui.css` file:
 	--wui-button-warning-textcolor-disabled: #d5dce3;
 	--wui-button-icon-float-padding: 5px;
 	--wui-button-mobile-default-height: 40px;
-	--wui-button-mobile-submittable-height: 40px;
+	--wui-button-mobile-submit-height: 40px;
 	--wui-button-mobile-icon-float-padding: 10px;
 	--wui-button-form-default-minwidth: 100px;
 }
@@ -2137,8 +2137,8 @@ Component for the implementation of dialog boxes (type `message`) and pop-up win
 | `--wui-modal-body-scroll-bgcolor-out`                | Scrollbar color of the body in normal state. |
 | `--wui-modal-body-scroll-bgcolor-over`               | Scrollbar color of the body in hover state. |
 | `--wui-modal-footer-bordercolor`                     | Border color of the modal footer. |
-| `--wui-modal-button-submittable-bgcolor-mobile`           | Background color of the submittable button in mobile mode. |
-| `--wui-modal-button-submittable-textcolor-mobile`         | Text color of the submittable button in mobile mode. |
+| `--wui-modal-button-submit-bgcolor-mobile`           | Background color of the submit button in mobile mode. |
+| `--wui-modal-button-submit-textcolor-mobile`         | Text color of the submit button in mobile mode. |
 | `--wui-modal-button-warning-textcolor-mobile`        | Text color of the warning button in mobile mode. |
 | `--wui-modal-message-box-width`                      | Width of the message type modal box. |
 | `--wui-modal-message-box-bgcolor`                    | Background color of the message type modal box. |
@@ -2186,8 +2186,8 @@ CSS settings:
 	--wui-modal-body-scroll-bgcolor-out: rgb(from #353a40 r g b / 20%);
 	--wui-modal-body-scroll-bgcolor-over: rgb(from #353a40 r g b / 40%);
 	--wui-modal-footer-bordercolor: transparent;
-	--wui-modal-button-submittable-bgcolor-mobile: rgb(from #959da5 r g b / 20%);
-	--wui-modal-button-submittable-textcolor-mobile: #1e90ff;
+	--wui-modal-button-submit-bgcolor-mobile: rgb(from #959da5 r g b / 20%);
+	--wui-modal-button-submit-textcolor-mobile: #1e90ff;
 	--wui-modal-button-warning-textcolor-mobile: #f44343;
 	--wui-modal-message-box-width: 280px;
 	--wui-modal-message-box-bgcolor: rgb(from #efeff6 r g b / 80%);
@@ -3737,9 +3737,9 @@ Component for the implementation of data forms. This component allows the implem
 | Property    | Type       | Default value | Description |
 | ----------- | ---------- | ------------- | ----------- |
 | selector    | `string`   | `".wui-form"` | (get/set)<br><br>CSS selector that defines the HTML container element of the form. If more than one element matches the selector, only the first match will be included. |
-| submittable      | `boolean`  | `true`        | (get/set)<br><br>Defines whether the form should be submittableted natively when the submittable event occurs. |
+| submit      | `boolean`  | `true`        | (get/set)<br><br>Defines whether the form should be submitted natively when the submit event occurs. |
 | onScrolling | `function` | `null`        | (get/set)<br><br>Function run when the content of the form body is scrolled. |
-| onSubmit    | `function` | `null`        | (get/set)<br><br>Function run when the form is submittableted. |
+| onSubmit    | `function` | `null`        | (get/set)<br><br>Function run when the form is submitted. |
 
 #### Methods
 
@@ -4041,7 +4041,7 @@ HTML code:
 		</div>
 		<div class="footer">
 			<button class="wui-button cancel">cancel</button>
-			<button class="wui-button submittable">submittable</button>
+			<button class="wui-button submit">submit</button>
 		</div>
 	</form>
 </nav>
@@ -4053,7 +4053,7 @@ JS Code:
 const init = () => {
 	const form = new WUIForm({
 		selector: ".wui-form.my-form",
-		submittable: false,
+		submit: false,
 		onScrolling: (top) => { },
 		onSubmit: () => { }
 	});
@@ -5786,8 +5786,9 @@ Component for the implementation of based on HTML element `<button>`.
 | textData     | `array`    | `null`          | (get/set)<br><br>Array of `[key, value]` pairs added as `data-*` attributes to the `<span>` element. Requires `textClass` to be set. Example: `[["id", "42"], ["lang", "en"]]` renders `data-id="42" data-lang="en"`. |
 | iconClass    | `string`   | `null`          | (get/set)<br><br>CSS class applied to a `<div>` element rendered before the `<span>` inside the button. When not `null`, a `<div class="{iconClass}">` is prepended to the button content. Takes precedence over `iconImage`. |
 | iconImage    | `string`   | `null`          | (get/set)<br><br>URL of an image rendered as `<img src="{iconImage}">` before the `<span>` inside the button. Used only when `iconClass` is `null`. |
-| submittable  | `boolean`  | `false`         | (get/set)<br><br>When `true`, adds the CSS class `submittable` to the `<button>` element, applying submittable button styles. |
-| warnable     | `boolean`  | `false`         | (get/set)<br><br>When `true`, adds the CSS class `warnable` to the `<button>` element, applying warnable button styles. |
+| submit       | `boolean`  | `false`         | (get/set)<br><br>When `true`, adds the CSS class `submit` to the `<button>` element, applying submit button styles. |
+| warning      | `boolean`  | `false`         | (get/set)<br><br>When `true`, adds the CSS class `warning` to the `<button>` element, applying warning button styles. |
+| flat         | `boolean`  | `false`         | (get/set)<br><br>When `true`, adds the CSS class `flat` to the `<button>` element, applying flat button styles. |
 | selectable   | `boolean`  | `false`         | (get/set)<br><br>Define whether the button is selectable. |
 | locked       | `boolean`  | `false`         | (get/set)<br><br>Defines whether the button is locked. |
 | enabled      | `boolean`  | `true`          | (get/set)<br><br>Defines whether the button is enabled. |
@@ -5824,21 +5825,21 @@ Component for the implementation of based on HTML element `<button>`.
 | `--wui-button-default-textcolor-selected`   | Text color of the default button in selected state. |
 | `--wui-button-default-textcolor-disabled`   | Text color of the default button in disabled state. |
 | `--wui-button-default-textsize`             | Text size of the default button. |
-| `--wui-button-submittable-minwidth`              | Minimum width of the submittable button. |
-| `--wui-button-submittable-height`                | Height of the submittable button. |
-| `--wui-button-submittable-bordercolor-out`       | Border color of the submittable button in normal state. |
-| `--wui-button-submittable-bordercolor-over`      | Border color of the submittable button in hover state. |
-| `--wui-button-submittable-bordercolor-selected`  | Border color of the submittable button in selected state. |
-| `--wui-button-submittable-bordercolor-disabled`  | Border color of the submittable button in disabled state. |
-| `--wui-button-submittable-bgcolor-out`           | Background color of the submittable button in normal state. |
-| `--wui-button-submittable-bgcolor-over`          | Background color of the submittable button in hover state. |
-| `--wui-button-submittable-bgcolor-selected`      | Background color of the submittable button in selected state. |
-| `--wui-button-submittable-bgcolor-disabled`      | Background color of the submittable button in disabled state. |
-| `--wui-button-submittable-textcolor-out`         | Text color of the submittable button in normal state. |
-| `--wui-button-submittable-textcolor-over`        | Text color of the submittable button in hover state. |
-| `--wui-button-submittable-textcolor-selected`    | Text color of the submittable button in selected state. |
-| `--wui-button-submittable-textcolor-disabled`    | Text color of the submittable button in disabled state. |
-| `--wui-button-submittable-textsize`              | Text size of the submittable button. |
+| `--wui-button-submit-minwidth`              | Minimum width of the submit button. |
+| `--wui-button-submit-height`                | Height of the submit button. |
+| `--wui-button-submit-bordercolor-out`       | Border color of the submit button in normal state. |
+| `--wui-button-submit-bordercolor-over`      | Border color of the submit button in hover state. |
+| `--wui-button-submit-bordercolor-selected`  | Border color of the submit button in selected state. |
+| `--wui-button-submit-bordercolor-disabled`  | Border color of the submit button in disabled state. |
+| `--wui-button-submit-bgcolor-out`           | Background color of the submit button in normal state. |
+| `--wui-button-submit-bgcolor-over`          | Background color of the submit button in hover state. |
+| `--wui-button-submit-bgcolor-selected`      | Background color of the submit button in selected state. |
+| `--wui-button-submit-bgcolor-disabled`      | Background color of the submit button in disabled state. |
+| `--wui-button-submit-textcolor-out`         | Text color of the submit button in normal state. |
+| `--wui-button-submit-textcolor-over`        | Text color of the submit button in hover state. |
+| `--wui-button-submit-textcolor-selected`    | Text color of the submit button in selected state. |
+| `--wui-button-submit-textcolor-disabled`    | Text color of the submit button in disabled state. |
+| `--wui-button-submit-textsize`              | Text size of the submit button. |
 | `--wui-button-warning-bordercolor-out`      | Border color of the warning button in normal state. |
 | `--wui-button-warning-bordercolor-over`     | Border color of the warning button in hover state. |
 | `--wui-button-warning-bordercolor-selected` | Border color of the warning button in selected state. |
@@ -5853,7 +5854,7 @@ Component for the implementation of based on HTML element `<button>`.
 | `--wui-button-warning-textcolor-disabled`   | Text color of the warning button in disabled state. |
 | `--wui-button-icon-float-padding`           | Padding of the floating icons in the button. |
 | `--wui-button-mobile-default-height`        | Height of the default button in mobile mode (screen width less than 768px). |
-| `--wui-button-mobile-submittable-height`         | Height of the submittable button in mobile mode (screen width less than 768px). |
+| `--wui-button-mobile-submit-height`         | Height of the submit button in mobile mode (screen width less than 768px). |
 | `--wui-button-mobile-icon-float-padding`    | Padding of the floating icons in the button in mobile mode (screen width less than 768px). |
 | `--wui-button-form-default-minwidth`        | Minimum width of the default button when used in forms. |
 
@@ -5886,21 +5887,21 @@ CSS settings:
 	--wui-button-default-textcolor-selected: #fff;
 	--wui-button-default-textcolor-disabled: #d5dce3;
 	--wui-button-default-textsize: 15px;
-	--wui-button-submittable-minwidth: 200px;
-	--wui-button-submittable-height: 34px;
-	--wui-button-submittable-bordercolor-out: rgb(from #1e90ff r g b / 20%);
-	--wui-button-submittable-bordercolor-over: #1e90ff;
-	--wui-button-submittable-bordercolor-selected: #1e90ff;
-	--wui-button-submittable-bordercolor-disabled: #d5dce3;
-	--wui-button-submittable-bgcolor-out: #1e90ff;
-	--wui-button-submittable-bgcolor-over: #1e90ff;
-	--wui-button-submittable-bgcolor-selected: #1e90ff;
-	--wui-button-submittable-bgcolor-disabled: #d5dce3;
-	--wui-button-submittable-textcolor-out: #fff;
-	--wui-button-submittable-textcolor-over: #fff;
-	--wui-button-submittable-textcolor-selected: #fff;
-	--wui-button-submittable-textcolor-disabled: #d5dce3;
-	--wui-button-submittable-textsize: 15px;
+	--wui-button-submit-minwidth: 200px;
+	--wui-button-submit-height: 34px;
+	--wui-button-submit-bordercolor-out: rgb(from #1e90ff r g b / 20%);
+	--wui-button-submit-bordercolor-over: #1e90ff;
+	--wui-button-submit-bordercolor-selected: #1e90ff;
+	--wui-button-submit-bordercolor-disabled: #d5dce3;
+	--wui-button-submit-bgcolor-out: #1e90ff;
+	--wui-button-submit-bgcolor-over: #1e90ff;
+	--wui-button-submit-bgcolor-selected: #1e90ff;
+	--wui-button-submit-bgcolor-disabled: #d5dce3;
+	--wui-button-submit-textcolor-out: #fff;
+	--wui-button-submit-textcolor-over: #fff;
+	--wui-button-submit-textcolor-selected: #fff;
+	--wui-button-submit-textcolor-disabled: #d5dce3;
+	--wui-button-submit-textsize: 15px;
 	--wui-button-warning-bordercolor-out: rgb(from #f44343 r g b / 25%);
 	--wui-button-warning-bordercolor-over: #f44343;
 	--wui-button-warning-bordercolor-selected: #f44343;
@@ -5915,7 +5916,7 @@ CSS settings:
 	--wui-button-warning-textcolor-disabled: #d5dce3;
 	--wui-button-icon-float-padding: 5px;
 	--wui-button-mobile-default-height: 40px;
-	--wui-button-mobile-submittable-height: 40px;
+	--wui-button-mobile-submit-height: 40px;
 	--wui-button-mobile-icon-float-padding: 10px;
 	--wui-button-form-default-minwidth: 100px;
 }
@@ -5977,7 +5978,9 @@ const init = () => {
 		//textData: null,
 		//iconClass: null,
 		//iconImage: null,
-		//submittable: false,
+		//submit: false,
+		//warning: false,
+		//flat: false,
 		//selectable: false,
 		//locked: false,
 		//enabled: true,
@@ -5993,7 +5996,7 @@ const init = () => {
 		iconClass: "wui-icon float-left mappointer-fill",
 		textClass: "my-label",
 		textData: [["action", "navigate"]],
-		submittable: true,
+		submit: true,
 		onClick: () => {
 			output.textContent = "Click button 2";
 		},
