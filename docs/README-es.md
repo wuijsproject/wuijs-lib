@@ -142,7 +142,7 @@ wuijs-main-lib/
 | [imgs/logo](https://github.com/wui-js/wuijs-main-lib/tree/main/imgs/logo/)                   | Logotipo e isotipo del proyecto en formato SVG y PNG. |
 | [legacy](https://github.com/wui-js/wuijs-main-lib/tree/main/legacy/)                         | Fuentes obsoletas con versiones anteriores. |
 | [legacy/wui-js](https://github.com/wui-js/wuijs-main-lib/tree/main/legacy/wui-js/)           | Directorio del proyecto WUI/JS. |
-| [legacy/wui-js/main](https://github.com/wui-js/wuijs-main-lib/tree/main/legacy/wui-js/main/) | Librería WUI/JS Main (versión anterior a la 0.4.0). |
+| [legacy/wui-js/main](https://github.com/wui-js/wuijs-main-lib/tree/main/legacy/wui-js/main/) | Librería WUI/JS Main (versiones anteriores). |
 | [src](https://github.com/wui-js/wuijs-main-lib/tree/main/src/)                               | Fuentes principales de la última versión. |
 | [src/wui-js](https://github.com/wui-js/wuijs-main-lib/tree/main/src/wui-js)                  | Directorio del proyecto WUI/JS. |
 | [src/wui-js/main](https://github.com/wui-js/wuijs-main-lib/tree/main/src/wui-js/main/)       | Librería WUI/JS Main. |
