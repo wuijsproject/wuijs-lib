@@ -3,8 +3,8 @@
 
 ---
 <p align="right">
-	[English](https://github.com/wui-js/wuijs-main-lib/blob/main/docs/README-en.md) |
-	[Español](https://github.com/wui-js/wuijs-main-lib/blob/main/docs/README-es.md)
+	<a href="https://github.com/wui-js/wuijs-main-lib/blob/main/docs/README-en.md">English</a> |
+	<a href="https://github.com/wui-js/wuijs-main-lib/blob/main/docs/README-es.md">Español</a>
 </p>
 
 # wuijs-main-lib
