@@ -8,6 +8,8 @@ Características:
 2. Se actualizó cargador de recursos `wui.js`.
 3. Se actualizó versión clase WUISelectpicker a `0.6`.
 	- Se mejoró evento `onChange` para que se dispare de manera diferida en dispositivos móviles (al presionar el botón Aceptar) y de manera inmediata en los navegadores de escritorio.
+4. Se actualizó versión clase WUIButton a `0.6`.
+	- Se agregó el argumento `selected` de tipo `booleano` a los parámetros `onClick` y `onDblClick`.
 
 ## [v0.6.0] - 2026-05-01
 
@@ -41,21 +43,21 @@ Características:
 7. Se actualizó versión clase WUILoader a `0.4`.
 	- Se agregó archivo `.root.css` con los valores por defecto de las variables CSS.
 	- Se agregó el método `destroy()`.
-8. Se actualizó versión clase WUITooltip a `0.3`
+8. Se actualizó versión clase WUITooltip a `0.3`.
 	- Se agregó archivo `.root.css` con los valores por defecto de las variables CSS.
 	- Se agregó el método `destroy()`.
 	- Se actualizó el método `init()` para almacenar referencias a los handlers de eventos por elemento para una correcta limpieza.
-9. Se actualizó versión clase WUIModal a `0.5`
+9. Se actualizó versión clase WUIModal a `0.5`.
 	- Se agregó archivo `.root.css` con los valores por defecto de las variables CSS.
 	- Se agregó el método `destroy()`.
 10. Se actualizó versión clase WUIPaging a `0.4`.
 	- Se agregó archivo `.root.css` con los valores por defecto de las variables CSS.
 	- Se agregó el método `destroy()`.
-11. Se actualizó versión clase WUISlider a `0.5`
+11. Se actualizó versión clase WUISlider a `0.5`.
 	- Se agregó archivo `.root.css` con los valores por defecto de las variables CSS.
 	- Se agregó el método `destroy()`.
 	- Se actualizó el método `load()` para almacenar referencias a los handlers de eventos a nivel de documento por slide para una correcta limpieza.
-12. Se actualizó versión clase WUITabs a `0.3`
+12. Se actualizó versión clase WUITabs a `0.3`.
 	- Se agregó archivo `.root.css` con los valores por defecto de las variables CSS.
 	- Se agregó el método `destroy()`.
 13. Se actualizó versión clase WUIMenubar a `0.4`.
@@ -64,37 +66,37 @@ Características:
 	- Se corrigió el método `destroy()`: el elemento raíz no se eliminaba del DOM.
 14. Se actualizó versión clase WUIList a `0.4`.
 	- Se agregó archivo `.root.css` con los valores por defecto de las variables CSS.
-15. Se actualizó versión clase WUITable a `0.5`
+15. Se actualizó versión clase WUITable a `0.5`.
 	- Se agregó archivo `.root.css` con los valores por defecto de las variables CSS.
 	- Se agregó la variable CSS `--wui-table-column-bordercolor-disabled`.
 	- Se agregó la variable CSS `--wui-table-row-bordercolor-disabled`.
-16. Se actualizó versión clase WUIForm a `0.5`
+16. Se actualizó versión clase WUIForm a `0.5`.
 	- Se agregó archivo `.root.css` con los valores por defecto de las variables CSS.
 	- Se agregó el método `destroy()`.
 	- Se actualizó `#darkModeListener()` para almacenar referencias al observer y al handler del media query para una correcta limpieza.
-17. Se actualizó versión clase WUISelectpicker a `0.5`
+17. Se actualizó versión clase WUISelectpicker a `0.5`.
 	- Se agregó archivo `.root.css` con los valores por defecto de las variables CSS.
 	- Se actualizó `#darkModeListener()` para almacenar referencias al observer y al handler del media query para una correcta limpieza.
 	- Se actualizó el método `destroy()` para desconectar el observer de dark mode y el listener del media query.
 	- Se corrigió error en la carga del estilo de los bordes de las opciones (`--wui-selectpicker-box-option-bordercolor-out`).
-18. Se actualizó versión clase WUIDatepicker a `0.5`
+18. Se actualizó versión clase WUIDatepicker a `0.5`.
 	- Se agregó archivo `.root.css` con los valores por defecto de las variables CSS.
 	- Se actualizó `#darkModeListener()` para almacenar referencias al observer y al handler del media query para una correcta limpieza.
 	- Se actualizó el método `destroy()` para desconectar el observer de dark mode y el listener del media query.
-19. Se actualizó versión clase WUITimepicker a `0.5`
+19. Se actualizó versión clase WUITimepicker a `0.5`.
 	- Se agregó archivo `.root.css` con los valores por defecto de las variables CSS.
 	- Se actualizó `#darkModeListener()` para almacenar referencias al observer y al handler del media query para una correcta limpieza.
 	- Se actualizó el método `destroy()` para desconectar el observer de dark mode y el listener del media query.
-20. Se actualizó versión clase WUIColorpicker a `0.5`
+20. Se actualizó versión clase WUIColorpicker a `0.5`.
 	- Se agregó archivo `.root.css` con los valores por defecto de las variables CSS.
 	- Se actualizó `#darkModeListener()` para almacenar referencias al observer y al handler del media query para una correcta limpieza.
 	- Se actualizó el método `destroy()` para desconectar el observer de dark mode y el listener del media query.
-21. Se actualizó versión clase WUISwitch a `0.6`
+21. Se actualizó versión clase WUISwitch a `0.6`.
 	- Se agregó archivo `.root.css` con los valores por defecto de las variables CSS.
-22. Se actualizó versión clase WUIIntensity a `0.4`
+22. Se actualizó versión clase WUIIntensity a `0.4`.
 	- Se agregó archivo `.root.css` con los valores por defecto de las variables CSS.
 	- Se corrigió error en la carga del estilo en estado deshabilitado (`--wui-intensity-bordercolor-disabled`).
-23. Se actualizó versión clase WUIButton a 0.5
+23. Se actualizó versión clase WUIButton a `0.5`.
 	- Se agregó archivo `.root.css` con los valores por defecto de las variables CSS.
 	- Se agregó el método `destroy()`.
 	- Se agregó la variable CSS `--wui-button-default-borderwidth`.
@@ -249,8 +251,8 @@ Características:
 Características:
 
 1. Inclusión de [Documentación](https://github.com/wui-js/wuijs-main-lib/blob/main/docs/README-es.md).
-2. Se agregó clase WUIMenubar versión 0.1.
-3. Se agregó clase WUIIntensity versión 0.1.
+2. Se agregó clase WUIMenubar versión `0.1`.
+3. Se agregó clase WUIIntensity versión `0.1`.
 4. Actualización versión clase WUICookie a `0.2`.
 	- Se agregó soporte para valores privados.
 	- Se agregó el método `remove()`, que permite eliminar una cookie mediante su nombre.

@@ -8,6 +8,8 @@ Features:
 2. Updated the resource loader `wui.js`.
 3. WUISelectpicker version class update to `0.6`.
 	- Improved `onChange` event to trigger later on mobile devices (upon pressing the OK button) and immediately on desktop browsers.
+4. WUIButton version class update to `0.6`.
+	- Added the `selected` argument of `boolean` type to the `onClick` and `onDblClick` parameters.
 
 ## [v0.6.0] - 2026-05-01
 
@@ -36,27 +38,27 @@ Features:
 	- Added `.error-triangle-fill` CSS class.
 	- Added `.claude-fill` CSS class.
 	- Added `.claude-color` CSS class.
-6. WUIFade version class update to `0.3`
+6. WUIFade version class update to `0.3`.
 	- Added `.root.css` file with CSS default variable values.
 7. WUILoader version class update to `0.4`.
 	- Added `.root.css` file with CSS default variable values.
 	- Added `destroy()` method.
-8. WUITooltip version class update to `0.3`
+8. WUITooltip version class update to `0.3`.
 	- Added `.root.css` file with CSS default variable values.
 	- Added `destroy()` method.
 	- Updated `init()` method to store event handler references per element for proper cleanup.
-9. WUIModal version class update to `0.5`
+9. WUIModal version class update to `0.5`.
 	- Added `.root.css` file with CSS default variable values.
 	- Fixed an error in the custom webkit scrollbar style (`scrollbar-color` conflict and `:is()` pseudo-selector incompatibility).
 10. WUIPaging version class update to `0.4`.
 	- Added `.root.css` file with CSS default variable values.
 	- Added `destroy()` method.
 	- Fixed an error in the custom webkit scrollbar style (`scrollbar-color` conflict and `:is()` pseudo-selector incompatibility).
-11. WUISlider version class update to `0.5`
+11. WUISlider version class update to `0.5`.
 	- Added `.root.css` file with CSS default variable values.
 	- Added `destroy()` method.
 	- Updated `load()` method to store document-level event handler references per slide for proper cleanup.
-12. WUITabs version class update to `0.3`
+12. WUITabs version class update to `0.3`.
 	- Added `.root.css` file with CSS default variable values.
 	- Added `destroy()` method.
 13. WUIMenubar version class update to `0.4`.
@@ -66,42 +68,42 @@ Features:
 14. WUIList version class update to `0.4`.
 	- Added `.root.css` file with CSS default variable values.
 	- Fixed an error in the custom webkit scrollbar style (`scrollbar-color` conflict and `:is()` pseudo-selector incompatibility).
-15. WUITable version class update to `0.5`
+15. WUITable version class update to `0.5`.
 	- Added `.root.css` file with CSS default variable values.
 	- Added `--wui-table-column-bordercolor-disabled` CSS var.
 	- Added `--wui-table-row-bordercolor-disabled` CSS var.
 	- Fixed an error in the custom webkit scrollbar style (`scrollbar-color` conflict and `:is()` pseudo-selector incompatibility).
-16. WUIForm version class update to `0.5`
+16. WUIForm version class update to `0.5`.
 	- Added `.root.css` file with CSS default variable values.
 	- Added `destroy()` method.
 	- Updated `#darkModeListener()` to store observer and media query handler references for proper cleanup.
 	- Fixed an error in the custom webkit scrollbar style (`scrollbar-color` conflict and `:is()` pseudo-selector incompatibility).
-17. WUISelectpicker version class update to `0.5`
+17. WUISelectpicker version class update to `0.5`.
 	- Added `.root.css` file with CSS default variable values.
 	- Updated `#darkModeListener()` to store observer and media query handler references for proper cleanup.
 	- Updated `destroy()` method to disconnect the dark mode observer and media query listener.
 	- Fixed an error in loading the style of the options borders (`--wui-selectpicker-box-option-bordercolor-out`).
 	- Fixed an error in the custom webkit scrollbar style (`scrollbar-color` conflict and `:is()` pseudo-selector incompatibility).
-18. WUIDatepicker version class update to `0.5`
+18. WUIDatepicker version class update to `0.5`.
 	- Added `.root.css` file with CSS default variable values.
 	- Updated `#darkModeListener()` to store observer and media query handler references for proper cleanup.
 	- Updated `destroy()` method to disconnect the dark mode observer and media query listener.
-19. WUITimepicker version class update to `0.5`
-	- Added `.root.css` file with CSS default variable values.
-	- Updated `#darkModeListener()` to store observer and media query handler references for proper cleanup.
-	- Updated `destroy()` method to disconnect the dark mode observer and media query listener.
-	- Fixed an error in the custom webkit scrollbar style (`scrollbar-color` conflict and `:is()` pseudo-selector incompatibility).
-20. WUIColorpicker version class update to `0.5`
+19. WUITimepicker version class update to `0.5`.
 	- Added `.root.css` file with CSS default variable values.
 	- Updated `#darkModeListener()` to store observer and media query handler references for proper cleanup.
 	- Updated `destroy()` method to disconnect the dark mode observer and media query listener.
 	- Fixed an error in the custom webkit scrollbar style (`scrollbar-color` conflict and `:is()` pseudo-selector incompatibility).
-21. WUISwitch version class update to `0.6`
+20. WUIColorpicker version class update to `0.5`.
 	- Added `.root.css` file with CSS default variable values.
-22. WUIIntensity version class update to `0.4`
+	- Updated `#darkModeListener()` to store observer and media query handler references for proper cleanup.
+	- Updated `destroy()` method to disconnect the dark mode observer and media query listener.
+	- Fixed an error in the custom webkit scrollbar style (`scrollbar-color` conflict and `:is()` pseudo-selector incompatibility).
+21. WUISwitch version class update to `0.6`.
+	- Added `.root.css` file with CSS default variable values.
+22. WUIIntensity version class update to `0.4`.
 	- Added `.root.css` file with CSS default variable values.
 	- Fixed an error in loading the style in disabled state (`--wui-menubar-bar-button-textcolor-disabled`).
-23. WUIButton version class update to `0.5`
+23. WUIButton version class update to `0.5`.
 	- Added `.root.css` file with CSS default variable values.
 	- Added `destroy()` method.
 	- Added `--wui-button-default-borderwidth` CSS var.
@@ -256,8 +258,8 @@ Features:
 Features:
 
 1. Inclusion of [Documentation](https://github.com/wui-js/wuijs-main-lib/blob/main/docs/README-en.md).
-2. Added WUIMenubar class version 0.1.
-3. Added WUIIntensity class version 0.1.
+2. Added WUIMenubar class version `0.1`.
+3. Added WUIIntensity class version `0.1`.
 4. WUICookie version class update to `0.2`.
 	- Added support for private values.
 	- Added the `remove()` method, which allows removing a cookie by its name.

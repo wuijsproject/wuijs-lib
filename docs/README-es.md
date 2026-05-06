@@ -113,7 +113,7 @@ WUI/JS Main Lib es parte del proyecto WUI/JS, que consta actualmente de 4 reposi
 | [WUIColorpicker](#wui-colorpicker)   | `0.5`   | Componente para la implementación de entradas de datos de tipo selector de color basada en el elemento HTML `<input type="color">`. |
 | [WUISwitch](#wui-switch)             | `0.6`   | Componente para la implementación de entradas de datos de tipo casilla de verificación basada en el elemento HTML `<input type="checkbox">`. |
 | [WUIIntensity](#wui-intensity)       | `0.4`   | Componente para la implementación de entradas de datos de tipo selector de intensidad de 4 niveles: nada, bajo, medio y alto basada en el elemento HTML `<input type="range">`. |
-| [WUIButton](#wui-button)             | `0.4`   | Componente para la implementación de botones basada en el elemento HTML `<button>`. |
+| [WUIButton](#wui-button)             | `0.6`   | Componente para la implementación de botones basada en el elemento HTML `<button>`. |
 
 <a name="dirmap"></a>
 
@@ -4936,7 +4936,7 @@ window.addEventListener("DOMContentLoaded", init);
 
 ### WUIButton
 
-Versión: `0.5`
+Versión: `0.6`
 
 Componente para la implementación de botones basada en el elemento HTML `<button>`.
 
@@ -4944,9 +4944,9 @@ Componente para la implementación de botones basada en el elemento HTML `<butto
 
 | Tipo | Archivo |
 |:----:| ------- |
-| CSS  | [src/wui-js/main/button/wui-button-0.5.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/button/wui-button-0.5.css) |
-| CSS  | [src/wui-js/main/button/wui-button-0.5.root.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/button/wui-button-0.5.root.css) |
-| JS   | [src/wui-js/main/button/wui-button-0.5.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/button/wui-button-0.5.js) |
+| CSS  | [src/wui-js/main/button/wui-button-0.6.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/button/wui-button-0.6.css) |
+| CSS  | [src/wui-js/main/button/wui-button-0.6.root.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/button/wui-button-0.6.root.css) |
+| JS   | [src/wui-js/main/button/wui-button-0.6.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/button/wui-button-0.6.js) |
 
 #### Constructor
 
@@ -4970,8 +4970,8 @@ Componente para la implementación de botones basada en el elemento HTML `<butto
 | selectable   | `boolean`  | `false`              | (get/set)<br><br>Define si el botón es seleccionable. |
 | locked       | `boolean`  | `false`              | (get/set)<br><br>Define si el botón está bloqueado. |
 | enabled      | `boolean`  | `true`               | (get/set)<br><br>Define si el botón está habilitado. |
-| onClick      | `function` | `null`               | (get/set)<br><br>Función que se ejecuta cuando el botón es presionado. La función no recibe parámetros. |
-| onDblClick   | `function` | `null`               | (get/set)<br><br>Función que se ejecuta cuando el botón es presionado dos veces. La función no recibe parámetros. |
+| onClick      | `function` | `null`               | (get/set)<br><br>Función que se ejecuta cuando el botón es presionado. La función recibe por parámetro:<br><br>**• selected:** `boolean`, estado de selección del botón. Si la propiedad `selectable` es `false`, el parámetro será `null`. |
+| onDblClick   | `function` | `null`               | (get/set)<br><br>Función que se ejecuta cuando el botón es presionado dos veces. La función recibe por parámetro:<br><br>**• selected:** `boolean`, estado de selección del botón. Si la propiedad `selectable` es `false`, el parámetro será `null`. |
 
 #### Métodos
 
@@ -5073,9 +5073,9 @@ Cabecera HTML:
 ```html
 <link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/icon/wui-icon-0.3.root.css">
 <link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/icon/wui-icon-0.3.css">
-<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/button/wui-button-0.5.root.css">
-<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/button/wui-button-0.5.css">
-<script type="text/javascript" src="/libraries/wui-js/main/button/wui-button-0.5.js"></script>
+<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/button/wui-button-0.6.root.css">
+<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/button/wui-button-0.6.css">
+<script type="text/javascript" src="/libraries/wui-js/main/button/wui-button-0.6.js"></script>
 ```
 
 Código HTML:
@@ -5106,10 +5106,10 @@ const init = () => {
 		//selectable: false,
 		//locked: false,
 		//enabled: true,
-		onClick: () => {
+		onClick: (selected) => {
 			output.textContent = "Clic button 1";
 		},
-		onDblClick: () => {
+		onDblClick: (selected) => {
 			output.textContent = "Double-Clic button 1";
 		}
 	});

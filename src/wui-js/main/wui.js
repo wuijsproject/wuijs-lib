@@ -83,7 +83,8 @@
 			"tooltip": { v: "0.3", js: true, css: true }
 		});
 		libraries["0.6.1"] = Object.assign({}, libraries["0.6.0"], {
-			"selectpicker": { v: "0.6", js: true, css: true }
+			"selectpicker": { v: "0.6", js: true, css: true },
+			"button": { v: "0.6", js: true, css: true }
 		});
 		let tasks = [];
 		let ver = version;
