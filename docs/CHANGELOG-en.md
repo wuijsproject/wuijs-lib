@@ -7,6 +7,18 @@
 
 # Change Log
 
+## [v0.6.2] - 2026-05-08
+
+Features:
+
+1. Updated the resource loader `wui.js`.
+2. WUIDatepicker version class update to `0.6`.
+	- Fixed an error in the selector date box position on mobile devices.
+3. WUITimepicker version class update to `0.6`.
+	- Fixed an error in the selector time box position on mobile devices.
+4. WUIColorpicker version class update to `0.6`.
+	- Fixed an error in the selector color box position on mobile devices.
+
 ## [v0.6.1] - 2026-05-06
 
 Features:

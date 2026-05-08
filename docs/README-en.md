@@ -14,9 +14,9 @@
 |                      | |
 | -------------------- | ----------- |
 | **Library name**     | `wuijs-main-lib` |
-| **Library version**  | `0.6.1` ([Change Log](https://github.com/wui-js/wuijs-main-lib/blob/main/docs/CHANGELOG-en.md)) |
+| **Library version**  | `0.6.2` ([Change Log](https://github.com/wui-js/wuijs-main-lib/blob/main/docs/CHANGELOG-en.md)) |
 | **NPM package**      | `@wui-js/main` |
-| **Document version** | `0.6.1.20260506.0` |
+| **Document version** | `0.6.2.20260508.0` |
 | **License**          | `Apache License 2.0` |
 | **Author**           | `Sergio E. Belmar V. <wuijs.project@gmail.com>` |
 | **Repository**       | [https://github.com/wui-js/wuijs-main-lib](https://github.com/wui-js/wuijs-main-lib) |
@@ -108,9 +108,9 @@ WUI/JS Main Lib is part of the WUI/JS project, which currently consists of 4 rep
 | [WUIForm](#wui-form)                 | `0.5`   | Component for the implementation of data forms. This component allows the implementation of HTML data input elements such as `<input>`, `<select>`, and `<textarea>`, and WUI library objects such as `WUISelectpicker`, `WUIDatepicker`, `WUITimepicker`, `WUIColorpicker`, `WUISwitch`, `WUIIntensity`, and `WUIButton`. |
 | [WUIFormat](#wui-format)             | `0.3`   | Utilities for management and validation `string`, `number` and `Date` data formats. |
 | [WUISelectpicker](#wui-selectpicker) | `0.6`   | Component for the implementation of multiple or exclusive selection list data inputs based on HTML element `<select>`. |
-| [WUIDatepicker](#wui-datepicker)     | `0.5`   | Component for the implementation of date type data inputs based on HTML element `<input type="date">`. |
-| [WUITimepicker](#wui-timepicker)     | `0.5`   | Component for the implementation of time type data inputs based on HTML element `<input type="time">`. |
-| [WUIColorpicker](#wui-colorpicker)   | `0.5`   | Component for the implementation of color picker type data inputs based on HTML element `<input type="color">`. |
+| [WUIDatepicker](#wui-datepicker)     | `0.6`   | Component for the implementation of date type data inputs based on HTML element `<input type="date">`. |
+| [WUITimepicker](#wui-timepicker)     | `0.6`   | Component for the implementation of time type data inputs based on HTML element `<input type="time">`. |
+| [WUIColorpicker](#wui-colorpicker)   | `0.6`   | Component for the implementation of color picker type data inputs based on HTML element `<input type="color">`. |
 | [WUISwitch](#wui-switch)             | `0.6`   | Component for the implementation of checkbox type data inputs based on HTML element `<input type="checkbox">`. |
 | [WUIIntensity](#wui-intensity)       | `0.4`   | Component for the implementation of 4-level intensity selector type data inputs: none, low, half, and high based on HTML element `<input type="range">`. |
 | [WUIButton](#wui-button)             | `0.6`   | Component for the implementation of based on HTML element `<button>`. |
@@ -236,12 +236,12 @@ HTML code:
 		<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/form/wui-form-0.5.css">
 		<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/selectpicker/wui-selectpicker-0.6.root.css">
 		<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/selectpicker/wui-selectpicker-0.6.css">
-		<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/datepicker/wui-datepicker-0.5.root.css">
-		<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/datepicker/wui-datepicker-0.5.css">
-		<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/timepicker/wui-timepicker-0.5.root.css">
-		<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/timepicker/wui-timepicker-0.5.css">
-		<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/colorpicker/wui-colorpicker-0.5.root.css">
-		<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/colorpicker/wui-colorpicker-0.5.css">
+		<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/datepicker/wui-datepicker-0.6.root.css">
+		<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/datepicker/wui-datepicker-0.6.css">
+		<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/timepicker/wui-timepicker-0.6.root.css">
+		<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/timepicker/wui-timepicker-0.6.css">
+		<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/colorpicker/wui-colorpicker-0.6.root.css">
+		<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/colorpicker/wui-colorpicker-0.6.css">
 		<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/switch/wui-switch-0.6.root.css">
 		<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/switch/wui-switch-0.6.css">
 		<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/intensity/wui-intensity-0.4.root.css">
@@ -265,9 +265,9 @@ HTML code:
 		<script type="text/javascript" src="/libraries/wui-js/main/form/wui-form-0.5.js"></script>
 		<script type="text/javascript" src="/libraries/wui-js/main/format/wui-format-0.3.js"></script>
 		<script type="text/javascript" src="/libraries/wui-js/main/selectpicker/wui-selectpicker-0.6.js"></script>
-		<script type="text/javascript" src="/libraries/wui-js/main/datepicker/wui-datepicker-0.5.js"></script>
-		<script type="text/javascript" src="/libraries/wui-js/main/timepicker/wui-timepicker-0.5.js"></script>
-		<script type="text/javascript" src="/libraries/wui-js/main/colorpicker/wui-colorpicker-0.5.js"></script>
+		<script type="text/javascript" src="/libraries/wui-js/main/datepicker/wui-datepicker-0.6.js"></script>
+		<script type="text/javascript" src="/libraries/wui-js/main/timepicker/wui-timepicker-0.6.js"></script>
+		<script type="text/javascript" src="/libraries/wui-js/main/colorpicker/wui-colorpicker-0.6.js"></script>
 		<script type="text/javascript" src="/libraries/wui-js/main/switch/wui-switch-0.6.js"></script>
 		<script type="text/javascript" src="/libraries/wui-js/main/intensity/wui-intensity-0.4.js"></script>
 		<script type="text/javascript" src="/libraries/wui-js/main/button/wui-button-0.3.js"></script>
@@ -304,8 +304,8 @@ This loader allows you to integrate all WUI libraries into a web page, either fu
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
 		<meta name="application-name" content="">
 		<meta name="theme-color" content="">
-		<link type="text/css" rel="stylesheet" href="./Settings/wui.root.css">
-		<script type="text/javascript" src="/libraries/wui-js/main/wui.js?v=0.6.0"></script>
+		<link type="text/css" rel="stylesheet" href="./settings/wui.root.css">
+		<script type="text/javascript" src="/libraries/wui-js/main/wui.js?v=0.6.2"></script>
 	</head>
 	<body>
 	</body>
@@ -325,7 +325,7 @@ Optionally, libraries can be included individually. To do this, add them to the 
 Library names passed in the `class` parameter should not contain the version suffix (`-x.x`) as the version will be automatically defined by the simple load script.
 
 ```html
-<script type="text/javascript" src="/libraries/wui-js/main/wui.js?v=0.6.0&c=selectpicker,switch"></script>
+<script type="text/javascript" src="/libraries/wui-js/main/wui.js?v=0.6.2&c=selectpicker,switch"></script>
 ```
 
 > [!NOTE]
@@ -334,7 +334,7 @@ Library names passed in the `class` parameter should not contain the version suf
 Additionally, you can omit loading the `root.css` files for each library by adding the `root` parameter with the value `0` (zero) to the `wui.js` file URL.
 
 ```html
-<script type="text/javascript" src="/libraries/wui-js/main/wui.js?v=0.6.0&c=selectpicker,switch&r=0"></script>
+<script type="text/javascript" src="/libraries/wui-js/main/wui.js?v=0.6.2&c=selectpicker,switch&r=0"></script>
 ```
 
 > [!TIP]
@@ -1483,9 +1483,9 @@ Component for the implementation of loading animations.
 
 | Type | File |
 |:----:| ---- |
+| JS   | [src/wui-js/main/loader/wui-loader-0.4.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/loader/wui-loader-0.4.js) |
 | CSS  | [src/wui-js/main/loader/wui-loader-0.4.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/loader/wui-loader-0.4.css) |
 | CSS  | [src/wui-js/main/loader/wui-loader-0.4.root.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/loader/wui-loader-0.4.root.css) |
-| JS   | [src/wui-js/main/loader/wui-loader-0.4.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/loader/wui-loader-0.4.js) |
 
 #### Constructor
 
@@ -1531,9 +1531,9 @@ Component for the implementation of tooltip texts.
 
 | Type | File |
 |:----:| ---- |
+| JS   | [src/wui-js/main/tooltip/wui-tooltip-0.3.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/tooltip/wui-tooltip-0.3.js) |
 | CSS  | [src/wui-js/main/tooltip/wui-tooltip-0.3.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/tooltip/wui-tooltip-0.3.css) |
 | CSS  | [src/wui-js/main/tooltip/wui-tooltip-0.3.root.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/tooltip/wui-tooltip-0.3.root.css) |
-| JS   | [src/wui-js/main/tooltip/wui-tooltip-0.3.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/tooltip/wui-tooltip-0.3.js) |
 
 #### Constructor
 
@@ -1625,9 +1625,9 @@ Component for the implementation of dialog boxes (type `message`) and pop-up win
 
 | Type | File |
 |:----:| ---- |
+| JS   | [src/wui-js/main/modal/wui-modal-0.5.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/modal/wui-modal-0.5.js) |
 | CSS  | [src/wui-js/main/modal/wui-modal-0.5.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/modal/wui-modal-0.5.css) |
 | CSS  | [src/wui-js/main/modal/wui-modal-0.5.root.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/modal/wui-modal-0.5.root.css) |
-| JS   | [src/wui-js/main/modal/wui-modal-0.5.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/modal/wui-modal-0.5.js) |
 
 #### Constructor
 
@@ -1835,9 +1835,9 @@ Component for the implementation of paginated views with animated transitions.
 
 | Type | File |
 |:----:| ---- |
+| JS   | [src/wui-js/main/paging/wui-paging-0.4.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/paging/wui-paging-0.4.js) |
 | CSS  | [src/wui-js/main/paging/wui-paging-0.4.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/paging/wui-paging-0.4.css) |
 | CSS  | [src/wui-js/main/paging/wui-paging-0.4.root.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/paging/wui-paging-0.4.root.css) |
-| JS   | [src/wui-js/main/paging/wui-paging-0.4.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/paging/wui-paging-0.4.js) |
 
 #### Constructor
 
@@ -2178,9 +2178,9 @@ Component for the implementation of views accessible by tab selection.
 
 | Type | File |
 |:----:| ---- |
+| JS   | [src/wui-js/main/tabs/wui-tabs-0.3.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/tabs/wui-tabs-0.3.js) |
 | CSS  | [src/wui-js/main/tabs/wui-tabs-0.3.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/tabs/wui-tabs-0.3.css) |
 | CSS  | [src/wui-js/main/tabs/wui-tabs-0.3.root.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/tabs/wui-tabs-0.3.root.css) |
-| JS   | [src/wui-js/main/tabs/wui-tabs-0.3.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/tabs/wui-tabs-0.3.js) |
 
 #### Constructor
 
@@ -2294,9 +2294,9 @@ Component for the implementation of menu bars.
 
 | Type | File |
 |:----:| ---- |
+| JS   | [src/wui-js/main/menubar/wui-menubar-0.4.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/menubar/wui-menubar-0.4.js) |
 | CSS  | [src/wui-js/main/menubar/wui-menubar-0.4.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/menubar/wui-menubar-0.4.css) |
 | CSS  | [src/wui-js/main/menubar/wui-menubar-0.4.root.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/menubar/wui-menubar-0.4.root.css) |
-| JS   | [src/wui-js/main/menubar/wui-menubar-0.4.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/menubar/wui-menubar-0.4.js) |
 
 #### Constructor
 
@@ -2550,9 +2550,9 @@ Component for the implementation of data lists and buttons for each row optional
 
 | Type | File |
 |:----:| ---- |
+| JS   | [src/wui-js/main/list/wui-list-0.4.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/list/wui-list-0.4.js) |
 | CSS  | [src/wui-js/main/list/wui-list-0.4.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/list/wui-list-0.4.css) |
 | CSS  | [src/wui-js/main/list/wui-list-0.4.root.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/list/wui-list-0.4.root.css) |
-| JS   | [src/wui-js/main/list/wui-list-0.4.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/list/wui-list-0.4.js) |
 
 #### Constructor
 
@@ -2858,9 +2858,9 @@ Component for the implementation of data tables. Unlike the `WUIList` object, th
 
 | Type | File |
 |:----:| ---- |
+| JS   | [src/wui-js/main/table/wui-table-0.5.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/table/wui-table-0.5.js) |
 | CSS  | [src/wui-js/main/table/wui-table-0.5.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/table/wui-table-0.5.css) |
 | CSS  | [src/wui-js/main/table/wui-table-0.5.root.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/table/wui-table-0.5.root.css) |
-| JS   | [src/wui-js/main/table/wui-table-0.5.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/table/wui-table-0.5.js) |
 
 #### Constructor
 
@@ -3874,9 +3874,9 @@ Component for the implementation of multiple or exclusive selection list data in
 
 | Type | File |
 |:----:| ---- |
+| JS   | [src/wui-js/main/selectpicker/wui-selectpicker-0.6.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/selectpicker/wui-selectpicker-0.6.js) |
 | CSS  | [src/wui-js/main/selectpicker/wui-selectpicker-0.6.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/selectpicker/wui-selectpicker-0.6.css) |
 | CSS  | [src/wui-js/main/selectpicker/wui-selectpicker-0.6.root.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/selectpicker/wui-selectpicker-0.6.root.css) |
-| JS   | [src/wui-js/main/selectpicker/wui-selectpicker-0.6.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/selectpicker/wui-selectpicker-0.6.js) |
 
 #### Constructor
 
@@ -4146,7 +4146,7 @@ window.addEventListener("DOMContentLoaded", init);
 
 ### WUIDatepicker
 
-Versión: `0.5`
+Versión: `0.6`
 
 Component for the implementation of date type data inputs based on HTML element `<input type="date">`.
 
@@ -4154,9 +4154,9 @@ Component for the implementation of date type data inputs based on HTML element 
 
 | Type | File |
 |:----:| ---- |
-| CSS  | [src/wui-js/main/datepicker/wui-datepicker-0.5.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/datepicker/wui-datepicker-0.5.css) |
-| CSS  | [src/wui-js/main/datepicker/wui-datepicker-0.5.root.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/datepicker/wui-datepicker-0.5.root.css) |
-| JS   | [src/wui-js/main/datepicker/wui-datepicker-0.5.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/datepicker/wui-datepicker-0.5.js) |
+| JS   | [src/wui-js/main/datepicker/wui-datepicker-0.6.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/datepicker/wui-datepicker-0.6.js) |
+| CSS  | [src/wui-js/main/datepicker/wui-datepicker-0.6.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/datepicker/wui-datepicker-0.6.css) |
+| CSS  | [src/wui-js/main/datepicker/wui-datepicker-0.6.root.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/datepicker/wui-datepicker-0.6.root.css) |
 
 #### Constructor
 
@@ -4290,9 +4290,9 @@ nav {
 HTML head:
 
 ```html
-<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/datepicker/wui-datepicker-0.5.root.css">
-<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/datepicker/wui-datepicker-0.5.css">
-<script type="text/javascript" src="/libraries/wui-js/main/datepicker/wui-datepicker-0.5.js"></script>
+<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/datepicker/wui-datepicker-0.6.root.css">
+<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/datepicker/wui-datepicker-0.6.css">
+<script type="text/javascript" src="/libraries/wui-js/main/datepicker/wui-datepicker-0.6.js"></script>
 ```
 
 HTML code:
@@ -4346,7 +4346,7 @@ window.addEventListener("DOMContentLoaded", init);
 
 ### WUITimepicker
 
-Versión: `0.5`
+Versión: `0.6`
 
 Component for the implementation of time type data inputs based on HTML element `<input type="time">`.
 
@@ -4354,9 +4354,9 @@ Component for the implementation of time type data inputs based on HTML element 
 
 | Type | File |
 |:----:| ---- |
-| CSS  | [src/wui-js/main/timepicker/wui-timepicker-0.5.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/timepicker/wui-timepicker-0.5.css) |
-| CSS  | [src/wui-js/main/timepicker/wui-timepicker-0.5.root.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/timepicker/wui-timepicker-0.5.root.css) |
-| JS   | [src/wui-js/main/timepicker/wui-timepicker-0.5.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/timepicker/wui-timepicker-0.5.js) |
+| JS   | [src/wui-js/main/timepicker/wui-timepicker-0.6.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/timepicker/wui-timepicker-0.6.js) |
+| CSS  | [src/wui-js/main/timepicker/wui-timepicker-0.6.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/timepicker/wui-timepicker-0.6.css) |
+| CSS  | [src/wui-js/main/timepicker/wui-timepicker-0.6.root.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/timepicker/wui-timepicker-0.6.root.css) |
 
 #### Constructor
 
@@ -4468,9 +4468,9 @@ nav {
 HTML head:
 
 ```html
-<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/timepicker/wui-timepicker-0.5.root.css">
-<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/timepicker/wui-timepicker-0.5.css">
-<script type="text/javascript" src="/libraries/wui-js/main/timepicker/wui-timepicker-0.5.js"></script>
+<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/timepicker/wui-timepicker-0.6.root.css">
+<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/timepicker/wui-timepicker-0.6.css">
+<script type="text/javascript" src="/libraries/wui-js/main/timepicker/wui-timepicker-0.6.js"></script>
 ```
 
 HTML code:
@@ -4522,7 +4522,7 @@ window.addEventListener("DOMContentLoaded", init);
 
 ### WUIColorpicker
 
-Version: `0.5`
+Version: `0.6`
 
 Component for the implementation of color picker type data inputs based on HTML element `<input type="color">`.
 
@@ -4530,9 +4530,9 @@ Component for the implementation of color picker type data inputs based on HTML 
 
 | Type | File |
 |:----:| ---- |
-| CSS  | [src/wui-js/main/colorpicker/wui-colorpicker-0.5.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/colorpicker/wui-colorpicker-0.5.css) |
-| CSS  | [src/wui-js/main/colorpicker/wui-colorpicker-0.5.root.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/colorpicker/wui-colorpicker-0.5.root.css) |
-| JS   | [src/wui-js/main/colorpicker/wui-colorpicker-0.5.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/colorpicker/wui-colorpicker-0.5.js) |
+| JS   | [src/wui-js/main/colorpicker/wui-colorpicker-0.6.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/colorpicker/wui-colorpicker-0.6.js) |
+| CSS  | [src/wui-js/main/colorpicker/wui-colorpicker-0.6.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/colorpicker/wui-colorpicker-0.6.css) |
+| CSS  | [src/wui-js/main/colorpicker/wui-colorpicker-0.6.root.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/colorpicker/wui-colorpicker-0.6.root.css) |
 
 #### Constructor
 
@@ -4698,9 +4698,9 @@ nav {
 HTML head:
 
 ```html
-<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/colorpicker/wui-colorpicker-0.5.root.css">
-<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/colorpicker/wui-colorpicker-0.5.css">
-<script type="text/javascript" src="/libraries/wui-js/main/colorpicker/wui-colorpicker-0.5.js"></script>
+<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/colorpicker/wui-colorpicker-0.6.root.css">
+<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/colorpicker/wui-colorpicker-0.6.css">
+<script type="text/javascript" src="/libraries/wui-js/main/colorpicker/wui-colorpicker-0.6.js"></script>
 ```
 
 HTML code:
@@ -4759,9 +4759,9 @@ Component for the implementation of checkbox type data inputs based on HTML elem
 
 | Type | File |
 |:----:| ---- |
+| JS   | [src/wui-js/main/switch/wui-switch-0.6.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/switch/wui-switch-0.6.js) |
 | CSS  | [src/wui-js/main/switch/wui-switch-0.6.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/switch/wui-switch-0.6.css) |
 | CSS  | [src/wui-js/main/switch/wui-switch-0.6.root.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/switch/wui-switch-0.6.root.css) |
-| JS   | [src/wui-js/main/switch/wui-switch-0.6.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/switch/wui-switch-0.6.js) |
 
 #### Constructor
 
@@ -4895,9 +4895,9 @@ Component for the implementation of 4-level intensity selector type data inputs:
 
 | Type | File |
 |:----:| ---- |
+| JS   | [src/wui-js/main/intensity/wui-intensity-0.4.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/intensity/wui-intensity-0.4.js) |
 | CSS  | [src/wui-js/main/intensity/wui-intensity-0.4.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/intensity/wui-intensity-0.4.css) |
 | CSS  | [src/wui-js/main/intensity/wui-intensity-0.4.root.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/intensity/wui-intensity-0.4.root.css) |
-| JS   | [src/wui-js/main/intensity/wui-intensity-0.4.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/intensity/wui-intensity-0.4.js) |
 
 #### Constructor
 
@@ -5019,9 +5019,9 @@ Component for the implementation of based on HTML element `<button>`.
 
 | Type | File |
 |:----:| ---- |
+| JS   | [src/wui-js/main/button/wui-button-0.6.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/button/wui-button-0.6.js) |
 | CSS  | [src/wui-js/main/button/wui-button-0.6.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/button/wui-button-0.6.css) |
 | CSS  | [src/wui-js/main/button/wui-button-0.6.root.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/button/wui-button-0.6.root.css) |
-| JS   | [src/wui-js/main/button/wui-button-0.6.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/button/wui-button-0.6.js) |
 
 #### Constructor
 

@@ -7,6 +7,20 @@
 
 # Registro de Cambios
 
+## [v0.6.2] - 2026-05-08
+
+Características:
+
+1. Se actualizó cargador de recursos `wui.js`.
+2. Se actualizó versión clase WUIDatepicker a `0.6`.
+	- Se corrigió error de posición de la caja del selector de fecha al mostrarse en dispositivos móviles.
+3. Se actualizó versión clase WUITimepicker a `0.6`.
+	- Se corrigió error de posición de la caja del selector de hora al mostrarse en dispositivos móviles.
+4. Se actualizó versión clase WUIColorpicker a `0.6`.
+	- Se corrigió error de posición de la caja del selector de colores al mostrarse en dispositivos móviles.
+
+# Registro de Cambios
+
 ## [v0.6.1] - 2026-05-06
 
 Características:
