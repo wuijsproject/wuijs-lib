@@ -15,7 +15,7 @@
 | --------------------- | --- |
 | **Nombre librería**   | `wuijs-main-lib` |
 | **Versión librería**  | `0.6.2` ([Registro de Cambios](https://github.com/wui-js/wuijs-main-lib/blob/main/docs/CHANGELOG-es.md)) |
-| **Paquete npm**       | `@wui-js/main` |
+| **Paquete npm**       | `@wui-js/main` ([npm](https://www.npmjs.com/package/@wui-js/main)) |
 | **Versión documento** | `0.6.3.20260508.0` |
 | **Licencia**          | `Licencia Apache 2.0` |
 | **Autor**             | `Sergio E. Belmar V. <wuijs.project@gmail.com>` |
