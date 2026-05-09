@@ -12,7 +12,7 @@
 </p>
 
 |                       | |
-| --------------------- | ----------- |
+| --------------------- | --- |
 | **Nombre librería**   | `wuijs-main-lib` |
 | **Versión librería**  | `0.6.2` ([Registro de Cambios](https://github.com/wui-js/wuijs-main-lib/blob/main/docs/CHANGELOG-es.md)) |
 | **Paquete npm**       | `@wui-js/main` |
