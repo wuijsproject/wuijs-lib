@@ -7,6 +7,14 @@
 
 # Change Log
 
+## [v0.7.0] - 2026-05-14
+
+Features:
+
+1. Updated the resource loader `wui.js`.
+2. WUIButton version class update to `0.7`.
+	- Fixed an error in overwriting the `iconClass`, `textClass`, `text` and `textData` properties when the HTML element was constructed.
+
 ## [v0.6.2] - 2026-05-08
 
 Features:

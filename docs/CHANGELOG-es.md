@@ -7,6 +7,14 @@
 
 # Registro de Cambios
 
+## [v0.7.0] - 2026-05-14
+
+Características:
+
+1. Se actualizó cargador de recursos `wui.js`.
+2. Se actualizó versión clase WUIButton a `0.7`.
+	- Se corrigió error de sobreescritura de las propiedades `iconClass`, `textClass`, `text` y `textData` al momento de construir el elemento HTML.
+
 ## [v0.6.2] - 2026-05-08
 
 Características:

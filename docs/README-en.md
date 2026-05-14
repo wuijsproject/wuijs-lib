@@ -14,9 +14,9 @@
 |                      | |
 | -------------------- | --- |
 | **Library name**     | `wuijs-main-lib` |
-| **Library version**  | `0.6.2` ([Change Log](https://github.com/wui-js/wuijs-main-lib/blob/main/docs/CHANGELOG-en.md)) |
+| **Library version**  | `0.7.0` ([Change Log](https://github.com/wui-js/wuijs-main-lib/blob/main/docs/CHANGELOG-en.md)) |
 | **NPM package**      | `@wui-js/main` ([npm](https://www.npmjs.com/package/@wui-js/main)) |
-| **Document version** | `0.6.2.20260512.0` |
+| **Document version** | `0.7.0.20260514.0` |
 | **License**          | `Apache License 2.0` |
 | **Author**           | `Sergio E. Belmar V. <wuijs.project@gmail.com>` |
 | **Repository**       | [https://github.com/wui-js/wuijs-main-lib](https://github.com/wui-js/wuijs-main-lib) |
@@ -75,11 +75,11 @@ WUI/JS Main Lib, an acronym for *Web User Interface JavaScript library*, is an o
 WUI/JS Main Lib is part of the WUI/JS project, which currently consists of 4 repositories:
 
 -	[https://github.com/wui-js/wuijs-main-lib](https://github.com/wui-js/wuijs-main-lib)<br>
-	Main UI library.<br><br>
--	[https://github.com/wui-js/wuijs-plugins-lib](https://github.com/wui-js/wuijs-plugins-lib)<br>
-	UI plugins library.<br><br>
+	UI Main library.<br><br>
 -	[https://github.com/wui-js/wuijs-environment-lib](https://github.com/wui-js/wuijs-environment-lib)<br>
-	Bridge library between a web environments and native web rendering engines.<br><br>
+	UI Bridge library between a web environments and native web rendering engines.<br><br>
+-	[https://github.com/wui-js/wuijs-plugins-lib](https://github.com/wui-js/wuijs-plugins-lib)<br>
+	UI Plugins library.<br><br>
 -	[https://github.com/wui-js/wuijs-demos](https://github.com/wui-js/wuijs-demos)<br>
 	Repository with demos and usage examples for the project libraries.<br><br>
 
@@ -113,7 +113,7 @@ WUI/JS Main Lib is part of the WUI/JS project, which currently consists of 4 rep
 | [WUIColorpicker](#wui-colorpicker)   | `0.6`   | Component for the implementation of color picker type data inputs based on HTML element `<input type="color">`. |
 | [WUISwitch](#wui-switch)             | `0.6`   | Component for the implementation of checkbox type data inputs based on HTML element `<input type="checkbox">`. |
 | [WUIIntensity](#wui-intensity)       | `0.4`   | Component for the implementation of 4-level intensity selector type data inputs: none, low, half, and high based on HTML element `<input type="range">`. |
-| [WUIButton](#wui-button)             | `0.6`   | Component for the implementation of based on HTML element `<button>`. |
+| [WUIButton](#wui-button)             | `0.7`   | Component for the implementation of based on HTML element `<button>`. |
 
 <a name="dirmap"></a>
 
@@ -305,7 +305,7 @@ This loader allows you to integrate all WUI libraries into a web page, either fu
 		<meta name="application-name" content="">
 		<meta name="theme-color" content="">
 		<link type="text/css" rel="stylesheet" href="./settings/wui.root.css">
-		<script type="text/javascript" src="/libraries/wui-js/main/wui.js?v=0.6.2"></script>
+		<script type="text/javascript" src="/libraries/wui-js/main/wui.js?v=0.7.0"></script>
 	</head>
 	<body>
 	</body>
@@ -325,7 +325,7 @@ Optionally, libraries can be included individually. To do this, add them to the 
 Library names passed in the `class` parameter should not contain the version suffix (`-x.x`) as the version will be automatically defined by the simple load script.
 
 ```html
-<script type="text/javascript" src="/libraries/wui-js/main/wui.js?v=0.6.2&c=selectpicker,switch"></script>
+<script type="text/javascript" src="/libraries/wui-js/main/wui.js?v=0.7.0&c=selectpicker,switch"></script>
 ```
 
 > [!NOTE]
@@ -334,7 +334,7 @@ Library names passed in the `class` parameter should not contain the version suf
 Additionally, you can omit loading the `root.css` files for each library by adding the `root` parameter with the value `0` (zero) to the `wui.js` file URL.
 
 ```html
-<script type="text/javascript" src="/libraries/wui-js/main/wui.js?v=0.6.2&c=selectpicker,switch&r=0"></script>
+<script type="text/javascript" src="/libraries/wui-js/main/wui.js?v=0.7.0&c=selectpicker,switch&r=0"></script>
 ```
 
 > [!TIP]
@@ -5011,7 +5011,7 @@ window.addEventListener("DOMContentLoaded", init);
 
 ### WUIButton
 
-Versión: `0.6`
+Versión: `0.7`
 
 Component for the implementation of based on HTML element `<button>`.
 
@@ -5019,9 +5019,9 @@ Component for the implementation of based on HTML element `<button>`.
 
 | Type | File |
 |:----:| ---- |
-| JS   | [src/wui-js/main/button/wui-button-0.6.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/button/wui-button-0.6.js) |
-| CSS  | [src/wui-js/main/button/wui-button-0.6.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/button/wui-button-0.6.css) |
-| CSS  | [src/wui-js/main/button/wui-button-0.6.root.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/button/wui-button-0.6.root.css) |
+| JS   | [src/wui-js/main/button/wui-button-0.7.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/button/wui-button-0.7.js) |
+| CSS  | [src/wui-js/main/button/wui-button-0.7.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/button/wui-button-0.7.css) |
+| CSS  | [src/wui-js/main/button/wui-button-0.7.root.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/button/wui-button-0.7.root.css) |
 
 #### Constructor
 
@@ -5148,9 +5148,9 @@ HTML head:
 ```html
 <link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/icon/wui-icon-0.4.root.css">
 <link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/icon/wui-icon-0.4.css">
-<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/button/wui-button-0.6.root.css">
-<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/button/wui-button-0.6.css">
-<script type="text/javascript" src="/libraries/wui-js/main/button/wui-button-0.6.js"></script>
+<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/button/wui-button-0.7.root.css">
+<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/button/wui-button-0.7.css">
+<script type="text/javascript" src="/libraries/wui-js/main/button/wui-button-0.7.js"></script>
 ```
 
 HTML code:
