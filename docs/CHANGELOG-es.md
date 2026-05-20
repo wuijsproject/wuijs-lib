@@ -7,6 +7,67 @@
 
 # Registro de Cambios
 
+## [v0.7.1] - 2026-05-16
+
+Características:
+
+1. Se actualizó cargador de recursos `wui.js`.
+2. Se actualizó versión clase WUIBody a `0.4`.
+	- Se agregó el método `isCompleted()`.
+3. Se actualizó versión clase WUILanguage a `0.4`.
+	- Se corrigió error en el método `load()`.
+4. Se actualizó versión clase WUIIcon a `0.5`.
+	- Se renombró la clase `.columnsgap-line` a `.columns-gap-line`.
+	- Se agregó la clase CSS `.columns-line`.
+	- Se agregó la clase CSS `.columns-x2-line`.
+	- Se agregó la clase CSS `.columns-x3-line`.
+	- Se agregó la clase CSS `.grid3x2-gap-line`.
+	- Se agregó la clase CSS `.grid3x3-gap-line`.
+	- Se agregó la clase CSS `.leftbar-line`.
+	- Se agregó la clase CSS `.leftbar-fill`.
+	- Se agregó la clase CSS `.rightbar-line`.
+	- Se agregó la clase CSS `.rightbar-fill`.
+5. Se actualizó versión clase WUIMenubar a `0.5`.
+	- Se agregó la propiedad booleana `hiddenPassiveBorder`.
+	- Se agregó la variable CSS `--wui-menubar-shadowopacity`.
+	- Se agregó la variable CSS `--wui-menubar-bar-borderradius`.
+	- Se agregó la variable CSS `--wui-menubar-bar-button-borderradius`.
+	- Se agregó la variable CSS `--wui-menubar-submenu-borderradius`.
+	- Se agregó la variable CSS `--wui-menubar-submenu-button-borderradius`.
+	- Se agregó la variable CSS `--wui-menubar-mobile-bar-bgcolor-top`.
+	- Se agregó la variable CSS `--wui-menubar-mobile-bar-bgcolor-bottom`.
+	- Se eliminó la variable CSS `--wui-menubar-borderradius`.
+6. Se actualizó versión clase WUISelectpicker a `0.7`.
+	- Se agregó la propiedad de arreglo `options`.
+	- Se agregó la propiedad de cadena `boxAlign`. Valores: `"left"`, `"center"`, `"right"`.
+	- Se agregó la propiedad booleana `viewicon`, para mostrar los íconos de la opción seleccionada.
+	- Se agregó la propiedad booleana `viewtest`, para mostrar los textos de la opción seleccionada.
+	- Se renombró el método `loadOptions` a `refresh`.
+	- Se renombró la opción de ícono `icon` a `iconClass`.
+	- Se renombró la variable CSS `--wui-selectpicker-bordercolor` a `--wui-selectpicker-bordercolor-out`.
+	- Se agregó la variable CSS `--wui-selectpicker-bordercolor-over`.
+	- Se agregó la variable CSS `--wui-selectpicker-bordercolor-disabled`.
+	- Se agregó la variable CSS `--wui-selectpicker-viewicon-iconsize`.
+	- Se agregó la variable CSS `--wui-selectpicker-viewicon-icongap`.
+	- Se agregó la variable CSS `--wui-selectpicker-viewicon-iconcolor`.
+	- Se agregó la variable CSS `--wui-selectpicker-box-shadowopacity`.
+	- Se agregó la variable CSS `--wui-selectpicker-box-width`.
+	- Se corrigió error de visualización de la caja cuando no existen opciones.
+	- Se corrigió error de uso de opción de ícono.
+	- Se corrigió error en la acción cancelar en el modo móvil.
+7. Se actualizó versión clase WUIDatepicker a `0.7`.
+	- Se renombró la variable CSS `--wui-datepicker-bordercolor` a `--wui-datepicker-bordercolor-out`.
+	- Se agregó la variable CSS `--wui-datepicker-bordercolor-over`.
+	- Se agregó la variable CSS `--wui-datepicker-bordercolor-disabled`.
+	- Se agregó la variable CSS `--wui-datepicker-box-shadowopacity`.
+8. Se actualizó versión clase WUITimepicker a `0.7`.
+	- Se renombró la variable CSS `--wui-timepicker-bordercolor` a `--wui-timepicker-bordercolor-out`.
+	- Se agregó la variable CSS `--wui-timepicker-bordercolor-over`.
+	- Se agregó la variable CSS `--wui-timepicker-bordercolor-disabled`.
+	- Se agregó la variable CSS `--wui-timepicker-box-shadowopacity`.
+9. Se actualizó versión clase WUIColorpicker a `0.7`.
+	- Se agregó la variable CSS `--wui-colorpicker-box-shadowopacity`.
+
 ## [v0.7.0] - 2026-05-14
 
 Características:

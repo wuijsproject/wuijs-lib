@@ -14,9 +14,9 @@
 |                      | |
 | -------------------- | --- |
 | **Library name**     | `wuijs-main-lib` |
-| **Library version**  | `0.7.0` ([Change Log](https://github.com/wui-js/wuijs-main-lib/blob/main/docs/CHANGELOG-en.md)) |
+| **Library version**  | `0.7.1` ([Change Log](https://github.com/wui-js/wuijs-main-lib/blob/main/docs/CHANGELOG-en.md)) |
 | **NPM package**      | `@wui-js/main` ([npm](https://www.npmjs.com/package/@wui-js/main)) |
-| **Document version** | `0.7.0.20260514.0` |
+| **Document version** | `0.7.1.20260516.0` |
 | **License**          | `Apache License 2.0` |
 | **Author**           | `Sergio E. Belmar V. <wuijs.project@gmail.com>` |
 | **Repository**       | [https://github.com/wui-js/wuijs-main-lib](https://github.com/wui-js/wuijs-main-lib) |
@@ -91,10 +91,10 @@ WUI/JS Main Lib is part of the WUI/JS project, which currently consists of 4 rep
 | ------------------------------------ | -------:| ----------- |
 | [WUICookie](#wui-cookie)             | `0.4`   | Utilities for cookies management. |
 | [WUIHead](#wui-head)                 | `0.3`   | Utilities for HTML head management. |
-| [WUIBody](#wui-body)                 | `0.3`   | Utilities for HTML body management. Allows the import of CSS/JS/HTML content and facilitates implementation in native mobile environments. |
-| [WUILanguage](#wui-language)         | `0.3`   | Utilities for interfaces with different languages managment. Allows you to load language files in JS or JSON format and dynamically update the content of HTML elements based on the language. |
+| [WUIBody](#wui-body)                 | `0.4`   | Utilities for HTML body management. Allows the import of CSS/JS/HTML content and facilitates implementation in native mobile environments. |
+| [WUILanguage](#wui-language)         | `0.4`   | Utilities for interfaces with different languages managment. Allows you to load language files in JS or JSON format and dynamically update the content of HTML elements based on the language. |
 | [WUIScrolly](#wui-scrolly)           | `0.5`   | Utilities for animating HTML elements managment using the "onscroll" event of the HTML page body. |
-| [WUIIcon](#wui-icon)                 | `0.4`   | Pre-designed icons set loaded via CSS, for use in interfaces. |
+| [WUIIcon](#wui-icon)                 | `0.5`   | Pre-designed icons set loaded via CSS, for use in interfaces. |
 | [WUIFade](#wui-fade)                 | `0.3`   | Utilities for fading out and fading control in HTML elements with opacity. |
 | [WUILoader](#wui-loader)             | `0.4`   | Component for the implementation of loading animations. |
 | [WUITooltip](#wui-tooltip)           | `0.3`   | Component for the implementation of tooltip texts. |
@@ -102,15 +102,15 @@ WUI/JS Main Lib is part of the WUI/JS project, which currently consists of 4 rep
 | [WUIPaging](#wui-paging)             | `0.4`   | Component for the implementation of paginated views with animated transitions. |
 | [WUISlider](#wui-slider)             | `0.5`   | Component for the implementation of slide presentations controlled by mouse/touch dragging and/or by event. |
 | [WUITabs](#wui-tabs)                 | `0.3`   | Component for the implementation of views accessible by tab selection. |
-| [WUIMenubar](#wui-menubar)           | `0.4`   | Component for the implementation of menu bars. |
+| [WUIMenubar](#wui-menubar)           | `0.5`   | Component for the implementation of menu bars. |
 | [WUIList](#wui-list)                 | `0.4`   | Component for the implementation of data lists and buttons for each row optionally. |
 | [WUITable](#wui-table)               | `0.5`   | Component for the implementation of data tables. Unlike the `WUIList` component, the `WUITable` component includes a column header. |
 | [WUIForm](#wui-form)                 | `0.5`   | Component for the implementation of data forms. This component allows the implementation of HTML data input elements such as `<input>`, `<select>`, and `<textarea>`, and WUI library objects such as `WUISelectpicker`, `WUIDatepicker`, `WUITimepicker`, `WUIColorpicker`, `WUISwitch`, `WUIIntensity`, and `WUIButton`. |
 | [WUIFormat](#wui-format)             | `0.3`   | Utilities for management and validation `string`, `number` and `Date` data formats. |
-| [WUISelectpicker](#wui-selectpicker) | `0.6`   | Component for the implementation of multiple or exclusive selection list data inputs based on HTML element `<select>`. |
-| [WUIDatepicker](#wui-datepicker)     | `0.6`   | Component for the implementation of date type data inputs based on HTML element `<input type="date">`. |
-| [WUITimepicker](#wui-timepicker)     | `0.6`   | Component for the implementation of time type data inputs based on HTML element `<input type="time">`. |
-| [WUIColorpicker](#wui-colorpicker)   | `0.6`   | Component for the implementation of color picker type data inputs based on HTML element `<input type="color">`. |
+| [WUISelectpicker](#wui-selectpicker) | `0.7`   | Component for the implementation of multiple or exclusive selection list data inputs based on HTML element `<select>`. |
+| [WUIDatepicker](#wui-datepicker)     | `0.7`   | Component for the implementation of date type data inputs based on HTML element `<input type="date">`. |
+| [WUITimepicker](#wui-timepicker)     | `0.7`   | Component for the implementation of time type data inputs based on HTML element `<input type="time">`. |
+| [WUIColorpicker](#wui-colorpicker)   | `0.7`   | Component for the implementation of color picker type data inputs based on HTML element `<input type="color">`. |
 | [WUISwitch](#wui-switch)             | `0.6`   | Component for the implementation of checkbox type data inputs based on HTML element `<input type="checkbox">`. |
 | [WUIIntensity](#wui-intensity)       | `0.4`   | Component for the implementation of 4-level intensity selector type data inputs: none, low, half, and high based on HTML element `<input type="range">`. |
 | [WUIButton](#wui-button)             | `0.7`   | Component for the implementation of based on HTML element `<button>`. |
@@ -212,8 +212,8 @@ HTML code:
 		<meta name="theme-color" content="">
 		<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/scrolly/wui-scrolly-0.5.root.css">
 		<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/scrolly/wui-scrolly-0.5.css">
-		<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/icon/wui-icon-0.4.root.css">
-		<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/icon/wui-icon-0.4.css">
+		<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/icon/wui-icon-0.5.root.css">
+		<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/icon/wui-icon-0.5.css">
 		<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/loader/wui-loader-0.4.root.css">
 		<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/loader/wui-loader-0.4.css">
 		<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/tooltip/wui-tooltip-0.3.root.css">
@@ -226,22 +226,22 @@ HTML code:
 		<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/slider/wui-slider-0.5.css">
 		<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/tabs/wui-tabs-0.3.root.css">
 		<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/tabs/wui-tabs-0.3.css">
-		<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/menubar/wui-menubar-0.4.root.css">
-		<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/menubar/wui-menubar-0.4.css">
+		<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/menubar/wui-menubar-0.5.root.css">
+		<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/menubar/wui-menubar-0.5.css">
 		<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/list/wui-list-0.4.root.css">
 		<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/list/wui-list-0.4.css">
 		<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/table/wui-table-0.5.root.css">
 		<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/table/wui-table-0.5.css">
 		<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/form/wui-form-0.5.root.css">
 		<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/form/wui-form-0.5.css">
-		<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/selectpicker/wui-selectpicker-0.6.root.css">
-		<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/selectpicker/wui-selectpicker-0.6.css">
-		<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/datepicker/wui-datepicker-0.6.root.css">
-		<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/datepicker/wui-datepicker-0.6.css">
-		<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/timepicker/wui-timepicker-0.6.root.css">
-		<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/timepicker/wui-timepicker-0.6.css">
-		<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/colorpicker/wui-colorpicker-0.6.root.css">
-		<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/colorpicker/wui-colorpicker-0.6.css">
+		<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/selectpicker/wui-selectpicker-0.7.root.css">
+		<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/selectpicker/wui-selectpicker-0.7.css">
+		<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/datepicker/wui-datepicker-0.7.root.css">
+		<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/datepicker/wui-datepicker-0.7.css">
+		<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/timepicker/wui-timepicker-0.7.root.css">
+		<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/timepicker/wui-timepicker-0.7.css">
+		<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/colorpicker/wui-colorpicker-0.7.root.css">
+		<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/colorpicker/wui-colorpicker-0.7.css">
 		<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/switch/wui-switch-0.6.root.css">
 		<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/switch/wui-switch-0.6.css">
 		<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/intensity/wui-intensity-0.4.root.css">
@@ -249,8 +249,8 @@ HTML code:
 		<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/button/wui-button-0.3.css">
 		<script type="text/javascript" src="/libraries/wui-js/main/cookie/wui-cookie-0.4.js"></script>
 		<script type="text/javascript" src="/libraries/wui-js/main/head/wui-head-0.3.js"></script>
-		<script type="text/javascript" src="/libraries/wui-js/main/body/wui-body-0.3.js"></script>
-		<script type="text/javascript" src="/libraries/wui-js/main/language/wui-language-0.3.js"></script>
+		<script type="text/javascript" src="/libraries/wui-js/main/body/wui-body-0.4.js"></script>
+		<script type="text/javascript" src="/libraries/wui-js/main/language/wui-language-0.4.js"></script>
 		<script type="text/javascript" src="/libraries/wui-js/main/scrolly/wui-scrolly-0.5.js"></script>
 		<script type="text/javascript" src="/libraries/wui-js/main/fade/wui-fade-0.3.js"></script>
 		<script type="text/javascript" src="/libraries/wui-js/main/loader/wui-loader-0.4.js"></script>
@@ -259,15 +259,15 @@ HTML code:
 		<script type="text/javascript" src="/libraries/wui-js/main/paging/wui-paging-0.4.js"></script>
 		<script type="text/javascript" src="/libraries/wui-js/main/slider/wui-slider-0.5.js"></script>
 		<script type="text/javascript" src="/libraries/wui-js/main/tabs/wui-tabs-0.3.js"></script>
-		<script type="text/javascript" src="/libraries/wui-js/main/menubar/wui-menubar-0.4.js"></script>
+		<script type="text/javascript" src="/libraries/wui-js/main/menubar/wui-menubar-0.5.js"></script>
 		<script type="text/javascript" src="/libraries/wui-js/main/list/wui-list-0.4.js"></script>
 		<script type="text/javascript" src="/libraries/wui-js/main/table/wui-table-0.5.js"></script>
 		<script type="text/javascript" src="/libraries/wui-js/main/form/wui-form-0.5.js"></script>
 		<script type="text/javascript" src="/libraries/wui-js/main/format/wui-format-0.3.js"></script>
-		<script type="text/javascript" src="/libraries/wui-js/main/selectpicker/wui-selectpicker-0.6.js"></script>
-		<script type="text/javascript" src="/libraries/wui-js/main/datepicker/wui-datepicker-0.6.js"></script>
-		<script type="text/javascript" src="/libraries/wui-js/main/timepicker/wui-timepicker-0.6.js"></script>
-		<script type="text/javascript" src="/libraries/wui-js/main/colorpicker/wui-colorpicker-0.6.js"></script>
+		<script type="text/javascript" src="/libraries/wui-js/main/selectpicker/wui-selectpicker-0.7.js"></script>
+		<script type="text/javascript" src="/libraries/wui-js/main/datepicker/wui-datepicker-0.7.js"></script>
+		<script type="text/javascript" src="/libraries/wui-js/main/timepicker/wui-timepicker-0.7.js"></script>
+		<script type="text/javascript" src="/libraries/wui-js/main/colorpicker/wui-colorpicker-0.7.js"></script>
 		<script type="text/javascript" src="/libraries/wui-js/main/switch/wui-switch-0.6.js"></script>
 		<script type="text/javascript" src="/libraries/wui-js/main/intensity/wui-intensity-0.4.js"></script>
 		<script type="text/javascript" src="/libraries/wui-js/main/button/wui-button-0.3.js"></script>
@@ -305,7 +305,7 @@ This loader allows you to integrate all WUI libraries into a web page, either fu
 		<meta name="application-name" content="">
 		<meta name="theme-color" content="">
 		<link type="text/css" rel="stylesheet" href="./settings/wui.root.css">
-		<script type="text/javascript" src="/libraries/wui-js/main/wui.js?v=0.7.0"></script>
+		<script type="text/javascript" src="/libraries/wui-js/main/wui.js?v=0.7.1"></script>
 	</head>
 	<body>
 	</body>
@@ -325,7 +325,7 @@ Optionally, libraries can be included individually. To do this, add them to the 
 Library names passed in the `class` parameter should not contain the version suffix (`-x.x`) as the version will be automatically defined by the simple load script.
 
 ```html
-<script type="text/javascript" src="/libraries/wui-js/main/wui.js?v=0.7.0&c=selectpicker,switch"></script>
+<script type="text/javascript" src="/libraries/wui-js/main/wui.js?v=0.7.1&c=selectpicker,switch"></script>
 ```
 
 > [!NOTE]
@@ -334,7 +334,7 @@ Library names passed in the `class` parameter should not contain the version suf
 Additionally, you can omit loading the `root.css` files for each library by adding the `root` parameter with the value `0` (zero) to the `wui.js` file URL.
 
 ```html
-<script type="text/javascript" src="/libraries/wui-js/main/wui.js?v=0.7.0&c=selectpicker,switch&r=0"></script>
+<script type="text/javascript" src="/libraries/wui-js/main/wui.js?v=0.7.1&c=selectpicker,switch&r=0"></script>
 ```
 
 > [!TIP]
@@ -368,7 +368,7 @@ Utilities for cookies management.
 
 | Nombre  | Tipo     | Descripción |
 | ------- | -------- | ----------- |
-| version | `string` | Versión del plugin. |
+| version | `string` | Version del plugin. |
 
 #### Properties
 
@@ -504,7 +504,7 @@ window.addEventListener("DOMContentLoaded", init);
 
 ### WUIBody
 
-Version: `0.3`
+Version: `0.4`
 
 Utilities for HTML body management. Allows the import of CSS/JS/HTML content and facilitates implementation in native mobile environments.
 
@@ -512,7 +512,7 @@ Utilities for HTML body management. Allows the import of CSS/JS/HTML content and
 
 | Type | File |
 |:----:| ---- |
-| JS   | [src/wui-js/main/body/wui-body-0.3.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/body/wui-body-0.3.js) |
+| JS   | [src/wui-js/main/body/wui-body-0.4.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/body/wui-body-0.4.js) |
 
 #### Constructor
 
@@ -532,12 +532,13 @@ Utilities for HTML body management. Allows the import of CSS/JS/HTML content and
 
 #### Methods
 
-| Method  | Return type | Description |
-| ------- | ----------- | ----------- |
-| import  | `void`      | `import(id, path[, done])`<br><br>Arguments:<br>**• id:** `string`, specifies the id of the HTML element where the content is to be loaded.<br>**• path:** `string`, specifies the subdirectory path and filename of the files with extension `.css`, `.htm` and `.js` that will be imported and loaded.<br>**• done:** `function` *optional*, this function is executed when the content loading has finished.<br><br>Imports CSS/JS/HTML content referenced to an HTML element by its `id`. The content is also commonly referred to as a "module" and is loaded in three sections:<br>**• CSS:** using a `<style>` element inserted before the HTML content.<br>**• HTML:** over the element identified by its `id`.<br>**• JS:** using a `<script>` element inserted into the body of the HTML document. |
-| prepare | `void`      | `prepare()`<br><br>Depending on the value of the `environment` parameter, modifies the HTML elements `a`, `input`, and `select` in the HTML document body to adapt them to native environments. |
-| openURL | `void`      | `openURL(url[, download])`<br><br>Arguments:<br><br>**• id:** `string`, specifies the URL that is required to be opened or downloaded.<br>**• download:** `string` *optional*, specifies the name of the file that will be used to download the content referenced by the URL.<br><br>Open or download content using a URL. This method is required in native environments since WebView on Android or WebKit on iOS aren't always supported. |
-| destroy | `void`      | `destroy()`<br><br>Destroyer. |
+| Method      | Return type | Description |
+| ----------- | ----------- | ----------- |
+| import      | `void`      | `import(id, path[, done])`<br><br>Arguments:<br>**• id:** `string`, specifies the id of the HTML element where the content is to be loaded.<br>**• path:** `string`, specifies the subdirectory path and filename of the files with extension `.css`, `.htm` and `.js` that will be imported and loaded.<br>**• done:** `function` *optional*, this function is executed when the content loading has finished.<br><br>Imports CSS/JS/HTML content referenced to an HTML element by its `id`. The content is also commonly referred to as a "module" and is loaded in three sections:<br>**• CSS:** using a `<style>` element inserted before the HTML content.<br>**• HTML:** over the element identified by its `id`.<br>**• JS:** using a `<script>` element inserted into the body of the HTML document. |
+| prepare     | `void`      | `prepare()`<br><br>Depending on the value of the `environment` parameter, modifies the HTML elements `a`, `input`, and `select` in the HTML document body to adapt them to native environments. |
+| openURL     | `void`      | `openURL(url[, download])`<br><br>Arguments:<br><br>**• id:** `string`, specifies the URL that is required to be opened or downloaded.<br>**• download:** `string` *optional*, specifies the name of the file that will be used to download the content referenced by the URL.<br><br>Open or download content using a URL. This method is required in native environments since WebView on Android or WebKit on iOS aren't always supported. |
+| isCompleted | `boolean`   | `isCompleted()`<br><br>Returns `true` if all contents have been imported and loaded, `false` in case contr. |
+| destroy     | `void`      | `destroy()`<br><br>Destroyer. |
 
 #### Implementation
 
@@ -587,7 +588,7 @@ body {
 HTML head:
 
 ```html
-<script type="text/javascript" src="/libraries/wui-js/main/body/wui-body-0.3.js"></script>
+<script type="text/javascript" src="/libraries/wui-js/main/body/wui-body-0.4.js"></script>
 ```
 
 HTML code:
@@ -626,7 +627,7 @@ window.addEventListener("DOMContentLoaded", init);
 
 ### WUILanguage
 
-Version: `0.3`
+Version: `0.4`
 
 Utilities for interfaces with different languages managment. Allows you to load language files in JS or JSON format and dynamically update the content of HTML elements based on the language.
 
@@ -634,7 +635,7 @@ Utilities for interfaces with different languages managment. Allows you to load 
 
 | Type | File |
 |:----:| ---- |
-| JS   | [src/wui-js/main/language/wui-language-0.3.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/language/wui-language-0.3.js) |
+| JS   | [src/wui-js/main/language/wui-language-0.4.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/language/wui-language-0.4.js) |
 
 #### Constructor
 
@@ -697,7 +698,7 @@ JSON code file `main-en.json`:
 HTML head:
 
 ```html
-<script type="text/javascript" src="/libraries/wui-js/main/language/wui-language-0.3.js"></script>
+<script type="text/javascript" src="/libraries/wui-js/main/language/wui-language-0.4.js"></script>
 ```
 
 HTML code:
@@ -757,7 +758,7 @@ language.load("en", ["main", "main2"]);
 
 ### WUIScrolly
 
-Versión: `0.5`
+Version: `0.5`
 
 Utilities for animating HTML elements managment using the "onscroll" event of the HTML page body.
 
@@ -1037,7 +1038,7 @@ window.addEventListener("DOMContentLoaded", init);
 
 ### WUIIcon
 
-Version: `0.4`
+Version: `0.5`
 
 Pre-designed icons set loaded via CSS, for use in interfaces.
 
@@ -1045,8 +1046,8 @@ Pre-designed icons set loaded via CSS, for use in interfaces.
 
 | Type | File |
 |:----:| ---- |
-| CSS  | [src/wui-js/main/icon/wui-icon-0.4.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/icon/wui-icon-0.4.css) |
-| CSS  | [src/wui-js/main/icon/wui-icon-0.4.root.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/icon/wui-icon-0.4.root.css) |
+| CSS  | [src/wui-js/main/icon/wui-icon-0.5.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/icon/wui-icon-0.5.css) |
+| CSS  | [src/wui-js/main/icon/wui-icon-0.5.root.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/icon/wui-icon-0.5.root.css) |
 
 #### Signals Icon Table
 
@@ -1207,39 +1208,38 @@ Pre-designed icons set loaded via CSS, for use in interfaces.
 
 #### Options Icon Table
 
-| Icon                                                                                    | Style             | Icon                                                                                        | Style                 | Icon                                                                                         | Style                  | Icon                                                                                         | Style                 |
-| :--:                                                                                    | ------            | :--:                                                                                        | ------                | :--:                                                                                         | ------                 | :--:                                                                                         | ------                 |
-| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/at-line.svg)          | .at-line          | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/at-lg-line.svg)           | .at-lg-line           | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/award-line.svg)            | .award-line            | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/award-fill.svg)            | .award-fill            |
-| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/basket-line.svg)      | .basket-line      | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/basket-fill.svg)          | .basket-fill          | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/bell-line.svg)             | .bell-line             | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/bell-fill.svg)             | .bell-fill             |
-| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/bluetooth-line.svg)   | .bluetooth-line   | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/bluetooth-fill.svg)       | .bluetooth-fill       | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/bug-line.svg)              | .bug-line              | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/bug-fill.svg)              | .bug-fill              |
-| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/cash-line.svg)        | .cash-line        | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/cash-alt-fill.svg)        | .cash-alt-fill        | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/circle-line.svg)           | .circle-line           | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/circle-fill.svg)           | .circle-fill           |
-| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/contacts-line.svg)    | .contacts-line    | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/contacts-fill.svg)        | .contacts-fill        | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/copy-line.svg)             | .copy-line             | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/copy-fill.svg)             | .copy-fill             |
-| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/copy-link-line.svg)   | .copy-link-line   | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/copy-link-fill.svg)       | .copy-link-fill       | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/easel-line.svg)            | .easel-line            | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/easel-fill.svg)            | .easel-fill            |
-| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/eye-line.svg)         | .eye-line         | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/eye-fill.svg)             | .eye-fill             | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/eye-slash-line.svg)        | .eye-slash-line        | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/eye-slash-fill.svg)        | .eye-slash-fill        |
-| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/flag-line.svg)        | .flag-line        | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/flag-fill.svg)            | .flag-fill            | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/floppy-line.svg)           | .floppy-line           | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/floppy-fill.svg)           | .floppy-fill           |
-| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/gear-line.svg)        | .gear-line        | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/gear-fill.svg)            | .gear-fill            | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/gears-line.svg)            | .gears-line            | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/gears-fill.svg)            | .gears-fill            |
-| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/grid3x2-line.svg)     | .grid3x2-line     | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/grid3x3-line.svg)         | .grid3x3-line         | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/health-line.svg)           | .health-line           | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/health-fill.svg)           | .health-fill           |
-| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/home-line.svg)        | .home-line        | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/home-fill.svg)            | .home-fill            | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/image-line.svg)            | .image-line            | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/image-fill.svg)            | .image-fill            |
-| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/image-alt-line.svg)   | .image-alt-line   | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/images-line.svg)          | .images-line          | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/key-line.svg)              | .key-line              | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/key-fill.svg)              | .key-fill              |
-| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/keyboard-line.svg)    | .keyboard-line    | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/keyboard-fill.svg)        | .keyboard-fill        | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/layers-line.svg)           | .layers-line           | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/layers-fill.svg)           | .layers-fill           |
-| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/lightbulb-line.svg)   | .lightbulb-line   | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/lightbulb-fill.svg)       | .lightbulb-fill       | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/lock-line.svg)             | .lock-line             | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/lock-fill.svg)             | .lock-fill             |
-| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/mailbox-line.svg)     | .mailbox-line     | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/mailbox-fill.svg)         | .mailbox-fill         | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/moon-line.svg)             | .moon-line             | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/moon-fill.svg)             | .moon-fill             |
-| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/moon-stars-line.svg)  | .moon-stars-line  | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/moon-stars-fill.svg)      | .moon-stars-fill      | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/mortarboard-line.svg)      | .mortarboard-line      | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/mortarboard-fill.svg)      | .mortarboard-fill      |
-| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/piechart-line.svg)    | .piechart-line    | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/piechart-fill.svg)        | .piechart-fill        | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/palette-line.svg)          | .palette-line          | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/palette-fill.svg)          | .palette-fill          |
-| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/pen-line.svg)         | .pen-line         | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/pen-fill.svg)             | .pen-fill             | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/pencil-line.svg)           | .pencil-line           | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/pencil-fill.svg)           | .pencil-fill           |
-| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/pin-line.svg)         | .pin-line         | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/pin-fill.svg)             | .pin-fill             | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/plant-line.svg)            | .plant-line            | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/plant-fill.svg)            | .plant-fill            |
-| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/play-line.svg)        | .play-line        | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/play-fill.svg)            | .play-fill            | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/play-circle-line.svg)      | .play-circle-line      | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/play-circle-fill.svg)      | .play-circle-fill      |
-| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/send-line.svg)        | .send-line        | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/send-fill.svg)            | .send-fill            | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/separationh-line.svg)      | .separationh-line      | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/separationv-line.svg)      | .separationv-line      |
-| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/share-line.svg)       | .share-line       | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/share-fill.svg)           | .share-fill           | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/shop-line.svg)             | .shop-line             | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/shop-alt-fill.svg)         | .shop-alt-fill         |
-| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/signpost-line.svg)    | .signpost-line    | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/signpost-fill.svg)        | .signpost-fill        | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/sim-line.svg)              | .sim-line              | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/sim-fill.svg)              | .sim-fill              |
-| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/star-line.svg)        | .star-line        | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/star-fill.svg)            | .star-fill            | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/star-circle-line.svg)      | .star-circle-line      | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/star-circle-fill.svg)      | .star-circle-fill      |
-| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/stoplights-line.svg)  | .stoplights-line  | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/stoplights-fill.svg)      | .stoplights-fill      | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/sun-line.svg)              | .sun-line              | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/sun-fill.svg)              | .sun-fill              |
-| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/thermometer-line.svg) | .thermometer-line | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/thermometer-low-line.svg) | .thermometer-low-line | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/thermometer-half-line.svg) | .thermometer-half-line | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/thermometer-high-line.svg) | .thermometer-high-line |
-| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/time-line.svg)        | .time-line        | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/time-fill.svg)            | .time-fill            | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/trash-line.svg)            | .trash-line            | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/trash-fill.svg)            | .trash-fill            |
-| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/trophy-line.svg)      | .trophy-line      | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/trophy-fill.svg)          | .trophy-fill          | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/unlock-line.svg)           | .unlock-line           | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/unlock-fill.svg)           | .unlock-fill           |
-| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/wallet-line.svg)      | .wallet-line      | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/wallet-fill.svg)          | .wallet-fill          | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/wifi-on-line.svg)          | .wifi-on-line          | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/wifi-off-line.svg)         | .wifi-off-line         |
-| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/window-app-line.svg)  | .window-app-line  | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/window-app-fill.svg)      | .window-app-fill      | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/wrench-line.svg)           | .wrench-line           | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/wrench-fill.svg)           | .wrench-fill           |
-| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/zoomin-line.svg)      | .zoomin-line      | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/zoomout-line.svg)         | .zoomout-line         |                                              |                        |                                              |                        |
+| Icon                                                                                   | Style                  | Icon                                                                                   | Style                  | Icon                                                                              | Style             | Icon                                                                                  | Style                 |
+| :--:                                                                                   | ------                 | :--:                                                                                   | ------                 | :--:                                                                              | ------            | :--:                                                                                  | ------                |
+| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/at-line.svg)               | .at-line               | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/at-lg-line.svg)            | .at-lg-line            | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/award-line.svg)       | .award-line       | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/award-fill.svg)           | .award-fill           |
+| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/basket-line.svg)           | .basket-line           | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/basket-fill.svg)           | .basket-fill           | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/bell-line.svg)        | .bell-line        | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/bell-fill.svg)            | .bell-fill            |
+| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/bluetooth-line.svg)        | .bluetooth-line        | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/bluetooth-fill.svg)        | .bluetooth-fill        | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/bug-line.svg)         | .bug-line         | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/bug-fill.svg)             | .bug-fill             |
+| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/cash-line.svg)             | .cash-line             | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/cash-alt-fill.svg)         | .cash-alt-fill         | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/circle-line.svg)      | .circle-line      | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/circle-fill.svg)          | .circle-fill          |
+| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/contacts-line.svg)         | .contacts-line         | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/contacts-fill.svg)         | .contacts-fill         | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/copy-line.svg)        | .copy-line        | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/copy-fill.svg)            | .copy-fill            |
+| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/copy-link-line.svg)        | .copy-link-line        | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/copy-link-fill.svg)        | .copy-link-fill        | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/easel-line.svg)       | .easel-line       | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/easel-fill.svg)           | .easel-fill           |
+| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/eye-line.svg)              | .eye-line              | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/eye-fill.svg)              | .eye-fill              | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/eye-slash-line.svg)   | .eye-slash-line   | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/eye-slash-fill.svg)       | .eye-slash-fill       |
+| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/flag-line.svg)             | .flag-line             | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/flag-fill.svg)             | .flag-fill             | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/floppy-line.svg)      | .floppy-line      | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/floppy-fill.svg)          | .floppy-fill          |
+| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/gear-line.svg)             | .gear-line             | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/gear-fill.svg)             | .gear-fill             | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/gears-line.svg)       | .gears-line       | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/gears-fill.svg)           | .gears-fill           |
+| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/health-line.svg)           | .health-line           | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/health-fill.svg)           | .health-fill           | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/home-line.svg)        | .home-line        | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/home-fill.svg)            | .home-fill            |
+| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/image-line.svg)            | .image-line            | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/image-fill.svg)            | .image-fill            | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/image-alt-line.svg)   | .image-alt-line   | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/images-line.svg)          | .images-line          |
+| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/key-line.svg)              | .key-line              | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/key-fill.svg)              | .key-fill              | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/keyboard-line.svg)    | .keyboard-line    | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/keyboard-fill.svg)        | .keyboard-fill        |
+| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/layers-line.svg)           | .layers-line           | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/layers-fill.svg)           | .layers-fill           | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/lightbulb-line.svg)   | .lightbulb-line   | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/lightbulb-fill.svg)       | .lightbulb-fill       |
+| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/lock-line.svg)             | .lock-line             | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/lock-fill.svg)             | .lock-fill             | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/mailbox-line.svg)     | .mailbox-line     | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/mailbox-fill.svg)         | .mailbox-fill         |
+| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/moon-line.svg)             | .moon-line             | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/moon-fill.svg)             | .moon-fill             | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/moon-stars-line.svg)  | .moon-stars-line  | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/moon-stars-fill.svg)      | .moon-stars-fill      |
+| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/mortarboard-line.svg)      | .mortarboard-line      | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/mortarboard-fill.svg)      | .mortarboard-fill      | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/piechart-line.svg)    | .piechart-line    | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/piechart-fill.svg)        | .piechart-fill        |
+| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/palette-line.svg)          | .palette-line          | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/palette-fill.svg)          | .palette-fill          | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/pen-line.svg)         | .pen-line         | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/pen-fill.svg)             | .pen-fill             |
+| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/pencil-line.svg)           | .pencil-line           | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/pencil-fill.svg)           | .pencil-fill           | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/pin-line.svg)         | .pin-line         | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/pin-fill.svg)             | .pin-fill             |
+| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/plant-line.svg)            | .plant-line            | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/plant-fill.svg)            | .plant-fill            | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/play-line.svg)        | .play-line        | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/play-fill.svg)            | .play-fill            |
+| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/play-circle-line.svg)      | .play-circle-line      | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/play-circle-fill.svg)      | .play-circle-fill      | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/send-line.svg)        | .send-line        | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/send-fill.svg)            | .send-fill            |
+| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/separationh-line.svg)      | .separationh-line      | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/separationv-line.svg)      | .separationv-line      | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/share-line.svg)       | .share-line       | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/share-fill.svg)           | .share-fill           |
+| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/shop-line.svg)             | .shop-line             | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/shop-alt-fill.svg)         | .shop-alt-fill         | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/signpost-line.svg)    | .signpost-line    | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/signpost-fill.svg)        | .signpost-fill        |
+| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/sim-line.svg)              | .sim-line              | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/sim-fill.svg)              | .sim-fill              | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/star-line.svg)        | .star-line        | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/star-fill.svg)            | .star-fill            |
+| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/star-circle-line.svg)      | .star-circle-line      | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/star-circle-fill.svg)      | .star-circle-fill      | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/stoplights-line.svg)  | .stoplights-line  | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/stoplights-fill.svg)      | .stoplights-fill      |
+| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/sun-line.svg)              | .sun-line              | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/sun-fill.svg)              | .sun-fill              | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/thermometer-line.svg) | .thermometer-line | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/thermometer-low-line.svg) | .thermometer-low-line |
+| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/thermometer-half-line.svg) | .thermometer-half-line | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/thermometer-high-line.svg) | .thermometer-high-line | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/time-line.svg)        | .time-line        | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/time-fill.svg)            | .time-fill            |
+| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/trash-line.svg)            | .trash-line            | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/trash-fill.svg)            | .trash-fill            | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/trophy-line.svg)      | .trophy-line      | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/trophy-fill.svg)          | .trophy-fill          |
+| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/unlock-line.svg)           | .unlock-line           | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/unlock-fill.svg)           | .unlock-fill           | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/wallet-line.svg)      | .wallet-line      | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/wallet-fill.svg)          | .wallet-fill          |
+| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/wifi-on-line.svg)          | .wifi-on-line          | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/wifi-off-line.svg)         | .wifi-off-line         | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/window-app-line.svg)  | .window-app-line  | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/window-app-fill.svg)      | .window-app-fill      |
+| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/wrench-line.svg)           | .wrench-line           | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/wrench-fill.svg)           | .wrench-fill           | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/zoomin-line.svg)      | .zoomin-line      | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/zoomout-line.svg)         | .zoomout-line         |
 
 #### Composer Icon Table
 
@@ -1250,17 +1250,24 @@ Pre-designed icons set loaded via CSS, for use in interfaces.
 | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/list-number-line.svg)       | .list-number-line       | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/list-stars-line.svg)         | .list-stars-line         | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/list-task-line.svg)   | .list-task-line   | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/list-unorderd-line.svg) | .list-unorderd-line |
 | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/text-center-line.svg)       | .text-center-line       | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/text-paragraph-line.svg)     | .text-paragraph-line     | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/text-left-line.svg)   | .text-left-line   | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/text-right-line.svg)    | .text-right-line    |
 
+#### Layout Icon Table
+
+| Icon                                                                          | Style         | Icon                                                                              | Style             | Icon                                                                             | Style            | Icon                                                                              | Style              |
+| :--:                                                                          | -----         | :--:                                                                              | -----             | :--:                                                                             | -----            | :--:                                                                              | -----              |
+| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/columns-line.svg) | .columns-line | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/columns-gap-line.svg) | .columns-gap-line | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/columns-x2-line.svg) | .columns-x2-line | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/columns-x3-line.svg)  | .columns-x3-line   |
+| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/grid3x2-line.svg) | .grid3x2-line | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/grid3x2-gap-line.svg) | .grid3x2-gap-line | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/grid3x3-line.svg)    | .grid3x3-line    | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/grid3x3-gap-line.svg) | .grid3x3-gap-line  |
+| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/leftbar-line.svg) | .leftbar-line | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/leftbar-fill.svg)     | .leftbar-fill     | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/rightbar-line.svg)   | .rightbar-line   | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/rightbar-fill.svg)    | .rightbar-fill     |
+
 #### Other Icons Table
 
-| Icon                                                                                         | Style                  | Icon                                                                                         | Style                  | Icon                                                                                         | Style                  | Icon                                                                                   | Style            |
-| :--:                                                                                         | -----                  | :--:                                                                                         | -----                  | :--:                                                                                         | -----                  | :--:                                                                                   | -----            |
-| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/ai-fill.svg)               | .ai-fill               | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/bullseye-line.svg)         | .bullseye-line         | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/columnsgap-line.svg)       | .columnsgap-line       | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/dart-fill.svg)       | .dart-fill       |
-| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/datasheet-line.svg)        | .datasheet-line        | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/datasheet-health-line.svg) | .datasheet-health-line | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/hash-line.svg)             | .hash-line             | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/headphones-line.svg) | .headphones-line |
-| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/headset-line.svg)          | .headset-line          | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/lab-fill.svg)              | .lab-fill              | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/logout-line.svg)           | .logout-line           | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/medal-line.svg)      | .medal-line      |
-| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/menu-line.svg)             | .menu-line             | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/pencil-square-fill.svg)    | .pencil-square-fill    | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/polygon-editable-line.svg) | .polygon-editable-line | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/qr-line.svg)         | .qr-line         |
-| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/qr-scan-line.svg)          | .qr-scan-line          | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/quote-fill.svg)            | .quote-fill            | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/rotate-line.svg)           | .rotate-line           | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/search-line.svg)     | .search-line     |
-| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/speedometer-line.svg)      | .speedometer-line      | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/translate-fill.svg)        | .translate-fill        | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/web-line.svg)              | .web-line              | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/universal-line.svg)  | .universal-line  |
-| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/icons/universal-circle-line.svg) | .universal-circle-line |                                              |                        |                                              |                        |                                        |                  | 
+| Icon                                                                                   | Style                  | Icon                                                                                   | Style                  | Icon                                                                             | Style            | Icon                                                                                   | Style                  |
+| :--:                                                                                   | -----                  | :--:                                                                                   | -----                  | :--:                                                                             | -----            | :--:                                                                                   | -----                  |
+| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/ai-fill.svg)               | .ai-fill               | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/bullseye-line.svg)         | .bullseye-line         | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/dart-fill.svg)       | .dart-fill       | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/datasheet-line.svg)        | .datasheet-line        |
+| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/datasheet-health-line.svg) | .datasheet-health-line | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/hash-line.svg)             | .hash-line             | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/headphones-line.svg) | .headphones-line | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/headset-line.svg)          | .headset-line          |
+| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/lab-fill.svg)              | .lab-fill              | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/logout-line.svg)           | .logout-line           | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/medal-line.svg)      | .medal-line      | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/menu-line.svg)             | .menu-line             |
+| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/pencil-square-fill.svg)    | .pencil-square-fill    | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/polygon-editable-line.svg) | .polygon-editable-line | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/qr-line.svg)         | .qr-line         | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/qr-scan-line.svg)          | .qr-scan-line          |
+| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/quote-fill.svg)            | .quote-fill            | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/rotate-line.svg)           | .rotate-line           | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/search-line.svg)     | .search-line     | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/speedometer-line.svg)      | .speedometer-line      |
+| ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/translate-fill.svg)        | .translate-fill        | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/web-line.svg)              | .web-line              | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/universal-line.svg)  | .universal-line  | ![](https://github.com/wui-js/wuijs-main-lib/blob/main/imgs/universal-circle-line.svg) | .universal-circle-line |
 
 #### Animated Icons Table
 
@@ -1287,7 +1294,7 @@ python ./svg-icon-maker.py --css <css-path> -o <output-directory> -c <color> -s 
 
 | Option             | Default value                              | Description |
 | ------------------ | ------------------------------------------ | ----------- |
-| `--css`            | `../src/wui-js/main/icon/wui-icon-0.4.css` | Path to the source CSS file. |
+| `--css`            | `../src/wui-js/main/icon/wui-icon-0.5.css` | Path to the source CSS file. |
 | `-o`,<br>`--out`   | `../imgs/icons/`                           | Output directory for the generated files. |
 | `-c`,<br>`--color` | `#a2a9b6`                                  | CSS-compatible color format that will replace the 'currentColor' statement in the SVG code. |
 | `-s`,<br>`--size`  | `24`                                       | Size in pixels (width and height) of the images in the set. |
@@ -1321,8 +1328,8 @@ nav {
 HTML head:
 
 ```html
-<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/icon/wui-icon-0.4.root.css">
-<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/icon/wui-icon-0.4.css">
+<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/icon/wui-icon-0.5.root.css">
+<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/icon/wui-icon-0.5.css">
 ```
 
 HTML code:
@@ -1751,8 +1758,8 @@ nav {
 HTML head:
 
 ```html
-<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/icon/wui-icon-0.4.root.css">
-<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/icon/wui-icon-0.4.css">
+<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/icon/wui-icon-0.5.root.css">
+<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/icon/wui-icon-0.5.css">
 <link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/modal/wui-modal-0.5.root.css">
 <link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/modal/wui-modal-0.5.css">
 <script type="text/javascript" src="/libraries/wui-js/main/modal/wui-modal-0.5.js"></script>
@@ -2286,7 +2293,7 @@ window.addEventListener("DOMContentLoaded", init);
 
 ### WUIMenubar
 
-Versión: `0.4`
+Version: `0.5`
 
 Component for the implementation of menu bars.
 
@@ -2294,9 +2301,9 @@ Component for the implementation of menu bars.
 
 | Type | File |
 |:----:| ---- |
-| JS   | [src/wui-js/main/menubar/wui-menubar-0.4.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/menubar/wui-menubar-0.4.js) |
-| CSS  | [src/wui-js/main/menubar/wui-menubar-0.4.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/menubar/wui-menubar-0.4.css) |
-| CSS  | [src/wui-js/main/menubar/wui-menubar-0.4.root.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/menubar/wui-menubar-0.4.root.css) |
+| JS   | [src/wui-js/main/menubar/wui-menubar-0.5.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/menubar/wui-menubar-0.5.js) |
+| CSS  | [src/wui-js/main/menubar/wui-menubar-0.5.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/menubar/wui-menubar-0.5.css) |
+| CSS  | [src/wui-js/main/menubar/wui-menubar-0.5.root.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/menubar/wui-menubar-0.5.root.css) |
 
 #### Constructor
 
@@ -2306,17 +2313,18 @@ Component for the implementation of menu bars.
 
 #### Properties
 
-| Property      | Type       | Default value.   | Description |
-| ------------- | ---------- | ---------------- | ----------- |
-| selector      | `string`   | `".wui-menubar"` | (get/set)<br><br>CSS selector that defines the HTML element that will be converted into the object. If more than one element matches the selector, only the first match will be included. |
-| compacted     | `boolean`  | `false`          | (get/set)<br><br>Define whether the menu is displayed in a compact format. |
-| expansive     | `boolean`  | `true`           | (get/set)<br><br>Define whether the menu expands.. The function of expansion is not visible in mobile mode (when the screen width is less than `768px`). |
-| autoClose     | `boolean`  | `true`           | (get/set)<br><br>Defines whether the submenu closes automatically when a button within it is clicked. If the property is `false`, a button to close the submenu manually will be loaded at the top. |
-| topButtons    | `array`    | `[]`             | (get/set)<br><br>List of menu top buttons, as defined by **Button Options**. These buttons are not visible in mobile mode (when the screen width is less than `768px`). |
-| mainButtons   | `array`    | `[]`             | (get/set)<br><br>List of menu main buttons, as defined by **Button Options**. |
-| bottomButtons | `array`    | `[]`             | (get/set)<br><br>List of menu bottom buttons, as defined by **Button Options**. These buttons are not visible in mobile mode (when the screen width is less than `768px`). |
-| onClick       | `function` | `null`           | (get/set)<br><br>Function run when a button is clicked. The function receives as parameters:<br><br>**• id:** `string`, unique button identifier. |
-| onSelect      | `function` | `null`           | (get/set)<br><br>Function run when a button with the `selectable` property is selected. The function receives as parameters:<br><br>**• id:** `string`, unique button identifier. |
+| Property            | Type       | Default value.   | Description |
+| ------------------- | ---------- | ---------------- | ----------- |
+| selector            | `string`   | `".wui-menubar"` | (get/set)<br><br>CSS selector that defines the HTML element that will be converted into the object. If more than one element matches the selector, only the first match will be included. |
+| compacted           | `boolean`  | `false`          | (get/set)<br><br>Define whether the menu is displayed in a compact format. |
+| expansive           | `boolean`  | `true`           | (get/set)<br><br>Define whether the menu expands.. The function of expansion is not visible in mobile mode (when the screen width is less than `768px`). |
+| autoClose           | `boolean`  | `true`           | (get/set)<br><br>Defines whether the submenu closes automatically when a button within it is clicked. If the property is `false`, a button to close the submenu manually will be loaded at the top. |
+| hiddenPassiveBorder | `boolean`  | `false`          | (get/set)<br><br>Hides the passive border of the main bar (top, left and bottom in normal mode and left, right and bottom in mobile mode). |
+| topButtons          | `array`    | `[]`             | (get/set)<br><br>List of menu top buttons, as defined by **Button Options**. These buttons are not visible in mobile mode (when the screen width is less than `768px`). |
+| mainButtons         | `array`    | `[]`             | (get/set)<br><br>List of menu main buttons, as defined by **Button Options**. |
+| bottomButtons       | `array`    | `[]`             | (get/set)<br><br>List of menu bottom buttons, as defined by **Button Options**. These buttons are not visible in mobile mode (when the screen width is less than `768px`). |
+| onClick             | `function` | `null`           | (get/set)<br><br>Function run when a button is clicked. The function receives as parameters:<br><br>**• id:** `string`, unique button identifier. |
+| onSelect            | `function` | `null`           | (get/set)<br><br>Function run when a button with the `selectable` property is selected. The function receives as parameters:<br><br>**• id:** `string`, unique button identifier. |
 
 #### Button Options
 
@@ -2352,46 +2360,50 @@ Component for the implementation of menu bars.
 
 | Variable                                          | Description |
 | ------------------------------------------------- | ----------- |
-| `--wui-menubar-shadowcolor`                       | Shadow color for the menu bar and submenu. |
+| `--wui-menubar-shadowcolor`                       | Shadow color for the menu and submenu bars. |
+| `--wui-menubar-shadowopacity`                     | Shadow opacity for the menu and submenu bars. |
 | `--wui-menubar-margin`                            | Outer margin of the menu bar relative to the window edges. |
-| `--wui-menubar-borderradius`                      | Border radius for the menu bar, submenu, and buttons. |
+| `--wui-menubar-bar-borderradius`                  | Border radius for the main menu bar. |
 | `--wui-menubar-bar-bordercolor`                   | Border color of the main menu bar. |
 | `--wui-menubar-bar-bgcolor-top`                   | Top background color of the main bar (used in gradient). |
 | `--wui-menubar-bar-bgcolor-bottom`                | Bottom background color of the main bar (used in gradient). |
+| `--wui-menubar-bar-button-borderradius`           | Border radius for the main bar buttons. |
 | `--wui-menubar-bar-button-bgcolor-out`            | Background color of main bar buttons in normal state. |
 | `--wui-menubar-bar-button-bgcolor-over`           | Background color of main bar buttons in hover/focus state. |
 | `--wui-menubar-bar-button-bgcolor-selected`       | Background color of main bar buttons in selected state. |
 | `--wui-menubar-bar-button-bgcolor-disabled`       | Background color of main bar buttons in disabled state. |
-| `--wui-menubar-bar-button-iconsize`               | Icon    size for main bar buttons. |
-| `--wui-menubar-bar-button-iconcolor-out`          | Icon    color of main bar buttons in normal state. |
-| `--wui-menubar-bar-button-iconcolor-over`         | Icon    color of main bar buttons in hover/focus state. |
-| `--wui-menubar-bar-button-iconcolor-selected`     | Icon    color of main bar buttons in selected state. |
-| `--wui-menubar-bar-button-iconcolor-disabled`     | Icon    color of main bar buttons in disabled state. |
+| `--wui-menubar-bar-button-iconsize`               | Icon size for main bar buttons. |
+| `--wui-menubar-bar-button-iconcolor-out`          | Icon color of main bar buttons in normal state. |
+| `--wui-menubar-bar-button-iconcolor-over`         | Icon color of main bar buttons in hover/focus state. |
+| `--wui-menubar-bar-button-iconcolor-selected`     | Icon color of main bar buttons in selected state. |
+| `--wui-menubar-bar-button-iconcolor-disabled`     | Icon color of main bar buttons in disabled state. |
 | `--wui-menubar-bar-button-textcolor-out`          | Text color of main bar buttons in normal state. |
 | `--wui-menubar-bar-button-textcolor-over`         | Text color of main bar buttons in hover/focus state. |
 | `--wui-menubar-bar-button-textcolor-selected`     | Text color of main bar buttons in selected state. |
 | `--wui-menubar-bar-button-textcolor-disabled`     | Text color of main bar buttons in disabled state. |
 | `--wui-menubar-expander-bgcolor-out`              | Background color of the expander/contractor button in normal state. |
 | `--wui-menubar-expander-bgcolor-over`             | Background color of the expander/contractor button in hover state. |
-| `--wui-menubar-expander-iconsize`                 | Icon    size of the expander/contractor button. |
-| `--wui-menubar-expander-iconcolor-out`            | Icon    color of the expander/contractor button in normal state. |
-| `--wui-menubar-expander-iconcolor-over`           | Icon    color of the expander/contractor button in hover state. |
+| `--wui-menubar-expander-iconsize`                 | Icon size of the expander/contractor button. |
+| `--wui-menubar-expander-iconcolor-out`            | Icon color of the expander/contractor button in normal state. |
+| `--wui-menubar-expander-iconcolor-over`           | Icon color of the expander/contractor button in hover state. |
 | `--wui-menubar-expander-expandicon-src`           | Source for the expand icon<br>(format: `url()` or `none` for the default source). |
 | `--wui-menubar-expander-contracticon-src`         | Source for the contract icon<br>(format: `url()` or `none` for the default source). |
-| `--wui-menubar-opener-iconsize`                   | Icon    size of the submenu opener button. |
+| `--wui-menubar-opener-iconsize`                   | Icon size of the submenu opener button. |
 | `--wui-menubar-opener-openicon-src`               | Source for the submenu open icon<br>(format: `url()` or `none` for the default source). |
 | `--wui-menubar-opener-closeicon-src`              | Source for the submenu close icon<br>(format: `url()` or `none` for the default source). |
+| `--wui-menubar-submenu-borderradius`              | Border radius for the submenu. |
 | `--wui-menubar-submenu-bordercolor`               | Border color of the submenu. |
 | `--wui-menubar-submenu-bgcolor`                   | Background color of the submenu. |
+| `--wui-menubar-submenu-button-borderradius`       | Border radius for submenu buttons. |
 | `--wui-menubar-submenu-button-bgcolor-out`        | Background color of submenu buttons in normal state. |
 | `--wui-menubar-submenu-button-bgcolor-over`       | Background color of submenu buttons in hover/focus state. |
 | `--wui-menubar-submenu-button-bgcolor-selected`   | Background color of submenu buttons in selected state. |
 | `--wui-menubar-submenu-button-bgcolor-disabled`   | Background color of submenu buttons in disabled state. |
-| `--wui-menubar-submenu-button-iconsize`           | Icon    size for submenu buttons. |
-| `--wui-menubar-submenu-button-iconcolor-out`      | Icon    color of submenu buttons in normal state. |
-| `--wui-menubar-submenu-button-iconcolor-over`     | Icon    color of submenu buttons in hover/focus state. |
-| `--wui-menubar-submenu-button-iconcolor-selected` | Icon    color of submenu buttons in selected state. |
-| `--wui-menubar-submenu-button-iconcolor-disabled` | Icon    color of submenu buttons in disabled state. |
+| `--wui-menubar-submenu-button-iconsize`           | Icon size for submenu buttons. |
+| `--wui-menubar-submenu-button-iconcolor-out`      | Icon color of submenu buttons in normal state. |
+| `--wui-menubar-submenu-button-iconcolor-over`     | Icon color of submenu buttons in hover/focus state. |
+| `--wui-menubar-submenu-button-iconcolor-selected` | Icon color of submenu buttons in selected state. |
+| `--wui-menubar-submenu-button-iconcolor-disabled` | Icon color of submenu buttons in disabled state. |
 | `--wui-menubar-submenu-button-textcolor-out`      | Text color of submenu buttons in normal state. |
 | `--wui-menubar-submenu-button-textcolor-over`     | Text color of submenu buttons in hover/focus state. |
 | `--wui-menubar-submenu-button-textcolor-selected` | Text color of submenu buttons in selected state. |
@@ -2400,6 +2412,8 @@ Component for the implementation of menu bars.
 | `--wui-menubar-tooltip-textcolor`                 | Text color of the tooltip. |
 | `--wui-menubar-bubble-bgcolor`                    | Background color of the notification bubble on buttons. |
 | `--wui-menubar-bubble-textcolor`                  | Text color of the notification bubble. |
+| `--wui-menubar-mobile-bar-bgcolor-top`            | Top background color of the main menu bar in mobile mode (used in gradient). |
+| `--wui-menubar-mobile-bar-bgcolor-bottom`         | Bottom background color of the main menu bar in mobile mode (used in gradient). |
 | `--wui-menubar-mobile-bar-horizpadding`           | Horizontal inner padding of the main menu bar in mobile mode. |
 | `--wui-menubar-mobile-bar-vertpadding`            | Vertical inner padding of the main menu bar in mobile mode. |
 | `--wui-menubar-mobile-opener-closeicon-src`       | Source for the submenu close icon in mobile mode<br>(format: `url()` or `none` for the default source). |
@@ -2440,11 +2454,11 @@ body {
 HTML head:
 
 ```html
-<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/icon/wui-icon-0.4.root.css">
-<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/icon/wui-icon-0.4.css">
-<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/menubar/wui-menubar-0.4.root.css">
-<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/menubar/wui-menubar-0.4.css">
-<script type="text/javascript" src="/libraries/wui-js/main/menubar/wui-menubar-0.4.js"></script>
+<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/icon/wui-icon-0.5.root.css">
+<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/icon/wui-icon-0.5.css">
+<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/menubar/wui-menubar-0.5.root.css">
+<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/menubar/wui-menubar-0.5.css">
+<script type="text/javascript" src="/libraries/wui-js/main/menubar/wui-menubar-0.5.js"></script>
 ```
 
 HTML code:
@@ -2542,7 +2556,7 @@ window.addEventListener("DOMContentLoaded", init);
 
 ### WUIList
 
-Versión: `0.4`
+Version: `0.4`
 
 Component for the implementation of data lists and buttons for each row optionally.
 
@@ -2712,8 +2726,8 @@ footer {
 HTML head:
 
 ```html
-<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/icon/wui-icon-0.4.root.css">
-<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/icon/wui-icon-0.4.css">
+<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/icon/wui-icon-0.5.root.css">
+<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/icon/wui-icon-0.5.css">
 <link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/list/wui-list-0.4.root.css">
 <link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/list/wui-list-0.4.css">
 <script type="text/javascript" src="/libraries/wui-js/main/list/wui-list-0.4.js"></script>
@@ -2850,7 +2864,7 @@ window.addEventListener("DOMContentLoaded", init);
 
 ### WUITable
 
-Versión: `0.5`
+Version: `0.5`
 
 Component for the implementation of data tables. Unlike the `WUIList` object, the `WUITable` object includes a column header.
 
@@ -2961,7 +2975,7 @@ Component for the implementation of data tables. Unlike the `WUIList` object, th
 | `--wui-table-column-textcolor-over`            | Text color of columns in hover/focus state. |
 | `--wui-table-column-textcolor-selected`        | Text color of columns in selected state. |
 | `--wui-table-column-textcolor-disabled`        | Text color of columns in disabled state. |
-| `--wui-table-column-sorter-iconsize`           | Icon    size for column sorting. |
+| `--wui-table-column-sorter-iconsize`           | Icon size for column sorting. |
 | `--wui-table-column-sorter-iconcolor-out`      | Color of the sorting icon in normal state. |
 | `--wui-table-column-sorter-iconcolor-over`     | Color of the sorting icon in hover state. |
 | `--wui-table-column-sorter-iconcolor-disabled` | Color of the sorting icon in disabled state. |
@@ -3263,16 +3277,16 @@ Component for the implementation of data forms. This component allows the implem
 | `--wui-form-input-textcolor-out`                 | Text color of input fields in normal state. |
 | `--wui-form-input-textcolor-over`                | Text color of input fields in hover state. |
 | `--wui-form-input-textcolor-disabled`            | Text color of input fields in disabled state. |
-| `--wui-form-date-opener-iconsize`                | Icon    size for the date picker opener. |
-| `--wui-form-date-opener-iconcolor-out`           | Icon    color for the date picker opener in normal state. |
-| `--wui-form-date-opener-iconcolor-over`          | Icon    color for the date picker opener in hover state. |
-| `--wui-form-date-opener-iconcolor-disabled`      | Icon    color for the date picker opener in disabled state. |
+| `--wui-form-date-opener-iconsize`                | Icon size for the date picker opener. |
+| `--wui-form-date-opener-iconcolor-out`           | Icon color for the date picker opener in normal state. |
+| `--wui-form-date-opener-iconcolor-over`          | Icon color for the date picker opener in hover state. |
+| `--wui-form-date-opener-iconcolor-disabled`      | Icon color for the date picker opener in disabled state. |
 | `--wui-form-date-opener-openicon-src`            | Source for the date picker open icon<br>(format: `url()` or `none` for the default source). |
 | `--wui-form-date-opener-closeicon-src`           | Source for the date picker close icon<br>(format: `url()` or `none` for the default source). |
-| `--wui-form-time-opener-iconsize`                | Icon    size for the time picker opener. |
-| `--wui-form-time-opener-iconcolor-out`           | Icon    color for the time picker opener in normal state. |
-| `--wui-form-time-opener-iconcolor-over`          | Icon    color for the time picker opener in hover state. |
-| `--wui-form-time-opener-iconcolor-disabled`      | Icon    color for the time picker opener in disabled state. |
+| `--wui-form-time-opener-iconsize`                | Icon size for the time picker opener. |
+| `--wui-form-time-opener-iconcolor-out`           | Icon color for the time picker opener in normal state. |
+| `--wui-form-time-opener-iconcolor-over`          | Icon color for the time picker opener in hover state. |
+| `--wui-form-time-opener-iconcolor-disabled`      | Icon color for the time picker opener in disabled state. |
 | `--wui-form-time-opener-openicon-src`            | Source for the time picker open icon<br>(format: `url()` or `none` for the default source). |
 | `--wui-form-time-opener-closeicon-src`           | Source for the time picker close icon<br>(format: `url()` or `none` for the default source). |
 | `--wui-form-range-thumb-size`                    | Size of the range control thumb. |
@@ -3287,10 +3301,10 @@ Component for the implementation of data forms. This component allows the implem
 | `--wui-form-range-trackbar-bgcolor-out`          | Background color of the range trackbar in normal state. |
 | `--wui-form-range-trackbar-bgcolor-focus`        | Background color of the range trackbar in focus state. |
 | `--wui-form-range-trackbar-bgcolor-disabled`     | Background color of the range trackbar in disabled state. |
-| `--wui-form-select-opener-iconsize`              | Icon    size for the select dropdown opener. |
-| `--wui-form-select-opener-iconcolor-out`         | Icon    color for the select opener in normal state. |
-| `--wui-form-select-opener-iconcolor-over`        | Icon    color for the select opener in hover state. |
-| `--wui-form-select-opener-iconcolor-disabled`    | Icon    color for the select opener in disabled state. |
+| `--wui-form-select-opener-iconsize`              | Icon size for the select dropdown opener. |
+| `--wui-form-select-opener-iconcolor-out`         | Icon color for the select opener in normal state. |
+| `--wui-form-select-opener-iconcolor-over`        | Icon color for the select opener in hover state. |
+| `--wui-form-select-opener-iconcolor-disabled`    | Icon color for the select opener in disabled state. |
 | `--wui-form-select-opener-openicon-src`          | Source for the select open icon<br>(format: `url()` or `none` for the default source). |
 | `--wui-form-select-opener-closeicon-src`         | Source for the select close icon<br>(format: `url()` or `none` for the default source). |
 | `--wui-form-data-textcolor-out`                  | Text color of data elements in normal state. |
@@ -3341,8 +3355,8 @@ nav {
 HTML Head:
 
 ```html
-<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/icon/wui-icon-0.4.root.css">
-<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/icon/wui-icon-0.4.css">
+<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/icon/wui-icon-0.5.root.css">
+<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/icon/wui-icon-0.5.css">
 <link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/form/wui-form-0.5.root.css">
 <link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/form/wui-form-0.5.css">
 <script type="text/javascript" src="/libraries/wui-js/main/form/wui-form-0.5.js"></script>
@@ -3866,7 +3880,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 ### WUISelectpicker
 
-Version: `0.6`
+Version: `0.7`
 
 Component for the implementation of multiple or exclusive selection list data inputs based on HTML element `<select>`.
 
@@ -3874,9 +3888,9 @@ Component for the implementation of multiple or exclusive selection list data in
 
 | Type | File |
 |:----:| ---- |
-| JS   | [src/wui-js/main/selectpicker/wui-selectpicker-0.6.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/selectpicker/wui-selectpicker-0.6.js) |
-| CSS  | [src/wui-js/main/selectpicker/wui-selectpicker-0.6.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/selectpicker/wui-selectpicker-0.6.css) |
-| CSS  | [src/wui-js/main/selectpicker/wui-selectpicker-0.6.root.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/selectpicker/wui-selectpicker-0.6.root.css) |
+| JS   | [src/wui-js/main/selectpicker/wui-selectpicker-0.7.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/selectpicker/wui-selectpicker-0.7.js) |
+| CSS  | [src/wui-js/main/selectpicker/wui-selectpicker-0.7.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/selectpicker/wui-selectpicker-0.7.css) |
+| CSS  | [src/wui-js/main/selectpicker/wui-selectpicker-0.7.root.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/selectpicker/wui-selectpicker-0.7.root.css) |
 
 #### Constructor
 
@@ -3889,15 +3903,19 @@ Component for the implementation of multiple or exclusive selection list data in
 | Property       | Type       | Default value         | Description |
 | -------------- | ---------- | --------------------- | ----------- |
 | selector       | `string`   | `".wui-selectpicker"` | (get/set)<br><br>CSS selector that defines the HTML container element of the object. If more than one element matches the selector, only the first match will be included. |
+| options        | `array`    | `[]`                  | (get/set)<br><br>Array of options for the selector according to the **Menu Options** definition. |
 | value          | `string`   | `""`                  | (get/set)<br><br>Value of the initial options selection. |
 | text           | `string`   | `""`                  | (get)<br><br>Text of the initial options selection. |
 | lang           | `string`   | `"en"`                | (get/set)<br><br>Component language.<br><br>Values:<br>• `"de"`, German.<br>• `"en"`, English.<br>• `"es"`, Spanish. |
 | texts          | `object`   | `{}`                  | (get/set)<br><br>Custom texts for component buttons and messages. |
 | openDirection  | `string`   | `"down"`              | (get/set)<br><br>Opening direction of the selector.<br><br>Values:<br>• `"up"`, upwards.<br>• `"down"`, downwards. |
+| boxAlign       | `string`   | `"center"`            | (get/set)<br><br>Horizontal alignment of the selector box relative to the data entry.<br><br>Values:<br>• `"left"`, left.<br>• `"center"`, center.<br>• `"right"`, right. |
 | multiple       | `boolean`  | `false`               | (get/set)<br><br>Defines if the selector allows multiple selection. |
 | separatorValue | `string`   | `","`                 | (get/set)<br><br>Character separator of values ​​in case of multiple selection. |
 | separatorText  | `string`   | `", "`                | (get/set)<br><br>Character separator of texts in case of multiple selection. |
 | filterable     | `boolean`  | `true`                | (get/set)<br><br>Defines if the selector allows filtering options by text input. |
+| viewicon       | `boolean`  | `false`               | (get/set)<br><br>Defines if the selector shows the icon of the selected option. Property enabled if `multiple` and `filterable` are `false`. |
+| viewtext       | `boolean`  | `true`                | (get/set)<br><br>Defines if the selector shows the text of the selected option. Property disabled if `multiple` and `filterable` are `false`. |
 | enabled        | `boolean`  | `true`                | (get/set)<br><br>Defines whether the data input is enabled. |
 | onOpen         | `function` | `null`                | (get/set)<br><br>Function run when the selector is opened. The function receives the current selected value as a parameter. |
 | onChange       | `function` | `null`                | (get/set)<br><br>Function run when the selected value changes. The function receives the new selected value as a parameter. |
@@ -3906,7 +3924,8 @@ Component for the implementation of multiple or exclusive selection list data in
 
 | Property  | Type      | Default value | Description |
 | --------- | --------- | ------------- | ----------- |
-| icon      | `string`  | `undefined`   | CSS classes of the option icon. |
+| ~~icon~~  | `string`  | `undefined`   | CSS classes of the option icon. **Deprecated**, use `iconClass` instead. |
+| iconClass | `string`  | `undefined`   | CSS classes of the option icon. |
 | text      | `string`  | `""`          | Option text. |
 | value     | `string`  | `""`          | Option value. |
 | selected  | `boolean` | `false`       | Option selection state. |
@@ -3921,8 +3940,9 @@ Component for the implementation of multiple or exclusive selection list data in
 | getInput        | `HTMLElement`        | `getInput()`<br><br>Returns the HTML element associated with the base data input `<select>`. |
 | init            | `void`               | `init()`<br><br>Initializes the object. |
 | addOption       | `void`               | `addOption(option)`<br><br>Arguments:<br>**• option:** `object`.<br><br>Add an option to the list, as defined by **Menu Options**. |
-| loadOptions     | `void`               | `loadOptions(options)`<br><br>Arguments:<br>**• options:** `array`.<br><br>Loads an array of options, clearing previously existing ones. |
+| ~~loadOptions~~ | `void`               | `loadOptions(options)` **Deprecated**, use `refresh()` instead.<br><br>Arguments:<br>**• options:** `array`.<br><br>Loads an array of options, clearing previously existing ones. |
 | clearOptions    | `void`               | `clearOptions()`<br><br>Removes all options from the list. |
+| refresh         | `void`               | `refresh(options)`<br><br>Arguments:<br>**• options:** `array`.<br><br>Loads an array of options, clearing previously existing ones. |
 | open            | `void`               | `open()`<br><br>Opens the selector. |
 | close           | `void`               | `close()`<br><br>Closes the selector. |
 | toggle          | `void`               | `toggle()`<br><br>Toggles the open state of the selector. |
@@ -3939,19 +3959,26 @@ Component for the implementation of multiple or exclusive selection list data in
 | --------------------------------------------------- | ----------- |
 | `--wui-selectpicker-borderradius`                   | Border radius of the selectpicker container. |
 | `--wui-selectpicker-borderwidth`                    | Border width of the selectpicker container. |
-| `--wui-selectpicker-bordercolor`                    | Border color of the selectpicker container. |
+| `--wui-selectpicker-bordercolor-out`                | Border color of the selectpicker container in normal state. |
+| `--wui-selectpicker-bordercolor-over`               | Border color of the selectpicker container in hover state. |
+| `--wui-selectpicker-bordercolor-disabled`           | Border color of the selectpicker container in disabled state. |
 | `--wui-selectpicker-bgcolor`                        | Background color of the selectpicker container. |
-| `--wui-selectpicker-opener-iconsize`                | Icon    size of the selectpicker opener. |
-| `--wui-selectpicker-opener-iconcolor-out`           | Icon    color of the selectpicker opener in normal state. |
-| `--wui-selectpicker-opener-iconcolor-over`          | Icon    color of the selectpicker opener in hover state. |
-| `--wui-selectpicker-opener-iconcolor-disabled`      | Icon    color of the selectpicker opener in disabled state. |
+| `--wui-selectpicker-opener-iconsize`                | Icon size of the selectpicker opener. |
+| `--wui-selectpicker-opener-iconcolor-out`           | Icon color of the selectpicker opener in normal state. |
+| `--wui-selectpicker-opener-iconcolor-over`          | Icon color of the selectpicker opener in hover state. |
+| `--wui-selectpicker-opener-iconcolor-disabled`      | Icon color of the selectpicker opener in disabled state. |
 | `--wui-selectpicker-opener-openicon-src`            | Image source of the selectpicker open icon<br>(format: `url()` or `none` for the default source). |
 | `--wui-selectpicker-opener-closeicon-src`           | Image source of the selectpicker close icon<br>(format: `url()` or `none` for the default source). |
+| `--wui-selectpicker-viewicon-iconsize`              | Size of the view icon. |
+| `--wui-selectpicker-viewicon-icongap`               | Gap between the text of the selected option and the view icon. |
+| `--wui-selectpicker-viewicon-iconcolor`             | Color of the icon of the selected option. |
 | `--wui-selectpicker-viewinput-paddingleft`          | Left padding of the view input field. |
 | `--wui-selectpicker-viewinput-textcolor-out`        | Text color of the view input field in normal state. |
 | `--wui-selectpicker-viewinput-textcolor-over`       | Text color of the view input field in hover state. |
 | `--wui-selectpicker-viewinput-textcolor-disabled`   | Text color of the view input field in disabled state. |
 | `--wui-selectpicker-box-shadowcolor`                | Shadow color of the dropdown box. |
+| `--wui-selectpicker-box-shadowopacity`              | Opacity of the shadow of the dropdown box. |
+| `--wui-selectpicker-box-width`                      | Width of the dropdown box. |
 | `--wui-selectpicker-box-borderradius`               | Border radius of the dropdown box. |
 | `--wui-selectpicker-box-bordercolor`                | Border color of the dropdown box. |
 | `--wui-selectpicker-box-bgcolor`                    | Background color of the dropdown box. |
@@ -3962,11 +3989,11 @@ Component for the implementation of multiple or exclusive selection list data in
 | `--wui-selectpicker-box-option-bordercolor-over`    | Border color of the dropdown box options in hover state. |
 | `--wui-selectpicker-box-option-bgcolor-out`         | Background color of the dropdown box options in normal state. |
 | `--wui-selectpicker-box-option-bgcolor-over`        | Background color of the dropdown box options in hover state. |
-| `--wui-selectpicker-box-option-iconsize`            | Icon    size of the dropdown box options. |
-| `--wui-selectpicker-box-option-iconcolor-out`       | Icon    color of the dropdown box options in normal state. |
-| `--wui-selectpicker-box-option-iconcolor-over`      | Icon    color of the dropdown box options in hover state. |
-| `--wui-selectpicker-box-option-iconcolor-selected`  | Icon    color of the dropdown box options in selected state. |
-| `--wui-selectpicker-box-option-iconcolor-disabled`  | Icon    color of the dropdown box options in disabled state. |
+| `--wui-selectpicker-box-option-iconsize`            | Icon size of the dropdown box options. |
+| `--wui-selectpicker-box-option-iconcolor-out`       | Icon color of the dropdown box options in normal state. |
+| `--wui-selectpicker-box-option-iconcolor-over`      | Icon color of the dropdown box options in hover state. |
+| `--wui-selectpicker-box-option-iconcolor-selected`  | Icon color of the dropdown box options in selected state. |
+| `--wui-selectpicker-box-option-iconcolor-disabled`  | Icon color of the dropdown box options in disabled state. |
 | `--wui-selectpicker-box-option-checkicon-src`       | Image source of the option check icon<br>(format: `url()` or `none` for the default source). |
 | `--wui-selectpicker-box-option-textcolor-empty`     | Text color of empty dropdown box options. |
 | `--wui-selectpicker-box-option-textcolor-out`       | Text color of the dropdown box options in normal state. |
@@ -4068,9 +4095,9 @@ nav {
 HTML head:
 
 ```html
-<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/selectpicker/wui-selectpicker-0.6.root.css">
-<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/selectpicker/wui-selectpicker-0.6.css">
-<script type="text/javascript" src="/libraries/wui-js/main/selectpicker/wui-selectpicker-0.6.js"></script>
+<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/selectpicker/wui-selectpicker-0.7.root.css">
+<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/selectpicker/wui-selectpicker-0.7.css">
+<script type="text/javascript" src="/libraries/wui-js/main/selectpicker/wui-selectpicker-0.7.js"></script>
 ```
 
 HTML code:
@@ -4146,7 +4173,7 @@ window.addEventListener("DOMContentLoaded", init);
 
 ### WUIDatepicker
 
-Versión: `0.6`
+Version: `0.7`
 
 Component for the implementation of date type data inputs based on HTML element `<input type="date">`.
 
@@ -4154,9 +4181,9 @@ Component for the implementation of date type data inputs based on HTML element 
 
 | Type | File |
 |:----:| ---- |
-| JS   | [src/wui-js/main/datepicker/wui-datepicker-0.6.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/datepicker/wui-datepicker-0.6.js) |
-| CSS  | [src/wui-js/main/datepicker/wui-datepicker-0.6.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/datepicker/wui-datepicker-0.6.css) |
-| CSS  | [src/wui-js/main/datepicker/wui-datepicker-0.6.root.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/datepicker/wui-datepicker-0.6.root.css) |
+| JS   | [src/wui-js/main/datepicker/wui-datepicker-0.7.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/datepicker/wui-datepicker-0.7.js) |
+| CSS  | [src/wui-js/main/datepicker/wui-datepicker-0.7.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/datepicker/wui-datepicker-0.7.css) |
+| CSS  | [src/wui-js/main/datepicker/wui-datepicker-0.7.root.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/datepicker/wui-datepicker-0.7.root.css) |
 
 #### Constructor
 
@@ -4211,10 +4238,10 @@ Component for the implementation of date type data inputs based on HTML element 
 | `--wui-datepicker-borderwidth`                   | Border width of the datepicker container. |
 | `--wui-datepicker-bordercolor`                   | Border color of the datepicker container. |
 | `--wui-datepicker-bgcolor`                       | Background color of the datepicker container. |
-| `--wui-datepicker-opener-iconsize`               | Icon    size of the datepicker opener. |
-| `--wui-datepicker-opener-iconcolor-out`          | Icon    color of the datepicker opener in normal state. |
-| `--wui-datepicker-opener-iconcolor-over`         | Icon    color of the datepicker opener in hover state. |
-| `--wui-datepicker-opener-iconcolor-disabled`     | Icon    color of the datepicker opener in disabled state. |
+| `--wui-datepicker-opener-iconsize`               | Icon size of the datepicker opener. |
+| `--wui-datepicker-opener-iconcolor-out`          | Icon color of the datepicker opener in normal state. |
+| `--wui-datepicker-opener-iconcolor-over`         | Icon color of the datepicker opener in hover state. |
+| `--wui-datepicker-opener-iconcolor-disabled`     | Icon color of the datepicker opener in disabled state. |
 | `--wui-datepicker-opener-openicon-src`           | Image source of the datepicker open icon<br>(format: `url()` or `none` for the default source). |
 | `--wui-datepicker-opener-closeicon-src`          | Image source of the datepicker close icon<br>(format: `url()` or `none` for the default source). |
 | `--wui-datepicker-viewinput-paddingleft`         | Left padding of the view input fields. |
@@ -4222,19 +4249,20 @@ Component for the implementation of date type data inputs based on HTML element 
 | `--wui-datepicker-viewinput-textcolor-over`      | Text color of the view input fields in hover state. |
 | `--wui-datepicker-viewinput-textcolor-disabled`  | Text color of the view input fields in disabled state. |
 | `--wui-datepicker-box-shadowcolor`               | Shadow color of the calendar dropdown. |
+| `--wui-datepicker-box-shadowopacity`             | Opacity of the shadow of the calendar dropdown. |
 | `--wui-datepicker-box-borderradius`              | Border radius of the calendar dropdown. |
 | `--wui-datepicker-box-bordercolor`               | Border color of the calendar dropdown. |
 | `--wui-datepicker-box-bgcolor`                   | Background color of the calendar dropdown. |
-| `--wui-datepicker-box-period-iconsize`           | Icon    size of the calendar period selector (month/year). |
-| `--wui-datepicker-box-period-iconcolor-out`      | Icon    color of the calendar period selector in normal state. |
-| `--wui-datepicker-box-period-iconcolor-over`     | Icon    color of the calendar period selector in hover state. |
-| `--wui-datepicker-box-period-iconcolor-disabled` | Icon    color of the calendar period selector in disabled state. |
+| `--wui-datepicker-box-period-iconsize`           | Icon size of the calendar period selector (month/year). |
+| `--wui-datepicker-box-period-iconcolor-out`      | Icon color of the calendar period selector in normal state. |
+| `--wui-datepicker-box-period-iconcolor-over`     | Icon color of the calendar period selector in hover state. |
+| `--wui-datepicker-box-period-iconcolor-disabled` | Icon color of the calendar period selector in disabled state. |
 | `--wui-datepicker-box-period-upicon-src`         | Image source of the period selector up icon<br>(format: `url()` or `none` for the default source). |
 | `--wui-datepicker-box-period-downicon-src`       | Image source of the period selector down icon<br>(format: `url()` or `none` for the default source). |
-| `--wui-datepicker-box-paging-iconsize`           | Icon    size of the calendar paging controls. |
-| `--wui-datepicker-box-paging-iconcolor-out`      | Icon    color of the calendar paging controls in normal state. |
-| `--wui-datepicker-box-paging-iconcolor-over`     | Icon    color of the calendar paging controls in hover state. |
-| `--wui-datepicker-box-paging-iconcolor-disabled` | Icon    color of the calendar paging controls in disabled state. |
+| `--wui-datepicker-box-paging-iconsize`           | Icon size of the calendar paging controls. |
+| `--wui-datepicker-box-paging-iconcolor-out`      | Icon color of the calendar paging controls in normal state. |
+| `--wui-datepicker-box-paging-iconcolor-over`     | Icon color of the calendar paging controls in hover state. |
+| `--wui-datepicker-box-paging-iconcolor-disabled` | Icon color of the calendar paging controls in disabled state. |
 | `--wui-datepicker-box-paging-previcon-src`       | Image source of the calendar previous paging icon<br>(format: `url()` or `none` for the default source). |
 | `--wui-datepicker-box-paging-nexticon-src`       | Image source of the calendar next paging icon<br>(format: `url()` or `none` for the default source). |
 | `--wui-datepicker-box-month-titlecolor`          | Text color of the calendar month title. |
@@ -4290,9 +4318,9 @@ nav {
 HTML head:
 
 ```html
-<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/datepicker/wui-datepicker-0.6.root.css">
-<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/datepicker/wui-datepicker-0.6.css">
-<script type="text/javascript" src="/libraries/wui-js/main/datepicker/wui-datepicker-0.6.js"></script>
+<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/datepicker/wui-datepicker-0.7.root.css">
+<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/datepicker/wui-datepicker-0.7.css">
+<script type="text/javascript" src="/libraries/wui-js/main/datepicker/wui-datepicker-0.7.js"></script>
 ```
 
 HTML code:
@@ -4346,7 +4374,7 @@ window.addEventListener("DOMContentLoaded", init);
 
 ### WUITimepicker
 
-Versión: `0.6`
+Version: `0.7`
 
 Component for the implementation of time type data inputs based on HTML element `<input type="time">`.
 
@@ -4354,9 +4382,9 @@ Component for the implementation of time type data inputs based on HTML element 
 
 | Type | File |
 |:----:| ---- |
-| JS   | [src/wui-js/main/timepicker/wui-timepicker-0.6.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/timepicker/wui-timepicker-0.6.js) |
-| CSS  | [src/wui-js/main/timepicker/wui-timepicker-0.6.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/timepicker/wui-timepicker-0.6.css) |
-| CSS  | [src/wui-js/main/timepicker/wui-timepicker-0.6.root.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/timepicker/wui-timepicker-0.6.root.css) |
+| JS   | [src/wui-js/main/timepicker/wui-timepicker-0.7.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/timepicker/wui-timepicker-0.7.js) |
+| CSS  | [src/wui-js/main/timepicker/wui-timepicker-0.7.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/timepicker/wui-timepicker-0.7.css) |
+| CSS  | [src/wui-js/main/timepicker/wui-timepicker-0.7.root.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/timepicker/wui-timepicker-0.7.root.css) |
 
 #### Constructor
 
@@ -4406,10 +4434,10 @@ Component for the implementation of time type data inputs based on HTML element 
 | `--wui-timepicker-borderwidth`                   | Border width of the timepicker container. |
 | `--wui-timepicker-bordercolor`                   | Border color of the timepicker container. |
 | `--wui-timepicker-bgcolor`                       | Background color of the timepicker container. |
-| `--wui-timepicker-opener-iconsize`               | Icon    size of the timepicker opener. |
-| `--wui-timepicker-opener-iconcolor-out`          | Icon    color of the timepicker opener in normal state. |
-| `--wui-timepicker-opener-iconcolor-over`         | Icon    color of the timepicker opener in hover state. |
-| `--wui-timepicker-opener-iconcolor-disabled`     | Icon    color of the timepicker opener in disabled state. |
+| `--wui-timepicker-opener-iconsize`               | Icon size of the timepicker opener. |
+| `--wui-timepicker-opener-iconcolor-out`          | Icon color of the timepicker opener in normal state. |
+| `--wui-timepicker-opener-iconcolor-over`         | Icon color of the timepicker opener in hover state. |
+| `--wui-timepicker-opener-iconcolor-disabled`     | Icon color of the timepicker opener in disabled state. |
 | `--wui-timepicker-opener-openicon-src`           | Image source of the timepicker open icon<br>(format: `url()` or `none` for the default source). |
 | `--wui-timepicker-opener-closeicon-src`          | Image source of the timepicker close icon<br>(format: `url()` or `none` for the default source). |
 | `--wui-timepicker-viewinput-paddingleft`         | Left padding of the view input fields. |
@@ -4417,6 +4445,7 @@ Component for the implementation of time type data inputs based on HTML element 
 | `--wui-timepicker-viewinput-textcolor-over`      | Text color of the view input fields in hover state. |
 | `--wui-timepicker-viewinput-textcolor-disabled`  | Text color of the view input fields in disabled state. |
 | `--wui-timepicker-box-shadowcolor`               | Shadow color of the time picker dropdown. |
+| `--wui-timepicker-box-shadowopacity`             | Opacity of the shadow of the time picker dropdown. |
 | `--wui-timepicker-box-borderradius`              | Border radius of the time picker dropdown. |
 | `--wui-timepicker-box-bordercolor`               | Border color of the time picker dropdown. |
 | `--wui-timepicker-box-bgcolor`                   | Background color of the time picker dropdown. |
@@ -4468,9 +4497,9 @@ nav {
 HTML head:
 
 ```html
-<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/timepicker/wui-timepicker-0.6.root.css">
-<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/timepicker/wui-timepicker-0.6.css">
-<script type="text/javascript" src="/libraries/wui-js/main/timepicker/wui-timepicker-0.6.js"></script>
+<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/timepicker/wui-timepicker-0.7.root.css">
+<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/timepicker/wui-timepicker-0.7.css">
+<script type="text/javascript" src="/libraries/wui-js/main/timepicker/wui-timepicker-0.7.js"></script>
 ```
 
 HTML code:
@@ -4522,7 +4551,7 @@ window.addEventListener("DOMContentLoaded", init);
 
 ### WUIColorpicker
 
-Version: `0.6`
+Version: `0.7`
 
 Component for the implementation of color picker type data inputs based on HTML element `<input type="color">`.
 
@@ -4530,9 +4559,9 @@ Component for the implementation of color picker type data inputs based on HTML 
 
 | Type | File |
 |:----:| ---- |
-| JS   | [src/wui-js/main/colorpicker/wui-colorpicker-0.6.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/colorpicker/wui-colorpicker-0.6.js) |
-| CSS  | [src/wui-js/main/colorpicker/wui-colorpicker-0.6.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/colorpicker/wui-colorpicker-0.6.css) |
-| CSS  | [src/wui-js/main/colorpicker/wui-colorpicker-0.6.root.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/colorpicker/wui-colorpicker-0.6.root.css) |
+| JS   | [src/wui-js/main/colorpicker/wui-colorpicker-0.7.js](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/colorpicker/wui-colorpicker-0.7.js) |
+| CSS  | [src/wui-js/main/colorpicker/wui-colorpicker-0.7.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/colorpicker/wui-colorpicker-0.7.css) |
+| CSS  | [src/wui-js/main/colorpicker/wui-colorpicker-0.7.root.css](https://github.com/wui-js/wuijs-main-lib/blob/main/src/wui-js/main/colorpicker/wui-colorpicker-0.7.root.css) |
 
 #### Constructor
 
@@ -4578,23 +4607,24 @@ Component for the implementation of color picker type data inputs based on HTML 
 
 | Variable                                            | Description |
 | --------------------------------------------------- | ----------- |
-| `--wui-colorpicker-opener-iconsize`                 | Icon    size of the colorpicker opener. |
-| `--wui-colorpicker-opener-iconcolor-out`            | Icon    color of the colorpicker opener in normal state. |
-| `--wui-colorpicker-opener-iconcolor-over`           | Icon    color of the colorpicker opener in hover state. |
-| `--wui-colorpicker-opener-iconcolor-disabled`       | Icon    color of the colorpicker opener in disabled state. |
+| `--wui-colorpicker-opener-iconsize`                 | Icon size of the colorpicker opener. |
+| `--wui-colorpicker-opener-iconcolor-out`            | Icon color of the colorpicker opener in normal state. |
+| `--wui-colorpicker-opener-iconcolor-over`           | Icon color of the colorpicker opener in hover state. |
+| `--wui-colorpicker-opener-iconcolor-disabled`       | Icon color of the colorpicker opener in disabled state. |
 | `--wui-colorpicker-opener-openicon-src`             | Source for the open icon<br>(format: `url()` or `none` for the default source). |
 | `--wui-colorpicker-opener-closeicon-src`            | Source for the close icon<br>(format: `url()` or `none` for the default source). |
 | `--wui-colorpicker-viewbutton-size`                 | Size of the color view button. |
 | `--wui-colorpicker-viewbutton-bordercolor-out`      | Border color of the view button in normal state. |
-| `--wui-colorpicker-viewbutton-bgcolor-out`          | Background color of the view button in normal state. |
 | `--wui-colorpicker-viewbutton-bordercolor-over`     | Border color of the view button in hover state. |
-| `--wui-colorpicker-viewbutton-bgcolor-over`         | Background color of the view button in hover state. |
 | `--wui-colorpicker-viewbutton-bordercolor-disabled` | Border color of the view button in disabled state. |
+| `--wui-colorpicker-viewbutton-bgcolor-out`          | Background color of the view button in normal state. |
+| `--wui-colorpicker-viewbutton-bgcolor-over`         | Background color of the view button in hover state. |
 | `--wui-colorpicker-viewbutton-bgcolor-disabled`     | Background color of the view button in disabled state. |
 | `--wui-colorpicker-viewcolor-borderwidth`           | Border width of the color indicator in the view button. |
 | `--wui-colorpicker-viewcolor-bordercolor`           | Border color of the color indicator in the view button. |
 | `--wui-colorpicker-viewcolor-emptyicon-src`         | Source for the empty color preview icon<br>(format: `url()` or `none` for the default source). |
 | `--wui-colorpicker-box-shadowcolor`                 | Shadow color of the color picker dropdown. |
+| `--wui-colorpicker-box-shadowopacity`               | Opacity of the shadow of the color picker dropdown. |
 | `--wui-colorpicker-box-borderradius`                | Border radius of the color picker dropdown. |
 | `--wui-colorpicker-box-bordercolor`                 | Border color of the color picker dropdown. |
 | `--wui-colorpicker-box-bgcolor`                     | Background color of the color picker dropdown. |
@@ -4603,8 +4633,8 @@ Component for the implementation of color picker type data inputs based on HTML 
 | `--wui-colorpicker-box-tab-textcolor-out`           | Text color of the picker tabs in normal state. |
 | `--wui-colorpicker-box-tab-textcolor-selected`      | Text color of the picker tabs in selected state. |
 | `--wui-colorpicker-box-option-bordercolor-out`      | Border color of the picker options in normal state. |
-| `--wui-colorpicker-box-option-bgcolor-out`          | Background color of the picker options in normal state. |
 | `--wui-colorpicker-box-option-bordercolor-over`     | Border color of the picker options in hover state. |
+| `--wui-colorpicker-box-option-bgcolor-out`          | Background color of the picker options in normal state. |
 | `--wui-colorpicker-box-option-bgcolor-over`         | Background color of the picker options in hover state. |
 | `--wui-colorpicker-box-option-bgcolor-selected`     | Background color of the picker options in selected state. |
 | `--wui-colorpicker-box-option-textcolor-out`        | Text color of the picker options in normal state. |
@@ -4698,9 +4728,9 @@ nav {
 HTML head:
 
 ```html
-<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/colorpicker/wui-colorpicker-0.6.root.css">
-<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/colorpicker/wui-colorpicker-0.6.css">
-<script type="text/javascript" src="/libraries/wui-js/main/colorpicker/wui-colorpicker-0.6.js"></script>
+<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/colorpicker/wui-colorpicker-0.7.root.css">
+<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/colorpicker/wui-colorpicker-0.7.css">
+<script type="text/javascript" src="/libraries/wui-js/main/colorpicker/wui-colorpicker-0.7.js"></script>
 ```
 
 HTML code:
@@ -5011,7 +5041,7 @@ window.addEventListener("DOMContentLoaded", init);
 
 ### WUIButton
 
-Versión: `0.7`
+Version: `0.7`
 
 Component for the implementation of based on HTML element `<button>`.
 
@@ -5146,8 +5176,8 @@ nav {
 HTML head:
 
 ```html
-<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/icon/wui-icon-0.4.root.css">
-<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/icon/wui-icon-0.4.css">
+<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/icon/wui-icon-0.5.root.css">
+<link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/icon/wui-icon-0.5.css">
 <link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/button/wui-button-0.7.root.css">
 <link type="text/css" rel="stylesheet" href="/libraries/wui-js/main/button/wui-button-0.7.css">
 <script type="text/javascript" src="/libraries/wui-js/main/button/wui-button-0.7.js"></script>

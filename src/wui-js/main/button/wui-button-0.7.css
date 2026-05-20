@@ -5,6 +5,14 @@
  * @copyright Sergio E. Belmar V. (wuijs.project@gmail.com)
  */
 
+button.wui-button,
+button.wui-button * {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-tap-highlight-color: transparent;
+}
+
 button.wui-button {
 	--button-shadow: rgba(50, 50, 93, .25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 	--button-radius: calc(var(--wui-button-default-height) / 2);
@@ -14,9 +22,6 @@ button.wui-button {
 	position: relative;
 	min-width: var(--wui-button-default-minwidth);
 	height: var(--wui-button-default-height);
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
 	-webkit-box-shadow: var(--button-shadow);
 	-moz-box-shadow: var(--button-shadow);
 	box-shadow: var(--button-shadow);
@@ -33,7 +38,6 @@ button.wui-button {
 	gap: 5px;
 	white-space: nowrap;
 	font-size: var(--wui-button-default-textsize);
-	-webkit-tap-highlight-color: transparent;
 	-webkit-transition: var(--button-transition);
 	-moz-transition: var(--button-transition);
 	transition: var(--button-transition);
